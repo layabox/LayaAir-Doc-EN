@@ -1,0 +1,160 @@
+# Use of runTime
+
+It is recommended to read the video tutorial, which provides a comprehensive explanation and practical introduction to the system of LayaAir script and runtime development.
+
+Script component course link: [https://ke.qq.com/course/427324](https://ke.qq.com/course/427324)
+
+Collection course link for UI and scene editing, component development, screen adaptation and anti-aliasing: [https://ke.qq.com/course/417469](https://ke.qq.com/course/417469)
+
+----------
+
+All components under the resource panel in LayaAirIDE have runtime attributes. Runtime is the logical class of the component when it is run; the same component can use the same runtime class to implement the same function. For example, the same component needs to implement the same function on different pages. . **It should be noted that if the component's runtime logic class does not inherit the component itself, and there is no attribute of the component in the inherited object, this attribute will be invalid. **
+
+**The runTime script is similar to the script script. The difference is that the runtime script is implemented by inheriting the page, scene or component class to implement the logic. Set the scene's Runtime property in the IDE to associate it with the scene or object**
+
+- **Compared with the script method, the inherited page class can directly use the attributes defined by the page (defined through the var attribute in the IDE), such as this.tipLbll, this.scoreLbl, which has a code prompt effect. The script script can only obtain nodes through this.owner.getChildByName("xxx") and other methods**
+- **Recommendation: If it is page-level logic and requires frequent access to multiple elements in the page, use the runtime inheritance writing method. If it is an independent small module with a single function, it is recommended to use the script script method. See IDE to create a new 2d sample project **
+
+**This article will set up the same runtime logic class for the Image component in two different pages to achieve the same function. The running effect is as shown in animation 0: **
+
+![0](img\0.gif)(Picture 0)
+
+### 1. Set the runtime class for the components in the page
+
+Create two UI pages in the page management directory, called MonkeyPage and BGPage. As shown below,
+
+![1](img\ide1.png)
+
+Drag an Image component into each of the two UI pages, click Scene2D and set the runtime attribute to game.ImageRunTime. (Drag the script onto the runtime script icon). As shown in Figure 1 and Figure 2:
+
+![1](img\ide3.png)(Figure 1)
+
+![2](img\ide2.png)(Figure 2)
+
+After the settings are completed, save the export UI and start writing logic code.
+
+
+
+### 2. Code logic processing
+
+Switch to code mode,
+
+Then write the effect we want to achieve in the ImageRunTime class, such as implementing a click-to-zoom (similar to a button) function. The entire code is as follows:
+
+```typescript
+
+	/*
+	ImageRunTime logic class
+	*/
+	export default class ImageRunTime extends Laya.Image{
+    	public scaleTime:number = 100;
+    	constructor() {
+        	super();
+        	//Set the center point of the component
+   		 this.anchorX = this.anchorY = 0.5;
+   		 //Add mouse press event listening. Press the zoom out button.
+   		 this.on(Laya.Event.MOUSE_DOWN,this,this.scaleSmall);
+   		 //Add mouse lift event listening. Restore button when lifted.
+   		 this.on(Laya.Event.MOUSE_UP,this, this.scaleBig);
+   		 //Add mouse leave event listening. Restore button when leaving.
+   		 this.on(Laya.Event.MOUSE_OUT,this, this.scaleBig);
+    	}
+    	private scaleBig():void
+   	 {
+   		 //Enlarge and restore the easing effect
+   		 Laya.Tween.to(this, {scaleX:1,scaleY:1},this.scaleTime);
+   	 }
+   	 private scaleSmall():void
+   	 {
+   		 //Easing effect that shrinks to 0.8
+   		 Laya.Tween.to(this,{scaleX:0.8,scaleY:0.8},this.scaleTime);
+   	 }
+	}
+
+```
+
+Instantiate these two UI interfaces in the main running class, the code is as follows:
+
+```typescript
+import GameConfig from "./GameConfig";
+import { ui } from "./ui/layaMaxUI";
+class Main {
+    constructor() {
+   	 //Initialize the engine according to IDE settings	 
+   	 if (window["Laya3D"]) Laya3D.init(GameConfig.width, GameConfig.height);
+   	 else Laya.init(GameConfig.width, GameConfig.height, Laya["WebGL"]);
+   	 Laya["Physics"] && Laya["Physics"].enable();
+   	 Laya["DebugPanel"] && Laya["DebugPanel"].enable();
+   	 Laya.stage.scaleMode = GameConfig.scaleMode;
+   	 Laya.stage.screenMode = GameConfig.screenMode;
+
+   	 //Open the debugging panel (set the debugging mode through the IDE, or add the debug=true parameter to the url address to open the debugging panel)
+   	 if (GameConfig.debug || Laya.Utils.getQueryString("debug") == "true") Laya.enableDebugPanel();
+   	 if (GameConfig.stat) Laya.Stat.show();
+   	 Laya.alertGlobalError = true;
+
+   	 //Activate resource version control. Version.json is automatically generated by the IDE publishing function. If not, it will not affect the subsequent process.
+   	 Laya.ResourceVersion.enable("version.json", Laya.Handler.create(this, this.onVersionLoaded), Laya.ResourceVersion.FILENAME_VERSION);
+    }
+
+    onVersionLoaded(): void {
+   	 //Activate size image mapping. When loading small images, if the small image is found in the large image collection, the large image collection will be loaded first instead of the small image.
+   	 Laya.AtlasInfoManager.enable("fileconfig.json", Laya.Handler.create(this, this.onConfigLoaded));
+    }
+
+    onConfigLoaded(): void {
+   	 //Load the scene specified by the IDE. If you create the scene in the editor, open the following line of comments and comment out the code on the example page.
+   	 //GameConfig.startScene && Laya.Scene.open(GameConfig.startScene);
+
+   	  //Instantiate the BGPageUI page
+   	  var bgPage: ui.BGPageUI = new ui.BGPageUI();
+   	  //In order to clearly see the location of this page, set a background color here.
+   	  bgPage.graphics.drawRect(0, 0, 300, 300, "#ffcccc");
+   	  //Add to stage
+   	  Laya.stage.addChild(bgPage);
+   	  //Instantiate the MonkeyPageUI page
+   	  var monkeyPage: ui.MonkeyPageUI = new ui.MonkeyPageUI();
+   	  //In order to clearly see the location of this page, set a background color here.
+   	  monkeyPage.graphics.drawRect(0, 0, 300, 300, "#ffcccc");
+   	  //Add to stage
+   	  Laya.stage.addChild(monkeyPage);
+   	  //Set the coordinates of the second page
+   	  monkeyPage.x = 350;
+
+    }
+}
+//Activate startup class
+new Main();
+```
+
+The above is code compatible with 1.0.
+
+### 3. If the object inherited by the runtime logical class is not its own component
+
+In the above code, we demonstrate the effect of inheriting its own component Image. What will happen if we inherit a Button component class? Let's see how it works. The code and implementation are as follows:
+
+```typescript
+module game {
+	/*
+	ImageRunTime logic class
+	*/
+	export class ImageRunTime extends Laya.Button{
+    	public scaleTime:number = 100;
+    	constructor() {
+        	super();
+        	//Set the center point of the component
+   		 this.anchorX = this.anchorY = 0.5;
+   		 ......
+    	}
+    	......
+	}
+}
+```
+
+![5](img\5.gif)(Figure 5)
+
+At this time, we will find that the resources on the UI page are displayed very strangely. At this time, because the skin of the button is tri-state by default, when the runtime logic class of the Image inherits from the Button component, it is no longer an Image component, but Is a Button component.
+
+
+
+

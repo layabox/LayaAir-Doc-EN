@@ -55,20 +55,20 @@
         "versions": {
             "options": [
                 {
-                    "value": "https://layaAir.com/3.3/doc/",
+                    "value": "https://layaair.com/3.0/doc-en/",
+                    "text": "v3.0"
+                },
+                {
+                    "value": "https://layaair.com/3.3/doc-en/",
                     "text": "v3.3"
                 },
                 {
-                    "value": "https://layaAir.com/3.2/doc/",
+                    "value": "https://layaair.com/3.2/doc-en/",
                     "text": "v3.2"
                 },
                 {
-                    "value": "https://layaAir.com/3.1/doc/",
+                    "value": "https://layaair.com/3.1/doc-en/",
                     "text": "v3.1"
-                },
-                {
-                    "value": "https://layaAir.com/3.0/doc/",
-                    "text": "v3.0"
                 }
             ]
         }
@@ -79,5 +79,5 @@
     "structure": {
         "readme": "services.md"
     },
-    "title": "LayaAir3 Engine Documentation · LAYABOX"
+    "title": "LayaAir3.0 Engine Documentation · LAYABOX"
 }
