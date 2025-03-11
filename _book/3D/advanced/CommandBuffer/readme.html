@@ -1,0 +1,2826 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Command Buffer · LayaAir3 Engine Documentation · LAYABOX</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-sidebar-style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-versions-select/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../performanceOptimization/readme.html" />
+    
+    
+    <link rel="prev" href="../PostProcessing/readme.html" />
+    
+
+    
+        <link rel="shortcut icon" href="./style/favicon-32.ico" type="image/x-icon">
+    
+    
+        <link rel="bookmark" href="./style/favicon-32.ico" type="image/x-icon">
+    
+    
+    
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./style/layabox-152.png">
+    
+    
+        
+    
+    
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" >
+            
+                <span>
+            
+                    
+                    Beginners
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.1" data-path="../../../basics/readme.html">
+            
+                <a href="../../../basics/readme.html">
+            
+                    
+                    Features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../../../basics/developmentEnvironment/readme.html">
+            
+                <a href="../../../basics/developmentEnvironment/readme.html">
+            
+                    
+                    Development Environment
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.2.1" data-path="../../../basics/developmentEnvironment/download/readme.html">
+            
+                <a href="../../../basics/developmentEnvironment/download/readme.html">
+            
+                    
+                    Install
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.2" data-path="../../../basics/IDE/GUI/readme.html">
+            
+                <a href="../../../basics/IDE/GUI/readme.html">
+            
+                    
+                    GUI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../../../basics/essentialSkills/readme.html">
+            
+                <a href="../../../basics/essentialSkills/readme.html">
+            
+                    
+                    Essential Skills
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.3.1" data-path="../../../basics/language/readme.html">
+            
+                <a href="../../../basics/language/readme.html">
+            
+                    
+                    Language
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.2" data-path="../../../basics/DevTools/readme.html">
+            
+                <a href="../../../basics/DevTools/readme.html">
+            
+                    
+                    DevTools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.3" data-path="../../../basics/LayaTree/readme.html">
+            
+                <a href="../../../basics/LayaTree/readme.html">
+            
+                    
+                    LayaTree
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Engine Basics
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../../basics/IDE/readme.html">
+            
+                <a href="../../../basics/IDE/readme.html">
+            
+                    
+                    IDE Basics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../../../basics/IDE/layouts/readme.html">
+            
+                <a href="../../../basics/IDE/layouts/readme.html">
+            
+                    
+                    layouts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../../../basics/IDE/projecFolders/readme.html">
+            
+                <a href="../../../basics/IDE/projecFolders/readme.html">
+            
+                    
+                    projecFolders
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../../../basics/IDE/projectSettings/readme.html">
+            
+                <a href="../../../basics/IDE/projectSettings/readme.html">
+            
+                    
+                    projectSettings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../../../basics/IDE/entry/readme.html">
+            
+                <a href="../../../basics/IDE/entry/readme.html">
+            
+                    
+                    entry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../../../basics/IDE/importJsLibrary/readme.html">
+            
+                <a href="../../../basics/IDE/importJsLibrary/readme.html">
+            
+                    
+                    import Js Library
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="../../../basics/IDE/Hierarchy/readme.html">
+            
+                <a href="../../../basics/IDE/Hierarchy/readme.html">
+            
+                    
+                    Hierarchy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="../../../basics/IDE/assets/readme.html">
+            
+                <a href="../../../basics/IDE/assets/readme.html">
+            
+                    
+                    assets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="../../../basics/IDE/Inspector/readme.html">
+            
+                <a href="../../../basics/IDE/Inspector/readme.html">
+            
+                    
+                    Inspector
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.9" data-path="../../../basics/IDE/Game/readme.html">
+            
+                <a href="../../../basics/IDE/Game/readme.html">
+            
+                    
+                    Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.10" data-path="../../../basics/IDE/shortcutKeyCombinations/readme.html">
+            
+                <a href="../../../basics/IDE/shortcutKeyCombinations/readme.html">
+            
+                    
+                    shortcutKey Combinations
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../../basics/common/readme.html">
+            
+                <a href="../../../basics/common/readme.html">
+            
+                    
+                    Engine General Basics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../../../basics/common/terms/readme.html">
+            
+                <a href="../../../basics/common/terms/readme.html">
+            
+                    
+                    basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../../../basics/common/Component/readme.html">
+            
+                <a href="../../../basics/common/Component/readme.html">
+            
+                    
+                    Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../../../basics/common/Loader/readme.html">
+            
+                <a href="../../../basics/common/Loader/readme.html">
+            
+                    
+                    Loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../../../basics/common/Scene/readme.html">
+            
+                <a href="../../../basics/common/Scene/readme.html">
+            
+                    
+                    Scene
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../../../basics/common/Node/readme.html">
+            
+                <a href="../../../basics/common/Node/readme.html">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="../../../basics/common/Timer/readme.html">
+            
+                <a href="../../../basics/common/Timer/readme.html">
+            
+                    
+                    Timer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="../../../basics/common/Event/readme.html">
+            
+                <a href="../../../basics/common/Event/readme.html">
+            
+                    
+                    Event
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.8" data-path="../../../basics/common/Tween/readme.html">
+            
+                <a href="../../../basics/common/Tween/readme.html">
+            
+                    
+                    Tween
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.9" data-path="../../../basics/common/Pool/readme.html">
+            
+                <a href="../../../basics/common/Pool/readme.html">
+            
+                    
+                    Pool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.10" data-path="../../../basics/common/network/readme.html">
+            
+                <a href="../../../basics/common/network/readme.html">
+            
+                    
+                    network
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.11" data-path="../../../basics/common/adaptScreen/readme.html">
+            
+                <a href="../../../basics/common/adaptScreen/readme.html">
+            
+                    
+                    adaptScreen
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.12" data-path="../../../basics/common/Browser/readme.html">
+            
+                <a href="../../../basics/common/Browser/readme.html">
+            
+                    
+                    Browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.13" data-path="../../../basics/common/device/readme.html">
+            
+                <a href="../../../basics/common/device/readme.html">
+            
+                    
+                    device
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.13.1" data-path="../../../basics/common/device/media/readme.html">
+            
+                <a href="../../../basics/common/device/media/readme.html">
+            
+                    
+                    media
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.13.2" data-path="../../../basics/common/device/motion/readme.html">
+            
+                <a href="../../../basics/common/device/motion/readme.html">
+            
+                    
+                    motion
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.14" data-path="../../../basics/common/Stat/readme.html">
+            
+                <a href="../../../basics/common/Stat/readme.html">
+            
+                    
+                    Stat
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../../basics/3D/readme.html">
+            
+                <a href="../../../basics/3D/readme.html">
+            
+                    
+                    Basic of 3D Engine
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../../../basics/3D/beginner/readme.html">
+            
+                <a href="../../../basics/3D/beginner/readme.html">
+            
+                    
+                    beginner
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../../../basics/3D/Transform/readme.html">
+            
+                <a href="../../../basics/3D/Transform/readme.html">
+            
+                    
+                    Transform
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Editor
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../../IDE/uiEditor/readme.html">
+            
+                <a href="../../../IDE/uiEditor/readme.html">
+            
+                    
+                    UI Editor
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../../IDE/uiEditor/basic/readme.html">
+            
+                <a href="../../../IDE/uiEditor/basic/readme.html">
+            
+                    
+                    Basic Interaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../../../IDE/uiEditor/widgets/readme.html">
+            
+                <a href="../../../IDE/uiEditor/widgets/readme.html">
+            
+                    
+                    widgets
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.1" data-path="../../../2D/displayObject/readme.html">
+            
+                <a href="../../../2D/displayObject/readme.html">
+            
+                    
+                    Display Object
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.1.1" data-path="../../../2D/displayObject/Sprite/readme.html">
+            
+                <a href="../../../2D/displayObject/Sprite/readme.html">
+            
+                    
+                    Sprite
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.1.2" data-path="../../../2D/displayObject/Animation/readme.html">
+            
+                <a href="../../../2D/displayObject/Animation/readme.html">
+            
+                    
+                    Animation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.1.3" data-path="../../../2D/displayObject/Text/readme.html">
+            
+                <a href="../../../2D/displayObject/Text/readme.html">
+            
+                    
+                    Text
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.1.4" data-path="../../../2D/displayObject/SoundNode/readme.html">
+            
+                <a href="../../../2D/displayObject/SoundNode/readme.html">
+            
+                    
+                    Sound Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.1.5" data-path="../../../2D/displayObject/VideoNode/readme.html">
+            
+                <a href="../../../2D/displayObject/VideoNode/readme.html">
+            
+                    
+                    Video Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2" data-path="../../../IDE/uiEditor/uiComponent/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/readme.html">
+            
+                    
+                    UIComponent
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.2.1" data-path="../../../IDE/uiEditor/uiComponent/Image/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/Image/readme.html">
+            
+                    
+                    Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.2" data-path="../../../IDE/uiEditor/uiComponent/Label/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/Label/readme.html">
+            
+                    
+                    Label
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.3" data-path="../../../IDE/uiEditor/uiComponent/TextInput/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/TextInput/readme.html">
+            
+                    
+                    TextInput
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.2.3.1" data-path="../../../IDE/uiEditor/uiComponent/TextArea/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/TextArea/readme.html">
+            
+                    
+                    TextArea
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.4" data-path="../../../IDE/uiEditor/uiComponent/Clip/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/Clip/readme.html">
+            
+                    
+                    Clip
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.2.4.1" data-path="../../../IDE/uiEditor/uiComponent/FontClip/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/FontClip/readme.html">
+            
+                    
+                    FontClip
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.5" data-path="../../../IDE/uiEditor/uiComponent/Button/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/Button/readme.html">
+            
+                    
+                    Button
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.6" data-path="../../../IDE/uiEditor/uiComponent/scroll/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/scroll/readme.html">
+            
+                    
+                    scroll
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.2.6.1" data-path="../../../IDE/uiEditor/uiComponent/HScrollBar/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/HScrollBar/readme.html">
+            
+                    
+                    HScrollBar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.6.2" data-path="../../../IDE/uiEditor/uiComponent/VScrollBar/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/VScrollBar/readme.html">
+            
+                    
+                    VScrollBar
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.7" data-path="../../../IDE/uiEditor/uiComponent/slider/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/slider/readme.html">
+            
+                    
+                    slider
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.2.7.1" data-path="../../../IDE/uiEditor/uiComponent/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/readme.html">
+            
+                    
+                    HSlider
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.7.2" data-path="../../../IDE/uiEditor/uiComponent/VSlider/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/VSlider/readme.html">
+            
+                    
+                    VSlider
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.8" data-path="../../../IDE/uiEditor/uiComponent/ProgressBar/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/ProgressBar/readme.html">
+            
+                    
+                    ProgressBar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.9" data-path="../../../IDE/uiEditor/uiComponent/Box/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/Box/readme.html">
+            
+                    
+                    Box
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.2.9.1" data-path="../../../IDE/uiEditor/uiComponent/HBoox/readme.md">
+            
+                <span>
+            
+                    
+                    HBoox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.9.2" data-path="../../../IDE/uiEditor/uiComponent/VBox/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/VBox/readme.html">
+            
+                    
+                    VBox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.9.3" data-path="../../../IDE/uiEditor/uiComponent/Panel/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/Panel/readme.html">
+            
+                    
+                    Panel
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.10" data-path="../../../IDE/uiEditor/uiComponent/List/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/List/readme.html">
+            
+                    
+                    List
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.2.10.1" data-path="../../../IDE/uiEditor/uiComponent/Tree/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/Tree/readme.html">
+            
+                    
+                    Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.11" data-path="../../../IDE/uiEditor/uiComponent/optionBox/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/optionBox/readme.html">
+            
+                    
+                    optionBox
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.2.11.1" data-path="../../../IDE/uiEditor/uiComponent/ComboBox/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/ComboBox/readme.html">
+            
+                    
+                    ComboBox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.11.2" data-path="../../../IDE/uiEditor/uiComponent/Radio/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/Radio/readme.html">
+            
+                    
+                    Radio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.11.3" data-path="../../../IDE/uiEditor/uiComponent/RadioGroup/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/RadioGroup/readme.html">
+            
+                    
+                    RadioGroup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.11.4" data-path="../../../IDE/uiEditor/uiComponent/CheckBox/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/CheckBox/readme.html">
+            
+                    
+                    CheckBox
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.12" data-path="../../../IDE/uiEditor/uiComponent/navigationMenu/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/navigationMenu/readme.html">
+            
+                    
+                    Navigation Menu
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.2.12.1" data-path="../../../IDE/uiEditor/uiComponent/Tab/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/Tab/readme.html">
+            
+                    
+                    Tab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.12.2" data-path="../../../IDE/uiEditor/uiComponent/ViewStack/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/ViewStack/readme.html">
+            
+                    
+                    ViewStack
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.13" data-path="../../../IDE/uiEditor/uiComponent/ColorPicker/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/ColorPicker/readme.html">
+            
+                    
+                    ColorPicker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.14" data-path="../../../IDE/uiEditor/uiComponent/OpenDataContextView/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/OpenDataContextView/readme.html">
+            
+                    
+                    OpenDataContextView
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.15" data-path="../../../IDE/uiEditor/Dialog/readme.html">
+            
+                <a href="../../../IDE/uiEditor/Dialog/readme.html">
+            
+                    
+                    Dialog
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.3" data-path="../../../IDE/uiEditor/uiComponent/skeleton/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/skeleton/readme.html">
+            
+                    
+                    skeleton
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.3.1" data-path="../../../IDE/uiEditor/uiComponent/skeleton/spine/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/skeleton/spine/readme.html">
+            
+                    
+                    spine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.3.2" data-path="../../../IDE/uiEditor/uiComponent/skeleton/sk/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/skeleton/sk/readme.html">
+            
+                    
+                    sk
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../../../IDE/uiEditor/readme.html">
+            
+                <a href="../../../IDE/uiEditor/readme.html">
+            
+                    
+                    graphics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../../../IDE/uiEditor/Filter/readme.html">
+            
+                <a href="../../../IDE/uiEditor/Filter/readme.html">
+            
+                    
+                    Filter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="../../../IDE/uiEditor/runtime/readme.html">
+            
+                <a href="../../../IDE/uiEditor/runtime/readme.html">
+            
+                    
+                    runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.6" data-path="../../../IDE/uiEditor/use3D/readme.html">
+            
+                <a href="../../../IDE/uiEditor/use3D/readme.html">
+            
+                    
+                    use3D
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.7" data-path="../../../IDE/uiEditor/textureCompress/readme.html">
+            
+                <a href="../../../IDE/uiEditor/textureCompress/readme.html">
+            
+                    
+                    textureCompress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.8" data-path="../../../IDE/uiEditor/3DUI/readme.html">
+            
+                <a href="../../../IDE/uiEditor/3DUI/readme.html">
+            
+                    
+                    3D UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../../IDE/sceneEditor/readme.html">
+            
+                <a href="../../../IDE/sceneEditor/readme.html">
+            
+                    
+                    Scene Editor
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../../IDE/sceneEditor/basic/readme.html">
+            
+                <a href="../../../IDE/sceneEditor/basic/readme.html">
+            
+                    
+                    Basic Interaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../../Sprite3D/readme.html">
+            
+                <a href="../../Sprite3D/readme.html">
+            
+                    
+                    Sprite3D
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../../displayObject/readme.html">
+            
+                <a href="../../displayObject/readme.html">
+            
+                    
+                    Display Object
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../../Camera/readme.html">
+            
+                <a href="../../Camera/readme.html">
+            
+                    
+                    Camera
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../../Light/readme.html">
+            
+                <a href="../../Light/readme.html">
+            
+                    
+                    Light
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="../../../IDE/sceneEditor/environment/readme.html">
+            
+                <a href="../../../IDE/sceneEditor/environment/readme.html">
+            
+                    
+                    environment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.7" data-path="../../useModel/readme.html">
+            
+                <a href="../../useModel/readme.html">
+            
+                    
+                    useModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../../IDE/animationEditor/readme.html">
+            
+                <a href="../../../IDE/animationEditor/readme.html">
+            
+                    
+                    Animation Editor
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../../IDE/animationEditor/timelineGUI/readme.html">
+            
+                <a href="../../../IDE/animationEditor/timelineGUI/readme.html">
+            
+                    
+                    timeline GUI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../../../IDE/animationEditor/aniController/readme.html">
+            
+                <a href="../../../IDE/animationEditor/aniController/readme.html">
+            
+                    
+                    Animation Controller
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../../../IDE/animationEditor/aniBake/readme.html">
+            
+                <a href="../../../IDE/animationEditor/aniBake/readme.html">
+            
+                    
+                    Animation Bake
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../../IDE/particleEditor/readme.html">
+            
+                <a href="../../../IDE/particleEditor/readme.html">
+            
+                    
+                    Particle Editor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../../IDE/materialEditor/readme.html">
+            
+                <a href="../../../IDE/materialEditor/readme.html">
+            
+                    
+                    Material Editor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../../IDE/ShaderBlueprint/readme.html">
+            
+                <a href="../../../IDE/ShaderBlueprint/readme.html">
+            
+                    
+                    Shader Blueprint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../../../IDE/assets/readme.html">
+            
+                <a href="../../../IDE/assets/readme.html">
+            
+                    
+                    Resource management
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.7.1" data-path="../../../IDE/assets/model/readme.html">
+            
+                <a href="../../../IDE/assets/model/readme.html">
+            
+                    
+                    Model import settings
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../../../IDE/Component/readme.html">
+            
+                <a href="../../../IDE/Component/readme.html">
+            
+                    
+                    Component
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.8.1" data-path="../../../IDE/Component/Mesh/readme.html">
+            
+                <a href="../../../IDE/Component/Mesh/readme.html">
+            
+                    
+                    Mesh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.2" data-path="../../../IDE/Component/Trail/readme.html">
+            
+                <a href="../../../IDE/Component/Trail/readme.html">
+            
+                    
+                    Trail
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.3" data-path="../../../IDE/Component/PixelLine/readme.html">
+            
+                <a href="../../../IDE/Component/PixelLine/readme.html">
+            
+                    
+                    Pixel Line
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.4" data-path="../../../IDE/Component/ReflectionProbe/readme.html">
+            
+                <a href="../../../IDE/Component/ReflectionProbe/readme.html">
+            
+                    
+                    Reflection Probe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.5" data-path="../../../IDE/Component/VolumetricGI/readme.html">
+            
+                <a href="../../../IDE/Component/VolumetricGI/readme.html">
+            
+                    
+                    Volumetric GI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.6" data-path="../../../IDE/Component/StaticBatchVolume/readme.html">
+            
+                <a href="../../../IDE/Component/StaticBatchVolume/readme.html">
+            
+                    
+                    StaticBatchVolume
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.7" data-path="../../../IDE/Component/LOD/readme.html">
+            
+                <a href="../../../IDE/Component/LOD/readme.html">
+            
+                    
+                    LOD Group
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.8" data-path="../../../IDE/Component/navMesh/readme.html">
+            
+                <a href="../../../IDE/Component/navMesh/readme.html">
+            
+                    
+                    navMesh
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../../../IDE/prefab/readme.html">
+            
+                <a href="../../../IDE/prefab/readme.html">
+            
+                    
+                    prefab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../../../IDE/layapackage/readme.html">
+            
+                <a href="../../../IDE/layapackage/readme.html">
+            
+                    
+                    layapackage
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.10.1" data-path="../../../IDE/layapackage/plug-in/readme.html">
+            
+                <a href="../../../IDE/layapackage/plug-in/readme.html">
+            
+                    
+                    plug-in
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10.2" data-path="../../../IDE/layapackage/pluginImport/readme.html">
+            
+                <a href="../../../IDE/layapackage/pluginImport/readme.html">
+            
+                    
+                    Plugin Import
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10.3" data-path="../../../IDE/layapackage/Layabox/readme.html">
+            
+                <a href="../../../IDE/layapackage/Layabox/readme.html">
+            
+                    
+                    Official Plugins
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.10.3.1" data-path="../../../IDE/layapackage/Layabox/LOD/readme.html">
+            
+                <a href="../../../IDE/layapackage/Layabox/LOD/readme.html">
+            
+                    
+                    LOD Reduction Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    advanced
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../../2D/advanced/readme.html">
+            
+                <a href="../../../2D/advanced/readme.html">
+            
+                    
+                    Advanced 2D
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../../../2D/advanced/useText/readme.html">
+            
+                <a href="../../../2D/advanced/useText/readme.html">
+            
+                    
+                    use Text
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="../../../2D/TiledMap/readme.html">
+            
+                <a href="../../../2D/TiledMap/readme.html">
+            
+                    
+                    TiledMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="../../../2D/performanceOptimization/readme.html">
+            
+                <a href="../../../2D/performanceOptimization/readme.html">
+            
+                    
+                    performance Optimization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.4" data-path="../../../2D/dom/readme.html">
+            
+                <a href="../../../2D/dom/readme.html">
+            
+                    
+                    DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../readme.html">
+            
+                <a href="../readme.html">
+            
+                    
+                    Advanced 3D
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../customShader/readme.html">
+            
+                <a href="../customShader/readme.html">
+            
+                    
+                    Custom Shader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../PostProcessing/readme.html">
+            
+                <a href="../PostProcessing/readme.html">
+            
+                    
+                    Post Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.2.3" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    Command Buffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.4" data-path="../performanceOptimization/readme.html">
+            
+                <a href="../performanceOptimization/readme.html">
+            
+                    
+                    performance Optimization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.5" data-path="../../WebXR/readme.html">
+            
+                <a href="../../WebXR/readme.html">
+            
+                    
+                    WebXR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.6" data-path="../Unity/readme.html">
+            
+                <a href="../Unity/readme.html">
+            
+                    
+                    Unity Resource Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Publishing
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../../released/generalSetting/readme.html">
+            
+                <a href="../../../released/generalSetting/readme.html">
+            
+                    
+                    General Setting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../../released/web/readme.html">
+            
+                <a href="../../../released/web/readme.html">
+            
+                    
+                    Web
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../../../released/CrazyGames/readme.html">
+            
+                <a href="../../../released/CrazyGames/readme.html">
+            
+                    
+                    CrazyGames
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../../../released/Poki/readme.html">
+            
+                <a href="../../../released/Poki/readme.html">
+            
+                    
+                    Poki
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../../released/miniGame/readme.html">
+            
+                <a href="../../../released/miniGame/readme.html">
+            
+                    
+                    miniGame
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../../../released/miniGame/wechat/readme.html">
+            
+                <a href="../../../released/miniGame/wechat/readme.html">
+            
+                    
+                    wechat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.2" data-path="../../../released/miniGame/byteDance/readme.html">
+            
+                <a href="../../../released/miniGame/byteDance/readme.html">
+            
+                    
+                    tiktok
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.3" data-path="../../../released/miniGame/OPPO/readme.html">
+            
+                <a href="../../../released/miniGame/OPPO/readme.html">
+            
+                    
+                    OPPO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.4" data-path="../../../released/miniGame/vivo/readme.html">
+            
+                <a href="../../../released/miniGame/vivo/readme.html">
+            
+                    
+                    vivo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.5" data-path="../../../released/miniGame/xiaomi/readme.html">
+            
+                <a href="../../../released/miniGame/xiaomi/readme.html">
+            
+                    
+                    xiaomi
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.6" data-path="../../../released/miniGame/alipaygame/readme.html">
+            
+                <a href="../../../released/miniGame/alipaygame/readme.html">
+            
+                    
+                    alipaygame
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../../released/native/LayaNative_Introduction/readme.html">
+            
+                <a href="../../../released/native/LayaNative_Introduction/readme.html">
+            
+                    
+                    Native
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../../../released/native/native_index/readme.html">
+            
+                <a href="../../../released/native/native_index/readme.html">
+            
+                    
+                    native index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../../../released/native/build_Tool/readme.html">
+            
+                <a href="../../../released/native/build_Tool/readme.html">
+            
+                    
+                    build Tool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="../../../released/native/screen_orientation/readme.html">
+            
+                <a href="../../../released/native/screen_orientation/readme.html">
+            
+                    
+                    screen orientation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.4" data-path="../../../released/native/loading_view_new/readme.html">
+            
+                <a href="../../../released/native/loading_view_new/readme.html">
+            
+                    
+                    Loading View
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.5" data-path="../../../released/native/network/readme.html">
+            
+                <a href="../../../released/native/network/readme.html">
+            
+                    
+                    network
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.6" data-path="../../../released/native/LocalStrorage/readme.html">
+            
+                <a href="../../../released/native/LocalStrorage/readme.html">
+            
+                    
+                    Local Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.7" data-path="../../../released/native/Android_BackPress/readme.html">
+            
+                <a href="../../../released/native/Android_BackPress/readme.html">
+            
+                    
+                    Android BackPress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.8" data-path="../../../released/native/real_device_debugging/readme.html">
+            
+                <a href="../../../released/native/real_device_debugging/readme.html">
+            
+                    
+                    Debugging JS on Android
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.9" data-path="../../../released/native/LayaDcc_Tool/readme.html">
+            
+                <a href="../../../released/native/LayaDcc_Tool/readme.html">
+            
+                    
+                    LayaDcc Tool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.10" data-path="../../../released/native/Secondary_Development/readme.html">
+            
+                <a href="../../../released/native/Secondary_Development/readme.html">
+            
+                    
+                    Secondary Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.11" data-path="../../../released/native/webview/readme.html">
+            
+                <a href="../../../released/native/webview/readme.html">
+            
+                    
+                    webview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.12" data-path="../../../released/native/built_in_font/readme.html">
+            
+                <a href="../../../released/native/built_in_font/readme.html">
+            
+                    
+                    Fonts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.13" data-path="../../../released/native/zipUpdate/readme.html">
+            
+                <a href="../../../released/native/zipUpdate/readme.html">
+            
+                    
+                    zip Update
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.14" data-path="../../../released/native/apk_expansion/readme.html">
+            
+                <a href="../../../released/native/apk_expansion/readme.html">
+            
+                    
+                    APK Expansion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.15" data-path="../../../released/native/build_Cmd/readme.html">
+            
+                <a href="../../../released/native/build_Cmd/readme.html">
+            
+                    
+                    Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.16" data-path="../../../released/native/Other_settings/readme.html">
+            
+                <a href="../../../released/native/Other_settings/readme.html">
+            
+                    
+                    Other
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >Command Buffer</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#commandbuffer-document"><b></b>CommandBuffer document</a></li><ul><ul><li><span class="title-icon "></span><a href="#1-introduction"><b></b>1. Introduction</a></li><li><span class="title-icon "></span><a href="#2-usage-steps"><b></b>2. Usage steps</a></li><li><span class="title-icon "></span><a href="#3usage-examples"><b></b>3.Usage examples</a></li></ul></ul></ul></div><a href="#commandbuffer-document" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="commandbuffer-document"><a name="commandbuffer-document" class="anchor-navigation-ex-anchor" href="#commandbuffer-document"><i class="fa fa-link" aria-hidden="true"></i></a>CommandBuffer document</h1>
+<h3 id="1-introduction"><a name="1-introduction" class="anchor-navigation-ex-anchor" href="#1-introduction"><i class="fa fa-link" aria-hidden="true"></i></a>1. Introduction</h3>
+<p>CommandBuffer is the rendering command buffer, which saves the rendering command list. When we add some rendering instructions to the CommandBuffer, we can control the rendering process and execute these instructions at the time we want. The command buffer sets the render target or draws a given mesh, which can be set to be executed at different points during camera rendering.</p>
+<p>CommandBuffer is a high-end 3D rendering function used to expand the rendering effects of the LayaAir engine rendering pipeline. It is very useful when realizing effects such as frosted glass (transparent glass blur), outline perspective strokes or edge light effects, beach footprints, depth of field, etc. Everyone who knows it knows that CommandBuffer is very powerful and is also a rendering often used in 3A-level masterpieces. function, and there will be no additional loss of functions, and some effects are even more performance-efficient than other solutions. It is a rendering extension function that can also be used to enhance 3D rendering effects in small game platforms.</p>
+<h3 id="2-usage-steps"><a name="2-usage-steps" class="anchor-navigation-ex-anchor" href="#2-usage-steps"><i class="fa fa-link" aria-hidden="true"></i></a>2. Usage steps</h3>
+<h4 id="1-after-creating-the-commandbuffer-add-rendering-instructions-to-the-commandbuffer"><a name="1-after-creating-the-commandbuffer-add-rendering-instructions-to-the-commandbuffer" class="anchor-navigation-ex-anchor" href="#1-after-creating-the-commandbuffer-add-rendering-instructions-to-the-commandbuffer"><i class="fa fa-link" aria-hidden="true"></i></a>1. After creating the CommandBuffer, add rendering instructions to the CommandBuffer</h4>
+<p>Add the code interface as follows:</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">var</span> buf<span class="token operator">:</span>CommandBuffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CommandBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>buf<span class="token punctuation">.</span><span class="token function">setRenderTarget</span><span class="token punctuation">(</span>renderTexture<span class="token punctuation">)</span><span class="token punctuation">;</span>buf<span class="token punctuation">.</span><span class="token function">drawRender</span><span class="token punctuation">(</span>renders<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>materials<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="2-cbuffer-needs-to-be-bound-to-the-rendering-event-of-the-camera-the-camera-events-currently-supported-by-laya-are-as-follows"><a name="2-cbuffer-needs-to-be-bound-to-the-rendering-event-of-the-camera-the-camera-events-currently-supported-by-laya-are-as-follows" class="anchor-navigation-ex-anchor" href="#2-cbuffer-needs-to-be-bound-to-the-rendering-event-of-the-camera-the-camera-events-currently-supported-by-laya-are-as-follows"><i class="fa fa-link" aria-hidden="true"></i></a>2. CBuffer needs to be bound to the rendering event of the Camera. The Camera events currently supported by laya are as follows:</h4>
+<pre class="language-"><code class="lang-typescript">BeforeForwardOpaque <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">//Before rendering non-transparent objects, BeforeSkyBox = 2, //Before rendering sky boxes, BeforeTransparent = 4, //Before rendering transparent objects, BeforeImageEffect = 6, //Before post-processing, AfterEveryThing = 8, // After all rendering</span>
+</code></pre>
+<p>The interface for adding CommandBuffer to camera events is as follows:</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">this</span><span class="token punctuation">.</span>camera<span class="token punctuation">.</span><span class="token function">addCommandBuffer</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>cameraEventFlag<span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">.</span>commandBuffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>The interface to delete CommandBuffer is as follows:</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">this</span><span class="token punctuation">.</span>camera<span class="token punctuation">.</span><span class="token function">removeCommandBuffer</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>cameraEventFlag<span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">.</span>commandBuffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>CommandBuffer is a rendering instruction set. This rendering instruction set is composed of independent rendering instructions one by one.</p>
+<pre class="language-"><code class="lang-typescript">setShaderData<span class="token comment">//Set shader data, you can set the texture vector number in the shader, etc. setGlobalShaderData//Set global data, which can be used for all shaderblitScreenQuad//Render the source texture to the target rendering texture instruction through the full-screen quadrilateral. blitScreenQuadByMaterial//Render the source texture to the target rendering texture through the full-screen quadrilateral instruction setRenderTarget//Set the instruction rendering target. After calling, all rendering will be rendered to the picture bound by the method clearRenderTarget//Clean up the bound rendering texture drawMesh// Render a MeshdrawRender//Render a Render</span>
+</code></pre>
+<p>You can combine different rendering instructions and put them into different rendering processes. Let&#x2019;s analyze the official examples to better understand the usage of CommandBuffer.</p>
+<h3 id="3usage-examples"><a name="3usage-examples" class="anchor-navigation-ex-anchor" href="#3usage-examples"><i class="fa fa-link" aria-hidden="true"></i></a>3.Usage examples</h3>
+<h4 id="31blurryglass-example-frosted-glass-example"><a name="31blurryglass-example-frosted-glass-example" class="anchor-navigation-ex-anchor" href="#31blurryglass-example-frosted-glass-example"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.BlurryGlass example (frosted glass example)</h4>
+<h5 id="renderings"><a name="renderings" class="anchor-navigation-ex-anchor" href="#renderings"><i class="fa fa-link" aria-hidden="true"></i></a>Renderings</h5>
+<p> <img src="img/image-20221222111440722.png" alt="image-20221222111440722" style="zoom:67%;"></p>
+<h5 id="example-principle"><a name="example-principle" class="anchor-navigation-ex-anchor" href="#example-principle"><i class="fa fa-link" aria-hidden="true"></i></a>Example principle</h5>
+<p>Frosted glass is a transparent material, and the three capsules behind it are all opaque materials, so we need to take out all the rendering objects behind the frosted glass model every frame, blur them, and then sample the picture according to the screen UV to the frosted glass, and it can be achieved Such effect</p>
+<h5 id="sample-code"><a name="sample-code" class="anchor-navigation-ex-anchor" href="#sample-code"><i class="fa fa-link" aria-hidden="true"></i></a>Sample code</h5>
+<pre class="language-"><code class="lang-typescript"><span class="token function">createCommandBuffer</span><span class="token punctuation">(</span>camera<span class="token operator">:</span>Camera<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">//When you need to get the camera rendering result before rendering a transparent object, so call the following attribute true</span>
+    camera<span class="token punctuation">.</span>enableBuiltInRenderTexture <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token comment">//Create CommandBuffer</span>
+    <span class="token keyword">var</span> buf<span class="token operator">:</span>CommandBuffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CommandBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Create a screen RenderTexture that needs to be blurred</span>
+    <span class="token keyword">var</span> viewPort<span class="token operator">:</span>Viewport <span class="token operator">=</span> camera<span class="token punctuation">.</span>viewport<span class="token punctuation">;</span>
+     <span class="token comment">//Create a new RenderTexture</span>
+    <span class="token keyword">var</span> renderTexture <span class="token operator">=</span> RenderTexture<span class="token punctuation">.</span><span class="token function">createFromPool</span><span class="token punctuation">(</span>viewPort<span class="token punctuation">.</span>width<span class="token punctuation">,</span>viewPort<span class="token punctuation">.</span>height<span class="token punctuation">,</span>RenderTextureFormat<span class="token punctuation">.</span><span class="token constant">R8G8B8</span><span class="token punctuation">,</span>RenderTextureDepthFormat<span class="token punctuation">.</span><span class="token constant">DEPTHSTENCIL_NONE</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>texture <span class="token operator">=</span> renderTexture<span class="token punctuation">;</span>
+    <span class="token comment">//Copy the current rendering result to the created RenderTexture</span>
+buf<span class="token punctuation">.</span><span class="token function">blitScreenTriangle</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span>renderTexture<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Get the blur shader</span>
+    <span class="token keyword">var</span> shader<span class="token operator">:</span>Shader3D <span class="token operator">=</span> Shader3D<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">&quot;blurEffect&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Set fuzzy parameters</span>
+<span class="token keyword">var</span> shaderValue<span class="token operator">:</span>ShaderData <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ShaderData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//down Sample level sets the downsampling level</span>
+    <span class="token keyword">var</span> downSampleFactor<span class="token operator">:</span><span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> downSampleWidth<span class="token operator">:</span><span class="token builtin">number</span> <span class="token operator">=</span> viewPort<span class="token punctuation">.</span>width<span class="token operator">/</span>downSampleFactor<span class="token punctuation">;</span>
+    <span class="token keyword">var</span> downSampleheigh<span class="token operator">:</span><span class="token builtin">number</span> <span class="token operator">=</span> viewPort<span class="token punctuation">.</span>height<span class="token operator">/</span>downSampleFactor<span class="token punctuation">;</span>
+    <span class="token comment">//Set blur material parameters</span>
+    <span class="token keyword">var</span> texSize<span class="token operator">:</span>Vector4 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vector4</span><span class="token punctuation">(</span><span class="token number">1.0</span><span class="token operator">/</span>viewPort<span class="token punctuation">.</span>width<span class="token punctuation">,</span><span class="token number">1.0</span><span class="token operator">/</span>viewPort<span class="token punctuation">.</span>height<span class="token punctuation">,</span>viewPort<span class="token punctuation">.</span>width<span class="token punctuation">,</span>downSampleheigh<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    shaderValue<span class="token punctuation">.</span><span class="token function">setNumber</span><span class="token punctuation">(</span>BlurEffect<span class="token punctuation">.</span><span class="token constant">SHADERVALUE_DOWNSAMPLEVALUE</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    shaderValue<span class="token punctuation">.</span><span class="token function">setVector</span><span class="token punctuation">(</span>BlurEffect<span class="token punctuation">.</span><span class="token constant">SHADERVALUE_TEXELSIZE</span><span class="token punctuation">,</span>texSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Create downsampling RenderTexture1</span>
+    <span class="token keyword">var</span> downRenderTexture <span class="token operator">=</span> RenderTexture<span class="token punctuation">.</span><span class="token function">createFromPool</span><span class="token punctuation">(</span>downSampleWidth<span class="token punctuation">,</span>downSampleheigh<span class="token punctuation">,</span>RenderTextureFormat<span class="token punctuation">.</span><span class="token constant">R8G8B8</span><span class="token punctuation">,</span>RenderTextureDepthFormat<span class="token punctuation">.</span><span class="token constant">DEPTHSTENCIL_NONE</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Downsampling command stream</span>
+    buf<span class="token punctuation">.</span><span class="token function">blitScreenTriangle</span><span class="token punctuation">(</span>renderTexture<span class="token punctuation">,</span>downRenderTexture<span class="token punctuation">,</span><span class="token keyword">null</span><span class="token punctuation">,</span>shader<span class="token punctuation">,</span>shaderValue<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Create downsampling RenderTexture2</span>
+    <span class="token keyword">var</span> blurTexture<span class="token operator">:</span>RenderTexture <span class="token operator">=</span> RenderTexture<span class="token punctuation">.</span><span class="token function">createFromPool</span><span class="token punctuation">(</span>downSampleWidth<span class="token punctuation">,</span>downSampleheigh<span class="token punctuation">,</span>RenderTextureFormat<span class="token punctuation">.</span><span class="token constant">R8G8B8</span><span class="token punctuation">,</span>RenderTextureDepthFormat<span class="token punctuation">.</span><span class="token constant">DEPTHSTENCIL_NONE</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    blurTexture<span class="token punctuation">.</span>filterMode <span class="token operator">=</span> FilterMode<span class="token punctuation">.</span>Bilinear<span class="token punctuation">;</span>
+    <span class="token comment">//Horizontal blur</span>
+    buf<span class="token punctuation">.</span><span class="token function">blitScreenTriangle</span><span class="token punctuation">(</span>downRenderTexture<span class="token punctuation">,</span>blurTexture<span class="token punctuation">,</span><span class="token keyword">null</span><span class="token punctuation">,</span>shader<span class="token punctuation">,</span>shaderValue<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//vertical blur</span>
+    buf<span class="token punctuation">.</span><span class="token function">blitScreenTriangle</span><span class="token punctuation">(</span>blurTexture<span class="token punctuation">,</span>downRenderTexture<span class="token punctuation">,</span><span class="token keyword">null</span><span class="token punctuation">,</span>shader<span class="token punctuation">,</span>shaderValue<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Horizontal blur</span>
+    buf<span class="token punctuation">.</span><span class="token function">blitScreenTriangle</span><span class="token punctuation">(</span>downRenderTexture<span class="token punctuation">,</span>blurTexture<span class="token punctuation">,</span><span class="token keyword">null</span><span class="token punctuation">,</span>shader<span class="token punctuation">,</span>shaderValue<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//vertical blur</span>
+    buf<span class="token punctuation">.</span><span class="token function">blitScreenTriangle</span><span class="token punctuation">(</span>blurTexture<span class="token punctuation">,</span>downRenderTexture<span class="token punctuation">,</span><span class="token keyword">null</span><span class="token punctuation">,</span>shader<span class="token punctuation">,</span>shaderValue<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//At this point, the blurred image has been generated in downRenderTexture</span>
+    <span class="token comment">//Set global uniform variables</span>
+    <span class="token keyword">var</span> globalUniformNameID<span class="token operator">:</span><span class="token builtin">number</span> <span class="token operator">=</span> Shader3D<span class="token punctuation">.</span><span class="token function">propertyNameToID</span><span class="token punctuation">(</span><span class="token string">&quot;u_screenTexture&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Assign the global variable u_screenTexture to the blurred image</span>
+    buf<span class="token punctuation">.</span><span class="token function">setGlobalTexture</span><span class="token punctuation">(</span>globalUniformNameID<span class="token punctuation">,</span>downRenderTexture<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Add commandBuffer to the rendering process</span>
+    camera<span class="token punctuation">.</span><span class="token function">addCommandBuffer</span><span class="token punctuation">(</span>CameraEventFlags<span class="token punctuation">.</span>BeforeTransparent<span class="token punctuation">,</span>buf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Recycle used RenderTexture</span>
+    RenderTexture<span class="token punctuation">.</span><span class="token function">recoverToPool</span><span class="token punctuation">(</span>downRenderTexture<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    RenderTexture<span class="token punctuation">.</span><span class="token function">recoverToPool</span><span class="token punctuation">(</span>blurTexture<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</code></pre>
+<h4 id="32outline-example-outline-stroke"><a name="32outline-example-outline-stroke" class="anchor-navigation-ex-anchor" href="#32outline-example-outline-stroke"><i class="fa fa-link" aria-hidden="true"></i></a>3.2.OutLine example (outline stroke)</h4>
+<h5 id="rendering"><a name="rendering" class="anchor-navigation-ex-anchor" href="#rendering"><i class="fa fa-link" aria-hidden="true"></i></a>Rendering:</h5>
+<p> <img src="img/image-20221222111753897.png" alt="image-20221222111753897"></p>
+<h5 id="example-principle_1"><a name="example-principle_1" class="anchor-navigation-ex-anchor" href="#example-principle_1"><i class="fa fa-link" aria-hidden="true"></i></a>Example principle:</h5>
+<p>After the rendering is completed, bind another black Rendertexture, redraw the particles, Box, and monkey as pure red, and then blur the image. Subtract the unblurred image from the blurred image color to get the rendering border. Finally, the rendering border Add it back to the rendered canvas to achieve the outline effect.</p>
+<h5 id="code-show-as-below"><a name="code-show-as-below" class="anchor-navigation-ex-anchor" href="#code-show-as-below"><i class="fa fa-link" aria-hidden="true"></i></a>code show as below</h5>
+<pre class="language-"><code class="lang-typescript"><span class="token function">createDrawMeshCommandBuffer</span><span class="token punctuation">(</span>camera<span class="token operator">:</span>Camera<span class="token punctuation">,</span>renders<span class="token operator">:</span>BaseRender<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>materials<span class="token operator">:</span>Material<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span>CommandBuffer<span class="token punctuation">{</span>
+    <span class="token keyword">var</span> buf<span class="token operator">:</span>CommandBuffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CommandBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Set true when you need to get the camera rendering effect in the process</span>
+    camera<span class="token punctuation">.</span>enableBuiltInRenderTexture <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token comment">//Create a Rendertexture as large as the screen</span>
+    <span class="token keyword">var</span> viewPort<span class="token operator">:</span>Viewport <span class="token operator">=</span> camera<span class="token punctuation">.</span>viewport<span class="token punctuation">;</span>
+    <span class="token keyword">var</span> renderTexture <span class="token operator">=</span> RenderTexture<span class="token punctuation">.</span><span class="token function">createFromPool</span><span class="token punctuation">(</span>viewPort<span class="token punctuation">.</span>width<span class="token punctuation">,</span>viewPort<span class="token punctuation">.</span>height<span class="token punctuation">,</span>RenderTextureFormat<span class="token punctuation">.</span><span class="token constant">R8G8B8A8</span><span class="token punctuation">,</span>RenderTextureDepthFormat<span class="token punctuation">.</span><span class="token constant">DEPTHSTENCIL_NONE</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Set RenderTexture as render target</span>
+    buf<span class="token punctuation">.</span><span class="token function">setRenderTarget</span><span class="token punctuation">(</span>renderTexture<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Clear the color of the render target to black and do not clean up the depth</span>
+    buf<span class="token punctuation">.</span><span class="token function">clearRenderTarget</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">Vector4</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Render the incoming Render to the texture</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>n <span class="token operator">=</span> renders<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      buf<span class="token punctuation">.</span><span class="token function">drawRender</span><span class="token punctuation">(</span>renders<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>materials<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//Create a new RenderTexture</span>
+     <span class="token keyword">var</span> subRendertexture <span class="token operator">=</span> RenderTexture<span class="token punctuation">.</span><span class="token function">createFromPool</span><span class="token punctuation">(</span>viewPort<span class="token punctuation">.</span>width<span class="token punctuation">,</span>viewPort<span class="token punctuation">.</span>height<span class="token punctuation">,</span>RenderTextureFormat<span class="token punctuation">.</span><span class="token constant">R8G8B8A8</span><span class="token punctuation">,</span>RenderTextureDepthFormat<span class="token punctuation">.</span><span class="token constant">DEPTHSTENCIL_NONE</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Copy the result of renderTexture to subRenderTexture</span>
+     buf<span class="token punctuation">.</span><span class="token function">blitScreenQuad</span><span class="token punctuation">(</span>renderTexture<span class="token punctuation">,</span>subRendertexture<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Set fuzzy parameters</span>
+     <span class="token keyword">var</span> downSampleFactor<span class="token operator">:</span><span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+     <span class="token keyword">var</span> downSampleWidth<span class="token operator">:</span><span class="token builtin">number</span> <span class="token operator">=</span> viewPort<span class="token punctuation">.</span>width<span class="token operator">/</span>downSampleFactor<span class="token punctuation">;</span>
+     <span class="token keyword">var</span> downSampleheigh<span class="token operator">:</span><span class="token builtin">number</span> <span class="token operator">=</span> viewPort<span class="token punctuation">.</span>height<span class="token operator">/</span>downSampleFactor<span class="token punctuation">;</span>
+    <span class="token keyword">var</span> texSize<span class="token operator">:</span>Vector4 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vector4</span><span class="token punctuation">(</span><span class="token number">1.0</span><span class="token operator">/</span>viewPort<span class="token punctuation">.</span>width<span class="token punctuation">,</span><span class="token number">1.0</span><span class="token operator">/</span>viewPort<span class="token punctuation">.</span>height<span class="token punctuation">,</span>viewPort<span class="token punctuation">.</span>width<span class="token punctuation">,</span>downSampleheigh<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Create blur material</span>
+    <span class="token keyword">var</span> blurMaterial<span class="token operator">:</span>BlurMaterial <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BlurMaterial</span><span class="token punctuation">(</span>texSize<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Create downsampling RenderTexture1</span>
+     <span class="token keyword">var</span> downRenderTexture <span class="token operator">=</span> RenderTexture<span class="token punctuation">.</span><span class="token function">createFromPool</span><span class="token punctuation">(</span>downSampleWidth<span class="token punctuation">,</span>downSampleheigh<span class="token punctuation">,</span>RenderTextureFormat<span class="token punctuation">.</span><span class="token constant">R8G8B8</span><span class="token punctuation">,</span>RenderTextureDepthFormat<span class="token punctuation">.</span><span class="token constant">DEPTHSTENCIL_NONE</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Downsampling Use 0SubShader of blurMaterial material to render Rendertexture to DownRendertexture</span>
+     buf<span class="token punctuation">.</span><span class="token function">blitScreenQuadByMaterial</span><span class="token punctuation">(</span>renderTexture<span class="token punctuation">,</span>downRenderTexture<span class="token punctuation">,</span><span class="token keyword">null</span><span class="token punctuation">,</span>blurMaterial<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token comment">//Create downsampling RenderTexture2</span>
+    <span class="token keyword">var</span> blurTexture<span class="token operator">:</span>RenderTexture <span class="token operator">=</span> RenderTexture<span class="token punctuation">.</span><span class="token function">createFromPool</span><span class="token punctuation">(</span>downSampleWidth<span class="token punctuation">,</span>downSampleheigh<span class="token punctuation">,</span>RenderTextureFormat<span class="token punctuation">.</span><span class="token constant">R8G8B8</span><span class="token punctuation">,</span>RenderTextureDepthFormat<span class="token punctuation">.</span><span class="token constant">DEPTHSTENCIL_NONE</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    blurTexture<span class="token punctuation">.</span>filterMode <span class="token operator">=</span> FilterMode<span class="token punctuation">.</span>Bilinear<span class="token punctuation">;</span>
+    <span class="token comment">//Horizontal blur uses 1SubShader of blurMaterial material</span>
+    buf<span class="token punctuation">.</span><span class="token function">blitScreenQuadByMaterial</span><span class="token punctuation">(</span>downRenderTexture<span class="token punctuation">,</span>blurTexture<span class="token punctuation">,</span><span class="token keyword">null</span><span class="token punctuation">,</span>blurMaterial<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//vertical blur 2SubShader using blurMaterial material</span>
+    buf<span class="token punctuation">.</span><span class="token function">blitScreenQuadByMaterial</span><span class="token punctuation">(</span>blurTexture<span class="token punctuation">,</span>downRenderTexture<span class="token punctuation">,</span><span class="token keyword">null</span><span class="token punctuation">,</span>blurMaterial<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Horizontal blur uses 1SubShader of blurMaterial material</span>
+    buf<span class="token punctuation">.</span><span class="token function">blitScreenQuadByMaterial</span><span class="token punctuation">(</span>downRenderTexture<span class="token punctuation">,</span>blurTexture<span class="token punctuation">,</span><span class="token keyword">null</span><span class="token punctuation">,</span>blurMaterial<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//vertical blur 2SubShader using blurMaterial material</span>
+    buf<span class="token punctuation">.</span><span class="token function">blitScreenQuadByMaterial</span><span class="token punctuation">(</span>blurTexture<span class="token punctuation">,</span>downRenderTexture<span class="token punctuation">,</span><span class="token keyword">null</span><span class="token punctuation">,</span>blurMaterial<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Insert the set image command stream into the command stream, and the image data of blurMaterial will be set when called.</span>
+    buf<span class="token punctuation">.</span><span class="token function">setShaderDataTexture</span><span class="token punctuation">(</span>blurMaterial<span class="token punctuation">.</span>_shaderValues<span class="token punctuation">,</span>BlurMaterial<span class="token punctuation">.</span><span class="token constant">SHADERVALUE_SOURCETEXTURE0</span><span class="token punctuation">,</span>downRenderTexture<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    buf<span class="token punctuation">.</span><span class="token function">setShaderDataTexture</span><span class="token punctuation">(</span>blurMaterial<span class="token punctuation">.</span>_shaderValues<span class="token punctuation">,</span>BlurMaterial<span class="token punctuation">.</span>ShADERVALUE_SOURCETEXTURE1<span class="token punctuation">,</span>subRendertexture<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//caculate edge calculate edge image</span>
+    buf<span class="token punctuation">.</span><span class="token function">blitScreenQuadByMaterial</span><span class="token punctuation">(</span>blurTexture<span class="token punctuation">,</span>renderTexture<span class="token punctuation">,</span><span class="token keyword">null</span><span class="token punctuation">,</span>blurMaterial<span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Re-import the image</span>
+    buf<span class="token punctuation">.</span><span class="token function">setShaderDataTexture</span><span class="token punctuation">(</span>blurMaterial<span class="token punctuation">.</span>_shaderValues<span class="token punctuation">,</span>BlurMaterial<span class="token punctuation">.</span><span class="token constant">SHADERVALUE_SOURCETEXTURE0</span><span class="token punctuation">,</span>renderTexture<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Copy the camera rendering result to subRendertexture, using blurMaterial&apos;s 4-channel shader</span>
+    buf<span class="token punctuation">.</span><span class="token function">blitScreenQuadByMaterial</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span>subRendertexture<span class="token punctuation">,</span><span class="token keyword">null</span><span class="token punctuation">,</span>blurMaterial<span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//Reassign subRenderTexture to the camera&apos;s rendering result</span>
+    buf<span class="token punctuation">.</span><span class="token function">blitScreenQuadByMaterial</span><span class="token punctuation">(</span>subRendertexture<span class="token punctuation">,</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> buf<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9;Layabox 2022 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Update&#xFF1A;
+2024-05-27 16:50:31
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../PostProcessing/readme.html" class="navigation navigation-prev " aria-label="Previous page: Post Processing">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../performanceOptimization/readme.html" class="navigation navigation-next " aria-label="Next page: performance Optimization">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Command Buffer","level":"1.4.2.3","depth":3,"next":{"title":"performance Optimization","level":"1.4.2.4","depth":3,"path":"3D/advanced/performanceOptimization/readme.md","ref":"3D/advanced/performanceOptimization/readme.md","articles":[]},"previous":{"title":"Post Processing","level":"1.4.2.2","depth":3,"path":"3D/advanced/PostProcessing/readme.md","ref":"3D/advanced/PostProcessing/readme.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","sidebar-style","anchor-navigation-ex","-lunr","-search","-sharing","search-pro","versions-select","-favicon","favicon-absolute","fontsettings","prism","splitter","code","flexible-alerts","auto-scroll-table","popup","tbfed-pagefooter","-theme-hqbook","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"","title":""},"tbfed-pagefooter":{"copyright":"Copyright ©Layabox 2022","modify_label":"Update：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"],"lang":{"flow":"typescript"},"ignore":["mermaid","eval-js"]},"livereload":{},"splitter":{},"search-pro":{},"auto-scroll-table":{},"popup":{},"code":{"copyButtons":true},"versions-select":{"type":"branches"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./style/layabox-152.png","appleTouchIconPrecomposedMore":{},"favicon":"./style/favicon-32.ico","bookmark":"./style/favicon-32.ico"},"fontsettings":{"family":"sans","size":2,"theme":"white"},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"versions":{"options":[{"value":"https://layaair.com/3.2/doc-en/","text":"v3.2"},{"value":"https://layaair.com/3.1/doc-en/","text":"v3.1"},{"value":"https://layaair.com/3.0/doc-en/","text":"v3.0"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","style":{"website":"style/website.css"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LayaAir3 Engine Documentation · LAYABOX","gitbook":"*"},"file":{"path":"3D/advanced/CommandBuffer/readme.md","mtime":"2024-05-27T08:50:31.356Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-10-29T09:01:12.852Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sidebar-style/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-versions-select/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+
