@@ -1,0 +1,3014 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>performance Optimization · LayaAir3 Engine Documentation · LAYABOX</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sidebar-style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-versions-select/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../dom/readme.html" />
+    
+    
+    <link rel="prev" href="../TiledMap/readme.html" />
+    
+
+    
+        <link rel="shortcut icon" href="./style/favicon-32.ico" type="image/x-icon">
+    
+    
+        <link rel="bookmark" href="./style/favicon-32.ico" type="image/x-icon">
+    
+    
+    
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./style/layabox-152.png">
+    
+    
+        
+    
+    
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" >
+            
+                <span>
+            
+                    
+                    Beginners
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.1" data-path="../../basics/readme.html">
+            
+                <a href="../../basics/readme.html">
+            
+                    
+                    Features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../../basics/developmentEnvironment/readme.html">
+            
+                <a href="../../basics/developmentEnvironment/readme.html">
+            
+                    
+                    Development Environment
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.2.1" data-path="../../basics/developmentEnvironment/download/readme.html">
+            
+                <a href="../../basics/developmentEnvironment/download/readme.html">
+            
+                    
+                    Install
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.2" data-path="../../basics/IDE/GUI/readme.html">
+            
+                <a href="../../basics/IDE/GUI/readme.html">
+            
+                    
+                    GUI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../../basics/essentialSkills/readme.html">
+            
+                <a href="../../basics/essentialSkills/readme.html">
+            
+                    
+                    Essential Skills
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.3.1" data-path="../../basics/language/readme.html">
+            
+                <a href="../../basics/language/readme.html">
+            
+                    
+                    Language
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.2" data-path="../../basics/DevTools/readme.html">
+            
+                <a href="../../basics/DevTools/readme.html">
+            
+                    
+                    DevTools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.3" data-path="../../basics/LayaTree/readme.html">
+            
+                <a href="../../basics/LayaTree/readme.html">
+            
+                    
+                    LayaTree
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Engine Basics
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../basics/IDE/readme.html">
+            
+                <a href="../../basics/IDE/readme.html">
+            
+                    
+                    IDE Basics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../../basics/IDE/layouts/readme.html">
+            
+                <a href="../../basics/IDE/layouts/readme.html">
+            
+                    
+                    layouts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../../basics/IDE/projecFolders/readme.html">
+            
+                <a href="../../basics/IDE/projecFolders/readme.html">
+            
+                    
+                    projecFolders
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../../basics/IDE/projectSettings/readme.html">
+            
+                <a href="../../basics/IDE/projectSettings/readme.html">
+            
+                    
+                    projectSettings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../../basics/IDE/entry/readme.html">
+            
+                <a href="../../basics/IDE/entry/readme.html">
+            
+                    
+                    entry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../../basics/IDE/importJsLibrary/readme.html">
+            
+                <a href="../../basics/IDE/importJsLibrary/readme.html">
+            
+                    
+                    import Js Library
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="../../basics/IDE/Hierarchy/readme.html">
+            
+                <a href="../../basics/IDE/Hierarchy/readme.html">
+            
+                    
+                    Hierarchy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="../../basics/IDE/assets/readme.html">
+            
+                <a href="../../basics/IDE/assets/readme.html">
+            
+                    
+                    assets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="../../basics/IDE/Inspector/readme.html">
+            
+                <a href="../../basics/IDE/Inspector/readme.html">
+            
+                    
+                    Inspector
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.9" data-path="../../basics/IDE/Game/readme.html">
+            
+                <a href="../../basics/IDE/Game/readme.html">
+            
+                    
+                    Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.10" data-path="../../basics/IDE/shortcutKeyCombinations/readme.html">
+            
+                <a href="../../basics/IDE/shortcutKeyCombinations/readme.html">
+            
+                    
+                    shortcutKey Combinations
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../basics/common/readme.html">
+            
+                <a href="../../basics/common/readme.html">
+            
+                    
+                    Engine General Basics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../../basics/common/terms/readme.html">
+            
+                <a href="../../basics/common/terms/readme.html">
+            
+                    
+                    basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../../basics/common/Component/readme.html">
+            
+                <a href="../../basics/common/Component/readme.html">
+            
+                    
+                    Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../../basics/common/Loader/readme.html">
+            
+                <a href="../../basics/common/Loader/readme.html">
+            
+                    
+                    Loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../../basics/common/Scene/readme.html">
+            
+                <a href="../../basics/common/Scene/readme.html">
+            
+                    
+                    Scene
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../../basics/common/Node/readme.html">
+            
+                <a href="../../basics/common/Node/readme.html">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="../../basics/common/Timer/readme.html">
+            
+                <a href="../../basics/common/Timer/readme.html">
+            
+                    
+                    Timer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="../../basics/common/Event/readme.html">
+            
+                <a href="../../basics/common/Event/readme.html">
+            
+                    
+                    Event
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.8" data-path="../../basics/common/Tween/readme.html">
+            
+                <a href="../../basics/common/Tween/readme.html">
+            
+                    
+                    Tween
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.9" data-path="../../basics/common/Pool/readme.html">
+            
+                <a href="../../basics/common/Pool/readme.html">
+            
+                    
+                    Pool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.10" data-path="../../basics/common/network/readme.html">
+            
+                <a href="../../basics/common/network/readme.html">
+            
+                    
+                    network
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.11" data-path="../../basics/common/adaptScreen/readme.html">
+            
+                <a href="../../basics/common/adaptScreen/readme.html">
+            
+                    
+                    adaptScreen
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.12" data-path="../../basics/common/Browser/readme.html">
+            
+                <a href="../../basics/common/Browser/readme.html">
+            
+                    
+                    Browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.13" data-path="../../basics/common/device/readme.html">
+            
+                <a href="../../basics/common/device/readme.html">
+            
+                    
+                    device
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.13.1" data-path="../../basics/common/device/media/readme.html">
+            
+                <a href="../../basics/common/device/media/readme.html">
+            
+                    
+                    media
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.13.2" data-path="../../basics/common/device/motion/readme.html">
+            
+                <a href="../../basics/common/device/motion/readme.html">
+            
+                    
+                    motion
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.14" data-path="../../basics/common/Stat/readme.html">
+            
+                <a href="../../basics/common/Stat/readme.html">
+            
+                    
+                    Stat
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../basics/3D/readme.html">
+            
+                <a href="../../basics/3D/readme.html">
+            
+                    
+                    Basic of 3D Engine
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../../basics/3D/beginner/readme.html">
+            
+                <a href="../../basics/3D/beginner/readme.html">
+            
+                    
+                    beginner
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../../basics/3D/Transform/readme.html">
+            
+                <a href="../../basics/3D/Transform/readme.html">
+            
+                    
+                    Transform
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Editor
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../IDE/uiEditor/readme.html">
+            
+                <a href="../../IDE/uiEditor/readme.html">
+            
+                    
+                    UI Editor
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../IDE/uiEditor/basic/readme.html">
+            
+                <a href="../../IDE/uiEditor/basic/readme.html">
+            
+                    
+                    Basic Interaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../../IDE/uiEditor/widgets/readme.html">
+            
+                <a href="../../IDE/uiEditor/widgets/readme.html">
+            
+                    
+                    widgets
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.1" data-path="../displayObject/readme.html">
+            
+                <a href="../displayObject/readme.html">
+            
+                    
+                    Display Object
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.1.1" data-path="../displayObject/Sprite/readme.html">
+            
+                <a href="../displayObject/Sprite/readme.html">
+            
+                    
+                    Sprite
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.1.2" data-path="../displayObject/Animation/readme.html">
+            
+                <a href="../displayObject/Animation/readme.html">
+            
+                    
+                    Animation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.1.3" data-path="../displayObject/Text/readme.html">
+            
+                <a href="../displayObject/Text/readme.html">
+            
+                    
+                    Text
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.1.4" data-path="../displayObject/SoundNode/readme.html">
+            
+                <a href="../displayObject/SoundNode/readme.html">
+            
+                    
+                    Sound Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.1.5" data-path="../displayObject/VideoNode/readme.html">
+            
+                <a href="../displayObject/VideoNode/readme.html">
+            
+                    
+                    Video Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2" data-path="../../IDE/uiEditor/uiComponent/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/readme.html">
+            
+                    
+                    UIComponent
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.2.1" data-path="../../IDE/uiEditor/uiComponent/Image/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/Image/readme.html">
+            
+                    
+                    Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.2" data-path="../../IDE/uiEditor/uiComponent/Label/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/Label/readme.html">
+            
+                    
+                    Label
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.3" data-path="../../IDE/uiEditor/uiComponent/TextInput/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/TextInput/readme.html">
+            
+                    
+                    TextInput
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.2.3.1" data-path="../../IDE/uiEditor/uiComponent/TextArea/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/TextArea/readme.html">
+            
+                    
+                    TextArea
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.4" data-path="../../IDE/uiEditor/uiComponent/Clip/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/Clip/readme.html">
+            
+                    
+                    Clip
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.2.4.1" data-path="../../IDE/uiEditor/uiComponent/FontClip/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/FontClip/readme.html">
+            
+                    
+                    FontClip
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.5" data-path="../../IDE/uiEditor/uiComponent/Button/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/Button/readme.html">
+            
+                    
+                    Button
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.6" data-path="../../IDE/uiEditor/uiComponent/scroll/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/scroll/readme.html">
+            
+                    
+                    scroll
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.2.6.1" data-path="../../IDE/uiEditor/uiComponent/HScrollBar/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/HScrollBar/readme.html">
+            
+                    
+                    HScrollBar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.6.2" data-path="../../IDE/uiEditor/uiComponent/VScrollBar/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/VScrollBar/readme.html">
+            
+                    
+                    VScrollBar
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.7" data-path="../../IDE/uiEditor/uiComponent/slider/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/slider/readme.html">
+            
+                    
+                    slider
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.2.7.1" data-path="../../IDE/uiEditor/uiComponent/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/readme.html">
+            
+                    
+                    HSlider
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.7.2" data-path="../../IDE/uiEditor/uiComponent/VSlider/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/VSlider/readme.html">
+            
+                    
+                    VSlider
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.8" data-path="../../IDE/uiEditor/uiComponent/ProgressBar/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/ProgressBar/readme.html">
+            
+                    
+                    ProgressBar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.9" data-path="../../IDE/uiEditor/uiComponent/Box/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/Box/readme.html">
+            
+                    
+                    Box
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.2.9.1" data-path="../../IDE/uiEditor/uiComponent/HBoox/readme.md">
+            
+                <span>
+            
+                    
+                    HBoox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.9.2" data-path="../../IDE/uiEditor/uiComponent/VBox/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/VBox/readme.html">
+            
+                    
+                    VBox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.9.3" data-path="../../IDE/uiEditor/uiComponent/Panel/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/Panel/readme.html">
+            
+                    
+                    Panel
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.10" data-path="../../IDE/uiEditor/uiComponent/List/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/List/readme.html">
+            
+                    
+                    List
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.2.10.1" data-path="../../IDE/uiEditor/uiComponent/Tree/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/Tree/readme.html">
+            
+                    
+                    Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.11" data-path="../../IDE/uiEditor/uiComponent/optionBox/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/optionBox/readme.html">
+            
+                    
+                    optionBox
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.2.11.1" data-path="../../IDE/uiEditor/uiComponent/ComboBox/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/ComboBox/readme.html">
+            
+                    
+                    ComboBox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.11.2" data-path="../../IDE/uiEditor/uiComponent/Radio/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/Radio/readme.html">
+            
+                    
+                    Radio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.11.3" data-path="../../IDE/uiEditor/uiComponent/RadioGroup/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/RadioGroup/readme.html">
+            
+                    
+                    RadioGroup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.11.4" data-path="../../IDE/uiEditor/uiComponent/CheckBox/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/CheckBox/readme.html">
+            
+                    
+                    CheckBox
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.12" data-path="../../IDE/uiEditor/uiComponent/navigationMenu/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/navigationMenu/readme.html">
+            
+                    
+                    Navigation Menu
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.2.12.1" data-path="../../IDE/uiEditor/uiComponent/Tab/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/Tab/readme.html">
+            
+                    
+                    Tab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.12.2" data-path="../../IDE/uiEditor/uiComponent/ViewStack/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/ViewStack/readme.html">
+            
+                    
+                    ViewStack
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.13" data-path="../../IDE/uiEditor/uiComponent/ColorPicker/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/ColorPicker/readme.html">
+            
+                    
+                    ColorPicker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.14" data-path="../../IDE/uiEditor/uiComponent/OpenDataContextView/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/OpenDataContextView/readme.html">
+            
+                    
+                    OpenDataContextView
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.15" data-path="../../IDE/uiEditor/Dialog/readme.html">
+            
+                <a href="../../IDE/uiEditor/Dialog/readme.html">
+            
+                    
+                    Dialog
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.3" data-path="../../IDE/uiEditor/uiComponent/skeleton/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/skeleton/readme.html">
+            
+                    
+                    skeleton
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.3.1" data-path="../../IDE/uiEditor/uiComponent/skeleton/spine/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/skeleton/spine/readme.html">
+            
+                    
+                    spine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.3.2" data-path="../../IDE/uiEditor/uiComponent/skeleton/sk/readme.html">
+            
+                <a href="../../IDE/uiEditor/uiComponent/skeleton/sk/readme.html">
+            
+                    
+                    sk
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../../IDE/uiEditor/readme.html">
+            
+                <a href="../../IDE/uiEditor/readme.html">
+            
+                    
+                    graphics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../../IDE/uiEditor/Filter/readme.html">
+            
+                <a href="../../IDE/uiEditor/Filter/readme.html">
+            
+                    
+                    Filter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="../../IDE/uiEditor/runtime/readme.html">
+            
+                <a href="../../IDE/uiEditor/runtime/readme.html">
+            
+                    
+                    runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.6" data-path="../../IDE/uiEditor/use3D/readme.html">
+            
+                <a href="../../IDE/uiEditor/use3D/readme.html">
+            
+                    
+                    use3D
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.7" data-path="../../IDE/uiEditor/textureCompress/readme.html">
+            
+                <a href="../../IDE/uiEditor/textureCompress/readme.html">
+            
+                    
+                    textureCompress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.8" data-path="../../IDE/uiEditor/3DUI/readme.html">
+            
+                <a href="../../IDE/uiEditor/3DUI/readme.html">
+            
+                    
+                    3D UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../IDE/sceneEditor/readme.html">
+            
+                <a href="../../IDE/sceneEditor/readme.html">
+            
+                    
+                    Scene Editor
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../IDE/sceneEditor/basic/readme.html">
+            
+                <a href="../../IDE/sceneEditor/basic/readme.html">
+            
+                    
+                    Basic Interaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../../3D/Sprite3D/readme.html">
+            
+                <a href="../../3D/Sprite3D/readme.html">
+            
+                    
+                    Sprite3D
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../../3D/displayObject/readme.html">
+            
+                <a href="../../3D/displayObject/readme.html">
+            
+                    
+                    Display Object
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../../3D/Camera/readme.html">
+            
+                <a href="../../3D/Camera/readme.html">
+            
+                    
+                    Camera
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../../3D/Light/readme.html">
+            
+                <a href="../../3D/Light/readme.html">
+            
+                    
+                    Light
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="../../IDE/sceneEditor/environment/readme.html">
+            
+                <a href="../../IDE/sceneEditor/environment/readme.html">
+            
+                    
+                    environment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.7" data-path="../../3D/useModel/readme.html">
+            
+                <a href="../../3D/useModel/readme.html">
+            
+                    
+                    useModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../IDE/animationEditor/readme.html">
+            
+                <a href="../../IDE/animationEditor/readme.html">
+            
+                    
+                    Animation Editor
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../IDE/animationEditor/timelineGUI/readme.html">
+            
+                <a href="../../IDE/animationEditor/timelineGUI/readme.html">
+            
+                    
+                    timeline GUI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../../IDE/animationEditor/aniController/readme.html">
+            
+                <a href="../../IDE/animationEditor/aniController/readme.html">
+            
+                    
+                    Animation Controller
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../../IDE/animationEditor/aniBake/readme.html">
+            
+                <a href="../../IDE/animationEditor/aniBake/readme.html">
+            
+                    
+                    Animation Bake
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../IDE/particleEditor/readme.html">
+            
+                <a href="../../IDE/particleEditor/readme.html">
+            
+                    
+                    Particle Editor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../IDE/materialEditor/readme.html">
+            
+                <a href="../../IDE/materialEditor/readme.html">
+            
+                    
+                    Material Editor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../IDE/ShaderBlueprint/readme.html">
+            
+                <a href="../../IDE/ShaderBlueprint/readme.html">
+            
+                    
+                    Shader Blueprint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../../IDE/assets/readme.html">
+            
+                <a href="../../IDE/assets/readme.html">
+            
+                    
+                    Resource management
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.7.1" data-path="../../IDE/assets/model/readme.html">
+            
+                <a href="../../IDE/assets/model/readme.html">
+            
+                    
+                    Model import settings
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../../IDE/Component/readme.html">
+            
+                <a href="../../IDE/Component/readme.html">
+            
+                    
+                    Component
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.8.1" data-path="../../IDE/Component/Mesh/readme.html">
+            
+                <a href="../../IDE/Component/Mesh/readme.html">
+            
+                    
+                    Mesh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.2" data-path="../../IDE/Component/Trail/readme.html">
+            
+                <a href="../../IDE/Component/Trail/readme.html">
+            
+                    
+                    Trail
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.3" data-path="../../IDE/Component/PixelLine/readme.html">
+            
+                <a href="../../IDE/Component/PixelLine/readme.html">
+            
+                    
+                    Pixel Line
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.4" data-path="../../IDE/Component/ReflectionProbe/readme.html">
+            
+                <a href="../../IDE/Component/ReflectionProbe/readme.html">
+            
+                    
+                    Reflection Probe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.5" data-path="../../IDE/Component/VolumetricGI/readme.html">
+            
+                <a href="../../IDE/Component/VolumetricGI/readme.html">
+            
+                    
+                    Volumetric GI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.6" data-path="../../IDE/Component/StaticBatchVolume/readme.html">
+            
+                <a href="../../IDE/Component/StaticBatchVolume/readme.html">
+            
+                    
+                    StaticBatchVolume
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.7" data-path="../../IDE/Component/LOD/readme.html">
+            
+                <a href="../../IDE/Component/LOD/readme.html">
+            
+                    
+                    LOD Group
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.8" data-path="../../IDE/Component/navMesh/readme.html">
+            
+                <a href="../../IDE/Component/navMesh/readme.html">
+            
+                    
+                    navMesh
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../../IDE/prefab/readme.html">
+            
+                <a href="../../IDE/prefab/readme.html">
+            
+                    
+                    prefab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../../IDE/layapackage/readme.html">
+            
+                <a href="../../IDE/layapackage/readme.html">
+            
+                    
+                    layapackage
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.10.1" data-path="../../IDE/layapackage/plug-in/readme.html">
+            
+                <a href="../../IDE/layapackage/plug-in/readme.html">
+            
+                    
+                    plug-in
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10.2" data-path="../../IDE/layapackage/pluginImport/readme.html">
+            
+                <a href="../../IDE/layapackage/pluginImport/readme.html">
+            
+                    
+                    Plugin Import
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10.3" data-path="../../IDE/layapackage/Layabox/readme.html">
+            
+                <a href="../../IDE/layapackage/Layabox/readme.html">
+            
+                    
+                    Official Plugins
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.10.3.1" data-path="../../IDE/layapackage/Layabox/LOD/readme.html">
+            
+                <a href="../../IDE/layapackage/Layabox/LOD/readme.html">
+            
+                    
+                    LOD Reduction Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    advanced
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../advanced/readme.html">
+            
+                <a href="../advanced/readme.html">
+            
+                    
+                    Advanced 2D
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../advanced/useText/readme.html">
+            
+                <a href="../advanced/useText/readme.html">
+            
+                    
+                    use Text
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="../TiledMap/readme.html">
+            
+                <a href="../TiledMap/readme.html">
+            
+                    
+                    TiledMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.1.3" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    performance Optimization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.4" data-path="../dom/readme.html">
+            
+                <a href="../dom/readme.html">
+            
+                    
+                    DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../3D/advanced/readme.html">
+            
+                <a href="../../3D/advanced/readme.html">
+            
+                    
+                    Advanced 3D
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../../3D/advanced/customShader/readme.html">
+            
+                <a href="../../3D/advanced/customShader/readme.html">
+            
+                    
+                    Custom Shader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../../3D/advanced/PostProcessing/readme.html">
+            
+                <a href="../../3D/advanced/PostProcessing/readme.html">
+            
+                    
+                    Post Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3" data-path="../../3D/advanced/CommandBuffer/readme.html">
+            
+                <a href="../../3D/advanced/CommandBuffer/readme.html">
+            
+                    
+                    Command Buffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.4" data-path="../../3D/advanced/performanceOptimization/readme.html">
+            
+                <a href="../../3D/advanced/performanceOptimization/readme.html">
+            
+                    
+                    performance Optimization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.5" data-path="../../3D/WebXR/readme.html">
+            
+                <a href="../../3D/WebXR/readme.html">
+            
+                    
+                    WebXR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.6" data-path="../../3D/advanced/Unity/readme.html">
+            
+                <a href="../../3D/advanced/Unity/readme.html">
+            
+                    
+                    Unity Resource Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Publishing
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../released/generalSetting/readme.html">
+            
+                <a href="../../released/generalSetting/readme.html">
+            
+                    
+                    General Setting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../released/web/readme.html">
+            
+                <a href="../../released/web/readme.html">
+            
+                    
+                    Web
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../../released/CrazyGames/readme.html">
+            
+                <a href="../../released/CrazyGames/readme.html">
+            
+                    
+                    CrazyGames
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../../released/Poki/readme.html">
+            
+                <a href="../../released/Poki/readme.html">
+            
+                    
+                    Poki
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../released/miniGame/readme.html">
+            
+                <a href="../../released/miniGame/readme.html">
+            
+                    
+                    miniGame
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../../released/miniGame/wechat/readme.html">
+            
+                <a href="../../released/miniGame/wechat/readme.html">
+            
+                    
+                    wechat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.2" data-path="../../released/miniGame/byteDance/readme.html">
+            
+                <a href="../../released/miniGame/byteDance/readme.html">
+            
+                    
+                    tiktok
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.3" data-path="../../released/miniGame/OPPO/readme.html">
+            
+                <a href="../../released/miniGame/OPPO/readme.html">
+            
+                    
+                    OPPO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.4" data-path="../../released/miniGame/vivo/readme.html">
+            
+                <a href="../../released/miniGame/vivo/readme.html">
+            
+                    
+                    vivo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.5" data-path="../../released/miniGame/xiaomi/readme.html">
+            
+                <a href="../../released/miniGame/xiaomi/readme.html">
+            
+                    
+                    xiaomi
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.6" data-path="../../released/miniGame/alipaygame/readme.html">
+            
+                <a href="../../released/miniGame/alipaygame/readme.html">
+            
+                    
+                    alipaygame
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../released/native/LayaNative_Introduction/readme.html">
+            
+                <a href="../../released/native/LayaNative_Introduction/readme.html">
+            
+                    
+                    Native
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../../released/native/native_index/readme.html">
+            
+                <a href="../../released/native/native_index/readme.html">
+            
+                    
+                    native index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../../released/native/build_Tool/readme.html">
+            
+                <a href="../../released/native/build_Tool/readme.html">
+            
+                    
+                    build Tool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="../../released/native/screen_orientation/readme.html">
+            
+                <a href="../../released/native/screen_orientation/readme.html">
+            
+                    
+                    screen orientation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.4" data-path="../../released/native/loading_view_new/readme.html">
+            
+                <a href="../../released/native/loading_view_new/readme.html">
+            
+                    
+                    Loading View
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.5" data-path="../../released/native/network/readme.html">
+            
+                <a href="../../released/native/network/readme.html">
+            
+                    
+                    network
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.6" data-path="../../released/native/LocalStrorage/readme.html">
+            
+                <a href="../../released/native/LocalStrorage/readme.html">
+            
+                    
+                    Local Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.7" data-path="../../released/native/Android_BackPress/readme.html">
+            
+                <a href="../../released/native/Android_BackPress/readme.html">
+            
+                    
+                    Android BackPress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.8" data-path="../../released/native/real_device_debugging/readme.html">
+            
+                <a href="../../released/native/real_device_debugging/readme.html">
+            
+                    
+                    Debugging JS on Android
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.9" data-path="../../released/native/LayaDcc_Tool/readme.html">
+            
+                <a href="../../released/native/LayaDcc_Tool/readme.html">
+            
+                    
+                    LayaDcc Tool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.10" data-path="../../released/native/Secondary_Development/readme.html">
+            
+                <a href="../../released/native/Secondary_Development/readme.html">
+            
+                    
+                    Secondary Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.11" data-path="../../released/native/webview/readme.html">
+            
+                <a href="../../released/native/webview/readme.html">
+            
+                    
+                    webview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.12" data-path="../../released/native/built_in_font/readme.html">
+            
+                <a href="../../released/native/built_in_font/readme.html">
+            
+                    
+                    Fonts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.13" data-path="../../released/native/zipUpdate/readme.html">
+            
+                <a href="../../released/native/zipUpdate/readme.html">
+            
+                    
+                    zip Update
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.14" data-path="../../released/native/apk_expansion/readme.html">
+            
+                <a href="../../released/native/apk_expansion/readme.html">
+            
+                    
+                    APK Expansion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.15" data-path="../../released/native/build_Cmd/readme.html">
+            
+                <a href="../../released/native/build_Cmd/readme.html">
+            
+                    
+                    Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.16" data-path="../../released/native/Other_settings/readme.html">
+            
+                <a href="../../released/native/Other_settings/readme.html">
+            
+                    
+                    Other
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >performance Optimization</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#performance-optimization"><b></b>Performance optimization</a></li><ul><li><span class="title-icon "></span><a href="#1-memory-optimization-method"><b></b>1. Memory optimization method</a></li><ul><li><span class="title-icon "></span><a href="#11-optimize-memory-through-object-pool"><b></b>1.1 Optimize memory through object pool</a></li><li><span class="title-icon "></span><a href="#12-release-memory"><b></b>1.2 Release memory</a></li><li><span class="title-icon "></span><a href="#13-resource-uninstallation"><b></b>1.3 Resource uninstallation</a></li><li><span class="title-icon "></span><a href="#14-about-filters-and-masks"><b></b>1.4 About filters and masks</a></li></ul></ul><li><span class="title-icon "></span><a href="#2-rendering-optimization-method"><b></b>2. Rendering optimization method</a></li><ul><ul><li><span class="title-icon "></span><a href="#21-optimize-sprite"><b></b>2.1 Optimize Sprite</a></li><li><span class="title-icon "></span><a href="#22-optimize-drawcall"><b></b>2.2 Optimize DrawCall</a></li><li><span class="title-icon "></span><a href="#23-optimizing-canvas"><b></b>2.3 Optimizing Canvas</a></li><li><span class="title-icon "></span><a href="#24-cacheas"><b></b>2.4 CacheAs</a></li><li><span class="title-icon "></span><a href="#25-text-stroke"><b></b>2.5 Text Stroke</a></li><li><span class="title-icon "></span><a href="#26-skip-text-formatting-and-render-directly"><b></b>2.6 Skip text formatting and render directly</a></li></ul><li><span class="title-icon "></span><a href="#3-reduce-cpu-usage"><b></b>3. Reduce CPU usage</a></li><ul><li><span class="title-icon "></span><a href="#31-reduce-dynamic-attribute-lookup"><b></b>3.1 Reduce dynamic attribute lookup</a></li><li><span class="title-icon "></span><a href="#32-recovery-of-performance-consumption"><b></b>3.2 Recovery of performance consumption</a></li><li><span class="title-icon "></span><a href="#33-how-to-obtain-the-boundary-of-the-displayed-object"><b></b>3.3 How to obtain the boundary of the displayed object</a></li><li><span class="title-icon "></span><a href="#34-change-frame-rate-based-on-activity-status"><b></b>3.4 Change frame rate based on activity status</a></li><li><span class="title-icon "></span><a href="#35-using-calllater"><b></b>3.5 Using callLater</a></li><li><span class="title-icon "></span><a href="#36-pictureatlas-loading"><b></b>3.6 Picture/Atlas Loading</a></li></ul></ul><li><span class="title-icon "></span><a href="#4-other-optimization-strategies"><b></b>4. Other optimization strategies</a></li><ul><ul><li><span class="title-icon "></span><a href="#41-reduce-the-number-of-particles-used"><b></b>4.1 Reduce the number of particles used</a></li><li><span class="title-icon "></span><a href="#42-minimize-the-use-of-rotation-scaling-alpha-and-other-attributes"><b></b>4.2 Minimize the use of rotation, scaling, alpha and other attributes</a></li><li><span class="title-icon "></span><a href="#43-do-not-create-objects-and-complex-calculations-in-timer-loops"><b></b>4.3 Do not create objects and complex calculations in Timer loops</a></li><li><span class="title-icon "></span><a href="#44-use-autosize-and-getbounds-as-little-as-possible"><b></b>4.4 Use autoSize and getBounds as little as possible</a></li><li><span class="title-icon "></span><a href="#45-the-execution-of-functions-caught-by-try-catch-will-become-very-slow"><b></b>4.5 The execution of functions caught by try catch will become very slow</a></li></ul></ul><li><span class="title-icon "></span><a href="#5-use-chromes-performance-analyzer"><b></b>5. Use chrome&#x2019;s performance analyzer</a></li><ul><ul><li><span class="title-icon "></span><a href="#51-cpu-usage-analysis"><b></b>5.1 CPU usage analysis</a></li><li><span class="title-icon "></span><a href="#52-memory-usage-analysis"><b></b>5.2 Memory usage analysis</a></li></ul><li><span class="title-icon "></span><a href="#6-use-of-texture-compression"><b></b>6. Use of texture compression</a></li></ul></ul></div><a href="#performance-optimization" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="performance-optimization"><a name="performance-optimization" class="anchor-navigation-ex-anchor" href="#performance-optimization"><i class="fa fa-link" aria-hidden="true"></i></a>Performance optimization</h1>
+<h2 id="1-memory-optimization-method"><a name="1-memory-optimization-method" class="anchor-navigation-ex-anchor" href="#1-memory-optimization-method"><i class="fa fa-link" aria-hidden="true"></i></a>1. Memory optimization method</h2>
+<h3 id="11-optimize-memory-through-object-pool"><a name="11-optimize-memory-through-object-pool" class="anchor-navigation-ex-anchor" href="#11-optimize-memory-through-object-pool"><i class="fa fa-link" aria-hidden="true"></i></a>1.1 Optimize memory through object pool</h3>
+<p>Object pool optimization is a very important optimization method in game development and is also one of the important factors affecting game performance.
+There are many objects in the game that are constantly being created and removed, such as the creation and removal of character attack bullets, special effects, the destruction and refreshing of NPCs, etc. The creation process consumes a lot of performance, especially when the number is large. .
+Object pool technology can solve the above problems very well. When objects are removed and disappear, they are recycled to the object pool. When new objects are needed, they are directly taken out of the object pool and used.
+The advantage is that it reduces the overhead when instantiating the object, allows the object to be used repeatedly, and reduces the chance of new memory allocation and garbage collector running.
+<strong>Note</strong>: When the object is removed, it is not immediately erased from the memory. Only when the memory is deemed to be insufficient, the garbage collection mechanism will be used to clear it. Clearing is very memory intensive and may cause lag. <strong>Using the object pool will reduce the garbage objects of the program and effectively improve the running speed and stability of the program</strong>.</p>
+<p>For specific usage, please refer to the <a href="../../basics/common/Pool/readme.html">&quot;Object Pool&quot;</a> document</p>
+<h3 id="12-release-memory"><a name="12-release-memory" class="anchor-navigation-ex-anchor" href="#12-release-memory"><i class="fa fa-link" aria-hidden="true"></i></a>1.2 Release memory</h3>
+<p>The JavaScript runtime cannot start the garbage collector. To ensure that an object can be recycled, all references to the object need to be deleted. The <code>destroy()</code> method provided by Sprite will help set the internal reference to null.</p>
+<p>For example, the following code ensures that the object can be garbage collected:</p>
+<pre class="language-"><code class="lang-typescript"><span class="token comment">//Create a Sprite instance</span>
+<span class="token keyword">var</span> sp<span class="token operator">:</span>Laya<span class="token punctuation">.</span>Sprite <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Laya</span><span class="token punctuation">.</span><span class="token function">Sprite</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//Set the sp internal reference to null</span>
+sp<span class="token punctuation">.</span><span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>When an object is set to null, it is not immediately removed from memory. The garbage collector will only run when the system thinks memory is low enough. Memory allocation (not object deletion) triggers garbage collection.</p>
+<p>Garbage collection can consume a lot of CPU during garbage collection and affect performance. Try to limit the use of garbage collection by reusing objects. Also, set references to null whenever possible so that the garbage collector spends less time looking for the object. Sometimes (for example, two objects refer to each other), it is impossible to set both references to null at the same time. The garbage collector will scan the unreachable objects and clear them, which will consume more performance than reference counting.</p>
+<h3 id="13-resource-uninstallation"><a name="13-resource-uninstallation" class="anchor-navigation-ex-anchor" href="#13-resource-uninstallation"><i class="fa fa-link" aria-hidden="true"></i></a>1.3 Resource uninstallation</h3>
+<p>There are always many resources loaded when the game is running. These resources should be unloaded in time after use, otherwise they will remain in the memory.</p>
+<p>The following example shows how to compare the resource status before and after loading the resource:</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">var</span> assets<span class="token operator">:</span> <span class="token builtin">Array</span><span class="token operator">&lt;</span><span class="token builtin">any</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+assets<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">&quot;resources/apes/monkey0.png&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+assets<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">&quot;resources/apes/monkey1.png&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+assets<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">&quot;resources/apes/monkey2.png&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+assets<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">&quot;resources/apes/monkey3.png&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Laya<span class="token punctuation">.</span>loader<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span>assets<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">:</span><span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> len<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> assets<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">&lt;</span>len<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> asset<span class="token operator">:</span><span class="token builtin">string</span> <span class="token operator">=</span> assets<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token comment">//Check the log, the resource has been in memory before cleaning</span>
+        <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Laya<span class="token punctuation">.</span>loader<span class="token punctuation">.</span><span class="token function">getRes</span><span class="token punctuation">(</span>asset<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//Call the cleanup method</span>
+        Laya<span class="token punctuation">.</span>loader<span class="token punctuation">.</span><span class="token function">clearRes</span><span class="token punctuation">(</span>asset<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//Check the log. After cleaning, the resource is uninstalled.</span>
+        <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Laya<span class="token punctuation">.</span>loader<span class="token punctuation">.</span><span class="token function">getRes</span><span class="token punctuation">(</span>asset<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="14-about-filters-and-masks"><a name="14-about-filters-and-masks" class="anchor-navigation-ex-anchor" href="#14-about-filters-and-masks"><i class="fa fa-link" aria-hidden="true"></i></a>1.4 About filters and masks</h3>
+<p>Try to minimize the use of filter effects. When filters (BlurFilter and GlowFilter) are applied to a display object, two bitmaps are created in memory at runtime. Each bitmap is the same size as the display object. The first bitmap is created as a rasterized version of the display object and then used to generate another bitmap with the filter applied:</p>
+<p><img src="img/1-1.png" alt="5"></p>
+<p>(Picture 1-1)</p>
+<p>Two bitmaps in memory when applying filter</p>
+<p>When one of the properties of the filter or display object is modified, both bitmaps in memory are updated to create the resulting bitmap, which can take up a lot of memory. In addition, this process involves CPU calculations, which will reduce performance when updated dynamically.</p>
+<p>ColorFiter&apos;s GPU consumption under WebGL is negligible.</p>
+<p>As a best practice, whenever possible, use bitmaps created with image authoring tools to simulate filters. Avoiding creating dynamic bitmaps at runtime can help reduce CPU or GPU load. Especially an image that has a filter applied and is not being modified.</p>
+<h1 id="2-rendering-optimization-method"><a name="2-rendering-optimization-method" class="anchor-navigation-ex-anchor" href="#2-rendering-optimization-method"><i class="fa fa-link" aria-hidden="true"></i></a>2. Rendering optimization method</h1>
+<h3 id="21-optimize-sprite"><a name="21-optimize-sprite" class="anchor-navigation-ex-anchor" href="#21-optimize-sprite"><i class="fa fa-link" aria-hidden="true"></i></a>2.1 Optimize Sprite</h3>
+<ol>
+<li><p>Try to reduce unnecessary levels of nesting and reduce the number of Sprites.</p>
+</li>
+<li><p>Try to remove objects in non-visible areas from the display list or set visible=false.</p>
+</li>
+<li><p>For containers with a large amount of static content or content that changes infrequently (such as buttons), you can set the cacheAs attribute for the entire container, which can greatly reduce the number of Sprites and significantly improve performance. If there is dynamic content, it is best to separate it from the static content so that only the static content is cached.</p>
+</li>
+<li><p>In the Panel, direct sub-objects outside the panel area (the sub-objects of the sub-objects cannot be judged) will not be rendered. Sub-objects beyond the panel area will not be consumed.</p>
+</li>
+</ol>
+<h3 id="22-optimize-drawcall"><a name="22-optimize-drawcall" class="anchor-navigation-ex-anchor" href="#22-optimize-drawcall"><i class="fa fa-link" aria-hidden="true"></i></a>2.2 Optimize DrawCall</h3>
+<ol>
+<li>Setting cacheAs for complex static content can greatly reduce DrawCall. Making good use of cacheAs is the key to game optimization.</li>
+<li>Try to ensure that the rendering order of pictures in the same atlas is next to each other. If different atlases are cross-rendered, the number of DrawCalls will increase.</li>
+<li>Try to ensure that all resources in the same panel use one atlas, which can reduce submission batches.</li>
+</ol>
+<h3 id="23-optimizing-canvas"><a name="23-optimizing-canvas" class="anchor-navigation-ex-anchor" href="#23-optimizing-canvas"><i class="fa fa-link" aria-hidden="true"></i></a>2.3 Optimizing Canvas</h3>
+<p>When optimizing Canvas, we need to pay attention not to use cacheAs in the following situations:</p>
+<ol>
+<li>The object is very simple, such as a word or a picture. Setting cacheAs=&quot;bitmap&quot; will not only not improve performance, but will also cause performance loss.</li>
+<li>There are frequently changing contents in the container, such as an animation or countdown in the container. If cacheAs=&quot;bitmap&quot; is set to this container, performance will be lost.</li>
+</ol>
+<p>You can determine whether the Canvas cache is being refreshed by looking at the first value of the Canvas statistics.</p>
+<h3 id="24-cacheas"><a name="24-cacheas" class="anchor-navigation-ex-anchor" href="#24-cacheas"><i class="fa fa-link" aria-hidden="true"></i></a>2.4 CacheAs</h3>
+<p>Setting cacheAs can cache the display object as a static image. When cacheAs is used, if the sub-object changes, it will be automatically re-cached. At the same time, the reCache method can also be manually called to update the cache. It is recommended to cache complex content that does not change frequently as static images, which can greatly improve rendering performance. cacheAs has three optional values: &quot;none&quot;, &quot;normal&quot; and &quot;bitmap&quot;.</p>
+<ol>
+<li>The default is &quot;none&quot;, no caching is done.</li>
+<li>When the value is &quot;normal&quot;, command caching is performed.</li>
+<li>When the value is &quot;bitmap&quot;, use renderTarget cache. It should be noted here that the renderTarget cache mode under webGL has a size limit of 2048. Exceeding 2048 will increase additional memory overhead. In addition, the overhead of continuous redrawing is relatively high, but drawcalls will be reduced and rendering performance will be the highest. The command cache mode under webGL will only reduce node traversal and command organization, but will not reduce drawcalls, and the performance is medium.</li>
+</ol>
+<p>After setting cacheAs, you can also set staticCache=true to prevent automatic updating of the cache, and you can manually call the reCache method to update the cache.</p>
+<p>cacheAs mainly improves performance in two ways. One is to reduce node traversal and vertex calculation; the other is to reduce drawCall. Making good use of cacheAs will be a powerful tool for engine optimization performance.</p>
+<p>The following example draws 10,000 texts (depending on computer performance, this example is 10,000):</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+     <span class="token keyword">private</span> text<span class="token operator">:</span>Laya<span class="token punctuation">.</span>Text<span class="token punctuation">;</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Laya<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token number">550</span><span class="token punctuation">,</span><span class="token number">400</span><span class="token punctuation">,</span>Laya<span class="token punctuation">.</span>WebGL<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Laya<span class="token punctuation">.</span>Stat<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> textBox<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Laya</span><span class="token punctuation">.</span><span class="token function">Sprite</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">10000</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>text<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Laya</span><span class="token punctuation">.</span><span class="token function">Text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>text<span class="token punctuation">.</span>text<span class="token operator">=</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>text<span class="token punctuation">.</span>color<span class="token operator">=</span><span class="token string">&quot;#CCCCCC&quot;</span><span class="token punctuation">;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>text<span class="token punctuation">.</span>x<span class="token operator">=</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">550</span><span class="token punctuation">;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>text<span class="token punctuation">.</span>y<span class="token operator">=</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">400</span><span class="token punctuation">;</span>
+            textBox<span class="token punctuation">.</span><span class="token function">addChild</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        Laya<span class="token punctuation">.</span>stage<span class="token punctuation">.</span><span class="token function">addChild</span><span class="token punctuation">(</span>textBox<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>The following is a screenshot of the runtime on the author&apos;s computer. The FPS is stable at around 52.</p>
+<p><img src="img/2-1.png" alt="1"></p>
+<p>(Figure 2-1)</p>
+<p>When we set the container where the text is located to cacheAs, as shown in the example below, the performance is greatly improved, and the FPS reaches 60 frames.</p>
+<pre class="language-"><code> //...Omit other code
+ var textBox=new Laya.Sprite();   
+ textBox.cacheAs=&quot;bitmap&quot;;
+ //...Omit other code
+</code></pre><p><img src="img/2-2.png" alt="2"></p>
+<p>(Figure 2-2)</p>
+<h3 id="25-text-stroke"><a name="25-text-stroke" class="anchor-navigation-ex-anchor" href="#25-text-stroke"><i class="fa fa-link" aria-hidden="true"></i></a>2.5 Text Stroke</h3>
+<p>At runtime, text with a stroke calls the drawing command one more time than text without a stroke. At this time, the CPU usage of text is proportional to the number of texts. Therefore, try to use alternatives to accomplish the same needs.</p>
+<p>&#xB7; For text content that rarely changes, cacheAs can be used to reduce performance consumption.</p>
+<p>&#xB7; For text fields whose content changes frequently but uses a small number of characters, you can choose to use bitmap fonts.</p>
+<h3 id="26-skip-text-formatting-and-render-directly"><a name="26-skip-text-formatting-and-render-directly" class="anchor-navigation-ex-anchor" href="#26-skip-text-formatting-and-render-directly"><i class="fa fa-link" aria-hidden="true"></i></a>2.6 Skip text formatting and render directly</h3>
+<p>In most cases, a lot of text does not require complex typesetting and simply displays a line of text. In order to cater to this demand, Text provides a method called changeText that can directly skip typesetting.</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">this</span><span class="token punctuation">.</span>text<span class="token punctuation">.</span>text<span class="token operator">=</span><span class="token string">&quot;text&quot;</span><span class="token punctuation">;</span>
+Laya<span class="token punctuation">.</span>stage<span class="token punctuation">.</span><span class="token function">addChild</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//The text content is only updated later. Using changeText can improve performance.</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>text<span class="token punctuation">.</span><span class="token function">changeText</span><span class="token punctuation">(</span><span class="token string">&quot;text changed.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Text.changeText will directly modify the last instruction for drawing the text in the drawing instruction. This behavior of the previous drawing instruction still existing will cause changeText to be used only in the following situations:</p>
+<p>&#xB7; The text is always one line.</p>
+<p>&#xB7; The style of the text is always the same (color, weight, italics, alignment, etc.).</p>
+<p>Even so, such needs are still often used in actual programming.</p>
+<h2 id="3-reduce-cpu-usage"><a name="3-reduce-cpu-usage" class="anchor-navigation-ex-anchor" href="#3-reduce-cpu-usage"><i class="fa fa-link" aria-hidden="true"></i></a>3. Reduce CPU usage</h2>
+<h3 id="31-reduce-dynamic-attribute-lookup"><a name="31-reduce-dynamic-attribute-lookup" class="anchor-navigation-ex-anchor" href="#31-reduce-dynamic-attribute-lookup"><i class="fa fa-link" aria-hidden="true"></i></a>3.1 Reduce dynamic attribute lookup</h3>
+<p>Any object in JavaScript is dynamic and you can add attributes at will. However, searching for an attribute among a large number of attributes can be time-consuming. If you need to use a certain attribute value frequently, you can use a local variable to save it:</p>
+<pre class="language-"><code class="lang-typescript"><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">var</span> prop<span class="token operator">=</span><span class="token keyword">this</span><span class="token punctuation">.</span>target<span class="token punctuation">.</span>prop<span class="token punctuation">;</span>
+    <span class="token comment">//use prop</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">process1</span><span class="token punctuation">(</span>prop<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">process2</span><span class="token punctuation">(</span>prop<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">process3</span><span class="token punctuation">(</span>prop<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="32-recovery-of-performance-consumption"><a name="32-recovery-of-performance-consumption" class="anchor-navigation-ex-anchor" href="#32-recovery-of-performance-consumption"><i class="fa fa-link" aria-hidden="true"></i></a>3.2 Recovery of performance consumption</h3>
+<p>When using functions that consume performance every day, especially loop processing, when not in use, be sure to recycle them in time or stop the loop.</p>
+<p> LayaAir provides two timer loops to execute code blocks.</p>
+<ol>
+<li>The execution frequency of <code>Laya.timer.frameLoop</code> depends on the frame frequency. The current frame rate can be viewed through Stat.FPS.</li>
+</ol>
+<ol>
+<li>The execution frequency of <code>Laya.timer.loop</code> depends on the time specified by the parameter.</li>
+</ol>
+<pre class="language-"><code class="lang-typescript">Laya<span class="token punctuation">.</span>timer<span class="token punctuation">.</span><span class="token function">frameLoop</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>animateFrameRateBased<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Laya<span class="token punctuation">.</span>stage<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&quot;click&quot;</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>dispose<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    Laya<span class="token punctuation">.</span>timer<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>animateFrameRateBased<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>When the life cycle of an object ends, remember to clear its internal Timer</p>
+<h3 id="33-how-to-obtain-the-boundary-of-the-displayed-object"><a name="33-how-to-obtain-the-boundary-of-the-displayed-object" class="anchor-navigation-ex-anchor" href="#33-how-to-obtain-the-boundary-of-the-displayed-object"><i class="fa fa-link" aria-hidden="true"></i></a>3.3 How to obtain the boundary of the displayed object</h3>
+<p>In relative layout, it is often necessary to correctly obtain the bounds of the displayed object. There are many ways to get the boundaries of the displayed object, and it is necessary to know the differences.</p>
+<ol>
+<li>Use getBounds/getGraphicBounds.</li>
+</ol>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">var</span> sp<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Laya</span><span class="token punctuation">.</span><span class="token function">Sprite</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+sp<span class="token punctuation">.</span>graphics<span class="token punctuation">.</span><span class="token function">drawRect</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token string">&quot;#FF0000&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> bounds<span class="token operator">:</span>Laya<span class="token punctuation">.</span>Rectangle<span class="token operator">=</span>sp<span class="token punctuation">.</span><span class="token function">getGraphicBounds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Laya<span class="token punctuation">.</span>stage<span class="token punctuation">.</span><span class="token function">addChild</span><span class="token punctuation">(</span>sp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>getBounds can meet most needs, but because it needs to calculate the boundary, it is not suitable for frequent calls.</p>
+<ol>
+<li>Set the container&apos;s autoSize to true.</li>
+</ol>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">var</span> sp<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Laya</span><span class="token punctuation">.</span><span class="token function">Sprite</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+sp<span class="token punctuation">.</span>autoSize<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">;</span>
+sp<span class="token punctuation">.</span>graphics<span class="token punctuation">.</span><span class="token function">drawRect</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token string">&quot;#FF0000&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Laya<span class="token punctuation">.</span>stage<span class="token punctuation">.</span><span class="token function">addChild</span><span class="token punctuation">(</span>sp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>The above code can correctly obtain the width and height at runtime. autoSize will be recalculated when the width and height are obtained and the state of the display list changes (autoSize calculates the width and height through getBoudns). So it is not advisable to apply autoSize to a container with a large number of sub-objects. If size is set, autoSize will not take effect.</p>
+<p>Get the width and height after using loadImage:</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">var</span> sp<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Laya</span><span class="token punctuation">.</span><span class="token function">Sprite</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+sp<span class="token punctuation">.</span><span class="token function">loadImage</span><span class="token punctuation">(</span><span class="token string">&quot;res/apes/monkey2.png&quot;</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>Laya<span class="token punctuation">.</span>Handler<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>sp<span class="token punctuation">.</span>width<span class="token punctuation">,</span>sp<span class="token punctuation">.</span>height<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Laya<span class="token punctuation">.</span>stage<span class="token punctuation">.</span><span class="token function">addChild</span><span class="token punctuation">(</span>sp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>loadImage can correctly obtain the width and height only after the callback function after loading is triggered.</p>
+<ol>
+<li><strong>Directly call the size setting:</strong></li>
+</ol>
+<pre class="language-"><code class="lang-typescript">Laya<span class="token punctuation">.</span>loader<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span><span class="token string">&quot;res/apes/monkey2.png&quot;</span><span class="token punctuation">,</span>Laya<span class="token punctuation">.</span>Handler<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">var</span> texture<span class="token operator">=</span>Laya<span class="token punctuation">.</span>loader<span class="token punctuation">.</span><span class="token function">getRes</span><span class="token punctuation">(</span><span class="token string">&quot;res/apes/monkey2.png&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> sp<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Laya</span><span class="token punctuation">.</span><span class="token function">Sprite</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    sp<span class="token punctuation">.</span>graphics<span class="token punctuation">.</span><span class="token function">drawTexture</span><span class="token punctuation">(</span>texture<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    sp<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span>texture<span class="token punctuation">.</span>width<span class="token punctuation">,</span>texture<span class="token punctuation">.</span>height<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Laya<span class="token punctuation">.</span>stage<span class="token punctuation">.</span><span class="token function">addChild</span><span class="token punctuation">(</span>sp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Using Graphics.drawTexture does not automatically set the width and height of the container, but you can use the width and height of the Texture to assign it to the container. Needless to say, this is the most efficient way.</p>
+<p><strong>Note: getGraphicsBounds is used to obtain the width and height of vector drawing. </strong></p>
+<h3 id="34-change-frame-rate-based-on-activity-status"><a name="34-change-frame-rate-based-on-activity-status" class="anchor-navigation-ex-anchor" href="#34-change-frame-rate-based-on-activity-status"><i class="fa fa-link" aria-hidden="true"></i></a>3.4 Change frame rate based on activity status</h3>
+<p>There are three modes of frame rate,</p>
+<ul>
+<li><p>Stage.FRAME_FAST</p>
+<p>In fast mode, the maximum FPS is the maximum frame rate of the monitor. If the maximum frame rate of the monitor is 60, then the maximum FPS is 60. If the maximum frame rate of the monitor is 120, then the maximum FPS is 120.</p>
+</li>
+<li><p>Stage.FRAME_SLOW</p>
+<p>In slow mode, the maximum FPS is half of the monitor&apos;s maximum frame rate. During the game running, the engine will discard every other frame. If it can actually reach 40 frames, then the final frame rate of the game is only 20. If the frame rate can reach 100, then the final frame rate can only be 50.</p>
+</li>
+<li><p>Stage.FRAME_MOUSE</p>
+<p>Mouse mode selectively switches between fast mode and slow mode. Sometimes the game does not need to be executed at full frame rate. For example, at 60 frames full frame, 30FPS can already meet the response of human vision in most cases, but mouse interaction At this time, 30FPS may cause incoherence in the picture, so Stage.FRAME_MOUSE came into being.</p>
+<p>The following example shows moving the mouse on the canvas at the frame rate of Stage.FRAME_SLOW so that the ball follows the movement of the mouse:</p>
+</li>
+</ul>
+<pre class="language-"><code class="lang-typescript">Laya<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>Browser<span class="token punctuation">.</span>width<span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">.</span>Browser<span class="token punctuation">.</span>height<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Laya<span class="token punctuation">.</span>Stat<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Laya<span class="token punctuation">.</span>stage<span class="token punctuation">.</span>frameRate<span class="token operator">=</span>Laya<span class="token punctuation">.</span>Stage<span class="token punctuation">.</span><span class="token constant">FRAME_SLOW</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> sp<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Laya</span><span class="token punctuation">.</span><span class="token function">Sprite</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+sp<span class="token punctuation">.</span>graphics<span class="token punctuation">.</span><span class="token function">drawCircle</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token string">&quot;#990000&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Laya<span class="token punctuation">.</span>stage<span class="token punctuation">.</span><span class="token function">addChild</span><span class="token punctuation">(</span>sp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Laya<span class="token punctuation">.</span>stage<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span>Laya<span class="token punctuation">.</span>Event<span class="token punctuation">.</span><span class="token constant">MOUSE_MOVE</span><span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    sp<span class="token punctuation">.</span><span class="token function">pos</span><span class="token punctuation">(</span>Laya<span class="token punctuation">.</span>stage<span class="token punctuation">.</span>mouseX<span class="token punctuation">,</span>Laya<span class="token punctuation">.</span>stage<span class="token punctuation">.</span>mouseY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><img src="img/3-1.png" alt="Picture 1.png"></p>
+<p>(Figure 3-1)</p>
+<p>At this time, the FPS displays 30, and when the mouse moves, you can feel that the update of the ball position is inconsistent. Set Stage.frameRate to Stage.FRAME_MOUSE:</p>
+<pre class="language-"><code class="lang-typescript">Laya<span class="token punctuation">.</span>stage<span class="token punctuation">.</span>frameRate <span class="token operator">=</span> Laya<span class="token punctuation">.</span>Stage<span class="token punctuation">.</span><span class="token constant">FRAME_MOUSE</span><span class="token punctuation">;</span>
+</code></pre>
+<p><img src="img/3-2.png" alt="Picture 1.png"></p>
+<p>(Figure 3-2)</p>
+<p>At this time, after moving the mouse, the FPS will display 60, and the screen smoothness will be improved. After the mouse remains motionless for 2 seconds, FPS will return to 30 frames.</p>
+<h3 id="35-using-calllater"><a name="35-using-calllater" class="anchor-navigation-ex-anchor" href="#35-using-calllater"><i class="fa fa-link" aria-hidden="true"></i></a>3.5 Using callLater</h3>
+<p>callLater delays the execution of the code block until before rendering of this frame. If the current operation frequently changes the state of an object, you may consider using callLater to reduce repeated calculations.</p>
+<p>Consider a figure for which setting any appearance-changing properties will cause the figure to be redrawn:</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">var</span> rotation<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>
+scale<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>
+position<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">private</span> <span class="token keyword">function</span> <span class="token function">setRotation</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token operator">:</span><span class="token keyword">void</span>
+<span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>rotation<span class="token operator">=</span>value<span class="token punctuation">;</span>
+  <span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">private</span> <span class="token keyword">function</span> <span class="token function">setScale</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token operator">:</span><span class="token keyword">void</span>
+<span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>scale <span class="token operator">=</span> value<span class="token punctuation">;</span>
+    <span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">private</span> <span class="token keyword">function</span> <span class="token function">setPosition</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token operator">:</span><span class="token keyword">void</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>position <span class="token operator">=</span> value<span class="token punctuation">;</span>
+    <span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;rotation: &apos;</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>rotation <span class="token operator">+</span> <span class="token string">&apos;\tscale: &apos;</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>scale <span class="token operator">+</span> <span class="token string">&apos;\tposition: &apos;</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>position<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Call the following code to change the status:</p>
+<pre class="language-"><code class="lang-typescript"><span class="token function">setRotation</span><span class="token punctuation">(</span><span class="token number">90</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">setScale</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">setPosition</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>The printed result of the console is:</p>
+<pre class="language-"><code class="lang-typescript">rotation<span class="token operator">:</span> 90scale<span class="token operator">:</span> 1position<span class="token operator">:</span> <span class="token number">0</span>
+rotation<span class="token operator">:</span> 90scale<span class="token operator">:</span> 2position<span class="token operator">:</span> <span class="token number">0</span>
+rotation<span class="token operator">:</span> 90scale<span class="token operator">:</span> 2position<span class="token operator">:</span> <span class="token number">30</span>
+</code></pre>
+<p>update was called three times, and the final result was correct, but the first two calls were unnecessary.</p>
+<p>Try changing the three updates to:</p>
+<pre class="language-"><code class="lang-typescript">Laya<span class="token punctuation">.</span>timer<span class="token punctuation">.</span><span class="token function">callLater</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> update<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>At this time, update will only be called once, and it is the result we want.</p>
+<h3 id="36-pictureatlas-loading"><a name="36-pictureatlas-loading" class="anchor-navigation-ex-anchor" href="#36-pictureatlas-loading"><i class="fa fa-link" aria-hidden="true"></i></a>3.6 Picture/Atlas Loading</h3>
+<p>After completing the loading of images/atlases, the engine will start processing image resources. If an image gallery is loaded, each sub-image will be processed. If a large number of images are processed at one time, this process may cause lengthy delays.</p>
+<p>In the resource loading of the game, resources can be loaded according to levels, scenes, etc. The fewer images you have to process at the same time, the more responsive the game will be at that time. After the resource is used, it can also be unloaded to release memory.</p>
+<h1 id="4-other-optimization-strategies"><a name="4-other-optimization-strategies" class="anchor-navigation-ex-anchor" href="#4-other-optimization-strategies"><i class="fa fa-link" aria-hidden="true"></i></a>4. Other optimization strategies</h1>
+<h3 id="41-reduce-the-number-of-particles-used"><a name="41-reduce-the-number-of-particles-used" class="anchor-navigation-ex-anchor" href="#41-reduce-the-number-of-particles-used"><i class="fa fa-link" aria-hidden="true"></i></a>4.1 Reduce the number of particles used</h3>
+<p>Since particles are vector drawing, using a large number of particles will put a lot of pressure on the CPU. However, GPU computing can be used in WebGL mode, which can reduce the pressure on the CPU. However, it should be controlled as much as possible, especially on mobile platforms, to reduce usage.</p>
+<h3 id="42-minimize-the-use-of-rotation-scaling-alpha-and-other-attributes"><a name="42-minimize-the-use-of-rotation-scaling-alpha-and-other-attributes" class="anchor-navigation-ex-anchor" href="#42-minimize-the-use-of-rotation-scaling-alpha-and-other-attributes"><i class="fa fa-link" aria-hidden="true"></i></a>4.2 Minimize the use of rotation, scaling, alpha and other attributes</h3>
+<p>Attributes such as rotation, scaling, alpha, etc., these attributes will consume performance, but the engine uses WebGL rendering mode, which greatly optimizes performance.</p>
+<h3 id="43-do-not-create-objects-and-complex-calculations-in-timer-loops"><a name="43-do-not-create-objects-and-complex-calculations-in-timer-loops" class="anchor-navigation-ex-anchor" href="#43-do-not-create-objects-and-complex-calculations-in-timer-loops"><i class="fa fa-link" aria-hidden="true"></i></a>4.3 Do not create objects and complex calculations in Timer loops</h3>
+<p>Since the <code>loop()</code> and <code>frameLoop()</code> methods of Timer will be continuously executed in a loop, when creating objects and complex calculations, it will cause a lot of performance consumption in the loop. Therefore, try not to create objects in the loop as much as possible. Objects and complex calculations.</p>
+<h3 id="44-use-autosize-and-getbounds-as-little-as-possible"><a name="44-use-autosize-and-getbounds-as-little-as-possible" class="anchor-navigation-ex-anchor" href="#44-use-autosize-and-getbounds-as-little-as-possible"><i class="fa fa-link" aria-hidden="true"></i></a>4.4 Use autoSize and getBounds as little as possible</h3>
+<p><code>autoSize()</code> and <code>getBounds()</code> require a lot of calculations and have a great impact on performance, so use them as little as possible.</p>
+<h3 id="45-the-execution-of-functions-caught-by-try-catch-will-become-very-slow"><a name="45-the-execution-of-functions-caught-by-try-catch-will-become-very-slow" class="anchor-navigation-ex-anchor" href="#45-the-execution-of-functions-caught-by-try-catch-will-become-very-slow"><i class="fa fa-link" aria-hidden="true"></i></a>4.5 The execution of functions caught by try catch will become very slow</h3>
+<p>Try to reduce the use of <code>try catch</code> in the project. The execution of functions caught by <code>try catch</code> will become very slow.</p>
+<h1 id="5-use-chromes-performance-analyzer"><a name="5-use-chromes-performance-analyzer" class="anchor-navigation-ex-anchor" href="#5-use-chromes-performance-analyzer"><i class="fa fa-link" aria-hidden="true"></i></a>5. Use chrome&#x2019;s performance analyzer</h1>
+<blockquote>
+<p>Performance Analyzer (Profiles) is part of the chrome developer tools. You can open the chrome developer tools by right-clicking on the page and selecting Inspect Element or pressing F12 on the Google Chrome page. Then click Profiles to switch to the Performance Analyzer (Profiles) panel.</p>
+</blockquote>
+<h3 id="51-cpu-usage-analysis"><a name="51-cpu-usage-analysis" class="anchor-navigation-ex-anchor" href="#51-cpu-usage-analysis"><i class="fa fa-link" aria-hidden="true"></i></a>5.1 CPU usage analysis</h3>
+<h4 id="start-cpu-performance-analyzer"><a name="start-cpu-performance-analyzer" class="anchor-navigation-ex-anchor" href="#start-cpu-performance-analyzer"><i class="fa fa-link" aria-hidden="true"></i></a>Start CPU Performance Analyzer</h4>
+<p> Select <code>Record JavaScript CPU Profile</code> and click the Start button or the solid dot in the upper left corner. At this time, Chrome will start to record the execution of the method of the current web page. As shown in Figure 5-1.</p>
+<p><img src="img/5-1.png" alt="Picture 1-1">
+(Figure 5-1)</p>
+<h4 id="end-the-monitoring-of-cpu-performance-analyzer"><a name="end-the-monitoring-of-cpu-performance-analyzer" class="anchor-navigation-ex-anchor" href="#end-the-monitoring-of-cpu-performance-analyzer"><i class="fa fa-link" aria-hidden="true"></i></a>End the monitoring of CPU performance analyzer</h4>
+<p>To end the monitoring recording of this performance analyzer, click the Stop button (or the solid red circle on the left). As shown in Figure 5-2.</p>
+<p><img src="img/5-2.png" alt="Picture 1-2">
+(Figure 5-2)</p>
+<h4 id="view-cpu-performance-analyzer-records"><a name="view-cpu-performance-analyzer-records" class="anchor-navigation-ex-anchor" href="#view-cpu-performance-analyzer-records"><i class="fa fa-link" aria-hidden="true"></i></a>View CPU Performance Analyzer records</h4>
+<p>After monitoring ends, a monitoring result file will be listed under Profiles on the left. Click to open this monitoring result file. As shown in Figure 5-3</p>
+<p><img src="img/5-3.png" alt="Picture 1-3">
+(Figure 5-3)</p>
+<p>Monitoring results are displayed in the form of data tables. We can find the function names provided in Function based on the consumption ranking, and optimize the places where performance consumption is large.</p>
+<h3 id="52-memory-usage-analysis"><a name="52-memory-usage-analysis" class="anchor-navigation-ex-anchor" href="#52-memory-usage-analysis"><i class="fa fa-link" aria-hidden="true"></i></a>5.2 Memory usage analysis</h3>
+<h4 id="start-memory-analysis"><a name="start-memory-analysis" class="anchor-navigation-ex-anchor" href="#start-memory-analysis"><i class="fa fa-link" aria-hidden="true"></i></a>Start memory analysis</h4>
+<p>Select <code>Take Heap Snapshot</code> and click the <code>Take Snapshot</code> button (you can also click the black solid circle on the left), as shown in Figure 5-4.</p>
+<p><img src="img/5-4.png" alt="Picture 2-1">
+(Figure 5-4)</p>
+<p>The generated memory snapshot file records the number of current web page objects, the memory size occupied, etc. in the form of a data table.</p>
+<h4 id="memory-snapshot-record"><a name="memory-snapshot-record" class="anchor-navigation-ex-anchor" href="#memory-snapshot-record"><i class="fa fa-link" aria-hidden="true"></i></a>Memory snapshot record</h4>
+<p>After starting memory analysis, a memory snapshot record file of the current web page will be generated soon under the Profiles column on the left. Click to view relevant data, as shown in Figure 5-5.</p>
+<p><img src="img/5-5.png" alt="Picture 2-2">
+(Figure 5-5)</p>
+<h4 id="memory-snapshot-analysis"><a name="memory-snapshot-analysis" class="anchor-navigation-ex-anchor" href="#memory-snapshot-analysis"><i class="fa fa-link" aria-hidden="true"></i></a>Memory snapshot analysis</h4>
+<p>After taking the first memory snapshot, click the dot in the upper left corner to record a new memory snapshot. Click to select the second memory snapshot to select the Comparison mode that changes between this second snapshot and the first snapshot. Optimize web pages through analysis.</p>
+<p> <img src="img/5-6.png" alt="Picture 1.png"></p>
+<p> (Figure 5-6)</p>
+<p> <img src="img/5-7.png" alt="Picture 1.png"></p>
+<p> (Figure 5-7)</p>
+<h2 id="6-use-of-texture-compression"><a name="6-use-of-texture-compression" class="anchor-navigation-ex-anchor" href="#6-use-of-texture-compression"><i class="fa fa-link" aria-hidden="true"></i></a>6. Use of texture compression</h2>
+<p>Benefits of using texture compression:</p>
+<ol>
+<li><p>Reduce memory, especially for mobile applications. The memory usage should not be too large, otherwise low-end machines will easily crash.</p>
+</li>
+<li><p>Reduce bandwidth. For mobile game applications, a large number of textures will be transferred to the GPU during rendering. If there is no limit, it will not only seriously affect the rendering performance, but also cause serious heat generation.</p>
+</li>
+</ol>
+<p>For specific usage, please refer to the <a href="../../IDE/uiEditor/textureCompress/readme.html">&quot;Texture Compression&quot;</a> document</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9;Layabox 2022 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Update&#xFF1A;
+2024-05-27 16:50:30
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../TiledMap/readme.html" class="navigation navigation-prev " aria-label="Previous page: TiledMap">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../dom/readme.html" class="navigation navigation-next " aria-label="Next page: DOM">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"performance Optimization","level":"1.4.1.3","depth":3,"next":{"title":"DOM","level":"1.4.1.4","depth":3,"path":"2D/dom/readme.md","ref":"2D/dom/readme.md","articles":[]},"previous":{"title":"TiledMap","level":"1.4.1.2","depth":3,"path":"2D/TiledMap/readme.md","ref":"2D/TiledMap/readme.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","sidebar-style","anchor-navigation-ex","-lunr","-search","-sharing","search-pro","versions-select","-favicon","favicon-absolute","fontsettings","prism","splitter","code","flexible-alerts","auto-scroll-table","popup","tbfed-pagefooter","-theme-hqbook","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"","title":""},"tbfed-pagefooter":{"copyright":"Copyright ©Layabox 2022","modify_label":"Update：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"],"lang":{"flow":"typescript"},"ignore":["mermaid","eval-js"]},"livereload":{},"splitter":{},"search-pro":{},"auto-scroll-table":{},"popup":{},"code":{"copyButtons":true},"versions-select":{"type":"branches"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./style/layabox-152.png","appleTouchIconPrecomposedMore":{},"favicon":"./style/favicon-32.ico","bookmark":"./style/favicon-32.ico"},"fontsettings":{"family":"sans","size":2,"theme":"white"},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"versions":{"options":[{"value":"https://layaair.com/3.2/doc-en/","text":"v3.2"},{"value":"https://layaair.com/3.1/doc-en/","text":"v3.1"},{"value":"https://layaair.com/3.0/doc-en/","text":"v3.0"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","style":{"website":"style/website.css"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LayaAir3 Engine Documentation · LAYABOX","gitbook":"*"},"file":{"path":"2D/performanceOptimization/readme.md","mtime":"2024-05-27T08:50:30.298Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-10-29T09:01:12.852Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sidebar-style/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-versions-select/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+
