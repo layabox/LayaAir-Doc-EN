@@ -1,0 +1,3855 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2D Pathfinding · LayaAir3 Engine Documentation · LAYABOX</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-sidebar-style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-versions-select/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../readme.html" />
+    
+    
+    <link rel="prev" href="../../../physicsEditor/physics2D/readme.html" />
+    
+
+    
+        <link rel="shortcut icon" href="./style/favicon-32.ico" type="image/x-icon">
+    
+    
+        <link rel="bookmark" href="./style/favicon-32.ico" type="image/x-icon">
+    
+    
+    
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./style/layabox-152.png">
+    
+    
+        
+    
+    
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" >
+            
+                <span>
+            
+                    
+                    Engine Introduction
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../../../">
+            
+                <a href="../../../../">
+            
+                    
+                    Engine History and Services
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../../../../basics/readme.html">
+            
+                <a href="../../../../basics/readme.html">
+            
+                    
+                    Engine Features Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../../../../basics/UnityToLayaAir/readme.html">
+            
+                <a href="../../../../basics/UnityToLayaAir/readme.html">
+            
+                    
+                    Unity to LayaAir Differences
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../../../../basics/2.x-Upgrade/readme.html">
+            
+                <a href="../../../../basics/2.x-Upgrade/readme.html">
+            
+                    
+                    2.x Engine Project Upgrade Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Development Environment
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../../../basics/developmentEnvironment/download/readme.html">
+            
+                <a href="../../../../basics/developmentEnvironment/download/readme.html">
+            
+                    
+                    Setting Up Basic Development Environment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../../../basics/IDE/GUI/readme.html">
+            
+                <a href="../../../../basics/IDE/GUI/readme.html">
+            
+                    
+                    IDE Development Interface
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../../../../basics/IDE/layouts/readme.html">
+            
+                <a href="../../../../basics/IDE/layouts/readme.html">
+            
+                    
+                    Custom Interface Layout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../../../../basics/IDE/projecFolders/readme.html">
+            
+                <a href="../../../../basics/IDE/projecFolders/readme.html">
+            
+                    
+                    Project Directory Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../../../../basics/IDE/projectSettings/readme.html">
+            
+                <a href="../../../../basics/IDE/projectSettings/readme.html">
+            
+                    
+                    Project Settings Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../../../../basics/IDE/entry/readme.html">
+            
+                <a href="../../../../basics/IDE/entry/readme.html">
+            
+                    
+                    Project Entry Point
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../../../../basics/IDE/Hierarchy/readme.html">
+            
+                <a href="../../../../basics/IDE/Hierarchy/readme.html">
+            
+                    
+                    Hierarchy Panel Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="../../../../basics/IDE/assets/readme.html">
+            
+                <a href="../../../../basics/IDE/assets/readme.html">
+            
+                    
+                    Project Asset Panel Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="../../../../basics/IDE/Inspector/readme.html">
+            
+                <a href="../../../../basics/IDE/Inspector/readme.html">
+            
+                    
+                    Inspector Panel Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.8" data-path="../../../../basics/IDE/Game/readme.html">
+            
+                <a href="../../../../basics/IDE/Game/readme.html">
+            
+                    
+                    Preview and Run Panel Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../../../basics/IDE/helloWorld/readme.html">
+            
+                <a href="../../../../basics/IDE/helloWorld/readme.html">
+            
+                    
+                    Development Process: Hello World
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../../../3D/advanced/Unity/readme.html">
+            
+                <a href="../../../../3D/advanced/Unity/readme.html">
+            
+                    
+                    Unity Asset Export Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Developer Fundamentals
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../../../basics/language/readme.html">
+            
+                <a href="../../../../basics/language/readme.html">
+            
+                    
+                    TS Language Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../../../basics/DevTools/readme.html">
+            
+                <a href="../../../../basics/DevTools/readme.html">
+            
+                    
+                    DevTools Debugging Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../../../basics/LayaTree/readme.html">
+            
+                <a href="../../../../basics/LayaTree/readme.html">
+            
+                    
+                    LayaTree Debugging Tool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../../../basics/IDE/shortcutKeyCombinations/readme.html">
+            
+                <a href="../../../../basics/IDE/shortcutKeyCombinations/readme.html">
+            
+                    
+                    IDE Shortcut Keys and Mouse Interaction Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Core Engine Features
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../../../basics/common/Loader/readme.html">
+            
+                <a href="../../../../basics/common/Loader/readme.html">
+            
+                    
+                    Resource Loading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../../../basics/common/Scene/readme.html">
+            
+                <a href="../../../../basics/common/Scene/readme.html">
+            
+                    
+                    Scene Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../../../basics/common/Node/readme.html">
+            
+                <a href="../../../../basics/common/Node/readme.html">
+            
+                    
+                    Node Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../../../basics/common/Timer/readme.html">
+            
+                <a href="../../../../basics/common/Timer/readme.html">
+            
+                    
+                    Timers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../../../basics/common/Event/readme.html">
+            
+                <a href="../../../../basics/common/Event/readme.html">
+            
+                    
+                    Event Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../../../basics/common/Tween/readme.html">
+            
+                <a href="../../../../basics/common/Tween/readme.html">
+            
+                    
+                    Tweening
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../../../basics/common/Pool/readme.html">
+            
+                <a href="../../../../basics/common/Pool/readme.html">
+            
+                    
+                    Object Pool
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    2D Basics
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../../../basics/common/terms/readme.html">
+            
+                <a href="../../../../basics/common/terms/readme.html">
+            
+                    
+                    Engine Basic Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../../uiEditor/basic/readme.html">
+            
+                <a href="../../../uiEditor/basic/readme.html">
+            
+                    
+                    UI Editor Basic Interaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../../uiEditor/widgets/readme.html">
+            
+                <a href="../../../uiEditor/widgets/readme.html">
+            
+                    
+                    UI Widget Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../../../2D/displayObject/readme.html">
+            
+                <a href="../../../../2D/displayObject/readme.html">
+            
+                    
+                    2D Basic Display Objects
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../../../../2D/displayObject/Sprite/readme.html">
+            
+                <a href="../../../../2D/displayObject/Sprite/readme.html">
+            
+                    
+                    Sprite
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../../../../2D/displayObject/Animation/readme.html">
+            
+                <a href="../../../../2D/displayObject/Animation/readme.html">
+            
+                    
+                    Animation Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="../../../../2D/displayObject/Text/readme.html">
+            
+                <a href="../../../../2D/displayObject/Text/readme.html">
+            
+                    
+                    Basic Text
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.4" data-path="../../../../2D/displayObject/SoundNode/readme.html">
+            
+                <a href="../../../../2D/displayObject/SoundNode/readme.html">
+            
+                    
+                    Audio Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.5" data-path="../../../../2D/displayObject/VideoNode/readme.html">
+            
+                <a href="../../../../2D/displayObject/VideoNode/readme.html">
+            
+                    
+                    Video Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../../uiEditor/uiComponent/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/readme.html">
+            
+                    
+                    UI Components Detailed
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.1" data-path="../../../uiEditor/uiComponent/Image/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/Image/readme.html">
+            
+                    
+                    Image Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.2" data-path="../../../uiEditor/uiComponent/Label/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/Label/readme.html">
+            
+                    
+                    Text Display Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.3" data-path="../../../uiEditor/uiComponent/TextInput/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/TextInput/readme.html">
+            
+                    
+                    Text Input Component
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.3.1" data-path="../../../uiEditor/uiComponent/TextArea/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/TextArea/readme.html">
+            
+                    
+                    Multi-line Text Input Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.4" data-path="../../../uiEditor/uiComponent/Clip/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/Clip/readme.html">
+            
+                    
+                    Bitmap Slice Component
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.4.1" data-path="../../../uiEditor/uiComponent/FontClip/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/FontClip/readme.html">
+            
+                    
+                    Font Slice Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.5" data-path="../../../uiEditor/uiComponent/Button/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/Button/readme.html">
+            
+                    
+                    Button Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.6" data-path="../../../uiEditor/uiComponent/scroll/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/scroll/readme.html">
+            
+                    
+                    Scrollbar Component
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.6.1" data-path="../../../uiEditor/uiComponent/HScrollBar/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/HScrollBar/readme.html">
+            
+                    
+                    Horizontal Scrollbar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.6.2" data-path="../../../uiEditor/uiComponent/VScrollBar/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/VScrollBar/readme.html">
+            
+                    
+                    Vertical Scrollbar
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.7" data-path="../../../uiEditor/uiComponent/slider/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/slider/readme.html">
+            
+                    
+                    Slider Component
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.7.1" data-path="../../../uiEditor/uiComponent/HSlider/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/HSlider/readme.html">
+            
+                    
+                    Horizontal Slider
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.7.2" data-path="../../../uiEditor/uiComponent/VSlider/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/VSlider/readme.html">
+            
+                    
+                    Vertical Slider
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.8" data-path="../../../uiEditor/uiComponent/ProgressBar/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/ProgressBar/readme.html">
+            
+                    
+                    Progress Bar Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.9" data-path="../../../uiEditor/uiComponent/Box/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/Box/readme.html">
+            
+                    
+                    Container Component
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.9.1" data-path="../../../uiEditor/uiComponent/HBox/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/HBox/readme.html">
+            
+                    
+                    Horizontal Layout Container
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.9.2" data-path="../../../uiEditor/uiComponent/VBox/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/VBox/readme.html">
+            
+                    
+                    Vertical Layout Container
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.9.3" data-path="../../../uiEditor/uiComponent/Panel/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/Panel/readme.html">
+            
+                    
+                    Panel Container
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.10" data-path="../../../uiEditor/uiComponent/List/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/List/readme.html">
+            
+                    
+                    List Component
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.10.1" data-path="../../../uiEditor/uiComponent/Tree/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/Tree/readme.html">
+            
+                    
+                    Tree List Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.11" data-path="../../../uiEditor/uiComponent/optionBox/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/optionBox/readme.html">
+            
+                    
+                    Option Box
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.11.1" data-path="../../../uiEditor/uiComponent/ComboBox/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/ComboBox/readme.html">
+            
+                    
+                    ComboBox Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.11.2" data-path="../../../uiEditor/uiComponent/Radio/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/Radio/readme.html">
+            
+                    
+                    Radio Button Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.11.3" data-path="../../../uiEditor/uiComponent/RadioGroup/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/RadioGroup/readme.html">
+            
+                    
+                    Radio Button Group Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.11.4" data-path="../../../uiEditor/uiComponent/CheckBox/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/CheckBox/readme.html">
+            
+                    
+                    Checkbox Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.12" data-path="../../../uiEditor/uiComponent/navigationMenu/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/navigationMenu/readme.html">
+            
+                    
+                    Navigation Menu Component
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.12.1" data-path="../../../uiEditor/uiComponent/Tab/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/Tab/readme.html">
+            
+                    
+                    Tab Group Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.12.2" data-path="../../../uiEditor/uiComponent/ViewStack/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/ViewStack/readme.html">
+            
+                    
+                    ViewStack Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.13" data-path="../../../uiEditor/uiComponent/ColorPicker/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/ColorPicker/readme.html">
+            
+                    
+                    Color Picker Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.14" data-path="../../../uiEditor/uiComponent/OpenDataContextView/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/OpenDataContextView/readme.html">
+            
+                    
+                    Open Data Context View Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.15" data-path="../../../uiEditor/Dialog/readme.html">
+            
+                <a href="../../../uiEditor/Dialog/readme.html">
+            
+                    
+                    Dialog View Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../../uiEditor/Area2D/readme.html">
+            
+                <a href="../../../uiEditor/Area2D/readme.html">
+            
+                    
+                    2D Area
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.6.1" data-path="../../../uiEditor/Area2D/Camera2D/readme.html">
+            
+                <a href="../../../uiEditor/Area2D/Camera2D/readme.html">
+            
+                    
+                    2D Camera
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../../../uiEditor/uiComponent/skeleton/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/skeleton/readme.html">
+            
+                    
+                    Skeleton Animation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.7.1" data-path="../2DRender/Spine2DRenderNode/readme.html">
+            
+                <a href="../2DRender/Spine2DRenderNode/readme.html">
+            
+                    
+                    Spine Skeleton Animation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7.2" data-path="../../../uiEditor/uiComponent/skeleton/sk/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/skeleton/sk/readme.html">
+            
+                    
+                    Built-in Skeleton Animation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../../../uiEditor/graphics/readme.html">
+            
+                <a href="../../../uiEditor/graphics/readme.html">
+            
+                    
+                    Drawing Graphics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../2DRender/readme.html">
+            
+                <a href="../2DRender/readme.html">
+            
+                    
+                    Rendering Components
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.9.1" data-path="../2DRender/Mesh2DRender/readme.html">
+            
+                <a href="../2DRender/Mesh2DRender/readme.html">
+            
+                    
+                    2D Mesh Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.2" data-path="../2DRender/Spine2DRenderNode/readme.html">
+            
+                <a href="../2DRender/Spine2DRenderNode/readme.html">
+            
+                    
+                    Spine Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.3" data-path="../2DRender/Trail2DRender/readme.html">
+            
+                <a href="../2DRender/Trail2DRender/readme.html">
+            
+                    
+                    2D Trail Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.4" data-path="../2DRender/Line2DRender/readme.html">
+            
+                <a href="../2DRender/Line2DRender/readme.html">
+            
+                    
+                    2D Line Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../../../uiEditor/Filter/readme.html">
+            
+                <a href="../../../uiEditor/Filter/readme.html">
+            
+                    
+                    UI Filter Effects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../../../uiEditor/runtime/readme.html">
+            
+                <a href="../../../uiEditor/runtime/readme.html">
+            
+                    
+                    UI Runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../../../uiEditor/use3D/readme.html">
+            
+                <a href="../../../uiEditor/use3D/readme.html">
+            
+                    
+                    2D Nodes Using 3D
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="../../../uiEditor/textureCompress/readme.html">
+            
+                <a href="../../../uiEditor/textureCompress/readme.html">
+            
+                    
+                    Texture Compression
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    3D Basics
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../../../basics/3D/beginner/readme.html">
+            
+                <a href="../../../../basics/3D/beginner/readme.html">
+            
+                    
+                    3D Concepts Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../../../basics/3D/Transform/readme.html">
+            
+                <a href="../../../../basics/3D/Transform/readme.html">
+            
+                    
+                    3D Transformations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../../sceneEditor/basic/readme.html">
+            
+                <a href="../../../sceneEditor/basic/readme.html">
+            
+                    
+                    3D Scene Editing Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../../sceneEditor/environment/readme.html">
+            
+                <a href="../../../sceneEditor/environment/readme.html">
+            
+                    
+                    3D Scene Environment Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../../../3D/useModel/readme.html">
+            
+                <a href="../../../../3D/useModel/readme.html">
+            
+                    
+                    Model and Animation Import Usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../../../../3D/Sprite3D/readme.html">
+            
+                <a href="../../../../3D/Sprite3D/readme.html">
+            
+                    
+                    Using 3D Sprites
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../../../../3D/displayObject/readme.html">
+            
+                <a href="../../../../3D/displayObject/readme.html">
+            
+                    
+                    3D Basic Display Objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../../../../3D/Camera/readme.html">
+            
+                <a href="../../../../3D/Camera/readme.html">
+            
+                    
+                    Using 3D Cameras
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../../../../3D/Light/readme.html">
+            
+                <a href="../../../../3D/Light/readme.html">
+            
+                    
+                    3D Lights and Shadows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../../../materialEditor/readme.html">
+            
+                <a href="../../../materialEditor/readme.html">
+            
+                    
+                    3D Material Editing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../../../uiEditor/3DUI/readme.html">
+            
+                <a href="../../../uiEditor/3DUI/readme.html">
+            
+                    
+                    Using 3D UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Particles
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../../particleEditor2D/readme.html">
+            
+                <a href="../../../particleEditor2D/readme.html">
+            
+                    
+                    2D Particles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../../particleEditor3D/readme.html">
+            
+                <a href="../../../particleEditor3D/readme.html">
+            
+                    
+                    3D Particles
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Animation
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../../../animationEditor/timelineGUI/readme.html">
+            
+                <a href="../../../animationEditor/timelineGUI/readme.html">
+            
+                    
+                    Timeline Animation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../../../animationEditor/aniController/readme.html">
+            
+                <a href="../../../animationEditor/aniController/readme.html">
+            
+                    
+                    Animation State Machine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../../../animationEditor/aniBake/readme.html">
+            
+                <a href="../../../animationEditor/aniBake/readme.html">
+            
+                    
+                    Animation Baking
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../../../uiEditor/uiComponent/skeleton/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/skeleton/readme.html">
+            
+                    
+                    Skeleton Animation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.4.1" data-path="../2DRender/Spine2DRenderNode/readme.html">
+            
+                <a href="../2DRender/Spine2DRenderNode/readme.html">
+            
+                    
+                    Spine Skeleton Animation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4.2" data-path="../../../uiEditor/uiComponent/skeleton/sk/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/skeleton/sk/readme.html">
+            
+                    
+                    Built-in Skeleton Animation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    IDE Assets
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../../../assets/model/readme.html">
+            
+                <a href="../../../assets/model/readme.html">
+            
+                    
+                    Model Asset Settings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../../../assets/prefab/readme.html">
+            
+                <a href="../../../assets/prefab/readme.html">
+            
+                    
+                    Prefabs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../../../assets/TileSet/readme.html">
+            
+                <a href="../../../assets/TileSet/readme.html">
+            
+                    
+                    Tile Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    Physics Engine
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../../../physicsEditor/physics2D/readme.html">
+            
+                <a href="../../../physicsEditor/physics2D/readme.html">
+            
+                    
+                    2D Physics Editor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../../../physicsEditor/physics3D/readme.html">
+            
+                <a href="../../../physicsEditor/physics3D/readme.html">
+            
+                    
+                    3D Physics Editor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../../../../3D/advanced/customPhysicsEngine/readme.html">
+            
+                <a href="../../../../3D/advanced/customPhysicsEngine/readme.html">
+            
+                    
+                    Custom Physics Engine
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    Shaders
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../../../../2D/advanced/customShader/readme.html">
+            
+                <a href="../../../../2D/advanced/customShader/readme.html">
+            
+                    
+                    Custom 2D Shader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../../../../3D/advanced/customShader/readme.html">
+            
+                <a href="../../../../3D/advanced/customShader/readme.html">
+            
+                    
+                    Custom 3D Shader
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    Blueprints
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../../../ShaderBlueprint/blueprint/readme.html">
+            
+                <a href="../../../ShaderBlueprint/blueprint/readme.html">
+            
+                    
+                    Program Blueprint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../../../ShaderBlueprint/ShaderBlueprint/readme.html">
+            
+                <a href="../../../ShaderBlueprint/ShaderBlueprint/readme.html">
+            
+                    
+                    Shader Blueprint
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    Device Interfaces and Adaptation
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../../../../basics/common/adaptScreen/readme.html">
+            
+                <a href="../../../../basics/common/adaptScreen/readme.html">
+            
+                    
+                    Screen Adaptation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../../../../basics/common/Browser/readme.html">
+            
+                <a href="../../../../basics/common/Browser/readme.html">
+            
+                    
+                    Browser Interface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../../../../basics/common/device/motion/readme.html">
+            
+                <a href="../../../../basics/common/device/motion/readme.html">
+            
+                    
+                    Gyroscope and Accelerometer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../../../../basics/common/device/geolocation/readme.html">
+            
+                <a href="../../../../basics/common/device/geolocation/readme.html">
+            
+                    
+                    Geolocation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.5" data-path="../../../../basics/common/device/baiduMap/readme.html">
+            
+                <a href="../../../../basics/common/device/baiduMap/readme.html">
+            
+                    
+                    Using Baidu Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <span>
+            
+                    
+                    Audio and Video
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../../../../basics/common/device/media/readme.html">
+            
+                <a href="../../../../basics/common/device/media/readme.html">
+            
+                    
+                    Audio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../../../../basics/common/device/video/readme.html">
+            
+                <a href="../../../../basics/common/device/video/readme.html">
+            
+                    
+                    Video
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    Network Communication
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../../../../basics/common/network/HTTP/readme.html">
+            
+                <a href="../../../../basics/common/network/HTTP/readme.html">
+            
+                    
+                    HTTP Communication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../../../../basics/common/network/WebSocket/readme.html">
+            
+                <a href="../../../../basics/common/network/WebSocket/readme.html">
+            
+                    
+                    WebSocket Communication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="../../../../libs/Protobuf/readme.html">
+            
+                <a href="../../../../libs/Protobuf/readme.html">
+            
+                    
+                    Protocol Buffer Communication
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" >
+            
+                <span>
+            
+                    
+                    Performance
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../../../../basics/common/Stat/readme.html">
+            
+                <a href="../../../../basics/common/Stat/readme.html">
+            
+                    
+                    Performance Statistics and Optimization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" data-path="../../../../2D/performanceOptimization/readme.html">
+            
+                <a href="../../../../2D/performanceOptimization/readme.html">
+            
+                    
+                    2D Performance Optimization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.3" data-path="../../../../3D/advanced/performanceOptimization/readme.html">
+            
+                <a href="../../../../3D/advanced/performanceOptimization/readme.html">
+            
+                    
+                    3D Performance Optimization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../../readme.html">
+            
+                <a href="../../readme.html">
+            
+                    
+                    3D Built-in Components
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../../../../basics/common/Component/readme.html">
+            
+                <a href="../../../../basics/common/Component/readme.html">
+            
+                    
+                    Entity Component System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="../../../customComponent/decorators/readme.html">
+            
+                <a href="../../../customComponent/decorators/readme.html">
+            
+                    
+                    Component Decorators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.3" data-path="../../../customComponent/componentProperties/readme.html">
+            
+                <a href="../../../customComponent/componentProperties/readme.html">
+            
+                    
+                    Component Property Code Usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4" data-path="../readme.html">
+            
+                <a href="../readme.html">
+            
+                    
+                    2D Built-in Components
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.4.1" data-path="../2DRender/readme.html">
+            
+                <a href="../2DRender/readme.html">
+            
+                    
+                    2D Rendering Components
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.4.1.1" data-path="../2DRender/Mesh2DRender/readme.html">
+            
+                <a href="../2DRender/Mesh2DRender/readme.html">
+            
+                    
+                    2D Mesh Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4.1.2" data-path="../2DRender/Spine2DRenderNode/readme.html">
+            
+                <a href="../2DRender/Spine2DRenderNode/readme.html">
+            
+                    
+                    Spine Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4.1.3" data-path="../2DRender/Trail2DRender/readme.html">
+            
+                <a href="../2DRender/Trail2DRender/readme.html">
+            
+                    
+                    2D Trail Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4.1.4" data-path="../2DRender/Line2DRender/readme.html">
+            
+                <a href="../2DRender/Line2DRender/readme.html">
+            
+                    
+                    2D Line Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4.1.5" data-path="../TileMapLayer/readme.html">
+            
+                <a href="../TileMapLayer/readme.html">
+            
+                    
+                    Tile Map Layer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4.1.6" data-path="../../../particleEditor2D/readme.html">
+            
+                <a href="../../../particleEditor2D/readme.html">
+            
+                    
+                    2D Particle Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4.2" data-path="../BaseLight2D/readme.html">
+            
+                <a href="../BaseLight2D/readme.html">
+            
+                    
+                    2D Lights and Meshes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.4.2.1" data-path="../DirectionLight2D/readme.html">
+            
+                <a href="../DirectionLight2D/readme.html">
+            
+                    
+                    2D Directional Light
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4.2.2" data-path="../SpriteLight2D/readme.html">
+            
+                <a href="../SpriteLight2D/readme.html">
+            
+                    
+                    2D Sprite Light
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4.2.3" data-path="../SpotLight2D/readme.html">
+            
+                <a href="../SpotLight2D/readme.html">
+            
+                    
+                    2D Spotlight
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4.2.4" data-path="../FreeformLight2D/readme.html">
+            
+                <a href="../FreeformLight2D/readme.html">
+            
+                    
+                    2D Freeform Light
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4.3" data-path="../LightOccluder2D/readme.html">
+            
+                <a href="../LightOccluder2D/readme.html">
+            
+                    
+                    2D Occluders and Shadows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4.4" data-path="../../../physicsEditor/physics2D/readme.html">
+            
+                <a href="../../../physicsEditor/physics2D/readme.html">
+            
+                    
+                    2D Physics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.17.4.5" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    2D Pathfinding
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5" data-path="../../readme.html">
+            
+                <a href="../../readme.html">
+            
+                    
+                    3D Built-in Components
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.5.1" data-path="../../Mesh/readme.html">
+            
+                <a href="../../Mesh/readme.html">
+            
+                    
+                    Meshes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5.2" data-path="../../3DRender/readme.html">
+            
+                <a href="../../3DRender/readme.html">
+            
+                    
+                    3D Rendering Components
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.5.2.1" data-path="../../../particleEditor3D/readme.html">
+            
+                <a href="../../../particleEditor3D/readme.html">
+            
+                    
+                    Particle Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5.2.2" data-path="../../PixelLine/readme.html">
+            
+                <a href="../../PixelLine/readme.html">
+            
+                    
+                    Pixel Line
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5.2.3" data-path="../../Trail/readme.html">
+            
+                <a href="../../Trail/readme.html">
+            
+                    
+                    Trail
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5.2.4" data-path="../../../uiEditor/3DUI/readme.html">
+            
+                <a href="../../../uiEditor/3DUI/readme.html">
+            
+                    
+                    3D UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5.2.5" data-path="../../ReflectionProbe/readme.html">
+            
+                <a href="../../ReflectionProbe/readme.html">
+            
+                    
+                    Reflection Probe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5.2.6" data-path="../../VolumetricGI/readme.html">
+            
+                <a href="../../VolumetricGI/readme.html">
+            
+                    
+                    Volumetric GI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5.2.7" data-path="../../StaticBatchVolume/readme.html">
+            
+                <a href="../../StaticBatchVolume/readme.html">
+            
+                    
+                    Static Batch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5.2.8" data-path="../../LOD/readme.html">
+            
+                <a href="../../LOD/readme.html">
+            
+                    
+                    LOD Group
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5.3" data-path="../../../../3D/Light/readme.html">
+            
+                <a href="../../../../3D/Light/readme.html">
+            
+                    
+                    3D Lights
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5.4" data-path="../../../physicsEditor/physics3D/readme.html">
+            
+                <a href="../../../physicsEditor/physics3D/readme.html">
+            
+                    
+                    3D Physics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5.5" data-path="../../navMesh/readme.html">
+            
+                <a href="../../navMesh/readme.html">
+            
+                    
+                    3D Pathfinding
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" >
+            
+                <span>
+            
+                    
+                    IDE Plugins
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../../../layapackage/plug-in/readme.html">
+            
+                <a href="../../../layapackage/plug-in/readme.html">
+            
+                    
+                    Plugin Development Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.2" data-path="../../../layapackage/pluginImport/readme.html">
+            
+                <a href="../../../layapackage/pluginImport/readme.html">
+            
+                    
+                    Plugin Import and Usage Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.3" data-path="../../../layapackage/Layabox/readme.html">
+            
+                <a href="../../../layapackage/Layabox/readme.html">
+            
+                    
+                    Official Plugins
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.3.1" data-path="../../../layapackage/Layabox/LOD/readme.html">
+            
+                <a href="../../../layapackage/Layabox/LOD/readme.html">
+            
+                    
+                    LOD Decimation Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.3.2" data-path="../../../layapackage/Layabox/BakeAnimation/readme.html">
+            
+                <a href="../../../layapackage/Layabox/BakeAnimation/readme.html">
+            
+                    
+                    3D Animation Baking Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" >
+            
+                <span>
+            
+                    
+                    External Scripts Usage
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="../../../../basics/IDE/importJsLibrary/readme.html">
+            
+                <a href="../../../../basics/IDE/importJsLibrary/readme.html">
+            
+                    
+                    External Script Import Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.2" data-path="../../../../libs/Protobuf/readme.html">
+            
+                <a href="../../../../libs/Protobuf/readme.html">
+            
+                    
+                    Practical Protocol Buffer Communication
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" >
+            
+                <span>
+            
+                    
+                    Advanced Usage
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="../../../../2D/advanced/readme.html">
+            
+                <a href="../../../../2D/advanced/readme.html">
+            
+                    
+                    2D Advanced
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1.1" data-path="../../../../2D/advanced/useText/readme.html">
+            
+                <a href="../../../../2D/advanced/useText/readme.html">
+            
+                    
+                    Advanced Text Usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.1.2" data-path="../../../../2D/TiledMap/readme.html">
+            
+                <a href="../../../../2D/TiledMap/readme.html">
+            
+                    
+                    TiledMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.1.3" data-path="../../../../2D/useWorker/readme.html">
+            
+                <a href="../../../../2D/useWorker/readme.html">
+            
+                    
+                    Multi-threading with Workers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.1.4" data-path="../../../../2D/dom/readme.html">
+            
+                <a href="../../../../2D/dom/readme.html">
+            
+                    
+                    Interacting with Native DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2" data-path="../../../../3D/advanced/readme.html">
+            
+                <a href="../../../../3D/advanced/readme.html">
+            
+                    
+                    3D Advanced
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.2.1" data-path="../../../../3D/advanced/PostProcessing/readme.html">
+            
+                <a href="../../../../3D/advanced/PostProcessing/readme.html">
+            
+                    
+                    Post Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2.2" data-path="../../../../3D/advanced/CommandBuffer/readme.html">
+            
+                <a href="../../../../3D/advanced/CommandBuffer/readme.html">
+            
+                    
+                    CommandBuffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2.3" data-path="../../../../3D/WebXR/readme.html">
+            
+                <a href="../../../../3D/WebXR/readme.html">
+            
+                    
+                    WebXR
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="../../../../released/web/readme.html">
+            
+                <a href="../../../../released/web/readme.html">
+            
+                    
+                    Web Build
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="../../../../released/generalSetting/readme.html">
+            
+                <a href="../../../../released/generalSetting/readme.html">
+            
+                    
+                    General Build Settings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.2" data-path="../../../../released/commandLine/readme.html">
+            
+                <a href="../../../../released/commandLine/readme.html">
+            
+                    
+                    Command-line Build
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.3" data-path="../../../../released/web/readme.html">
+            
+                <a href="../../../../released/web/readme.html">
+            
+                    
+                    Web Build
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.3.1" data-path="../../../../released/CrazyGames/readme.html">
+            
+                <a href="../../../../released/CrazyGames/readme.html">
+            
+                    
+                    CrazyGames
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.3.2" data-path="../../../../released/Poki/readme.html">
+            
+                <a href="../../../../released/Poki/readme.html">
+            
+                    
+                    Poki
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.4" data-path="../../../../released/miniGame/readme.html">
+            
+                <a href="../../../../released/miniGame/readme.html">
+            
+                    
+                    Mini Game Release
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.4.1" data-path="../../../../released/miniGame/wechat/readme.html">
+            
+                <a href="../../../../released/miniGame/wechat/readme.html">
+            
+                    
+                    WeChat Mini Game
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.4.1.1" data-path="../../../../released/miniGame/wechat/Worker/readme.html">
+            
+                <a href="../../../../released/miniGame/wechat/Worker/readme.html">
+            
+                    
+                    WeChat Mini Game Worker Usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.4.2" data-path="../../../../released/miniGame/byteDance/readme.html">
+            
+                <a href="../../../../released/miniGame/byteDance/readme.html">
+            
+                    
+                    Douyin Mini Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.4.3" data-path="../../../../released/miniGame/OPPO/readme.html">
+            
+                <a href="../../../../released/miniGame/OPPO/readme.html">
+            
+                    
+                    OPPO Mini Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.4.4" data-path="../../../../released/miniGame/vivo/readme.html">
+            
+                <a href="../../../../released/miniGame/vivo/readme.html">
+            
+                    
+                    Vivo Mini Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.4.5" data-path="../../../../released/miniGame/xiaomi/readme.html">
+            
+                <a href="../../../../released/miniGame/xiaomi/readme.html">
+            
+                    
+                    Xiaomi Mini Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.4.6" data-path="../../../../released/miniGame/alipaygame/readme.html">
+            
+                <a href="../../../../released/miniGame/alipaygame/readme.html">
+            
+                    
+                    Alipay Mini Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.4.7" data-path="../../../../released/miniGame/tbgame/readme.html">
+            
+                <a href="../../../../released/miniGame/tbgame/readme.html">
+            
+                    
+                    Taobao Mini Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5" data-path="../../../../released/native/LayaNative_Introduction/readme.html">
+            
+                <a href="../../../../released/native/LayaNative_Introduction/readme.html">
+            
+                    
+                    Native Package Development Basics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.5.1" data-path="../../../../released/native/native_index/readme.html">
+            
+                <a href="../../../../released/native/native_index/readme.html">
+            
+                    
+                    LayaNative is Not a Browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5.2" data-path="../../../../released/native/screen_orientation/readme.html">
+            
+                <a href="../../../../released/native/screen_orientation/readme.html">
+            
+                    
+                    Screen Orientation Settings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5.3" data-path="../../../../released/native/loading_view_new/readme.html">
+            
+                <a href="../../../../released/native/loading_view_new/readme.html">
+            
+                    
+                    Splash Screen (LoadingView)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5.4" data-path="../../../../released/native/network/readme.html">
+            
+                <a href="../../../../released/native/network/readme.html">
+            
+                    
+                    Network Monitoring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5.5" data-path="../../../../released/native/LocalStrorage/readme.html">
+            
+                <a href="../../../../released/native/LocalStrorage/readme.html">
+            
+                    
+                    LocalStorage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5.6" data-path="../../../../released/native/LayaDcc_Tool/readme.html">
+            
+                <a href="../../../../released/native/LayaDcc_Tool/readme.html">
+            
+                    
+                    Cache Tools - layadcc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5.7" data-path="../../../../released/native/platform_communication/readme.html">
+            
+                <a href="../../../../released/native/platform_communication/readme.html">
+            
+                    
+                    Native Platform Communication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5.8" data-path="../../../../released/native/Secondary_Development/readme.html">
+            
+                <a href="../../../../released/native/Secondary_Development/readme.html">
+            
+                    
+                    Secondary Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5.9" data-path="../../../../released/native/built_in_font/readme.html">
+            
+                <a href="../../../../released/native/built_in_font/readme.html">
+            
+                    
+                    Embedded Fonts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5.10" data-path="../../../../released/native/zipUpdate/readme.html">
+            
+                <a href="../../../../released/native/zipUpdate/readme.html">
+            
+                    
+                    Zip Update
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5.11" data-path="../../../../released/native/apk_expansion/readme.html">
+            
+                <a href="../../../../released/native/apk_expansion/readme.html">
+            
+                    
+                    APK Expansion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5.12" data-path="../../../../released/native/Other_settings/readme.html">
+            
+                <a href="../../../../released/native/Other_settings/readme.html">
+            
+                    
+                    Other Settings
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.6" data-path="../../../../released/Windows/readme.html">
+            
+                <a href="../../../../released/Windows/readme.html">
+            
+                    
+                    Windows Build
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.6.1" data-path="../../../../released/Windows/extension/readme.html">
+            
+                <a href="../../../../released/Windows/extension/readme.html">
+            
+                    
+                    Windows Extensions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.6.2" data-path="../../../../released/Windows/steam/readme.html">
+            
+                <a href="../../../../released/Windows/steam/readme.html">
+            
+                    
+                    Steam Extension Example
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.7" data-path="../../../../released/Harmony/readme.html">
+            
+                <a href="../../../../released/Harmony/readme.html">
+            
+                    
+                    HarmonyOS NEXT Build
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.7.1" data-path="../../../../released/Harmony/debug/readme.html">
+            
+                <a href="../../../../released/Harmony/debug/readme.html">
+            
+                    
+                    HarmonyOS NEXT JavaScript Debugging
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.8" data-path="../../../../released/Android/readme.html">
+            
+                <a href="../../../../released/Android/readme.html">
+            
+                    
+                    Android Build
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.8.1" data-path="../../../../released/Android/debug/readme.html">
+            
+                <a href="../../../../released/Android/debug/readme.html">
+            
+                    
+                    Android JavaScript Debugging
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.9" data-path="../../../../released/iOS/readme.html">
+            
+                <a href="../../../../released/iOS/readme.html">
+            
+                    
+                    iOS Build
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.10" data-path="../../../../released/Linux/readme.html">
+            
+                <a href="../../../../released/Linux/readme.html">
+            
+                    
+                    Linux Build
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../.." >2D Pathfinding</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#2d-pathfinding"><b></b>2D Pathfinding</a></li><ul><li><span class="title-icon "></span><a href="#1-overview"><b></b>1. Overview</a></li><li><span class="title-icon "></span><a href="#2-2d-navigation-mesh-surface"><b></b>2. 2D Navigation Mesh Surface</a></li><ul><li><span class="title-icon "></span><a href="#21-component-properties"><b></b>2.1 Component Properties</a></li><li><span class="title-icon "></span><a href="#22-generate-navigation-area"><b></b>2.2 Generate Navigation Area</a></li></ul><li><span class="title-icon "></span><a href="#3-2d-navigation-agent"><b></b>3. 2D Navigation Agent</a></li><ul><li><span class="title-icon "></span><a href="#31-component-properties"><b></b>3.1 Component Properties</a></li><li><span class="title-icon "></span><a href="#32-character-pathfinding"><b></b>3.2 Character Pathfinding</a></li></ul></ul></ul></div><a href="#2d-pathfinding" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="2d-pathfinding"><a name="2d-pathfinding" class="anchor-navigation-ex-anchor" href="#2d-pathfinding"><i class="fa fa-link" aria-hidden="true"></i></a>2D Pathfinding</h1>
+<h2 id="1-overview"><a name="1-overview" class="anchor-navigation-ex-anchor" href="#1-overview"><i class="fa fa-link" aria-hidden="true"></i></a>1. Overview</h2>
+<p>In modern game development, the automatic pathfinding feature has become one of the indispensable basic functions. Whether it&apos;s the automatic movement of characters, the patrol of NPCs, or the following of pets, a pathfinding system is required. Click on a position in the scene, and the character (Agent) will automatically find a path to reach the destination. There may be many obstacles during the pathfinding process, and the character will automatically bypass the obstacles to reach the end point.</p>
+<p>LayaAir provides developers with a 2D pathfinding solution. There can be many ways to implement automatic pathfinding. One of the more traditional ones is to use the &quot;A* pathfinding&quot; algorithm, which is used in many web games and client games. This technology can also be used for pathfinding in LayaAir. Refer to the method provided <a href="../../../../basics/IDE/importJsLibrary/readme.html">here</a>.</p>
+<p>This article introduces the built-in 2D pathfinding system NavMesh2D in LayaAir. Before using it, first, you need to check the &quot;Navigation and Pathfinding&quot; module in the &quot;Project Settings&quot; panel, as shown in Figure 1-1,</p>
+<p><img src="img/1-1.png" alt="1-1"></p>
+<p>(Figure 1-1)</p>
+<p>The 2D pathfinding system is implemented through two components: 2D navigation mesh surface (NavMesh2DSurface) and 2D navigation agent (Nav2DAgent). The 2D navigation mesh surface defines the navigation mesh, representing the area where the character can move. The 2D navigation agent defines the pathfinding agent, which is used to represent the main object of pathfinding (characters, NPCs, vehicles, etc.).</p>
+<h2 id="2-2d-navigation-mesh-surface"><a name="2-2d-navigation-mesh-surface" class="anchor-navigation-ex-anchor" href="#2-2d-navigation-mesh-surface"><i class="fa fa-link" aria-hidden="true"></i></a>2. 2D Navigation Mesh Surface</h2>
+<p>As shown in Figure 2-1, there is a 2D scene with a terrain background. There are mountains, lakes, paths, etc. in the scene,</p>
+<p><img src="img/2-1.png" alt="2-1" style="zoom:60%;"></p>
+<p>(Figure 2-1)</p>
+<h3 id="21-component-properties"><a name="21-component-properties" class="anchor-navigation-ex-anchor" href="#21-component-properties"><i class="fa fa-link" aria-hidden="true"></i></a>2.1 Component Properties</h3>
+<p>On this terrain background layer, add a sprite to create a navigation mesh. Add the <code>2D Navigation Mesh Surface</code> component to the sprite, as shown in Figure 2-2,</p>
+<p><img src="img/2-2.png" alt="2-2"></p>
+<p>(Figure 2-2)</p>
+<p>The added component is shown in Figure 2-3,</p>
+<p><img src="img/2-3.png" alt="2-3"></p>
+<p>(Figure 2-3)</p>
+<p>The properties are introduced respectively:</p>
+<h4 id="211-agent-type-agenttype"><a name="211-agent-type-agenttype" class="anchor-navigation-ex-anchor" href="#211-agent-type-agenttype"><i class="fa fa-link" aria-hidden="true"></i></a>2.1.1 Agent Type <code>agentType</code></h4>
+<p>Used to specify the type of agent for pathfinding on this navigation surface. In the pathfinding system, an agent is an abstract concept used to represent the main object of pathfinding, such as characters, NPCs, and vehicles in the game. Different types of agents have different characteristics and limitations during pathfinding, such as size, movement mode, and types of accessible areas. The role of agent type is to enable developers to flexibly set and adjust local pathfinding parameters according to different types of pathfinding objects in the game to meet the needs of the game.</p>
+<p>The default value is Humanoid (humanoid character), indicating the navigation settings suitable for humanoid characters and is suitable for most humanoid character navigation in games.</p>
+<p>As shown in Figure 2-4, developers can open the configuration interface by selecting the <code>open Agent Settings</code> option and add a custom agent type.</p>
+<p><img src="img/2-4.png" alt="2-4"></p>
+<p>(Figure 2-4)</p>
+<p>The configuration page of Agents is shown in Figure 2-5,</p>
+<p><img src="img/2-5.png" alt="2-5"></p>
+<p>(Figure 2-5)</p>
+<p>Note that this page is not to adjust the agent itself but to adjust the terrain applicable to this agent. The meanings of its parameters are introduced below,</p>
+<p><code>agentName</code>: The name of the Agent type applicable to the navigation mesh surface. The name entered here will be the same as the name of the option at the agent type, as shown in Figure 2-6.</p>
+<p><img src="img/2-6.png" alt="2-6"></p>
+<p>(Figure 2-6)</p>
+<p><code>agentRadius</code>: This value determines the minimum distance between the Agent and obstacles during navigation. A larger radius will keep the Agent at a greater distance from obstacles.</p>
+<p><code>cellSize</code>: The cell size of the navigation mesh. A smaller cell size will generate a more detailed navigation mesh but will increase memory usage and computational cost.</p>
+<p><code>tileSize</code>: The tile size of the navigation mesh. The navigation mesh can be divided into multiple tiles for more efficient generation and loading of navigation data in large scenes.</p>
+<h4 id="212-area-flag-areaflag"><a name="212-area-flag-areaflag" class="anchor-navigation-ex-anchor" href="#212-area-flag-areaflag"><i class="fa fa-link" aria-hidden="true"></i></a>2.1.2 Area Flag <code>areaFlag</code></h4>
+<p>Used to mark the area type of the current static navigation surface, such as walkable areas, water, obstacle areas, etc. Area flags can affect the agent&apos;s preferences and avoidance behavior for different areas during pathfinding.</p>
+<p>As shown in Figure 2-7, developers can open the configuration interface by clicking the <code>open Area Settings</code> option and add a custom area flag type.</p>
+<p><img src="img/2-7.png" alt="2-7"></p>
+<p>(Figure 2-7)</p>
+<p>The configuration interface of Areas is shown in Figure 2-8,</p>
+<p><img src="img/2-8.png" alt="2-8"></p>
+<p>(Figure 2-8)</p>
+<p><code>name</code>: The name of the area type. The name entered here will be the same as the name of the option at the area flag, as shown in Figure 2-9.</p>
+<p><img src="img/2-9.png" alt="2-9"></p>
+<p>(Figure 2-9)</p>
+<p><code>cost</code>: Specifies the relative cost or difficulty for the agent to traverse this type of surface during navigation. Usually, it is a positive number. A higher value indicates a higher cost or difficulty to pass through the surface. For example, the Cost of the water surface can be set to 5, while the Cost of the ordinary ground can be set to 1, indicating that it is more difficult for the agent to cross the water surface compared to the ordinary ground.</p>
+<p>In general, by setting different areaFlags, you can control how the agent interacts with different types of surfaces during navigation. The agent will prefer paths with lower Cost during pathfinding and avoid surfaces with higher Cost. Developers can set appropriate areaFlags and Cost values for different surface types according to their own needs to affect the agent&apos;s navigation behavior.</p>
+<h4 id="213-asynchronous-generation-asyn"><a name="213-asynchronous-generation-asyn" class="anchor-navigation-ex-anchor" href="#213-asynchronous-generation-asyn"><i class="fa fa-link" aria-hidden="true"></i></a>2.1.3 Asynchronous Generation <code>asyn</code></h4>
+<p>Indicates whether to enable the asynchronous generation of navigation. When asynchronous baking is checked, the generation process of the navigation mesh will be performed asynchronously in the background without blocking the execution of the main thread. Enabling asynchronous generation can ensure that only one tile is generated per frame during game runtime, improving the fluency of scene loading and editing.</p>
+<h4 id="214-partition-type-partitiontype"><a name="214-partition-type-partitiontype" class="anchor-navigation-ex-anchor" href="#214-partition-type-partitiontype"><i class="fa fa-link" aria-hidden="true"></i></a>2.1.4 Partition Type <code>partitionType</code></h4>
+<p>Used to specify the partitioning method of the navigation mesh. As shown in Figure 2-10, there are three options: Monotone (monotone partitioning), Watershed (watershed partitioning), and Layer (hierarchical partitioning).</p>
+<p><img src="img/2-10.png" alt="2-10"></p>
+<p>(2-10)</p>
+<p><code>Monotone</code>: Uses the monotone polygon partitioning algorithm. The created navigation mesh area has a simple shape and smooth edges and is suitable for simple scenes. Monotone partitioning generates navigation meshes faster and occupies relatively less memory. However, for complex scenes, Monotone partitioning may produce less precise navigation meshes.</p>
+<p><code>Watershed</code>: Compared with Monotone partitioning, Watershed partitioning generates navigation meshes slower and occupies relatively more memory. However, Watershed partitioning can better adapt to complex scenes and generate more precise and natural navigation mesh areas and is suitable for scenes with high requirements for navigation mesh quality.</p>
+<p><code>Layers</code>: Suitable for scenes where different pathfinding rules need to be applied to different areas.</p>
+<h4 id="215-data-datas"><a name="215-data-datas" class="anchor-navigation-ex-anchor" href="#215-data-datas"><i class="fa fa-link" aria-hidden="true"></i></a>2.1.5 Data <code>datas</code></h4>
+<p>Click the <code>Bake</code> button to pop up the baking panel, as shown in Figure 2-11. Select the child nodes to be baked from the hierarchy panel (the surface node has added the 2D navigation mesh surface component), drag them into the baking panel, and select the nodes for baking as needed.</p>
+<p><img src="img/2-11.png" alt="2-11"></p>
+<p>(Figure 2-11)</p>
+<p><code>Active</code>: Indicates whether the node participates in the generation of the navigation mesh. When checked, the data of this node will be used to generate the navigation mesh. When unchecked, this node will be completely ignored.</p>
+<p><code>Bake From</code>:</p>
+<ul>
+<li>Graphics generates the navigation mesh from the graphic data of the Sprite. For example, as shown in Figure 2-12,</li>
+</ul>
+<p><img src="img/2-12.png" alt="2-12"></p>
+<p>(Figure 2-12)</p>
+<ul>
+<li>Physics generates the navigation mesh from the physical collider data. For example, as shown in Figure 2-13,</li>
+</ul>
+<p><img src="img/2-13.jpg" alt="2-13"></p>
+<p>(Figure 2-13)</p>
+<ul>
+<li>MeshRender generates the navigation mesh from the mesh data. For example, as shown in Figure 2-14,</li>
+</ul>
+<p><img src="img/2-14.jpg" alt="2-14"></p>
+<p>(Figure 2-14)</p>
+<ul>
+<li>None does not use any existing data.</li>
+</ul>
+<p>After setting, click the <code>Bake</code> button in the upper right corner to generate the navigation mesh file. If you need to re-select the nodes, click <code>Clear</code>.</p>
+<p>The final baking result (.bin file) will be saved in a new folder created in the assets directory (named after the scene where the node is located). Moreover, the baked file will be automatically added to the datas property.</p>
+<p>Generally, baking the navigation mesh is usually performed after the scene editing is completed to ensure that the navigation mesh is consistent with the latest scene state. If the positions of scene nodes and their child nodes are moved, or rotated, etc., the node data needs to be re-baked (cannot exist in the prefab. If it is dragged into the scene from the prefab, the data needs to be re-baked). Because the baked navigation mesh will not change dynamically with the scene. Developers can first click the <code>clear</code> button to clear the original datas data and then re-bake.</p>
+<h4 id="216-maximum-simplification-error-maxsimplificationerror"><a name="216-maximum-simplification-error-maxsimplificationerror" class="anchor-navigation-ex-anchor" href="#216-maximum-simplification-error-maxsimplificationerror"><i class="fa fa-link" aria-hidden="true"></i></a>2.1.6 Maximum Simplification Error <code>maxSimplificationError</code></h4>
+<p>Defines the maximum error value allowed when simplifying the polygon border, mainly used to control the degree of simplification of the navigation mesh. This value affects the generation quality of the navigation mesh. A larger value results in a higher degree of simplification, generating a rougher navigation mesh with better performance. A smaller value results in a lower degree of simplification, generating a more accurate navigation mesh but with greater performance consumption.</p>
+<p>A larger value reduces the complexity of the navigation mesh and improves the pathfinding performance. Therefore, for simple scenes, a larger value can be used. But the value should not be set too large, otherwise, it may lead to inaccurate pathfinding.</p>
+<p>A smaller value retains more details and improves the accuracy of pathfinding. Therefore, for scenes that require precise pathfinding, it is recommended to use a smaller value. But do not set it too small, which may cause unnecessary performance overhead.</p>
+<h4 id="217-convex-polygon-area-volumes"><a name="217-convex-polygon-area-volumes" class="anchor-navigation-ex-anchor" href="#217-convex-polygon-area-volumes"><i class="fa fa-link" aria-hidden="true"></i></a>2.1.7 Convex Polygon Area <code>volumes</code></h4>
+<p>Represents a component used in the navigation system to modify the properties of the navigation mesh within a certain area. It allows defining an area in the scene and adjusting its size, shape, position, etc. There is no need to re-bake after setting, and the parameters are shown in Figure 2-15.</p>
+<p><img src="img/2-15.png" alt="2-15"></p>
+<p>(Figure 2-15)</p>
+<p><code>Position</code>: Sets the position of the dynamic area.</p>
+<p><code>Scale</code>: Sets the scale of the dynamic area.</p>
+<p><code>Rotation</code>: Sets the rotation of the dynamic area.</p>
+<p><code>AreaFlag</code>: Sets the area flag of the dynamic area.</p>
+<p><code>Datas</code>: Sets the vertex positions and number of the shape of the dynamic area.</p>
+<p><code>Edit Shape</code>: After clicking, you can edit the shape of the dynamic area in the scene by dragging with the mouse.</p>
+<p>Developers can set the modified area to a different area flag (areaFlag), that is, set a different cost value (cost) for this area. This cost value will affect the cost calculation when passing through this area during pathfinding. A higher cost value will make the character tend to avoid this area, while a lower cost value will encourage the character to pass through this area.</p>
+<p>For example, as shown in Figure 2-16, when the agent moves from point A to point B, there is a dynamic area in the middle, and its area flag is unwalk, indicating that it is not walkable (the orange part indicates the walk area). Then the agent will bypass this area during pathfinding.</p>
+<p><img src="img/2-16.png" alt="2-16"></p>
+<p>(Figure 2-16)</p>
+<h4 id="218-obstacles-obstacles"><a name="218-obstacles-obstacles" class="anchor-navigation-ex-anchor" href="#218-obstacles-obstacles"><i class="fa fa-link" aria-hidden="true"></i></a>2.1.8 Obstacles <code>obstacles</code></h4>
+<p>Used to represent the areas regarded as obstacles during pathfinding. By placing obstacle areas in the scene and setting the size and shape of the obstacles, it affects the generation of the navigation mesh and the calculation of pathfinding. The parameters are shown in Figure 2-17.</p>
+<p><img src="img/2-17.png" alt="2-17"></p>
+<p>(Figure 2-17)</p>
+<p><code>Position</code>: Sets the position of the obstacle.</p>
+<p><code>Scale</code>: Sets the scale of the obstacle.</p>
+<p><code>Rotation</code>: Sets the rotation of the obstacle.</p>
+<p><code>AreaFlag</code>: Sets the area flag of the obstacle.</p>
+<p><code>MeshType</code>: Sets the type of the obstacle: box, cycle, mesh.</p>
+<p><code>Edit Shape</code>: After clicking, you can move the obstacle in the scene by dragging with the mouse.</p>
+<p>As shown in Figure 2-18, the box-type obstacle can change the navigation mesh without re-baking (the orange part is the previously baked navigation mesh).</p>
+<p><img src="img/2-18.png" alt="2-18"></p>
+<p>(Figure 2-18)</p>
+<h4 id="219-navigation-mesh-link-navmeshlink"><a name="219-navigation-mesh-link-navmeshlink" class="anchor-navigation-ex-anchor" href="#219-navigation-mesh-link-navmeshlink"><i class="fa fa-link" aria-hidden="true"></i></a>2.1.9 Navigation Mesh Link <code>navMeshLink</code></h4>
+<p>A component used to connect two different navigation mesh surfaces. It allows creating links between navigation meshes. By specifying the start and end points during movement, the character can move on these links and thus perform pathfinding between different navigation areas. The parameters are shown in Figure 2-19,</p>
+<p><img src="img/2-19.png" alt="2-19"></p>
+<p>(Figure 2-19)</p>
+<p><code>AreaFlag</code>: Sets the area flag of the navigation area link.</p>
+<p><code>Start</code>: The starting position of the link, specifying the position and direction where the link starts. The link will start from this starting position.</p>
+<p><code>End</code>: The ending position of the link, specifying the position and direction where the link ends. The link will end at this ending position.</p>
+<p><code>Width</code>: The width of the link, determining the size of the passable area of the link.</p>
+<p><code>Bidirectional</code>: Whether it is a two-way link. If not checked, the link can only be one-way. The agent can only go from the start point to the end point and cannot go from the end point to the start point.</p>
+<p>As shown in Figure 2-20, when the agent needs to find a path from the area on the left to the area on the right, the navigation area link component is required.</p>
+<p><img src="img/2-20.png" alt="2-20"></p>
+<p>(Figure 2-20)</p>
+<h3 id="22-generate-navigation-area"><a name="22-generate-navigation-area" class="anchor-navigation-ex-anchor" href="#22-generate-navigation-area"><i class="fa fa-link" aria-hidden="true"></i></a>2.2 Generate Navigation Area</h3>
+<p>To implement pathfinding navigation in the scene of Figure 2-1, you first need to generate a pathfinding area based on the terrain. Taking baking the graphics area as an example, you first need to outline the terrain using the graphics property of the sprite, as shown in Figure 2-21. Use the sprite to outline the mountain path (this is only for demonstration and does not strictly control the boundary).</p>
+<p><img src="img/2-21.png" alt="2-21"></p>
+<p>(Figure 2-21)</p>
+<p>The graphics of node sprite(7) is the same size as the background, and the 2D navigation mesh surface component is added to the node surface. The area flag is set to walk. The baking settings are shown in Figure 2-22,</p>
+<p><img src="img/2-22.png" alt="2-22"></p>
+<p>(Figure 2-22)</p>
+<p>The final baking effect is shown in Figure 2-23, which is all the passable areas.</p>
+<p><img src="img/2-23.png" alt="2-23" style="zoom:67%;"></p>
+<p>(Figure 2-23)</p>
+<h2 id="3-2d-navigation-agent"><a name="3-2d-navigation-agent" class="anchor-navigation-ex-anchor" href="#3-2d-navigation-agent"><i class="fa fa-link" aria-hidden="true"></i></a>3. 2D Navigation Agent</h2>
+<p>The navigation agent is a component used in the navigation system to control the movement and pathfinding of pathfinding objects such as characters or objects on the navigation mesh. It is the main component for the interaction between the pathfinding object and the navigation system and is responsible for handling the movement, obstacle avoidance, and path planning of the pathfinding object. This component is the key to achieving autonomous pathfinding and movement of the pathfinding object in a complex environment.</p>
+<p>The navigation agent is only circular, which simplifies calculations and greatly simplifies complex shapes. Moreover, the circle has no sharp corners, making the agent move more smoothly in the environment and less likely to get stuck or cross small obstacles.</p>
+<h3 id="31-component-properties"><a name="31-component-properties" class="anchor-navigation-ex-anchor" href="#31-component-properties"><i class="fa fa-link" aria-hidden="true"></i></a>3.1 Component Properties</h3>
+<p>Create a node in the scene and add the 2D navigation agent component to it, as shown in Figure 3-1,</p>
+<p><img src="img/3-1.png" alt="3-1"></p>
+<p>(Figure 3-1)</p>
+<p>After selecting the <code>agent type</code>, developers can adjust some properties of this navigation agent:</p>
+<table>
+<thead>
+<tr>
+<th>Chinese Property Name</th>
+<th>English Property Name</th>
+<th>Property Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Radius</td>
+<td>Radius</td>
+<td>Sets the collision radius of the agent. It determines the occupied area of the agent on the navigation mesh and affects its collision detection with obstacles.</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>Speed</td>
+<td>Sets the maximum movement speed of the agent. A larger speed allows the agent to reach the destination point faster.</td>
+</tr>
+<tr>
+<td>Max Acceleration</td>
+<td>Max Acceleration</td>
+<td>Sets the maximum acceleration of the agent. This determines the acceleration when the agent starts moving, stops moving, or changes direction.</td>
+</tr>
+<tr>
+<td>Avoidance Quality Level</td>
+<td>Quality</td>
+<td>Defines the avoidance quality of the agent. It affects the accuracy and efficiency of the path calculation of the agent on the navigation mesh. A higher quality can generate a more accurate and optimized path but may increase the computational cost.</td>
+</tr>
+<tr>
+<td>Avoidance Priority Level</td>
+<td>Priority</td>
+<td>Sets the avoidance priority of the agent. A higher priority allows the agent to have a higher priority during pathfinding and obstacle avoidance. The smaller the value, the higher the priority.</td>
+</tr>
+<tr>
+<td>Navigation Area Type</td>
+<td>Area Mask</td>
+<td>Sets the types of navigation areas that the agent can pass through. It can restrict the agent to move only within specific types of areas.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-character-pathfinding"><a name="32-character-pathfinding" class="anchor-navigation-ex-anchor" href="#32-character-pathfinding"><i class="fa fa-link" aria-hidden="true"></i></a>3.2 Character Pathfinding</h3>
+<p>First, you can create a Sprite node (Hit) in the scene and draw a graphic to display the position clicked by the mouse. Use another Sprite node (allow) and draw a graphic to represent the character for pathfinding, as shown in Figure 3-2,</p>
+<p><img src="img/3-2.png" alt="3-2"></p>
+<p>(Figure 3-2)</p>
+<p>Create a custom component script on the surface node in Figure 2-21:</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> Sprite <span class="token operator">=</span> Laya<span class="token punctuation">.</span>Sprite<span class="token punctuation">;</span>
+<span class="token keyword">import</span> Component <span class="token operator">=</span> Laya<span class="token punctuation">.</span>Component<span class="token punctuation">;</span>
+<span class="token keyword">import</span> Nav2DAgent <span class="token operator">=</span> Laya<span class="token punctuation">.</span>Nav2DAgent<span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span> regClass<span class="token punctuation">,</span> property <span class="token punctuation">}</span> <span class="token operator">=</span> Laya<span class="token punctuation">;</span>
+
+<span class="token decorator"><span class="token at operator">@</span><span class="token function">regClass</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">TestSprite</span> <span class="token keyword">extends</span> <span class="token class-name">Laya</span><span class="token punctuation">.</span>Script <span class="token punctuation">{</span>
+
+    <span class="token comment">// Used to display the position clicked by the mouse</span>
+    <span class="token decorator"><span class="token at operator">@</span><span class="token function">property</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token operator">:</span> Laya<span class="token punctuation">.</span>Sprite <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> hit<span class="token operator">:</span> Sprite<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> _temp<span class="token operator">:</span> Sprite<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> _allAgent<span class="token operator">:</span> Nav2DAgent<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token function">findCompents</span><span class="token punctuation">(</span>lists<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> sprite<span class="token operator">:</span> Sprite<span class="token punctuation">,</span> componentType<span class="token operator">:</span> <span class="token keyword">typeof</span> Component<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> comp <span class="token operator">=</span> sprite<span class="token punctuation">.</span><span class="token function">getComponent</span><span class="token punctuation">(</span>componentType<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>comp<span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            lists<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>comp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> sprite<span class="token punctuation">.</span>numChildren<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">let</span> child <span class="token operator">=</span> sprite<span class="token punctuation">.</span><span class="token function">getChildAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token keyword">as</span> Sprite<span class="token punctuation">;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">findCompents</span><span class="token punctuation">(</span>lists<span class="token punctuation">,</span> child<span class="token punctuation">,</span> componentType<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Executed after the component is activated. At this time, all nodes and components have been created, and this method is executed only once</span>
+    <span class="token function">onAwake</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> sprite <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>owner <span class="token keyword">as</span> Laya<span class="token punctuation">.</span>Sprite<span class="token punctuation">;</span>
+        <span class="token comment">//sprite.cache = true;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>_temp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Laya</span><span class="token punctuation">.</span><span class="token function">Sprite</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>owner<span class="token punctuation">.</span>scene<span class="token punctuation">.</span><span class="token function">addChild</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>_temp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">findCompents</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>_allAgent<span class="token punctuation">,</span> sprite<span class="token punctuation">.</span>scene<span class="token punctuation">,</span> Nav2DAgent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+    <span class="token function">onMouseClick</span><span class="token punctuation">(</span>evt<span class="token operator">:</span> Laya<span class="token punctuation">.</span>Event<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> pos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Laya</span><span class="token punctuation">.</span><span class="token function">Vector2</span><span class="token punctuation">(</span>evt<span class="token punctuation">.</span>stageX<span class="token punctuation">,</span> evt<span class="token punctuation">.</span>stageY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;click&quot;</span><span class="token punctuation">,</span> pos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>_temp<span class="token punctuation">.</span>graphics<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>_allAgent<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>agent<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            agent<span class="token punctuation">.</span>destination <span class="token operator">=</span> pos<span class="token punctuation">;</span>
+            <span class="token keyword">let</span> paths <span class="token operator">=</span> agent<span class="token punctuation">.</span><span class="token function">getCurrentPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>paths<span class="token punctuation">.</span>length <span class="token operator">&gt;=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">let</span> points<span class="token operator">:</span> <span class="token builtin">any</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+                paths<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>point<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                    points<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>point<span class="token punctuation">.</span>pos<span class="token punctuation">.</span>x<span class="token punctuation">,</span> point<span class="token punctuation">.</span>pos<span class="token punctuation">.</span>z<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>_temp<span class="token punctuation">.</span>graphics<span class="token punctuation">.</span><span class="token function">drawLines</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> points<span class="token punctuation">,</span> <span class="token string">&quot;#00000030&quot;</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>hit<span class="token punctuation">.</span><span class="token function">pos</span><span class="token punctuation">(</span>pos<span class="token punctuation">.</span>x<span class="token punctuation">,</span> pos<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>In this way, the position clicked by the mouse is the destination, and the character will automatically avoid obstacles and reach the destination. The effect is shown in the animation 3-3,</p>
+<p><img src="img/3-3.gif" alt="3-3" style="zoom: 50%;"></p>
+<p>(Animation 3-2) </p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9;Layabox 2022 all right reserved&#xFF0C;powered by <a href="https://layaAir.com/" target="_blank">LayaAir</a> Engine</span><span class="footer-modification">Update&#xFF1A;
+2025-02-20 10:53:46
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../../../physicsEditor/physics2D/readme.html" class="navigation navigation-prev " aria-label="Previous page: 2D Physics">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../readme.html" class="navigation navigation-next " aria-label="Next page: 3D Built-in Components">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2D Pathfinding","level":"1.17.4.5","depth":3,"next":{"title":"3D Built-in Components","level":"1.17.5","depth":2,"path":"IDE/Component/readme.md","ref":"IDE/Component/readme.md","articles":[{"title":"Meshes","level":"1.17.5.1","depth":3,"path":"IDE/Component/Mesh/readme.md","ref":"IDE/Component/Mesh/readme.md","articles":[]},{"title":"3D Rendering Components","level":"1.17.5.2","depth":3,"path":"IDE/Component/3DRender/readme.md","ref":"IDE/Component/3DRender/readme.md","articles":[{"title":"Particle Renderer","level":"1.17.5.2.1","depth":4,"path":"IDE/particleEditor3D/readme.md","ref":"IDE/particleEditor3D/readme.md","articles":[]},{"title":"Pixel Line","level":"1.17.5.2.2","depth":4,"path":"IDE/Component/PixelLine/readme.md","ref":"IDE/Component/PixelLine/readme.md","articles":[]},{"title":"Trail","level":"1.17.5.2.3","depth":4,"path":"IDE/Component/Trail/readme.md","ref":"IDE/Component/Trail/readme.md","articles":[]},{"title":"3D UI","level":"1.17.5.2.4","depth":4,"path":"IDE/uiEditor/3DUI/readme.md","ref":"IDE/uiEditor/3DUI/readme.md","articles":[]},{"title":"Reflection Probe","level":"1.17.5.2.5","depth":4,"path":"IDE/Component/ReflectionProbe/readme.md","ref":"IDE/Component/ReflectionProbe/readme.md","articles":[]},{"title":"Volumetric GI","level":"1.17.5.2.6","depth":4,"path":"IDE/Component/VolumetricGI/readme.md","ref":"IDE/Component/VolumetricGI/readme.md","articles":[]},{"title":"Static Batch","level":"1.17.5.2.7","depth":4,"path":"IDE/Component/StaticBatchVolume/readme.md","ref":"IDE/Component/StaticBatchVolume/readme.md","articles":[]},{"title":"LOD Group","level":"1.17.5.2.8","depth":4,"path":"IDE/Component/LOD/readme.md","ref":"IDE/Component/LOD/readme.md","articles":[]}]},{"title":"3D Lights","level":"1.17.5.3","depth":3,"path":"3D/Light/readme.md","ref":"3D/Light/readme.md","articles":[]},{"title":"3D Physics","level":"1.17.5.4","depth":3,"path":"IDE/physicsEditor/physics3D/readme.md","ref":"IDE/physicsEditor/physics3D/readme.md","articles":[]},{"title":"3D Pathfinding","level":"1.17.5.5","depth":3,"path":"IDE/Component/navMesh/readme.md","ref":"IDE/Component/navMesh/readme.md","articles":[]}]},"previous":{"title":"2D Physics","level":"1.17.4.4","depth":3,"path":"IDE/physicsEditor/physics2D/readme.md","ref":"IDE/physicsEditor/physics2D/readme.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","sidebar-style","anchor-navigation-ex","-lunr","-search","-sharing","search-pro","versions-select","-favicon","favicon-absolute","fontsettings","prism","splitter","code","flexible-alerts","auto-scroll-table","popup","tbfed-pagefooter","-theme-hqbook"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"","title":""},"tbfed-pagefooter":{"copyright":"Copyright ©Layabox 2022","modify_label":"Update：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"],"lang":{"flow":"typescript"},"ignore":["mermaid","eval-js"]},"splitter":{},"search-pro":{},"auto-scroll-table":{},"popup":{},"code":{"copyButtons":true},"versions-select":{"type":"branches"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./style/layabox-152.png","appleTouchIconPrecomposedMore":{},"favicon":"./style/favicon-32.ico","bookmark":"./style/favicon-32.ico"},"fontsettings":{"family":"sans","size":2,"theme":"white"},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"versions":{"options":[{"value":"https://layaair.com/3.3/doc-en/","text":"v3.3"},{"value":"https://layaair.com/3.2/doc-en/","text":"v3.2"},{"value":"https://layaair.com/3.1/doc-en/","text":"v3.1"},{"value":"https://layaair.com/3.0/doc-en/","text":"v3.0"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","style":{"website":"style/website.css"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LayaAir3 Engine Documentation · LAYABOX","gitbook":"*"},"file":{"path":"IDE/Component/2D/navMesh/readme.md","mtime":"2025-02-20T02:53:46.914Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-02-20T04:36:41.519Z"},"basePath":"../../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sidebar-style/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-versions-select/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+

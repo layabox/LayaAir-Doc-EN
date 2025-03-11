@@ -1,8 +1,7 @@
-# Official plug-in
+# Official Plugins
 
-LayaAir officially provides some plug-ins for developers to use:
+LayaAir officially provides some plugins for developers to use:
 
+### [LOD Mesh Reduction Plugin](./LOD/readme.md)
 
-
-### [LOD surface reduction plug-in](./LOD/readme.md)
-
+### [3D Skeletal Animation Baking Plugin](./BakeAnimation/readme.md)

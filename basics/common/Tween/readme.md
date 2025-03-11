@@ -1,341 +1,408 @@
-# Easing
-
-
+# Tween
 
 ## 1. Overview
 
-The greatest use of easing is to apply it to the movement performance of the design. It can combine physics, mathematics and other principles to truly simulate and display the movement phenomena in life, which is more in line with the laws of nature and human cognition, and allows objects to interact according to the user's expected behavior. Provide a continuity of experience. Easing animation is common in game development. It is one of the important factors to improve the game UI experience, such as dialog boxes popping up and closing, button animations appearing and disappearing, props flying into backpacks, etc. We can directly use the animation provided by the LayaAir engine Tween easing class and Ease class for quick implementation.
+The greatest use of tweening is in the motion performance of design. It can realistically simulate the motion phenomena in real life by combining principles of physics, mathematics, etc., which is more in line with natural laws and human cognition. It enables objects to interact according to the expected behavior of users, providing a continuous experience. Tween animations are quite common in game development and are one of the important factors to enhance the game UI experience, such as the pop-up and closing of dialog boxes, the appearance and disappearance of button animations, and the flying of items into the backpack, etc.
 
-Next we introduce the Tween and Ease classes respectively
+In previous versions, the LayaAir engine provided the Tween easing class and the Ease class to achieve the effect of tweening.
+
+Starting from the LayaAir 3.3 version, the Tween system has undergone comprehensive optimization and upgrading. These changes include compatibility with common usages such as Laya.Tween.to and Laya.Tween.from, maintaining most of the API unchanged, but no longer supporting the non-mainstream new Tween() usage.
+
+The types of tweening attributes not only support number but also add support for Vector2, Vector3, Vector4, Color, Point, and string-form color values. The new Tween object is designed to be very lightweight, so it is not reused by default to avoid problems caused by object reuse. In addition, the new system no longer uses Handler, thus eliminating the confusion caused by Handler reuse. At the same time, the improved Tween system supports more options and serial and parallel task functions, providing developers with a more flexible and powerful tool to achieve the desired animation effect.
 
 
 
 ## 2. Ease
 
-The `Ease` class defines a large number of easing functions to achieve the specific easing effect of the `Tween` animation. The Tween class of the LayaAir engine is used in combination with the Ease class to basically meet the easing effect requirements of game development.
+The `Ease` class defines a large number of easing functions to achieve the specific easing effect of the `Tween` animation. The combination of the Tween class and the Ease class of the LayaAir engine can basically meet the easing effect requirements of game development.
 
-We mainly look at the following easing effects to understand:
-
-
-
-### 2.1 Uniform motion (linearIn)
-
-In rare cases, uniform motion will be used, which will appear stiff. It does not conform to the laws of the physical world. In a real state of motion, the speed of an object will change with the state of motion.
-
-<img src="images/1.gif" style="zoom: 33%;" />
+Let's mainly look at the following several easing effects to understand:
 
 
 
-### 2.2 Acceleration (expoIn)
+### 2.1 Uniform Motion (linearIn)
 
-Start the movement at zero velocity and then increase the speed as you execute.
+In relatively few cases, uniform motion is used, which may seem rather stiff. It does not conform to the laws of the physical world. In a real motion state, the speed of an object changes with the motion state.
 
-<img src="images/2.gif" style="zoom:33%;" />
-
-
-
-### 2.3 Rapid acceleration (strongIn)
-
-Start the movement at zero velocity and then speed it up as you execute
-
-<img src="images/3.gif" style="zoom:33%;" />
+![2-1-1](img/2-1-1.gif)
 
 
 
-### 2.4 BackIn
+### 2.2 Accelerated Motion (expoIn)
 
-Start by moving backwards, then move in the opposite direction toward the target
+It starts the motion at zero speed and then accelerates the speed during execution.
 
-<img src="images/4.gif" style="zoom:33%;" />  
+![2-2-1](img/2-2-1.gif)
 
-More effects can be viewed through examples
+
+
+### 2.3 Fast Accelerated Motion (strongIn)
+
+It starts the motion at zero speed and then accelerates the speed during execution.
+
+![2-3-1](img/2-3-1.gif)
+
+
+
+### 2.4 Backward and Then Reverse (backIn)
+
+It starts by moving backward and then reverses to move towards the target.
+
+![2-4-1](img/2-4-1.gif)
 
 
 
 ## 3. Tween
 
-The `Tween` easing class is used to implement easing of the target object's attributes, such as target value settings such as the easing distance of the x or y axis of the target object, as well as settings such as easing start, stop, and cleanup.
+### 3.1 Basic Usage
 
+When using the new version of the Tween system, developers no longer need to pass complex parameters within a method. They only need to add or remove the corresponding methods to the code according to the requirements of the program design. This design makes the code concise and clear and is easy to modify.
 
-
-### 3.1 Introduction to commonly used APIs
-
-The easing class `Tween` provides more methods, and we commonly use two methods, namely `from()` and `to()`. The parameter settings of these two methods are exactly the same, but the effects are different. Different, from is to generate movement from the easing target point to the initial position (from the easing target position), and to is to generate movement from the initial position to the easing target position (to the easing target position), which will be detailed later with examples. Note, developers can first understand the basic instructions of these two methods:
+Next, let's take a look at a piece of code. This code provides a basic usage example of Tween:
 
 ```typescript
-	/**
- 	* From the props attribute, ease to the current state.
- 	* @param target target object (the object whose attribute value is about to be changed).
- 	* @param props Changed property list, such as {x:100,y:20,ease:Ease.backOut,complete:Handler.create(this,onComplete),update:new Handler(this,onComplete)}.
- 	* @param duration The time spent, in milliseconds.
- 	* @param ease easing type, the default is uniform motion.
- 	* @param complete End callback function.
- 	* @param delay delay execution time.
- 	* @param coverBefore Whether to cover the previous easing.
- 	* @param autoRecover Whether to automatically recycle, the default is true, and it will automatically recycle to the object pool after easing.
- 	* @return Returns the Tween object.
- 	*/
-	static from(target: any, props: any, duration: number, ease: Function = null, complete: Handler = null, delay: number = 0, coverBefore: boolean = false, autoRecover: boolean = true): Tween {
-    	return Pool.getItemByClass("tween", Tween)._create(target, props, duration, ease, complete, delay, coverBefore, false, autoRecover, true);
-	}
-    
-	/**
- 	* Easing the props property of the object to the target value.
- 	* @param target target object (the object whose attribute value is about to be changed).
- 	* @param props Changed property list, such as {x:100,y:20,ease:Ease.backOut,complete:Handler.create(this,onComplete),update:new Handler(this,onComplete)}.
- 	* @param duration The time spent, in milliseconds.
- 	* @param ease easing type, the default is uniform motion.
- 	* @param complete End callback function.
- 	* @param delay delay execution time.
- 	* @param coverBefore Whether to cover the previous easing.
- 	* @param autoRecover Whether to automatically recycle, the default is true, and it will automatically recycle to the object pool after easing.
- 	* @return Returns the Tween object.
- 	*/
-	static to(target: any, props: any, duration: number, ease: Function|null = null, complete: Handler|null = null, delay: number = 0, coverBefore: boolean = false, autoRecover: boolean = true): Tween {
-    	return Pool.getItemByClass("tween", Tween)._create(target, props, duration, ease, complete, delay, coverBefore, true, autoRecover, true);
-	}
+   /**
+    * Create a basic tween
+    * aSprite is a 2D sprite
+    */
+    Laya.Tween.create(aSprite).duration(1000).to("x", 500).to("y", 300);
+```
 
+Add this code to the script on the node, run it and view the effect, as shown in Figure 3-1-1:
+
+![3-1-1](img/3-1-1.gif)
+
+(Figure 3-1-1)
+
+Let's explain this code:
+
+**1.** Use the `create()` method to create a tween. This method can pass the target object of the tween as a parameter:
+
+```typescript
+        /**
+         * @zh Create a new tween object. Use the returned object to set the properties and other options of the tween.
+         * The tween starts automatically without the need for additional API calls. If you do not want the tween to be executed immediately, you can call pause and then resume later.
+         * @param target The target object of the tween. Can be empty.
+         * @param lifecycleOwner The lifecycle object. When destroyed, the tween will automatically stop. Generally, if the target object of the task has a destroyed property, there is no need to set this property. If the target object of the task does not have a destroyed property, this property can be set.
+         * @returns Returns a Tween object.
+         */
+         static create(target?: any, lifecycleOwner?: { destroyed: boolean; }): Tween;
+```
+
+If the target object of the tween is not an object with a lifecycle, such as a Transform3D, we can additionally pass a parameter to tell the underlying layer its associated lifecycle object.
+
+
+
+**2.** Use the `duration()` method to set the duration of the tween, with the unit of milliseconds (ms):
+
+```typescript
+        /**
+         * @zh Set the duration of the current task.
+         * @param value The duration, in milliseconds.
+         * @return The Tween object.
+         */
+        duration(value: number): this;
 ```
 
 
 
-### 3.2 Parameter description
-
-Both methods `to()` and `from()` support static methods, so we don't need to instantiate the Tween class to use it.
-
-The parameters of `to()` and `from()` are relatively simple to understand. Here we focus on the props, duration, ease, complete, and delay parameters.
-
-**props**
-
-props are the properties of the target object that need to be changed to produce the easing effect. The public properties of the object can be set, such as the most commonly used x, y position properties, and alpha transparency properties, as well as other properties such as rotation, axis, size, etc. The setting of attributes is in the form of object data, such as {x:100,y:20,ease:Ease.backOut,complete:Handler.create(this,onComplete),update:new Handler(this,onComplete)}
-
-**duration**
-
-duration is the time it takes to execute the easing effect, in milliseconds. The longer the time, the slower the easing effect.
-
-**ease**
-
-Ease is an easing type, which can use various functions defined under the Ease class to change the animation process.
-
-**complete**
-
-complete is the callback method after easing is completed. For example, when a button appears to be easing, we cannot allow the user to click it during the easing process. In this case, we can use the easing to complete the callback, and add button monitoring to the callback function.
-
-**delay**
-
-delay is the time of delayed execution. Later, the text easing fluctuation effect will be produced through delayed execution in the instance.
-
-
-
-### 3.3 Easing example
-
-In the following code, we first implement the text easing animation of the "LayaBox" character through the Tween.from() method.
-
-`from()` ：
+**3. ** Use the `to()` method to set the properties of the tween:
 
 ```typescript
-	//Create easing text
-	private createTween():void{
-    	//"LayaBox string total width"
-    	var w:number = 800;
-    	//The starting position of text creation (>>Use the right shift operator here, which is equivalent to /2. Using >> is more efficient)
-    	var offsetX:number = Laya.stage.width - w >> 1;
-    	//Displayed string
-    	var demoString:string = "LayaBox";
-    	var letterText:Laya.Text;
-    	//Create individual characters based on the "LayaBox" string length and use an easing animation for each individual character
-    	for(var i:number = 0,len:number = demoString.length;i<len;++i){
-        	//Create text by extracting individual characters one by one from the "LayaBox" string
-        	letterText = this.createLetter(demoString.charAt(i));
-        	letterText.x = w/len*i+offsetX;
-        	//Initial y attribute of text
-        	letterText.y = 300;
-        	//The object letterText attribute y moves from the easing target 100 to the initial y attribute 300. Each execution of the easing effect takes 3000 milliseconds. The easing type uses the elasticOut function method, and the delay interval is i*100 milliseconds.
-        	Laya.Tween.from(letterText,{y:100},3000,Laya.Ease.elasticOut,null,i*1000);
-    	}
-	}
-	//Create a single character text and load it to the stage
-	private createLetter(char:string):Laya.Text{
-    	var letter:Laya.Text = new Laya.Text();
-    	letter.text = char;
-    	letter.color = "#ffffff";
-    	letter.font = "Impact";
-    	letter.fontSize = 180;
-    	this.owner.addChild(letter);
-    	return letter;
-	}
+        /**
+         * @zh Tween the property of the object to the specified value.
+         * The property type can be a number, string, boolean, Vector2, Vector3, Vector4, Color. If it is a string, it is implicitly a color value.
+         * @param propName The property name.
+         * @param value The target value of the property.
+         * @return The Tween object.
+         */
+        to(propName: string, value: any): this;
 ```
 
-<img src="images/3-1.gif" style="zoom:50%;" />
-
-(Animation 3-1)
-
-Combined with the example code, and then through the motion effect of animation 3-1, we can see that after the text "Layabox" appears at the initial position (*y-axis 300*), it disappears instantly, and then is set from the easing method Tween.from The target `{ y : 100 }` (*y axis 100*) moves towards the initial position (easing effect from top to bottom).
-
-Because this method is first displayed at the initial position, and then disappears instantly from the easing target position to the initial position. It will create a visual difference and feel more like a bounce effect. So let's continue to understand the effects of Tween.to, and developers can choose which easing method to use according to their needs.
-
-`to()`: We can continue to use the above example, just change Tween.from to Tween.to
+In addition to the `to()` method, there are also two methods `from()` and `go()` that can be used to set the properties of the tween:
 
 ```typescript
-//The object letterText attribute y moves from the initial y attribute to the 100 attribute of the easing target. The easing effect takes 3000 milliseconds. The easing type uses the elasticOut function method, and the delay interval is 1000 milliseconds.
-Laya.Tween.to( letterText , {y:100}, 3000, Laya.Ease.elasticOut, null, 1000 );
+    /**
+        * @zh Tween the property of the object from the specified value to the current value.
+        * @param propName The property name.
+        * The property type can be a number, string, boolean, Vector2, Vector3, Vector4, Color. If it is a string, it is implicitly a color value.
+        * @param value The target value of the property.
+        * @return The Tween object.
+        */
+    	from(propName: string, value: any): this;
+
+        /**
+         * @zh Tween the property of the object from the specified start value to the specified end value.
+         * @param propName The property name.
+         * The property type can be a number, string, boolean, Vector2, Vector3, Vector4, Color. If it is a string, it is implicitly a color value.
+         * @param startValue The start value of the property.
+         * @param endValue The end value of the property.
+         * @return The Tween object.
+         */
+        go<T>(propName: string, startValue: T, endValue: T): this;
 ```
 
-The operation effect is shown in the animation 3-2.
-
-<img src="images/3-2.gif" style="zoom:50%;" />
-
-(Animation 3-2)
+There are many other methods in Tween to achieve various effects. They are not listed here. Developers in need can refer to the API documentation.
 
 
 
-### 3.4 Understanding Props parameters
+### 3.2 Lifecycle
 
-Regardless of Tween.from or Tween.to, the second parameter Props (property) can affect the motion trajectory of the easing effect, etc.
-
-Since the easing effects of Tween.from and Tween.to are originally opposite, Tween.from has a falling feeling, while Tween.to in GIF 3-2 has a bouncing upward feeling.
-
-If we swap the initial y attribute value with the easing target's y attribute value, let's take a look at the difference between the falling effect achieved using Tween.to and Tween.from.
-
-Continuing with the previous example, modify the code as follows.
+Developers can call the `kill()` method of the tween to prematurely end the tween. If the Tween object returned by the `create()` method is saved, the `kill()` method on the Tween can be directly called. In addition, the associated tween of the object can also be queried through the `Laya.Tween.getTween()` or `Laya.Tween.getTweens()` methods.
 
 ```typescript
-//Initial y attribute of text
-letterText.y = 100;
-//Laya.Tween.from(letterText,{y:100},3000,Laya.Ease.elasticOut,null,i*1000);//Comment this line and change Laya.Tween.from to Laya.Tween. to
-Laya.Tween.to(letterText, { y : 300 }, 3000, Laya.Ease.elasticOut, null, i * 1000);
+        // Get the first tween on the object
+        let tween = Tween.getTween(aSprite);
+        if (tween!= null)
+            tween.kill();
+
+        // Get all tweens on the object
+        let tweens = Tween.getTweens(sSprite);
+        tweens.forEach(tween => tween.kill());
 ```
 
-The running effect is shown in the animation 3-3
+The `kill()` method has an optional parameter `complete`. This parameter indicates whether the various properties need to be set to the final state when the `kill()` method is called to prematurely end the tween. For example, if there is a tween that moves the x-coordinate to 500 and the `kill()` method is called when it runs to x = 250, the x-coordinate will remain at 250; if `kill(true)` is called, the x-coordinate will be immediately set to 500.
 
- <img src="images/3-3.gif" style="zoom:50%;" />
+Call `kill(true)`:
 
-(Animation 3-3)
+![3-2-2](img/3-2-2.gif)
 
-Since in the animated picture 3-3, the initial y attribute is at 100, the effect of Tween.to is to move from the initial attribute to the attribute of the easing target. Therefore, when the y attribute of the easing target is 300, it will produce a movement from the initial y-axis of 100 to the y-axis of 300, which is the effect of falling. There will be a significant difference between implementing the falling effect with Tween.from. Therefore, developers should pay attention to the difference in effects between the two when using them.
+Call `kill(false)`:
 
+![3-2-1](img/3-2-1.gif)
 
-
-### 3.5 Understand the easing duration (*duration*) and delayed execution (*delay*) parameters
-
-Continuing to use the previous example, we change the third parameter duration to 1000 milliseconds and the sixth parameter delay to 100 milliseconds. The effect is as shown in the animation 3-4. Both the easing speed and the speed of the falling interval will produce obvious changes. Therefore, it can be seen that different animation effect goals can also be achieved by adjusting the duration or delay time. I won’t go into details here, developers can adjust the experience themselves.
-
-<img src="images/3-4.gif" style="zoom:50%;" />
-
-(Animation 3-4)
-
-The modified code for the effect of animation 3-4 is as follows:
+If the target object of the tween is destroyed, the tween will immediately end.
 
 ```typescript
-//Initial y attribute of text
-letterText.y = 100;
-//Laya.Tween.from(letterText,{y:100},3000,Laya.Ease.elasticOut,null,i*1000);//Comment this line and change Laya.Tween.from to Laya.Tween. to
-Laya.Tween.to(letterText, { y : 300 }, 1000, Laya.Ease.elasticOut, null, i * 100);
+        Laya.Tween.create(aSprite).duration(1000).to("x", 100)
+
+        aSprite.destroy(); // The above tween will immediately end
+```
+
+If the target object of the tween is not an object with a lifecycle, such as a Transform3D, we can additionally pass a parameter to tell the underlying layer its associated lifecycle object.
+
+```typescript
+        Laya.Tween.create(aCube.transform, aCube).duration(1000).to("x", 100)
+
+        aCube.destroy(); // The above tween will also immediately end
 ```
 
 
 
-### 3.6 Understanding ease parameters
+### 3.3 Callback Functions
 
-The fourth parameter ease corresponds to each method of the `laya.utils.Ease` class. In this section, we change it to the `Ease.bounceIn` effect, as shown in the animation 3-5.
+The Tween system supports three types of callbacks: start callback, update callback, and end callback.
 
-<img src="images/3-5.gif" style="zoom:50%;" />
-
-(Animation 3-5)
-
-The modified code for the effect of animation 3-5 is as follows:
+**Start Callback**: When the tween starts, the `onStart()` method will be called. It should be noted that the `delay()` method will cause the tween to be delayed in starting. If the developer calls the `delay()` method, the start callback of the tween will be executed after the delay ends.
 
 ```typescript
-//Initial y attribute of text
-letterText.y = 100;
-//Laya.Tween.from(letterText,{y:100},3000,Laya.Ease.elasticOut,null,i*1000);//Comment this line and change Laya.Tween.from to Laya.Tween. to
-Laya.Tween.to(letterText, { y : 300 }, 1000, Laya.Ease.bounceIn, null, i * 100);
+        Laya.Tween.create(aSprite).duration(1000).to("x", 100)
+            // The onStart method will be called 2000 milliseconds later
+            .delay(2000)
+            // Start callback
+           .onStart(tweener => {
+                // The final value of x is set to 200 in the start callback
+                tweener.endValue.set("x", 200);
+            });
+```
+
+**Update Callback**: The `onUpdata()` method will be called each time the tween is updated. The following code starts a purely calculated tween, and the specific effect will be implemented by the developer in onUpdate.
+
+```typescript
+        // Create a purely calculated tween
+        Laya.Tween.create(null).duration(1000).go(null, 0, 1000)
+            // Update callback
+           .onUpdate(tweener => {
+                let value = tweener.get(null);
+                // The developer can implement the specific effect here
+            });
+```
+
+**End Callback**: When the tween ends, the `then()` method will be called, and the developer can set the corresponding logic in it. It should be noted that when the `kill()` method is called and the parameter value is set to true, the end callback will also be called.
+
+```typescript
+        // Create the tween
+        let tween = Laya.Tween.create(aSprite).duration(1000).to("x", 0)
+            // End callback
+           .then(this.onComplete, this);
+
+        // The then() method will also be executed
+        if (tween!= null)
+            tween.kill(true);
 ```
 
 
 
-### 3.7 Understanding the completion callback (*complete*) parameters
+### 3.4 Easing Functions
 
-The fifth parameter complete is used to call back after executing the easing effect. We continue to use the previous example and add a callback method to make the font color turn red after the easing is completed.
-
-Usage example:
+Developers can set an easing function through the `ease()` method to achieve the adjustment of the speed of numerical changes.
 
 ```typescript
-Laya.Tween.to(letterText, { y : 300 }, 1000, Laya.Ease.bounceIn, Laya.Handler.create(this,this.changeColor,[letterText]), i * 100);
+    // When using the ease() method, an easing function can be passed as a parameter
+    Laya.Tween.create(aSprite).duration(1000).to("x", 600).ease(Laya.Ease.cubicOut);
+
+
+    // The function name can also be directly used
+    Laya.Tween.create(aSprite).duration(1000).to("x", 600).ease("cubicOut");
 ```
 
-The added changeColor method is as follows
+The running effect is as shown in the figure. It can be seen that the object starts to move at a relatively fast speed and gradually slows down during the movement:
+
+![3-4-1](img/3-4-1.gif)
+
+
+
+Some easing functions may have additional parameters. The developer can pass these parameters in the `ease()` method. For example, the `elasticOut()` method can additionally set the amplitude and effective time of elasticity.
 
 ```typescript
-	/**
- 	* Callback method after easing is completed
- 	* txt easing object
- 	*/    
-	private changeColor(txt:Laya.Text):void{
-    	//Change text font to red
-    	txt.color = "#ff0000";
-	}
+    // Pass parameters for the easing function
+    Laya.Tween.create(aSprite).duration(1000).to("x", 600).ease("elasticOut", 5);
 ```
 
-The code running effect is shown in Figure 3-6.
-
-<img src="images/3-6.gif" style="zoom:50%;" />
-
-(Animation 3-6)
 
 
-
-### 3.8 Implement process callback through Props parameters
-
-The complete (*complete callback*) parameter can be implemented not only in the fifth parameter, but also in the second parameter Props. However, in order to make the code clearer and easier to read, we do not recommend implementing the completion callback in Props.
-
-Here we only introduce how to implement update callback in Props. That is to say, if we want to execute the callback method during the easing process, it is impossible to implement the fifth parameter, because the fifth parameter must be executed after the easing is completed. Therefore, we continue to use the previous example and add a font color update callback in the Props parameter.
-
-Usage example:
+Developers can also customize the easing function
 
 ```typescript
-/**
-* The object letterText property y eases from 100 to 300, and the color is updated through the callback method every frame
-* Use 1000 milliseconds to complete the easing effect
-* The easing type uses bounceIn
-* After the easing effect of a single character ends, use the changeColor callback function to change the character to red
-* Execution with delay interval i*100 milliseconds
-*/
-Laya.Tween.to(letterText, { y : 300, update: new Laya.Handler(this, this.updateColor,[letterText])}, 1000, Laya.Ease.bounceIn, Laya.Handler.create(this,this.changeColor,[letterText]), i * 100);
+    // Call the developer-defined easing function
+    Laya.Tween.create(aSprite).duration(1000).to("x", 600).ease(myEase);
+
+    // The developer-defined easing function
+    function myEase(t: number, b: number, c: number, d: number) : number {
+        //...
+    }
 ```
 
-The added changeColor method is as follows
+
+
+### 3.5 Serial and Parallel
+
+This section mainly introduces two methods: `chain()` and `parallel()`.
+
+`chain()`: When developers want to execute multiple tweening effects sequentially, they can use the `chain()` method. This method will serialize multiple tweening effects together and execute these tweening effects one by one. For example, if the developer wants to move the x of aSprite to 600 within 1 second and then move the y to 400 within 2 seconds, the code can be set as follows:
 
 ```typescript
-	/**
- 	* Callback update method when easing is in progress
- 	* txt easing object
- 	*/
-	private updateColor(txt:Laya.Text):void{
-    	var c:number = Math.floor(Math.random()*3);
-    	switch (c) {
-        	case 0:
-            	txt.color = "#eee000";
-            	break;
-        	case 1:
-            	txt.color = "#ffffff";
-            	break;
-        	case 2:
-            	txt.color = "#ff0000";
-            	break;
-        	default:
-            	txt.color = "#eee000";
-            	break;
-    	}
-	}
+    // Serialize two tweening effects together
+    Laya.Tween.create(aSprite).duration(1000).to("x", 600)
+        .chain().duration(2000).to("y", 400);
 ```
 
-When the code is running, since the update callback is executed every frame, there is a flashing effect during the easing process. As shown in animation 3-7
+The running effect is as follows: 
 
-<img src="images/3-7.gif" style="zoom:50%;" />
-
-(Animation 3-7)
+![3-5-1](img/3-5-1.gif)
 
 
 
+The `chain()` method will inherit the target object of the previous tween by default. The developer can also change the target object by themselves. For example:
 
+```typescript
+    // Move the x of aSprite to 600 within 1 second, and then move the y of bSprite to 400 within 2 seconds
+    Laya.Tween.create(aSprite).duration(1000).to("x", 600)
+        .chain(bSprite).duration(2000).to("y", 400);
+```
+
+![3-5-2](img/3-5-2.gif)
+
+
+
+`parallel()`: Generally speaking, if we need to tween multiple properties simultaneously, we only need to continuously call `to()`, `from()`, or `go()`. However, these methods all share the same target object, duration, easing function, and other options. For example, if we call `duration(1000)`, then the duration of all tweens is one second; if at this time we want the duration of one tween to be 2 seconds, the `parallel()` method needs to be used. The `parallel()` method can allow multiple tweens to execute in parallel, and each tween can set different options. The example code is as follows:
+
+```typescript
+        // This code uses both serial and parallel methods
+        Laya.Tween.create(aSprite).duration(1000).to("x", 600)
+           .parallel().duration(2000).to("y", 400)
+           .chain().duration(1000).to("visible", false);
+```
+
+The above example achieves moving x to 600 within 1 second and moving y to 400 within 2 seconds simultaneously. After these two tweens are completed, delay for 1 second to execute visible = false.
+
+![3-5-3](img/3-5-3.gif)
+
+
+
+It should be noted that using the `kill()` method will terminate the entire tween, including all serial and parallel tasks. If it is necessary to terminate a single task, the findTweener can be used to obtain the task object of one of the segments.
+
+```typescript
+        // Create the tween and add a name to the tween
+        Laya.Tween.create(aSprite).name("first").duration(1000).to("x", 100)
+           .chain().duration(2000).to("y", 100);
+
+        // Find the tween based on the name
+        let tweener = Laya.Tween.findTweener("first");
+        if (tweener!= null) // It is necessary to check for null because if this tween has already completed execution, it will return null
+            tweener.kill(); // This will terminate this tween and immediately execute the next segment
+```
+
+
+
+### 3.6 Custom Interpolation Functions
+
+Developers can set custom interpolation functions through the `interp()` method. The engine has several built-in special interpolation functions that fulfill some common requirements.
+
+
+
+#### 3.6.1 Vibration Effect
+
+Using the interpolation function `Laya.Tween.shake` can achieve the effect of making an object vibrate for a period of time. The vibration effect does not use the final value, so the final value parameter of x in the `to()` method can be passed as 0.
+
+```typescript
+        // Create the tween
+        Laya.Tween.create(aSprite).duration(1000).to("x", 0)
+            // Achieve the vibration effect through the interpolation function
+          .interp(Laya.Tween.shake, 10);
+```
+
+The running effect is as follows:
+
+![3-6-1-1](img/3-6-1-1.gif)
+
+
+
+#### 3.6.2 Separate Color Channel Interpolation
+
+When performing tweening on color values of integer type or string type, the desired effect may not be obtained. For example, from 0x000000 to 0xFF0000, the red color does not deepen gradually as expected but various colors appear in the middle, as shown in the figure:
+
+![3-6-2-1](img/3-6-2-1.gif)
+
+
+
+In this case, it is necessary to separate the color channels and calculate for each channel; the built-in interpolation function `Laya.Tween.sperateChannel` in the engine can fulfill this requirement.
+
+```typescript
+        // Create the tween
+        Laya.Tween.create(aImage).duration(1000).go("color", "#000000", "#FF0000")
+            // Separate the color channels through the interpolation function
+          .interp(Laya.Tween.seperateChannel);
+```
+
+The running effect is as follows:
+
+![3-6-2-2](img/3-6-2-2.gif)
+
+
+
+#### 3.6.3 Curve Path
+
+Developers can use the built-in interpolation function `Laya.Tween.useCurvePath` of the engine to achieve the function of making an object move along a path. The path can consist of one or more segments of straight lines, quadratic Bezier curves, cubic Bezier curves, and B-spline curves. When using this interpolation, the initial and final values passed in to/from/go will be ignored, and the coordinate values are sampled completely from the curve.
+
+```typescript
+        // Create a path
+        let path = new Laya.CurvePath();
+        path.create(
+            // Set the points on the path
+            Laya.PathPoint.create(0, 0, 0),
+            Laya.PathPoint.create(-6, 1, 1),
+            Laya.PathPoint.create(3, 3, 3),
+        );
+
+        // Create the tween
+        Laya.Tween.create(aCube.transform, aCube)
+           .duration(2000)
+           .to("localPosition", Laya.Vector3.ZERO)
+            // Set the interpolation function to make the object move along the curve path
+          .interp(Laya.Tween.useCurvePath, path)
+```
+
+The running effect is as follows:
+
+![3-6-3-1](img/3-6-3-1.gif)

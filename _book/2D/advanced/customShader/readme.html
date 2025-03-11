@@ -1,0 +1,3964 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Custom 2D Shader · LayaAir3 Engine Documentation · LAYABOX</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-sidebar-style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-versions-select/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../../3D/advanced/customShader/readme.html" />
+    
+    
+
+    
+        <link rel="shortcut icon" href="./style/favicon-32.ico" type="image/x-icon">
+    
+    
+        <link rel="bookmark" href="./style/favicon-32.ico" type="image/x-icon">
+    
+    
+    
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./style/layabox-152.png">
+    
+    
+        
+    
+    
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" >
+            
+                <span>
+            
+                    
+                    Engine Introduction
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Engine History and Services
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../../../basics/readme.html">
+            
+                <a href="../../../basics/readme.html">
+            
+                    
+                    Engine Features Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../../../basics/UnityToLayaAir/readme.html">
+            
+                <a href="../../../basics/UnityToLayaAir/readme.html">
+            
+                    
+                    Unity to LayaAir Differences
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../../../basics/2.x-Upgrade/readme.html">
+            
+                <a href="../../../basics/2.x-Upgrade/readme.html">
+            
+                    
+                    2.x Engine Project Upgrade Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Development Environment
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../../basics/developmentEnvironment/download/readme.html">
+            
+                <a href="../../../basics/developmentEnvironment/download/readme.html">
+            
+                    
+                    Setting Up Basic Development Environment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../../basics/IDE/GUI/readme.html">
+            
+                <a href="../../../basics/IDE/GUI/readme.html">
+            
+                    
+                    IDE Development Interface
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../../../basics/IDE/layouts/readme.html">
+            
+                <a href="../../../basics/IDE/layouts/readme.html">
+            
+                    
+                    Custom Interface Layout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../../../basics/IDE/projecFolders/readme.html">
+            
+                <a href="../../../basics/IDE/projecFolders/readme.html">
+            
+                    
+                    Project Directory Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../../../basics/IDE/projectSettings/readme.html">
+            
+                <a href="../../../basics/IDE/projectSettings/readme.html">
+            
+                    
+                    Project Settings Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../../../basics/IDE/entry/readme.html">
+            
+                <a href="../../../basics/IDE/entry/readme.html">
+            
+                    
+                    Project Entry Point
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../../../basics/IDE/Hierarchy/readme.html">
+            
+                <a href="../../../basics/IDE/Hierarchy/readme.html">
+            
+                    
+                    Hierarchy Panel Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="../../../basics/IDE/assets/readme.html">
+            
+                <a href="../../../basics/IDE/assets/readme.html">
+            
+                    
+                    Project Asset Panel Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="../../../basics/IDE/Inspector/readme.html">
+            
+                <a href="../../../basics/IDE/Inspector/readme.html">
+            
+                    
+                    Inspector Panel Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.8" data-path="../../../basics/IDE/Game/readme.html">
+            
+                <a href="../../../basics/IDE/Game/readme.html">
+            
+                    
+                    Preview and Run Panel Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../../basics/IDE/helloWorld/readme.html">
+            
+                <a href="../../../basics/IDE/helloWorld/readme.html">
+            
+                    
+                    Development Process: Hello World
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../../3D/advanced/Unity/readme.html">
+            
+                <a href="../../../3D/advanced/Unity/readme.html">
+            
+                    
+                    Unity Asset Export Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Developer Fundamentals
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../../basics/language/readme.html">
+            
+                <a href="../../../basics/language/readme.html">
+            
+                    
+                    TS Language Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../../basics/DevTools/readme.html">
+            
+                <a href="../../../basics/DevTools/readme.html">
+            
+                    
+                    DevTools Debugging Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../../basics/LayaTree/readme.html">
+            
+                <a href="../../../basics/LayaTree/readme.html">
+            
+                    
+                    LayaTree Debugging Tool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../../basics/IDE/shortcutKeyCombinations/readme.html">
+            
+                <a href="../../../basics/IDE/shortcutKeyCombinations/readme.html">
+            
+                    
+                    IDE Shortcut Keys and Mouse Interaction Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Core Engine Features
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../../basics/common/Loader/readme.html">
+            
+                <a href="../../../basics/common/Loader/readme.html">
+            
+                    
+                    Resource Loading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../../basics/common/Scene/readme.html">
+            
+                <a href="../../../basics/common/Scene/readme.html">
+            
+                    
+                    Scene Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../../basics/common/Node/readme.html">
+            
+                <a href="../../../basics/common/Node/readme.html">
+            
+                    
+                    Node Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../../basics/common/Timer/readme.html">
+            
+                <a href="../../../basics/common/Timer/readme.html">
+            
+                    
+                    Timers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../../basics/common/Event/readme.html">
+            
+                <a href="../../../basics/common/Event/readme.html">
+            
+                    
+                    Event Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../../basics/common/Tween/readme.html">
+            
+                <a href="../../../basics/common/Tween/readme.html">
+            
+                    
+                    Tweening
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../../basics/common/Pool/readme.html">
+            
+                <a href="../../../basics/common/Pool/readme.html">
+            
+                    
+                    Object Pool
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    2D Basics
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../../basics/common/terms/readme.html">
+            
+                <a href="../../../basics/common/terms/readme.html">
+            
+                    
+                    Engine Basic Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../../IDE/uiEditor/basic/readme.html">
+            
+                <a href="../../../IDE/uiEditor/basic/readme.html">
+            
+                    
+                    UI Editor Basic Interaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../../IDE/uiEditor/widgets/readme.html">
+            
+                <a href="../../../IDE/uiEditor/widgets/readme.html">
+            
+                    
+                    UI Widget Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../displayObject/readme.html">
+            
+                <a href="../../displayObject/readme.html">
+            
+                    
+                    2D Basic Display Objects
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../../displayObject/Sprite/readme.html">
+            
+                <a href="../../displayObject/Sprite/readme.html">
+            
+                    
+                    Sprite
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../../displayObject/Animation/readme.html">
+            
+                <a href="../../displayObject/Animation/readme.html">
+            
+                    
+                    Animation Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="../../displayObject/Text/readme.html">
+            
+                <a href="../../displayObject/Text/readme.html">
+            
+                    
+                    Basic Text
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.4" data-path="../../displayObject/SoundNode/readme.html">
+            
+                <a href="../../displayObject/SoundNode/readme.html">
+            
+                    
+                    Audio Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.5" data-path="../../displayObject/VideoNode/readme.html">
+            
+                <a href="../../displayObject/VideoNode/readme.html">
+            
+                    
+                    Video Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../../IDE/uiEditor/uiComponent/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/readme.html">
+            
+                    
+                    UI Components Detailed
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.1" data-path="../../../IDE/uiEditor/uiComponent/Image/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/Image/readme.html">
+            
+                    
+                    Image Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.2" data-path="../../../IDE/uiEditor/uiComponent/Label/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/Label/readme.html">
+            
+                    
+                    Text Display Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.3" data-path="../../../IDE/uiEditor/uiComponent/TextInput/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/TextInput/readme.html">
+            
+                    
+                    Text Input Component
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.3.1" data-path="../../../IDE/uiEditor/uiComponent/TextArea/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/TextArea/readme.html">
+            
+                    
+                    Multi-line Text Input Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.4" data-path="../../../IDE/uiEditor/uiComponent/Clip/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/Clip/readme.html">
+            
+                    
+                    Bitmap Slice Component
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.4.1" data-path="../../../IDE/uiEditor/uiComponent/FontClip/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/FontClip/readme.html">
+            
+                    
+                    Font Slice Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.5" data-path="../../../IDE/uiEditor/uiComponent/Button/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/Button/readme.html">
+            
+                    
+                    Button Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.6" data-path="../../../IDE/uiEditor/uiComponent/scroll/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/scroll/readme.html">
+            
+                    
+                    Scrollbar Component
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.6.1" data-path="../../../IDE/uiEditor/uiComponent/HScrollBar/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/HScrollBar/readme.html">
+            
+                    
+                    Horizontal Scrollbar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.6.2" data-path="../../../IDE/uiEditor/uiComponent/VScrollBar/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/VScrollBar/readme.html">
+            
+                    
+                    Vertical Scrollbar
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.7" data-path="../../../IDE/uiEditor/uiComponent/slider/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/slider/readme.html">
+            
+                    
+                    Slider Component
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.7.1" data-path="../../../IDE/uiEditor/uiComponent/HSlider/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/HSlider/readme.html">
+            
+                    
+                    Horizontal Slider
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.7.2" data-path="../../../IDE/uiEditor/uiComponent/VSlider/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/VSlider/readme.html">
+            
+                    
+                    Vertical Slider
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.8" data-path="../../../IDE/uiEditor/uiComponent/ProgressBar/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/ProgressBar/readme.html">
+            
+                    
+                    Progress Bar Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.9" data-path="../../../IDE/uiEditor/uiComponent/Box/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/Box/readme.html">
+            
+                    
+                    Container Component
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.9.1" data-path="../../../IDE/uiEditor/uiComponent/HBox/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/HBox/readme.html">
+            
+                    
+                    Horizontal Layout Container
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.9.2" data-path="../../../IDE/uiEditor/uiComponent/VBox/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/VBox/readme.html">
+            
+                    
+                    Vertical Layout Container
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.9.3" data-path="../../../IDE/uiEditor/uiComponent/Panel/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/Panel/readme.html">
+            
+                    
+                    Panel Container
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.10" data-path="../../../IDE/uiEditor/uiComponent/List/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/List/readme.html">
+            
+                    
+                    List Component
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.10.1" data-path="../../../IDE/uiEditor/uiComponent/Tree/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/Tree/readme.html">
+            
+                    
+                    Tree List Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.11" data-path="../../../IDE/uiEditor/uiComponent/optionBox/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/optionBox/readme.html">
+            
+                    
+                    Option Box
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.11.1" data-path="../../../IDE/uiEditor/uiComponent/ComboBox/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/ComboBox/readme.html">
+            
+                    
+                    ComboBox Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.11.2" data-path="../../../IDE/uiEditor/uiComponent/Radio/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/Radio/readme.html">
+            
+                    
+                    Radio Button Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.11.3" data-path="../../../IDE/uiEditor/uiComponent/RadioGroup/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/RadioGroup/readme.html">
+            
+                    
+                    Radio Button Group Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.11.4" data-path="../../../IDE/uiEditor/uiComponent/CheckBox/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/CheckBox/readme.html">
+            
+                    
+                    Checkbox Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.12" data-path="../../../IDE/uiEditor/uiComponent/navigationMenu/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/navigationMenu/readme.html">
+            
+                    
+                    Navigation Menu Component
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.12.1" data-path="../../../IDE/uiEditor/uiComponent/Tab/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/Tab/readme.html">
+            
+                    
+                    Tab Group Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.12.2" data-path="../../../IDE/uiEditor/uiComponent/ViewStack/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/ViewStack/readme.html">
+            
+                    
+                    ViewStack Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.13" data-path="../../../IDE/uiEditor/uiComponent/ColorPicker/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/ColorPicker/readme.html">
+            
+                    
+                    Color Picker Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.14" data-path="../../../IDE/uiEditor/uiComponent/OpenDataContextView/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/OpenDataContextView/readme.html">
+            
+                    
+                    Open Data Context View Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.15" data-path="../../../IDE/uiEditor/Dialog/readme.html">
+            
+                <a href="../../../IDE/uiEditor/Dialog/readme.html">
+            
+                    
+                    Dialog View Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../../IDE/uiEditor/Area2D/readme.html">
+            
+                <a href="../../../IDE/uiEditor/Area2D/readme.html">
+            
+                    
+                    2D Area
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.6.1" data-path="../../../IDE/uiEditor/Area2D/Camera2D/readme.html">
+            
+                <a href="../../../IDE/uiEditor/Area2D/Camera2D/readme.html">
+            
+                    
+                    2D Camera
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../../../IDE/uiEditor/uiComponent/skeleton/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/skeleton/readme.html">
+            
+                    
+                    Skeleton Animation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.7.1" data-path="../../../IDE/Component/2D/2DRender/Spine2DRenderNode/readme.html">
+            
+                <a href="../../../IDE/Component/2D/2DRender/Spine2DRenderNode/readme.html">
+            
+                    
+                    Spine Skeleton Animation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7.2" data-path="../../../IDE/uiEditor/uiComponent/skeleton/sk/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/skeleton/sk/readme.html">
+            
+                    
+                    Built-in Skeleton Animation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../../../IDE/uiEditor/graphics/readme.html">
+            
+                <a href="../../../IDE/uiEditor/graphics/readme.html">
+            
+                    
+                    Drawing Graphics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../../../IDE/Component/2D/2DRender/readme.html">
+            
+                <a href="../../../IDE/Component/2D/2DRender/readme.html">
+            
+                    
+                    Rendering Components
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.9.1" data-path="../../../IDE/Component/2D/2DRender/Mesh2DRender/readme.html">
+            
+                <a href="../../../IDE/Component/2D/2DRender/Mesh2DRender/readme.html">
+            
+                    
+                    2D Mesh Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.2" data-path="../../../IDE/Component/2D/2DRender/Spine2DRenderNode/readme.html">
+            
+                <a href="../../../IDE/Component/2D/2DRender/Spine2DRenderNode/readme.html">
+            
+                    
+                    Spine Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.3" data-path="../../../IDE/Component/2D/2DRender/Trail2DRender/readme.html">
+            
+                <a href="../../../IDE/Component/2D/2DRender/Trail2DRender/readme.html">
+            
+                    
+                    2D Trail Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.4" data-path="../../../IDE/Component/2D/2DRender/Line2DRender/readme.html">
+            
+                <a href="../../../IDE/Component/2D/2DRender/Line2DRender/readme.html">
+            
+                    
+                    2D Line Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../../../IDE/uiEditor/Filter/readme.html">
+            
+                <a href="../../../IDE/uiEditor/Filter/readme.html">
+            
+                    
+                    UI Filter Effects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../../../IDE/uiEditor/runtime/readme.html">
+            
+                <a href="../../../IDE/uiEditor/runtime/readme.html">
+            
+                    
+                    UI Runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../../../IDE/uiEditor/use3D/readme.html">
+            
+                <a href="../../../IDE/uiEditor/use3D/readme.html">
+            
+                    
+                    2D Nodes Using 3D
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="../../../IDE/uiEditor/textureCompress/readme.html">
+            
+                <a href="../../../IDE/uiEditor/textureCompress/readme.html">
+            
+                    
+                    Texture Compression
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    3D Basics
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../../basics/3D/beginner/readme.html">
+            
+                <a href="../../../basics/3D/beginner/readme.html">
+            
+                    
+                    3D Concepts Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../../basics/3D/Transform/readme.html">
+            
+                <a href="../../../basics/3D/Transform/readme.html">
+            
+                    
+                    3D Transformations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../../IDE/sceneEditor/basic/readme.html">
+            
+                <a href="../../../IDE/sceneEditor/basic/readme.html">
+            
+                    
+                    3D Scene Editing Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../../IDE/sceneEditor/environment/readme.html">
+            
+                <a href="../../../IDE/sceneEditor/environment/readme.html">
+            
+                    
+                    3D Scene Environment Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../../3D/useModel/readme.html">
+            
+                <a href="../../../3D/useModel/readme.html">
+            
+                    
+                    Model and Animation Import Usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../../../3D/Sprite3D/readme.html">
+            
+                <a href="../../../3D/Sprite3D/readme.html">
+            
+                    
+                    Using 3D Sprites
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../../../3D/displayObject/readme.html">
+            
+                <a href="../../../3D/displayObject/readme.html">
+            
+                    
+                    3D Basic Display Objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../../../3D/Camera/readme.html">
+            
+                <a href="../../../3D/Camera/readme.html">
+            
+                    
+                    Using 3D Cameras
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../../../3D/Light/readme.html">
+            
+                <a href="../../../3D/Light/readme.html">
+            
+                    
+                    3D Lights and Shadows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../../../IDE/materialEditor/readme.html">
+            
+                <a href="../../../IDE/materialEditor/readme.html">
+            
+                    
+                    3D Material Editing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../../../IDE/uiEditor/3DUI/readme.html">
+            
+                <a href="../../../IDE/uiEditor/3DUI/readme.html">
+            
+                    
+                    Using 3D UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Particles
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../../IDE/particleEditor2D/readme.html">
+            
+                <a href="../../../IDE/particleEditor2D/readme.html">
+            
+                    
+                    2D Particles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../../IDE/particleEditor3D/readme.html">
+            
+                <a href="../../../IDE/particleEditor3D/readme.html">
+            
+                    
+                    3D Particles
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Animation
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../../../IDE/animationEditor/timelineGUI/readme.html">
+            
+                <a href="../../../IDE/animationEditor/timelineGUI/readme.html">
+            
+                    
+                    Timeline Animation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../../../IDE/animationEditor/aniController/readme.html">
+            
+                <a href="../../../IDE/animationEditor/aniController/readme.html">
+            
+                    
+                    Animation State Machine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../../../IDE/animationEditor/aniBake/readme.html">
+            
+                <a href="../../../IDE/animationEditor/aniBake/readme.html">
+            
+                    
+                    Animation Baking
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../../../IDE/uiEditor/uiComponent/skeleton/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/skeleton/readme.html">
+            
+                    
+                    Skeleton Animation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.4.1" data-path="../../../IDE/Component/2D/2DRender/Spine2DRenderNode/readme.html">
+            
+                <a href="../../../IDE/Component/2D/2DRender/Spine2DRenderNode/readme.html">
+            
+                    
+                    Spine Skeleton Animation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4.2" data-path="../../../IDE/uiEditor/uiComponent/skeleton/sk/readme.html">
+            
+                <a href="../../../IDE/uiEditor/uiComponent/skeleton/sk/readme.html">
+            
+                    
+                    Built-in Skeleton Animation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    IDE Assets
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../../../IDE/assets/model/readme.html">
+            
+                <a href="../../../IDE/assets/model/readme.html">
+            
+                    
+                    Model Asset Settings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../../../IDE/assets/prefab/readme.html">
+            
+                <a href="../../../IDE/assets/prefab/readme.html">
+            
+                    
+                    Prefabs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../../../IDE/assets/TileSet/readme.html">
+            
+                <a href="../../../IDE/assets/TileSet/readme.html">
+            
+                    
+                    Tile Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    Physics Engine
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../../../IDE/physicsEditor/physics2D/readme.html">
+            
+                <a href="../../../IDE/physicsEditor/physics2D/readme.html">
+            
+                    
+                    2D Physics Editor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../../../IDE/physicsEditor/physics3D/readme.html">
+            
+                <a href="../../../IDE/physicsEditor/physics3D/readme.html">
+            
+                    
+                    3D Physics Editor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../../../3D/advanced/customPhysicsEngine/readme.html">
+            
+                <a href="../../../3D/advanced/customPhysicsEngine/readme.html">
+            
+                    
+                    Custom Physics Engine
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    Shaders
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.11.1" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    Custom 2D Shader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../../../3D/advanced/customShader/readme.html">
+            
+                <a href="../../../3D/advanced/customShader/readme.html">
+            
+                    
+                    Custom 3D Shader
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    Blueprints
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../../../IDE/ShaderBlueprint/blueprint/readme.html">
+            
+                <a href="../../../IDE/ShaderBlueprint/blueprint/readme.html">
+            
+                    
+                    Program Blueprint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../../../IDE/ShaderBlueprint/ShaderBlueprint/readme.html">
+            
+                <a href="../../../IDE/ShaderBlueprint/ShaderBlueprint/readme.html">
+            
+                    
+                    Shader Blueprint
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    Device Interfaces and Adaptation
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../../../basics/common/adaptScreen/readme.html">
+            
+                <a href="../../../basics/common/adaptScreen/readme.html">
+            
+                    
+                    Screen Adaptation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../../../basics/common/Browser/readme.html">
+            
+                <a href="../../../basics/common/Browser/readme.html">
+            
+                    
+                    Browser Interface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../../../basics/common/device/motion/readme.html">
+            
+                <a href="../../../basics/common/device/motion/readme.html">
+            
+                    
+                    Gyroscope and Accelerometer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../../../basics/common/device/geolocation/readme.html">
+            
+                <a href="../../../basics/common/device/geolocation/readme.html">
+            
+                    
+                    Geolocation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.5" data-path="../../../basics/common/device/baiduMap/readme.html">
+            
+                <a href="../../../basics/common/device/baiduMap/readme.html">
+            
+                    
+                    Using Baidu Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <span>
+            
+                    
+                    Audio and Video
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../../../basics/common/device/media/readme.html">
+            
+                <a href="../../../basics/common/device/media/readme.html">
+            
+                    
+                    Audio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../../../basics/common/device/video/readme.html">
+            
+                <a href="../../../basics/common/device/video/readme.html">
+            
+                    
+                    Video
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    Network Communication
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../../../basics/common/network/HTTP/readme.html">
+            
+                <a href="../../../basics/common/network/HTTP/readme.html">
+            
+                    
+                    HTTP Communication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../../../basics/common/network/WebSocket/readme.html">
+            
+                <a href="../../../basics/common/network/WebSocket/readme.html">
+            
+                    
+                    WebSocket Communication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="../../../libs/Protobuf/readme.html">
+            
+                <a href="../../../libs/Protobuf/readme.html">
+            
+                    
+                    Protocol Buffer Communication
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" >
+            
+                <span>
+            
+                    
+                    Performance
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../../../basics/common/Stat/readme.html">
+            
+                <a href="../../../basics/common/Stat/readme.html">
+            
+                    
+                    Performance Statistics and Optimization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" data-path="../../performanceOptimization/readme.html">
+            
+                <a href="../../performanceOptimization/readme.html">
+            
+                    
+                    2D Performance Optimization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.3" data-path="../../../3D/advanced/performanceOptimization/readme.html">
+            
+                <a href="../../../3D/advanced/performanceOptimization/readme.html">
+            
+                    
+                    3D Performance Optimization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../../../IDE/Component/readme.html">
+            
+                <a href="../../../IDE/Component/readme.html">
+            
+                    
+                    3D Built-in Components
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../../../basics/common/Component/readme.html">
+            
+                <a href="../../../basics/common/Component/readme.html">
+            
+                    
+                    Entity Component System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="../../../IDE/customComponent/decorators/readme.html">
+            
+                <a href="../../../IDE/customComponent/decorators/readme.html">
+            
+                    
+                    Component Decorators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.3" data-path="../../../IDE/customComponent/componentProperties/readme.html">
+            
+                <a href="../../../IDE/customComponent/componentProperties/readme.html">
+            
+                    
+                    Component Property Code Usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4" data-path="../../../IDE/Component/2D/readme.html">
+            
+                <a href="../../../IDE/Component/2D/readme.html">
+            
+                    
+                    2D Built-in Components
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.4.1" data-path="../../../IDE/Component/2D/2DRender/readme.html">
+            
+                <a href="../../../IDE/Component/2D/2DRender/readme.html">
+            
+                    
+                    2D Rendering Components
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.4.1.1" data-path="../../../IDE/Component/2D/2DRender/Mesh2DRender/readme.html">
+            
+                <a href="../../../IDE/Component/2D/2DRender/Mesh2DRender/readme.html">
+            
+                    
+                    2D Mesh Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4.1.2" data-path="../../../IDE/Component/2D/2DRender/Spine2DRenderNode/readme.html">
+            
+                <a href="../../../IDE/Component/2D/2DRender/Spine2DRenderNode/readme.html">
+            
+                    
+                    Spine Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4.1.3" data-path="../../../IDE/Component/2D/2DRender/Trail2DRender/readme.html">
+            
+                <a href="../../../IDE/Component/2D/2DRender/Trail2DRender/readme.html">
+            
+                    
+                    2D Trail Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4.1.4" data-path="../../../IDE/Component/2D/2DRender/Line2DRender/readme.html">
+            
+                <a href="../../../IDE/Component/2D/2DRender/Line2DRender/readme.html">
+            
+                    
+                    2D Line Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4.1.5" data-path="../../../IDE/Component/2D/TileMapLayer/readme.html">
+            
+                <a href="../../../IDE/Component/2D/TileMapLayer/readme.html">
+            
+                    
+                    Tile Map Layer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4.1.6" data-path="../../../IDE/particleEditor2D/readme.html">
+            
+                <a href="../../../IDE/particleEditor2D/readme.html">
+            
+                    
+                    2D Particle Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4.2" data-path="../../../IDE/Component/2D/BaseLight2D/readme.html">
+            
+                <a href="../../../IDE/Component/2D/BaseLight2D/readme.html">
+            
+                    
+                    2D Lights and Meshes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.4.2.1" data-path="../../../IDE/Component/2D/DirectionLight2D/readme.html">
+            
+                <a href="../../../IDE/Component/2D/DirectionLight2D/readme.html">
+            
+                    
+                    2D Directional Light
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4.2.2" data-path="../../../IDE/Component/2D/SpriteLight2D/readme.html">
+            
+                <a href="../../../IDE/Component/2D/SpriteLight2D/readme.html">
+            
+                    
+                    2D Sprite Light
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4.2.3" data-path="../../../IDE/Component/2D/SpotLight2D/readme.html">
+            
+                <a href="../../../IDE/Component/2D/SpotLight2D/readme.html">
+            
+                    
+                    2D Spotlight
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4.2.4" data-path="../../../IDE/Component/2D/FreeformLight2D/readme.html">
+            
+                <a href="../../../IDE/Component/2D/FreeformLight2D/readme.html">
+            
+                    
+                    2D Freeform Light
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4.3" data-path="../../../IDE/Component/2D/LightOccluder2D/readme.html">
+            
+                <a href="../../../IDE/Component/2D/LightOccluder2D/readme.html">
+            
+                    
+                    2D Occluders and Shadows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4.4" data-path="../../../IDE/physicsEditor/physics2D/readme.html">
+            
+                <a href="../../../IDE/physicsEditor/physics2D/readme.html">
+            
+                    
+                    2D Physics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4.5" data-path="../../../IDE/Component/2D/navMesh/readme.html">
+            
+                <a href="../../../IDE/Component/2D/navMesh/readme.html">
+            
+                    
+                    2D Pathfinding
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5" data-path="../../../IDE/Component/readme.html">
+            
+                <a href="../../../IDE/Component/readme.html">
+            
+                    
+                    3D Built-in Components
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.5.1" data-path="../../../IDE/Component/Mesh/readme.html">
+            
+                <a href="../../../IDE/Component/Mesh/readme.html">
+            
+                    
+                    Meshes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5.2" data-path="../../../IDE/Component/3DRender/readme.html">
+            
+                <a href="../../../IDE/Component/3DRender/readme.html">
+            
+                    
+                    3D Rendering Components
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.5.2.1" data-path="../../../IDE/particleEditor3D/readme.html">
+            
+                <a href="../../../IDE/particleEditor3D/readme.html">
+            
+                    
+                    Particle Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5.2.2" data-path="../../../IDE/Component/PixelLine/readme.html">
+            
+                <a href="../../../IDE/Component/PixelLine/readme.html">
+            
+                    
+                    Pixel Line
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5.2.3" data-path="../../../IDE/Component/Trail/readme.html">
+            
+                <a href="../../../IDE/Component/Trail/readme.html">
+            
+                    
+                    Trail
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5.2.4" data-path="../../../IDE/uiEditor/3DUI/readme.html">
+            
+                <a href="../../../IDE/uiEditor/3DUI/readme.html">
+            
+                    
+                    3D UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5.2.5" data-path="../../../IDE/Component/ReflectionProbe/readme.html">
+            
+                <a href="../../../IDE/Component/ReflectionProbe/readme.html">
+            
+                    
+                    Reflection Probe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5.2.6" data-path="../../../IDE/Component/VolumetricGI/readme.html">
+            
+                <a href="../../../IDE/Component/VolumetricGI/readme.html">
+            
+                    
+                    Volumetric GI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5.2.7" data-path="../../../IDE/Component/StaticBatchVolume/readme.html">
+            
+                <a href="../../../IDE/Component/StaticBatchVolume/readme.html">
+            
+                    
+                    Static Batch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5.2.8" data-path="../../../IDE/Component/LOD/readme.html">
+            
+                <a href="../../../IDE/Component/LOD/readme.html">
+            
+                    
+                    LOD Group
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5.3" data-path="../../../3D/Light/readme.html">
+            
+                <a href="../../../3D/Light/readme.html">
+            
+                    
+                    3D Lights
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5.4" data-path="../../../IDE/physicsEditor/physics3D/readme.html">
+            
+                <a href="../../../IDE/physicsEditor/physics3D/readme.html">
+            
+                    
+                    3D Physics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5.5" data-path="../../../IDE/Component/navMesh/readme.html">
+            
+                <a href="../../../IDE/Component/navMesh/readme.html">
+            
+                    
+                    3D Pathfinding
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" >
+            
+                <span>
+            
+                    
+                    IDE Plugins
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../../../IDE/layapackage/plug-in/readme.html">
+            
+                <a href="../../../IDE/layapackage/plug-in/readme.html">
+            
+                    
+                    Plugin Development Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.2" data-path="../../../IDE/layapackage/pluginImport/readme.html">
+            
+                <a href="../../../IDE/layapackage/pluginImport/readme.html">
+            
+                    
+                    Plugin Import and Usage Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.3" data-path="../../../IDE/layapackage/Layabox/readme.html">
+            
+                <a href="../../../IDE/layapackage/Layabox/readme.html">
+            
+                    
+                    Official Plugins
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.3.1" data-path="../../../IDE/layapackage/Layabox/LOD/readme.html">
+            
+                <a href="../../../IDE/layapackage/Layabox/LOD/readme.html">
+            
+                    
+                    LOD Decimation Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.3.2" data-path="../../../IDE/layapackage/Layabox/BakeAnimation/readme.html">
+            
+                <a href="../../../IDE/layapackage/Layabox/BakeAnimation/readme.html">
+            
+                    
+                    3D Animation Baking Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" >
+            
+                <span>
+            
+                    
+                    External Scripts Usage
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="../../../basics/IDE/importJsLibrary/readme.html">
+            
+                <a href="../../../basics/IDE/importJsLibrary/readme.html">
+            
+                    
+                    External Script Import Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.2" data-path="../../../libs/Protobuf/readme.html">
+            
+                <a href="../../../libs/Protobuf/readme.html">
+            
+                    
+                    Practical Protocol Buffer Communication
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" >
+            
+                <span>
+            
+                    
+                    Advanced Usage
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="../readme.html">
+            
+                <a href="../readme.html">
+            
+                    
+                    2D Advanced
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1.1" data-path="../useText/readme.html">
+            
+                <a href="../useText/readme.html">
+            
+                    
+                    Advanced Text Usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.1.2" data-path="../../TiledMap/readme.html">
+            
+                <a href="../../TiledMap/readme.html">
+            
+                    
+                    TiledMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.1.3" data-path="../../useWorker/readme.html">
+            
+                <a href="../../useWorker/readme.html">
+            
+                    
+                    Multi-threading with Workers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.1.4" data-path="../../dom/readme.html">
+            
+                <a href="../../dom/readme.html">
+            
+                    
+                    Interacting with Native DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2" data-path="../../../3D/advanced/readme.html">
+            
+                <a href="../../../3D/advanced/readme.html">
+            
+                    
+                    3D Advanced
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.2.1" data-path="../../../3D/advanced/PostProcessing/readme.html">
+            
+                <a href="../../../3D/advanced/PostProcessing/readme.html">
+            
+                    
+                    Post Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2.2" data-path="../../../3D/advanced/CommandBuffer/readme.html">
+            
+                <a href="../../../3D/advanced/CommandBuffer/readme.html">
+            
+                    
+                    CommandBuffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2.3" data-path="../../../3D/WebXR/readme.html">
+            
+                <a href="../../../3D/WebXR/readme.html">
+            
+                    
+                    WebXR
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="../../../released/web/readme.html">
+            
+                <a href="../../../released/web/readme.html">
+            
+                    
+                    Web Build
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="../../../released/generalSetting/readme.html">
+            
+                <a href="../../../released/generalSetting/readme.html">
+            
+                    
+                    General Build Settings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.2" data-path="../../../released/commandLine/readme.html">
+            
+                <a href="../../../released/commandLine/readme.html">
+            
+                    
+                    Command-line Build
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.3" data-path="../../../released/web/readme.html">
+            
+                <a href="../../../released/web/readme.html">
+            
+                    
+                    Web Build
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.3.1" data-path="../../../released/CrazyGames/readme.html">
+            
+                <a href="../../../released/CrazyGames/readme.html">
+            
+                    
+                    CrazyGames
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.3.2" data-path="../../../released/Poki/readme.html">
+            
+                <a href="../../../released/Poki/readme.html">
+            
+                    
+                    Poki
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.4" data-path="../../../released/miniGame/readme.html">
+            
+                <a href="../../../released/miniGame/readme.html">
+            
+                    
+                    Mini Game Release
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.4.1" data-path="../../../released/miniGame/wechat/readme.html">
+            
+                <a href="../../../released/miniGame/wechat/readme.html">
+            
+                    
+                    WeChat Mini Game
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.4.1.1" data-path="../../../released/miniGame/wechat/Worker/readme.html">
+            
+                <a href="../../../released/miniGame/wechat/Worker/readme.html">
+            
+                    
+                    WeChat Mini Game Worker Usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.4.2" data-path="../../../released/miniGame/byteDance/readme.html">
+            
+                <a href="../../../released/miniGame/byteDance/readme.html">
+            
+                    
+                    Douyin Mini Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.4.3" data-path="../../../released/miniGame/OPPO/readme.html">
+            
+                <a href="../../../released/miniGame/OPPO/readme.html">
+            
+                    
+                    OPPO Mini Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.4.4" data-path="../../../released/miniGame/vivo/readme.html">
+            
+                <a href="../../../released/miniGame/vivo/readme.html">
+            
+                    
+                    Vivo Mini Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.4.5" data-path="../../../released/miniGame/xiaomi/readme.html">
+            
+                <a href="../../../released/miniGame/xiaomi/readme.html">
+            
+                    
+                    Xiaomi Mini Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.4.6" data-path="../../../released/miniGame/alipaygame/readme.html">
+            
+                <a href="../../../released/miniGame/alipaygame/readme.html">
+            
+                    
+                    Alipay Mini Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.4.7" data-path="../../../released/miniGame/tbgame/readme.html">
+            
+                <a href="../../../released/miniGame/tbgame/readme.html">
+            
+                    
+                    Taobao Mini Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5" data-path="../../../released/native/LayaNative_Introduction/readme.html">
+            
+                <a href="../../../released/native/LayaNative_Introduction/readme.html">
+            
+                    
+                    Native Package Development Basics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.5.1" data-path="../../../released/native/native_index/readme.html">
+            
+                <a href="../../../released/native/native_index/readme.html">
+            
+                    
+                    LayaNative is Not a Browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5.2" data-path="../../../released/native/screen_orientation/readme.html">
+            
+                <a href="../../../released/native/screen_orientation/readme.html">
+            
+                    
+                    Screen Orientation Settings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5.3" data-path="../../../released/native/loading_view_new/readme.html">
+            
+                <a href="../../../released/native/loading_view_new/readme.html">
+            
+                    
+                    Splash Screen (LoadingView)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5.4" data-path="../../../released/native/network/readme.html">
+            
+                <a href="../../../released/native/network/readme.html">
+            
+                    
+                    Network Monitoring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5.5" data-path="../../../released/native/LocalStrorage/readme.html">
+            
+                <a href="../../../released/native/LocalStrorage/readme.html">
+            
+                    
+                    LocalStorage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5.6" data-path="../../../released/native/LayaDcc_Tool/readme.html">
+            
+                <a href="../../../released/native/LayaDcc_Tool/readme.html">
+            
+                    
+                    Cache Tools - layadcc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5.7" data-path="../../../released/native/platform_communication/readme.html">
+            
+                <a href="../../../released/native/platform_communication/readme.html">
+            
+                    
+                    Native Platform Communication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5.8" data-path="../../../released/native/Secondary_Development/readme.html">
+            
+                <a href="../../../released/native/Secondary_Development/readme.html">
+            
+                    
+                    Secondary Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5.9" data-path="../../../released/native/built_in_font/readme.html">
+            
+                <a href="../../../released/native/built_in_font/readme.html">
+            
+                    
+                    Embedded Fonts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5.10" data-path="../../../released/native/zipUpdate/readme.html">
+            
+                <a href="../../../released/native/zipUpdate/readme.html">
+            
+                    
+                    Zip Update
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5.11" data-path="../../../released/native/apk_expansion/readme.html">
+            
+                <a href="../../../released/native/apk_expansion/readme.html">
+            
+                    
+                    APK Expansion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5.12" data-path="../../../released/native/Other_settings/readme.html">
+            
+                <a href="../../../released/native/Other_settings/readme.html">
+            
+                    
+                    Other Settings
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.6" data-path="../../../released/Windows/readme.html">
+            
+                <a href="../../../released/Windows/readme.html">
+            
+                    
+                    Windows Build
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.6.1" data-path="../../../released/Windows/extension/readme.html">
+            
+                <a href="../../../released/Windows/extension/readme.html">
+            
+                    
+                    Windows Extensions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.6.2" data-path="../../../released/Windows/steam/readme.html">
+            
+                <a href="../../../released/Windows/steam/readme.html">
+            
+                    
+                    Steam Extension Example
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.7" data-path="../../../released/Harmony/readme.html">
+            
+                <a href="../../../released/Harmony/readme.html">
+            
+                    
+                    HarmonyOS NEXT Build
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.7.1" data-path="../../../released/Harmony/debug/readme.html">
+            
+                <a href="../../../released/Harmony/debug/readme.html">
+            
+                    
+                    HarmonyOS NEXT JavaScript Debugging
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.8" data-path="../../../released/Android/readme.html">
+            
+                <a href="../../../released/Android/readme.html">
+            
+                    
+                    Android Build
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.8.1" data-path="../../../released/Android/debug/readme.html">
+            
+                <a href="../../../released/Android/debug/readme.html">
+            
+                    
+                    Android JavaScript Debugging
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.9" data-path="../../../released/iOS/readme.html">
+            
+                <a href="../../../released/iOS/readme.html">
+            
+                    
+                    iOS Build
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.10" data-path="../../../released/Linux/readme.html">
+            
+                <a href="../../../released/Linux/readme.html">
+            
+                    
+                    Linux Build
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >Custom 2D Shader</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#custom-2d-shader"><b></b>Custom 2D Shader</a></li><ul><li><span class="title-icon "></span><a href="#1-overview"><b></b>1. Overview</a></li><li><span class="title-icon "></span><a href="#2-structure-and-application"><b></b>2. Structure and Application</a></li><ul><li><span class="title-icon "></span><a href="#21-shader-file"><b></b>2.1 Shader File</a></li><li><span class="title-icon "></span><a href="#22-application-scope"><b></b>2.2 Application Scope</a></li><li><span class="title-icon "></span><a href="#23-file-structure"><b></b>2.3 File Structure</a></li></ul><li><span class="title-icon "></span><a href="#3-uniformmap"><b></b>3. uniformMap</a></li><ul><li><span class="title-icon "></span><a href="#31-common-variable-types-of-uniform"><b></b>3.1 Common Variable Types of uniform</a></li><li><span class="title-icon "></span><a href="#32-common-built-in-uniforms-in-the-engine"><b></b>3.2 Common Built-in uniforms in the Engine</a></li></ul><li><span class="title-icon "></span><a href="#4-attributemap"><b></b>4. attributeMap</a></li><li><span class="title-icon "></span><a href="#5-defines"><b></b>5. defines</a></li><ul><li><span class="title-icon "></span><a href="#51-basic-usage"><b></b>5.1 Basic Usage</a></li><li><span class="title-icon "></span><a href="#52-linkage-with-uniformmap"><b></b>5.2 Linkage with uniformMap</a></li></ul><li><span class="title-icon "></span><a href="#6-styles"><b></b>6. styles</a></li><ul><li><span class="title-icon "></span><a href="#61-for-uniformmap"><b></b>6.1 For uniformMap</a></li><li><span class="title-icon "></span><a href="#62-for-defines"><b></b>6.2 For defines</a></li></ul><li><span class="title-icon "></span><a href="#7-shaderpass"><b></b>7. shaderPass</a></li><ul><li><span class="title-icon "></span><a href="#71-what-is-shaderpass"><b></b>7.1 What is shaderPass</a></li><li><span class="title-icon "></span><a href="#72-vertex-shader"><b></b>7.2 Vertex Shader</a></li><li><span class="title-icon "></span><a href="#73-fragment-shader"><b></b>7.3 Fragment Shader</a></li></ul><li><span class="title-icon "></span><a href="#8-built-in-2d-shaders-in-layaair-ide"><b></b>8. Built-in 2D Shaders in LayaAir-IDE</a></li></ul></ul></div><a href="#custom-2d-shader" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="custom-2d-shader"><a name="custom-2d-shader" class="anchor-navigation-ex-anchor" href="#custom-2d-shader"><i class="fa fa-link" aria-hidden="true"></i></a>Custom 2D Shader</h1>
+<h2 id="1-overview"><a name="1-overview" class="anchor-navigation-ex-anchor" href="#1-overview"><i class="fa fa-link" aria-hidden="true"></i></a>1. Overview</h2>
+<p>The 2D custom shader (Shader) is a kind of advanced engine capability. This feature may not be common in the vast majority of projects. However, for those projects that pursue more refined effects and unique styles, the demand for custom shaders also exists.</p>
+<p>Currently, LayaAir can implement custom 2D texture rendering (Texture2D) and basic primitive rendering (Primitive).</p>
+<p>This documentation is an advanced one. Before reading, you need to have basic knowledge of Shader. You can refer to some concept introductions in the 3D shader <a href="../../../3D/advanced/customShader/readme.html">documentation</a>.</p>
+<h2 id="2-structure-and-application"><a name="2-structure-and-application" class="anchor-navigation-ex-anchor" href="#2-structure-and-application"><i class="fa fa-link" aria-hidden="true"></i></a>2. Structure and Application</h2>
+<h3 id="21-shader-file"><a name="21-shader-file" class="anchor-navigation-ex-anchor" href="#21-shader-file"><i class="fa fa-link" aria-hidden="true"></i></a>2.1 Shader File</h3>
+<p>The Shader in the LayaAir engine mainly centers around the.shader file. In the engine core, the.shader file is the textual representation of the Shader class object. Different.shader files will produce different shading effects, and these.shader files become the core factors for different materials.</p>
+<p>Right-click the menu bar in the project resource window -&gt; Select Create -&gt; Select Shader (as shown in Figure 2-1), there are two built-in 2D Shaders to choose from.</p>
+<p><img src="img/2-1.png" alt="2-1"></p>
+<p>(Figure 2-1)</p>
+<h3 id="22-application-scope"><a name="22-application-scope" class="anchor-navigation-ex-anchor" href="#22-application-scope"><i class="fa fa-link" aria-hidden="true"></i></a>2.2 Application Scope</h3>
+<p>The application of Shader in LayaAir is mainly reflected in the display of different material effects. Through the selection of different Shaders, the materials change, forming different effects. As shown in Figure 2-2, in the &quot;Property Settings&quot; panel of the material resource, you can select a custom Shader, and the Shader in <code>Laya</code> in the figure is the built-in Shader of the engine.</p>
+<p><img src="img/2-2.png" alt="2-2"></p>
+<p>(Figure 2-2)</p>
+<p>Then, the material file with the shader added can be added to the 2D node. As shown in Figure 2-3, taking Sprite as an example, add the material to the Material property.</p>
+<blockquote>
+<p>Each 2D component has a Material property.</p>
+</blockquote>
+<p><img src="img/2-3.png" alt="2-3"></p>
+<p>(Figure 2-3)</p>
+<p>To sum up, Shader is applied to the material, and the material is applied to the 2D node.</p>
+<h3 id="23-file-structure"><a name="23-file-structure" class="anchor-navigation-ex-anchor" href="#23-file-structure"><i class="fa fa-link" aria-hidden="true"></i></a>2.3 File Structure</h3>
+<p>In the LayaAir engine, to customize a.shader file, the following structure is required:</p>
+<p><code>Shader3D Start/End</code>: Shader file header/footer.</p>
+<p>Used to declare the rendering pass, rendering state, material parameters, etc.,</p>
+<pre class="language-"><code class="lang-glsl">Shader3D Start
+<span class="token punctuation">{</span>
+    <span class="token comment">//Fill in the attributes of the Shader rendering pass, rendering state, material parameters, etc. here</span>
+<span class="token punctuation">}</span>
+Shader3D End
+</code></pre>
+<p><code>name</code>: Shader name</p>
+<p>Used to explain the name of the Shader to distinguish the functions and effects of different Shaders. This name is also the name displayed in Figure 2-2.</p>
+<pre class="language-"><code class="lang-glsl">Shader3D Start
+<span class="token punctuation">{</span>
+    <span class="token comment">//Here, ShaderName is the name of the Shader, not the name of the.shader file</span>
+    name<span class="token operator">:</span> ShaderName 
+<span class="token punctuation">}</span>
+Shader3D End
+</code></pre>
+<p><code>shaderType</code>: Shader type (In 2D Shader, it is directly set to 2).</p>
+<pre class="language-"><code class="lang-glsl">Shader3D Start
+<span class="token punctuation">{</span>
+    shaderType<span class="token operator">:</span><span class="token number">2</span>
+<span class="token punctuation">}</span>
+Shader3D End
+</code></pre>
+<h2 id="3-uniformmap"><a name="3-uniformmap" class="anchor-navigation-ex-anchor" href="#3-uniformmap"><i class="fa fa-link" aria-hidden="true"></i></a>3. uniformMap</h2>
+<p>The uniform variable is a global variable in the shader program, which remains unchanged during a rendering process and is set and passed to the GPU by the CPU side. Global means that the uniform variable must be unique in each shader program object and can be accessed by any shader (vertex shader, fragment shader) of the shader program at any stage. Moreover, no matter what the uniform value is set to, the uniform will always retain their data until they are reset or updated.</p>
+<p>And the uniformMap is a data structure that stores such a bunch of uniform variables, and allows developers to understand the uniform variables used in the Shader more intuitively in a combined form.</p>
+<h3 id="31-common-variable-types-of-uniform"><a name="31-common-variable-types-of-uniform" class="anchor-navigation-ex-anchor" href="#31-common-variable-types-of-uniform"><i class="fa fa-link" aria-hidden="true"></i></a>3.1 Common Variable Types of uniform</h3>
+<p>Common types of uniform variables: Texture2D, Vector2, Vector4, Float, Matrix4x4.</p>
+<p><code>Texture2D</code>: Image type for 2D texture sampling.</p>
+<p><code>Vector2</code>: Two-dimensional vector, used for representing 2D coordinate positions.</p>
+<p><code>Vector4</code>: Four-dimensional vector, used for representing colors.</p>
+<p><code>Float</code>: Floating-point type.</p>
+<p><code>Matrix4X4</code>: 4X4 homogeneous matrix.</p>
+<pre class="language-"><code class="lang-glsl">Shader3D Start
+<span class="token punctuation">{</span>
+    name<span class="token operator">:</span>Sprite2DTextureShader<span class="token punctuation">,</span>
+    shaderType<span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span>
+    uniformMap<span class="token operator">:</span><span class="token punctuation">{</span>
+        u_MainTex <span class="token operator">:</span> <span class="token punctuation">{</span>type<span class="token operator">:</span> Texture2D<span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token string">&quot;white&quot;</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        u_SampleTexcoord <span class="token operator">:</span> <span class="token punctuation">{</span>type<span class="token operator">:</span> Vector2<span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        u_Color <span class="token operator">:</span> <span class="token punctuation">{</span>type<span class="token operator">:</span>Vector4<span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        u_spend <span class="token operator">:</span> <span class="token punctuation">{</span>type<span class="token operator">:</span>Float<span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span><span class="token number">1.0</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        u_defaultMat <span class="token operator">:</span> <span class="token punctuation">{</span>type<span class="token operator">:</span>Matrix4x4<span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span><span class="token punctuation">[</span>
+        <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span>
+        <span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token number">0.0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+Shader3D End
+</code></pre>
+<h3 id="32-common-built-in-uniforms-in-the-engine"><a name="32-common-built-in-uniforms-in-the-engine" class="anchor-navigation-ex-anchor" href="#32-common-built-in-uniforms-in-the-engine"><i class="fa fa-link" aria-hidden="true"></i></a>3.2 Common Built-in uniforms in the Engine</h3>
+<blockquote>
+<p>Note: The other uniform variables involved in the engine can be found in the xx.glsl file in the LayaAir engine source code.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Variable Name</th>
+<th style="text-align:left">Description</th>
+<th>Belonging GLSL File (High-level operations are not recommended to be used directly)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">u_mmat</td>
+<td style="text-align:left">2D transformation matrix</td>
+<td>Sprite2DVertex.glsl</td>
+</tr>
+<tr>
+<td style="text-align:left">u_spriteTexture</td>
+<td style="text-align:left">Sprite texture</td>
+<td>Sprite2DFrag.glsl</td>
+</tr>
+<tr>
+<td style="text-align:left">u_color</td>
+<td style="text-align:left">Color</td>
+<td>Sprite2DFrag.glsl</td>
+</tr>
+<tr>
+<td style="text-align:left">u_colorAdd</td>
+<td style="text-align:left">Color overlay</td>
+<td>Sprite2DFrag.glsl</td>
+</tr>
+<tr>
+<td style="text-align:left">u_clipMatPos</td>
+<td style="text-align:left">Clipping position</td>
+<td>Sprite2DVertex.glsl</td>
+</tr>
+<tr>
+<td style="text-align:left">u_clipMatDir</td>
+<td style="text-align:left">Clipping direction</td>
+<td>Sprite2DVertex.glsl</td>
+</tr>
+<tr>
+<td style="text-align:left">u_blurInfo</td>
+<td style="text-align:left">Blurring information</td>
+<td>Sprite2DFrag.glsl</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-attributemap"><a name="4-attributemap" class="anchor-navigation-ex-anchor" href="#4-attributemap"><i class="fa fa-link" aria-hidden="true"></i></a>4. attributeMap</h2>
+<p>The attributeMap consists of individual attributes. Attributes mainly include two types: basic vertex data and texture-related data, and they are usually read-only. These attribute data are processed in the <strong>vertex shader</strong> and then passed to the fragment shader for the final color calculation. The entire process manages the state and data of the Shader through the <code>Value2D</code> class of the engine.</p>
+<ul>
+<li>Basic vertex data:</li>
+</ul>
+<p><code>a_position</code>: Vertex position data.</p>
+<p><code>a_attribColor</code>: Vertex color data.</p>
+<ul>
+<li>Texture-related data:</li>
+</ul>
+<p><code>a_posuv</code>: Composite data containing position and UV coordinates.</p>
+<p><code>a_attribColor</code>: Vertex color data.</p>
+<p><code>a_attribFlags</code>: Texture flag data.</p>
+<p>Regarding attributes, when developers customize the Shader, they usually need to follow the following rules:</p>
+<p>(1) Must use the attribute names and structures predefined by the engine.</p>
+<p>(2) These attributes can only be used in the vertex shader. If they need to be used in the fragment shader, they need to be passed through varying.</p>
+<p>(3) Generally, do not add new attributes at will, just use the predefined ones of the engine directly.</p>
+<pre class="language-"><code class="lang-glsl">Shader3D Start
+<span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    attributeMap<span class="token operator">:</span> <span class="token punctuation">{</span>
+        a_posuv<span class="token operator">:</span> Vector4<span class="token punctuation">,</span>
+        a_attribColor<span class="token operator">:</span> Vector4<span class="token punctuation">,</span>
+        a_attribFlags<span class="token operator">:</span> Vector4<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+Shader3D End
+</code></pre>
+<h2 id="5-defines"><a name="5-defines" class="anchor-navigation-ex-anchor" href="#5-defines"><i class="fa fa-link" aria-hidden="true"></i></a>5. defines</h2>
+<h3 id="51-basic-usage"><a name="51-basic-usage" class="anchor-navigation-ex-anchor" href="#51-basic-usage"><i class="fa fa-link" aria-hidden="true"></i></a>5.1 Basic Usage</h3>
+<p>Macro switches can be used to control the Shader instructions of different branch conditions in the vertex shader and the fragment shader. In defines, the basic structure of the macro switch is:</p>
+<p><code>defineName</code>: The name of the macro switch.</p>
+<p><code>type</code>: Generally bool, true or false triggers two different branches.</p>
+<p><code>default</code>: When set to true, it is displayed as checked in the material property settings panel by default; when set to false, it is displayed as unchecked in the material property panel.</p>
+<p><code>private</code>: When the value is false, in the Shader window of the material&apos;s property settings panel, the macro switch will be displayed as a check switch for developers to control the opening and closing of the macro as needed on the panel; when the private value is true, the check switch is not displayed.</p>
+<pre class="language-"><code class="lang-glsl">Shader3D Start
+<span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    defines<span class="token operator">:</span> <span class="token punctuation">{</span>
+        TEXTUREVS<span class="token operator">:</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token keyword">bool</span><span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span> private<span class="token operator">:</span> <span class="token keyword">false</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        GRAY<span class="token operator">:</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token keyword">bool</span><span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token keyword">false</span><span class="token punctuation">,</span> private<span class="token operator">:</span> <span class="token keyword">false</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+Shader3D End
+</code></pre>
+<p>The figure 5-1 below shows the effect of the above defines in the material&apos;s property settings panel,</p>
+<p><img src="img/5-1.png" alt="5-1"></p>
+<p>(Figure 5-1)</p>
+<h3 id="52-linkage-with-uniformmap"><a name="52-linkage-with-uniformmap" class="anchor-navigation-ex-anchor" href="#52-linkage-with-uniformmap"><i class="fa fa-link" aria-hidden="true"></i></a>5.2 Linkage with uniformMap</h3>
+<p>The macro switch in defines can be linked with the global attribute in the uniformMap. For example, in the following sample code:</p>
+<pre class="language-"><code class="lang-glsl">Shader3D Start
+<span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    uniformMap<span class="token operator">:</span><span class="token punctuation">{</span>
+        <span class="token comment">//Modify u_mainTex and define A at the same time</span>
+        u_mainTex<span class="token operator">:</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> Texture2D<span class="token punctuation">,</span> define<span class="token operator">:</span> A <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        <span class="token comment">//Modify u_noiseMap and define B and C at the same time</span>
+        u_noiseMap<span class="token operator">:</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> Texture2D<span class="token punctuation">,</span> define<span class="token operator">:</span> <span class="token punctuation">[</span>B<span class="token punctuation">,</span>C<span class="token punctuation">]</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    defines<span class="token operator">:</span> <span class="token punctuation">{</span>
+        A <span class="token operator">:</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> Bool <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        B <span class="token operator">:</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> Bool <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        C <span class="token operator">:</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> Bool <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+Shader3D End
+</code></pre>
+<p>In the material&apos;s property settings panel, adding a texture to u_mainTex will make A checked; adding a texture to u_noiseMap will make B and C checked. The effect is shown in Animated GIF 5-2.</p>
+<p><img src="img/5-2.gif" alt="5-2"></p>
+<p>(Animated GIF 5-2)</p>
+<h2 id="6-styles"><a name="6-styles" class="anchor-navigation-ex-anchor" href="#6-styles"><i class="fa fa-link" aria-hidden="true"></i></a>6. styles</h2>
+<p>In uniformMap or defines, the display details of uniform or define on the UI can be adjusted directly, or these details can be moved to the styles section to make uniformMap and defines more concise.</p>
+<h3 id="61-for-uniformmap"><a name="61-for-uniformmap" class="anchor-navigation-ex-anchor" href="#61-for-uniformmap"><i class="fa fa-link" aria-hidden="true"></i></a>6.1 For uniformMap</h3>
+<p>Originally in the uniformMap, more details need to be defined. For example (original writing):</p>
+<pre class="language-"><code class="lang-glsl">    uniformMap<span class="token operator">:</span><span class="token punctuation">{</span>
+        u_Number<span class="token operator">:</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> Float<span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">,</span> alias<span class="token operator">:</span><span class="token string">&quot;Number&quot;</span><span class="token punctuation">,</span>  range<span class="token operator">:</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">,</span> fractionDigits<span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre>
+<p>If there are many details, for the conciseness of the uniformMap, these details can be moved to styles:</p>
+<pre class="language-"><code class="lang-glsl">    uniformMap<span class="token operator">:</span><span class="token punctuation">{</span>
+        u_Number<span class="token operator">:</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> Float<span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span><span class="token number">0</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    styles<span class="token operator">:</span> <span class="token punctuation">{</span>
+        u_Number<span class="token operator">:</span> <span class="token punctuation">{</span> caption<span class="token operator">:</span><span class="token string">&quot;Number&quot;</span><span class="token punctuation">,</span> range<span class="token operator">:</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">,</span> fractionDigits<span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre>
+<h3 id="62-for-defines"><a name="62-for-defines" class="anchor-navigation-ex-anchor" href="#62-for-defines"><i class="fa fa-link" aria-hidden="true"></i></a>6.2 For defines</h3>
+<p>The more important function of styles is to define attributes that are only used for the UI and do not belong to uniform and define. For example:</p>
+<pre class="language-"><code class="lang-glsl">    defines<span class="token operator">:</span> <span class="token punctuation">{</span>
+        RAIN <span class="token operator">:</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> Bool<span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        SNOWY <span class="token operator">:</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> Bool<span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token keyword">false</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    styles<span class="token operator">:</span> <span class="token punctuation">{</span>
+        RAIN <span class="token operator">:</span> <span class="token punctuation">{</span> caption<span class="token operator">:</span> <span class="token string">&quot;Rain&quot;</span><span class="token punctuation">,</span> inspector <span class="token operator">:</span> null <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">//inspector is null, not displayed in the property panel</span>
+        SNOWY <span class="token operator">:</span> <span class="token punctuation">{</span> caption<span class="token operator">:</span> <span class="token string">&quot;Snowy&quot;</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        <span class="token comment">// Define attributes that do not belong to uniform and define</span>
+        weather <span class="token operator">:</span> <span class="token punctuation">{</span> caption<span class="token operator">:</span><span class="token string">&quot;Weather&quot;</span><span class="token punctuation">,</span> inspector<span class="token operator">:</span> RadioGroup<span class="token punctuation">,</span> options<span class="token operator">:</span> <span class="token punctuation">{</span> members<span class="token operator">:</span> <span class="token punctuation">[</span>RAIN<span class="token punctuation">,</span> SNOWY<span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre>
+<p>RAIN and SNOWY are in defines, but in styles, the inspector of RAIN is null, so it is not displayed. SNOWY is displayed normally. Weather is an attribute that is only used for the UI and does not belong to uniform and define. The effect is shown in Figure 6-1.</p>
+<p><img src="img/6-1.png" alt="6-1"></p>
+<p>(Figure 6-1)</p>
+<h2 id="7-shaderpass"><a name="7-shaderpass" class="anchor-navigation-ex-anchor" href="#7-shaderpass"><i class="fa fa-link" aria-hidden="true"></i></a>7. shaderPass</h2>
+<h3 id="71-what-is-shaderpass"><a name="71-what-is-shaderpass" class="anchor-navigation-ex-anchor" href="#71-what-is-shaderpass"><i class="fa fa-link" aria-hidden="true"></i></a>7.1 What is shaderPass</h3>
+<p>The shaderPass can be understood as the rendering scheme of the Shader. Each Shader has at least one shaderPass and can have multiple shaderPasses. It divides the Shader object into multiple parts, which are respectively compatible with different hardware, rendering pipelines and runtime setting information. However, too many shaderPasses can cause a decrease in rendering efficiency and performance bottlenecks.</p>
+<pre class="language-"><code class="lang-glsl">Shader3D Start
+<span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    shaderPass<span class="token operator">:</span><span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token comment">//Shader VS/FS Info here</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+Shader3D End
+</code></pre>
+<p>The shaderPass mainly defines the vertex shader and the fragment shader. For example,</p>
+<pre class="language-"><code class="lang-glsl">Shader3D Start
+<span class="token punctuation">{</span>
+    type<span class="token operator">:</span>Shader3D<span class="token punctuation">,</span>
+    name<span class="token operator">:</span>Sprite2DTextureShader<span class="token punctuation">,</span>
+    shaderType<span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span>
+    uniformMap<span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    attributeMap<span class="token operator">:</span> <span class="token punctuation">{</span>
+        a_posuv<span class="token operator">:</span> Vector4<span class="token punctuation">,</span>
+        a_attribColor<span class="token operator">:</span> Vector4<span class="token punctuation">,</span>
+        a_attribFlags<span class="token operator">:</span> Vector4<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    defines<span class="token operator">:</span> <span class="token punctuation">{</span>
+        TEXTUREVS<span class="token operator">:</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token keyword">bool</span><span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span> private<span class="token operator">:</span> <span class="token keyword">false</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        GRAY<span class="token operator">:</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token keyword">bool</span><span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token keyword">false</span><span class="token punctuation">,</span> private<span class="token operator">:</span> <span class="token keyword">false</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    shaderPass<span class="token operator">:</span><span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            pipeline<span class="token operator">:</span>Forward<span class="token punctuation">,</span>
+            VS<span class="token operator">:</span>textureVS<span class="token punctuation">,</span>
+            FS<span class="token operator">:</span>texturePS
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+Shader3D End
+</code></pre>
+<p>This Shader has only one shaderPass. The content of the vertex shader is textureVS, the content of the fragment shader is texturePS, and the rendering mode is forward rendering.</p>
+<p>When implementing the specific vertex shader (VS) and fragment shader (PS), you need to add the start and end flags: <code>GLSL Start</code> / <code>GLSL End</code>.</p>
+<pre class="language-"><code class="lang-glsl">GLSL Start
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span><span class="token expression">GLSL textureVS</span></span>
+    <span class="token comment">// VS</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">end</span><span class="token expression">GLSL</span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span><span class="token expression">GLSL texturePS</span></span>
+    <span class="token comment">// PS</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">end</span><span class="token expression">GLSL</span></span>
+
+GLSL End
+</code></pre>
+<p>Among them, #defineGLSL &quot;name&quot; / #endGLSL are the VS and FS fragment markers corresponding to the shaderPass.</p>
+<h3 id="72-vertex-shader"><a name="72-vertex-shader" class="anchor-navigation-ex-anchor" href="#72-vertex-shader"><i class="fa fa-link" aria-hidden="true"></i></a>7.2 Vertex Shader</h3>
+<p>In the VS fragment, vertex information needs to be obtained and the final vertex position needs to be calculated. The code is as follows:</p>
+<pre class="language-"><code class="lang-glsl"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span><span class="token expression">GLSL textureVS</span></span>
+
+    <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">SHADER_NAME</span> <span class="token expression">Sprite2DTextureShader</span></span>
+    <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&quot;Sprite2DVertex.glsl&quot;</span><span class="token expression"><span class="token punctuation">;</span></span></span>
+
+    <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        vertexInfo info<span class="token punctuation">;</span>
+        <span class="token function">getVertexInfo</span><span class="token punctuation">(</span>info<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        v_cliped <span class="token operator">=</span> info<span class="token punctuation">.</span>cliped<span class="token punctuation">;</span>
+        v_texcoordAlpha <span class="token operator">=</span> info<span class="token punctuation">.</span>texcoordAlpha<span class="token punctuation">;</span>
+        v_useTex <span class="token operator">=</span> info<span class="token punctuation">.</span>useTex<span class="token punctuation">;</span>
+        v_color <span class="token operator">=</span> info<span class="token punctuation">.</span>color<span class="token punctuation">;</span>
+
+        <span class="token keyword">vec4</span> pos<span class="token punctuation">;</span>
+        <span class="token function">getPosition</span><span class="token punctuation">(</span>pos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        gl_Position <span class="token operator">=</span> pos<span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">end</span><span class="token expression">GLSL</span></span>
+</code></pre>
+<p><code>#define SHADER_NAME Sprite2DTextureShader</code> is a macro definition used to define the name of the shader.</p>
+<p><code>#include &quot;Sprite2DVertex.glsl&quot;</code> indicates that the Sprite2DVertex.glsl basic library is included. The &quot;#include&quot; in the LayaAir Shader is similar to the &quot;include&quot; in the C language. Some shader algorithms that the engine has packaged are built into the xxx.glsl file of the engine.</p>
+<p>If the built-in glsl of the engine is referenced, it can be referenced directly; if it is a custom.glsl file, it can be placed anywhere under the assets folder. Then the.shader file references the.glsl file through a relative path. Even in the same level directory, it needs to start with./, for example:</p>
+<pre class="language-"><code class="lang-glsl"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&quot;./abc.glsl&quot;</span><span class="token expression"><span class="token punctuation">;</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&quot;./path/to/abc.glsl&quot;</span><span class="token expression"><span class="token punctuation">;</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&quot;../path/abc.glsl&quot;</span><span class="token expression"><span class="token punctuation">;</span></span></span>
+</code></pre>
+<h3 id="73-fragment-shader"><a name="73-fragment-shader" class="anchor-navigation-ex-anchor" href="#73-fragment-shader"><i class="fa fa-link" aria-hidden="true"></i></a>7.3 Fragment Shader</h3>
+<p>In the PS fragment, the actual pixel rendering, that is, shading, needs to be completed. The code is as follows:</p>
+<pre class="language-"><code class="lang-glsl"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span><span class="token expression">GLSL texturePS</span></span>
+    <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">SHADER_NAME</span> <span class="token expression">Sprite2DTextureShader</span></span>
+    <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">if</span> <span class="token expression"><span class="token function">defined</span><span class="token punctuation">(</span>GL_FRAGMENT_PRECISION_HIGH<span class="token punctuation">)</span></span></span>
+        <span class="token keyword">precision</span> <span class="token keyword">highp</span> <span class="token keyword">float</span><span class="token punctuation">;</span>
+    <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">else</span></span>
+        <span class="token keyword">precision</span> <span class="token keyword">mediump</span> <span class="token keyword">float</span><span class="token punctuation">;</span>
+    <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span>
+
+    <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&quot;Sprite2DFrag.glsl&quot;</span><span class="token expression"><span class="token punctuation">;</span></span></span>
+
+    <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">clip</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">vec4</span> color <span class="token operator">=</span> <span class="token function">getSpriteTextureColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifdef</span> <span class="token expression">GRAY</span></span>
+            <span class="token keyword">float</span> gray <span class="token operator">=</span> <span class="token function">dot</span><span class="token punctuation">(</span>color<span class="token punctuation">.</span>rgb<span class="token punctuation">,</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span><span class="token number">0.299</span><span class="token punctuation">,</span> <span class="token number">0.587</span><span class="token punctuation">,</span> <span class="token number">0.114</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Convert to grayscale</span>
+            color<span class="token punctuation">.</span>rgb <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span>gray<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span>
+
+        <span class="token function">setglColor</span><span class="token punctuation">(</span>color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">end</span><span class="token expression">GLSL</span></span>
+</code></pre>
+<p>The final effect is shown in the animated GIF 7-1. By controlling whether the image is grayscale through the macro switch, it can be seen that it becomes grayscale after checking.</p>
+<p><img src="img/7-1.gif" alt="7-1" style="zoom:80%;"></p>
+<p>(Animated GIF 7-1)</p>
+<h2 id="8-built-in-2d-shaders-in-layaair-ide"><a name="8-built-in-2d-shaders-in-layaair-ide" class="anchor-navigation-ex-anchor" href="#8-built-in-2d-shaders-in-layaair-ide"><i class="fa fa-link" aria-hidden="true"></i></a>8. Built-in 2D Shaders in LayaAir-IDE</h2>
+<p>In LayaAir-IDE, three built-in 2D shaders can be created, as shown in Figure 8-1,</p>
+<p><img src="img/8-1.png" alt="8-1"></p>
+<p>(Figure 8-1)</p>
+<p>These three shaders are templates provided for developers and can be changed based on them. But it should be noted that they are three types of shaders and are not universal:</p>
+<ul>
+<li>Texture (uv) type, that is, the 2D texture type. It can be used for material assignment of Sprite, as shown in Figure 8-2. It cannot be used on the BaseRenderNode2D type (for example, Mesh2DRender, Line2DRender, Trail2DRender).</li>
+</ul>
+<p><img src="img/8-2.png" alt="8-2"></p>
+<p>(Figure 8-2)</p>
+<ul>
+<li>Primitive (mesh) type, that is, the 2D graphic type. It can be used for material assignment of Sprite, and the usage position is the same as shown in Figure 8-2. The difference from the first type is that the Primitive type cannot use the default texture, that is, Sprite cannot assign a value to texture.</li>
+<li>BaseRender2D type, that is, the 2D basic rendering type. It can be used to assign materials to the rendering components of Sprite and cannot be used for the material of Sprite in Figure 8-2. BaseRender2D can receive the 2D lighting type and is generally used on the 2D rendering components with BaseRenderNode2D as the base class (for example, Mesh2DRender, Line2DRender, Trail2DRender), as shown in Figure 8-3.</li>
+</ul>
+<p><img src="img/8-3.png" alt="8-3" style="zoom:50%;"></p>
+<p>(Figure 8-3) </p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9;Layabox 2022 all right reserved&#xFF0C;powered by <a href="https://layaAir.com/" target="_blank">LayaAir</a> Engine</span><span class="footer-modification">Update&#xFF1A;
+2025-02-19 14:40:12
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="../../../3D/advanced/customShader/readme.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Custom 3D Shader">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Custom 2D Shader","level":"1.11.1","depth":2,"next":{"title":"Custom 3D Shader","level":"1.11.2","depth":2,"path":"3D/advanced/customShader/readme.md","ref":"3D/advanced/customShader/readme.md","articles":[]},"previous":{"title":"Shaders","level":"1.11","depth":1,"ref":"","articles":[{"title":"Custom 2D Shader","level":"1.11.1","depth":2,"path":"2D/advanced/customShader/readme.md","ref":"2D/advanced/customShader/readme.md","articles":[]},{"title":"Custom 3D Shader","level":"1.11.2","depth":2,"path":"3D/advanced/customShader/readme.md","ref":"3D/advanced/customShader/readme.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","sidebar-style","anchor-navigation-ex","-lunr","-search","-sharing","search-pro","versions-select","-favicon","favicon-absolute","fontsettings","prism","splitter","code","flexible-alerts","auto-scroll-table","popup","tbfed-pagefooter","-theme-hqbook"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"","title":""},"tbfed-pagefooter":{"copyright":"Copyright ©Layabox 2022","modify_label":"Update：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"],"lang":{"flow":"typescript"},"ignore":["mermaid","eval-js"]},"splitter":{},"search-pro":{},"auto-scroll-table":{},"popup":{},"code":{"copyButtons":true},"versions-select":{"type":"branches"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./style/layabox-152.png","appleTouchIconPrecomposedMore":{},"favicon":"./style/favicon-32.ico","bookmark":"./style/favicon-32.ico"},"fontsettings":{"family":"sans","size":2,"theme":"white"},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"versions":{"options":[{"value":"https://layaair.com/3.3/doc-en/","text":"v3.3"},{"value":"https://layaair.com/3.2/doc-en/","text":"v3.2"},{"value":"https://layaair.com/3.1/doc-en/","text":"v3.1"},{"value":"https://layaair.com/3.0/doc-en/","text":"v3.0"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","style":{"website":"style/website.css"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LayaAir3 Engine Documentation · LAYABOX","gitbook":"*"},"file":{"path":"2D/advanced/customShader/readme.md","mtime":"2025-02-19T06:40:12.044Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-02-20T04:36:41.519Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sidebar-style/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-versions-select/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+
