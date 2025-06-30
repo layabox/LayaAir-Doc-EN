@@ -141,6 +141,7 @@
   * [3D Performance Optimization](3D/advanced/performanceOptimization/readme.md)
 - Engine Components
   * [Entity Component System](basics/common/Component/readme.md)
+  * [Built-in Methods for Component Scripts](IDE/customComponent/system/readme.md)
   * [Component Decorators](IDE/customComponent/decorators/readme.md)
   * [Component Property Code Usage](IDE/customComponent/componentProperties/readme.md)
   - [2D Built-in Components](IDE/Component/2D/readme.md)
@@ -172,6 +173,13 @@
       * [LOD Group](IDE/Component/LOD/readme.md)
     * [3D Lights](3D/Light/readme.md)
     * [3D Physics](IDE/physicsEditor/physics3D/readme.md)
+      * [Rigidbody3D](IDE/Component/physics3D/Rigidbody3D/readme.md)      
+      * [PhysicsCollider](IDE/Component/physics3D/PhysicsCollider/readme.md)
+      * [CharacterController](IDE/Component/physics3D/CharacterController/readme.md)
+      * [FixedConstraint](IDE/Component/physics3D/FixedConstraint/readme.md)
+      * [HingeConstraint](IDE/Component/physics3D/HingeConstraint/readme.md)
+      * [SpringConstraint](IDE/Component/physics3D/SpringConstraint/readme.md)
+      * [ConfigurableConstraint](IDE/Component/physics3D/ConfigurableConstraint/readme.md)   
     * [3D Pathfinding](IDE/Component/navMesh/readme.md)
 - IDE Plugins
   * [Plugin Development Guide](IDE/layapackage/plug-in/readme.md)
