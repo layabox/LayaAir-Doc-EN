@@ -437,20 +437,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="../../../basics/LayaTree/readme.html">
-            
-                <a href="../../../basics/LayaTree/readme.html">
-            
-                    
-                    LayaTree Debugging Tool
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.4" data-path="../../../basics/IDE/shortcutKeyCombinations/readme.html">
+        <li class="chapter " data-level="1.3.3" data-path="../../../basics/IDE/shortcutKeyCombinations/readme.html">
             
                 <a href="../../../basics/IDE/shortcutKeyCombinations/readme.html">
             
@@ -3609,178 +3596,225 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#model-import-settings"><b></b>Model import settings</a></li><ul><li><span class="title-icon "></span><a href="#1-model-import-and-setting"><b></b>1. Model import and setting</a></li><li><span class="title-icon "></span><a href="#2-model-scene-scene-import-settings-instructions"><b></b>2. Model scene (Scene) import settings instructions</a></li><ul><li><span class="title-icon "></span><a href="#21-model-scaling-scale-factor"><b></b>2.1 Model scaling scale Factor</a></li><li><span class="title-icon "></span><a href="#22-model-unit-conversionconvert-units"><b></b>2.2 Model unit conversionconvert Units</a></li><li><span class="title-icon "></span><a href="#23-import-model-built-in-data-visibility-camera-light-source"><b></b>2.3 Import model built-in data (visibility, camera, light source)</a></li><li><span class="title-icon "></span><a href="#24-add-level-of-detail-add-lod-group"><b></b>2.4 Add level of detail add Lod Group</a></li></ul><li><span class="title-icon "></span><a href="#3-instructions-for-importing-the-models-mesh-mesh"><b></b>3. Instructions for importing the model&#x2019;s mesh (Mesh)</a></li><ul><li><span class="title-icon "></span><a href="#31-easier-to-understand-attribute-descriptions"><b></b>3.1 Easier-to-understand attribute descriptions</a></li><li><span class="title-icon "></span><a href="#32-index-data-format-index-format"><b></b>3.2 Index data format Index Format</a></li><li><span class="title-icon "></span><a href="#33-processing-normals-and-tangents"><b></b>3.3 Processing normals and tangents</a></li><li><span class="title-icon "></span><a href="#34-uv1"><b></b>3.4 UV1</a></li></ul><li><span class="title-icon "></span><a href="#4-instructions-for-importing-the-models-bone-binding-rig"><b></b>4. Instructions for importing the model&#x2019;s bone binding (Rig)</a></li><ul><li><span class="title-icon "></span><a href="#41-max-bonesvertex"><b></b>4.1 Max Bones/Vertex</a></li><li><span class="title-icon "></span><a href="#42-max-bone-weight"><b></b>4.2 Max Bone Weight</a></li></ul><li><span class="title-icon "></span><a href="#5-model-animation-animator-import-settings-instructions"><b></b>5. Model animation (Animator) import settings instructions</a></li><li><span class="title-icon "></span><a href="#6-instructions-for-importing-model-materials-materials"><b></b>6. Instructions for importing model materials (Materials)</a></li></ul></ul></div><a href="#model-import-settings" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="model-import-settings"><a name="model-import-settings" class="anchor-navigation-ex-anchor" href="#model-import-settings"><i class="fa fa-link" aria-hidden="true"></i></a>Model import settings</h1>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#model-import-settings"><b></b>Model Import Settings</a></li><ul><li><span class="title-icon "></span><a href="#i-model-import-and-setup"><b></b>I. Model Import and Setup</a></li><ul><li><span class="title-icon "></span><a href="#11-supported-model-formats-for-import"><b></b>1.1 Supported Model Formats for Import</a></li><li><span class="title-icon "></span><a href="#12-basic-use-of-imported-models"><b></b>1.2 Basic Use of Imported Models</a></li><li><span class="title-icon "></span><a href="#13-modifying-properties-of-imported-models"><b></b>1.3 Modifying Properties of Imported Models</a></li><li><span class="title-icon "></span><a href="#14-extracting-internal-model-resources"><b></b>1.4 Extracting Internal Model Resources</a></li></ul><li><span class="title-icon "></span><a href="#ii-model-scene-import-settings-description"><b></b>II. Model Scene Import Settings Description</a></li><ul><li><span class="title-icon "></span><a href="#21-model-unit-conversion"><b></b>2.1 Model Unit Conversion</a></li><li><span class="title-icon "></span><a href="#22-model-scale-factor"><b></b>2.2 Model Scale Factor</a></li><li><span class="title-icon "></span><a href="#23-import-model-built-in-data-visibility-camera-light"><b></b>2.3 Import Model Built-in Data (Visibility, Camera, Light)</a></li><li><span class="title-icon "></span><a href="#24-add-lod-group"><b></b>2.4 Add LOD Group</a></li></ul><li><span class="title-icon "></span><a href="#iii-model-mesh-import-settings-description"><b></b>III. Model Mesh Import Settings Description</a></li><ul><li><span class="title-icon "></span><a href="#31-easily-understood-property-descriptions"><b></b>3.1 Easily Understood Property Descriptions</a></li><li><span class="title-icon "></span><a href="#32-index-data-format"><b></b>3.2 Index Data Format</a></li><li><span class="title-icon "></span><a href="#33-handling-normals-and-tangents"><b></b>3.3 Handling Normals and Tangents</a></li><li><span class="title-icon "></span><a href="#34-uv1"><b></b>3.4 UV1</a></li></ul><li><span class="title-icon "></span><a href="#iv-model-rig-import-settings-description"><b></b>IV. Model Rig Import Settings Description</a></li><ul><li><span class="title-icon "></span><a href="#41-max-bones--vertex"><b></b>4.1 Max Bones / Vertex</a></li><li><span class="title-icon "></span><a href="#42-min-bone-weight"><b></b>4.2 Min Bone Weight</a></li></ul><li><span class="title-icon "></span><a href="#v-model-animation-animator-import-settings-description"><b></b>V. Model Animation (Animator) Import Settings Description</a></li><li><span class="title-icon "></span><a href="#vi-model-material-materials-import-settings-description"><b></b>VI. Model Material (Materials) Import Settings Description</a></li><ul><li><span class="title-icon "></span><a href="#61-extract-materials"><b></b>6.1 Extract Materials</a></li><li><span class="title-icon "></span><a href="#62-remapped-materials"><b></b>6.2 Remapped Materials</a></li><li><span class="title-icon "></span><a href="#63-on-demand-remap"><b></b>6.3 On Demand Remap</a></li></ul></ul></ul></div><a href="#model-import-settings" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="model-import-settings"><a name="model-import-settings" class="anchor-navigation-ex-anchor" href="#model-import-settings"><i class="fa fa-link" aria-hidden="true"></i></a>Model Import Settings</h1>
 <blockquote>
-<p>Author: Charley &amp;&amp; Meng Xingyu</p>
+<p>Author: Charley &amp; &#x5B5F;&#x661F;&#x715C;</p>
 </blockquote>
-<h2 id="1-model-import-and-setting"><a name="1-model-import-and-setting" class="anchor-navigation-ex-anchor" href="#1-model-import-and-setting"><i class="fa fa-link" aria-hidden="true"></i></a>1. Model import and setting</h2>
-<p>LayaAir3-IDE only supports the import of model formats with suffixes such as <strong>fbx, gltf, and glb</strong>.</p>
+<h2 id="i-model-import-and-setup"><a name="i-model-import-and-setup" class="anchor-navigation-ex-anchor" href="#i-model-import-and-setup"><i class="fa fa-link" aria-hidden="true"></i></a>I. Model Import and Setup</h2>
+<h3 id="11-supported-model-formats-for-import"><a name="11-supported-model-formats-for-import" class="anchor-navigation-ex-anchor" href="#11-supported-model-formats-for-import"><i class="fa fa-link" aria-hidden="true"></i></a>1.1 Supported Model Formats for Import</h3>
+<p>LayaAir3-IDE supports model formats with the following extensions for import: <strong>obj, fbx, gltf, glb</strong>.</p>
 <blockquote>
-<p>LayaAirIDE also supports the import of models and meshes exported by the &quot;LayaAir-Unity Resource Export Plug-in&quot; (.lh and .lm suffixes). This article mainly refers to external model files. If there is a need for lm grid configuration, this document is also applicable.</p>
+<p>LayaAirIDE also supports importing models and meshes exported by the <code>&quot;LayaAir-Unity Resource Export Plugin&quot;</code> (with .lh and .lm extensions). This document primarily refers to external model files, but if there&apos;s a need for .lm mesh configuration, this document is also applicable.</p>
 </blockquote>
-<p>Drag the models with these suffixes into the assets directory of the project resources, and they will be automatically converted and imported, and then they can be added to the scene.</p>
-<p>The operation is as shown in the animation 1-1:</p>
+<h3 id="12-basic-use-of-imported-models"><a name="12-basic-use-of-imported-models" class="anchor-navigation-ex-anchor" href="#12-basic-use-of-imported-models"><i class="fa fa-link" aria-hidden="true"></i></a>1.2 Basic Use of Imported Models</h3>
+<p>Models with these extensions can be dragged and dropped into the <code>assets</code> directory within your project resources. They will automatically be converted and imported, and then you can add them to your scene.</p>
+<p>The operation is shown in animated GIF 1-1:</p>
 <p><img src="img/1-1.gif" alt="1-1"></p>
-<p>(Animation 1-1)</p>
-<p>When a model is selected, you can modify the settings for model import in the <code>Property Settings Panel</code>. Click <code>Apply</code> after each modification, and the import will be re-imported based on the modified properties.</p>
+<p>(Animated GIF 1-1)</p>
+<h3 id="13-modifying-properties-of-imported-models"><a name="13-modifying-properties-of-imported-models" class="anchor-navigation-ex-anchor" href="#13-modifying-properties-of-imported-models"><i class="fa fa-link" aria-hidden="true"></i></a>1.3 Modifying Properties of Imported Models</h3>
+<p>When a model is selected, you can modify its import settings in the <strong>Property Settings panel</strong>. <strong>After each modification</strong>, click <code>Apply</code> to <strong>re-import the model based on the updated properties</strong>.</p>
 <p>The operation is shown in Figure 1-2:</p>
-<p><img src="img/1-2.png" alt="1-2"></p>
+<p><img src="img/1-2.png" alt="1-2">  </p>
 <p>(Figure 1-2)</p>
-<h2 id="2-model-scene-scene-import-settings-instructions"><a name="2-model-scene-scene-import-settings-instructions" class="anchor-navigation-ex-anchor" href="#2-model-scene-scene-import-settings-instructions"><i class="fa fa-link" aria-hidden="true"></i></a>2. Model scene (Scene) import settings instructions</h2>
-<p>A model may contain a lot of information, such as scene-related information such as cameras and light sources, as well as meshes, animations, materials, bones, etc. We classify this information, starting with the scene-related settings.</p>
-<h3 id="21-model-scaling-scale-factor"><a name="21-model-scaling-scale-factor" class="anchor-navigation-ex-anchor" href="#21-model-scaling-scale-factor"><i class="fa fa-link" aria-hidden="true"></i></a>2.1 Model scaling scale Factor</h3>
-<p>Model scaling is mainly used to preprocess the model size according to the target scene scale to make it meet the design requirements and optimize the scaling relationship between different models.</p>
-<p>For example, you can adjust the model to the physical size that meets your needs through the settings here. The effect comparison is shown in Figure 2-1:</p>
-<p><img src="img/2-1.gif" alt="2-1"></p>
+<h3 id="14-extracting-internal-model-resources"><a name="14-extracting-internal-model-resources" class="anchor-navigation-ex-anchor" href="#14-extracting-internal-model-resources"><i class="fa fa-link" aria-hidden="true"></i></a>1.4 Extracting Internal Model Resources</h3>
+<p>As mentioned earlier, every modification to model settings leads to a re-import. If developers frequently modify models via custom IDE plugins, it might continuously trigger the model import processing tool, affecting the IDE experience.</p>
+<p>Furthermore, beyond the basic settings on the properties panel, it&apos;s impossible to modify internal model data like animations or materials directly.</p>
+<p>Therefore, we recommend using the <code>Extract Internal Model Resources</code> function from the right-click menu to extract the model, as shown in Figure 1-3.</p>
+<p><img src="img/1-3.png" alt=""> </p>
+<p>(Figure 1-3)</p>
+<p>Extracting a model&apos;s internal resources allows developers to freely modify the model&apos;s internal data without re-importing every time they save. Also, during the extraction process, some format errors in animation files will be automatically corrected.</p>
+<h2 id="ii-model-scene-import-settings-description"><a name="ii-model-scene-import-settings-description" class="anchor-navigation-ex-anchor" href="#ii-model-scene-import-settings-description"><i class="fa fa-link" aria-hidden="true"></i></a>II. Model Scene Import Settings Description</h2>
+<p>A model may contain a lot of information, such as scene-related data like cameras and lights, as well as meshes, animations, materials, and bones. We categorize this information and start by introducing scene-related settings.</p>
+<h3 id="21-model-unit-conversion"><a name="21-model-unit-conversion" class="anchor-navigation-ex-anchor" href="#21-model-unit-conversion"><i class="fa fa-link" aria-hidden="true"></i></a>2.1 Model Unit Conversion</h3>
+<p>The default unit for imported models is <strong>meters</strong>. You can change it to <strong>centimeters</strong> or revert it back to <strong>meters</strong> here.</p>
+<p>During unit conversion, to avoid sudden scaling up or down of the model, the default process is to maintain the visual size but perform a scaling adjustment.</p>
+<p>For example, when <strong>changing the unit to centimeters</strong>, there will be a <strong>checked</strong> associated option by default: <code>Normalize Mesh</code>, as shown in Figure 2-1. Checking this option keeps the current model&apos;s visual size while only changing the model&apos;s unit.</p>
+<p><img src="img/2-1.png" alt=""> </p>
 <p>(Figure 2-1)</p>
-<h3 id="22-model-unit-conversionconvert-units"><a name="22-model-unit-conversionconvert-units" class="anchor-navigation-ex-anchor" href="#22-model-unit-conversionconvert-units"><i class="fa fa-link" aria-hidden="true"></i></a>2.2 Model unit conversionconvert Units</h3>
-<p>The default unit after the model is imported is meters.</p>
-<p>If you change the unit to centimeters, there will be a checked associated option <code>Size Unit Converter</code> that is checked by default. The purpose of the default check is to maintain the visual size of the current model and only change the unit of the model.</p>
-<p>If checked and unchecked, the scene will feel magnified 100 times. The effect comparison is shown in Figure 2-2:</p>
-<p><img src="img/2-2.gif" alt="2-2"></p>
-<p>(Animation 2-2)</p>
-<h3 id="23-import-model-built-in-data-visibility-camera-light-source"><a name="23-import-model-built-in-data-visibility-camera-light-source" class="anchor-navigation-ex-anchor" href="#23-import-model-built-in-data-visibility-camera-light-source"><i class="fa fa-link" aria-hidden="true"></i></a>2.3 Import model built-in data (visibility, camera, light source)</h3>
-<p>If the art has visibility, camera, and light attribute settings when making the model, LayaAir3-IDE will not import them by default. It is recommended to add and set them in the scene of LayaAir-IDE.</p>
-<p>When developers have these built-in data requirements for using the model, they can also check these options, as shown in Figure 2-3. Re-import it by clicking <strong>Apply</strong>.</p>
-<p><img src="img/2-3.png" alt="2-3"></p>
+<p><strong>If unchecked</strong>, the model will be scaled up by 100 times (e.g., 100 centimeters becomes 100 meters). A comparison of effects is shown in Figure 2-2:</p>
+<p><img src="img/2-2.png" alt="2-2"></p>
+<p>(Figure 2-2)</p>
+<p>If converting from centimeters to meters, this option is not available, and the conversion process is handled automatically. Scaled-up sizes will be restored, and unscaled sizes will remain unchanged.</p>
+<h3 id="22-model-scale-factor"><a name="22-model-scale-factor" class="anchor-navigation-ex-anchor" href="#22-model-scale-factor"><i class="fa fa-link" aria-hidden="true"></i></a>2.2 Model Scale Factor</h3>
+<p>Model scaling is primarily used to pre-process model size according to the target scene scale. It adjusts the overall scale of different models to meet design requirements.</p>
+<p>For example, the <code>Normalize Mesh</code> function mentioned in the previous section is essentially implemented based on model scaling.</p>
+<h3 id="23-import-model-built-in-data-visibility-camera-light"><a name="23-import-model-built-in-data-visibility-camera-light" class="anchor-navigation-ex-anchor" href="#23-import-model-built-in-data-visibility-camera-light"><i class="fa fa-link" aria-hidden="true"></i></a>2.3 Import Model Built-in Data (Visibility, Camera, Light)</h3>
+<p>If the artist has set visibility, camera, or light properties during model creation, LayaAir3-IDE does not import them by default. It is recommended to add and set these in the LayaAir-IDE scene.</p>
+<p>However, if developers need to use these built-in model data, they can enable them by checking the respective options, as shown in Figure 2-3. Click <strong>Apply</strong> to re-import.</p>
+<p><img src="img/2-3.png" alt="2-3"> </p>
 <p>(Figure 2-3)</p>
-<h3 id="24-add-level-of-detail-add-lod-group"><a name="24-add-level-of-detail-add-lod-group" class="anchor-navigation-ex-anchor" href="#24-add-level-of-detail-add-lod-group"><i class="fa fa-link" aria-hidden="true"></i></a>2.4 Add level of detail add Lod Group</h3>
-<p>When Lod data exists in the model, checking this option will export the Lod data and automatically create a Lod Group component to set the Lod data when using the model. The effect after adding is shown in the animation 2-4.</p>
+<h3 id="24-add-lod-group"><a name="24-add-lod-group" class="anchor-navigation-ex-anchor" href="#24-add-lod-group"><i class="fa fa-link" aria-hidden="true"></i></a>2.4 Add LOD Group</h3>
+<p>When a model contains LOD data, checking this option will export the LOD data and automatically create an LOD Group component to set the LOD data when using the model. The effect after adding is shown in animated GIF 2-4.</p>
 <p><img src="img/2-4.gif" alt="2-4"></p>
-<p>(Animation 2-4)</p>
-<h2 id="3-instructions-for-importing-the-models-mesh-mesh"><a name="3-instructions-for-importing-the-models-mesh-mesh" class="anchor-navigation-ex-anchor" href="#3-instructions-for-importing-the-models-mesh-mesh"><i class="fa fa-link" aria-hidden="true"></i></a>3. Instructions for importing the model&#x2019;s mesh (Mesh)</h2>
-<h3 id="31-easier-to-understand-attribute-descriptions"><a name="31-easier-to-understand-attribute-descriptions" class="anchor-navigation-ex-anchor" href="#31-easier-to-understand-attribute-descriptions"><i class="fa fa-link" aria-hidden="true"></i></a>3.1 Easier-to-understand attribute descriptions</h3>
-<p>There are some attribute settings that are easier to understand, as shown in Figure 3-1.</p>
-<p><img src="img/3-1.png" alt="3-1"></p>
+<p>(Animated GIF 2-4)</p>
+<h2 id="iii-model-mesh-import-settings-description"><a name="iii-model-mesh-import-settings-description" class="anchor-navigation-ex-anchor" href="#iii-model-mesh-import-settings-description"><i class="fa fa-link" aria-hidden="true"></i></a>III. Model Mesh Import Settings Description</h2>
+<h3 id="31-easily-understood-property-descriptions"><a name="31-easily-understood-property-descriptions" class="anchor-navigation-ex-anchor" href="#31-easily-understood-property-descriptions"><i class="fa fa-link" aria-hidden="true"></i></a>3.1 Easily Understood Property Descriptions</h3>
+<p>Some property settings are straightforward to understand, as shown in Figure 3-1:</p>
+<p><img src="img/3-1.png" alt="3-1"> </p>
 <p>(Figure 3-1)</p>
-<p>We provide an overview via tables.</p>
+<p>We provide a summary in the table below.</p>
 <table>
 <thead>
 <tr>
-<th>Chinese attribute name</th>
-<th>English attribute name</th>
-<th>Property description</th>
+<th>Chinese Property Name</th>
+<th>English Property Name</th>
+<th>Property Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>&#x52A8;&#x6001;&#x8BFB;&#x5199;</td>
-<td>Read Write</td>
-<td>When dynamic Read Write is checked, developers are allowed to dynamically access or modify the model data at runtime (for example, when pinching a face, the mesh vertex information that needs to be changed belongs to the modified model data). <br>It should be noted that enabling <code>Read Write</code> will increase memory usage. <br>So, if your model does not need to be modified at runtime, please do not turn this option on to save memory.</td>
+<td>read Write</td>
+<td>When checked, allows developers to dynamically access or modify model data at runtime (e.g., modifying mesh vertex information for facial manipulation).\<br \="">Note that enabling <code>read Write</code> increases memory usage.\<br \="">Therefore, if your model does not need to be modified at runtime, please do not enable this option to save memory.</td>
 </tr>
 <tr>
 <td>&#x7F51;&#x683C;&#x538B;&#x7F29;</td>
-<td>Mesh Compress</td>
-<td>If checked, the grid data can be compressed to reduce the size of the grid file. <br>It should be noted that the compressed mesh will be stored in the temporary directory of the IDE, and the original model will not change. <br>The change in volume reduction can only be seen after publishing.</td>
+<td>mesh Compress</td>
+<td>When checked, mesh data can be compressed to reduce the mesh file size.\<br \="">Note that compressed meshes will reside in the IDE&apos;s temporary directory; the original model remains unchanged.\<br \="">The volume reduction will only be visible after publishing.</td>
 </tr>
 <tr>
 <td>&#x6807;&#x51C6;&#x5316;&#x6743;&#x91CD;</td>
-<td>Standardized Weights</td>
-<td>Adjust the total weight to 1 by adjusting the weight correction.<br>It is used to solve problems such as possible distortion of the model beyond a certain range. It is recommended to keep it checked. <br>If you can ensure that there will be no problems when applying the model, you can also uncheck it. After unchecking, the original data of the model will be maintained and the original effect of the model will be obtained.</td>
+<td>standardized weights</td>
+<td>Adjusts total weights to 1 through weight correction,\<br \="">used to solve issues like distortion that might occur if the model exceeds a certain range. It&apos;s recommended to keep this checked.\<br \="">If you can ensure the model will not have issues when applied, you can uncheck it; this will preserve the original model data for its original effect.</td>
 </tr>
 <tr>
 <td>&#x5BFC;&#x5165;&#x53D8;&#x5F62;&#x76EE;&#x6807;</td>
-<td>Import Morph Target</td>
-<td>Import the morph target (also called Blend Shape) data in the model.</td>
+<td>import Morph Target</td>
+<td>Imports morph target (also called Blend Shape) data from the model.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="32-index-data-format-index-format"><a name="32-index-data-format-index-format" class="anchor-navigation-ex-anchor" href="#32-index-data-format-index-format"><i class="fa fa-link" aria-hidden="true"></i></a>3.2 Index data format Index Format</h3>
-<p>Index data is used to determine the position of vertices in the vertex buffer, thereby building the shape of the geometry. This property is used to control the precision and range of these index data, thereby affecting the performance and quality of rendering.</p>
-<p>As shown in Figure 3-2, this attribute has three options: <strong>Auto, UInt16-bit, and UInt32</strong>-bit.</p>
-<p><img src="img/3-2.png" alt="3-2"></p>
+<h3 id="32-index-data-format"><a name="32-index-data-format" class="anchor-navigation-ex-anchor" href="#32-index-data-format"><i class="fa fa-link" aria-hidden="true"></i></a>3.2 Index Data Format</h3>
+<p>Index data is used to determine the position of vertices in the vertex buffer, thereby constructing the shape of the geometry. This property controls the precision and range of this index data, affecting rendering performance and quality.</p>
+<p>As shown in Figure 3-2, this property has three options: <strong>Auto, UInt16, and UInt32</strong>.</p>
+<p><img src="img/3-2.png" alt="3-2"> </p>
 <p>(Figure 3-2)</p>
-<p><strong>Auto</strong>: Automatic is the default option. In this mode, LayaAir will automatically decide which data format to use based on the number of vertices. By default, UInt16 will be used first. When the number of vertices exceeds 65535, it will automatically switch to UInt32 data format. .</p>
-<p><strong>UInt16</strong>: This means that the index data is represented by a 16-bit unsigned integer (0~65535). Using a 16-bit index saves memory and is sufficient to express the vertex index in most cases. However, when the number of vertices of the model exceeds 65535, it needs to be split into multiple sub-meshes for rendering, which may increase the number of draw calls.</p>
-<p><strong>UInt32</strong>: This means that the index data is represented using a 32-bit unsigned integer (0~4294967295). Using 32-bit indexes can support larger models and avoid splitting into multiple subgrids, but will take up more memory.</p>
-<h3 id="33-processing-normals-and-tangents"><a name="33-processing-normals-and-tangents" class="anchor-navigation-ex-anchor" href="#33-processing-normals-and-tangents"><i class="fa fa-link" aria-hidden="true"></i></a>3.3 Processing normals and tangents</h3>
-<p>In terms of the ability to handle normal effects, there are mainly three related attributes, namely <strong>Normal</strong>, <strong>Normal Calculation Mode</strong>, and <strong>Tangent</strong>, as shown in Figure 3-3:</p>
-<p><img src="img/3-3.png" alt="3-3"></p>
+<p><strong>Auto</strong>: This is the default option. In this mode, LayaAir will automatically decide which data format to use based on the number of vertices. It will prioritize UInt16 by default, and automatically switch to UInt32 data format when the number of vertices exceeds 65535.</p>
+<p><strong>UInt16</strong>: This means that index data is represented using 16-bit unsigned integers (0~65535). Using 16-bit indices can save memory and is sufficient for vertex indexing in most cases. However, when the number of vertices in a model exceeds 65535, it needs to be split into multiple sub-meshes for rendering, which may increase the number of draw calls.</p>
+<p><strong>UInt32</strong>: This means that index data is represented using 32-bit unsigned integers (0~4294967295). Using 32-bit indices can support larger models, avoiding the need to split them into multiple sub-meshes, but it will consume more memory.</p>
+<h3 id="33-handling-normals-and-tangents"><a name="33-handling-normals-and-tangents" class="anchor-navigation-ex-anchor" href="#33-handling-normals-and-tangents"><i class="fa fa-link" aria-hidden="true"></i></a>3.3 Handling Normals and Tangents</h3>
+<p>In terms of handling normal effects, there are three main related properties: <strong>Normals</strong>, <strong>Normal Calculate Mode</strong>, and <strong>Tangents</strong>, as shown in Figure 3-3:</p>
+<p><img src="img/3-3.png" alt="3-3"> </p>
 <p>(Figure 3-3)</p>
-<h4 id="331-normal"><a name="331-normal" class="anchor-navigation-ex-anchor" href="#331-normal"><i class="fa fa-link" aria-hidden="true"></i></a>3.3.1 Normal</h4>
-<p>The <strong>Normal</strong> attribute has three options, <strong>import</strong><code>import</code>, <strong>calculate</strong><code>calculate</code>, and <strong>None</strong><code>None</code>. As shown in Figure 3-4.</p>
-<p><img src="img/3-4.png" alt="3-4"></p>
+<h4 id="331-normals-normal"><a name="331-normals-normal" class="anchor-navigation-ex-anchor" href="#331-normals-normal"><i class="fa fa-link" aria-hidden="true"></i></a>3.3.1 Normals <code>normal</code></h4>
+<p>The <strong>Normals</strong> property has three options: <strong>Import</strong><code>import</code>, <strong>Calculate</strong><code>calculate</code>, and <strong>None</strong><code>none</code>. As shown in Figure 3-4.</p>
+<p><img src="img/3-4.png" alt="3-4"> </p>
 <p>(Figure 3-4)</p>
-<p><strong>Import</strong> means using the predefined normal data in the model file. This means that if the model file contains normal information, LayaAir will directly use these normal data for rendering. If the model has no normal data or the normal data is incorrect, you may get incorrect lighting effects.</p>
-<p><strong>Calculation</strong> means that the normal data of the model will be recalculated when the model is imported. This may be useful in certain situations, such as when the model&apos;s normal data is incomplete or inaccurate. Recalculating normals may consume some computing resources, but it ensures that the model is lit correctly.</p>
-<p>Whether it is importing or calculating, you need to set the associated attribute <strong>Normal Calculation Mode</strong>, and selecting <strong>None</strong> will completely ignore the normal data of the model, and the vertices will not be imported. The attribute <code>Normal Calculation Mode</code> will not be displayed in the IDE. <strong>None</strong> this option may be used for specific rendering needs, either by manually editing the normals in LayaAir or using a script to calculate the normals. Failure to do so means that when rendering, no normal data will be available, potentially resulting in incorrect lighting visuals.</p>
-<h4 id="332-normal-calculate-mode"><a name="332-normal-calculate-mode" class="anchor-navigation-ex-anchor" href="#332-normal-calculate-mode"><i class="fa fa-link" aria-hidden="true"></i></a>3.3.2 Normal Calculate Mode</h4>
-<p><strong>Normal Calculation Mode</strong> has two options: <strong>Unweight</strong> and <strong>Area Weight</strong>. As shown in Figure 3-5.</p>
-<p><img src="img/3-5.png" alt="3-5"></p>
+<p><strong>Import</strong> means using the normal data predefined in the model file. This implies that if the model file contains normal information, LayaAir will directly use this data for rendering. If the model lacks normal data or has incorrect normal data, it might result in incorrect lighting effects.</p>
+<p><strong>Calculate</strong> means that the model&apos;s normal data will be recomputed during model import. This can be useful in certain situations, for example, when the model&apos;s normal data is incomplete or inaccurate. Recalculating normals may consume some computational resources but ensures correct lighting effects for the model.</p>
+<p>Whether importing or calculating, the associated property <strong>Normal Calculate Mode</strong> needs to be set. Choosing <strong>None</strong> will completely ignore the model&apos;s normal data, and vertices will not be passed. The <code>Normal Calculate Mode</code> property will also not be displayed in the IDE. The <strong>None</strong> option might be used for specific rendering requirements, or when manually editing normals or calculating them with scripts in LayaAir. Otherwise, it means no normal data will be available during rendering, which could lead to incorrect lighting visual effects.</p>
+<h4 id="332-normal-calculate-mode-normal-calculate-mode"><a name="332-normal-calculate-mode-normal-calculate-mode" class="anchor-navigation-ex-anchor" href="#332-normal-calculate-mode-normal-calculate-mode"><i class="fa fa-link" aria-hidden="true"></i></a>3.3.2 Normal Calculate Mode <code>normal Calculate Mode</code></h4>
+<p>The <strong>Normal Calculate Mode</strong> has two options: <strong>Unweighted</strong> and <strong>Area Weighted</strong><code>areaWeight</code>. As shown in Figure 3-5.</p>
+<p><img src="img/3-5.png" alt="3-5"> </p>
 <p>(Figure 3-5)</p>
-<p><strong>Unweight</strong>, meaning the normal will be calculated as a simple average of adjacent vertices. This means that the normal of each vertex is only affected by its neighboring vertices, regardless of the size or angle of the face. This works well for smooth surfaces, but normal discontinuities may occur at sharp corners or separated edges.</p>
-<p><strong>Area Weight</strong> will weight the average of the normals of adjacent vertices according to the size of the face. This produces smoother normal transitions on sharply angled surfaces, reducing normal discontinuities.</p>
-<h4 id="333-tangents"><a name="333-tangents" class="anchor-navigation-ex-anchor" href="#333-tangents"><i class="fa fa-link" aria-hidden="true"></i></a>3.3.3 Tangents</h4>
-<p>Tangent data is a key part of advanced effects like normal maps and normal mapping. Normal maps simulate high detail by storing normal information on the model&apos;s surface. Tangent data helps calculate pixel normals, giving objects visual bump detail. So <strong>Tangent</strong> is the same as <strong>Normal Calculation Mode</strong>,only when the normal line exists (not set to <strong>None</strong>), it will be displayed on the property panel.</p>
-<p>Tangents define the tangent vectors for each vertex on the model surface. They are <strong>None</strong>, <strong>calculate</strong>, and <strong>import</strong> respectively. As shown in Figure 3-6.</p>
-<p><img src="img/3-6.png" alt="3-6"></p>
+<p><strong>Unweighted</strong> means normals are calculated as a simple average of adjacent vertices. This implies that each vertex&apos;s normal is only influenced by its neighboring vertices, without considering the size or angle of the faces. This method is suitable for smooth surfaces, but may result in normal discontinuities at sharp corners or separate edges.</p>
+<p><strong>Area Weighted</strong> calculates the weighted average of adjacent vertex normals based on face area. This can produce smoother normal transitions on sharp surfaces, reducing normal discontinuities.</p>
+<h4 id="333-tangents-tangents"><a name="333-tangents-tangents" class="anchor-navigation-ex-anchor" href="#333-tangents-tangents"><i class="fa fa-link" aria-hidden="true"></i></a>3.3.3 Tangents <code>tangents</code></h4>
+<p>Tangent data is a crucial part of advanced effects like normal maps and normal mapping. Normal maps simulate height detail by storing normal information on the model surface. Tangent data helps calculate pixel normals, making objects visually appear to have bump details. Therefore, like <strong>Normal Calculate Mode</strong>, <strong>Tangents</strong> will only be displayed in the properties panel when normals exist (i.e., not set to <strong>None</strong>).</p>
+<p>Tangents are used to define the tangent vector for each vertex on the model surface. The options are <strong>None</strong><code>none</code>, <strong>Calculate</strong><code>calculate</code>, and <strong>Import</strong><code>import</code>. As shown in Figure 3-6.</p>
+<p><img src="img/3-6.png" alt="3-6"> </p>
 <p>(Figure 3-6)</p>
-<p><strong>None</strong> means tangent data will not be calculated or imported. This means that no tangent data will be available during rendering, potentially affecting the correctness of effects such as normal maps. If this is not a problem, select this option to save memory used by vertices.</p>
-<p><strong>calculate</strong> means recalculating the tangent vector when importing the model. This can be useful when using effects such as normal mapping and normal mapping, as tangent vectors need to be used with normals and texture coordinates. Recalculating tangents may consume some computing resources, but it ensures the correctness of the rendering effect.</p>
-<p><strong>import</strong> will use the predefined tangent data in the model file. This means that if the model file contains tangent information, LayaAir will directly use these tangent data for rendering. If the model has no tangent data or the tangent data is incorrect, you may get incorrect normal mapping effects.</p>
+<p><strong>None</strong> means that tangent data will not be calculated or imported. This implies that no tangent data will be available during rendering, which may affect the correctness of normal maps and similar effects. If this doesn&apos;t pose a problem, selecting this option can save memory used by vertices.</p>
+<p><strong>Calculate</strong> means that tangent vectors are recomputed when the model is imported. This can be useful when using effects like normal maps and normal mapping, as tangent vectors need to be used in conjunction with normals and texture coordinates. Recalculating tangents may consume some computational resources but ensures the correctness of rendering effects.</p>
+<p><strong>Import</strong> will use the tangent data predefined in the model file. This means that if the model file contains tangent information, LayaAir will directly use this data for rendering. If the model lacks tangent data or has incorrect tangent data, you might get incorrect normal mapping effects.</p>
 <h3 id="34-uv1"><a name="34-uv1" class="anchor-navigation-ex-anchor" href="#34-uv1"><i class="fa fa-link" aria-hidden="true"></i></a>3.4 UV1</h3>
-<p>When the model is imported, the UV1 that comes with the model can be imported by default. As shown in Figure 3-7,</p>
-<p><img src="img/3-7.png" alt="3-7"></p>
+<p>During model import, the UV1 channel included in the model can be imported by default, as shown in Figure 3-7.</p>
+<p><img src="img/3-7.png" alt="3-7"> </p>
 <p>(Figure 3-7)</p>
-<p>You can check <code>Normal UV1</code>. After checking, when the model is imported, its own UV1 will have the standard for light map baking. Otherwise, the imported UV1 by default will not start the light map baking process. If UV1 is not used for light map baking, you do not need to check this option.</p>
-<p>Sometimes, the model only has one default UV. If you want to generate another UV1 to support the light map, as shown in Figure 3-8, you can select the <code>generate</code> option.</p>
-<p><img src="img/3-8.png" alt="3-8"></p>
+<p>You can check <code>Normalize UV1</code>. When checked, the model&apos;s built-in UV1 will meet the standard for lightmap baking upon import; otherwise, the default imported UV1 will not initiate the lightmap baking process. If UV1 is not used for lightmap baking, you don&apos;t need to check this option.</p>
+<p>Sometimes, a model only has a default UV. If you want to generate an additional UV1 to support lightmaps, as shown in Figure 3-8, you can select the <code>Generate</code> option.</p>
+<p><img src="img/3-8.png" alt="3-8"> </p>
 <p>(Figure 3-8)</p>
-<p>The following is the configuration of its subkeys:</p>
-<h4 id="341-maxchartarea"><a name="341-maxchartarea" class="anchor-navigation-ex-anchor" href="#341-maxchartarea"><i class="fa fa-link" aria-hidden="true"></i></a>3.4.1 maxChartArea</h4>
-<p>The maximum chart area size is a parameter in the lightmap generation process that controls the maximum chart area. A graph is the basic unit used in algorithms to organize patches. This parameter limits the total area of &#x200B;&#x200B;patches contained in a single chart to control the size of the chart.</p>
-<p>This parameter plays a role in the chart generation process and is used to control the chart generation and merging process. The algorithm checks whether the area of &#x200B;&#x200B;each chart exceeds the value of <code>maxChartArea</code>. If it exceeds, it will limit the generation or merging of charts. If the maximum chart area size is set to 0 (the default), it means there is no area limit and the chart can be any size.</p>
-<p>Smaller values &#x200B;&#x200B;result in more graphs, each containing fewer patches. Larger values &#x200B;&#x200B;may produce fewer large charts.</p>
-<h4 id="342-max-boundary-length"><a name="342-max-boundary-length" class="anchor-navigation-ex-anchor" href="#342-max-boundary-length"><i class="fa fa-link" aria-hidden="true"></i></a>3.4.2 Max Boundary Length</h4>
-<p>During the lightmap generation process, the maximum boundary length is used to constrain the merging and generation of charts.</p>
-<p>In the algorithm, it will be judged whether the boundary length after generating or merging two charts exceeds the preset maximum boundary length limit. If it exceeds, it will be restricted and the merge will not be performed or the generation will be aborted to control the boundaries of the generated chart. </p>
-<p>By default, the value of the maximum border length is 0, which means that there is no limit on the maximum border length of the chart.</p>
-<h4 id="343-normal-deviation-weight"><a name="343-normal-deviation-weight" class="anchor-navigation-ex-anchor" href="#343-normal-deviation-weight"><i class="fa fa-link" aria-hidden="true"></i></a>3.4.3 Normal Deviation Weight</h4>
-<p>The normal deviation weight is an important parameter used to control the cost calculation in the patch charting process during the light map generation process.</p>
-<p>During the graphing process of patches, the algorithm will traverse each face in the current graph area and determine which faces can be added as candidate faces to the graph generation. The basis for calculation is called cost.</p>
-<p>The angular deviation between the surface normal and the best-fitting normal of the chart (the average normal vector of the entire chart) is one of the factors that affects the cost. When it exceeds a certain angle range (about 45 degrees), it is considered to be larger, is directly excluded from the generation queue. If the angle is not exceeded, the cost will be multiplied by the normal deviation weight value and used as a basis for further calculations. Therefore, the normal deviation weight is one of the important parameters that affects the normal angle deviation cost and chart generation.</p>
-<p>When the normal deviation weight value is larger, the normal deviation has a greater impact on chart generation. A larger value makes the graph generation algorithm more inclined to select patches with more consistent normals to be assigned to the same graph, so that the generated graph is smoother in the normal direction. However, too high a value may result in chart generation that is too conservative and fails to take full advantage of favorable polygon structures.</p>
-<p>On the contrary, the smaller the normal deviation weight value, the graph generation algorithm will tolerate a certain degree of normal deviation during the patch graphing process. This means that the algorithm may assign patches with widely different normals into the same graph, even though their normal directions are not exactly the same. Might be suitable for some scenarios that require more variation.</p>
-<h4 id="344-maximum-iteration"><a name="344-maximum-iteration" class="anchor-navigation-ex-anchor" href="#344-maximum-iteration"><i class="fa fa-link" aria-hidden="true"></i></a>3.4.4 Maximum Iteration</h4>
-<p>Maximum Iteration is a parameter that controls the number of iterations during chart generation and optimization. Iteration is an important step in the chart generation algorithm, which continuously optimizes the generated charts through multiple iterations to achieve better results.</p>
-<p>More iterations mean the algorithm will have more opportunities to adjust and optimize the chart, potentially producing a better chart layout. However, too many iterations may increase the computational cost and time overhead of the algorithm.</p>
-<p>A lower number of iterations may be more time efficient, but the resulting graph may not be as optimized as with more iterations.</p>
-<p>Developers can set here to control the number of iterations of chart generation and optimization to balance computational efficiency and the quality of generated results.</p>
+<p>Here are the configurations for its sub-items:</p>
+<h4 id="341-maximum-chart-area-max-chart-area"><a name="341-maximum-chart-area-max-chart-area" class="anchor-navigation-ex-anchor" href="#341-maximum-chart-area-max-chart-area"><i class="fa fa-link" aria-hidden="true"></i></a>3.4.1 Maximum Chart Area <code>max Chart Area</code></h4>
+<p>Maximum Chart Area is a parameter in the lightmap generation process used to control the maximum area of a chart. Charts are fundamental units used to organize faces in the algorithm. This parameter limits the total area of faces contained within a single chart to control chart size.</p>
+<p>This parameter plays a role in the chart generation process, controlling the generation and merging of charts. The algorithm checks whether the area of each chart exceeds the <code>maxChartArea</code> value. If it does, chart generation or merging will be limited. If the maximum chart area size is set to 0 (default), it means there is no area limit, and charts can be of any size.</p>
+<p>Smaller values lead to more charts being generated, with fewer faces per chart. Larger values may generate a small number of large charts.</p>
+<h4 id="342-maximum-boundary-length-max-boundary-length"><a name="342-maximum-boundary-length-max-boundary-length" class="anchor-navigation-ex-anchor" href="#342-maximum-boundary-length-max-boundary-length"><i class="fa fa-link" aria-hidden="true"></i></a>3.4.2 Maximum Boundary Length <code>max Boundary Length</code></h4>
+<p>In the lightmap generation process, <code>max Boundary Length</code> is used to constrain the merging and generation of charts.</p>
+<p>In the algorithm, it checks whether the boundary length after generating or merging two charts exceeds the preset maximum boundary length limit. If it does, it will be limited, and the merge or generation will be aborted, thereby controlling the compactness of the generated charts in terms of boundaries.</p>
+<p>By default, the maximum boundary length is 0, meaning there is no limit on the maximum boundary length of charts.</p>
+<h4 id="343-normal-deviation-weight-normal-deviation-weight"><a name="343-normal-deviation-weight-normal-deviation-weight" class="anchor-navigation-ex-anchor" href="#343-normal-deviation-weight-normal-deviation-weight"><i class="fa fa-link" aria-hidden="true"></i></a>3.4.3 Normal Deviation Weight <code>normal Deviation Weight</code></h4>
+<p>Normal Deviation Weight is an important parameter used to control the cost calculation during the face charting process within lightmap generation.</p>
+<p>In the face charting process, the algorithm iterates through each face in the current chart area and determines which faces can be candidates for inclusion in the chart generation. The basis for calculation is what we call &quot;cost.&quot;</p>
+<p>The angular deviation between a face normal and the chart&apos;s best-fit normal (the average normal vector of the entire chart) is one of the factors influencing this cost. If it exceeds a certain angular range (approximately 45 degrees), it&apos;s considered a high cost and directly excluded from the generation queue. For angles within the range, the cost is calculated by multiplying it by the normal deviation weight, which is then used for further calculations. Therefore, the normal deviation weight is one of the important parameters affecting the cost of normal angular deviation and chart generation.</p>
+<p>A larger normal deviation weight means that normal deviation has a greater impact on chart generation. A larger value makes the chart generation algorithm more inclined to select faces with consistent normals to be assigned to the same chart, resulting in smoother charts in the normal direction. However, excessively high values might lead to overly conservative chart generation, failing to fully utilize favorable face structures.</p>
+<p>Conversely, a smaller normal deviation weight value means the chart generation algorithm will tolerate a certain degree of normal deviation during the face charting process. This implies that the algorithm might assign faces with larger normal differences to the same chart, even if their normal directions are not perfectly aligned. This might be suitable for scenes that require more variation.</p>
+<h4 id="344-maximum-iterations-max-iteration"><a name="344-maximum-iterations-max-iteration" class="anchor-navigation-ex-anchor" href="#344-maximum-iterations-max-iteration"><i class="fa fa-link" aria-hidden="true"></i></a>3.4.4 Maximum Iterations <code>max Iteration</code></h4>
+<p>Maximum Iteration is a parameter used to control the number of iterations during the chart generation and optimization process. Iteration is an important step in the chart generation algorithm, as it continuously optimizes the generated charts through multiple iterations to achieve better results.</p>
+<p>More iterations mean the algorithm will have more opportunities to adjust and optimize the charts, potentially leading to better chart layouts. However, too many iterations can increase the computational cost and time overhead of the algorithm.</p>
+<p>Fewer iterations might be more time-efficient, but the generated charts might not be as well optimized as with more iterations.</p>
+<p>Developers can use this setting to control the number of iterations for chart generation and optimization, balancing computational efficiency and the quality of the generated results.</p>
 <h4 id="345-texels-per-unit"><a name="345-texels-per-unit" class="anchor-navigation-ex-anchor" href="#345-texels-per-unit"><i class="fa fa-link" aria-hidden="true"></i></a>3.4.5 Texels Per Unit</h4>
-<p>The Texels Per Unit parameter defines the number of texels contained in each unit of space (for example, a 1x1 unit rectangle). This parameter is used during lightmap generation to control the texture density of the chart.</p>
-<p>Specifically, it affects the size distribution of charts within texture atlases. In the lightmap generation algorithm, the value of texels per unit is taken into account when determining the position and size of the map within the texture atlas. <strong>If the value is greater than 0,</strong> the algorithm will allocate the texture area of &#x200B;&#x200B;the chart according to the given value so that it has a higher resolution on the texture. <strong>If the value is 0</strong>, the algorithm estimates an appropriate value based on the surface area of &#x200B;&#x200B;the chart and the given resolution so that the chart is properly represented on the texture.</p>
-<p>In effect, this parameter affects the mapping quality of the chart in the final texture atlas. Higher values &#x200B;&#x200B;will result in the chart having a higher resolution on the texture, making details clearer, but will also increase the size of the final texture atlas. Lower values &#x200B;&#x200B;make the chart less resolution on the texture, but can reduce the size of the texture atlas. Therefore, adjusting the <code>Texels Per Unit</code> parameter can provide a trade-off between chart quality and texture atlas size.</p>
+<p>The <code>Texels Per Unit</code> parameter defines the number of texture pixels contained within each unit space (e.g., a 1x1 unit square). This parameter is used during lightmap generation to control the texture density of charts.</p>
+<p>Specifically, it affects the size allocation of charts within the texture atlas. In the lightmap generation algorithm, when determining the position and size of charts in the texture atlas, the value of &quot;Texels Per Unit&quot; is considered. <strong>If the value is greater than 0</strong>, the algorithm will allocate the chart&apos;s texture area based on the given value to achieve a higher resolution on the texture. <strong>If the value is 0</strong>, the algorithm will estimate an appropriate value based on the chart&apos;s surface area and a given resolution to ensure the chart is properly represented on the texture.</p>
+<p>From a visual perspective, this parameter affects the mapping quality of charts in the final texture atlas. Higher values result in higher resolution for charts on the texture, making details clearer, but also increase the size of the final texture atlas. Lower values reduce the resolution of charts on the texture but can decrease the texture atlas size. Therefore, adjusting the <code>Texels Per Unit</code> parameter allows for a trade-off between chart quality and texture atlas size.</p>
 <h4 id="346-padding"><a name="346-padding" class="anchor-navigation-ex-anchor" href="#346-padding"><i class="fa fa-link" aria-hidden="true"></i></a>3.4.6 Padding</h4>
-<p>Margin is the extra pixel space added around the chart. These extra pixels are used to extend the boundaries of the chart to ensure there is enough space between them and no overlap occurs.</p>
-<p>Expanding margins provides better texture sampling boundaries, reduces color mixing between charts, and improves edge rendering.</p>
-<p>When used, the margin values &#x200B;&#x200B;can be adjusted as needed to trade off rendering quality and atlas size. Reasonable values &#x200B;&#x200B;will generally provide better rendering, but increasing the margins too much may cause the atlas to become too large, taking up more memory.</p>
-<h2 id="4-instructions-for-importing-the-models-bone-binding-rig"><a name="4-instructions-for-importing-the-models-bone-binding-rig" class="anchor-navigation-ex-anchor" href="#4-instructions-for-importing-the-models-bone-binding-rig"><i class="fa fa-link" aria-hidden="true"></i></a>4. Instructions for importing the model&#x2019;s bone binding (Rig)</h2>
-<p>The bone binding when importing the model has two setting options: maximum number of bones per vertex and maximum bone weight, as shown in Figure 4-1.</p>
-<p><img src="img/4-1.png" alt="4-1"></p>
-<p>(Pic 4-1)</p>
-<h3 id="41-max-bonesvertex"><a name="41-max-bonesvertex" class="anchor-navigation-ex-anchor" href="#41-max-bonesvertex"><i class="fa fa-link" aria-hidden="true"></i></a>4.1 Max Bones/Vertex</h3>
-<p>As the name suggests, this is used to set the maximum number of bones that can be bound to each vertex, that is, the maximum number of bones that each vertex can be affected by.</p>
-<p>This parameter is directly related to the complexity and expressiveness of the character model&apos;s animation. If the value of <strong>Max Bones/Vertex</strong> is set high, it means that each vertex can be affected by more bones, and more complex and detailed animation effects can be produced. But it will also increase the computational burden of the game, which may lead to performance degradation. We need to weigh it according to the actual situation and needs.</p>
-<h3 id="42-max-bone-weight"><a name="42-max-bone-weight" class="anchor-navigation-ex-anchor" href="#42-max-bone-weight"><i class="fa fa-link" aria-hidden="true"></i></a>4.2 Max Bone Weight</h3>
-<p>Maximum bone weight is used to limit the maximum weight value given by a single bone to each vertex.</p>
-<p>What are bone weights? When we skin a character model, we need to decide how each bone affects the vertices of the model. This is the weight, for example a weight of 0.5 here means that this bone will have 50% influence on this point.</p>
-<p>Typically developers set different weights for each bone to fine-tune how they affect the animation and shape of the model.</p>
-<p>The <strong>Max Bone Weight</strong> here is used to limit the set bone weight to not exceed the value here. When it exceeds the value here, the weight setting here will be adopted.</p>
-<h2 id="5-model-animation-animator-import-settings-instructions"><a name="5-model-animation-animator-import-settings-instructions" class="anchor-navigation-ex-anchor" href="#5-model-animation-animator-import-settings-instructions"><i class="fa fa-link" aria-hidden="true"></i></a>5. Model animation (Animator) import settings instructions</h2>
-<p>After checking <code>Anim Compression</code>, as shown in Figure 5-1. The volume of animation data can be compressed according to configuration.</p>
-<p><img src="img/5-1.png" alt="5-1"></p>
+<p>Padding refers to the extra pixel spacing added around charts. These extra pixels are used to extend the chart boundaries to ensure there&apos;s enough space between them and prevent overlapping.</p>
+<p>Increasing padding can provide better texture sampling boundaries, reduce color blending between charts, and improve edge rendering effects.</p>
+<p>When using it, you can adjust the padding value as needed to balance rendering quality and atlas size. A reasonable value usually provides better rendering results, but excessively increasing padding can make the atlas too large, consuming more memory.</p>
+<h2 id="iv-model-rig-import-settings-description"><a name="iv-model-rig-import-settings-description" class="anchor-navigation-ex-anchor" href="#iv-model-rig-import-settings-description"><i class="fa fa-link" aria-hidden="true"></i></a>IV. Model Rig Import Settings Description</h2>
+<p>For model import, the Rig options allow you to set <strong>skin weights</strong>, with the default being Standard mode, as shown in Figure 4-1.</p>
+<p><img src="img/4-1.png" alt="4-1">  </p>
+<p>(Figure 4-1)</p>
+<p>When we select Custom mode, there are two sub-options: <code>Max Bones / Vertex</code> and <code>Min Bone Weight</code>, as shown in Figure 4-2.</p>
+<p><img src="img/4-2.png" alt=""> </p>
+<p>(Figure 4-2)</p>
+<h3 id="41-max-bones--vertex"><a name="41-max-bones--vertex" class="anchor-navigation-ex-anchor" href="#41-max-bones--vertex"><i class="fa fa-link" aria-hidden="true"></i></a>4.1 Max Bones / Vertex</h3>
+<p>As the name suggests, this sets the maximum number of bones that can be bound to each vertex, meaning how many bones can influence each vertex at most. Bones exceeding this limit will be culled.</p>
+<p>This parameter is directly related to the complexity and expressiveness of character model animations. If the <strong>Max Bones / Vertex</strong> value is set very high, it means each vertex can be influenced by more bones, allowing for more complex and refined animation effects. However, it also increases the computational load on the game, potentially leading to performance degradation. We need to weigh this based on actual circumstances and requirements.</p>
+<h3 id="42-min-bone-weight"><a name="42-min-bone-weight" class="anchor-navigation-ex-anchor" href="#42-min-bone-weight"><i class="fa fa-link" aria-hidden="true"></i></a>4.2 Min Bone Weight</h3>
+<p>Minimum Bone Weight is used to set a minimum weight value. When importing a model with skeletal animation, if the influence weight of a bone on a certain vertex is less than this threshold, that influence will be ignored. This parameter is typically used to discard bone influences that have almost no deformation effect, optimizing performance and cleaning data.</p>
+<h2 id="v-model-animation-animator-import-settings-description"><a name="v-model-animation-animator-import-settings-description" class="anchor-navigation-ex-anchor" href="#v-model-animation-animator-import-settings-description"><i class="fa fa-link" aria-hidden="true"></i></a>V. Model Animation (Animator) Import Settings Description</h2>
+<p>After checking <code>Animation Data Compression</code>, as shown in Figure 5-1, the animation data size can be compressed according to the configuration.</p>
+<p><img src="img/5-1.png" alt="5-1"> </p>
 <p>(Figure 5-1)</p>
-<p>The minimum ignore value means that if the value exceeds the set value, the keyframe will be ignored by the algorithm, thereby achieving the purpose of reducing animation data.</p>
-<p>There are three ignored dimensions, namely displacement, scaling and rotation.</p>
-<p>Ignored input values &#x200B;&#x200B;are in degrees.</p>
-<h2 id="6-instructions-for-importing-model-materials-materials"><a name="6-instructions-for-importing-model-materials-materials" class="anchor-navigation-ex-anchor" href="#6-instructions-for-importing-model-materials-materials"><i class="fa fa-link" aria-hidden="true"></i></a>6. Instructions for importing model materials (Materials)</h2>
-<p>Material position is used to set the access position source of the model material. There are two options. As shown in Figure 6-1.</p>
-<p><img src="img/6-1.png" alt="6-1"></p>
+<p><code>Minimum Ignore Value</code> indicates that keyframes exceeding the set value will be ignored by the algorithm, thereby achieving the purpose of reducing animation data.</p>
+<p>There are three dimensions for ignoring: position, scale, and rotation.</p>
+<p>The input values for ignoring are all in degrees.</p>
+<h2 id="vi-model-material-materials-import-settings-description"><a name="vi-model-material-materials-import-settings-description" class="anchor-navigation-ex-anchor" href="#vi-model-material-materials-import-settings-description"><i class="fa fa-link" aria-hidden="true"></i></a>VI. Model Material (Materials) Import Settings Description</h2>
+<h3 id="61-extract-materials"><a name="61-extract-materials" class="anchor-navigation-ex-anchor" href="#61-extract-materials"><i class="fa fa-link" aria-hidden="true"></i></a>6.1 Extract Materials</h3>
+<p>As mentioned earlier, materials inside a model cannot be modified directly. We advised extracting the model&apos;s internal resources. If you don&apos;t frequently change model data, you can choose not to extract the model itself, but only extract its materials, and then link the materials you want to modify using the material remapping table.</p>
+<p>After clicking the <code>Extract All Materials</code> button, the <strong>Material Output Target Folder Selection</strong> window will pop up, as shown in Figure 6-1.</p>
+<p><img src="img/6-1.png" alt="6-1"> </p>
 <p>(Figure 6-1)</p>
-<p>Select <strong>Use embedded material</strong> to directly use the material embedded in the model file.</p>
-<p>Select <strong>Use external materials</strong> and click <code>Apply</code>, the materials inside the model file will be extracted to the outside of the model and used as material resources outside the model.</p>
+<h3 id="62-remapped-materials"><a name="62-remapped-materials" class="anchor-navigation-ex-anchor" href="#62-remapped-materials"><i class="fa fa-link" aria-hidden="true"></i></a>6.2 Remapped Materials</h3>
+<p>After extraction, the extracted materials will automatically be linked to the material remapping table, as shown in Figure 6-2. Of course, developers can also manually change the material mapping relationships.</p>
+<p><img src="img/6-2.png" alt="">  </p>
+<p>(Figure 6-2)</p>
+<h3 id="63-on-demand-remap"><a name="63-on-demand-remap" class="anchor-navigation-ex-anchor" href="#63-on-demand-remap"><i class="fa fa-link" aria-hidden="true"></i></a>6.3 On Demand Remap</h3>
+<p>For material mapping, you can also map by searching and matching. This method has two condition parameters: <strong>Naming Match Mode</strong> and <strong>Search Method</strong>.</p>
+<h4 id="631-naming-match-mode-naming"><a name="631-naming-match-mode-naming" class="anchor-navigation-ex-anchor" href="#631-naming-match-mode-naming"><i class="fa fa-link" aria-hidden="true"></i></a>6.3.1 Naming Match Mode <code>naming</code></h4>
+<p>There are two naming match rules: match by <strong>Material Name only</strong>, or match by <strong>Model Name + Material Name</strong>, as shown in Figure 6-3.</p>
+<p><img src="img/6-3.png" alt=""> </p>
+<p>(Figure 6-3)</p>
+<table>
+<thead>
+<tr>
+<th>Matching Rule</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Material Name</td>
+<td>The material name consists only of the <strong>material&apos;s file name</strong>, e.g.: body.lmat</td>
+</tr>
+<tr>
+<td>Model Name + Material Name</td>
+<td>The material name&apos;s composition rule is: model file name - material file name,\<br \="">e.g., &quot;character&quot; + &quot;-&quot; + &quot;body.lmat&quot; &#x2192; &quot;character-body.lmat&quot;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="632-constrain-search-directory-search"><a name="632-constrain-search-directory-search" class="anchor-navigation-ex-anchor" href="#632-constrain-search-directory-search"><i class="fa fa-link" aria-hidden="true"></i></a>6.3.2 Constrain Search Directory <code>search</code></h4>
+<p>Once the Naming Match Mode is set, the IDE will use the naming result as the search key for materials and look in the specified directory.</p>
+<p><strong>Constrain Search Directory</strong> specifies which directory to search, and there are two ways, as shown in Figure 6-4:</p>
+<p><img src="img/6-4.png" alt=""> </p>
+<p>(Figure 6-4)</p>
+<p>The two options in the figure are relatively easy to understand: search in the current <code>materials</code> directory, or search in the current and parent <code>materials</code> directories.</p>
+<p>If a material matching the naming rule is found, the material mapping will be performed automatically. </p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9;Layabox 2025 all right reserved&#xFF0C;powered by <a href="https://layaAir.com/" target="_blank">LayaAir</a> Engine</span><span class="footer-modification">Update: 
-2025-06-27 15:45:28
+2025-07-01 18:37:09
 </span></footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -3821,7 +3855,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Model Asset Settings","level":"1.9.1","depth":2,"next":{"title":"Prefabs","level":"1.9.2","depth":2,"path":"IDE/assets/prefab/readme.md","ref":"IDE/assets/prefab/readme.md","articles":[]},"previous":{"title":"IDE Assets","level":"1.9","depth":1,"ref":"","articles":[{"title":"Model Asset Settings","level":"1.9.1","depth":2,"path":"IDE/assets/model/readme.md","ref":"IDE/assets/model/readme.md","articles":[]},{"title":"Prefabs","level":"1.9.2","depth":2,"path":"IDE/assets/prefab/readme.md","ref":"IDE/assets/prefab/readme.md","articles":[]},{"title":"Tile Maps","level":"1.9.3","depth":2,"path":"IDE/assets/TileSet/readme.md","ref":"IDE/assets/TileSet/readme.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","sidebar-style","anchor-navigation-ex","-lunr","-search","-sharing","search-pro","versions-select","-favicon","favicon-absolute","fontsettings","prism","splitter","code","flexible-alerts","auto-scroll-table","popup","tbfed-pagefooter","-theme-hqbook"],"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"sidebar-style":{"author":"","title":""},"tbfed-pagefooter":{"copyright":"Copyright ©Layabox 2025","modify_label":"Update: ","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"],"lang":{"flow":"typescript"},"ignore":["mermaid","eval-js"]},"splitter":{},"search-pro":{},"auto-scroll-table":{},"popup":{},"code":{"copyButtons":true},"versions-select":{"type":"branches"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./style/layabox-152.png","appleTouchIconPrecomposedMore":{},"favicon":"./style/favicon-32.ico","bookmark":"./style/favicon-32.ico"},"fontsettings":{"family":"sans","size":2,"theme":"white"},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"versions":{"options":[{"value":"https://layaAir.com/3.3/doc/","text":"v3.3"},{"value":"https://layaAir.com/3.2/doc/","text":"v3.2"},{"value":"https://layaAir.com/3.1/doc/","text":"v3.1"},{"value":"https://layaAir.com/3.0/doc/","text":"v3.0"}]},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"theme":"default","style":{"website":"style/website.css"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"services.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LayaAir3.3 Engine Documentation · LAYABOX","gitbook":"*"},"file":{"path":"IDE/assets/model/readme.md","mtime":"2025-06-27T07:45:28.908Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-06-30T10:06:43.671Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Model Asset Settings","level":"1.9.1","depth":2,"next":{"title":"Prefabs","level":"1.9.2","depth":2,"path":"IDE/assets/prefab/readme.md","ref":"IDE/assets/prefab/readme.md","articles":[]},"previous":{"title":"IDE Assets","level":"1.9","depth":1,"ref":"","articles":[{"title":"Model Asset Settings","level":"1.9.1","depth":2,"path":"IDE/assets/model/readme.md","ref":"IDE/assets/model/readme.md","articles":[]},{"title":"Prefabs","level":"1.9.2","depth":2,"path":"IDE/assets/prefab/readme.md","ref":"IDE/assets/prefab/readme.md","articles":[]},{"title":"Tile Maps","level":"1.9.3","depth":2,"path":"IDE/assets/TileSet/readme.md","ref":"IDE/assets/TileSet/readme.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","sidebar-style","anchor-navigation-ex","-lunr","-search","-sharing","search-pro","versions-select","-favicon","favicon-absolute","fontsettings","prism","splitter","code","flexible-alerts","auto-scroll-table","popup","tbfed-pagefooter","-theme-hqbook"],"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"sidebar-style":{"author":"","title":""},"tbfed-pagefooter":{"copyright":"Copyright ©Layabox 2025","modify_label":"Update: ","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"],"lang":{"flow":"typescript"},"ignore":["mermaid","eval-js"]},"splitter":{},"search-pro":{},"auto-scroll-table":{},"popup":{},"code":{"copyButtons":true},"versions-select":{"type":"branches"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./style/layabox-152.png","appleTouchIconPrecomposedMore":{},"favicon":"./style/favicon-32.ico","bookmark":"./style/favicon-32.ico"},"fontsettings":{"family":"sans","size":2,"theme":"white"},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"versions":{"options":[{"value":"https://layaAir.com/3.3/doc/","text":"v3.3"},{"value":"https://layaAir.com/3.2/doc/","text":"v3.2"},{"value":"https://layaAir.com/3.1/doc/","text":"v3.1"},{"value":"https://layaAir.com/3.0/doc/","text":"v3.0"}]},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"theme":"default","style":{"website":"style/website.css"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"services.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LayaAir3.3 Engine Documentation · LAYABOX","gitbook":"*"},"file":{"path":"IDE/assets/model/readme.md","mtime":"2025-07-01T10:37:09.351Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-07-01T10:51:27.470Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

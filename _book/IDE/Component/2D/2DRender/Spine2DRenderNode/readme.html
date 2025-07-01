@@ -439,20 +439,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="../../../../../basics/LayaTree/readme.html">
-            
-                <a href="../../../../../basics/LayaTree/readme.html">
-            
-                    
-                    LayaTree Debugging Tool
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.4" data-path="../../../../../basics/IDE/shortcutKeyCombinations/readme.html">
+        <li class="chapter " data-level="1.3.3" data-path="../../../../../basics/IDE/shortcutKeyCombinations/readme.html">
             
                 <a href="../../../../../basics/IDE/shortcutKeyCombinations/readme.html">
             
@@ -3611,112 +3598,253 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#spine-skeletal-animation"><b></b>Spine Skeletal Animation</a></li><ul><li><span class="title-icon "></span><a href="#1-overview"><b></b>1. Overview</a></li><li><span class="title-icon "></span><a href="#2-using-spine-animation-in-the-ide"><b></b>2. Using Spine Animation in the IDE</a></li><ul><li><span class="title-icon "></span><a href="#21-copy-the-spine-resource-to-the-project"><b></b>2.1 Copy the spine resource to the project</a></li><li><span class="title-icon "></span><a href="#22-add-the-spine-animation-component"><b></b>2.2 Add the spine animation component</a></li><li><span class="title-icon "></span><a href="#23-attributes"><b></b>2.3 Attributes</a></li></ul><li><span class="title-icon "></span><a href="#3-spine-animation-in-code"><b></b>3. Spine Animation in Code</a></li></ul></ul></div><a href="#spine-skeletal-animation" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="spine-skeletal-animation"><a name="spine-skeletal-animation" class="anchor-navigation-ex-anchor" href="#spine-skeletal-animation"><i class="fa fa-link" aria-hidden="true"></i></a>Spine Skeletal Animation</h1>
-<h2 id="1-overview"><a name="1-overview" class="anchor-navigation-ex-anchor" href="#1-overview"><i class="fa fa-link" aria-hidden="true"></i></a>1. Overview</h2>
-<p>Spine skeletal animation is one of the frequently used skeletal animations in games. The Spine tool is used to bind images to bones and then control the bones to achieve the animation.</p>
-<p>How to create Spine skeletal animation graphics will not be introduced here. Interested developers can visit the <a href="http://zh.esotericsoftware.com/" target="_blank">Spine official website</a>.</p>
-<p>The LayaAir IDE supports the addition, preview, and running of Spine skeletal animations. Before using it, it is necessary to check the class library in the IDE and select the version of Spine.</p>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#spine-renderer-spine2drendernode"><b></b>Spine Renderer (Spine2DRenderNode)</a></li><ul><li><span class="title-icon "></span><a href="#1-getting-started-with-spine"><b></b>1. Getting Started with Spine</a></li><ul><li><span class="title-icon "></span><a href="#11-supported-spine-runtimes"><b></b>1.1 Supported Spine Runtimes</a></li><li><span class="title-icon "></span><a href="#12-basic-spine-usage-flow"><b></b>1.2 Basic Spine Usage Flow</a></li></ul><li><span class="title-icon "></span><a href="#2-spine-panel-properties-explained"><b></b>2. Spine Panel Properties Explained</a></li><ul><li><span class="title-icon "></span><a href="#21-render-layer-layer"><b></b>2.1 Render Layer layer</a></li><li><span class="title-icon "></span><a href="#22-receive-light"><b></b>2.2 Receive Light</a></li><li><span class="title-icon "></span><a href="#23-source-file"><b></b>2.3 Source File</a></li><li><span class="title-icon "></span><a href="#24-use-fast-render"><b></b>2.4 Use Fast Render</a></li><li><span class="title-icon "></span><a href="#25-skin-name"><b></b>2.5 Skin Name</a></li><li><span class="title-icon "></span><a href="#26-animation-name"><b></b>2.6 Animation Name</a></li><li><span class="title-icon "></span><a href="#27-loop-playback"><b></b>2.7 Loop Playback</a></li><li><span class="title-icon "></span><a href="#28-preview"><b></b>2.8 Preview</a></li><li><span class="title-icon "></span><a href="#29-physics-update-physicsupdate"><b></b>2.9 Physics Update physicsUpdate</a></li></ul><li><span class="title-icon "></span><a href="#3-external-skins-externalskins-part-swapping"><b></b>3. External Skins externalSkins (Part Swapping)</a></li><ul><li><span class="title-icon "></span><a href="#31-importing-external-skin-resources"><b></b>3.1 Importing External Skin Resources</a></li><li><span class="title-icon "></span><a href="#32-replacing-different-parts"><b></b>3.2 Replacing Different Parts</a></li><li><span class="title-icon "></span><a href="#33-code-example-for-replacing-parts"><b></b>3.3 Code Example for Replacing Parts</a></li></ul><li><span class="title-icon "></span><a href="#4-common-considerations-must-read"><b></b>4. Common Considerations (Must Read)</a></li><ul><li><span class="title-icon "></span><a href="#41-playback-issues-due-to-asynchronous-loading"><b></b>4.1 Playback Issues due to Asynchronous Loading</a></li><li><span class="title-icon "></span><a href="#42-you-must-specify-the-type-when-loading-a-spine-json"><b></b>4.2 You Must Specify the Type When Loading a Spine JSON</a></li><li><span class="title-icon "></span><a href="#43-display-differences-with-alpha-blending"><b></b>4.3 Display Differences with Alpha Blending</a></li><li><span class="title-icon "></span><a href="#44-do-not-manually-load-spines-atlas-and-png-files"><b></b>4.4 Do Not Manually Load Spine&apos;s .atlas and .png Files</a></li></ul></ul></ul></div><a href="#spine-renderer-spine2drendernode" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="spine-renderer-spine2drendernode"><a name="spine-renderer-spine2drendernode" class="anchor-navigation-ex-anchor" href="#spine-renderer-spine2drendernode"><i class="fa fa-link" aria-hidden="true"></i></a>Spine Renderer (<code>Spine2DRenderNode</code>)</h1>
 <blockquote>
-<p>Starting from version 3.2, it supports directly dragging Spine resources from the resource library into the hierarchy or scene to automatically create Spine rendering nodes and Spine components.</p>
+<p>Author: Charley</p>
 </blockquote>
-<p><img src="img/1-1.png" alt="1-1"></p>
+<h2 id="1-getting-started-with-spine"><a name="1-getting-started-with-spine" class="anchor-navigation-ex-anchor" href="#1-getting-started-with-spine"><i class="fa fa-link" aria-hidden="true"></i></a>1. Getting Started with Spine</h2>
+<p>Spine is a professional 2D skeletal animation tool widely used in game development. It uses a bone-driven animation approach, with keyframe interpolation and mesh deformation to make character or object animations more fluid and more resource-efficient than frame-by-frame animation.</p>
+<blockquote>
+<p>This article does not cover how to create Spine skeletal animations. Interested developers can visit the <a href="https://zh.esotericsoftware.com/spine-academy" target="_blank">Spine website</a> for more information.</p>
+</blockquote>
+<h3 id="11-supported-spine-runtimes"><a name="11-supported-spine-runtimes" class="anchor-navigation-ex-anchor" href="#11-supported-spine-runtimes"><i class="fa fa-link" aria-hidden="true"></i></a>1.1 Supported Spine Runtimes</h3>
+<p>Spine consists of two main parts: the Spine Editor and the Spine Runtime. The Spine Editor is used to create and adjust animations, supporting the import of bitmap resources, bone binding, keyframe adjustment, and animation parameter settings.</p>
+<p>The Spine Runtime is a series of open-source libraries provided by Spine&apos;s official team. The LayaAir engine integrates Spine animation rendering by introducing the Spine Runtime libraries.</p>
+<p>Currently, LayaAir supports Spine 3.7, 3.8, 4.0, 4.1, and 4.2 runtime versions. Developers can select the corresponding Spine runtime version in the IDE under <code>Project Settings</code> -&gt; <code>Engine Modules</code> -&gt; <code>2D</code> -&gt; <code>Spine Animation</code>. The interface is shown in Figure 1-1.</p>
+<p><img src="img/1-1.png" alt="1-1">  </p>
 <p>(Figure 1-1)</p>
-<p>Currently, LayaAir supports versions 3.7, 3.8, 4.0, and 4.1. Next, we will explain the usage in the IDE by using the Spine animation of version 3.8.</p>
-<h2 id="2-using-spine-animation-in-the-ide"><a name="2-using-spine-animation-in-the-ide" class="anchor-navigation-ex-anchor" href="#2-using-spine-animation-in-the-ide"><i class="fa fa-link" aria-hidden="true"></i></a>2. Using Spine Animation in the IDE</h2>
-<h3 id="21-copy-the-spine-resource-to-the-project"><a name="21-copy-the-spine-resource-to-the-project" class="anchor-navigation-ex-anchor" href="#21-copy-the-spine-resource-to-the-project"><i class="fa fa-link" aria-hidden="true"></i></a>2.1 Copy the spine resource to the project</h3>
-<p>As shown in Figure 2-1, we put the completed Spine animation resource in the assets directory. Here, we use the example downloaded from the Spine official website for demonstration,</p>
-<p><img src="img/2-1.png" alt="2-1"></p>
+<p><strong>Note</strong>: The IDE cannot automatically identify the Spine version. Therefore, developers need to manually select the correct runtime library version based on their Spine resource to ensure correct operation.</p>
+<h3 id="12-basic-spine-usage-flow"><a name="12-basic-spine-usage-flow" class="anchor-navigation-ex-anchor" href="#12-basic-spine-usage-flow"><i class="fa fa-link" aria-hidden="true"></i></a>1.2 Basic Spine Usage Flow</h3>
+<p>Once the Spine resources are placed in the resource directory (<code>assets</code>), you can directly drag and drop the Spine file (<code>.skel</code> or <code>.json</code>) into the hierarchy panel. This automatically creates a 2D sprite node and adds a <code>Spine Renderer</code> component to it, with the Spine source file path automatically set to the dragged resource, as shown in Figure 1-2.</p>
+<p><img src="img/1-2.png" alt=""> </p>
+<p>(Figure 1-2)</p>
+<p>Alternatively, developers can add the <code>Spine Renderer</code> component to an existing node by using the &quot;Add Component&quot; function, as shown in animated Figure 1-3.</p>
+<p><img src="img/1-3.gif" alt="1-3"> </p>
+<p>(Animated Figure 1-3)</p>
+<p>If you have added the Spine component and specified the Spine resource but <strong>it does not display correctly in the IDE, it is usually because of an incorrect runtime library version</strong>. You need to first confirm the Spine resource version and then select the correct Spine runtime library as shown in Figure 1-1.</p>
+<p>When dynamically loading the Spine in code, you also need to be mindful of the Spine resource&apos;s runtime library version.</p>
+<p>Here is an example of dynamic code addition:</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">const</span> <span class="token punctuation">{</span> regClass<span class="token punctuation">,</span> property <span class="token punctuation">}</span> <span class="token operator">=</span> Laya<span class="token punctuation">;</span>
+<span class="token decorator"><span class="token at operator">@</span><span class="token function">regClass</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">Demo</span> <span class="token keyword">extends</span> <span class="token class-name">Laya</span><span class="token punctuation">.</span>Script <span class="token punctuation">{</span>
+     spine<span class="token operator">:</span> Laya<span class="token punctuation">.</span>Spine2DRenderNode<span class="token punctuation">;</span>
+     <span class="token comment">// Executed after the component is activated, once all nodes and components have been created. This method is only run once.</span>
+     <span class="token function">onAwake</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+         <span class="token comment">// Load the Spine animation data resource (json file), making sure to set the type to Laya.Loader.SPINE, otherwise the json will not be recognized as a Spine resource.</span>
+         Laya<span class="token punctuation">.</span>loader<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span><span class="token string">&quot;girl2/mix-and-match-pro.json&quot;</span><span class="token punctuation">,</span> Laya<span class="token punctuation">.</span>Loader<span class="token punctuation">.</span><span class="token constant">SPINE</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+             <span class="token comment">// Add the Spine Renderer component to the sprite node.</span>
+             <span class="token keyword">this</span><span class="token punctuation">.</span>spine <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>owner<span class="token punctuation">.</span><span class="token function">addComponent</span><span class="token punctuation">(</span>Laya<span class="token punctuation">.</span>Spine2DRenderNode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+             <span class="token keyword">this</span><span class="token punctuation">.</span>spine<span class="token punctuation">.</span>source <span class="token operator">=</span> <span class="token string">&quot;girl2/mix-and-match-pro.json&quot;</span><span class="token punctuation">;</span> <span class="token comment">// Set the Spine animation data source.</span>
+             <span class="token keyword">this</span><span class="token punctuation">.</span>spine<span class="token punctuation">.</span>skinName <span class="token operator">=</span> <span class="token string">&quot;full-skins/girl&quot;</span><span class="token punctuation">;</span> <span class="token comment">// Set the skin name.</span>
+             <span class="token keyword">this</span><span class="token punctuation">.</span>spine<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token string">&quot;idle&quot;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Play the animation named &quot;idle&quot;, with false indicating it does not loop.</span>
+         <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="2-spine-panel-properties-explained"><a name="2-spine-panel-properties-explained" class="anchor-navigation-ex-anchor" href="#2-spine-panel-properties-explained"><i class="fa fa-link" aria-hidden="true"></i></a>2. Spine Panel Properties Explained</h2>
+<h3 id="21-render-layer-layer"><a name="21-render-layer-layer" class="anchor-navigation-ex-anchor" href="#21-render-layer-layer"><i class="fa fa-link" aria-hidden="true"></i></a>2.1 Render Layer <code>layer</code></h3>
+<p>The render layer determines whether the node is affected by the 2D lighting system and other render-layer-related logic.</p>
+<p>For example, after setting the render layer to <code>abc</code> as shown in Figure 2-1, the Spine animation on the current node can be affected by 2D lights whose <code>Layer Mask</code> is also set to <code>abc</code>.</p>
+<p><img src="img/2-1.png" alt=""> </p>
 <p>(Figure 2-1)</p>
-<h3 id="22-add-the-spine-animation-component"><a name="22-add-the-spine-animation-component" class="anchor-navigation-ex-anchor" href="#22-add-the-spine-animation-component"><i class="fa fa-link" aria-hidden="true"></i></a>2.2 Add the spine animation component</h3>
-<p>In the LayaAir IDE, the skeletal animation can be achieved by adding components. First, create a 2D node, and then add a spine component on the component, as shown in the animation 2-2,</p>
-<p><img src="img/2-2.gif" alt="2-2"></p>
-<p>(Animation 2-2)</p>
-<h3 id="23-attributes"><a name="23-attributes" class="anchor-navigation-ex-anchor" href="#23-attributes"><i class="fa fa-link" aria-hidden="true"></i></a>2.3 Attributes</h3>
-<p>Let&apos;s first take a look at the attributes of the Spine animation component, as shown in Figure 2-3</p>
-<p><img src="img/2-3.png" alt="2-3"></p>
+<blockquote>
+<p>For more information on how lights affect render layers, refer to the <a href="../../BaseLight2D/readme.html">&#x300A;BaseLight2D&#x300B;</a>documentation.</p>
+</blockquote>
+<h3 id="22-receive-light"><a name="22-receive-light" class="anchor-navigation-ex-anchor" href="#22-receive-light"><i class="fa fa-link" aria-hidden="true"></i></a>2.2 Receive Light</h3>
+<p>By default, Spine does not receive light. It will only be affected by light if <code>lightReceive</code> is checked.</p>
+<p>As shown in Figure 2-2, the Spine animation on the right is affected by a blue 2D directional light, while the one on the left is not.</p>
+<p><img src="img/2-2.png" alt=""> </p>
+<p>(Figure 2-2)</p>
+<h3 id="23-source-file"><a name="23-source-file" class="anchor-navigation-ex-anchor" href="#23-source-file"><i class="fa fa-link" aria-hidden="true"></i></a>2.3 Source File</h3>
+<p>The path to the Spine animation resource file, with the format <code>.skel</code> or <code>.json</code>.</p>
+<h3 id="24-use-fast-render"><a name="24-use-fast-render" class="anchor-navigation-ex-anchor" href="#24-use-fast-render"><i class="fa fa-link" aria-hidden="true"></i></a>2.4 Use Fast Render</h3>
+<p>The Spine component enables Fast Render by default. In this mode, a series of optimization strategies, such as GPU computation, are used to significantly improve Spine animation performance.</p>
+<p>However, this optimization strategy balances performance and memory by limiting the number of bones per vertex. The number of bones controlling a single vertex cannot be greater than 4.</p>
+<p>If the number of bones controlling a vertex exceeds 4, it may cause rendering abnormalities. The engine will also issue a warning, as shown in Figure 2-3.</p>
+<p><img src="img/2-3.png" alt=""> </p>
 <p>(Figure 2-3)</p>
-<table>
-<thead>
-<tr>
-<th>Attribute Name</th>
-<th>Attribute Explanation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Layer</td>
-<td>Can be associated with the 2D lighting system by setting different layer values. Different layers can receive different lighting effects.</td>
-</tr>
-<tr>
-<td>Shared Material</td>
-<td>Supports <a href="../../../../../2D/advanced/customShader/readme.html">custom shaders</a> to set the rendering effect of the Spine animation.</td>
-</tr>
-<tr>
-<td>Source</td>
-<td>The configuration file of the spine animation, that is, the.skel file or.json file.</td>
-</tr>
-<tr>
-<td>Use Fast Render</td>
-<td>Enabled by default. Enabling this value for some complex Spines may result in rendering errors, such as when the number of bone controls for a certain vertex is greater than 4.</td>
-</tr>
-<tr>
-<td>Skin Name</td>
-<td>The name of the skeletal animation.</td>
-</tr>
-<tr>
-<td>Animation Name</td>
-<td>The name of the played animation.</td>
-</tr>
-<tr>
-<td>Loop</td>
-<td>Whether to play in a loop.</td>
-</tr>
-<tr>
-<td>Preview</td>
-<td>Whether to preview in the IDE.</td>
-</tr>
-<tr>
-<td>External Skins</td>
-<td>Used to load and manage external Spine skin resources.</td>
-</tr>
-</tbody>
-</table>
-<p>Then the animation resource can be dragged in. First, drag the.skel file into the <code>Source</code> attribute, check the <code>Preview</code> attribute, and the animation will be seen in the IDE. Check <code>Loop Play</code> to set whether to loop the animation, and you can also select the animation name to switch animations. As shown in the animation 2-4,</p>
-<p><img src="img/2-4.gif" alt="2-4"></p>
-<p>(Animation 2-4)</p>
-<h2 id="3-spine-animation-in-code"><a name="3-spine-animation-in-code" class="anchor-navigation-ex-anchor" href="#3-spine-animation-in-code"><i class="fa fa-link" aria-hidden="true"></i></a>3. Spine Animation in Code</h2>
-<p>When using in code, first load the Spine animation resource and then add the spine component.</p>
-<p>Code example:</p>
+<p>If rendering is abnormal, you can uncheck <code>Use Fast Render</code> to revert to the standard rendering process. However, we recommend adjusting the Spine art resource for optimal animation performance.</p>
+<h3 id="25-skin-name"><a name="25-skin-name" class="anchor-navigation-ex-anchor" href="#25-skin-name"><i class="fa fa-link" aria-hidden="true"></i></a>2.5 Skin Name</h3>
+<p>If your Spine asset has multiple skins, you can switch between different skin names in the IDE to preview the effects, as shown in Figure 2-4.</p>
+<p><img src="img/2-4.png" alt="2-4"></p>
+<p>(Figure 2-4)</p>
+<p>Developers can also switch between different skins dynamically through code based on game logic.</p>
+<p>Here is a code example:</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">const</span> <span class="token punctuation">{</span> regClass<span class="token punctuation">,</span> property <span class="token punctuation">}</span> <span class="token operator">=</span> Laya<span class="token punctuation">;</span>
+
+<span class="token decorator"><span class="token at operator">@</span><span class="token function">regClass</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">NewScript</span> <span class="token keyword">extends</span> <span class="token class-name">Laya</span><span class="token punctuation">.</span>Script <span class="token punctuation">{</span>
+     spine<span class="token operator">:</span> Laya<span class="token punctuation">.</span>Spine2DRenderNode<span class="token punctuation">;</span>
+     <span class="token function">onEnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+         <span class="token comment">// Get the spine component attached to the IDE node.</span>
+         <span class="token keyword">this</span><span class="token punctuation">.</span>spine <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>owner<span class="token punctuation">.</span><span class="token function">getComponent</span><span class="token punctuation">(</span>Laya<span class="token punctuation">.</span>Spine2DRenderNode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token keyword">let</span> currentSkin<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>spine<span class="token punctuation">.</span>skinName<span class="token punctuation">;</span> <span class="token comment">// Record the current skin state.</span>
+         <span class="token comment">// Execute logic after playback stops.</span>
+         <span class="token keyword">this</span><span class="token punctuation">.</span>owner<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span>Laya<span class="token punctuation">.</span>Event<span class="token punctuation">.</span><span class="token constant">STOPPED</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+             <span class="token comment">// Use a ternary operator to switch skin names.</span>
+             currentSkin <span class="token operator">=</span> currentSkin <span class="token operator">===</span> <span class="token string">&quot;full-skins/girl&quot;</span> <span class="token operator">?</span> <span class="token string">&quot;full-skins/girl-blue-cape&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;full-skins/girl&quot;</span><span class="token punctuation">;</span>
+             <span class="token keyword">this</span><span class="token punctuation">.</span>spine<span class="token punctuation">.</span>skinName <span class="token operator">=</span> currentSkin<span class="token punctuation">;</span>
+             <span class="token keyword">this</span><span class="token punctuation">.</span>spine<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token string">&quot;idle&quot;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Play the animation again after switching.</span>
+             <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Current skin switched to: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>currentSkin<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="26-animation-name"><a name="26-animation-name" class="anchor-navigation-ex-anchor" href="#26-animation-name"><i class="fa fa-link" aria-hidden="true"></i></a>2.6 Animation Name</h3>
+<p>In the example code above, we used the <code>play</code> method to play an animation directly. For easier use in the IDE panel, we have encapsulated the <code>play</code> method with the <code>animationName</code> accessor.</p>
+<p>This allows developers to directly see all the animation names in the Spine asset within the IDE panel, making it easy to switch and preview different animations, as shown in Figure 2-5.</p>
+<p><img src="img/2-5.png" alt=""> </p>
+<p>(Figure 2-5)</p>
+<h3 id="27-loop-playback"><a name="27-loop-playback" class="anchor-navigation-ex-anchor" href="#27-loop-playback"><i class="fa fa-link" aria-hidden="true"></i></a>2.7 Loop Playback</h3>
+<p>Similar to <code>animationName</code>, <code>loop</code> is an encapsulated property for the <code>play</code> method, providing a visual control in the IDE to enable or disable looping.</p>
+<p>Check the box to loop the animation; uncheck it to play only once.</p>
+<h3 id="28-preview"><a name="28-preview" class="anchor-navigation-ex-anchor" href="#28-preview"><i class="fa fa-link" aria-hidden="true"></i></a>2.8 Preview</h3>
+<p>Preview is not an engine feature but an IDE-specific function to control whether the animation plays in the scene editor.</p>
+<p>Check the box to play the Spine animation; uncheck it to display only a static frame.</p>
+<h3 id="29-physics-update-physicsupdate"><a name="29-physics-update-physicsupdate" class="anchor-navigation-ex-anchor" href="#29-physics-update-physicsupdate"><i class="fa fa-link" aria-hidden="true"></i></a>2.9 Physics Update <code>physicsUpdate</code></h3>
+<blockquote>
+<p>The physics simulation feature is only available for Spine versions 4.2 and above. We currently only support <code>none</code> and <code>update</code> parameter settings.</p>
+</blockquote>
+<ul>
+<li><p><code>none</code>: No physics simulation is used.</p>
+</li>
+<li><p><code>update</code>: Enables physics updates. When enabled, the final animation pose is no longer determined solely by the timeline but is influenced by physical effects.</p>
+</li>
+</ul>
+<p>As shown in animated Figure 2-6, after enabling <code>Physics Update</code> for the girl on the right, her hair and skirt sway naturally under the influence of physical forces.</p>
+<p><img src="img/2-6.gif" alt=""> </p>
+<p>(Animated Figure 2-6)</p>
+<p>The specific physics parameters need to be set in the Spine editor; LayaAir only determines whether to enable them.</p>
+<h2 id="3-external-skins-externalskins-part-swapping"><a name="3-external-skins-externalskins-part-swapping" class="anchor-navigation-ex-anchor" href="#3-external-skins-externalskins-part-swapping"><i class="fa fa-link" aria-hidden="true"></i></a>3. External Skins <code>externalSkins</code> (Part Swapping)</h2>
+<p>The main function of <code>externalSkins</code> is to import other Spine resources to replace attachments on the current Spine&apos;s slots under different skins.</p>
+<blockquote>
+<p>The external skins feature does not support Fast Render mode (<code>useFastRender</code>).</p>
+</blockquote>
+<h3 id="31-importing-external-skin-resources"><a name="31-importing-external-skin-resources" class="anchor-navigation-ex-anchor" href="#31-importing-external-skin-resources"><i class="fa fa-link" aria-hidden="true"></i></a>3.1 Importing External Skin Resources</h3>
+<p>Clicking the <code>+</code> icon on the right side of <code>External Skins</code> creates a sub-object property with <code>Source File</code> and <code>Part List</code> fields, as shown in Figure 3-1.</p>
+<p><img src="img/3-1.png" alt=""> </p>
+<p>(Figure 3-1)</p>
+<p>The <code>Source File</code> in the sub-object list is the Spine resource file, and the skin and attachments in the <code>Part List</code> are obtained from that source file.</p>
+<p>In principle, each sub-object&apos;s <code>Source File</code> should correspond to a different Spine resource file; do not use duplicates. This is because the engine will apply each setting in the list, and duplicate resource settings will overwrite the previous identical setting.</p>
+<p>It is important to note that external skins are used to replace attachments from another set of skins that are outside the current Spine component&apos;s skin set.</p>
+<p>If the Spine resource for the current component has multiple skins, you can still reference them in the sub-object list of external skins, as shown in Figure 3-2. Just be careful not to reuse the same resource within the sub-objects.</p>
+<p><img src="img/3-2.png" alt=""> </p>
+<p>(Figure 3-2)</p>
+<h3 id="32-replacing-different-parts"><a name="32-replacing-different-parts" class="anchor-navigation-ex-anchor" href="#32-replacing-different-parts"><i class="fa fa-link" aria-hidden="true"></i></a>3.2 Replacing Different Parts</h3>
+<p>The <code>Part List</code> in the <code>External Skins</code> sub-object is used to specify which attachment from a skin in the corresponding source file should be used for which slot.</p>
+<h4 id="321-slot-name-slot"><a name="321-slot-name-slot" class="anchor-navigation-ex-anchor" href="#321-slot-name-slot"><i class="fa fa-link" aria-hidden="true"></i></a>3.2.1 Slot Name <code>slot</code></h4>
+<p>The <code>Slot Name</code> is a list of all slots in the current component&apos;s Spine resource file. Developers can select the slot they want to replace from the list, as shown in Figure 3-3.</p>
+<p><img src="img/3-3.png" alt=""> </p>
+<p>(Figure 3-3)</p>
+<h4 id="322-skin-name-skin"><a name="322-skin-name-skin" class="anchor-navigation-ex-anchor" href="#322-skin-name-skin"><i class="fa fa-link" aria-hidden="true"></i></a>3.2.2 Skin Name <code>skin</code></h4>
+<p>The <code>Skin Name</code> is a list of all skins from the <code>Source File</code> corresponding to the <code>External Skins</code> sub-object.</p>
+<p>In Spine, a single skin can correspond to different attachments, as shown in animated Figure 3-4.</p>
+<p><img src="img/3-4.gif" alt=""> </p>
+<p>(Animated Figure 3-4)</p>
+<p>Similarly, the same attachment name can have a different appearance under different skins. As shown in animated Figure 3-5, switching the skin name changes the appearance of the right leg.</p>
+<p><img src="img/3-5.gif" alt=""> </p>
+<p>(Animated Figure 3-5)</p>
+<h4 id="323-attachment-name-attachment"><a name="323-attachment-name-attachment" class="anchor-navigation-ex-anchor" href="#323-attachment-name-attachment"><i class="fa fa-link" aria-hidden="true"></i></a>3.2.3 Attachment Name <code>attachment</code></h4>
+<p>To facilitate needs like changing outfits or weapons, a Spine character is usually broken down into individual parts. In Spine, these parts are professionally called <code>attachments</code>, which need to be connected through slots. The effect is shown in animated Figure 3-6.</p>
+<p><img src="img/3-6.gif" alt=""> </p>
+<p>(Animated Figure 3-6)</p>
+<h3 id="33-code-example-for-replacing-parts"><a name="33-code-example-for-replacing-parts" class="anchor-navigation-ex-anchor" href="#33-code-example-for-replacing-parts"><i class="fa fa-link" aria-hidden="true"></i></a>3.3 Code Example for Replacing Parts</h3>
+<p>Visual operations are usually used for previewing effects or changing default settings. Replacing attachments is more commonly controlled through code, for example, to change a weapon.</p>
+<p>Here is a code example:</p>
 <pre class="language-"><code class="lang-typescript"><span class="token keyword">const</span> <span class="token punctuation">{</span> regClass<span class="token punctuation">,</span> property <span class="token punctuation">}</span> <span class="token operator">=</span> Laya<span class="token punctuation">;</span>
 
 <span class="token decorator"><span class="token at operator">@</span><span class="token function">regClass</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">NewScript</span> <span class="token keyword">extends</span> <span class="token class-name">Laya</span><span class="token punctuation">.</span>Script <span class="token punctuation">{</span>
 
-    <span class="token decorator"><span class="token at operator">@</span><span class="token function">property</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token operator">:</span> Laya<span class="token punctuation">.</span>Sprite <span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> sprite<span class="token operator">:</span> Laya<span class="token punctuation">.</span>Sprite<span class="token punctuation">;</span>
+     <span class="token decorator"><span class="token at operator">@</span><span class="token function">property</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token operator">:</span> Laya<span class="token punctuation">.</span>Button<span class="token punctuation">,</span> caption<span class="token operator">:</span> <span class="token string">&quot;Switch Button&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+     <span class="token keyword">public</span> btn<span class="token operator">:</span> Laya<span class="token punctuation">.</span>Button<span class="token punctuation">;</span>
 
-    <span class="token keyword">private</span> spine<span class="token operator">:</span> Laya<span class="token punctuation">.</span>Spine2DRenderNode<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> index<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+     spine<span class="token operator">:</span> Laya<span class="token punctuation">.</span>Spine2DRenderNode<span class="token punctuation">;</span>
 
-    <span class="token comment">// Executed after the component is activated. At this time, all nodes and components have been created. This method is executed only once</span>
-    <span class="token function">onAwake</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+     <span class="token comment">// External skin object.</span>
+     weaponSkin<span class="token operator">:</span> Laya<span class="token punctuation">.</span>ExternalSkin <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Laya</span><span class="token punctuation">.</span><span class="token function">ExternalSkin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token comment">// External skin list item.</span>
+     weaponSkinItem<span class="token operator">:</span> Laya<span class="token punctuation">.</span>ExternalSkinItem <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Laya</span><span class="token punctuation">.</span><span class="token function">ExternalSkinItem</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="token comment">// Load the Spine animation resource</span>
-        Laya<span class="token punctuation">.</span>loader<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span><span class="token string">&quot;resources/boy/spineboy-pma.skel&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-            <span class="token comment">// Add the spine component</span>
-            <span class="token keyword">this</span><span class="token punctuation">.</span>spine <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>sprite<span class="token punctuation">.</span><span class="token function">addComponent</span><span class="token punctuation">(</span>Laya<span class="token punctuation">.</span>Spine2DRenderNode<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">this</span><span class="token punctuation">.</span>spine<span class="token punctuation">.</span>source <span class="token operator">=</span> <span class="token string">&quot;resources/boy/spineboy-pma.skel&quot;</span><span class="token punctuation">;</span>
-            <span class="token keyword">this</span><span class="token punctuation">.</span>spine<span class="token punctuation">.</span>animationName <span class="token operator">=</span> <span class="token string">&quot;walk&quot;</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+     <span class="token comment">// Executed after the component is activated. All nodes and components have been created at this point. This method is executed only once.</span>
+     <span class="token function">onAwake</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+         <span class="token comment">// Load Spine animation resources.</span>
+         Laya<span class="token punctuation">.</span>loader<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">&quot;spine4.1/boss.json&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;spine4.1/role.json&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> Laya<span class="token punctuation">.</span>Loader<span class="token punctuation">.</span><span class="token constant">SPINE</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+             <span class="token comment">// Add the Spine Renderer component to the sprite node and return the component.</span>
+             <span class="token keyword">this</span><span class="token punctuation">.</span>spine <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>owner<span class="token punctuation">.</span><span class="token function">addComponent</span><span class="token punctuation">(</span>Laya<span class="token punctuation">.</span>Spine2DRenderNode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+             <span class="token keyword">this</span><span class="token punctuation">.</span>spine<span class="token punctuation">.</span>source <span class="token operator">=</span> <span class="token string">&quot;spine4.1/role.json&quot;</span><span class="token punctuation">;</span> <span class="token comment">// Set the Spine animation data source.</span>
+             <span class="token keyword">this</span><span class="token punctuation">.</span>spine<span class="token punctuation">.</span>skinName <span class="token operator">=</span> <span class="token string">&quot;default&quot;</span><span class="token punctuation">;</span> <span class="token comment">// Set the skin name.</span>
+             <span class="token keyword">this</span><span class="token punctuation">.</span>spine<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token string">&quot;att&quot;</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Play the &quot;att&quot; attack animation, true indicates looping.</span>
+
+             <span class="token keyword">this</span><span class="token punctuation">.</span>btn<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span>Laya<span class="token punctuation">.</span>Event<span class="token punctuation">.</span><span class="token constant">CLICK</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>changeAttachment<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Listen for click events to trigger the method for changing the weapon.</span>
+
+             <span class="token comment">// The following basic settings can be set in the IDE, so you don&apos;t have to add them in code. This is just for demonstration.</span>
+             <span class="token comment">// Set the external skin object.</span>
+             <span class="token keyword">this</span><span class="token punctuation">.</span>spine<span class="token punctuation">.</span>externalSkins <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>weaponSkin<span class="token punctuation">]</span><span class="token punctuation">;</span>
+             <span class="token comment">// Set data for the external skin object.</span>
+             <span class="token keyword">this</span><span class="token punctuation">.</span>weaponSkin<span class="token punctuation">.</span>source <span class="token operator">=</span> <span class="token string">&quot;spine4.1/boss.json&quot;</span><span class="token punctuation">;</span> <span class="token comment">// Set the external skin data source.</span>
+             <span class="token keyword">this</span><span class="token punctuation">.</span>weaponSkin<span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>weaponSkinItem<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// Set the external skin list items.</span>
+             <span class="token comment">// Set data for the external skin list item.</span>
+             <span class="token keyword">this</span><span class="token punctuation">.</span>weaponSkinItem<span class="token punctuation">.</span>slot <span class="token operator">=</span> <span class="token string">&quot;taidao&quot;</span><span class="token punctuation">;</span> <span class="token comment">// Set the slot name.</span>
+             <span class="token keyword">this</span><span class="token punctuation">.</span>weaponSkinItem<span class="token punctuation">.</span>skin <span class="token operator">=</span> <span class="token string">&quot;default&quot;</span><span class="token punctuation">;</span> <span class="token comment">// Set the skin name.</span>
+         <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+
+     <span class="token comment">// Change the weapon.</span>
+     <span class="token function">changeAttachment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+         <span class="token comment">// Switch the weapon based on the current attachment state.</span>
+         <span class="token keyword">const</span> newAttachment <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>weaponSkinItem<span class="token punctuation">.</span>attachment <span class="token operator">===</span> <span class="token string">&quot;weapon_1&quot;</span> <span class="token operator">?</span> <span class="token string">&quot;weapon_3&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;weapon_1&quot;</span><span class="token punctuation">;</span>
+         <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setAttachment</span><span class="token punctuation">(</span><span class="token string">&quot;taidao&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;default&quot;</span><span class="token punctuation">,</span> newAttachment<span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Switched to </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>newAttachment<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+
+     <span class="token comment">// Set the weapon attachment.</span>
+     <span class="token function">setAttachment</span><span class="token punctuation">(</span>slot<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> skinName<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> attachmentName<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+         <span class="token keyword">this</span><span class="token punctuation">.</span>weaponSkinItem<span class="token punctuation">.</span>slot <span class="token operator">=</span> slot<span class="token punctuation">;</span> <span class="token comment">// Set the slot name.</span>
+         <span class="token keyword">this</span><span class="token punctuation">.</span>weaponSkinItem<span class="token punctuation">.</span>skin <span class="token operator">=</span> skinName<span class="token punctuation">;</span> <span class="token comment">// Set the skin name.</span>
+         <span class="token keyword">this</span><span class="token punctuation">.</span>weaponSkinItem<span class="token punctuation">.</span>attachment <span class="token operator">=</span> attachmentName<span class="token punctuation">;</span> <span class="token comment">// Set the attachment name.</span>
+         <span class="token keyword">this</span><span class="token punctuation">.</span>spine<span class="token punctuation">.</span><span class="token function">resetExternalSkin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Reset the loaded external skin to apply the settings.</span>
+     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>In addition, the GPU rendering optimization of spine is enabled by default, and no additional operations are required by developers. If you want to turn it off for testing, you can use the following code:</p>
-<pre class="language-"><code class="lang-typescript"><span class="token comment">// Turn off GPU skeletal animation optimization</span>
-Laya<span class="token punctuation">.</span>SketonOptimise<span class="token punctuation">.</span>normalRenderSwitch <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<p>The code in action is shown in animated Figure 3-7.</p>
+<p><img src="img/3-7.gif" alt=""> </p>
+<p>(Animated Figure 3-7)</p>
+<h2 id="4-common-considerations-must-read"><a name="4-common-considerations-must-read" class="anchor-navigation-ex-anchor" href="#4-common-considerations-must-read"><i class="fa fa-link" aria-hidden="true"></i></a>4. Common Considerations (Must Read)</h2>
+<h3 id="41-playback-issues-due-to-asynchronous-loading"><a name="41-playback-issues-due-to-asynchronous-loading" class="anchor-navigation-ex-anchor" href="#41-playback-issues-due-to-asynchronous-loading"><i class="fa fa-link" aria-hidden="true"></i></a>4.1 Playback Issues due to Asynchronous Loading</h3>
+<p>Sometimes, due to the large size of Spine resources and slow user network speeds, the code controlling the Spine component may fail or report errors. This happens because the resources are still in the process of asynchronous loading when lifecycle methods like <code>onAwake</code> and <code>onEnable</code> are executed, and are not yet fully loaded. This can cause issues with usage.</p>
+<p>The solution is to put larger Spine resources into the preloading queue to load them in advance.</p>
+<p>Alternatively, listen for the <code>Laya.Event.READY</code> event before processing your logic.</p>
+<h3 id="42-you-must-specify-the-type-when-loading-a-spine-json"><a name="42-you-must-specify-the-type-when-loading-a-spine-json" class="anchor-navigation-ex-anchor" href="#42-you-must-specify-the-type-when-loading-a-spine-json"><i class="fa fa-link" aria-hidden="true"></i></a>4.2 You Must Specify the Type When Loading a Spine JSON</h3>
+<p>If developers load a binary Spine resource, they can omit the type because the binary suffix is special and can be specified internally by the engine. However, JSON is a general resource type, so the engine cannot specify the type internally. Therefore, developers must specify the Spine type as <code>Laya.Loader.SPINE</code> during loading, as shown in the example below:</p>
+<pre class="language-"><code class="lang-typescript"><span class="token comment">// Load the Spine animation data resource (json file), making sure to set the type to Laya.Loader.SPINE, otherwise the json will not be recognized as a Spine resource.</span>
+Laya<span class="token punctuation">.</span>loader<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">&quot;aa.json&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;bb.json&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> Laya<span class="token punctuation">.</span>Loader<span class="token punctuation">.</span><span class="token constant">SPINE</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
+<h3 id="43-display-differences-with-alpha-blending"><a name="43-display-differences-with-alpha-blending" class="anchor-navigation-ex-anchor" href="#43-display-differences-with-alpha-blending"><i class="fa fa-link" aria-hidden="true"></i></a>4.3 Display Differences with Alpha Blending</h3>
+<p>Some developers have reported that the effect seen in Spine is different from the engine&apos;s effect, typically appearing less bright or with less obvious semi-transparent areas.</p>
+<p>In fact, these issues are almost always caused by texture configurations for alpha blending. This is especially common for projects that worked fine in version 3.1 but show discrepancies in 3.2 and later.</p>
+<p>Starting from LayaAir 3.2, a distinction is made between premultiplied and non-premultiplied blending for Spine.</p>
+<p>If your Spine requires alpha blending, you cannot use the default sprite texture type. You need to make the following changes to the Spine texture resources in the IDE project:</p>
+<ul>
+<li>In the Project Resources panel, select the texture from your Spine resource.</li>
+<li>In the Spine texture&apos;s property panel, change the <code>Texture Type</code> to <code>Default</code>.</li>
+<li>Check the <code>sRGB Color Space</code> box.</li>
+<li>Make sure <strong>not</strong> to check <code>Premultiply Alpha</code> (do not check this when exporting from Spine either).</li>
+<li>Click <code>Apply</code>.</li>
+</ul>
+<p>These steps are shown in Figure 4-1:</p>
+<p><img src="img/4-1.png" alt=""> </p>
+<p>(Figure 4-1)</p>
+<p>Note: If the effect is still incorrect after applying, refresh the IDE.
+Additionally, if you have multiple Spine textures, you can select them all at once to set them. Or, developers can write an IDE plugin to automate this process.</p>
+<h3 id="44-do-not-manually-load-spines-atlas-and-png-files"><a name="44-do-not-manually-load-spines-atlas-and-png-files" class="anchor-navigation-ex-anchor" href="#44-do-not-manually-load-spines-atlas-and-png-files"><i class="fa fa-link" aria-hidden="true"></i></a>4.4 Do Not Manually Load Spine&apos;s .atlas and .png Files</h3>
+<p>When developers manually load Spine&apos;s <code>.atlas</code> files in code or preload them in the IDE&apos;s Scene2D, they may see a warning similar to the following during runtime:</p>
+<pre class="language-"><code class="lang-sh">Failed to load <span class="token string">&apos;http://localhost:18094/resources/ddlx_02/ddlx_02.atlas&apos;</span> Unexpected token <span class="token string">&apos;d&apos;</span>, <span class="token string">&quot;ddlx_02.pn&quot;</span><span class="token punctuation">..</span>. is not valid JSON
+</code></pre>
+<p>This occurs because although a Spine <code>.atlas</code> file has the same name as our engine&apos;s atlas files, they are not the same thing. Our atlas information is in JSON format, while Spine&apos;s is not. So, when loading, the engine finds that the <code>.atlas</code> file is not a valid JSON and reports the warning <code>&quot;... load &apos;xxx.atlas&apos;....is not valid JSON&quot;</code>.</p>
+<p>When loading a Spine asset, developers only need to load the main Spine file (<code>.skel</code> or <code>.json</code>). You do not need to manually load the <code>.atlas</code> and <code>.png</code> files, as the engine will automatically load the associated resources based on the main Spine file. </p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9;Layabox 2025 all right reserved&#xFF0C;powered by <a href="https://layaAir.com/" target="_blank">LayaAir</a> Engine</span><span class="footer-modification">Update: 
-2025-06-27 15:45:28
+2025-07-01 18:49:59
 </span></footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -3761,7 +3889,7 @@ Laya<span class="token punctuation">.</span>SketonOptimise<span class="token pun
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Spine Skeleton Animation","level":"1.5.7.1","depth":3,"next":{"title":"Built-in Skeleton Animation","level":"1.5.7.2","depth":3,"path":"IDE/uiEditor/uiComponent/skeleton/sk/readme.md","ref":"IDE/uiEditor/uiComponent/skeleton/sk/readme.md","articles":[]},"previous":{"title":"Skeleton Animation","level":"1.5.7","depth":2,"path":"IDE/uiEditor/uiComponent/skeleton/readme.md","ref":"IDE/uiEditor/uiComponent/skeleton/readme.md","articles":[{"title":"Spine Skeleton Animation","level":"1.5.7.1","depth":3,"path":"IDE/Component/2D/2DRender/Spine2DRenderNode/readme.md","ref":"IDE/Component/2D/2DRender/Spine2DRenderNode/readme.md","articles":[]},{"title":"Built-in Skeleton Animation","level":"1.5.7.2","depth":3,"path":"IDE/uiEditor/uiComponent/skeleton/sk/readme.md","ref":"IDE/uiEditor/uiComponent/skeleton/sk/readme.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","sidebar-style","anchor-navigation-ex","-lunr","-search","-sharing","search-pro","versions-select","-favicon","favicon-absolute","fontsettings","prism","splitter","code","flexible-alerts","auto-scroll-table","popup","tbfed-pagefooter","-theme-hqbook"],"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"sidebar-style":{"author":"","title":""},"tbfed-pagefooter":{"copyright":"Copyright ©Layabox 2025","modify_label":"Update: ","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"],"lang":{"flow":"typescript"},"ignore":["mermaid","eval-js"]},"splitter":{},"search-pro":{},"auto-scroll-table":{},"popup":{},"code":{"copyButtons":true},"versions-select":{"type":"branches"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./style/layabox-152.png","appleTouchIconPrecomposedMore":{},"favicon":"./style/favicon-32.ico","bookmark":"./style/favicon-32.ico"},"fontsettings":{"family":"sans","size":2,"theme":"white"},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"versions":{"options":[{"value":"https://layaAir.com/3.3/doc/","text":"v3.3"},{"value":"https://layaAir.com/3.2/doc/","text":"v3.2"},{"value":"https://layaAir.com/3.1/doc/","text":"v3.1"},{"value":"https://layaAir.com/3.0/doc/","text":"v3.0"}]},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"theme":"default","style":{"website":"style/website.css"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"services.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LayaAir3.3 Engine Documentation · LAYABOX","gitbook":"*"},"file":{"path":"IDE/Component/2D/2DRender/Spine2DRenderNode/readme.md","mtime":"2025-06-27T07:45:28.061Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-06-30T10:06:43.671Z"},"basePath":"../../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Spine Skeleton Animation","level":"1.5.7.1","depth":3,"next":{"title":"Built-in Skeleton Animation","level":"1.5.7.2","depth":3,"path":"IDE/uiEditor/uiComponent/skeleton/sk/readme.md","ref":"IDE/uiEditor/uiComponent/skeleton/sk/readme.md","articles":[]},"previous":{"title":"Skeleton Animation","level":"1.5.7","depth":2,"path":"IDE/uiEditor/uiComponent/skeleton/readme.md","ref":"IDE/uiEditor/uiComponent/skeleton/readme.md","articles":[{"title":"Spine Skeleton Animation","level":"1.5.7.1","depth":3,"path":"IDE/Component/2D/2DRender/Spine2DRenderNode/readme.md","ref":"IDE/Component/2D/2DRender/Spine2DRenderNode/readme.md","articles":[]},{"title":"Built-in Skeleton Animation","level":"1.5.7.2","depth":3,"path":"IDE/uiEditor/uiComponent/skeleton/sk/readme.md","ref":"IDE/uiEditor/uiComponent/skeleton/sk/readme.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","sidebar-style","anchor-navigation-ex","-lunr","-search","-sharing","search-pro","versions-select","-favicon","favicon-absolute","fontsettings","prism","splitter","code","flexible-alerts","auto-scroll-table","popup","tbfed-pagefooter","-theme-hqbook"],"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"sidebar-style":{"author":"","title":""},"tbfed-pagefooter":{"copyright":"Copyright ©Layabox 2025","modify_label":"Update: ","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"],"lang":{"flow":"typescript"},"ignore":["mermaid","eval-js"]},"splitter":{},"search-pro":{},"auto-scroll-table":{},"popup":{},"code":{"copyButtons":true},"versions-select":{"type":"branches"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./style/layabox-152.png","appleTouchIconPrecomposedMore":{},"favicon":"./style/favicon-32.ico","bookmark":"./style/favicon-32.ico"},"fontsettings":{"family":"sans","size":2,"theme":"white"},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"versions":{"options":[{"value":"https://layaAir.com/3.3/doc/","text":"v3.3"},{"value":"https://layaAir.com/3.2/doc/","text":"v3.2"},{"value":"https://layaAir.com/3.1/doc/","text":"v3.1"},{"value":"https://layaAir.com/3.0/doc/","text":"v3.0"}]},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"theme":"default","style":{"website":"style/website.css"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"services.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LayaAir3.3 Engine Documentation · LAYABOX","gitbook":"*"},"file":{"path":"IDE/Component/2D/2DRender/Spine2DRenderNode/readme.md","mtime":"2025-07-01T10:49:59.556Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-07-01T10:51:27.470Z"},"basePath":"../../../../..","book":{"language":""}});
         });
     </script>
 </div>
