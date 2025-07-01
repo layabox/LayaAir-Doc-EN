@@ -1,287 +1,345 @@
-# Model import settings
+# Model Import Settings
 
-> Author: Charley && Meng Xingyu
+> Author: Charley & 孟星煜
 
-## 1. Model import and setting
+## I. Model Import and Setup
 
-LayaAir3-IDE only supports the import of model formats with suffixes such as **fbx, gltf, and glb**.
+### 1.1 Supported Model Formats for Import
 
-> LayaAirIDE also supports the import of models and meshes exported by the "LayaAir-Unity Resource Export Plug-in" (.lh and .lm suffixes). This article mainly refers to external model files. If there is a need for lm grid configuration, this document is also applicable.
+LayaAir3-IDE supports model formats with the following extensions for import: **obj, fbx, gltf, glb**.
 
-Drag the models with these suffixes into the assets directory of the project resources, and they will be automatically converted and imported, and then they can be added to the scene.
+> LayaAirIDE also supports importing models and meshes exported by the `"LayaAir-Unity Resource Export Plugin"` (with .lh and .lm extensions). This document primarily refers to external model files, but if there's a need for .lm mesh configuration, this document is also applicable.
 
-The operation is as shown in the animation 1-1:
+### 1.2 Basic Use of Imported Models
+
+Models with these extensions can be dragged and dropped into the `assets` directory within your project resources. They will automatically be converted and imported, and then you can add them to your scene.
+
+The operation is shown in animated GIF 1-1:
 
 ![1-1](img/1-1.gif)
 
-(Animation 1-1)
+(Animated GIF 1-1)
 
-When a model is selected, you can modify the settings for model import in the `Property Settings Panel`. Click `Apply` after each modification, and the import will be re-imported based on the modified properties.
+### 1.3 Modifying Properties of Imported Models
+
+When a model is selected, you can modify its import settings in the **Property Settings panel**. **After each modification**, click `Apply` to **re-import the model based on the updated properties**.
 
 The operation is shown in Figure 1-2:
 
-![1-2](img/1-2.png)
+![1-2](img/1-2.png)  
 
 (Figure 1-2)
 
+### 1.4 Extracting Internal Model Resources
 
+As mentioned earlier, every modification to model settings leads to a re-import. If developers frequently modify models via custom IDE plugins, it might continuously trigger the model import processing tool, affecting the IDE experience.
 
-## 2. Model scene (Scene) import settings instructions
+Furthermore, beyond the basic settings on the properties panel, it's impossible to modify internal model data like animations or materials directly.
 
-A model may contain a lot of information, such as scene-related information such as cameras and light sources, as well as meshes, animations, materials, bones, etc. We classify this information, starting with the scene-related settings.
+Therefore, we recommend using the `Extract Internal Model Resources` function from the right-click menu to extract the model, as shown in Figure 1-3.
 
-### 2.1 Model scaling scale Factor
+![](img/1-3.png) 
 
-Model scaling is mainly used to preprocess the model size according to the target scene scale to make it meet the design requirements and optimize the scaling relationship between different models.
+(Figure 1-3)
 
-For example, you can adjust the model to the physical size that meets your needs through the settings here. The effect comparison is shown in Figure 2-1:
+Extracting a model's internal resources allows developers to freely modify the model's internal data without re-importing every time they save. Also, during the extraction process, some format errors in animation files will be automatically corrected.
 
-![2-1](img/2-1.gif)
+## II. Model Scene Import Settings Description
+
+A model may contain a lot of information, such as scene-related data like cameras and lights, as well as meshes, animations, materials, and bones. We categorize this information and start by introducing scene-related settings.
+
+### 2.1 Model Unit Conversion
+
+The default unit for imported models is **meters**. You can change it to **centimeters** or revert it back to **meters** here.
+
+During unit conversion, to avoid sudden scaling up or down of the model, the default process is to maintain the visual size but perform a scaling adjustment.
+
+For example, when **changing the unit to centimeters**, there will be a **checked** associated option by default: `Normalize Mesh`, as shown in Figure 2-1. Checking this option keeps the current model's visual size while only changing the model's unit.
+
+![](img/2-1.png) 
 
 (Figure 2-1)
 
-### 2.2 Model unit conversionconvert Units
+**If unchecked**, the model will be scaled up by 100 times (e.g., 100 centimeters becomes 100 meters). A comparison of effects is shown in Figure 2-2:
 
-The default unit after the model is imported is meters.
+![2-2](img/2-2.png)
 
-If you change the unit to centimeters, there will be a checked associated option `Size Unit Converter` that is checked by default. The purpose of the default check is to maintain the visual size of the current model and only change the unit of the model.
+(Figure 2-2)
 
-If checked and unchecked, the scene will feel magnified 100 times. The effect comparison is shown in Figure 2-2:
+If converting from centimeters to meters, this option is not available, and the conversion process is handled automatically. Scaled-up sizes will be restored, and unscaled sizes will remain unchanged.
 
-![2-2](img/2-2.gif)
+### 2.2 Model Scale Factor
 
-(Animation 2-2)
+Model scaling is primarily used to pre-process model size according to the target scene scale. It adjusts the overall scale of different models to meet design requirements.
 
-### 2.3 Import model built-in data (visibility, camera, light source)
+For example, the `Normalize Mesh` function mentioned in the previous section is essentially implemented based on model scaling.
 
-If the art has visibility, camera, and light attribute settings when making the model, LayaAir3-IDE will not import them by default. It is recommended to add and set them in the scene of LayaAir-IDE.
+### 2.3 Import Model Built-in Data (Visibility, Camera, Light)
 
-When developers have these built-in data requirements for using the model, they can also check these options, as shown in Figure 2-3. Re-import it by clicking **Apply**.
+If the artist has set visibility, camera, or light properties during model creation, LayaAir3-IDE does not import them by default. It is recommended to add and set these in the LayaAir-IDE scene.
 
-![2-3](img/2-3.png)
+However, if developers need to use these built-in model data, they can enable them by checking the respective options, as shown in Figure 2-3. Click **Apply** to re-import.
+
+![2-3](img/2-3.png) 
 
 (Figure 2-3)
 
-### 2.4 Add level of detail add Lod Group
+### 2.4 Add LOD Group
 
-When Lod data exists in the model, checking this option will export the Lod data and automatically create a Lod Group component to set the Lod data when using the model. The effect after adding is shown in the animation 2-4.
+When a model contains LOD data, checking this option will export the LOD data and automatically create an LOD Group component to set the LOD data when using the model. The effect after adding is shown in animated GIF 2-4.
 
 ![2-4](img/2-4.gif)
 
-(Animation 2-4)
+(Animated GIF 2-4)
 
 
+## III. Model Mesh Import Settings Description
 
-## 3. Instructions for importing the model’s mesh (Mesh)
+### 3.1 Easily Understood Property Descriptions
 
-### 3.1 Easier-to-understand attribute descriptions
+Some property settings are straightforward to understand, as shown in Figure 3-1:
 
-There are some attribute settings that are easier to understand, as shown in Figure 3-1.
-
-![3-1](img/3-1.png)
+![3-1](img/3-1.png) 
 
 (Figure 3-1)
 
-We provide an overview via tables.
+We provide a summary in the table below.
 
-| Chinese attribute name | English attribute name	| Property description	|
-| ------------ | -------------------- | ------------------------------------------------------------ |
-| 动态读写	| Read Write       | When dynamic Read Write is checked, developers are allowed to dynamically access or modify the model data at runtime (for example, when pinching a face, the mesh vertex information that needs to be changed belongs to the modified model data). <br />It should be noted that enabling `Read Write` will increase memory usage. <br />So, if your model does not need to be modified at runtime, please do not turn this option on to save memory. |
-| 网格压缩	| Mesh Compress    | If checked, the grid data can be compressed to reduce the size of the grid file. <br />It should be noted that the compressed mesh will be stored in the temporary directory of the IDE, and the original model will not change. <br />The change in volume reduction can only be seen after publishing. |
-| 标准化权重 | Standardized Weights | Adjust the total weight to 1 by adjusting the weight correction.<br />It is used to solve problems such as possible distortion of the model beyond a certain range. It is recommended to keep it checked. <br />If you can ensure that there will be no problems when applying the model, you can also uncheck it. After unchecking, the original data of the model will be maintained and the original effect of the model will be obtained. |
-| 导入变形目标 | Import Morph Target | Import the morph target (also called Blend Shape) data in the model. |
+| Chinese Property Name | English Property Name | Property Description |
+|---|---|---|
+| 动态读写 | read Write | When checked, allows developers to dynamically access or modify model data at runtime (e.g., modifying mesh vertex information for facial manipulation).\<br /\>Note that enabling `read Write` increases memory usage.\<br /\>Therefore, if your model does not need to be modified at runtime, please do not enable this option to save memory. |
+| 网格压缩 | mesh Compress | When checked, mesh data can be compressed to reduce the mesh file size.\<br /\>Note that compressed meshes will reside in the IDE's temporary directory; the original model remains unchanged.\<br /\>The volume reduction will only be visible after publishing. |
+| 标准化权重 | standardized weights | Adjusts total weights to 1 through weight correction,\<br /\>used to solve issues like distortion that might occur if the model exceeds a certain range. It's recommended to keep this checked.\<br /\>If you can ensure the model will not have issues when applied, you can uncheck it; this will preserve the original model data for its original effect. |
+| 导入变形目标 | import Morph Target | Imports morph target (also called Blend Shape) data from the model. |
 
-### 3.2 Index data format Index Format
+### 3.2 Index Data Format
 
-Index data is used to determine the position of vertices in the vertex buffer, thereby building the shape of the geometry. This property is used to control the precision and range of these index data, thereby affecting the performance and quality of rendering.
+Index data is used to determine the position of vertices in the vertex buffer, thereby constructing the shape of the geometry. This property controls the precision and range of this index data, affecting rendering performance and quality.
 
-As shown in Figure 3-2, this attribute has three options: **Auto, UInt16-bit, and UInt32**-bit.
+As shown in Figure 3-2, this property has three options: **Auto, UInt16, and UInt32**.
 
-![3-2](img/3-2.png)
+![3-2](img/3-2.png) 
 
 (Figure 3-2)
 
-**Auto**: Automatic is the default option. In this mode, LayaAir will automatically decide which data format to use based on the number of vertices. By default, UInt16 will be used first. When the number of vertices exceeds 65535, it will automatically switch to UInt32 data format. .
+**Auto**: This is the default option. In this mode, LayaAir will automatically decide which data format to use based on the number of vertices. It will prioritize UInt16 by default, and automatically switch to UInt32 data format when the number of vertices exceeds 65535.
 
-**UInt16**: This means that the index data is represented by a 16-bit unsigned integer (0~65535). Using a 16-bit index saves memory and is sufficient to express the vertex index in most cases. However, when the number of vertices of the model exceeds 65535, it needs to be split into multiple sub-meshes for rendering, which may increase the number of draw calls.
+**UInt16**: This means that index data is represented using 16-bit unsigned integers (0\~65535). Using 16-bit indices can save memory and is sufficient for vertex indexing in most cases. However, when the number of vertices in a model exceeds 65535, it needs to be split into multiple sub-meshes for rendering, which may increase the number of draw calls.
 
-**UInt32**: This means that the index data is represented using a 32-bit unsigned integer (0~4294967295). Using 32-bit indexes can support larger models and avoid splitting into multiple subgrids, but will take up more memory.
+**UInt32**: This means that index data is represented using 32-bit unsigned integers (0\~4294967295). Using 32-bit indices can support larger models, avoiding the need to split them into multiple sub-meshes, but it will consume more memory.
 
-### 3.3 Processing normals and tangents
+### 3.3 Handling Normals and Tangents
 
-In terms of the ability to handle normal effects, there are mainly three related attributes, namely **Normal**, **Normal Calculation Mode**, and **Tangent**, as shown in Figure 3-3:
+In terms of handling normal effects, there are three main related properties: **Normals**, **Normal Calculate Mode**, and **Tangents**, as shown in Figure 3-3:
 
-![3-3](img/3-3.png)
+![3-3](img/3-3.png) 
 
 (Figure 3-3)
 
-#### 3.3.1 Normal 
+#### 3.3.1 Normals `normal`
 
-The **Normal** attribute has three options, **import**`import`, **calculate**`calculate`, and **None**`None`. As shown in Figure 3-4.
+The **Normals** property has three options: **Import**`import`, **Calculate**`calculate`, and **None**`none`. As shown in Figure 3-4.
 
-![3-4](img/3-4.png)
+![3-4](img/3-4.png) 
 
 (Figure 3-4)
 
-**Import** means using the predefined normal data in the model file. This means that if the model file contains normal information, LayaAir will directly use these normal data for rendering. If the model has no normal data or the normal data is incorrect, you may get incorrect lighting effects.
+**Import** means using the normal data predefined in the model file. This implies that if the model file contains normal information, LayaAir will directly use this data for rendering. If the model lacks normal data or has incorrect normal data, it might result in incorrect lighting effects.
 
-**Calculation** means that the normal data of the model will be recalculated when the model is imported. This may be useful in certain situations, such as when the model's normal data is incomplete or inaccurate. Recalculating normals may consume some computing resources, but it ensures that the model is lit correctly.
+**Calculate** means that the model's normal data will be recomputed during model import. This can be useful in certain situations, for example, when the model's normal data is incomplete or inaccurate. Recalculating normals may consume some computational resources but ensures correct lighting effects for the model.
 
-Whether it is importing or calculating, you need to set the associated attribute **Normal Calculation Mode**, and selecting **None** will completely ignore the normal data of the model, and the vertices will not be imported. The attribute `Normal Calculation Mode` will not be displayed in the IDE. **None** this option may be used for specific rendering needs, either by manually editing the normals in LayaAir or using a script to calculate the normals. Failure to do so means that when rendering, no normal data will be available, potentially resulting in incorrect lighting visuals.
+Whether importing or calculating, the associated property **Normal Calculate Mode** needs to be set. Choosing **None** will completely ignore the model's normal data, and vertices will not be passed. The `Normal Calculate Mode` property will also not be displayed in the IDE. The **None** option might be used for specific rendering requirements, or when manually editing normals or calculating them with scripts in LayaAir. Otherwise, it means no normal data will be available during rendering, which could lead to incorrect lighting visual effects.
 
-#### 3.3.2 Normal Calculate Mode
+#### 3.3.2 Normal Calculate Mode `normal Calculate Mode`
 
-**Normal Calculation Mode** has two options: **Unweight** and **Area Weight**. As shown in Figure 3-5.
+The **Normal Calculate Mode** has two options: **Unweighted** and **Area Weighted**`areaWeight`. As shown in Figure 3-5.
 
-![3-5](img/3-5.png)
+![3-5](img/3-5.png) 
 
 (Figure 3-5)
 
-**Unweight**, meaning the normal will be calculated as a simple average of adjacent vertices. This means that the normal of each vertex is only affected by its neighboring vertices, regardless of the size or angle of the face. This works well for smooth surfaces, but normal discontinuities may occur at sharp corners or separated edges.
+**Unweighted** means normals are calculated as a simple average of adjacent vertices. This implies that each vertex's normal is only influenced by its neighboring vertices, without considering the size or angle of the faces. This method is suitable for smooth surfaces, but may result in normal discontinuities at sharp corners or separate edges.
 
-**Area Weight** will weight the average of the normals of adjacent vertices according to the size of the face. This produces smoother normal transitions on sharply angled surfaces, reducing normal discontinuities.
+**Area Weighted** calculates the weighted average of adjacent vertex normals based on face area. This can produce smoother normal transitions on sharp surfaces, reducing normal discontinuities.
 
-#### 3.3.3 Tangents
+#### 3.3.3 Tangents `tangents`
 
-Tangent data is a key part of advanced effects like normal maps and normal mapping. Normal maps simulate high detail by storing normal information on the model's surface. Tangent data helps calculate pixel normals, giving objects visual bump detail. So **Tangent** is the same as **Normal Calculation Mode**,only when the normal line exists (not set to **None**), it will be displayed on the property panel.
+Tangent data is a crucial part of advanced effects like normal maps and normal mapping. Normal maps simulate height detail by storing normal information on the model surface. Tangent data helps calculate pixel normals, making objects visually appear to have bump details. Therefore, like **Normal Calculate Mode**, **Tangents** will only be displayed in the properties panel when normals exist (i.e., not set to **None**).
 
-Tangents define the tangent vectors for each vertex on the model surface. They are **None**, **calculate**, and **import** respectively. As shown in Figure 3-6.
+Tangents are used to define the tangent vector for each vertex on the model surface. The options are **None**`none`, **Calculate**`calculate`, and **Import**`import`. As shown in Figure 3-6.
 
-![3-6](img/3-6.png)
+![3-6](img/3-6.png) 
 
 (Figure 3-6)
 
-**None** means tangent data will not be calculated or imported. This means that no tangent data will be available during rendering, potentially affecting the correctness of effects such as normal maps. If this is not a problem, select this option to save memory used by vertices.
+**None** means that tangent data will not be calculated or imported. This implies that no tangent data will be available during rendering, which may affect the correctness of normal maps and similar effects. If this doesn't pose a problem, selecting this option can save memory used by vertices.
 
-**calculate** means recalculating the tangent vector when importing the model. This can be useful when using effects such as normal mapping and normal mapping, as tangent vectors need to be used with normals and texture coordinates. Recalculating tangents may consume some computing resources, but it ensures the correctness of the rendering effect.
+**Calculate** means that tangent vectors are recomputed when the model is imported. This can be useful when using effects like normal maps and normal mapping, as tangent vectors need to be used in conjunction with normals and texture coordinates. Recalculating tangents may consume some computational resources but ensures the correctness of rendering effects.
 
-**import** will use the predefined tangent data in the model file. This means that if the model file contains tangent information, LayaAir will directly use these tangent data for rendering. If the model has no tangent data or the tangent data is incorrect, you may get incorrect normal mapping effects.
+**Import** will use the tangent data predefined in the model file. This means that if the model file contains tangent information, LayaAir will directly use this data for rendering. If the model lacks tangent data or has incorrect tangent data, you might get incorrect normal mapping effects.
 
 ### 3.4 UV1
 
-When the model is imported, the UV1 that comes with the model can be imported by default. As shown in Figure 3-7,
+During model import, the UV1 channel included in the model can be imported by default, as shown in Figure 3-7.
 
-![3-7](img/3-7.png)
+![3-7](img/3-7.png) 
 
 (Figure 3-7)
 
-You can check `Normal UV1`. After checking, when the model is imported, its own UV1 will have the standard for light map baking. Otherwise, the imported UV1 by default will not start the light map baking process. If UV1 is not used for light map baking, you do not need to check this option.
+You can check `Normalize UV1`. When checked, the model's built-in UV1 will meet the standard for lightmap baking upon import; otherwise, the default imported UV1 will not initiate the lightmap baking process. If UV1 is not used for lightmap baking, you don't need to check this option.
 
-Sometimes, the model only has one default UV. If you want to generate another UV1 to support the light map, as shown in Figure 3-8, you can select the `generate` option.
+Sometimes, a model only has a default UV. If you want to generate an additional UV1 to support lightmaps, as shown in Figure 3-8, you can select the `Generate` option.
 
-![3-8](img/3-8.png)
+![3-8](img/3-8.png) 
 
 (Figure 3-8)
 
-The following is the configuration of its subkeys:
+Here are the configurations for its sub-items:
 
-#### 3.4.1 maxChartArea
+#### 3.4.1 Maximum Chart Area `max Chart Area`
 
-The maximum chart area size is a parameter in the lightmap generation process that controls the maximum chart area. A graph is the basic unit used in algorithms to organize patches. This parameter limits the total area of ​​patches contained in a single chart to control the size of the chart.
+Maximum Chart Area is a parameter in the lightmap generation process used to control the maximum area of a chart. Charts are fundamental units used to organize faces in the algorithm. This parameter limits the total area of faces contained within a single chart to control chart size.
 
-This parameter plays a role in the chart generation process and is used to control the chart generation and merging process. The algorithm checks whether the area of ​​each chart exceeds the value of `maxChartArea`. If it exceeds, it will limit the generation or merging of charts. If the maximum chart area size is set to 0 (the default), it means there is no area limit and the chart can be any size.
+This parameter plays a role in the chart generation process, controlling the generation and merging of charts. The algorithm checks whether the area of each chart exceeds the `maxChartArea` value. If it does, chart generation or merging will be limited. If the maximum chart area size is set to 0 (default), it means there is no area limit, and charts can be of any size.
 
-Smaller values ​​result in more graphs, each containing fewer patches. Larger values ​​may produce fewer large charts.
+Smaller values lead to more charts being generated, with fewer faces per chart. Larger values may generate a small number of large charts.
 
-#### 3.4.2 Max Boundary Length
+#### 3.4.2 Maximum Boundary Length `max Boundary Length`
 
-During the lightmap generation process, the maximum boundary length is used to constrain the merging and generation of charts.
+In the lightmap generation process, `max Boundary Length` is used to constrain the merging and generation of charts.
 
-In the algorithm, it will be judged whether the boundary length after generating or merging two charts exceeds the preset maximum boundary length limit. If it exceeds, it will be restricted and the merge will not be performed or the generation will be aborted to control the boundaries of the generated chart. 
+In the algorithm, it checks whether the boundary length after generating or merging two charts exceeds the preset maximum boundary length limit. If it does, it will be limited, and the merge or generation will be aborted, thereby controlling the compactness of the generated charts in terms of boundaries.
 
-By default, the value of the maximum border length is 0, which means that there is no limit on the maximum border length of the chart.
+By default, the maximum boundary length is 0, meaning there is no limit on the maximum boundary length of charts.
 
-#### 3.4.3 Normal Deviation Weight
+#### 3.4.3 Normal Deviation Weight `normal Deviation Weight`
 
-The normal deviation weight is an important parameter used to control the cost calculation in the patch charting process during the light map generation process.
+Normal Deviation Weight is an important parameter used to control the cost calculation during the face charting process within lightmap generation.
 
-During the graphing process of patches, the algorithm will traverse each face in the current graph area and determine which faces can be added as candidate faces to the graph generation. The basis for calculation is called cost.
+In the face charting process, the algorithm iterates through each face in the current chart area and determines which faces can be candidates for inclusion in the chart generation. The basis for calculation is what we call "cost."
 
-The angular deviation between the surface normal and the best-fitting normal of the chart (the average normal vector of the entire chart) is one of the factors that affects the cost. When it exceeds a certain angle range (about 45 degrees), it is considered to be larger, is directly excluded from the generation queue. If the angle is not exceeded, the cost will be multiplied by the normal deviation weight value and used as a basis for further calculations. Therefore, the normal deviation weight is one of the important parameters that affects the normal angle deviation cost and chart generation.
+The angular deviation between a face normal and the chart's best-fit normal (the average normal vector of the entire chart) is one of the factors influencing this cost. If it exceeds a certain angular range (approximately 45 degrees), it's considered a high cost and directly excluded from the generation queue. For angles within the range, the cost is calculated by multiplying it by the normal deviation weight, which is then used for further calculations. Therefore, the normal deviation weight is one of the important parameters affecting the cost of normal angular deviation and chart generation.
 
-When the normal deviation weight value is larger, the normal deviation has a greater impact on chart generation. A larger value makes the graph generation algorithm more inclined to select patches with more consistent normals to be assigned to the same graph, so that the generated graph is smoother in the normal direction. However, too high a value may result in chart generation that is too conservative and fails to take full advantage of favorable polygon structures.
+A larger normal deviation weight means that normal deviation has a greater impact on chart generation. A larger value makes the chart generation algorithm more inclined to select faces with consistent normals to be assigned to the same chart, resulting in smoother charts in the normal direction. However, excessively high values might lead to overly conservative chart generation, failing to fully utilize favorable face structures.
 
-On the contrary, the smaller the normal deviation weight value, the graph generation algorithm will tolerate a certain degree of normal deviation during the patch graphing process. This means that the algorithm may assign patches with widely different normals into the same graph, even though their normal directions are not exactly the same. Might be suitable for some scenarios that require more variation.
+Conversely, a smaller normal deviation weight value means the chart generation algorithm will tolerate a certain degree of normal deviation during the face charting process. This implies that the algorithm might assign faces with larger normal differences to the same chart, even if their normal directions are not perfectly aligned. This might be suitable for scenes that require more variation.
 
-#### 3.4.4 Maximum Iteration
+#### 3.4.4 Maximum Iterations `max Iteration`
 
-Maximum Iteration is a parameter that controls the number of iterations during chart generation and optimization. Iteration is an important step in the chart generation algorithm, which continuously optimizes the generated charts through multiple iterations to achieve better results.
+Maximum Iteration is a parameter used to control the number of iterations during the chart generation and optimization process. Iteration is an important step in the chart generation algorithm, as it continuously optimizes the generated charts through multiple iterations to achieve better results.
 
-More iterations mean the algorithm will have more opportunities to adjust and optimize the chart, potentially producing a better chart layout. However, too many iterations may increase the computational cost and time overhead of the algorithm.
+More iterations mean the algorithm will have more opportunities to adjust and optimize the charts, potentially leading to better chart layouts. However, too many iterations can increase the computational cost and time overhead of the algorithm.
 
-A lower number of iterations may be more time efficient, but the resulting graph may not be as optimized as with more iterations.
+Fewer iterations might be more time-efficient, but the generated charts might not be as well optimized as with more iterations.
 
-Developers can set here to control the number of iterations of chart generation and optimization to balance computational efficiency and the quality of generated results.
+Developers can use this setting to control the number of iterations for chart generation and optimization, balancing computational efficiency and the quality of the generated results.
 
 #### 3.4.5 Texels Per Unit
 
-The Texels Per Unit parameter defines the number of texels contained in each unit of space (for example, a 1x1 unit rectangle). This parameter is used during lightmap generation to control the texture density of the chart.
+The `Texels Per Unit` parameter defines the number of texture pixels contained within each unit space (e.g., a 1x1 unit square). This parameter is used during lightmap generation to control the texture density of charts.
 
-Specifically, it affects the size distribution of charts within texture atlases. In the lightmap generation algorithm, the value of texels per unit is taken into account when determining the position and size of the map within the texture atlas. **If the value is greater than 0,** the algorithm will allocate the texture area of ​​the chart according to the given value so that it has a higher resolution on the texture. **If the value is 0**, the algorithm estimates an appropriate value based on the surface area of ​​the chart and the given resolution so that the chart is properly represented on the texture.
+Specifically, it affects the size allocation of charts within the texture atlas. In the lightmap generation algorithm, when determining the position and size of charts in the texture atlas, the value of "Texels Per Unit" is considered. **If the value is greater than 0**, the algorithm will allocate the chart's texture area based on the given value to achieve a higher resolution on the texture. **If the value is 0**, the algorithm will estimate an appropriate value based on the chart's surface area and a given resolution to ensure the chart is properly represented on the texture.
 
-In effect, this parameter affects the mapping quality of the chart in the final texture atlas. Higher values ​​will result in the chart having a higher resolution on the texture, making details clearer, but will also increase the size of the final texture atlas. Lower values ​​make the chart less resolution on the texture, but can reduce the size of the texture atlas. Therefore, adjusting the `Texels Per Unit` parameter can provide a trade-off between chart quality and texture atlas size.
+From a visual perspective, this parameter affects the mapping quality of charts in the final texture atlas. Higher values result in higher resolution for charts on the texture, making details clearer, but also increase the size of the final texture atlas. Lower values reduce the resolution of charts on the texture but can decrease the texture atlas size. Therefore, adjusting the `Texels Per Unit` parameter allows for a trade-off between chart quality and texture atlas size.
 
 #### 3.4.6 Padding
 
-Margin is the extra pixel space added around the chart. These extra pixels are used to extend the boundaries of the chart to ensure there is enough space between them and no overlap occurs.
+Padding refers to the extra pixel spacing added around charts. These extra pixels are used to extend the chart boundaries to ensure there's enough space between them and prevent overlapping.
 
-Expanding margins provides better texture sampling boundaries, reduces color mixing between charts, and improves edge rendering.
+Increasing padding can provide better texture sampling boundaries, reduce color blending between charts, and improve edge rendering effects.
 
-When used, the margin values ​​can be adjusted as needed to trade off rendering quality and atlas size. Reasonable values ​​will generally provide better rendering, but increasing the margins too much may cause the atlas to become too large, taking up more memory.
+When using it, you can adjust the padding value as needed to balance rendering quality and atlas size. A reasonable value usually provides better rendering results, but excessively increasing padding can make the atlas too large, consuming more memory.
+
+
+## IV. Model Rig Import Settings Description
+
+For model import, the Rig options allow you to set **skin weights**, with the default being Standard mode, as shown in Figure 4-1.
+
+![4-1](img/4-1.png)  
+
+(Figure 4-1)
+
+When we select Custom mode, there are two sub-options: `Max Bones / Vertex` and `Min Bone Weight`, as shown in Figure 4-2.
+
+![](img/4-2.png) 
+
+(Figure 4-2)
+
+### 4.1 Max Bones / Vertex
+
+As the name suggests, this sets the maximum number of bones that can be bound to each vertex, meaning how many bones can influence each vertex at most. Bones exceeding this limit will be culled.
+
+This parameter is directly related to the complexity and expressiveness of character model animations. If the **Max Bones / Vertex** value is set very high, it means each vertex can be influenced by more bones, allowing for more complex and refined animation effects. However, it also increases the computational load on the game, potentially leading to performance degradation. We need to weigh this based on actual circumstances and requirements.
+
+### 4.2 Min Bone Weight
+
+Minimum Bone Weight is used to set a minimum weight value. When importing a model with skeletal animation, if the influence weight of a bone on a certain vertex is less than this threshold, that influence will be ignored. This parameter is typically used to discard bone influences that have almost no deformation effect, optimizing performance and cleaning data.
 
 
 
-## 4. Instructions for importing the model’s bone binding (Rig)
+## V. Model Animation (Animator) Import Settings Description
 
-The bone binding when importing the model has two setting options: maximum number of bones per vertex and maximum bone weight, as shown in Figure 4-1.
+After checking `Animation Data Compression`, as shown in Figure 5-1, the animation data size can be compressed according to the configuration.
 
-![4-1](img/4-1.png)
-
-(Pic 4-1)
-
-### 4.1 Max Bones/Vertex
-
-As the name suggests, this is used to set the maximum number of bones that can be bound to each vertex, that is, the maximum number of bones that each vertex can be affected by.
-
-This parameter is directly related to the complexity and expressiveness of the character model's animation. If the value of **Max Bones/Vertex** is set high, it means that each vertex can be affected by more bones, and more complex and detailed animation effects can be produced. But it will also increase the computational burden of the game, which may lead to performance degradation. We need to weigh it according to the actual situation and needs.
-
-### 4.2 Max Bone Weight
-
-Maximum bone weight is used to limit the maximum weight value given by a single bone to each vertex.
-
-What are bone weights? When we skin a character model, we need to decide how each bone affects the vertices of the model. This is the weight, for example a weight of 0.5 here means that this bone will have 50% influence on this point.
-
-Typically developers set different weights for each bone to fine-tune how they affect the animation and shape of the model.
-
-The **Max Bone Weight** here is used to limit the set bone weight to not exceed the value here. When it exceeds the value here, the weight setting here will be adopted.
-
-## 5. Model animation (Animator) import settings instructions
-
-After checking `Anim Compression`, as shown in Figure 5-1. The volume of animation data can be compressed according to configuration.
-
-![5-1](img/5-1.png)
+![5-1](img/5-1.png) 
 
 (Figure 5-1)
 
-The minimum ignore value means that if the value exceeds the set value, the keyframe will be ignored by the algorithm, thereby achieving the purpose of reducing animation data.
+`Minimum Ignore Value` indicates that keyframes exceeding the set value will be ignored by the algorithm, thereby achieving the purpose of reducing animation data.
 
-There are three ignored dimensions, namely displacement, scaling and rotation.
+There are three dimensions for ignoring: position, scale, and rotation.
 
-Ignored input values ​​are in degrees.
+The input values for ignoring are all in degrees.
 
-## 6. Instructions for importing model materials (Materials)
 
-Material position is used to set the access position source of the model material. There are two options. As shown in Figure 6-1.
 
-![6-1](img/6-1.png)
+## VI. Model Material (Materials) Import Settings Description
+
+### 6.1 Extract Materials
+
+As mentioned earlier, materials inside a model cannot be modified directly. We advised extracting the model's internal resources. If you don't frequently change model data, you can choose not to extract the model itself, but only extract its materials, and then link the materials you want to modify using the material remapping table.
+
+After clicking the `Extract All Materials` button, the **Material Output Target Folder Selection** window will pop up, as shown in Figure 6-1.
+
+![6-1](img/6-1.png) 
 
 (Figure 6-1)
 
-Select **Use embedded material** to directly use the material embedded in the model file.
+### 6.2 Remapped Materials
 
-Select **Use external materials** and click `Apply`, the materials inside the model file will be extracted to the outside of the model and used as material resources outside the model.
+After extraction, the extracted materials will automatically be linked to the material remapping table, as shown in Figure 6-2. Of course, developers can also manually change the material mapping relationships.
 
+![](img/6-2.png)  
 
+(Figure 6-2)
 
+### 6.3 On Demand Remap
 
+For material mapping, you can also map by searching and matching. This method has two condition parameters: **Naming Match Mode** and **Search Method**.
 
+#### 6.3.1 Naming Match Mode `naming`
+
+There are two naming match rules: match by **Material Name only**, or match by **Model Name + Material Name**, as shown in Figure 6-3.
+
+![](img/6-3.png) 
+
+(Figure 6-3)
+
+| Matching Rule | Function |
+|---|---|
+| Material Name | The material name consists only of the **material's file name**, e.g.: body.lmat |
+| Model Name + Material Name | The material name's composition rule is: model file name - material file name,\<br /\>e.g., "character" + "-" + "body.lmat" → "character-body.lmat" |
+
+#### 6.3.2 Constrain Search Directory `search`
+
+Once the Naming Match Mode is set, the IDE will use the naming result as the search key for materials and look in the specified directory.
+
+**Constrain Search Directory** specifies which directory to search, and there are two ways, as shown in Figure 6-4:
+
+![](img/6-4.png) 
+
+(Figure 6-4)
+
+The two options in the figure are relatively easy to understand: search in the current `materials` directory, or search in the current and parent `materials` directories.
+
+If a material matching the naming rule is found, the material mapping will be performed automatically.

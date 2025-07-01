@@ -22,7 +22,7 @@ After dragging the Label component into the editing area and setting the value o
 
 ### 1.2 Label attribute
 
-<img src="img/1-3.png" alt="1-3" style="zoom:67%;" />
+<img src="img/1-3.png" alt="1-3" style="zoom:90%;" />
 
 (Figure 1-3)
 
@@ -36,6 +36,7 @@ After dragging the Label component into the editing area and setting the value o
 | style      	| Whether "**B**" (bold) is bold, whether "***I***" (italic) is italic, whether "<u>**U**</u>" is underlined |
 | syntax     	| [Multi-style mixed arrangement](../../../../2D/displayObject/Text/readme.md), supports some HTML syntax and UBB syntax. You can also check the template to be able to use variables in strings |
 | align      	| Alignment, horizontal alignment (align) is left (aligned to the left), center (aligned to the center), right (aligned to the right); vertical alignment (valign) is top (aligned to the top), middle (aligned to the center), bottom (bottom alignment) |
+| Align ltems    | Item alignment, the alignment method for images and text when they are mixed in layout, are top (aligned at the top), middle (aligned in the center),  bottom (aligned at the bottom). |
 | bgColor    	| Background color, after checking, you can directly enter the color value, for example: `#ffffff`, or you can click the color picker on the right side of the input bar to select a color |
 | bordercolor	| Text border color. After checking, you can directly enter the color value, for example: `#ffffff`, or you can click the color picker on the right side of the input bar to select a color |
 | overflow   	| Text overflow processing, there are five modes. visible: Default mode, no cropping is performed. hidden: Do not display characters beyond the text field. scroll: does not display character pixels outside the text area, and supports the scroll interface. shrink: When the text exceeds the text area, the text shrinks as a whole to fit in the text box. ellipsis (display ellipsis): When the text field is exceeded, the text is truncated and an ellipsis is displayed at the end of the text |
@@ -159,5 +160,4 @@ export class UI_Label extends Laya.Script {
 (Figure 2-1)
 
  	
-
 

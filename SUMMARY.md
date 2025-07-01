@@ -19,7 +19,6 @@
 - Developer Fundamentals
   * [TS Language Basics](basics/language/readme.md)
   * [DevTools Debugging Tools](basics/DevTools/readme.md)
-  * [LayaTree Debugging Tool](basics/LayaTree/readme.md)
   * [IDE Shortcut Keys and Mouse Interaction Guide](basics/IDE/shortcutKeyCombinations/readme.md)
 - Core Engine Features
   * [Resource Loading](basics/common/Loader/readme.md)

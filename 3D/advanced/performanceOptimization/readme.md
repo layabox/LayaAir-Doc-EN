@@ -142,9 +142,286 @@ Figure 6-3
  ![image-20230117103118514](img/image-20230117103118514.png)
 
 Figure 6-4
+## 7\. Node-Based Material Batching Feature
 
+### 7.1 Visual Effect
 
+The node-based material batching feature can be demonstrated through Figure 7-1 and Figure 7-2. This test scene contains a total of 200 small spheres and 1 plane. After batching, the final scene's **opaque draw calls** are significantly reduced.
 
+![1](img/1.png)
+
+Figure 7-1: Scene Screenshot
+
+![2](img/2.png)
+
+Figure 7-2: Stat Panel
+
+### 7.2 Usage Example
+
+This example uses a script to implement a node-based material batching feature. It primarily optimizes rendering performance by assigning shared materials and meshes to multiple 3D nodes and utilizing a custom `UniformBuffer`.
+
+The script code is as follows:
+
+```typescript
+const { regClass, property } = Laya;
+
+@regClass()
+export class Script extends Laya.Script {
+    // Shared material for batching
+    public batchMat: Laya.Material;
+    // Number of colors
+    private _colorNums = 20;
+    // Number of sprites
+    private _spriteNums = 200;
+
+    private _createColorBufferData() {
+        // Randomly generate 20 color values.
+        let colorBuffer = new Float32Array(20 * 4);
+        for (var i = 0; i < this._colorNums; i++) {
+            let offset = i * 4;
+            colorBuffer[offset] = Math.random();
+            colorBuffer[offset + 1] = Math.random();
+            colorBuffer[offset + 2] = Math.random();
+            colorBuffer[offset + 3] = 1;
+        }
+        // Set the uniform buffer.
+        this.batchMat.setBuffer("colormap", colorBuffer);
+    }
+
+    // Randomly generate _spriteNums number of spheres with random colors.
+    private _createMeshSpriteRender() {
+        let mesh = Laya.PrimitiveMesh.createSphere(0.5);
+        let ownerSprite = this.owner;
+        let positionRanvge = 30;
+        for (var i = 0; i < this._spriteNums; i++) {
+            let sprite = ownerSprite.addChild(new Laya.Sprite3D());
+            let filter = sprite.addComponent(Laya.MeshFilter);
+            let render = sprite.addComponent(Laya.MeshRenderer);
+            // Set the same material and mesh.
+            filter.sharedMesh = mesh;
+            render.sharedMaterial = this.batchMat;
+            // Set a random position.
+            sprite.transform.localPosition = this._getRandomPosition(positionRanvge);
+            // Get a random color index.
+            let colorIndex = Math.floor(Math.random() * this._colorNums);
+            // Set the node's Laya.ENodeCustomData.custom_0 to the corresponding color index.
+            render.setNodeCustomData(Laya.ENodeCustomData.custom_0, colorIndex);
+        }
+    }
+    
+    private _getRandomPosition(positionRanvge: number): Laya.Vector3 {
+        let getRangeRandom = () => {
+            return (Math.random() - 0.5) * positionRanvge;
+        }
+        return new Laya.Vector3(getRangeRandom(), 0.3, getRangeRandom());
+    }
+
+}
+```
+
+The shader code is as follows:
+
+```glsl
+Shader3D Start
+{
+    type:Shader3D
+    name:PBRColorBatchShader
+    enableInstancing:true,
+    supportReflectionProbe:true,
+    uniformMap:{
+        u_AlphaTestValue: { type: Float, default: 0.5, range: [0.0, 1.0] },
+
+        u_TilingOffset: { type: Vector4, default: [1, 1, 0, 0] },
+
+        u_AlbedoColor: { type: Color, default: [1, 1, 1, 1] },
+        u_AlbedoTexture: { type: Texture2D, options: { define: "ALBEDOTEXTURE" } },
+
+        u_NormalTexture: { type: Texture2D, options: { define: "NORMALTEXTURE" } },
+        u_NormalScale: { type: Float, default: 1.0, range: [0.0, 2.0] },
+
+        u_Metallic: { type: Float, default: 0.0, range: [0.0, 1.0] },
+        u_Smoothness: { type: Float, default: 0.0, range: [0.0, 1.0] },
+        u_MetallicGlossTexture: { type: Texture2D, options: { define: "METALLICGLOSSTEXTURE" } },
+
+        u_OcclusionTexture: { type: Texture2D, options: { define: "OCCLUSIONTEXTURE" } },
+        u_OcclusionStrength: { type: Float, default: 1.0 },
+
+        u_EmissionColor: { type: Color, default: [0, 0, 0, 0] },
+        u_EmissionIntensity: { type: Float, default: 1.0 },
+        u_EmissionTexture: { type: Texture2D, options: { define: "EMISSIONTEXTURE" } },
+    },
+    defines: {
+        EMISSION: { type: bool, default: false },
+        ENABLEVERTEXCOLOR: { type: bool, default: false }
+    }
+    shaderPass:[
+        {
+            pipeline:Forward,
+            VS:LitVS,
+            FS:LitFS
+        }
+    ]
+}
+Shader3D End
+
+GLSL Start
+#defineGLSL LitVS
+    #define SHADER_NAME PBRColorBatchShader
+
+    #include "Math.glsl";
+
+    #include "Scene.glsl";
+    #include "SceneFogInput.glsl"
+
+    #include "Camera.glsl";
+    #include "Sprite3DVertex.glsl";
+
+    #include "VertexCommon.glsl";
+
+    #include "PBRVertex.glsl";
+
+    varying float spriteCustomData;
+
+    void main()
+    {
+        Vertex vertex;
+        getVertexParams(vertex);
+
+        PixelParams pixel;
+        initPixelParams(pixel, vertex);
+
+        gl_Position = getPositionCS(pixel.positionWS);
+
+        gl_Position = remapPositionZ(gl_Position);
+        
+        spriteCustomData = NodeCustomData0;
+
+    #ifdef FOG
+        FogHandle(gl_Position.z);
+    #endif // FOG
+    }
+#endGLSL
+
+#defineGLSL LitFS
+    #define SHADER_NAME PBRColorBatchShader
+
+    #include "Color.glsl";
+
+    #include "Scene.glsl";
+    #include "SceneFog.glsl";
+
+    #include "Camera.glsl";
+    #include "Sprite3DFrag.glsl";
+
+    #include "PBRMetallicFrag.glsl";
+
+    uniform vec4 colormap[20];
+    varying float spriteCustomData;
+
+    void initSurfaceInputs(inout SurfaceInputs inputs, inout PixelParams pixel)
+    {
+        inputs.alphaTest = u_AlphaTestValue;
+
+    #ifdef UV
+        vec2 uv = transformUV(pixel.uv0, u_TilingOffset);
+    #else // UV
+        vec2 uv = vec2(0.0);
+    #endif // UV
+
+        inputs.diffuseColor = colormap[int(spriteCustomData)].rgb;
+        inputs.alpha = colormap[int(spriteCustomData)].a;
+
+    #ifdef COLOR
+        #ifdef ENABLEVERTEXCOLOR
+        inputs.diffuseColor *= pixel.vertexColor.xyz;
+        inputs.alpha *= pixel.vertexColor.a;
+        #endif // ENABLEVERTEXCOLOR
+    #endif // COLOR
+
+    #ifdef ALBEDOTEXTURE
+        vec4 albedoSampler = texture2D(u_AlbedoTexture, uv);
+        #ifdef Gamma_u_AlbedoTexture
+        albedoSampler = gammaToLinear(albedoSampler);
+        #endif // Gamma_u_AlbedoTexture
+        inputs.diffuseColor *= albedoSampler.rgb;
+        inputs.alpha *= albedoSampler.a;
+    #endif // ALBEDOTEXTURE
+
+        inputs.normalTS = vec3(0.0, 0.0, 1.0);
+    #ifdef NORMALTEXTURE
+        vec3 normalSampler = texture2D(u_NormalTexture, uv).rgb;
+        normalSampler = normalize(normalSampler * 2.0 - 1.0);
+        normalSampler.y *= -1.0;
+        inputs.normalTS = normalScale(normalSampler, u_NormalScale);
+    #endif
+
+        inputs.metallic = u_Metallic;
+        inputs.smoothness = u_Smoothness;
+
+    #ifdef METALLICGLOSSTEXTURE
+        vec4 metallicSampler = texture2D(u_MetallicGlossTexture, uv);
+        inputs.metallic = metallicSampler.x;
+        inputs.smoothness = (metallicSampler.a * u_Smoothness);
+    #endif // METALLICGLOSSTEXTURE
+
+        inputs.occlusion = 1.0;
+    #ifdef OCCLUSIONTEXTURE
+        vec4 occlusionSampler = texture2D(u_OcclusionTexture, uv);
+        float occlusion = occlusionSampler.g;
+        inputs.occlusion = (1.0 - u_OcclusionStrength) + occlusion * u_OcclusionStrength;
+    #endif // OCCLUSIONTEXTURE
+
+        inputs.emissionColor = vec3(0.0);
+    #ifdef EMISSION
+        inputs.emissionColor = u_EmissionColor.rgb * u_EmissionIntensity;
+        #ifdef EMISSIONTEXTURE
+        vec4 emissionSampler = texture2D(u_EmissionTexture, uv);
+        #ifdef Gamma_u_EmissionTexture
+        emissionSampler = gammaToLinear(emissionSampler);
+        #endif // Gamma_u_EmissionTexture
+        inputs.emissionColor *= emissionSampler.rgb;
+        #endif // EMISSIONTEXTURE
+    #endif // EMISSION
+    }
+
+    void main()
+    {
+        PixelParams pixel;
+        getPixelParams(pixel);
+
+        SurfaceInputs inputs;
+        initSurfaceInputs(inputs, pixel);
+
+        vec4 surfaceColor = PBR_Metallic_Flow(inputs, pixel);
+        
+    #ifdef FOG
+        surfaceColor.rgb = sceneLitFog(surfaceColor.rgb);
+    #endif // FOG
+
+        gl_FragColor = surfaceColor;
+
+        gl_FragColor = outputTransform(gl_FragColor);
+    }
+#endGLSL
+
+GLSL End
+```
+
+#### 7.2.1 Principle Introduction
+
+Developers can set a corresponding **uniform buffer** using a material's `setBuffer` method.
+
+In the example, we create a `Float32Array` of length 4 \* 20 (i.e., `colorBuffer`) to serve as the data source for `uniform vec4 colormap[20]`, containing 20 different color values.
+
+During implementation, we generate a random color index (`colorIndex`) for each node and store these index values in the node's custom data area at the `ENodeCustomData.custom_0` location using the `BaseRender.setNodeCustomData` method. It's important to note that this interface only supports setting numerical data.
+
+During the rendering phase, the engine detects 200 spheres using the same material and mesh and automatically performs batching optimization. The `CustomData` from different nodes is submitted together in the form of an `InstanceBuffer`, so all 200 spheres can be rendered in just **one draw call**, which greatly improves rendering efficiency.
+
+#### 7.2.2 Important Notes
+
+1.  Currently, the `BaseRender.setNodeCustomData` method only has `custom_0`, `custom_1`, and `custom_2` options.
+2.  When a material switches to Instance rendering, these three slots occupy the vertices `VertexMesh.MESH_CUSTOME0`, `VertexMesh.MESH_CUSTOME1`, and `VertexMesh.MESH_CUSTOME2`.
+3.  When using a uniform buffer, be aware that excessively large data on low-end mobile devices may run the risk of exceeding the uniform size limit.
 
 
 
