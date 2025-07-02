@@ -238,7 +238,7 @@ Not only can images be texture compressed, but the atlases we usually use in 2D 
 
 (Figure 2-11)
 
-> For how to use the automatically generated atlas, please refer to ["Web Publishing"](../../../released/web/readme.md).
+> Please refer to [《generalSetting》](../../../released/generalSetting/readme.md) for instructions on how to use auto-generated atlases.
 
 Taking the Android platform as an example, in LayaAir IDE, configure the texture compression for the automatic atlas settings, and then use the image as the skin of the Image component in the scene. After publishing, you can see that the atlas can also use texture compression format, as shown in Figure 2-12. `@1.ktx` is the texture compression format of the Android platform, .atlas is the atlas file, and .png is the default for other platforms. texture format.
 

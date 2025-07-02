@@ -104,7 +104,7 @@ Take a look at the contents of package.json:
 Next, we can use import AstarFinder in our code. The sample code is as follows:
 
 ```typescript
-import { AStarFinder } from "../node_modules/astar-typescript/dist/astar";
+import { AStarFinder } from "astar-typescript";
 
 
 const { regClass, property } = Laya;
@@ -244,7 +244,6 @@ And is introduced in release\web\index.html, as shown in Figure 2-8,
 After running the released project, A* pathfinding still runs normally. Developers can also use "Allow editor loading" and "Depend on others".
 
 > Run the released project reference [*Web Release*](../../../released/web/readme.md).
-
 
 
 

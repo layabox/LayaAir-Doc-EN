@@ -1,123 +1,237 @@
-# Custom Physics Engine Library
+# Custom Physics Engine Libraries
 
-## 1. Understanding the Built-in Physics Engine
+> Author: Charley
 
-### 1.1 Which Classes Correspond to the Built-in Physics Engine
+The LayaAir engine has built-in third-party physics engines; for example, Box2D is built-in for 2D, and Bullet and PhysX are built-in for 3D.
 
-The LayaAir3 engine has a built-in Box2D physics engine for 2D, corresponding to the classes in the Physics directory of the engine source code, as shown in Figure 1-1:
+At the same time, we also provide a solution for **custom physics engine libraries**. If developers need to integrate other physics engines into the LayaAir engine, this document will guide you through the process of integrating a physics engine, making it easier for you to connect and use.
+
+
+
+## 1\. Understanding Built-in Physics Engines
+
+### 1.1 Which Classes Do Built-in Physics Engines Correspond To?
+
+The LayaAir3 engine has the **Box2D** physics engine built in for 2D, supporting both JS engine libraries and Wasm libraries. This corresponds to the classes under the `Physics` directory in the engine source code, as shown in Figure 1-1:
 
 ![](img/1-1.png) 
 
 (Figure 1-1)
 
-In 3D, it has built-in Bullet and PhysX physics engines, corresponding to the classes in the Physics3D directory of the engine source code, as shown in Figure 1-2.
+For 3D, we have **Bullet** and **PhysX** physics engines built in, corresponding to the classes under the `Physics3D` directory in the engine source code, as shown in Figure 1-2.
 
 ![](img/1-2.png) 
 
- (Figure 1-2)
+(Figure 1-2)
 
-### 1.2 Compiling the Engine as a Physics Library
+### 1.2 Compiling the Engine into a Physics Library
 
-The built-in physics engine is not directly using a third-party physics engine as it is.
+Built-in physics engines are not simply third-party physics engines used directly.
 
-Instead, the interfaces of the third-party physics engine and the interfaces of the LayaAir engine need to be connected one by one, that is, the third-party physics engine is built into the LayaAir engine. In this way, developers can finally switch to use various physics engines directly through the physics interface of the LayaAir engine. And in the IDE, through the way of physical components, visual editing can be carried out.
+Instead, the interfaces of the third-party physics engine are **individually integrated with the interfaces of the LayaAir engine**, meaning the third-party physics engine is built into the LayaAir engine. This way, developers can ultimately switch and use various physics engines directly through the LayaAir engine's physics interfaces. Furthermore, within the IDE, visual editing is possible through physics components.
 
-The physics engine that developers ultimately use is a complete physics library that integrates and packages the physical docking classes based on the third-party physics engine and the LayaAir engine.
+The physics engine ultimately used by the developer is a complete physics library formed by the integration of the third-party physics engine and the LayaAir engine's physics integration classes.
 
-The custom physics engine library and the built-in physics engine library of the engine have the same docking process. The only difference is that the built-in engine is docked and built into the open-source engine by the official developers of the engine, while the custom engine is a physics engine library that is docked and integrated by the project developers themselves by understanding and referring to the docking process and interfaces of the engine.
+The process of integrating a custom physics engine library with a built-in engine library follows the same steps. The only difference is that built-in engines are integrated by the official engine developers and included in the open-source engine, while custom engines are integrated by project developers who understand and refer to the engine's integration process and interfaces to connect with third-party physics engines and form their own physics engine libraries.
 
-Next, let's understand which class files need to be compiled and integrated into an independent physics engine library by analyzing the compilation script in the engine source code.
+Next, we will analyze the compilation scripts in the engine source code to understand which class files need to be compiled and integrated into an independent physics engine library.
 
-First, we open the `build` task in the gulp script. Just by the name of the sub-task, we can clearly see the sub-task `copyJsLibs` for copying the third-party engine library and various sub-tasks for processing the physics engine library, as shown in Figure 2-1.
+First, let's open the `build` task in the gulp script. From the subtask names alone, you can clearly see the `copyJsLibs` task for copying third-party engine libraries and subtasks for processing various physics engine libraries, as shown in Figure 1-3.
+
+![](img/1-3.png) 
+
+(Figure 1-3)
+
+If you examine the task code, it becomes even clearer that the `copyJsLibs` task specifies the file rules to be processed using `gulp.src()`, and then copies the matching files to the specified directory using `gulp.dest()`. In the physics engine library task code, it can also be intuitively seen that each LayaAir physics engine library is a new library formed by merging the LayaAir engine's physics integration code with the third-party physics engine JS library.
+
+![](img/1-4.png) 
+
+(Figure 1-4)
+
+Of course, a complete physics engine implementation, in addition to the corresponding third-party physics engine library, also includes basic physics functionalities such as physics components. These are used as the basic physics library. Both 2D and 3D have basic physics engine libraries, namely `laya.physics2D.js` and `laya.physics3D.js`, as shown in Figure 1-5.
+
+![](img/1-5.png) 
+
+(Figure 1-5)
+
+By analyzing the engine library's compilation process, we can understand that the built-in physics engine is divided into three parts: the implementation of LayaAir engine's physics foundation and physics components, the adaptation library (integration code) between the LayaAir engine and the physics engine, and the third-party physics engine library.
+
+Ultimately, the LayaAir engine's physics basic library and the implementation of physics components form the LayaAir engine physics basic library. The LayaAir engine physics adaptation library and the third-party physics library are merged to form a complete physics engine library.
+
+
+
+## 3\. Custom Physics Engine Library Workflow
+
+Having understood the structure of LayaAir's built-in physics engine, this section will cover the tasks developers need to perform when creating a custom physics engine library.
+
+> Customizing a physics engine requires the ability to read and write engine code. If you cannot complete the custom integration, you can contact LayaAir\_Engine on WeChat for commercial customization.
+
+### 2.1 Selecting and Obtaining a Third-Party Physics Engine Library
+
+Although Box2D, Bullet, and PhysX, these built-in physics engines, are top-tier internationally renowned engines, some developers have specific needs. For example, some projects may not require a very high-precision physics engine, only basic physics features, but demand a very lightweight engine library. By customizing the engine library, these developers can choose the engine most suitable for their project.
+
+For example, 2D physics lightweight engines like **matter.js** and 3D physics lightweight engines like **cannon.js**.
+
+Developers can obtain the source code or pre-compiled engine libraries for these physics engines from open-source websites.
+
+Whether compiling from source code into an engine library or obtaining ready-made JS engine libraries, the preparation for "third-party physics engine library," one of the three parts introduced in the previous subsection, is complete.
+
+### 2.2 Adapting to Third-Party Physics Engines
+
+The other two parts, the LayaAir engine physics basic library, do not need to be rewritten by developers; they can directly use the pre-compiled library from the engine.
+
+Developers only need to integrate the physics engine's **adaptation library**. To help you better understand how to integrate third-party physics engines, we have independently open-sourced a physics engine adaptation library called **LayaAir3Physics-Cannon** outside the LayaAir engine library, using the Cannon physics library as an example for adaptation. This will allow developers to understand the entire adaptation process more simply.
+
+The specific operations are as follows:
+
+First, we clone the source code of our adapted Cannon.js library project via Git from: https://github.com/layabox/LayaAir3Physics-Cannon.git
+
+After cloning the source code project to your local machine, configure the project's compilation environment according to the [Open Source Usage Document (README.zh-CN.md)](https://github.com/layabox/LayaAir3Physics-Cannon/blob/master/README.zh-CN.md).
+
+In this project's source code, the `src` directory is less complex; it only contains the physics engine adaptation code, as shown in Figure 2-1:
 
 ![](img/2-1.png) 
 
 (Figure 2-1)
 
-If you view the code of the task, it will be more clearly seen that in the `copyJsLibs` task, the file rule to be processed is specified by `gulp.src()`, and then the files that meet the conditions are copied to the specified directory through `gulp.dest()` according to this rule. In the task code of the physics engine library, it can also be intuitively seen that each LayaAir physics engine library is a new library after the combination of the LayaAir engine's physics engine docking code and the third-party physics engine JS library.
+Once we have read and understood the adaptation source code under `src`, we can use this source code as a reference to adapt other physics engine libraries.
 
-![](img/2-2.png) 
+During the adaptation process, one point needs special emphasis. If developers need to insert their own initialization process into the scene initialization flow (for example, some physics engines use WebAssembly, which requires downloading resources during the initialization phase), then they need to use `Laya.addBeforeInitCallback()` to register a method. An example of code usage is shown in Figure 2-2.
+
+![](img/2-2.png)   
 
 (Figure 2-2)
 
-Of course, in addition to the corresponding third-party physics engine library, a complete physics engine implementation also has basic physical functions such as physical components. These are used as the basic library of the physics engine. Both 2D and 3D have the basic library of the physics engine, namely `laya.physics2D.js` and `laya.physics3D.js`, as shown in Figure 2-3.
+### 2.3 Merging into a Complete Physics Engine Library
+
+After completing the adaptation work, developers can refer to the gulp script in the Cannon adaptation source code to compile the physics engine adaptation source code and then merge it with the third-party physics engine library into a single, independent physics engine library.
+
+In the Cannon adaptation source code, we can analyze what work needs to be done by referring to the build process in the gulp script.
+
+Here, we will still use the Cannon source project as an example, focusing on which parts need to be done.
+
+First, the developer places the obtained third-party physics engine library into the `libs` directory.
+
+In this example, `cannon.js` is the original library file of the third-party physics engine, as shown in Figure 2-3. Developers can modify gulp to replace it with their own third-party physics engine library.
 
 ![](img/2-3.png) 
 
 (Figure 2-3)
 
-By analyzing the compilation process of the engine library, we can understand that the built-in physics engine is divided into three parts: the implementation of the physical basis and physical components of the LayaAir engine, the adaptation library (docking code) of the LayaAir engine and the physics engine, and the third-party physics engine library.
+Second, after the adaptation is complete, modify the generated adaptation library filename in the gulp script, replacing `laya.cannon` with your own physics engine library name, then execute the script. The script will automatically complete the compilation, as well as the merging and output of the engine library.
 
-Ultimately, the implementation of the physical basis and physical components of the LayaAir engine forms the LayaAir engine physical basis library, and the LayaAir engine physical adaptation library and the third-party physical library are combined into a complete physical engine library.
 
-## 2. The Process of Customizing the Physics Engine Library
 
-After understanding the structure of the built-in physics engine of LayaAir, in this section, let's understand what developers need to do in the process of customizing the physics engine library.
+## 3\. Using a Custom Physics Engine Library
 
-> Customizing the physics engine requires the ability to read and write engine code. If the custom docking cannot be completed, you can contact WeChat LayaAir_Engine for commercial customization
+### 3.1 Local Import of Physics Engine Library Installation Package
 
-### 2.1 Select and Obtain the Third-Party Physics Engine Library
+#### 3.1.1 Configuring the Installation Package
 
-Although the built-in physics engines such as Box2D, Bullet, and PhysX are all top-notch and well-known engines internationally. However, some developers also have some specific needs. For example, in some projects, a highly accurate physics engine is not required, only some basic physical characteristics are needed, but the engine library is required to be relatively lightweight. Through the way of customizing the engine library, these developers can choose the most suitable engine for the project.
+The directory structure of the installation package is as follows:
 
-For example, 2D lightweight physics engine **matter.js** and 3D lightweight physics engine **cannon.js**, etc.
+```
+.
+├── package.json
+├── laya.cannon.js
+└── editorResources
+    └── cannon.png
+```
 
-Developers can obtain the source code or compiled engine library of these physics engines by themselves from open-source websites.
+  - `laya.cannon.js` is the example engine library filename; developers can name it as needed.
+  - `cannon.png` is the icon for the installation package. It's important to note that this package icon must be placed under `editorResources` for the installation package to find it. This is similar to the role of the `resources` directory under the `assets` directory.
+  - `package.json` is the crucial configuration file for the installation package; its contents determine whether it can be recognized as an installation package.
 
-Whether compiling the source code into an engine library or obtaining a ready-made JS engine library, the preparation work of one of the three parts of the physics engine library introduced in the previous section, the "third-party physics engine library", is completed.
+An example of the installation package's configuration file code is as follows:
 
-### 2.2 Adapt the Third-Party Physics Engine
+```json
+{
+  "name": "com.layabox.cannon",
+  "displayName": "Cannon.js",
+  "version": "1.0.2",
+  "description": "Cannon.js physics engine library.\n\nAfter installation, you can select Cannon.js for use in \"Project Settings\" => \"Engine Modules\" => \"3D\" => \"Physics System\".",
+  "icon": "editorResources/cannon.png",
+  "author": "layabox",
+  "contributes": {
+    "engine": [
+      {
+        "name": "laya.physics3D",
+        "addons": [
+          {
+            "name": "Cannon.js",
+            "files": [
+              "laya.cannon.js"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+```
 
-For the other two parts, the LayaAir engine physical basis library does not require developers to rewrite, and the compiled library of the engine can be used by default.
+#### 3.1.2 Importing a Local Installation Package
 
-Developers only need to dock the adaptation library of the physics engine. In order to help everyone understand how to dock the third-party physics engine more conveniently, outside the LayaAir engine library, we independently open-sourced a physics engine adaptation library **LayaAir3Physics-Cannon** with the adaptation access of the Cannon physical library as an example, so that developers can understand the entire adaptation process more concisely.
-
-The specific operations are as follows:
-
-First, we clone the project source code of our adapted Cannon.js library through Git. The address is: https://github.com/layabox/LayaAir3Physics-Cannon.git
-
-After cloning the source code project to the local, we configure the compilation environment of the project according to [Open Source Usage Documentation (README.zh-CN.md)](https://github.com/layabox/LayaAir3Physics-Cannon/blob/master/README.zh-CN.md).
-
-In this project source code, the `src` directory is not so complicated. Here only includes the code for the physical engine adaptation. As shown in Figure 3-1:
+Click the `Package Manager` option under the IDE's `Developer` menu. In the pop-up panel, click the `+` sign in the upper left corner and select the installation package directory, as shown in Figure 3-1.
 
 ![](img/3-1.png) 
 
 (Figure 3-1)
 
-When we read and understand the adaptation source code under `src`, we can use this source code as a reference to adapt other physics engine libraries.
+> Note: Here, `cannon.js` refers to the directory name, not the file name.
 
-During the adaptation process, one point needs to be reminded emphatically. If developers need to insert their own initialization process in the scene initialization process, for example, some physics engines use wasm and need to download resources in the initialization stage, then the `Laya.addBeforeInitCallback()` needs to be used to register the method. The code usage example is shown in Figure 3-2.
+After the installation package is successfully imported, the installation package information corresponding to `package.json` will appear in the installation package list, as shown in Figure 3-2, indicating successful installation.
 
-![](img/3-2.png)  
+![](img/3-2.png) 
 
 (Figure 3-2)
 
-### 2.3 Merge into a Complete Physics Engine Library
+#### 3.1.3 Using a Custom Physics Engine
 
-After the adaptation work is completed, developers can refer to the gulp script in the Cannon adaptation source code to compile the physical engine adaptation source code and then merge it with the third-party physical engine library into an independent physical engine library.
+After successful installation, go back to `Project Settings` -\> `Engine Modules`. You will see that a new Cannon.js configuration has been added under `3D` -\> `Physics System`, as shown in Figure 3-3.
 
-In the cannon adaptation source code, we can refer to the build process in the gulp script to analyze what needs to be done.
-
-Here we still take the Cannon source code project as an example and focus on describing which several pieces of work need to be done.
-
-First, developers put the obtained third-party physical engine library in the libs directory,
-
-In this example, `cannon.js` is the original library file of the third-party physical engine. As shown in Figure 3-3, developers can modify gulp to replace it with their own third-party physical engine library.
-
-![](img/3-3.png) 
-
+  ![](img/3-3.png)  
+  
 (Figure 3-3)
 
-Second, after the adaptation is completed, modify the generated file name of the adaptation library in the gulp script, replace laya.cannon with the name of their own physical engine library, and then execute the script. The script will automatically complete the compilation and the merging and output of the engine library.
+Seeing the settings in the figure indicates that the `contributes` configuration in `package.json` has taken effect. At this point, switch to Cannon.js and refresh the IDE for it to take effect.
 
-## 3. Using the Custom Physics Engine Library
+```json
+  "contributes": {
+    "engine": [
+      {
+        "name": "laya.physics3D",
+        "addons": [
+          {
+            "name": "Cannon.js",
+            "files": [
+              "laya.cannon.js"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+```
 
-The merged engine library can be placed in the assets directory under the resource panel of the IDE,
+Finally, let's explain the main parameters of `contributes`.
 
-Then for the `2D engine library` or `3D engine library` option, first set `Custom`, and then drag and drop the custom physics engine library file to the custom input box, as shown in Figure 4-1:
+  - `engine` indicates that this is an engine module configuration.
+  - `engine.name` specifies which configuration under the engine module; the value `laya.physics3D` indicates the 3D physics engine configuration.
+  - `engine.addons` indicates adding new options under the built-in `laya.physics3D` engine configuration.
+  - `engine.addons.name` specifies the display name of the option.
+  - `engine.addons.files` specifies which engine library corresponds to this new option (if not in the root directory of the installation package, the path needs to be included, e.g., `libs/laya.cannon.js`).
 
-![](img/4-1.png) 
+### 3.2 Using Engine Library Installation Packages from the Resource Store
 
-So far,
+If a third-party physics engine library is available in the resource store, such as Cannon.js, you can directly go to the resource store, log in, and add it to your "My Resources."
 
-The basic process of the custom engine has been introduced.
+Cannon.js plugin address: [https://store.layaair.com/info.php?id=10180](https://store.layaair.com/info.php?id=10180)
+
+After adding it, you can find it directly in the IDE's package manager list and click "Install," as shown in Figure 3-4.
+
+![](img/3-4.png) 
+
+(Figure 3-4)
+
+This concludes the introduction to the basic workflow for custom engines.

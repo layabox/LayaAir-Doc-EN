@@ -182,7 +182,8 @@
     * [3D Pathfinding](IDE/Component/navMesh/readme.md)
 - IDE Plugins
   * [Plugin Development Guide](IDE/layapackage/plug-in/readme.md)
-  * [Plugin Import and Usage Guide](IDE/layapackage/pluginImport/readme.md)
+  * [Package Manager and Importing Asset Packs](IDE/layapackage/pluginImport/readme.md)
+  * [Exporting Asset Packs and Uploading to the Store](IDE/layapackage/exportToStore/readme.md)
   - [Official Plugins](IDE/layapackage/Layabox/readme.md)
     * [LOD Decimation Plugin](IDE/layapackage/Layabox/LOD/readme.md)
     * [3D Animation Baking Plugin](IDE/layapackage/Layabox/BakeAnimation/readme.md)

@@ -121,7 +121,7 @@ In the `Resource Panel`, click on the files of the following resource types to s
 
 - Picture: You can set the imported picture attributes. For details, please refer to Section 1.4 of [Project Resource Panel Instructions](../../../basics/IDE/assets/readme.md).
 - Bitmap font: Bitmap font can be customized. For details, please refer to Section 2.2 of [Advanced Text Use](../../../2D/advanced/useText/readme.md).
-- Automatic atlas: An atlas can be automatically generated after publishing. For details, please refer to Section 3.3.1 of [Web Publishing](../../../released/web/readme.md).
+- Automatic atlas: After publishing, an atlas can be automatically generated. For detailed information, please refer to the comprehensive explanation of atlas packing in [《General Setting》](../../../released/generalSetting/readme.md)
 - Material: Custom materials can be created. For details, please refer to [Material Editing Module](../../../IDE/materialEditor/readme.md).
 - Animation: There are 2D animation files and 3D animation files. For details, please refer to [Detailed Explanation of Timeline Animation Editing](../../../IDE/animationEditor/timelineGUI/readme.md).
 - Light map baking: You can set lighting attributes. For details, please refer to Section 6 of [3D Scene Environment Settings](../../../IDE/sceneEditor/environment/readme.md).
