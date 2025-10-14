@@ -287,17 +287,195 @@ Laya.stage.addChild(sprite);
 
 ### 3.4 Other Properties
 
-#### 3.4.1 zIndex
+#### 3.4.1 Setting zIndex
+
+The `zIndex` property is used to adjust the rendering order of a `Sprite`. You can directly set this value in the IDE:
+
+![3-4-1-1](img/3-4-1-1.png)
+
+You can also set it through code:
+
+```typescript
+onAwake(): void {
+    let sp = new Laya.Sprite;
+    sp.zIndex = 1;
+}
+```
+
+Adjusting the rendering order through this property takes effect globally. It is not limited by the node hierarchy and does not affect the logical order of nodes in the tree.
+
+Suppose we have the following node tree:
+
+![3-4-1-2](img/3-4-1-2.png)
+
+By default, the rendering order follows the depth-first traversal of the node tree:
+
+S -> A -> C -> D -> B -> E -> F
+
+If we set `C`’s `zIndex` to 1, the rendering order becomes:
+
+S -> A -> D -> B -> E -> F -> C
+
+If we then set `D`’s `zIndex` to -1, the rendering order becomes:
+
+D -> S -> A -> B -> E -> F -> C
+
+The larger the `zIndex` value, the later the node is rendered and the higher its display layer.
+
+Note that `zIndex` is relative to its parent node. For example, if a parent node has a `zIndex` of 1 and a child node has a `zIndex` of 2, the child node’s effective `zIndex` value is 3. For instance, if you set `A`’s `zIndex` to 1, `C`’s to 1, and `B`’s to 1, the rendering order becomes:
+
+S -> D -> E -> F -> A -> B -> C
+
+`C` is rendered last because its effective `zIndex` value is 2.
+
+In practical applications, you often want to adjust rendering order **locally** rather than globally. For example, if within a prefab you want a certain node to be rendered on top, you might set its `zIndex` to a positive number. However, after adding this prefab to the scene, if other nodes do not have a `zIndex` set, that node will appear above all other nodes in the scene, which is usually not the intended behavior.
+
+To solve this, `Sprite` introduces another property — `stackingRoot`:
+
+![3-4-1-3](img/3-4-1-3.png)
+
+When this property is checked, all child and descendant nodes’ `zIndex` values only affect the rendering order **within this node**.
+
+Using the same example, if we set `A`’s `stackingRoot` to `true`, set `C`’s `zIndex` to 2, and `D`’s `zIndex` to 1, the rendering order becomes:
+
+S -> A -> D -> C -> B -> E -> F
+
+As you can see, even though `C` and `D` have larger `zIndex` values than `B`, `E`, and `F`, they do not appear above them.
+
+If we now set `A`’s `zIndex` to 3, the rendering order becomes:
+
+S -> B -> E -> F -> A -> D -> C
+
+Note that the order inside `A` is `D` then `C`, not `C` then `D`. In other words, a node marked as `stackingRoot` still uses its own `zIndex` to determine its **global** rendering order.
+
+`Sprite` also has another property called `zOrder`. This changes the **logical order** of child nodes under the same parent, but does **not** affect rendering order.
+
+This property is not exposed in the IDE and can only be set through code:
+
+```typescript
+onAwake(): void {
+    // Create two nodes and add them to the scene
+    let sp1 = new Laya.Sprite();
+    sp1.name = "sp1";
+    this.owner.addChild(sp1);
+
+    let sp2 = new Laya.Sprite();
+    sp2.name = "sp2";
+    this.owner.addChild(sp2);
+
+    sp1.zOrder = 1;
+    sp2.zOrder = 0;
+}
+```
+
+Runtime result:
+
+![3-4-1-4](img/3-4-1-4.png)
+
+Although `sp1` was added first in the code, its `zOrder` value is higher, so it appears above `sp2` in hierarchy.
+
+#### 3.4.2 Setting BlendMode
+
+Example code for setting `blendMode`:
+
+```typescript
+let sp1 = new Laya.Sprite();
+Laya.stage.addChild(sp1);
+// Load and display image 1
+sp1.loadImage("atlas/comp/image.png", null);
+let sp2 = new Laya.Sprite();
+Laya.stage.addChild(sp2);
+// Load and display image 2
+sp2.loadImage("resources/layabox.png", null);
+sp2.pos(200, 190);
+// Set blendMode
+sp2.blendMode = "lighter";
+```
+
+Runtime result:
+
+![3-4](img/3-4.png)
+
+(Figure 3-4)
+
+Compared with Figure 3-3, when using the `"lighter"` `blendMode`, the colors of `sp2` and `sp1` are blended together.
+
+#### 3.4.3 Setting autoSize
+
+Specifies whether to automatically calculate width and height. The default is `false`.
+ By default, a `Sprite`’s width and height are 0 and do not change with its drawn content.
+ If you want to automatically determine the width and height based on the drawn content, set this property to `true`. Example:
+
+```typescript
+let sprite = new Laya.Sprite();
+// Add to stage
+Laya.stage.addChild(sprite);
+sprite.autoSize = true;
+```
+
+#### 3.4.4 Caching as a Static Image
+
+Example:
+
+```typescript
+let sprite = new Laya.Sprite();
+Laya.stage.addChild(sprite);
+// Cache as a static image
+sprite.cacheAs = "bitmap";
+```
+
+#### 3.4.5 Setting a Mask
+
+Example:
+
+```typescript
+let sprite = new Laya.Sprite();
+Laya.stage.addChild(sprite);
+sprite.loadImage("atlas/comp/image.png", null);
+
+// Create a mask
+let mask = new Laya.Sprite();
+sprite.addChild(mask);
+mask.graphics.drawCircle(200, 200, 100, "#FFFFFF");
+
+// Apply the mask after 1 second
+setTimeout(() => { 
+	sprite.mask = mask;
+}, 1000);
+```
+
+Runtime result:
+
+![3-5](img/3-5.gif)
+
+(Animated Figure 3-5)
+
+#### 3.4.6 Setting the Click Area (hitArea)
+
+Mouse-related properties share similar code patterns.
+ Here’s an example using `hitArea`:
 
 ```typescript
 let sp = new Laya.Sprite();
-sp.zIndex = 1;
+Laya.stage.addChild(sp);
+// Load and display an image
+sp.loadImage("atlas/comp/image.png", null);
+// Set click event
+sp.on("click", this, () => {
+	Laya.Tween.to(sp, { scaleX: 0.5, scaleY: 0.5 }, 100);
+});
+// Define click area
+let hitArea: Laya.HitArea = new Laya.HitArea();
+hitArea.hit.drawRect(0, 0, 100, 100, "#00ff00");
+sp.hitArea = hitArea;
 ```
 
-`stackingRoot` can confine zIndex adjustments to a subtree. `zOrder` affects logical order,
+Runtime result:
 
+![3-6](img/3-6.gif)
 
-`drawCallOptimize` improves rendering efficiency.
+(Animated Figure 3-6)
 
-
+You can see that clicks within the defined area trigger the event, while clicks outside do not.
+ If you don’t define a `hitArea`, any click within the image bounds will trigger the event.
 
