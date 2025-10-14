@@ -40,7 +40,7 @@ After saving the name, you can see the timeline animation editing panel, animati
 
 Not only can we create animations on nodes in the scene, we can also create animations in prefabs.
 
-> If you don’t understand prefabs, please check the [<<Prefab module>>](../../prefab/readme.md) document first.
+> If you don’t understand prefabs, please check the [<<Prefab module>>](../../assets/prefab/readme.md) document first.
 
 From an operational point of view, there is no essential difference between creating animations on the scene and creating animations in prefabs.
 
