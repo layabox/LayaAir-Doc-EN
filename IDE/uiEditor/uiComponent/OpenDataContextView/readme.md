@@ -15,7 +15,6 @@ Key points developers need to understand to use Open Data Context:
 2. **Communication between main domain and Open Data Context** – send messages and player data from the main domain and handle them in the Open Data Context.
 3. **Rendering in the Open Data Context** – use the canvas engine to render data on the sharedCanvas accessible by both main and Open Data Contexts.
 
----
 
 ## 2. Creating an Open Data Context
 
@@ -66,7 +65,7 @@ After creating the Open Data Context view node, you also need to create an **Ope
 2. If the folder already exists, the engine will not overwrite it.
 3. If unchecked, the engine deletes any existing `openDataContext` folder during build; ensure your code is backed up.
 
----
+
 
 ## 3. Communication between Main Domain and Open Data Context
 
@@ -104,7 +103,7 @@ In the Open Data Context’s `index.js` file, `onMessage` receives messages:
 
 `postMessage` is useful for events requiring immediate updates, e.g., refreshing the leaderboard after a button click.
 
----
+
 
 ### 2. `setUserCloudStorage` and `getFriendCloudStorage`
 
@@ -159,7 +158,7 @@ wx.getUserCloudStorage({
 
 After this, you can access data of friends who have played the game.
 
----
+
 
 ## 4. Rendering in Open Data Context
 
@@ -215,7 +214,7 @@ init();
 
 `template` is XML-like. `style` is key-value for layout properties. Learn more in the [Layout documentation](https://wechat-miniprogram.github.io/minigame-canvas-engine/components/overview.html).
 
----
+
 
 ### 1. Template Engine
 
@@ -241,7 +240,7 @@ For Open Data Context, developers should understand Web front-end basics, CSS, a
 * [CSS Tutorial](https://www.runoob.com/css/css-tutorial.html)
 * [Flex Layout Tutorial](https://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
 
----
+
 
 ## 5. Example Workflow
 
@@ -255,7 +254,7 @@ For Open Data Context, developers should understand Web front-end basics, CSS, a
   * `Button` – toggle Open Data Context display
   * `OpenDataContext` – Open Data Context node
 
----
+
 
 ### 2. Add Scripts
 
@@ -319,7 +318,7 @@ export class Script extends Laya.Script {
 }
 ```
 
----
+
 
 ### 3. Template Function & Style
 
@@ -327,11 +326,8 @@ export class Script extends Laya.Script {
 * Export template function via **doT** → replace `tplfn.js`
 * Copy style from demo → `style.js`
 
----
 
-### 4. Open Data Context JS (`index.js`)
-
-```javascript
+4. Open Data Context JS (index.js)
 const style = require("./render/style.js");
 const tplFn = require("./render/tplfn.js");
 const Layout = require("./engine.js").default;
@@ -364,4 +360,17 @@ function draw(res) {
     Layout.layout(sharedContext);
 }
 
-```
+function init() {
+    wx.onMessage(data => {
+        if (data.type === "updateViewPort") Layout.updateViewPort(data.box);
+        else if (data.type === 'reFresh') reFresh();
+    });
+}
+
+init();
+
+5. Run & Preview
+
+Use a WeChat account with Mini Program development & privacy permissions.
+
+Open the project in WeChat Developer Tools to see Open Data Context in action:
