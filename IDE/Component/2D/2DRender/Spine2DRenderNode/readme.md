@@ -174,6 +174,16 @@ As shown in animated Figure 2-6, after enabling `Physics Update` for the girl on
 (Animated Figure 2-6)
 
 The specific physics parameters need to be set in the Spine editor; LayaAir only determines whether to enable them.
+### 2.10 Auto Adjust (`autoAdjust`)
+
+When **Auto Adjust** is enabled, the engine automatically calculates and sets the node’s anchor point based on the origin (0,0) in the Spine file, aligning it with the origin in the Spine editor. This allows developers to conveniently perform actions like mirroring or rotating animations based on the anchor point.
+
+As shown in Animation 2-7, **after enabling this feature, the node’s own anchor point settings will be ignored**. If further offset adjustments are needed, they can be done via the Spine component’s offset properties or by nesting the Spine node within another node.
+
+![](img/2-7.gif)
+
+(Animation 2-7)
+
 
 ## 3\. External Skins `externalSkins` (Part Swapping)
 
