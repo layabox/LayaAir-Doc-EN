@@ -77,7 +77,7 @@
         "website": "style/website.css"
     },
     "structure": {
-        "readme": "services.md"
+        "readme": "index.md"
     },
     "title": "LayaAir3.3 Engine Documentation · LAYABOX"
 }

@@ -1,328 +1,393 @@
-# Detailed explanation of project settings
+# Project Settings Explained
 
 > Author: Charley, Meng Xingyu
 
-The project settings of the IDE include two parts, run settings and editor settings.
+## 1. Run Configuration
 
-## 1. Run settings
+### 1.1 Resolution Settings
 
-### 1.1 Resolution setting
+Resolution settings affect the preview effect inside the IDE, as well as the canvas width and height, scaling mode, alignment, and background color at runtime. Available properties are shown in Figure 1-1:
 
-The resolution setting will affect the preview effect in the IDE, as well as the canvas width and height, adaptation mode, alignment, canvas background color, etc. when the project is running. The settable properties are shown in Figure 1-1:
+![1-1](img/1-1.png)
 
-<img src="img/1-1.png" style="zoom:60%;" />  
+(Figure 1-1)
 
-(Picture 1-1)
+#### 1.1.1 Screen Width and Height Adaptation
 
-#### 1.1.1 Screen width and height adaptation
+Three settings affect the display size of the product: **Design Width**, **Design Height**, and **Scale Mode**.
 
-The three settings that affect the width and height of the product screen are design width and height (Design Width, Design Height) and scaling mode (Scale Mode).
+The **Design Width** and **Height** represent the dimensions set and visible in the IDE.
 
-The design width and height are the width and height we set in the IDE and see.
+These values determine the background size of the UI scene and the preview mode within the IDE.
 
-This width and height will affect the size of the UI scene background in the IDE, and the viewing effect in the IDE's preview running mode is also based on this width and height.
+However, in actual runtime environments (e.g., different mobile devices), the screen ratios vary, so the designed resolution cannot perfectly match all devices.
 
-In the actual operating environment, such as different mobile phones. Due to the different screen ratios, it is certainly impossible to completely match the design width and height.
+Therefore, the engine provides multiple **scale adaptation modes** to adjust the canvas according to different screens.
 
-Therefore, you need to use the engine's own scaling adaptation mode to scale to meet the developer's screen needs.
+Scale adaptation involves concepts such as the **canvas**, **stage**, and **adaptation algorithms** — these are explained in detail in the [Screen Adaptation](../../common/adaptScreen/readme.md) document.
 
-The scaling adaptation mode involves many knowledge points such as canvas, stage, adaptation algorithm, etc. We introduce it in detail in another document ["Screen Adaptation"] (../../common/adaptScreen/readme.md).
+#### 1.1.2 Orientation (Landscape/Portrait)
 
-#### 1.1.2 Horizontal and vertical screen adaptation
+Sometimes, you may want to force a specific screen orientation. This can be set via the **Screen Mode** property in the IDE.
 
-Sometimes, we need to force the horizontal and vertical screen settings according to the screen ratio. This can be done by setting the Screen Mode in the IDE.
+There are three orientation modes, as shown in Figure 1-2.
 
-There are three adaptation modes for horizontal and vertical screens, as shown in Figure 1-2.
-
- <img src="img/1-2.png" alt="Picture 3" style="zoom:60%;" />
+![1-2](img/1-2.png)
 
 (Figure 1-2)
 
-**1, no change: none**
+**1. None**
 
-When set to none, no matter how the screen direction is rotated, the horizontal direction of the game will not change to follow the screen rotation.
+When set to `none`, the game’s orientation will not change when the device is rotated.
 
-The effect is shown in the animation 1-3.
+Example shown in Animation 1-3:
 
 ![](img/1-3.gif)
 
 (Animation 1-3)
 
-Through the animation 1-3, we found that when the value is none, when the screen is rotated, the interface based on the vertical screen design will become unsuitable in the horizontal screen. Similarly, the interface based on the horizontal screen design will not be suitable in the vertical screen. It will become unsuitable.
+As shown, when the screen rotates, the designed portrait interface may not display correctly in landscape and vice versa.
 
-Of course, if our layout strategy is used more reasonably, we may also be able to take into account the experience of both horizontal and vertical screens. The effect is shown in the animation 1-4.
+With proper layout strategies, you can make the UI adaptive to both orientations (Animation 1-4).
 
 ![](img/1-4.gif)
 
 (Animation 1-4)
 
-Although it is not that ugly, in order to achieve the best effect, the best solution is to always keep the vertical screen in the same direction as the device's vertical screen, and the horizontal screen in the same direction as the device's horizontal screen.
+However, the best practice is to keep **portrait mode** aligned with the device’s portrait orientation and **landscape mode** with the device’s landscape orientation.
 
-**2, always horizontal screen: horizontal**
+**2. Always Landscape (horizontal)**
 
-When the width and height we set are horizontal screen products, horizontal is undoubtedly the best experience, as shown in the animation 1-5.
+If your game is designed for landscape, this is the optimal choice.
 
-![](img/1-5.gif)  
+![](img/1-5.gif)
 
 (Animation 1-5)
 
-Through the animation 1-5, we found that when the screenMode attribute value is set to horizontal, no matter how the screen direction is rotated, the horizontal direction in the design will always remain perpendicular to the shortest side of the screen. Therefore, when the user's device is in portrait mode, it will be natural to see a horizontal screen image. The device will be turned sideways to match the design of the product.
+When `screenMode` is set to `horizontal`, the game’s horizontal axis always stays perpendicular to the shorter screen edge, ensuring proper display orientation.
 
-**3, always vertical screen: vertical**
+**3. Always Portrait (vertical)**
 
-When the width and height we set are vertical screen products, vertical is undoubtedly the best experience, as shown in the animation 1-6.
+For portrait games, this setting is ideal.
 
-![](img/1-6.gif)  
+![](img/1-6.gif)
 
 (Animation 1-6)
 
-Through the animation 1-6, we found that when the screenMode attribute value is set to vertical, no matter how the screen direction is rotated, the horizontal direction of the game will always remain vertical to the longer side of the screen. Therefore, even if the user has turned the device horizontally, he still sees the vertical screen image, and will naturally return the device to vertical screen, thus conforming to the design of the product.
+When `screenMode` is set to `vertical`, the game’s horizontal axis always stays perpendicular to the longer screen edge.
+
+Even if users rotate the device, the display remains vertical.
 
 > [!Tip]
+> In browsers, the engine’s auto-rotation only affects the **canvas**, not the browser itself.
+> If the phone is locked, the canvas may rotate but the browser remains fixed, which may cause input issues (e.g., rotated keyboard).
 >
-> It should be noted that when running in the browser, the engine's automatic horizontal screen and automatic vertical screen can only rotate the canvas. If the user's phone locks the screen, although the screen will automatically rotate, the browser will not rotate. Over, it will cause the input method to still pop up in the direction of the browser. At this time, it may cause the input method and the browser to be displayed at 90 degrees.
->
-> When running on a mini-game platform, since the bottom layer of the mini-game has a horizontal or vertical screen configuration, this problem will not occur.
+> Mini-game platforms handle orientation at the system level, so this issue does not occur there.
 
-#### 1.1.3 Canvas alignment adaptation
+#### 1.1.3 Canvas Background Color
 
-The alignV (vertical alignment) and alignH (horizontal alignment) provided in the engine are used to align the canvas. The setting method is shown in Figure 1-7:
+This property defines the canvas background color. The default value is `#888888`, as shown in Figure 1-7.
 
-<img src="img/1-7.png" style="zoom: 60%;" />  
+![1-7](img/1-7.png)
 
 (Figure 1-7)
 
-Parameter description is as follows:
+---
 
-The parameters of AlignV vertical alignment are: top (top alignment), middle (vertical center alignment), bottom (bottom alignment).
+### 1.2 Engine Initialization Settings
 
-The parameters of AlignH horizontal alignment are: left (aligned to the left), center (aligned to the center horizontally), right (aligned to the right).
+Some engine options must be configured at initialization, as shown in Figure 1-8.
 
-> [!Tip]
->
-> Canvas alignment cannot be understood as the alignment of the UI interface based on the stage, but the alignment of the canvas relative to the entire physical screen.
->
-> This setting is basically not used on the mobile side. Most mobile terminals require full-screen adaptation. When the canvas already covers the entire screen, the settings are meaningless.
->
-> Usually used on the PC side in non-full-screen modes, such as when the canvas is not in full-screen mode (showall and noscale).
-
-#### 1.1.4 Canvas background color setting
-
-The canvas background color is actually to set a color for the canvas. The default value is `#888888`, as shown in Figure 1-8:
-
-<img src="img/1-8.png" style="zoom: 60%;" />  
+![1-8](img/1-8.png)
 
 (Figure 1-8)
 
-### 1.2 Engine initialization settings
+**2D Parameters:**
 
-There are some engine configuration items that need to be set when the engine is initialized, and the setting entry is as shown in Figure 1-9:
+| Property                  | Description                                                                      |
+| ------------------------- | -------------------------------------------------------------------------------- |
+| FPS                       | Frames per second. Controls frame duration; e.g., 60 FPS means 16.6ms per frame. |
+| Canvas Antialias          | Enables WebGL `antialias` to smooth jagged edges; consumes extra performance.    |
+| Retina Canvas             | Enables high-DPI rendering for sharper visuals at the cost of performance.       |
+| Canvas Transparency       | Makes the canvas background transparent.                                         |
+| Vertex Cache Optimization | Allocates 64k vertex buffer for 2D rendering to improve performance.             |
+| Default Font              | Sets the default font for new text objects in the IDE.                           |
+| Default Font Size         | Sets the default font size for new text objects.                                 |
 
-<img src="img/1-9.png"  />  
+**3D Parameters:**
+
+| Property               | Description                                                   |
+| ---------------------- | ------------------------------------------------------------- |
+| Dynamic Batching       | Reduces render batches by merging compatible meshes.          |
+| Default Physics Memory | Sets default 3D physics memory allocation (MB).               |
+| Resolution Scale       | Adjusts 3D rendering resolution (2D UI unaffected).           |
+| Multiple Lights        | Enables multiple light sources.                               |
+| Max Light Count        | Default 32.                                                   |
+| Cluster Count (x,y,z)  | Defines light clusters; affects light distribution accuracy.  |
+| Max Blend Shape Count  | Maximum number of blend shapes per mesh renderer. Default 32. |
+
+---
+
+### 1.3 Miscellaneous
+
+As shown in Figure 1-9, LayaAir IDE allows enabling debug modules:
+
+![1-9](img/1-9.png)
 
 (Figure 1-9)
 
-2D attribute parameter description:
+#### 1.3.1 Show Statistics
 
-| attribute name	| Property description	|
-| -------------- | ------------------------------------------------------------ |
-| Frames per second FPS	| Device frame rate; used to calculate the maximum rendering interval between two frames. Usually the frame rate on the device is a maximum of 60, that is, only a maximum of 60 frames will appear on the screen in one second, so the frame rate between two frames The duration is 1000ms/60. For high frame rate devices, we can modify the FPS value. For example, for a 120 frame device, the time between two frames is 1000ms/120. |
-| Canvas anti-aliasing	| Whether to turn on anti-aliasing; used to set the antialias anti-aliasing switch attribute of the webGL context, which will cause additional performance consumption. It is mainly used for 2D non-rectangular vector drawing anti-aliasing. When there is no vector drawing graphics or the performance pressure is high, you can choose not to Turn on. It is recommended to use the camera's Fxaa or Msaa for 3D anti-aliasing. |
-| Retina Canvas Mode | Whether to use HD canvas mode; after turning it on, regardless of any adaptation mode, the canvas will use the physical resolution size. After turning it on, it will consume more performance than not using the physical resolution, but it will keep the text and so on the best clarity. Spend. |
-| Canvas transparent	| Whether the canvas is transparent; the canvas has a background color by default. After turning it on, you can set the canvas to be colorless and transparent. |
-| Vertex cache optimization | Whether to allocate the largest VB buffer; after turning it on, when rendering 2D, a cache sufficient for 64k vertices will be directly allocated each time a VB is created. This improves efficiency. After turning it off, 64k of video memory can be saved, but performance efficiency will be sacrificed. If 2D is included, it is recommended to keep it turned on by default. |
-| Default font	| The default font of text; after setting, the default font of new text in the IDE will adopt the setting here. |
-|Default font size	| The default font size of text; after setting, the default font size of new text in the IDE will adopt the setting here. |
+Displays frame rate, memory usage, and node counts (Figure 1-10).
 
-3D attribute parameter description:
-
-| attribute name	| Property description	|
-| ------------------ | ------------------------------------------------------------ |
-| Static batching	| Whether to enable static batching; turning on static batching can reduce the number of rendering state changes between visible mesh draw calls. |
-| Dynamic batching	| Whether to enable dynamic batching; after enabling dynamic batching, if **instance merging** (same Mesh and same material) is met, the number of RenderBatches rendering batches and Shader submissions can be reduced. |
-| Physical function initialization memory | When initializing 3D settings, the default physical function initialization memory is in M.	|
-| Enable UniformBuffer | Enable Uniform Buffer; when the Uniform Buffer cache is enabled, the amount of data transferred from the CUP to the GPU can be reduced. |
-| Resolution multiple	| Set the 3D resolution multiple, the default value is 1; reducing the 3D resolution will not affect the resolution of the 2D UI. Appropriate adjustment can reduce performance consumption. |
-| Multiple light sources	| Whether to enable multiple light sources; if multiple light sources are not needed, turning it off can reduce performance consumption. |
-| Maximum number of light sources	| The default value is 32.	|
-| Number of light clusters	| The number of lighting clusters in x, y, and z axes; the z value will determine the number of clusters affected by area light (point light, spotlight), Math.floor(2048 / lightClusterCount.z - 1) * 4 is the number of each Cluster The maximum average amount of light received in the area. If the average number of light sources affected by each Cluster is greater than this value, the farther Cluster will ignore the excess light effects. |
-| Maximum number of deformations	| The maximum number of deformations for the mesh renderer. The default value is 32.	|
-| Whether to use BVH cropping	| Whether to use BVH clipping; after turning it on, you can set: the maximum number of cells in a BVH node (if it exceeds this number, it will be separated -), the size of the maximum BVH node, and the minimum number of cellbuilds (if it is less than this number, BVH will not be built). |
-
-
-
-### 1.3 Project startup settings
-
-#### 1.3.1 Entry startup scenario
-
-There are two ways to set the LayaAir 3.0 project running entrance. One is to use the current scene (the scene being edited) as the project running entrance, and the other is to set a fixed project entrance scene.
-
-When we set the **startup scene** in **build release** and **check** the startup scene as the entrance, as shown in Figure 1-10. When running the project, after the engine is initialized, the set startup scenario will be run first.
-
-<img src="img/1-10.png" style="zoom: 60%;" />  
+<img src="img/1-10.png" alt="1-10" style="zoom:80%;" />  
 
 (Figure 1-10)
 
-#### 1.3.2 Engine library module
+For detailed metric explanations, see [Performance Statistics and Optimization](../../common/Stat/readme.md).
 
-The LayaAir engine consists of multiple module components, and only the more basic modules are introduced by default, as shown in Figure 1-11.
+#### 1.3.2 Show VConsole
 
-![1-11](img/1-11.png)
+On mobile devices, `VConsole` provides lightweight debugging tools (Figure 1-11).
+
+<img src="img/1-11.png" alt="1-11" style="zoom:50%;" />  
 
 (Figure 1-11)
 
-If applied to other modules, you need to check the corresponding module before you can use its API, otherwise an error will be reported when the project is run.
+#### 1.3.3 Show Global Error Popup
 
-Engine library module description:
+When `window.onerror` catches a global error, enabling this option will display a popup with stack details.
 
-| Engine library module name	| Engine library module description	|
-| ------------------- | ------------------------------------------------------------ |
-| laya.d3	| 3D basic module, a must-have library for using 3D	|
-| laya.ui	| ui module, including commonly used ui components, a must-have library for using 2D UI components	|
-| laya.ani	| 2D animation module, including 2D node animation (sequence frame, atlas animation), built-in skeletal animation, etc. |
-| laya.device     	| Gyroscope, accelerometer, geographical location, camera, microphone and other device interface call packaging |
-| laya.tiledmap   	| tiledmap map interface encapsulation	|
-| laya.particle   	| 2D particle encapsulation, not recommended	|
-| laya. gltf	| The code directly uses the loading and parsing library of the gltf model	|
-| laya.physics    	| Package of Box2D physics library	|
-| laya.physics3D  	| Bullet 3D Physics Library	|
-| laya.physics3D.wasm | Bullet 3D physics library for WebAssembly	|
-| laya.spine      	| spine animation engine library	|
-| laya.workerloader | WorkerLoader decodes images asynchronously	|
-
-#### 1.3.3 Start page configuration
-
-The startup page refers to the icon displayed before the game starts. If no setting is made, the engine's default icon will be used. Developers can customize icons, as shown in Figure 1-12:
-
-![1-12](img/1-12.png)
-
-(Figure 1-12)
-
-Parameter Description:
-
-| Parameters	| Description	|
-| ---------------- | ------------------------------------------------------------ |
-| Activate	| When checked, the startup page will be displayed before the game starts.	|
-| background color	| After checking, you can set the background color of the startup page.	|
-| Pictures	| The icon displayed on the startup page, the default is the engine icon. When customizing icons, the image path must be placed in the bin directory. |
-| Adaptation	| Screen adaptation of icons. There are four modes: center, fill, contain, and cover.	|
-| Minimum display time	| The minimum display time of the startup page, in seconds.	|
-| Allow activation in preview | When checked, the startup page can be seen in preview mode. Otherwise, the splash page will only be visible after publishing. |
-
-
-
-### 1.4 Debug startup settings
-
-As shown in Figure 1-13, LayaAir IDE can enable the following debugging modules:
-
-![1-12](img/1-13.png)
-
-(Figure 1-13)
-
-#### 1.4.1 Display statistics
-
-After checking Show statistics, you can view the current frame rate, memory usage, nodes and other information for project analysis and optimization. As shown in Figure 1-14.
-
-<img src="img/1-14.png" style="zoom:67%;" />  
-
-(Figure 1-14)
-
-If you want to know more details about the parameters on the statistics panel, please consult the document [Performance Statistics and Optimization](../../common/Stat/readme.md)
-
-#### 1.4.2 Display the mobile debugging tool VConsole
-
-Debugging on the mobile side usually requires connecting to the browser on the computer side.
-
-If the developer does not need breakpoints, but just some common log printing, loading and other viewing, open `V Console`, and the debugging tool panel as shown in Figure 1-15 will appear on the mobile terminal.
-
-![](img/1-15.png)  
-
-(Figure 1-15)
-
-#### 1.4.3 Pop-up window displays global errors
-
-If you capture a global error [window.onerror](https://www.w3school.com.cn/jsref/event_onerror.asp), check `pop-up window to display global error` to throw a detailed error stack in the pop-up window. For example, you can customize a global error with the following code:
+Example:
 
 ```typescript
-//Customize a global error
-let err = new Error("Customized Error");
+let err = new Error("Custom Error");
 Laya.Browser.window.onerror(err.message, "", "", "", err);
 ```
 
-When running, a pop-up window will throw an exception, and the effect is shown in Figure 1-16.
+<img src="img/1-12.png" alt="1-12" style="zoom:50%;" />  
 
-![1-16](img/1-16.png)
+(Figure 1-12)
 
-(Figure 1-16)
+---
 
-#### 1.4.4 Display 2D physics debugging
+## 2. Engine Modules
 
-In LayaAir IDE, if you add physical attributes (rigid body, collision box, etc.) to a 2D node and check `Show 2D physical debugging`, the node with added physical attributes will display a shadow effect, as shown in the animation 1-17 Shown:
-
-![1-17](img/1-17.gif)
-
-(Animation 1-17)
-
-
-
-## 2. Editor settings
-
-### 2.1 3D prefab editing scene
-
-By default, 3D prefabs are edited in the context of a dedicated system empty scene (DefaultPrefabEditEnv).
-
-If we specify a target scene through `3D prefab editing scene`, it is equivalent to editing directly in a 3D scene. In this way, when switching to a 3D scene, it will be more in line with the needs. The operation is shown in Figure 2-1:
+LayaAir Engine consists of multiple modules. Only basic modules are enabled by default (Figure 2-1).
 
 ![2-1](img/2-1.png)
 
 (Figure 2-1)
 
-The effect is shown in Figure 2-2:
+If your project uses additional features, you must enable the corresponding module, or runtime errors will occur.
 
-<img src="img/2-2.png" style="zoom:60%;" />
+**2D Modules:**
 
-(Figure 2-2)
+| Module            | Description                                 |
+| ----------------- | ------------------------------------------- |
+| UI System         | Includes two UI frameworks (classic & new). |
+| 2D Lighting       | Components for 2D lighting.                 |
+| 2D Line Rendering | Line renderer for 2D.                       |
+| Physics System    | Box2D physics library (JS or WASM).         |
+| Spine             | Spine animation support.                    |
+| Navigation        | 2D pathfinding.                             |
+| Laya Skeleton     | Built-in `.sk` skeleton animation.          |
+| TileMap           | Built-in tile map support.                  |
+| 2D Trail          | 2D trail renderer.                          |
+| Particle          | 2D particle system.                         |
 
-### 2.2 Enable texture compression when importing resources
+**3D Modules:**
 
-After checking `Enable texture compression when importing resources`, when importing texture resources (PNG and JPG) from outside to the IDE, as shown in Figure 2-3, the [Texture Compression](. ./../../IDE/uiEditor/textureCompress/readme.md), enabling this operation will increase operating efficiency, but will affect display quality.
+| Module      | Description                |
+| ----------- | -------------------------- |
+| Core 3D     | Base 3D functionality.     |
+| Physics     | Bullet or PhysX (JS/WASM). |
+| Navigation  | 3D pathfinding.            |
+| Trail       | 3D trail system.           |
+| GLTF Parser | Runtime GLTF model loader. |
 
-![2-3](img/2-3.png)
+**Common Modules:**
 
-(Figure 2-3)
+| Module    | Description              |
+| --------- | ------------------------ |
+| Blueprint | Visual scripting system. |
 
-This operation has no impact on old resources before this feature is enabled.
+**Other Modules:**
 
+| Module             | Description                                  |
+| ------------------ | -------------------------------------------- |
+| Peripheral Support | Access to sensors, camera, mic, GPS, etc.    |
+| WorkerLoader       | Asynchronous image decoding.                 |
+| 2.x Format Support | Load `.ls` and `.lh` from older LayaAir 2.x. |
+| Legacy TiledMap    | Old TiledMap support.                        |
 
+---
 
-### 2.3 Automatically bake IBL
+## 3. Physics System
 
-After checking `Automatically bake IBL`, as shown in Figure 2-4, if the skybox material is changed in Scene3D (Material is changed from skybox to other materials), there is no need to manually click the `Bake` button for the IBL Tex of Reflection Probe. , after saving the scene, the IDE will automatically re-bake it.
+### 3.1 2D Physics
 
-![2-4](img/2-4.png)
+Global configuration options (Figure 3-1):
 
-(Figure 2-4)
+![3-1](img/3-1.png)
 
-> Only when the Source of Reflection Probe is Skybox, it will be baked automatically. Custom cannot be baked automatically.
+(Figure 3-1)
 
-### 2.4 Preview server
+| Setting             | Description                                                          |
+| ------------------- | -------------------------------------------------------------------- |
+| Rigidbody Sleep     | Allows rigid bodies to sleep when inactive to save performance.      |
+| Gravity             | Sets gravity acceleration vector (X,Y). Usually only Y is used.      |
+| Velocity Iterations | Iterations for solving velocity constraints. More = higher accuracy. |
+| Position Iterations | Iterations for solving position constraints. More = higher accuracy. |
+| Unit Ratio          | Converts physics units to pixels (default 1 unit = 50px).            |
+| Show Physics Gizmos | Displays collision boxes, joints, etc.                               |
 
-The preview server can set the address and port number for previewing in the browser. After setting, refresh the IDE to apply it. The effect is shown in Figure 2-5.
+### 3.2 3D Physics
 
-![2-5](img/2-5.png)
+Global configuration options (Figure 3-2):
 
-(Figure 2-5)
+![3-2](img/3-2.png)
 
-### 2.5 3D node level settings
+(Figure 3-2)
 
-For 3D nodes, you can select levels and set them. In the editing settings, you can add, delete, and name levels. The effect is shown in Figure 2-6.
+| Setting                        | Description                                           |
+| ------------------------------ | ----------------------------------------------------- |
+| Fixed Time Step                | Physics simulation timestep, default 0.016s (≈60FPS). |
+| Max Substeps                   | Maximum substeps per frame for stability.             |
+| Continuous Collision Detection | Prevents fast-moving objects from tunneling.          |
+| CCD Threshold                  | Speed threshold for enabling CCD.                     |
+| CCD Sphere Radius              | Defines the sweep sphere radius used in CCD.          |
 
-<img src="img/2-6.png" alt="img"  />  
+---
 
-(Figure 2-6)
+## 4. WebGPU
 
-For more information about hierarchical Layer, you can go to the IDE document [Using 3D Sprites](../../../3D/Sprite3D/readme.md) to view it.
+WebGPU is a new web standard providing high-performance rendering and computation. Enable it in supported browsers to improve rendering performance (Figure 4-1).
 
+<img src="img/4-1.png" alt="4-1" style="zoom:80%;" />  
 
+(Figure 4-1)
 
+Note: IDE preview does not support WebGPU — use an external browser.
 
+In Chrome, visit `chrome://flags` and search for **WebGPU** to enable it (Figure 4-2).
+
+<img src="img/4-2.png" alt="4-2" style="zoom:50%;" />  
+
+(Figure 4-2)
+
+---
+
+## 5. Splash Screen
+
+The splash screen displays before the game starts. You can customize it (Figure 5-1).
+
+![5-1](img/5-1.png)
+
+(Figure 5-1)
+
+| Option           | Description                                  |
+| ---------------- | -------------------------------------------- |
+| Enable           | Shows splash before game starts.             |
+| Background Color | Sets splash background color.                |
+| Image            | Custom splash image (must be in `bin/`).     |
+| Fit Mode         | Icon fit mode: center, fill, contain, cover. |
+| Min Display Time | Minimum display time (seconds).              |
+| Show in Preview  | Shows splash during preview mode.            |
+
+---
+
+## 6. Script Compilation
+
+IDE provides script compilation and release options (Figure 6-1).
+
+![6-1](img/6-1.png)
+
+(Figure 6-1)
+
+**Compilation Options:**
+
+| Option            | Description                                            |
+| ----------------- | ------------------------------------------------------ |
+| Macros            | Define constants or conditional flags (e.g., `DEBUG`). |
+| External Packages | Add third-party SDKs or libraries.                     |
+| Aliases           | Create path or module aliases.                         |
+| Encoding          | Set character encoding (usually UTF-8).                |
+| Entry File        | Specifies the startup script file.                     |
+| Startup Script    | Custom startup logic before loading scenes.            |
+
+**Release Options:**
+
+| Option              | Description                                           |
+| ------------------- | ----------------------------------------------------- |
+| Keep Unused Scripts | Includes unused component scripts in release build.   |
+| Remove `debugger`   | Strips `debugger` statements.                         |
+| Remove `console`    | Removes `console.log`/`console.warn`.                 |
+| Keep Names          | Keeps original class/function names in minified code. |
+| Keep Unused Vars    | Retains unused variables/functions.                   |
+
+---
+
+## 7. Preview Server
+
+You can configure the preview server address and port (Figure 7-1).
+
+![7-1](img/7-1.png)
+
+(Figure 7-1)
+
+Enabling **Protect Source Maps** ensures only local preview requests receive `.map` files, protecting code from internal network leaks (Figure 7-2).
+
+![7-2](img/7-2.png)
+
+(Figure 7-2)
+
+---
+
+## 8. Presets
+
+### 8.1 Texture Type
+
+When importing external textures (PNG/JPG), the IDE assigns a default texture type (e.g., Sprite Texture) as shown in Figure 8-1.
+
+![8-1](img/8-1.png)
+
+(Figure 8-1)
+
+### 8.2 3D Prefab Editing Scene
+
+By default, 3D prefabs are edited in a system environment scene (`DefaultPrefabEditEnv`).
+
+You can specify a custom scene as the prefab editing environment (Figure 8-2).
+
+![8-2](img/8-2.png)
+
+(Figure 8-2)
+
+### 8.3 Auto Bake IBL
+
+When **Auto Bake IBL** is checked (Figure 8-3), changing the skybox material in Scene3D will trigger automatic IBL re-baking after saving.
+
+<img src="img/8-3.png" alt="8-3" style="zoom:80%;" />  
+
+(Figure 8-3)
+
+> Only effective when Reflection Probe Source = Skybox. “Custom” sources require manual baking.
+
+### 8.4 3D Render Layer Definitions
+
+You can add, delete, or rename 3D rendering layers via the editor (Figure 8-4).
+
+![8-4](img/8-4.png)
+
+(Figure 8-4)
+
+See [Using 3D Sprites](../../../3D/Sprite3D/readme.md) for more details.
+
+### 8.5 2D Render Layer Definitions
+
+2D rendering components (e.g., mesh renderer, trail, line, light) can specify render layers (Figure 8-5).
+
+<img src="img/8-5.png" alt="8-5" style="zoom:50%;" />  
+
+(Figure 8-5)
