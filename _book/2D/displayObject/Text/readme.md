@@ -72,7 +72,7 @@ Supported HTML syntax:
 | `<i>Text</i>`                                  | `<i>This is italic</i>`                                  | Italic text                    |
 | `<u>Text</u>`                                  | `<u>This is underlined</u>`                              | Underlined text                |
 | `<li>Text1</li> <li>Text2</li> <li>Text3</li>` | `<li>Apple</li><li>Banana</li><li>Orange</li>`           | List                           |
-| `<img src='image_url' width=200 height=100/>`  | `<img src='atlas/comp/image.png' width=200 height=100/>` | Displays an image (supports %) |
+| ``  | `` | Displays an image (supports %) |
 | `<a href='xxx'>link text</a>`                  | `<a href='www.layabox.com'>Layabox</a>`                  | Hyperlink                      |
 | `<div>Text</div>`                              | `<div>Outer container text</div>`                        | Div container                  |
 | `<span>Text</span>`                            | `<span>Inline element</span>`                            | Inline element                 |
@@ -89,7 +89,7 @@ As shown in Figure 1-3, when both HTML and UBB are checked, you can input syntax
 Example Text content:
 
 ```html
-<img src='atlas/comp/image.png' width = 200 height=100/>
+
 [url='www.layabox.com']Layabox[/url]
 [size=60]text[/size]
 [color=#FF0000]text[/color]

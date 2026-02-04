@@ -6,9 +6,9 @@ In the **ECS (Entity-Component-System)** architecture used by the LayaAir engine
 
 When developers inherit the LayaAir component script class (`Laya.Script`), they can use a series of built-in lifecycle methods (e.g., `onAwake`, `onEnable`, `onUpdate`, etc.) and event response methods (e.g., `onMouseDown`, `onMouseClick`, etc.) provided by the engine. **These built-in methods serve as the entry points for component script logic, corresponding to the logical processing part of the System in the ECS architecture.**
 
-> To learn more about ECS Components, please refer to [《Component Decorator Description》](../../../IDE/customComponent/decorators/readme.md)
+> To learn more about ECS Components, please refer to ["Component Decorator Description"](../../../IDE/customComponent/decorators/readme.md)
 >
-> For **more comprehensive knowledge about ECS**, please refer to [《Entity Component System》](../../../basics/common/Component/readme.md)。
+> For **more comprehensive knowledge about ECS**, please refer to ["Entity Component System"](../../../basics/common/Component/readme.md)。
 
 -----
 

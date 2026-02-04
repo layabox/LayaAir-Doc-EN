@@ -206,7 +206,7 @@ Shader3D End
 | u_CameraDirection                                        	| Camera direction	| Camera.glsl                      	|
 | u_CameraUp                                               	| Camera up orientation | Camera.glsl	|
 | u_CameraPos                                              	| camera position	| Camera.glsl                      	|
-| u_ZBufferParams：<br />1.0 - far / near,   far / near,   (near - far) / (near * far),   1 / near | Zbuffer参数 | Camera.glsl                      	|
+| u_ZBufferParams:<br />1.0 - far / near,   far / near,   (near - far) / (near * far),   1 / near | Zbuffer Parameters | Camera.glsl                      	|
 | u_CameraDepthTexture                                     	| depth texture	| Camera.glsl                      	|
 | u_Time                                                   	| time	| Scene.glsl                       	|
 | u_FogParams(Start, range, Density, default)	| Fog effect parameters	| Scene.glsl                       	|
@@ -287,7 +287,7 @@ The capture environment of the probe can be represented by a CubeMap. The CubeMa
 
 #### 5.2.3 supportReflectionProbe switch
 
-`supportReflectionProbe` ：ReflectionProbe开关。
+`supportReflectionProbe`: ReflectionProbe switch.
 
 Enable the switch to True when the probe exists in the scene, and enable the switch to False when the probe does not exist in the scene.
 

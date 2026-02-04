@@ -1,180 +1,248 @@
-# Project entry description
+# Project Startup Entry Description
 
-> Author: Charley, Meng Xingyu
+> Author: Charley
 >
 
-The project entry is the first place where the project is executed after the engine is initialized.
+The project entry is the first place to execute after engine initialization.
 
-For large projects, it is usually the entry point for resource preloading and global initialization. For micro products that do not require preloading, it is usually the main interface and global entry logic.
+For large projects, this is typically the entry point for resource preloading and global initialization. For mini products that don't need preloading, it's usually the main interface and global entry logic.
 
-## 1. Startup scene
+## 1. Project Startup Entry
 
-### 1.1 A must-read for LayaAir2.0 users, the entrance has changed
+There are two ways to set up the project entry in LayaAir3:
 
-In the LayaAir2.x engine, the Main class is used as the entry class of the project, so the initial configuration of some engines can only be set through code in the entry class (Figure 1-1).
+One is to **specify a startup scene** in the **Build & Publish** interface, so that the specified scene will be used as the entry after publishing.
 
-<img src="images/1-1.png" alt="image-20221227201757905" style="zoom:50%;" />
+The other is to **specify a startup script** in **Project Settings**, where developers can decide in the startup script which scene to open as the entry based on code logic.
 
-(Picture 1-1)
+### 1.1 Setting the Startup Scene
 
-However, in LayaAir 3.0, in order to simplify developers' understanding and process, the entrance to the project no longer appears in the form of an entrance class. The entrance to the project becomes the startup scene. The initial configuration of the engine only requires visual configuration in the IDE. More on this below.
+Let's first introduce how to set the startup scene through `Build & Publish`.
 
-> Old users of LayaAir 2.0, don’t look for the Main entry class anymore, it has been killed~
+First, open the `Build & Publish` panel in the `File` navigation menu. Then, in the `General` tab, find the `Startup Scene` setting under `Resource Options`.
 
-### 1.2 Set startup scene
+Select the target scene through the scene selector on the right side of the input box, or drag the scene directly into the input box.
 
-For the LayaAir 3.0 engine, the startup scene can only be set in the IDE as the entry point of the project. If you need to initialize the engine global configuration, configure it directly in the IDE's project settings. If you need code logic, you can directly associate the script with the scene to execute the code logic.
+ ![1-1](img/1-1.png)
 
-In this section, we first introduce how to set up the startup scene.
+(Figure 1-1)
 
-We open the `Build Release` panel in the `File` navigation menu. As shown in Figure 1-2,
+Note that the settings here in Build & Publish are mainly for the entry startup scene after publishing. For testing within the IDE, it's more common to run the currently open scene rather than the startup scene.
 
- ![1-2](images/1-2.png)
+So when running, we can choose whether to run the current scene or the startup scene. As shown in Figure 1-2.
+
+![](img/1-2.png)
 
 (Figure 1-2)
 
-The `Startup Scene` of the `Build Release` panel is used to specify the startup scene of the project, as shown in Figure 1-3.
+### 1.2 Setting the Startup Script
 
- ![1-3](images/1-3.png)
+First, we need to create a startup script (TS).
+
+**This script must be an async main function and cannot be renamed.** We can write our entry logic inside the main function.
+
+Create an `Entry.ts` with the following example code:
+
+```typescript
+export async function main() {
+    console.log("Hello LayaAir!");
+
+    //Load scene and open scene
+    Laya.Scene.open('Scene.ls');
+}
+```
+
+Then, in the `Script Compilation` tab of `Project Settings`, find the `Startup Script` setting under `Script Compilation Options`.
+
+Select the target script through the script selector on the right side of the input box, or drag the script directly into the input box. As shown in Figure 1-3.
+
+![1-7](img/1-3.png)
 
 (Figure 1-3)
 
-Developers can select a scene file in the pop-up panel and designate it as the startup scene. The operation is as shown in the animation 1-4.
+Once the startup script setting takes effect, whether in the IDE or after publishing, the default scene will no longer be opened.
 
-![1-4](images/1-4.gif)
+Even if the running setting has "Open Default Scene" checked, only the logic within the startup script's main function will be executed by default.
 
-(Animation 1-4)
-
-### 1.3 Engine configuration items before project entry
-
-Before executing the project entry, developers can also configure some engine initialization settings, as shown in Figure 1-5. We open the `Project Settings' panel and configure it directly in the engine options.
-
-![1-5](images/1-5.png)
-
-(Figure 1-5)
-
-For specific parameter setting instructions, please refer to the document ["Project Settings Detailed Explanation"] (../projectSettings/readme.md).
-
-### 1.4 Entry settings for preview operation
-
-After the startup scene is released online in the build release, it is undoubtedly the first to be loaded and displayed as the entrance to the project.
-
-However, when debugging the project in preview and run, we sometimes do not want to display the startup scene first, which will make the debugging process very long.
-
-Therefore, click the drop-down arrow in the red circle in Figure 1-6, and click the check box to use `Start Scene` or `Current Scene` as the **entry** for preview running.
-
-![](images/1-6.png)
-
-(Figure 1-6)
-
-> The current scene refers to the scene currently open for editing in the IDE.
-
-
-
-## 2. Entry logic script
-
-Although this knowledge point is not exclusive to the project entrance, we still briefly talk about the process.
-
-First of all, LayaAir 3.0 does not recommend developers to use custom scripts as the entry point for projects. Therefore, from a normal process, the logic of the code must follow the entrance scene, and the corresponding logic is executed through the life cycle methods of the entrance scene activation and adding to the stage and other engines.
-
-For the 3D root node Scene3D of the scene, the only scripts that can be bound are custom component scripts. The 2D root node of the scene, Scene2D, can also bind UI component scripts in addition to custom component scripts.
-
-> Regarding the difference and use of custom component scripts and UI component scripts, please refer to relevant documents. This article only introduces the core process of project entry.
->
-> For customized component scripts (decorator exposed properties, event methods, life cycle methods, etc.), please refer to [*Entity Component System (ECS)*](../../common/Component/readme.md)
->
-> UI component scripts (associated UI components, differences from custom component scripts, etc.) please refer to *[UI Inheritance Class](../../../IDE/uiEditor/runtime/readme.md)*
-
-
-
-### 2.1 Basic usage process of custom component scripts
-
-**Customized component script** inherits from the Laya.Script class and defines the component's event methods and its own life cycle methods.
-
-Animation 2-1 demonstrates how to add custom component scripts to Scene2D nodes. In the `Property Settings` panel, click `Add Component`->`New Component Script`, then you can rename the script to be created (renamed to aaa in the picture), and finally click `Create and Add` to create it script.
-
-![2-1](images/2-1.gif)
-
-(Animation 2-1)
-
- According to the custom component script aaa.ts added in the above animation, a script template class named aaa is generated, as shown in Figure 2-2. Just write the code directly in the script.
-
-![2-2](images/2-2.png)
-
-(Figure 2-2)
+For example, in Figure 1-3, Entry.ts executes the logic to open scene Scene.ls. If we add conditional logic, we can open different entry scenes based on different environments.
 
 > [!Tip]
 >
-> For specific component script usage documentation, please refer to [*Entity Component System (ECS)*](../../common/Component/readme.md)
+> It's important to note that the startup script only takes effect **after publishing** or when the preview mode is set to **startup scene** (not **current scene**).
 
+### 1.3 How to Quickly Switch Startup Entry
 
+During development, some developers may need to frequently switch between "entry scene" and "current scene" as the startup entry. The IDE currently offers two ways to achieve quick switching:
 
-### 2.2 UI component script
+One is to set custom keyboard shortcuts; the other is to add additional shortcut buttons through plugins.
 
-In addition to custom component scripts, UI component scripts can also be used as the logic code for project entry.
+#### 1.3.1 Customizing Scene Preview Shortcuts
 
-> UI components are mainly used in 2D scenes when there are many nodes that need to be managed, and in application scenarios where parameters need to be passed to the scene when opening the scene (such as dynamic prompts for pop-up windows, etc.).
->
-> UI components can be used independently or simultaneously with component scripts.
+In the dropdown menu of scene preview settings, there are several quick features: **current scene** preview in editor or browser, **startup scene** preview in editor or browser.
 
-**UI component script** needs to be added at the `UI runtime (Runtime)` property entrance, as shown in Figure 2-3. And, only in the Scene2D node of the scene or the `Property Settings` panel of the 2D prefab
+Compared to opening the dropdown menu with the mouse each time, using keyboard shortcuts directly can significantly improve operational efficiency. Therefore, you can navigate through:
 
-![2-3](images/2-3.png)
+Edit (Application menu on macOS) → Preferences → Shortcuts → Global, and click the "+" next to the target command to bind the desired shortcut key, as shown in Figure 1-4.
 
-(Figure 2-3)
+![](img/1-4.png)
 
-> 2D prefabs have the UI runtime (Runtime) attribute as long as they are root nodes.
+(Figure 1-4)
 
-The following takes the Scene2D node as an example to introduce how to create a UI component script. Double-click the mouse in the `UI Runtime` attribute input box. The IDE will pop up a window prompting you to create a UI component script file. The default is `RuntimeScript.ts`. Developers can rename it, such as GIF 2. -BBB shown in 5, click `Save` to create the script.
+#### 1.3.2 Adding Shortcut Buttons
 
-![2-5](images/2-5.gif)
+If you prefer mouse operations, you can also add a new button to the main panel via a plugin to execute different logic from the default preview button.
 
-(Animation 2-5)
+For example, set the default button to play (run preview) the current scene. As shown in Figure 1-5.
 
-> It is recommended to first learn custom component scripts and their usage, and then learn the related content of UI component scripts.
+![](img/1-5.png)
 
+(Figure 1-5)
 
+Then, while keeping the IDE's default "preview current scene" behavior unchanged, use a plugin to add an additional "Run with Startup Scene as Entry" button. The effect is shown in Figure 1-6.
 
-## 3. Custom initialization
+This way, developers can quickly achieve different startup entry requirements by clicking different buttons.
 
-Because of the previous process, the engine was initialized first, and then the entry scene was loaded and started. However, in some special cases, developers may need to execute some logic before engine initialization, for example, they need to determine different operating environments in advance.
+![](img/1-6.png)
 
-Then we also provide a customized code flow, using `Laya.LayaEnv.beforeInit` to define the logic to be executed before the engine is initialized, and using `Laya.LayaEnv.afterInit` to define the logic to be executed after the engine is initialized.
+(Figure 1-6)
 
-For example, when a developer creates a project, a `Main.ts` will be automatically generated and the following code will be added:
+Plugin code is as follows:
 
 ```typescript
-Laya.LayaEnv.beforeInit = function(config: Laya.IStageConfig) {
-	//This method will be called before Laya.init
-	console.log("before init");
-	//Here you can make customized modifications to config, Laya.Config, and Laya.Config3D.
+//PlayButton.ts
+class PlayButton {
+    @IEditor.onLoad
+    addPackButton() { //Add play button for running preview
+        let playControls = gui.GRoot.inst.getChildByPath("MainView.topButtons.playControlls.Box");
+        let btn = playControls.getChild("packUI"); //Get the play button for running preview
+        if (!btn) {
+            btn = playControls.addChild(gui.UIPackage.createWidgetSync("~/ui/basic/Button/FlatIconButton.widget"));
+            btn.name = "packUI";
+            btn.setSize(16, 16);
+            btn.icon = "~/ui/icons/global.svg"; //Can change the display icon here
+            btn.onClick(() => {
+                //false for startup scene, true for current scene.
+                //editor for running in editor mode, browser for running in browser mode
+                SceneEditor.playControls.play(false, "editor");
+                console.log("Play button clicked");
+            });
+        }
+    }
 }
+```
 
-Laya.LayaEnv.afterInit = function() {
-	//This method will be called after Laya.init
-	console.log("after init");
+> Create a blank script in the assets directory and copy the above example code into the script file to use.
+
+## 2. Other Entry Related
+
+### 2.1 Custom Engine Startup Configuration
+
+Before the project entry starts, the engine also has some initialization startup configurations.
+
+Usually, we can configure them directly in the `Project Settings` panel, as shown in Figure 2-1.
+
+![1-4](img/2-1.png)
+
+(Figure 2-1)
+
+For specific parameter setting instructions, please refer to the document ["Project Settings Panel"](../projectSettings/readme.md).
+
+In addition to the settings that can be directly configured in the `IDE`, we can also add engine configurations or logic through code before or after engine initialization.
+
+If we add it to the startup script, the example code is as follows:
+
+```typescript
+// Execute custom logic before engine initialization (this method is called before Laya.init)
+Laya.addBeforeInitCallback(() => {
+    // Enable WebGL2 rendering mode by default
+    Laya.Config.useWebGL2 = true;
+    console.log("before init");
+});
+// Execute custom logic after engine initialization (this method is called after Laya.init)
+Laya.addAfterInitCallback(() => {
+    console.log("after init");
+});
+
+export async function main() {
+    console.log("Hello LayaAir!");
+    //Load scene and open scene
+    Laya.Scene.open('Scene.ls');
 }
+```
+
+If there's no startup script, only a startup scene, then we add engine initialization logic configuration before the startup scene's script class.
+
+Example code is as follows:
+
+```typescript
+// Execute custom logic before engine initialization (this method is called before Laya.init)
+Laya.addBeforeInitCallback(() => {
+    // Enable WebGL2 rendering mode by default
+    Laya.Config.useWebGL2 = true;
+    console.log("before init");
+});
+// Execute custom logic after engine initialization (this method is called after Laya.init)
+Laya.addAfterInitCallback(() =>{
+    console.log("after init");
+});
+
 
 const { regClass, property } = Laya;
 @regClass()
 export class Main extends Laya.Script {
 
-	onStart() {
-    	console.log("Game start");
-	}
+    onStart() {
+        console.log("Game start");
+    }
 }
 ```
 
-It should be noted that you need to ensure that the script file where these codes are located is referenced in the scene, otherwise the unused code in the project will be eliminated when the version is released, and it will be invalid.
+### 2.2 Scene Script Description
 
-**Note: If there are no special needs, it is not recommended to use the method in this section to initialize the game. Developers should use the method of mounting component scripts for scenes. **
+The previous section covered the project entry.
 
-You can see the output when running, as shown in Figure 3-1:
+This section briefly describes scene scripts. Scene scripts are mainly of two types:
 
-![3-1](images/3-1.png)
+One is custom `component scripts`. This type of script is universal for both 2D and 3D, and in general, we recommend using custom scripts.
 
-(Figure 3-1)
+The other is `UI runtime`, which can only be used for 2D scene root nodes and 2D prefabs. This is a UI component inheritance class designed to meet needs such as rewriting UI components and managing many UI child nodes.
 
+#### 2.2.1 Basic Usage of Custom Component Scripts
 
+**Custom component scripts** inherit from the Laya.Script class and define component event methods and their own lifecycle methods.
 
+Animated Figure 2-1 demonstrates how to add a custom component script. In the `Property Settings` panel, click `Add Component` → `New Component Script`, then you can rename the script to be created (renamed to aaa in the figure), and finally click `Create and Add` to create the script.
 
+![2-2](img/2-2.gif)
+
+(Figure 2-2)
+
+The custom component script aaa.ts added as shown in the animated figure above generates a script template class named aaa, as shown in Figure 2-3. You can write code directly in this script.
+
+![2-2](img/2-3.png)
+
+(Figure 2-3)
+
+For more information on custom component scripts (decorator exposed properties, event methods, lifecycle methods, etc.), please refer to ["Entity Component System (ECS)"](../../common/Component/readme.md)
+
+#### 2.2.2 Using UI Runtime
+
+In addition to custom component scripts, you can also use UI runtime (**UI component scripts**) as the logic code for the project entry.
+
+UI runtime can be used independently or simultaneously with component scripts.
+
+Application scenarios for UI runtime include managing many nodes, needing to pass parameters to scenes when opening them (e.g., dynamic prompts for popups), rewriting engine UI components, and reorganizing UI data sources.
+
+UI runtime needs to be added in the `UI Runtime` property entry, as shown in Figure 2-4. It can only be added to 2D scene root nodes (Scene2D) or 2D prefab root nodes.
+
+![2-4](img/2-4.png)
+
+(Figure 2-4)
+
+First double-click the `UI Runtime` input box, then in the pop-up panel, select the directory and rename the script filename, and click `Save`, as shown in Animated Figure 2-5.
+
+<img src="img/2-5.gif" style="zoom:80%;" />
+
+(Figure 2-5)
+
+For specific usage of UI runtime, please refer to related documentation: ["UI Runtime"](../../../IDE/uiEditor/runtime/readme.md)

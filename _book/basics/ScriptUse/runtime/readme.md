@@ -17,19 +17,19 @@ All components under the resource panel in LayaAirIDE have runtime attributes. R
 
 **This article will set up the same runtime logic class for the Image component in two different pages to achieve the same function. The running effect is as shown in animation 0: **
 
-![0](img\0.gif)(Picture 0)
+![0](img/0.gif)(Picture 0)
 
 ### 1. Set the runtime class for the components in the page
 
 Create two UI pages in the page management directory, called MonkeyPage and BGPage. As shown below,
 
-![1](img\ide1.png)
+![1](img/ide1.png)
 
 Drag an Image component into each of the two UI pages, click Scene2D and set the runtime attribute to game.ImageRunTime. (Drag the script onto the runtime script icon). As shown in Figure 1 and Figure 2:
 
-![1](img\ide3.png)(Figure 1)
+![1](img/ide3.png)(Figure 1)
 
-![2](img\ide2.png)(Figure 2)
+![2](img/ide2.png)(Figure 2)
 
 After the settings are completed, save the export UI and start writing logic code.
 
@@ -151,7 +151,7 @@ module game {
 }
 ```
 
-![5](img\5.gif)(Figure 5)
+![5](img/5.gif)(Figure 5)
 
 At this time, we will find that the resources on the UI page are displayed very strangely. At this time, because the skin of the button is tri-state by default, when the runtime logic class of the Image inherits from the Button component, it is no longer an Image component, but Is a Button component.
 

@@ -345,7 +345,7 @@ The runtime result is shown in Figure 3-1.
 
 ### 3.3 Binary Communication Based on Laya.Byte
 
-#### 3.3.1 TypedArray基础概念
+#### 3.3.1 TypedArray Basic Concepts
 
 #### 3.3.1 TypedArray Basic Concept
 

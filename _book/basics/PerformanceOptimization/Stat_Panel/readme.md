@@ -1,85 +1,66 @@
-# Introduction to performance statistics panel	 
+# Performance Statistics Panel Introduction
 
-From the beginning of the design of the LayaAir engine, performance was the first goal and a lot of performance optimization was done in the engine. Proper use of engines can allow games and other engine products to achieve the experience of native APPs. If developers cannot take advantage of the engine, the final performance experience of the game may not be possible. Therefore, in the process of making games, it is still very necessary to master game and engine optimization skills.
+The LayaAir engine was designed with performance as the primary goal, incorporating extensive performance optimizations within the engine. Proper use of the engine can allow games and other engine products to achieve native APP experience. If developers cannot fully leverage the engine's advantages, the final performance experience of the game may be difficult to discuss. Therefore, in the process of making games, mastering game and engine optimization techniques is very necessary.
 
+> To understand engine performance, you must first understand the performance statistics panel. Below, we will provide a detailed introduction to the performance statistics panel.
 
+## 1. Calling the Performance Statistics Panel
 
-> To understand the performance of the engine, you must first understand the performance statistics panel. The performance statistics panel will be introduced in detail below.
+The LayaAir engine's built-in performance statistics panel can monitor current performance in real time. Calling the statistics panel varies depending on the development language.
 
+In TS language, simply input `Laya.Stat.show(0,0);` in the code to bring up the performance statistics panel.
 
-
-## 1. Calling the performance statistics panel
-
-The performance statistics panel built into the LayaAir engine can detect current performance in real time. The call statistics panel will be different depending on the development language.
-
-In TS language, enter `Laya.Stat.show(0,0);` directly in the code to bring up the performance statistics panel.
-
-The sample Demo.ts code is as follows:
+Example Demo.ts code is written as follows:
 
 ```typescript
-//Initialize the stage
-Release.heat(1136, 640);
-//Call the performance statistics panel method, (0,0) is the panel position coordinates
+//Initialize stage
+Laya.init(1136, 640);
+//Call performance statistics panel method, (0,0) are panel position coordinates
 Laya.Stat.show(0,0);
 ```
 
-**Tips**: Pay attention to capitalization.
-
-
+**Tips**: Pay attention to case.
 
 ## 2. Introduction to FPS
 
 ### 2.1 FPS Overview
 
-FPS is the abbreviation of Frames Per Second. Assume that the frame rate of the game is 60FPS, which means that the execution time of each frame when the game is running is 1/60 second. The higher the frame rate value, the smoother it feels visually.
+FPS is the abbreviation for Frames Per Second. Assuming a game frame rate of 60 FPS, it indicates that each frame's execution time during game running is 1/60 second. The higher the frame rate value, the smoother the visual experience.
 
-![Picture 1](img/1.png)<br /> (Picture 1)
+![Figure 1](img/1.png)<br />	(Figure 1)
 
-The current full frame rate of PCs, mobile phones and other devices is 60 frames, as shown in Figure 1. However, some games do not have high requirements for the smoothness of the screen. You can also use the engine's frame rate limiting method `Stage.FRAME_SLOW` to reduce the FPS Frame rate is limited to a maximum of 30fps.
+The current full frame for devices such as PCs and mobile phones is 60 frames, as shown in Figure 1. However, some games do not have high requirements for picture smoothness, and can also use the engine's frame rate limiting method `Stage.FRAME_SLOW` to limit the FPS frame rate to a maximum of 30 frames.
 
-Since the actual running environment is in the browser, performance also depends on the efficiency of the JavaScript interpreter. Therefore, the FPS value of the same game may be different in different browsers. This part is not something that developers can decide. What developers can do is to use the best engines and optimization projects as much as possible to improve the FPS frame rate on low-end devices or low-performance browsers.
+Since the actual runtime environment is in a browser, performance also depends on the efficiency of the JavaScript interpreter. Therefore, the FPS value of the same game may vary in different browsers. This part is not something developers can decide. What developers can do is make the best use of the engine and optimize the project to improve FPS frame rates on low-end devices or low-performance browsers.
 
-#### 2.2 FPS in different modes
+#### 2.2 FPS in Different Modes
 
-The LayaAir engine supports two rendering modes: Canvas and WebGL. Therefore, when looking at the FPS frame rate, pay attention to which mode it is in. `FPS(Canvas)` indicates the frame rate in Canvas mode, as shown in Figure 1; `FPS(WebGL)` indicates the frame rate in WebGL mode. speed, as shown in Figure 2.
+The LayaAir engine supports both Canvas and WebGL rendering modes. Therefore, when viewing FPS frame rates, pay attention to which mode is being used. `FPS(Canvas)` indicates the frame rate in Canvas mode, as shown in Figure 1; `FPS(WebGL)` indicates the frame rate in WebGL mode, as shown in Figure 2.
 
-![Picture 2.png](img/2.png)<br /> (Picture 2)
+![Figure 2.png](img/2.png)<br />	(Figure 2)
 
-#### 2.3 Numerical description of FPS
+#### 2.3 FPS Value Description
 
-In Figure 1 and Figure 2, the first yellow value of FPS `60` is the current **FPS frame rate**, the higher the better.
+In Figures 1 and 2, the first yellow value `60` in FPS is the current **FPS frame rate**, which is better when higher.
 
-The second yellow value `16` is the time spent rendering each frame in milliseconds. The smaller the value, the better.
+The second yellow value `16` is **the time consumed per frame rendering**, in milliseconds. This value is better when smaller.
 
-If these two values ​​cannot be maintained at full frame, they will change during product operation, as shown in animation 3.
+These two values, if they cannot be maintained at full frame, will change during product operation, as shown in Animated Figure 3.
 
-![Animation 3](img/3.gif) <br /> (Animation 3)
+![Animated Figure 3](img/3.gif) <br /> (Animated Figure 3)
 
 ## 3. Introduction to DrawCall
 
- **The number of DrawCalls is an important indicator that determines performance**, located in the third row of the statistics panel, as shown in Figure 4. DrawCall represents different meanings under Canvas and WebGL rendering, but the less the better. **It is recommended that developers try to limit it to less than 100**.
+**The number of DrawCalls is an important indicator determining performance**, located on the third line of the statistics panel, as shown in Figure 4. DrawCall represents different meanings under Canvas and WebGL rendering, but in both cases, less is better. **It is recommended that developers try to limit it to below 100**.
 
-![Picture 4](img/4.png) <br /> (Picture 4)
-
-
+![Figure 4](img/4.png) <br /> (Figure 4)
 
 #### 4.1 DrawCall under Canvas
 
- DrawCall in Canvas mode represents the number of drawings per frame, including pictures, text, and vector graphics.
+Under Canvas mode, DrawCall represents the number of draws per frame, including images, text, and vector graphics.
 
 #### 4.2 DrawCall under WebGL
 
-In WebGL mode, DrawCall represents a rendering submission batch. The process of preparing data and notifying the GPU for rendering each time is called a DrawCall. In each DrawCall, in addition to notifying the GPU of rendering, it is time-consuming to switch materials and shaders. It is also a very time-consuming operation.
+Under WebGL mode, DrawCall represents render submission batches. The process of preparing data and notifying the GPU to render and draw each time is called 1 DrawCall. In each DrawCall, besides notifying the GPU rendering, switching materials and shaders is also a very time-consuming operation.
 
-
-
-
-
-**Tips**: For more information on the optimization of CacheAs, you can view the document "CacheAs Static Cache Optimization"
-
-
-
-
-
- 
-
+**Tips**: For more optimization introduction about CacheAs, you can refer to the document "CacheAs Static Cache Optimization"

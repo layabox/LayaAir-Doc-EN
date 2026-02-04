@@ -1,190 +1,174 @@
 # Prefab Module
 
-
-
 ## 1. Overview
 
-During project development, situations like the following often occur:
+In project development, situations like this often occur:
 
-(1) At the project initiation stage, the art department defines a series of standard font colors and font sizes for application in various UIs. One day, the art department suddenly decides to change the default font color and font size. UI producers then need to modify all interfaces, which is very troublesome. **In such cases, using prefabs can easily handle this. By modifying only one place, it can affect the entire project.**
+(1) At the start of a project, artists define a series of standard font colors and font sizes, which are applied in various UIs. One day, the artist suddenly wants to change the default font color and font size. UI creators would need to modify all interfaces once, which would be very troublesome. **For this situation, using prefabs can easily handle it. Modifying one place can affect the entire project.**
 
-(2) Different 2D interfaces have the same local layout, and it is hoped that by modifying it once, the same layout in multiple interfaces will change together. **In such cases, using prefabs can easily cope with it.**
+(2) Different 2D interfaces have partially identical layouts, and you want to modify once so that multiple interfaces with identical layouts change together. **For this situation, using prefabs can easily handle it.**
 
-(3) In 3D project development, certain objects that are reused in the same scene or different scenes, such as models, textures, animations, etc., are all set up. We hope that when using them, they can be loaded with code directly. **In such cases, only by using prefabs can it be achieved.**
+(3) In 3D project development, repeatedly using a certain object in the same scene or different scenes, such as models, textures, animations, etc., that are already set up, you can directly create heroes, monsters, effects, etc. in the scene. We want to just load it with code when using it. **For this situation, only using prefabs can achieve it.**
 
-For similar demands as above, LayaAirIDE provides 2D prefabs and 3D prefabs. Next, this article will introduce how to use these two types of prefabs.
+For similar needs as above, LayaAirIDE provides UI prefabs, 2D prefabs, and 3D prefabs. Next, this article will introduce how to use these types of prefabs.
 
+## 2. Creating in IDE
 
+The process of creating prefabs can only be completed in the IDE. Usually, created prefabs are files with ".lh" suffix. This section introduces how to create prefabs (2D) and prefabs (3D) in the IDE.
 
-## 2. Creation in the IDE
+### 2.1 Creating Prefab (2D)
 
-The process of creating prefabs can only be completed in the IDE. Usually, after creating a prefab, the file has a suffix of ".lh". This section introduces how to create prefabs (2D) and prefabs (3D) in the IDE
+Prefab (2D) and Prefab (UI) are prefabs used in the 2D interface development process, usually for 2D components and partial interfaces that will be used repeatedly.
 
-### 2.1 Creating Prefabs (2D)
+As shown in Animated Figure 2-1, in the IDE under assets in project resources, developers can choose the directory where they want to store prefabs. In this directory, in the right-click menu, create prefab (2D/UI). Here we create a prefab (UI).
 
-Prefabs (2D) are used in the development process of 2D interfaces, usually for repeatedly used 2D components, local interfaces, etc.
+<img src="img/2-1.gif" style="zoom:70%;" />
 
-As shown in Animated GIF 2-1, under the assets of the project resources in the IDE, developers can select the directory where they want the prefab to be stored. In this directory, right-click and create Prefab (2D) in the menu
+(Figure 2-1)
 
-<img src="img/2-1.gif" style="zoom:50%;" /> 
+After creating a prefab, developers usually need to rename it so that the prefab's function can be identified by name. As shown in Animated Figure 2-2.
 
-(Animated GIF 2-1)
+<img src="img/2-2.gif" style="zoom:50%;" />
 
-After creating the prefab, developers usually need to rename it so that the function of the prefab can be identified by the name, as shown in Animated GIF 2-2
+(Figure 2-2)
 
-<img src="img/2-2.gif" style="zoom:50%;" /> 
+Click on the Title prefab, and you can see there's a root node "Box", as shown in Figure 2-3.
 
-(Animated GIF 2-2)
-
-Click on the Title prefab, and you can see that there is a root node "Box", as shown in Figure 2-3
-
-<img src="img/2-3.png" style="zoom:50%;" /> 
+<img src="img/2-3.png" style="zoom:50%;" />
 
 (Figure 2-3)
 
-Developers can create 2D components under Box or convert the Box node into other 2D components for use. We will introduce this in detail later
+Developers can create 2D components under Box, or convert the Box node to other 2D components for use. We'll introduce this in detail later.
 
+The root node of prefab (2D) is "Sprite". As shown in Figure 2-4.
 
+<img src="img/2-6.png" style="zoom:100%;" />
 
-### 2.2 Creating Prefabs (3D)
+(Figure 2-4)
 
-The process of creating a Prefab 3D is the same as that of Prefab 2D, as shown in Animated GIF 2-4
+### 2.2 Creating Prefab (3D)
 
-<img src="img/2-4.gif" style="zoom:50%;" />  
+The process of creating prefab 3D is the same as prefab 2D, as shown in Animated Figure 2-5.
 
-(Animated GIF 2-4)
-
-The difference is that when double-clicking to open Prefab 3D, the root node is "Sprite3D", which is the 3D sprite object we need to create. At the same time, the right side of Figure 2-5 is the default IDE scene with the skybox provided by the IDE
-
-<img src="img/2-5.png" style="zoom:50%;" /> 
+<img src="img/2-4.gif" style="zoom:70%;" />
 
 (Figure 2-5)
 
+The difference is that double-clicking to open prefab 3D, the root node is "Sprite3D", which is the 3D sprite object we need to create. At the same time, the right side of Figure 2-6 is the default IDE scene, using the IDE's built-in skybox.
 
+<img src="img/2-5.png" style="zoom:50%;" />
 
-### 2.3 Modifying the Prefab Editing Scene
+(Figure 2-6)
 
-Developers can change the editing scene of the 3D prefab in the following way, as shown in Animated GIF 2-6
+### 2.3 Modifying Prefab Editing Scene
 
-<img src="img/2-6.gif" style="zoom:50%;" /> 
+Developers can change the 3D prefab's editing scene in the following way. As shown in Animated Figure 2-6.
 
-(Animated GIF 2-6)
+<img src="img/2-6.gif" style="zoom:50%;" />
 
-For example, we have a 3D city scene. In the project settings of the IDE, click the Edit option. In the Prefab Editing Scene, drag in the 3D city scene file. At this time, when looking at the scene window of the prefab again, you can see that the scene has changed to the 3D city. In this case, it is more convenient for developers to make 3D prefabs more flexibly in the scene
+(Figure 2-6)
 
-
+For example, if we have a 3D city scene, in the IDE's project settings, click the edit option, and in the prefab editing scene, drag in the 3D city scene file. At this time, when viewing the prefab's scene window again, you can see the scene has changed to the 3D city. In this case, it's more convenient for developers to flexibly create 3D prefabs in the scene.
 
 ## 3. Using Prefabs
 
-### 3.1 2D Prefabs
+### 3.1 UI/2D Prefabs
 
-In the first section, it was mentioned that during the development process, many interfaces use fonts similar to the title. Developers are best to implement this through prefabs. When there is a demand to change the font of all interface titles, only one modification to the prefab is needed.
+The first section mentioned that during development, many interfaces will use fonts similar to titles. It's best for developers to implement this through prefabs. When there's a need to change the font of all interface titles, you only need to modify the prefab once.
 
-#### 3.1.1 Converting Node Types
+#### 3.1.1 Converting Node Type
 
-Since the default root node of the created prefab is Box, if the title is created under Box, then this Box node is redundant. If a large number of titles are created in the interface, many Boxes will be created, which is strongly not recommended considering performance. Therefore, we hope to use the node conversion to change Box to the Label component. As shown in Animated GIF 3-1
+Since the created prefab defaults to a Box root node, if creating a title under Box, this Box node is redundant. If creating a large number of titles in the interface, many Boxes will be created. From a performance perspective, this is strongly not recommended. Therefore, we want to use node conversion to change Box to a Label component. As shown in Animated Figure 3-1.
 
-<img src="img/3-1.gif" style="zoom:50%;" /> 
+<img src="img/3-1.gif" style="zoom:50%;" />
 
-(Animated GIF 3-1)
+(Figure 3-1)
 
+#### 3.1.2 Setting Font
 
-
-#### 3.1.2 Setting the Font
-
-Next, there is no need to introduce the production process of the title here. As shown in Figure 3-2, we temporarily create a yellow 30-point bold font as the title and rename it to Title
+Next, we won't introduce the title production process much. As shown in Figure 3-2, we temporarily create a yellow size 30 bold font as the title and rename it to Title.
 
 <img src="img/3-2.png" style="zoom:50%;" />
 
 (Figure 3-2)
 
+#### 3.1.3 Using Prefabs in IDE
 
+After the prefab is made, it can be dragged into the interface where we want to use it in the IDE. As shown in Animated Figure 3-3.
 
-#### 3.1.3 Using Prefabs in the IDE
-
-When the prefab is made, it can be dragged into the interface we want to use in the IDE, as shown in Animated GIF 3-3
-
-<img src="img/3-3.gif" style="zoom:50%;" /> 
-
-(Animated GIF 3-3)
-
-There is a List in the scene. We hope that there will be a title in the item. We drag the Title prefab under the Box of the List as the Label title of the item of the List. It can be seen that in the node, the Label name color is green, indicating that this node is a prefab node. Of course, all nodes under this node will be green.
-
-
-
-#### 3.1.4 Modifying Prefab Properties
-
-When the demand is to change all the titles to red, that is, by modifying once, multiple interfaces change together. Then only the color of the text needs to be modified in the Title prefab, as shown in Animated GIF 3-4
-
-<img src="img/3-4.gif" style="zoom:50%;" /> 
-
-(Animated GIF 3-4)
-
-After modifying the prefab, the modification effect can be seen in the scene interface using the prefab. Of course, the effect can also be directly run in the prefab interface. When developers finish editing and close the prefab interface, remember to save the prefab file, otherwise, when opening this prefab next time, the previous changes will be lost.
-
-New UI components can also be added to the prefab. Similarly, the newly added UI components in the scene are synchronized. This is not shown here. Developers can try it themselves.
-
-> Note: Any scripts added on UI components can also be synchronized to the scene, but the runtime class under the prefab cannot be synchronized
-
-
-
-#### 3.1.5 Overriding Prefab Properties
-
-If we operate the prefab node in the scene, such as adding a new UI component, modifying the properties of the UI component, and attaching a script to the UI component, as shown in Figure 3-3
-
-<img src="img/3-3.png" style="zoom:50%;" /> 
+<img src="img/3-3.gif" style="zoom:50%;" />
 
 (Figure 3-3)
 
-For example, there is an item node in the List under the scene that is a prefab. We have made several changes under the List, which are marked in Figure 3-3
+There's a List in the scene. We want the item to have a title. We drag the Title prefab into the List's Box as the Label title of the List's item. You can see that in the node, the Label name color is green, representing that this node is a prefab node. Of course, all nodes under this node will also be green.
 
-- Added the LabelScript script to the Label component (marked with a "+" sign)
+#### 3.1.4 Modifying Prefab Properties
 
-- Modified the width property of the item node (indicated by a yellow line in the property setting panel)
+When the requirement says to change all titles to red, that is, modify once and multiple interfaces change together. Then you only need to modify the text color in the Title prefab. As shown in Animated Figure 3-4.
 
-- Added the Button component (marked with a "+" sign)
-
-These modifications can also be overwritten to the prefab. Let's see how to operate. As shown in Figure 3-4
-
-<img src="img/3-4.png" style="zoom:50%;" /> 
+<img src="img/3-4.gif" style="zoom:50%;" />
 
 (Figure 3-4)
 
-Click on the item node, and in the property panel on the right, click the `Override Properties` button to open the operation panel of `Override Properties to item`
+After modifying the prefab, you can see the modification effect in scene interfaces using the prefab. Of course, you can also directly run to see the effect in the prefab interface. After developers complete editing, when closing the prefab interface, they need to remember to save the prefab file. Otherwise, the next time they open this prefab, previous changes will be lost.
 
-Since there were three operations before, when we click on item, LabelScript, and Button, we can see, as shown in Figure 3-8
+New UI components can also be added to the prefab. Similarly, new UI components added in the scene are synchronized. We won't demonstrate this here. Developers can try it themselves.
 
-<img src="img/3-8.png" style="zoom: 40%;" /> 
+> Note: Any scripts added to UI components can also be synchronized to the scene, but the runtime class under the prefab cannot be synchronized.
 
-(Figure 3-8) 
+#### 3.1.5 Overriding Prefab Properties
 
-The IDE records these three modification operations. We can `Undo` or `Apply` each item separately, or directly `Undo All` or `Apply All`
+If we operate on prefab nodes in the scene, such as adding new UI components, modifying UI component properties, or hanging scripts on UI components, as shown in Figure 3-3.
 
-After clicking Apply or Apply All for each operation, when returning to the item prefab window, the three modifications will be updated and saved to the prefab, as shown in Figure 3-9
+<img src="img/3-3.png" style="zoom:50%;" />
 
-<img src="img/3-9.png" style="zoom:50%;" /> 
+(Figure 3-3)
 
-(Figure 3-9) 
+For example, there's an item node under the List in the scene that's a prefab. We made several changes under the List. In Figure 3-3, there will be indicators.
+
+- Added LabelScript script to the Label component (with "+" indicator)
+
+- Modified width property of the item node (property settings panel has yellow line prompt)
+
+- Added Button component (with "+" indicator)
+
+These modifications can also be overridden to the prefab. Let's see how to operate. As shown in Figure 3-4.
+
+<img src="img/3-4.png" style="zoom:50%;" />
+
+(Figure 3-4)
+
+Click the item node, and in the property panel on the right, click the `Override Properties` button to open the `Override Properties to item` operation panel.
+
+Since there were three operations before, when we click item, LabelScript, and Button, we can see as shown in Figure 3-8.
+
+<img src="img/3-8.png" style="zoom: 40%;" />
+
+(Figure 3-8)
+
+The IDE has recorded these three modification operations. We can separately `Undo` or `Apply` each item, or directly `Undo All` or `Apply All`.
+
+When each operation clicks apply or uses apply all, after returning to the item prefab window, all three modifications will be updated and saved to the prefab. As shown in Figure 3-9.
+
+<img src="img/3-9.png" style="zoom:50%;" />
+
+(Figure 3-9)
 
 Through the above operations, using the method of overriding prefab properties can also achieve the effect of modifying the prefab.
 
-
-
-> Note: If the prefab sets a relative layout, then when using this prefab object on the scene, the relative layout on the scene cannot be set to null (it is not allowed by the IDE to uncheck or force the code to set it to null, and it is also useless). It is based on the relative layout in the prefab. 
+> Note: If relative layout is set in the prefab, then when using this prefab object in the scene, the relative layout on the scene cannot be set to empty (IDE not checking or forcing code to set to null is not allowed and useless). It will be based on the relative layout within the prefab.
 >
-> However, if the relative layout value is modified in the scene, it is based on the settings in the scene. For example, the top of the prefab is set to 10, and when the prefab is used in the scene, the top is changed to 20. Then during runtime, the scene takes 20 as the benchmark.
-
-
+> However, if the relative layout value is modified in the scene, it will be based on the scene's settings. For example, if the prefab's top is set to 10, and when the scene uses this prefab, top is changed to 20, then during runtime, the scene will use 20 as the benchmark.
 
 #### 3.1.6 Using Prefabs in Code
 
-Adding prefabs through code is as simple as using a component. As shown in Figure 3-5, we hope to put the Title prefab under the Box
+Adding prefabs through code is as simple as using a component. As shown in Figure 3-5, we want to put the Title prefab under Box.
 
-<img src="img/3-5.png" style="zoom:50%;" /> 
+<img src="img/3-5.png" style="zoom:50%;" />
 
-(Animated GIF 3-5)
+(Figure 3-5)
 
-The sample code is as follows:
+Example code is as follows:
 
 ```typescript
 const { regClass, property } = Laya;
@@ -195,57 +179,51 @@ export class ScriptA extends Laya.Script {
 
     @property( { type: Laya.Box } )
     private box: Laya.Box;
-    
+
     constructor() {
         super();
     }
-    
+
     onStart(): void {
-    
-        //Load the prefab file
+
+        //Load prefab file
         Laya.loader.load("resources/Title.lh").then( (res)=>{
-            //Create the prefab
+            //Create prefab
             let label: Laya.Label = res.create();
-            //Add the prefab Label font to the box node
+            //Add prefab Label font to box node
             this.box.addChild( label );
         } );
     }
 }
 ```
 
-The running effect is shown in Figure 3-6
+The running effect is shown in Figure 3-6.
 
-<img src="img/3-6.png" style="zoom:50%;" /> 
+<img src="img/3-6.png" style="zoom:50%;" />
 
 (Figure 3-6)
 
-
-
 ### 3.2 3D Prefabs
 
-The usage process of 3D prefabs is the same as that of 2D prefabs. Here we will not introduce how to make prefabs. Let's take a look at the usage effect of 3D prefabs through the following examples
+The use of 3D prefabs is the same as 2D prefabs. Here we won't introduce how to make prefabs. Let's see the use effect of 3D prefabs through the following example.
 
-#### 3.2.1 Use in the IDE
+#### 3.2.1 Using in IDE
 
-Suppose we have created a 3D prefab and made LayaMonkey by adding components such as models, materials, animation state machines, etc., as shown in Figure 3-7
+Assuming we've already created a 3D prefab and made LayaMonkey by adding models, materials, animation state machines, and other components. As shown in Figure 3-7.
 
-<img src="img/3-7.png" style="zoom:50%;" /> 
+<img src="img/3-7.png" style="zoom:50%;" />
 
 (Figure 3-7)
 
+At this time, the made LayaMonkey can be dragged into any scene. As shown in Animated Figure 3-8.
 
+<img src="img/3-8.gif" style="zoom:50%;" />
 
-At this time, the made LayaMonkey can be dragged into any scene, as shown in Animated GIF 3-8
+(Figure 3-8)
 
-<img src="img/3-8.gif" style="zoom:50%;" /> 
+#### 3.2.2 Using in Code
 
-(Animated GIF 3-8)
-
-
-
-#### 3.2.2 Use in Code
-
-Using 3D prefabs through code is the most common way. Often, enemies in game battles are constantly created through code. Like the situation of dragging LayaMonkey in the IDE mentioned above, let's implement it with code as follows:
+Using 3D prefabs through code is the most common method. Often in game battles, enemies are continuously created through code. Like the situation of dragging LayaMonkey into the IDE above, we implement it with code as follows:
 
 ```typescript
 const { regClass, property } = Laya;
@@ -254,17 +232,17 @@ const { regClass, property } = Laya;
 export class Main extends Laya.Script {
 
     @property( { type : Laya.Camera } )
-    private camera: Laya.Camera;  
+    private camera: Laya.Camera;
     @property( { type : Laya.Scene3D } )
     private scene: Laya.Scene3D;
-    
+
     onStart() {
         console.log("Game start");
-        //Load the prefab file
+        //Load prefab file
         Laya.loader.load("resources/Prefab.lh").then( (res)=>{
-            //Create the prefab
+            //Create prefab
             let monkey: Laya.Sprite3D = res.create();
-            //Add the prefab to the scene
+            //Add prefab to scene
             this.scene.addChild( monkey );
             monkey.transform.position = new Laya.Vector3(-28.9354,0.3,-63.20264);
         } );
@@ -273,19 +251,17 @@ export class Main extends Laya.Script {
 
 ```
 
-The running effect is shown in Animated GIF 3-9
+The running effect is shown in Animated Figure 3-9.
 
-<img src="img/3-9.gif" style="zoom:50%;" /> 
+<img src="img/3-9.gif" style="zoom:50%;" />
 
-(Animated GIF 3-9)
-
-
+(Figure 3-9)
 
 ## 4. Preloading Prefabs
 
-During the development process, we will implement various functions by creating a large number of prefabs. Therefore, a prefab can also be understood as a collection of resources. When loading prefab files through code, the associated resources can also be loaded together. Therefore, during the project startup loading process, all prefabs can be loaded first, just like preloading scenes. The engine will load the associated resources together.
+During development, we will achieve various functions by creating a large number of prefabs. Therefore, prefabs can also be understood as a collection of resources. When loading prefab files through code, associated resources can be loaded together. Therefore, during project startup loading, you can directly load all prefabs first, just like preloading scenes. The engine will load associated resources together.
 
-In the 2D beginner sample code of LayaAir, it can be seen that the implementation code for preloading a group of prefabs is as follows:
+In LayaAir's 2D introduction example code, you can see the implementation code for preloading a group of prefabs:
 
 ```typescript
 import { LoadingRTBase } from "./LoadingRT.generated";
@@ -295,7 +271,7 @@ const { regClass, property } = Laya;
 export default class LoadingRT extends LoadingRTBase {
     onAwake(): void {
         Laya.loader.load(
-            // First load the ones needed for this scene
+            //Load what this scene uses first
             ["resources/UI/image.png", "resources/UI/progress.png", "resources/UI/progress$bar.png"]
         ).then(() => {
             let resArr: Array<any> = [
@@ -339,28 +315,28 @@ export default class LoadingRT extends LoadingRTBase {
             ];
 
 
-            // The load of 3.0 can load 2D and 3D resources simultaneously
+            //3.0's load can load 2D and 3D resources simultaneously
             Laya.loader.load(resArr, null, Laya.Handler.create(this, this.onLoading, null, false)).then(() => {
-                // After loading is completed, processing logic
+                // After loading is complete, handle logic
                 this.progress.value = 0.98;
-                console.log("Loading completed", this.progress.value);
-                // There are too few things preloaded. To delay for one second for local viewing effect, real projects do not need to delay
+                console.log("Loading finished", this.progress.value);
+                //Too few things preloaded, delay one second to see the effect locally, real projects don't need delay
                 Laya.timer.once(1000, this, () => {
-                    // Jump to the entrance scene
-                    Laya.Scene.open("Scenes/Index.ls"); // Do not use Laya.Scene.open("./Scenes/Index.ls");
+                    //Jump to entry scene
+                    Laya.Scene.open("Scenes/Index.ls"); //Don't use Laya.Scene.open("./Scenes/Index.ls");
                 });
 
             });
 
-            // Listen for loading failures
+            // Listen for loading failure
             Laya.loader.on(Laya.Event.ERROR, this, this.onError);
         });
     }
 
     /**
-     * Print an error when there is an error
-     * @param err Error message
-     */
+   * Print error when error occurs
+   * @param err Error message
+   */
     onError(err: string): void {
         console.log("Loading failed: " + err);
     }
@@ -369,7 +345,7 @@ export default class LoadingRT extends LoadingRTBase {
      * Listen during loading
      */
     onLoading(progress: number): void {
-        // When approaching the completion of loading, make the display progress a little slower than the actual progress. This is reserved for the automatic loading when opening the scene, especially when there are many scene resources to be opened and not all are placed in the preload, and some need to be automatically loaded again.
+        //When nearing completion, make the displayed progress slower than actual progress, this reserves for automatic loading when opening scenes, especially when the scene to be opened has many resources and hasn't been fully put into preloading, and needs to automatically load some more.
         if (progress > 0.92) this.progress.value = 0.95;
         else this.progress.value = progress;
         console.log("Loading progress: " + progress, this.progress.value);
@@ -377,4 +353,4 @@ export default class LoadingRT extends LoadingRTBase {
 }
 ```
 
-Through the above code, it can be seen in the debugging tool of the browser that the engine will load all the resources of the prefabs.
+Through the above code, you can see in the browser's debugging tool that the engine will load all prefab resources.

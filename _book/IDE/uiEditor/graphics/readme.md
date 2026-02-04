@@ -535,21 +535,45 @@ Adjusting the control points changes the curve shape. Curves can be linear (1st 
 
 ![1.gif](img/6-1.gif)
 
-* A simple line from P0 to P1, controlled by parameter t (0 ≤ t ≤ 1).
+(Animation 6-1)
+
+**Explanation:** The above shows continuous points from P0 to P1, describing a linear Bézier curve. In a linear Bézier curve function, parameter t passes through the curve B(t) described from P0 to P1. For example, when t=0.25, B(t) is at one-quarter of the path from point P0 to P1. Just like continuous t from 0 to 1, B(t) describes a straight line from P0 to P1.
 
 #### 6.1.2 Quadratic Bézier Curve (2nd order)
 
 ![2.gif](img/6-2.gif)
 
-* Uses a control point P1 between start P0 and end P2.
+(Animation 6-2)
+
+![blob.png](img/6-3.png)
+
+(Animation 6-3)
+
+**Explanation:** To construct a quadratic Bézier curve, continuous points Q0 from P0 to P1 in the above figure describe a linear Bézier curve. Continuous points Q1 from P1 to P2 describe a linear Bézier curve. Continuous points B(t) from Q0 to Q1 describe a quadratic Bézier curve.
 
 #### 6.1.3 Cubic Bézier Curve (3rd order)
 
 ![3.gif](img/6-4.gif)
 
-* Uses two control points to define curve shape.
+(Animation 6-4)
 
-Higher-order Bézier curves exist but are less common.
+![blob.png](img/6-5.png)
+
+(Animation 6-5)
+
+**Explanation:** For cubic curves, intermediate points Q0, Q1, Q2 described by linear Bézier curves, and points R0, R1 described by quadratic curves can be constructed.
+
+#### 6.1.4 Higher-Order Bézier Curves
+
+Higher-order Bézier curves are less common, so this document will not describe them in detail. To learn more about Bézier curve principles, please refer to other related articles.
+
+![4.gif](img/6-6.gif)
+
+(Animation 6-6) Fourth-order Bézier curve
+
+![5.gif](img/6-7.gif)
+
+(Animation 6-7) Fifth-order Bézier curve
 
 ---
 

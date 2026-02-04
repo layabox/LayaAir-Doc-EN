@@ -1,73 +1,96 @@
-# Horizontal and vertical screen settings
+# Screen Orientation Settings
 
-This document further comprehensively introduces the horizontal and vertical screen settings of LayaNative.
+This document provides a comprehensive introduction to LayaNative screen direction settings.
 
-## 1. Horizontal and vertical screen settings before project construction
+## 1. Setting in IDE Before Publishing
 
-If you want to set up horizontal and vertical screens, go to `Tools`--> `app build` in the menu bar of LayaAirIDE. In the open build project window, just configure the screen orientation. The configuration method is as shown in the figure below.
+If you want to set screen orientation, through LayaAir-IDE's build and publish panel, in the Android/iOS publish options, as shown in Figure 1-1, configure the screen orientation here.
 
-<img src="img/0.png" style="zoom:50%;" />
+![1-1](img/1-1.png)
 
-After setting the screen orientation, click Release and the screenOrientation attribute will be added to index.js:
+(Figure 1-1)
 
-```javascript
-/**
- * Set the LayaNative screen orientation, you can set the following values
- * landscape       	Horizontal screen
- * portrait        	Vertical screen
- * sensor_landscape	Landscape (both directions)
- * sensor_portrait 	Portrait screen (both orientations)
- */
-window.screenOrientation = "portrait"; // Set the screen to vertical screen
-//-----Engine library starts-----
-loadLib("libs/laya.core.js")
-loadLib("libs/laya.ui.js")
-loadLib("libs/laya.d3.js")
-//-----End of engine library-------
-loadLib("js/bundle.js");//project code js
-```
+It's recommended that developers set the direction consistent with the project settings panel.
 
-## 2. Horizontal and vertical screen settings after project construction
+![1-2](img/1-2.png)
+
+(Figure 1-2)
+
+`Landscape`: Device placed horizontally, width greater than height. Screen content displays horizontally.
+
+`Portrait`: Device placed vertically, height greater than width. Screen content displays vertically.
+
+`Reverse Landscape`: Device placed horizontally, but screen content rotated 180 degrees.
+
+`Reverse Portrait`: Device placed vertically, but screen content rotated 180 degrees.
+
+`Sensor Landscape Rotation`: Automatically switches between two landscape directions based on the device's gravity sensor.
+
+`Sensor Portrait Rotation`: Automatically switches between two portrait directions based on the device's gravity sensor.
+
+`Full Sensor Rotation`: Automatically switches between all four directions based on the device's gravity sensor.
+
+## 2. Landscape/Portrait Settings After Project Build
+
+After building and publishing, you can modify the native project's corresponding configuration to set landscape/portrait orientation.
 
 ### 2.1 iOS
 
-After the iOS project is successfully built, open the resource/config.ini file and modify the value of `orientation=16`, as shown in the following figure:
+After the iOS project is successfully built, open the XCode project settings page and check the corresponding Device Orientation options as needed. As shown in Figure 2-1:
 
-![Picture 1](img/1.png)
+<img src="img/2-2.png" alt="2-2" style="zoom: 50%;" />
 
-The meaning of the parameters is as follows:
-```
-orientation=2 //Vertical screen: IOS home button is down
-orientation=4 //Vertical screen: IOS home button is on top
-orientation=8 //Horizontal screen: IOS home button is on the left
-orientation=16 //Horizontal screen: IOS home button is on the right
-```
-The value of orientation can be set using bitwise OR, for example:
-```   
-Orientation=6 //Indicates that the vertical screen can be rotated arbitrarily
-orientation=24 //Indicates that the horizontal screen can be rotated arbitrarily
-```
-
-**Note:** The horizontal and vertical screen settings in the iOS project are best consistent with the config.ini settings. Inconsistent settings may cause unknown situations to occur. The settings are as shown below:
-
-![Picture](img/2.png)
+(Figure 2-1)
 
 ### 2.2 Android
 
-The android project is built successfully. Open the AndroidManifest.xml file. There is a screenOrientation parameter in the activity tag. Developers can modify it according to their own needs, as shown in the following figure:
-![Picture 2](img/3.jpg)
+After the Android project is successfully built, open the `AndroidManifest.xml` file. In the activity tag, there's a screenOrientation parameter that developers can modify according to their needs. As shown in Figure 2-3:
 
-The configurable parameters are Android standards and will not be explained too much here, as shown below:
+<img src="img/2-3.png" alt="2-3" style="zoom:80%;" />
 
+(Figure 2-3)
+
+landscape: Landscape
+
+portrait: Portrait
+
+reverseLandscape: Reverse landscape
+
+reversePortrait: Reverse portrait
+
+sensorLandscape: Sensor landscape rotation
+
+sensorPortrait: Sensor portrait rotation
+
+fullSensor: Full sensor rotation
+
+## 3. Dynamically Setting Landscape/Portrait Through Code
+
+You can also dynamically set landscape/portrait through code. The interface is similar to the WeChat mini-game interface:
+
+> Version >= LayaAir 3.4
+
+```typescript
+    /**
+    * Set LayaNative screen orientation. Can set the following values:
+    * landscape: Landscape
+    * portrait: Portrait
+    * reverseLandscape: Reverse landscape
+    * reversePortrait: Reverse portrait
+    * sensorLandscape: Sensor landscape rotation
+    * sensorPortrait: Sensor portrait rotation
+    * fullSensor: Full sensor rotation
+    */
+    conch.setDeviceOrientation({
+        value: value,
+        success: function () {
+            console.log("success");
+        },
+        fail: function () {
+            console.log("fail");
+        },
+        complete: function () {
+            console.log("complete");
+        },
+    });
 ```
-"landscape","portrait","full_sensor","sensor_landscape","sensor_portrait","reverse_landscape","reverse_portrait"
-```
-
-## 3. Execution sequence
-
-When the application starts, it will first read the screen orientation set in config.ini of iOS or the screen orientation set in AndroidManifest.xml of android. When index.js is parsed, the value of the horizontal and vertical screen settings is read and the screen orientation is reset.
-
-For example: Android's AndroidManifest.xml is set to portrait, and the label in index.js is set to landscape. During operation, you will find that on the Android device, the screen will rotate from portrait to landscape.
-
-**Tips: It is recommended that developers set the two values ​​​​consistently to avoid screen rotation during program execution. **
-

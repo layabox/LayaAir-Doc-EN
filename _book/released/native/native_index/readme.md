@@ -1,54 +1,53 @@
-# LayaNative home page description
+# LayaNative Entry Description
 
+**LayaNative is not a browser!**
 
-Important things need to be said three times:
+**LayaNative is not a browser!**
 
-##### LayaNative is not a browser!
+**LayaNative is not a browser!**
 
-##### LayaNative is not a browser!
+Starting from LayaAir3.2 version, it supports automatic packaging into installation packages for various platforms (such as exe, apk, ipa), and provides options for developers to independently choose the corresponding platform's installation environment, then automatically install the required environment for packaging, so developers don't have to worry about what environment to install to successfully package.
 
-##### LayaNative is not a browser!
+For experienced developers, if you're more accustomed to using traditional development environments to create installation packages, the solution to publish as native package projects is also retained.
 
-### 1. LayaNative startup entrance
+A PC simulator is provided on the PC end. Like the mobile runner, you can make instant modifications in the project and directly view the packaged running effect on the PC simulator.
 
-Since LayaNative is not a browser, it does not run HTML content by encapsulating controls such as browsers or webkit.
+## 1. LayaNative's Startup Entry
 
-Therefore, LayaNative cannot start and run html page files.
+Since LayaNative is not a browser, nor does it run html content through encapsulated browsers or webkit-like controls.
 
-The index.html in the bin directory of the engine project can be used as the entry point in the browser, but cannot be used as the startup entry point for LayaNative.
+Therefore, LayaNative cannot start and run HTML page files.
 
-**LayaNative’s startup entry is by default**
+**LayaNative's default startup entry is:**
 
-Through the menu bar `Tools`--> `app build` of LayaAirIDE, in the opened build project window, just configure the URL. The configuration method is shown in Figure 1.
+Through LayaAir-IDE's menu bar `File` → `Build & Publish`, in the opened window, configure the `Resource Server URL`. The configuration method is shown in Figure 1-1. In Figure 1-1, the entry defaults to index.js.
 
-<img src="img/1.png" style="zoom:50%;" />  
+![1-1](img/1-1.png)
 
-In Figure 1, the entry is index.js by default.
+(Figure 1-1)
 
-### 2. LayaNative startup file configuration instructions
+## 2. LayaNative Startup File Configuration Description
 
-The entry file mainly determines the screen orientation when the project is running and the information about the js files that need to be loaded.
+The entry file mainly determines information about JS files that need to be loaded during project runtime.
 
-If we use the project's index.js as the startup entry file of LayaNative, after clicking the version release
+If using the project's index.js as LayaNative's startup entry file, after clicking build and publish, find index.js in the resource directory.
 
-Examples are as follows:
+![2-1](img/2-1.png)
+
+(Figure 2-1)
+
+After opening, the code is as follows:
 
 ```javascript
-/**
- * Set the LayaNative screen orientation, you can set the following values
- * landscape       	Horizontal screen
- * portrait        	Vertical screen
- * sensor_landscape	Landscape (both directions)
- * sensor_portrait 	Portrait screen (both orientations)
- */
-window.screenOrientation = "portrait"; // Set the screen to vertical screen
-//-----Engine library starts-----
-loadLib("libs/laya.core.js")
-loadLib("libs/laya.ui.js")
-loadLib("libs/laya.d3.js")
-//-----End of engine library-------
-loadLib("js/bundle.js");//project code js
+//
+loadLib("libs/laya.core.js");
+//
+loadLib("libs/laya.d3.js");
+//
+loadLib("libs/laya.opengl_2D.js");
+//
+loadLib("libs/laya.opengl_3D.js");
+......
 ```
 
-**Note:** Please do not write any logic code in the index.js file, otherwise unknown errors may occur.
-
+> Please do not write any logic code in the index.js file. If you do, unknown errors may occur.

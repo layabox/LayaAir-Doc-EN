@@ -2,256 +2,267 @@
 
 > Author: Charley
 
-## 1\. Getting Started with Spine
+## 1. Getting Started with Spine
 
-Spine is a professional 2D skeletal animation tool widely used in game development. It uses a bone-driven animation approach, with keyframe interpolation and mesh deformation to make character or object animations more fluid and more resource-efficient than frame-by-frame animation.
+Spine is a professional 2D skeletal animation tool widely used in game development. It adopts a bone-driven animation approach, using keyframe interpolation and mesh deformation to make character or object animations smoother and more resource-efficient than frame-by-frame animation.
 
-> This article does not cover how to create Spine skeletal animations. Interested developers can visit the [Spine website](https://zh.esotericsoftware.com/spine-academy) for more information.
+> How to create Spine skeletal animations is not covered in this article. Interested developers can visit the [Spine website](https://esotericsoftware.com/spine-academy) to learn more.
 
-### 1.1 Supported Spine Runtimes
+### 1.1 Which Spine Runtimes Are Supported
 
-Spine consists of two main parts: the Spine Editor and the Spine Runtime. The Spine Editor is used to create and adjust animations, supporting the import of bitmap resources, bone binding, keyframe adjustment, and animation parameter settings.
+Spine mainly consists of two parts: the Spine editor and Spine runtime. The Spine editor is used to create and adjust animations, supporting importing bitmap resources, binding bones, adjusting keyframes, and setting animation parameters.
 
-The Spine Runtime is a series of open-source libraries provided by Spine's official team. The LayaAir engine integrates Spine animation rendering by introducing the Spine Runtime libraries.
+Spine runtime is a series of open-source libraries officially provided. The LayaAir engine integrates Spine animation rendering by introducing the Spine runtime.
 
-Currently, LayaAir supports Spine 3.7, 3.8, 4.0, 4.1, and 4.2 runtime versions. Developers can select the corresponding Spine runtime version in the IDE under `Project Settings` -\> `Engine Modules` -\> `2D` -\> `Spine Animation`. The interface is shown in Figure 1-1.
+Currently, LayaAir supports Spine runtime library versions 3.7, 3.8, 4.0, 4.1, and 4.2. Developers can select the corresponding Spine runtime version through the IDE's `Project Settings` → `Engine Module` → 2D → Spine Animation. The operation interface is shown in Figure 1-1.
 
-![1-1](img/1-1.png)  
+![1-1](img/1-1.png)
 
 (Figure 1-1)
 
-**Note**: The IDE cannot automatically identify the Spine version. Therefore, developers need to manually select the correct runtime library version based on their Spine resource to ensure correct operation.
+**Note**: The IDE cannot automatically identify the Spine version. Therefore, developers need to manually select the corresponding version of the runtime library based on the Spine resource version to ensure correct Spine operation.
 
-### 1.2 Basic Spine Usage Flow
+### 1.2 Basic Spine Usage Workflow
 
-Once the Spine resources are placed in the resource directory (`assets`), you can directly drag and drop the Spine file (`.skel` or `.json`) into the hierarchy panel. This automatically creates a 2D sprite node and adds a `Spine Renderer` component to it, with the Spine source file path automatically set to the dragged resource, as shown in Figure 1-2.
+After placing Spine resources in the resource directory (assets), you can directly drag Spine files (`.skel` or `.json`) to the hierarchy panel for use. At this time, a 2D sprite node will be automatically created, and a `Spine Renderer` component will be automatically created on this node, with the Spine source file path pointing to the dragged Spine resource by default. As shown in Figure 1-2.
 
-![](img/1-2.png) 
+![](img/1-2.png)
 
 (Figure 1-2)
 
-Alternatively, developers can add the `Spine Renderer` component to an existing node by using the "Add Component" function, as shown in animated Figure 1-3.
+Of course, developers can also add a `Spine Renderer` component to an already created node by adding a component. The operation is shown in Animated Figure 1-3.
 
-![1-3](img/1-3.gif) 
+![1-3](img/1-3.gif)
 
-(Animated Figure 1-3)
+(Figure 1-3)
 
-If you have added the Spine component and specified the Spine resource but **it does not display correctly in the IDE, it is usually because of an incorrect runtime library version**. You need to first confirm the Spine resource version and then select the correct Spine runtime library as shown in Figure 1-1.
+If the Spine component is added normally and the Spine resource is specified, but **cannot be displayed in the IDE**, it's usually because the runtime library version is incorrect. You need to first confirm the Spine resource version and select the correct Spine runtime library version as shown in Figure 1-1.
 
-When dynamically loading the Spine in code, you also need to be mindful of the Spine resource's runtime library version.
+When dynamically loading and using through code, you also need to pay attention to the Spine resource's runtime library version.
 
-Here is an example of dynamic code addition:
+An example of dynamic code addition is as follows:
 
 ```typescript
 const { regClass, property } = Laya;
 @regClass()
 export class Demo extends Laya.Script {
-     spine: Laya.Spine2DRenderNode;
-     // Executed after the component is activated, once all nodes and components have been created. This method is only run once.
-     onAwake(): void {
-         // Load the Spine animation data resource (json file), making sure to set the type to Laya.Loader.SPINE, otherwise the json will not be recognized as a Spine resource.
-         Laya.loader.load("girl2/mix-and-match-pro.json", Laya.Loader.SPINE).then(() => {
-             // Add the Spine Renderer component to the sprite node.
-             this.spine = this.owner.addComponent(Laya.Spine2DRenderNode);
-             this.spine.source = "girl2/mix-and-match-pro.json"; // Set the Spine animation data source.
-             this.spine.skinName = "full-skins/girl"; // Set the skin name.
-             this.spine.play("idle", false); // Play the animation named "idle", with false indicating it does not loop.
-         });
-     }
+    spine: Laya.Spine2DRenderNode;
+    //Executed after component is activated, at this time all nodes and components have been created. This method only executes once
+    onAwake(): void {
+        // Load Spine animation data resource (json file). Note: must be set to Laya.Loader.SPINE type, otherwise json won't be recognized as SPINE resource
+        Laya.loader.load("girl2/mix-and-match-pro.json", Laya.Loader.SPINE).then(() => {
+            // Add Spine renderer component to sprite node
+            this.spine = this.owner.addComponent(Laya.Spine2DRenderNode);
+            this.spine.source = "girl2/mix-and-match-pro.json"; // Set Spine animation data source
+            this.spine.skinName = "full-skins/girl"; // Set skin name
+            this.spine.play("idle", false); // Play animation named "idle", false means don't loop
+        });
+    }
 }
 ```
 
-## 2\. Spine Panel Properties Explained
+## 2. Spine Panel Property Description
 
-### 2.1 Render Layer `layer`
+### 2.1 Render Layer layer
 
-The render layer determines whether the node is affected by the 2D lighting system and other render-layer-related logic.
+The render layer is mainly used for whether it's affected by the 2D lighting system and other render layer related logic effects.
 
-For example, after setting the render layer to `abc` as shown in Figure 2-1, the Spine animation on the current node can be affected by 2D lights whose `Layer Mask` is also set to `abc`.
+For example, after setting the render layer to `abc`, as shown in Figure 2-1. When allowing lighting reception, the current node's Spine animation can be affected by 2D lights with the `Layer Mask` set to `abc`.
 
-![](img/2-1.png) 
+![](img/2-1.png)
 
 (Figure 2-1)
 
-> For more information on how lights affect render layers, refer to the [《BaseLight2D》](../../BaseLight2D/readme.md)documentation.
+> For how lights affect render layers, please refer to the ["2D Lighting"](../../BaseLight2D/readme.md) documentation
 
-### 2.2 Receive Light 
+### 2.2 Receive Lighting lightReceive
 
-By default, Spine does not receive light. It will only be affected by light if `lightReceive` is checked.
+By default, Spine is not affected by lighting. Only after checking "Receive Lighting" will it be affected by lights.
 
-As shown in Figure 2-2, the Spine animation on the right is affected by a blue 2D directional light, while the one on the left is not.
+As shown in Figure 2-2, two identical Spine animations. The Spine on the right is affected by a blue 2D directional light.
 
-![](img/2-2.png) 
+![](img/2-2.png)
 
 (Figure 2-2)
 
-### 2.3 Source File 
+### 2.3 Source File source
 
-The path to the Spine animation resource file, with the format `.skel` or `.json`.
+The resource file path for Spine animation. Resource format is `.skel` or `.json`.
 
-### 2.4 Use Fast Render 
+### 2.4 Use Fast Render useFastRender
 
-The Spine component enables Fast Render by default. In this mode, a series of optimization strategies, such as GPU computation, are used to significantly improve Spine animation performance.
+The Spine component enables fast render by default. In this state, it adopts a series of optimization strategies such as GPU computation, significantly improving Spine animation performance.
 
-However, this optimization strategy balances performance and memory by limiting the number of bones per vertex. The number of bones controlling a single vertex cannot be greater than 4.
+However, this optimization strategy balances performance and memory by limiting the number of bones per vertex. That is, the bone control count per vertex cannot exceed 4.
 
-If the number of bones controlling a vertex exceeds 4, it may cause rendering abnormalities. The engine will also issue a warning, as shown in Figure 2-3.
+When a vertex's bone control count exceeds 4, rendering abnormalities may occur. The engine will also issue a warning. As shown in Figure 2-3.
 
-![](img/2-3.png) 
+![](img/2-3.png)
 
 (Figure 2-3)
 
-If rendering is abnormal, you can uncheck `Use Fast Render` to revert to the standard rendering process. However, we recommend adjusting the Spine art resource for optimal animation performance.
+When rendering abnormalities occur, you can uncheck `Use Fast Render` to restore the normal rendering process. However, we recommend adjusting Spine art resources to obtain optimal animation playback performance.
 
-### 2.5 Skin Name 
+### 2.5 Skin Name skinName
 
-If your Spine asset has multiple skins, you can switch between different skin names in the IDE to preview the effects, as shown in Figure 2-4.
+When multiple skins exist in Spine, by switching different skin names, you can preview the effects of different skins in the IDE. As shown in Figure 2-4.
 
 ![2-4](img/2-4.png)
 
 (Figure 2-4)
 
-Developers can also switch between different skins dynamically through code based on game logic.
+Developers can also dynamically switch between different skins through code based on logic.
 
-Here is a code example:
+Example code is as follows:
 
 ```typescript
 const { regClass, property } = Laya;
 
 @regClass()
 export class NewScript extends Laya.Script {
-     spine: Laya.Spine2DRenderNode;
-     onEnable(): void {
-         // Get the spine component attached to the IDE node.
-         this.spine = this.owner.getComponent(Laya.Spine2DRenderNode);
-         let currentSkin: string = this.spine.skinName; // Record the current skin state.
-         // Execute logic after playback stops.
-         this.owner.on(Laya.Event.STOPPED, this, () => {
-             // Use a ternary operator to switch skin names.
-             currentSkin = currentSkin === "full-skins/girl" ? "full-skins/girl-blue-cape" : "full-skins/girl";
-             this.spine.skinName = currentSkin;
-             this.spine.play("idle", false); // Play the animation again after switching.
-             console.log(`Current skin switched to: ${currentSkin}`);
-         });
-     }
+    spine: Laya.Spine2DRenderNode;
+    onEnable(): void {
+        //Get the spine component mounted on the IDE node
+        this.spine = this.owner.getComponent(Laya.Spine2DRenderNode);
+        let currentSkin: string = this.spine.skinName; // Record current skin state
+        //Execute logic after playback stops
+        this.owner.on(Laya.Event.STOPPED, this, () => {
+            // Switch skin name through ternary operator
+            currentSkin = currentSkin === "full-skins/girl" ? "full-skins/girl-blue-cape" : "full-skins/girl";
+            this.spine.skinName = currentSkin;
+            this.spine.play("idle", false); //Replay once after switching
+            console.log(`Current skin switched to: ${currentSkin}`);
+        });
+    }
 }
 ```
 
-### 2.6 Animation Name 
+### 2.6 Animation Name animationName
 
-In the example code above, we used the `play` method to play an animation directly. For easier use in the IDE panel, we have encapsulated the `play` method with the `animationName` accessor.
+In the previous example code, we played animations directly through the play method. For easier use in the IDE panel, we provide the accessor `animationName` which encapsulates the play method.
 
-This allows developers to directly see all the animation names in the Spine asset within the IDE panel, making it easy to switch and preview different animations, as shown in Figure 2-5.
+This allows developers to directly view all current Spine animation names in the IDE panel, used to switch and view animation effects with different names. The effect is shown in Figure 2-5.
 
-![](img/2-5.png) 
+![](img/2-5.png)
 
 (Figure 2-5)
 
-### 2.7 Loop Playback 
+### 2.7 Loop loop
 
-Similar to `animationName`, `loop` is an encapsulated property for the `play` method, providing a visual control in the IDE to enable or disable looping.
+Like animationName (animationName), loop is also a play method encapsulated for IDE visual operations to control whether to loop playback.
 
-Check the box to loop the animation; uncheck it to play only once.
+Checking means loop playback. Unchecking means play only once.
 
-### 2.8 Preview 
+### 2.8 Preview preview
 
-Preview is not an engine feature but an IDE-specific function to control whether the animation plays in the scene editor.
+Preview is not an engine function. It's an IDE feature to control whether to play animation in scene editing mode.
 
-Check the box to play the Spine animation; uncheck it to display only a static frame.
+Checking means playing Spine animation. Unchecking means not playing animation, only showing static frames.
 
-### 2.9 Physics Update `physicsUpdate`
+### 2.9 Physics Update physicsUpdate
 
-> The physics simulation feature is only available for Spine versions 4.2 and above. We currently only support `none` and `update` parameter settings.
+> Physics simulation functionality is only effective on Spine 4.2 and above versions. We currently only support setting none and update parameters.
 
-  - `none`: No physics simulation is used.
+- none: Don't use physics simulation;
 
-  - `update`: Enables physics updates. When enabled, the final animation pose is no longer determined solely by the timeline but is influenced by physical effects.
+- update: Enable physics update. After enabling, the animation's final pose is no longer completely determined by the timeline but will be affected by physics effects.
 
-As shown in animated Figure 2-6, after enabling `Physics Update` for the girl on the right, her hair and skirt sway naturally under the influence of physical forces.
+As shown in Animated Figure 2-6, the girl on the right, after `enabling physics update`, has her hair and dress affected by physics force, swinging naturally.
 
-![](img/2-6.gif) 
+![](img/2-6.gif)
 
-(Animated Figure 2-6)
+(Figure 2-6)
 
-The specific physics parameters need to be set in the Spine editor; LayaAir only determines whether to enable them.
-### 2.10 Auto Adjust (`autoAdjust`)
+Specific physics parameters need to be set in the Spine editor. LayaAir only determines whether to enable it.
 
-When **Auto Adjust** is enabled, the engine automatically calculates and sets the node’s anchor point based on the origin (0,0) in the Spine file, aligning it with the origin in the Spine editor. This allows developers to conveniently perform actions like mirroring or rotating animations based on the anchor point.
+### 2.10 Auto Adjust autoAdjust
+After enabling **Auto Adjust**, the engine reads the origin (0,0) from the Spine file and automatically calculates the node's anchor point based on this, keeping it consistent with the origin in the Spine editor.
 
-As shown in Animation 2-7, **after enabling this feature, the node’s own anchor point settings will be ignored**. If further offset adjustments are needed, they can be done via the Spine component’s offset properties or by nesting the Spine node within another node.
+This way, developers can easily complete operations like animation mirroring and rotation based on the anchor point. As shown in Animated Figure 2-7.
 
 ![](img/2-7.gif)
 
-(Animation 2-7)
+(Figure 2-7)
 
+It's important to note that **after enabling this feature, the anchor point setting of the node where the Spine component is located will no longer take effect.**
 
-## 3\. External Skins `externalSkins` (Part Swapping)
+If you still need additional position offset, you can use Spine's offset property or wrap it in an outer node for adjustment.
 
-The main function of `externalSkins` is to import other Spine resources to replace attachments on the current Spine's slots under different skins.
+### 2.11 Offset offset
 
-> The external skins feature does not support Fast Render mode (`useFastRender`).
+When the position calculated by **Auto Adjust** still has deviations from expectations, you can use **Offset** for precise fine-tuning of the final display position.
 
-### 3.1 Importing External Skin Resources
+### 2.12 Premultiplied Alpha `premultipliedAlpha`
 
-Clicking the `+` icon on the right side of `External Skins` creates a sub-object property with `Source File` and `Part List` fields, as shown in Figure 3-1.
+Usually, the LayaAir engine reads the Spine animation and 'Premultiplied Alpha' settings in the IDE, performing premultiplication processing on Spine textures based on the settings. Sometimes, the developer's images have already undergone premultiplied alpha processing, but neither Spine nor the IDE has the premultiplied alpha option checked. At this time, the engine will make incorrect judgments and processing. Enabling this option explicitly tells the engine that premultiplied alpha processing needs to be enabled.
 
-![](img/3-1.png) 
+## 3. External Skins externalSkins (Part Replacement)
+
+The main function of `External Skins` is to introduce other Spine resources to replace attachments under different skins on the current Spine slots.
+
+> External skin functionality doesn't support using fast render mode (useFastRender)
+
+### 3.1 Introducing External Skin Resources
+
+Each click on the `+` sign to the right of `External Skins` creates a sub-object property containing `Source File` and `Part List`. As shown in Figure 3-1.
+
+![](img/3-1.png)
 
 (Figure 3-1)
 
-The `Source File` in the sub-object list is the Spine resource file, and the skin and attachments in the `Part List` are obtained from that source file.
+The `Source File` in the sub-object list is the Spine resource file. The skins and attachments in the `Part List` are obtained from that source file.
 
-In principle, each sub-object's `Source File` should correspond to a different Spine resource file; do not use duplicates. This is because the engine will apply each setting in the list, and duplicate resource settings will overwrite the previous identical setting.
+In principle, each sub-object's `Source File` should correspond to a different Spine resource file and should not be duplicated. Because the engine will apply to every setting in the list, duplicate resource settings will override the previous identical setting.
 
-It is important to note that external skins are used to replace attachments from another set of skins that are outside the current Spine component's skin set.
+It should be noted that the function of external skins is to replace attachments under another skin outside the current component's Spine skin.
 
-If the Spine resource for the current component has multiple skins, you can still reference them in the sub-object list of external skins, as shown in Figure 3-2. Just be careful not to reuse the same resource within the sub-objects.
+If there are multiple sets of skins in the Spine resources under the current component, they can still be referenced in the external skin's sub-object list. As shown in Figure 3-2, just be careful not to reuse them in sub-objects.
 
-![](img/3-2.png) 
+![](img/3-2.png)
 
 (Figure 3-2)
 
 ### 3.2 Replacing Different Parts
 
-The `Part List` in the `External Skins` sub-object is used to specify which attachment from a skin in the corresponding source file should be used for which slot.
+The `Part List` in the `External Skins` sub-object list is used to handle which attachment under which skin in the source file corresponding to the current sub-object corresponds to which slot.
 
-#### 3.2.1 Slot Name `slot`
+#### 3.2.1 Slot Name slot
 
-The `Slot Name` is a list of all slots in the current component's Spine resource file. Developers can select the slot they want to replace from the list, as shown in Figure 3-3.
+`Slot Name` is the list of all slots in the current component's Spine resource file. Developers can select the corresponding slot name from the list to replace whichever slot they want. As shown in Figure 3-3.
 
-![](img/3-3.png) 
+![](img/3-3.png)
 
 (Figure 3-3)
 
-#### 3.2.2 Skin Name `skin`
+#### 3.2.2 Skin Name skin
 
-The `Skin Name` is a list of all skins from the `Source File` corresponding to the `External Skins` sub-object.
+`Skin Name` comes from the complete skin list corresponding to the `Source File` in the `External Skins` sub-object.
 
-In Spine, a single skin can correspond to different attachments, as shown in animated Figure 3-4.
+In Spine, under the same skin, there will be different attachments. The effect is shown in Animated Figure 3-4.
 
-![](img/3-4.gif) 
+![](img/3-4.gif)
 
-(Animated Figure 3-4)
+(Figure 3-4)
 
-Similarly, the same attachment name can have a different appearance under different skins. As shown in animated Figure 3-5, switching the skin name changes the appearance of the right leg.
+Or rather, the same attachment name has different appearances under different skins. The effect is shown in Animated Figure 3-5. Switching different skin names changes the appearance of the right leg's skin.
 
-![](img/3-5.gif) 
+![](img/3-5.gif)
 
-(Animated Figure 3-5)
+(Figure 3-5)
 
-#### 3.2.3 Attachment Name `attachment`
+#### 3.2.3 Attachment Name attachment
 
-To facilitate needs like changing outfits or weapons, a Spine character is usually broken down into individual parts. In Spine, these parts are professionally called `attachments`, which need to be connected through slots. The effect is shown in animated Figure 3-6.
+To facilitate needs like changing outfits or weapons, Spine is usually split into individual parts. This part has a professional term in Spine called `attachment`. Attachments need to be connected through slots. The effect is shown in Animated Figure 3-6.
 
-![](img/3-6.gif) 
+![](img/3-6.gif)
 
-(Animated Figure 3-6)
+(Figure 3-6)
 
 ### 3.3 Code Example for Replacing Parts
 
-Visual operations are usually used for previewing effects or changing default settings. Replacing attachments is more commonly controlled through code, for example, to change a weapon.
+Visual operations are usually used to preview effects or change default settings. Replacing attachments is more commonly controlled through code, such as changing weapons.
 
-Here is a code example:
+Example code is as follows:
 
 ```typescript
 const { regClass, property } = Laya;
@@ -259,116 +270,119 @@ const { regClass, property } = Laya;
 @regClass()
 export class NewScript extends Laya.Script {
 
-     @property({ type: Laya.Button, caption: "Switch Button" })
-     public btn: Laya.Button;
+    @property({ type: Laya.Button, caption: "Switch Button" })
+    public btn: Laya.Button;
 
-     spine: Laya.Spine2DRenderNode;
+    spine: Laya.Spine2DRenderNode;
 
-     // External skin object.
-     weaponSkin: Laya.ExternalSkin = new Laya.ExternalSkin();
-     // External skin list item.
-     weaponSkinItem: Laya.ExternalSkinItem = new Laya.ExternalSkinItem();
+    //External skin
+    weaponSkin: Laya.ExternalSkin = new Laya.ExternalSkin();
+    //External skin list item
+    weaponSkinItem: Laya.ExternalSkinItem = new Laya.ExternalSkinItem();
 
-     // Executed after the component is activated. All nodes and components have been created at this point. This method is executed only once.
-     onAwake(): void {
-         // Load Spine animation resources.
-         Laya.loader.load(["spine4.1/boss.json", "spine4.1/role.json"], Laya.Loader.SPINE).then(() => {
-             // Add the Spine Renderer component to the sprite node and return the component.
-             this.spine = this.owner.addComponent(Laya.Spine2DRenderNode);
-             this.spine.source = "spine4.1/role.json"; // Set the Spine animation data source.
-             this.spine.skinName = "default"; // Set the skin name.
-             this.spine.play("att", true); // Play the "att" attack animation, true indicates looping.
 
-             this.btn.on(Laya.Event.CLICK, this, this.changeAttachment); // Listen for click events to trigger the method for changing the weapon.
 
-             // The following basic settings can be set in the IDE, so you don't have to add them in code. This is just for demonstration.
-             // Set the external skin object.
-             this.spine.externalSkins = [this.weaponSkin];
-             // Set data for the external skin object.
-             this.weaponSkin.source = "spine4.1/boss.json"; // Set the external skin data source.
-             this.weaponSkin.items = [this.weaponSkinItem]; // Set the external skin list items.
-             // Set data for the external skin list item.
-             this.weaponSkinItem.slot = "taidao"; // Set the slot name.
-             this.weaponSkinItem.skin = "default"; // Set the skin name.
-         });
-     }
+    //Executed after component is activated, at this time all nodes and components have been created. This method only executes once
+    onAwake(): void {
+        // Load Spine animation resources
+        Laya.loader.load(["spine4.1/boss.json", "spine4.1/role.json"], Laya.Loader.SPINE).then(() => {
+            // Add Spine renderer component to sprite node and return Spine renderer component after adding
+            this.spine = this.owner.addComponent(Laya.Spine2DRenderNode);
+            this.spine.source = "spine4.1/role.json"; // Set Spine animation data source
+            this.spine.skinName = "default"; // Set skin name
+            this.spine.play("att", true); // Play attack animation named "att", true means loop playback
 
-     // Change the weapon.
-     changeAttachment(): void {
-         // Switch the weapon based on the current attachment state.
-         const newAttachment = this.weaponSkinItem.attachment === "weapon_1" ? "weapon_3" : "weapon_1";
-         this.setAttachment("taidao", "default", newAttachment);
-         console.log(`Switched to ${newAttachment}`);
-     }
+            this.btn.on(Laya.Event.CLICK, this, this.changeAttachment); //Listen for click event to trigger weapon switching method
 
-     // Set the weapon attachment.
-     setAttachment(slot: string, skinName: string, attachmentName: string): void {
-         this.weaponSkinItem.slot = slot; // Set the slot name.
-         this.weaponSkinItem.skin = skinName; // Set the skin name.
-         this.weaponSkinItem.attachment = attachmentName; // Set the attachment name.
-         this.spine.resetExternalSkin(); // Reset the loaded external skin to apply the settings.
-     }
+            //The following basic settings can be set in the IDE, so code doesn't need to add them. This is only to demonstrate code usage
+            //Set external skin object
+            this.spine.externalSkins = [this.weaponSkin];
+            // Set data for external skin object
+            this.weaponSkin.source = "spine4.1/boss.json"; // Set external skin data source
+            this.weaponSkin.items = [this.weaponSkinItem];// Set external skin list item
+            // Set data for external skin list item
+            this.weaponSkinItem.slot = "taidao"; // Set slot name
+            this.weaponSkinItem.skin = "default"; // Set skin name
+
+        });
+    }
+
+    //Change weapon
+    changeAttachment(): void {
+        // Switch weapon based on current attachment state
+        const newAttachment = this.weaponSkinItem.attachment === "weapon_1" ? "weapon_3" : "weapon_1";
+        this.setAttachment("taidao", "default", newAttachment);
+        console.log(`Switched to ${newAttachment}`);
+    }
+
+    //Set weapon attachment
+    setAttachment(slot: string, skinName: string, attachmentName: string): void {
+        this.weaponSkinItem.slot = slot; // Set slot name
+        this.weaponSkinItem.skin = skinName; // Set skin name
+        this.weaponSkinItem.attachment = attachmentName; // Set attachment name
+        this.spine.resetExternalSkin(); // Reset loaded external skin to make settings take effect
+    }
 }
 ```
 
-The code in action is shown in animated Figure 3-7.
+The code running effect is shown in Animated Figure 3-7.
 
-![](img/3-7.gif) 
+![](img/3-7.gif)
 
-(Animated Figure 3-7)
+(Figure 3-7)
 
-## 4\. Common Considerations (Must Read)
+## 4. Common Precautions (Must Read)
 
-### 4.1 Playback Issues due to Asynchronous Loading
+### 4.1 Playback Issues Caused by Asynchronous Loading
 
-Sometimes, due to the large size of Spine resources and slow user network speeds, the code controlling the Spine component may fail or report errors. This happens because the resources are still in the process of asynchronous loading when lifecycle methods like `onAwake` and `onEnable` are executed, and are not yet fully loaded. This can cause issues with usage.
+Sometimes, due to comprehensive reasons such as slightly larger Spine resources and slow user network speeds, the code controlling the Spine component may fail or error. This is because when lifecycle methods like onAwake and onEnable execute, the resource is still in asynchronous loading and hasn't finished loading yet. So usage problems occur.
 
-The solution is to put larger Spine resources into the preloading queue to load them in advance.
+The solution is to put slightly larger Spine resources in the preload queue and load them in advance.
 
-Alternatively, listen for the `Laya.Event.READY` event before processing your logic.
+Or listen to the `Laya.Event.READY` event before processing logic.
 
-### 4.2 You Must Specify the Type When Loading a Spine JSON
+### 4.2 Must Specify Type When Loading Spine JSON
 
-If developers load a binary Spine resource, they can omit the type because the binary suffix is special and can be specified internally by the engine. However, JSON is a general resource type, so the engine cannot specify the type internally. Therefore, developers must specify the Spine type as `Laya.Loader.SPINE` during loading, as shown in the example below:
+If developers load binary Spine resources, they can omit the type because Spine's binary suffix is quite unique and can be directly identified by the engine internally. However, JSON type is a general resource type that the engine cannot specify internally. Therefore, developers must specify the Spine type as `Laya.Loader.SPINE` type when loading. Example is as follows:
 
 ```typescript
-// Load the Spine animation data resource (json file), making sure to set the type to Laya.Loader.SPINE, otherwise the json will not be recognized as a Spine resource.
+// Load Spine animation data resource (json file). Note: must be set to Laya.Loader.SPINE type, otherwise json won't be recognized as SPINE resource
 Laya.loader.load(["aa.json", "bb.json"], Laya.Loader.SPINE);
 ```
 
-### 4.3 Display Differences with Alpha Blending
+### 4.3 Display Differences with Transparent Blending
 
-Some developers have reported that the effect seen in Spine is different from the engine's effect, typically appearing less bright or with less obvious semi-transparent areas.
+Some developers report that effects seen in Spine differ from engine effects. Common manifestations include insufficient brightness andnot obvious semi-transparent areas.
 
-In fact, these issues are almost always caused by texture configurations for alpha blending. This is especially common for projects that worked fine in version 3.1 but show discrepancies in 3.2 and later.
+Actually, the above problems are almost all caused by texture configuration for transparent blending. Especially version 3.1 might be normal, but differences start appearing from 3.2.
 
-Starting from LayaAir 3.2, a distinction is made between premultiplied and non-premultiplied blending for Spine.
+Since LayaAir 3.2 started, distinctions were made between spine premultiplied and non-premultiplied blending methods.
 
-If your Spine requires alpha blending, you cannot use the default sprite texture type. You need to make the following changes to the Spine texture resources in the IDE project:
+If Spine has transparent blending needs, you cannot use the sprite texture texture type. You need to make the following changes to Spine resources in the IDE project:
 
-  - In the Project Resources panel, select the texture from your Spine resource.
-  - In the Spine texture's property panel, change the `Texture Type` to `Default`.
-  - Check the `sRGB Color Space` box.
-  - Make sure **not** to check `Premultiply Alpha` (do not check this when exporting from Spine either).
-  - Click `Apply`.
+- In the project resource panel, select textures in Spine resources.
+- On the Spine texture's property panel, change the texture type to default type.
+- Check sRGB color space
+- Be careful not to check Premultiplied Alpha (also don't check when exporting from Spine)
+- Click Apply
 
-These steps are shown in Figure 4-1:
+The above operations are shown in Figure 4-1:
 
-![](img/4-1.png) 
+![](img/4-1.png)
 
 (Figure 4-1)
 
-Note: If the effect is still incorrect after applying, refresh the IDE.
-Additionally, if you have multiple Spine textures, you can select them all at once to set them. Or, developers can write an IDE plugin to automate this process.
+Note: If the effect is incorrect after applying, refresh the IDE.
+Also, if there are multiple Spines, you can select multiple textures and set them all at once. Or developers can write an IDE plugin to automatically handle the above operations.
 
-### 4.4 Do Not Manually Load Spine's .atlas and .png Files
+### 4.4 Don't Actively Load Spine's Atlas and PNG
 
-When developers manually load Spine's `.atlas` files in code or preload them in the IDE's Scene2D, they may see a warning similar to the following during runtime:
+When developers preload Spine's atlas in code or in the IDE's Scene2D, warnings similar to the following will appear at runtime.
 
 ```sh
 Failed to load 'http://localhost:18094/resources/ddlx_02/ddlx_02.atlas' Unexpected token 'd', "ddlx_02.pn"... is not valid JSON
 ```
 
-This occurs because although a Spine `.atlas` file has the same name as our engine's atlas files, they are not the same thing. Our atlas information is in JSON format, while Spine's is not. So, when loading, the engine finds that the `.atlas` file is not a valid JSON and reports the warning `"... load 'xxx.atlas'....is not valid JSON"`.
+This is because, although Spine's atlas and our engine's atlas file atlas have the same name, they're not the same thing. Our atlas information is in JSON format, while Spine's is not. So when loading, finding that the atlas isn't JSON, it reports the `"... load 'xxx.atlas'....is not valid JSON"` warning.
 
-When loading a Spine asset, developers only need to load the main Spine file (`.skel` or `.json`). You do not need to manually load the `.atlas` and `.png` files, as the engine will automatically load the associated resources based on the main Spine file.
+When developers load Spine, they only need to load the Spine main file (`.skel` or `.json`). Atlas and PNG don't need to be actively loaded by developers. The engine will automatically load associated resources based on the Spine main file.

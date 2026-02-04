@@ -371,7 +371,7 @@ As shown in Figure 2-23, in the quick creation menu, click "Automatic Atlas Sett
 
 By creating an AtlasConfig, developers can use it to automatically package atlases
 
-Please refer to [《General Setting》](../../../released/generalSetting/readme.md)。 for instructions on how to use auto-generated atlases.
+Please refer to ["General Setting"](../../../released/generalSetting/readme.md)。 for instructions on how to use auto-generated atlases.
 
 
 

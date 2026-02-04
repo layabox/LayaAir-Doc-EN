@@ -1,6 +1,6 @@
 # Model Import Settings
 
-> Author: Charley & 孟星煜
+> Author: Charley & Meng Xingyu
 
 ## I. Model Import and Setup
 
@@ -107,8 +107,8 @@ We provide a summary in the table below.
 
 | Chinese Property Name | English Property Name | Property Description |
 |---|---|---|
-| 动态读写 | read Write | When checked, allows developers to dynamically access or modify model data at runtime (e.g., modifying mesh vertex information for facial manipulation).\<br /\>Note that enabling `read Write` increases memory usage.\<br /\>Therefore, if your model does not need to be modified at runtime, please do not enable this option to save memory. |
-| 网格压缩 | mesh Compress | When checked, mesh data can be compressed to reduce the mesh file size.\<br /\>Note that compressed meshes will reside in the IDE's temporary directory; the original model remains unchanged.\<br /\>The volume reduction will only be visible after publishing. |
+| Dynamic Read/Write | read Write | When checked, allows developers to dynamically access or modify model data at runtime (e.g., modifying mesh vertex information for facial manipulation).\<br /\>Note that enabling `read Write` increases memory usage.\<br /\>Therefore, if your model does not need to be modified at runtime, please do not enable this option to save memory. |
+| Mesh Compression | mesh Compress | When checked, mesh data can be compressed to reduce the mesh file size.\<br /\>Note that compressed meshes will reside in the IDE's temporary directory; the original model remains unchanged.\<br /\>The volume reduction will only be visible after publishing. |
 | 标准化权重 | standardized weights | Adjusts total weights to 1 through weight correction,\<br /\>used to solve issues like distortion that might occur if the model exceeds a certain range. It's recommended to keep this checked.\<br /\>If you can ensure the model will not have issues when applied, you can uncheck it; this will preserve the original model data for its original effect. |
 | 导入变形目标 | import Morph Target | Imports morph target (also called Blend Shape) data from the model. |
 

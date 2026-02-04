@@ -1,12 +1,12 @@
 # Detailed Explanation of Component Decorator Identifiers
 
-> Author: Charley, 谷主,孟星煜
+> Author: Charley, Guzhu, Meng Xingyu
 
 In the ECS (Entity-Component-System) architecture adopted by the LayaAir engine, **components are the core units for carrying data. Each component focuses on storing specific attributes and states of an entity**, such as a character's position, velocity, health, etc. This data provides the foundation for systems to process logic, as systems execute corresponding business logic based on component data.
 
 The core role of decorators in LayaAir-IDE is to help the IDE recognize custom components created by developers. **Through decorator identifiers, developers can easily and quickly expose data that needs to be configured within a component to the IDE's property panel.** This eliminates the need for developers to write additional configuration code, allowing them to directly adjust component parameters in a visual interface. This greatly enhances development efficiency and operational convenience by facilitating efficient data transfer and component configuration.
 
-This document will provide a comprehensive introduction to the function and usage of decorator identifiers. For **more comprehensive ECS-related knowledge**, please refer to the[《Component》](../../../basics/common/Component/readme.md) documentation.
+This document will provide a comprehensive introduction to the function and usage of decorator identifiers. For **more comprehensive ECS-related knowledge**, please refer to the["Component"](../../../basics/common/Component/readme.md) documentation.
 
 
 ## 1\. Identifying Component Scripts: @regClass()

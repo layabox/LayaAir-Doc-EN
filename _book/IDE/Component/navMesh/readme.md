@@ -2,7 +2,7 @@
 
 > Version >= LayaAir 3.2
 
-## 一、Profile
+## 1. Profile
 
 In game development, 3D pathfinding is a crucial feature, especially in games that require simulating characters or objects automatically navigating and moving within a three-dimensional space. 3D pathfinding enables game characters to intelligently find the optimal path from one point to another in complex 3D environments while avoiding obstacles and other potential hindrances.
 
@@ -18,7 +18,7 @@ The following components are used to implement a simple 3D pathfinding.
 
 
 
-## 二、Navigation & Pathfinding
+## 2.Navigation & Pathfinding
 
 To implement a pathfinding process, it is necessary to add navigation meshes, agents, and others. The navigation mesh represents the areas within which characters can move, while agents represent the entities undergoing navigation (such as characters, NPCs, vehicles, etc.). Additionally, navigation area links can be used to enable some special functionalities.
 

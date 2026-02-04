@@ -90,7 +90,7 @@ The common asset types in LayaAir are as follows:
 
 If you want to export assets from a Unity project for development in LayaAir, you need to use the "Unity Asset Export Plugin."
 
-Note that this plugin does not support exporting all asset types. For specific supported types and usage instructions, please refer to the [《Unity Resource Export Plugin》](../../3D/advanced/Unity/readme.md) document.
+Note that this plugin does not support exporting all asset types. For specific supported types and usage instructions, please refer to the ["Unity Resource Export Plugin"](../../3D/advanced/Unity/readme.md) document.
 
 -----
 
@@ -98,7 +98,7 @@ Note that this plugin does not support exporting all asset types. For specific s
 
 ### 3.1 Basic Workflow
 
-Developers can refer to the [《Development Workflow: Hello World》](https://www.google.com/search?q=../IDE/helloWorld/readme.md) document to understand the overall development process, including essential operations like environment setup, project creation, basic settings, and running and debugging.
+Developers can refer to the ["Development Workflow: Hello World"](https://www.google.com/search?q=../IDE/helloWorld/readme.md) document to understand the overall development process, including essential operations like environment setup, project creation, basic settings, and running and debugging.
 
 ### 3.2 UI Editing
 
@@ -110,35 +110,35 @@ When developing games in LayaAir, you will write script code for logic control. 
 
 The program blueprint feature allows developers to write a script component using a node-based "connect the dots" method or extend built-in UI controls.
 
-For information on using program blueprints, please refer to the [《haderBlueprint》](../../IDE/ShaderBlueprint/blueprint/readme.md)document.
+For information on using program blueprints, please refer to the ["haderBlueprint"](../../IDE/ShaderBlueprint/blueprint/readme.md)document.
 
 ### 3.4 Animation Editing
 
 Similar to creating and editing animations in Unity, LayaAir provides related functionality.
 
-If you want to create an animation file and edit custom animations, refer to the [《animationEditor》](../../IDE/animationEditor/timelineGUI/readme.md)document.
+If you want to create an animation file and edit custom animations, refer to the ["animationEditor"](../../IDE/animationEditor/timelineGUI/readme.md)document.
 
-If you already have usable animation files, you can refer to the [《animationEditor》](../../IDE/animationEditor/aniController/readme.md) document to learn how to use them.
+If you already have usable animation files, you can refer to the ["animationEditor"](../../IDE/animationEditor/aniController/readme.md) document to learn how to use them.
 
 ### 3.5 Rendering
 
 Both LayaAir and Unity can achieve rich effects through Shaders. The usage is similar: apply the Shader to a material, and then apply the material to an object.
 
-To use 3D shaders, refer to the [《customShader3D》](../../3D/advanced/customShader/readme.md)document. To use 2D shaders, refer to the [《customShader2D》](../../2D/advanced/customShader/readme.md) document.
+To use 3D shaders, refer to the ["customShader3D"](../../3D/advanced/customShader/readme.md)document. To use 2D shaders, refer to the ["customShader2D"](../../2D/advanced/customShader/readme.md) document.
 
 ### 3.6 Physics System
 
 LayaAir has a built-in Box2D 2D physics engine and Bullet/PhysX 3D physics engines.
 
-For using the 2D physics engine, refer to the[《physics2D》](../../IDE/physicsEditor/physics2D/readme.md) document. For the 3D physics engine, refer to the [《physics3D》](../../IDE/physicsEditor/physics3D/readme.md) document.
+For using the 2D physics engine, refer to the["physics2D"](../../IDE/physicsEditor/physics2D/readme.md) document. For the 3D physics engine, refer to the ["physics3D"](../../IDE/physicsEditor/physics3D/readme.md) document.
 
-Of course, developers can also integrate other third-party physics engines into the LayaAir engine and switch between them directly through LayaAir's physics interface. For the specific process, refer to the [《customPhysicsEngine》](../../3D/advanced/customPhysicsEngine/readme.md)document.
+Of course, developers can also integrate other third-party physics engines into the LayaAir engine and switch between them directly through LayaAir's physics interface. For the specific process, refer to the ["customPhysicsEngine"](../../3D/advanced/customPhysicsEngine/readme.md)document.
 
 ### 3.7 Custom Plugins
 
 LayaAir-IDE supports user-defined plugins to develop more extended features. The plugin system encapsulates most functions based on the Electron framework, so plugin developers don't need to learn front-end frameworks; they can complete custom plugins using only the UI framework provided by the IDE.
 
-To develop plugins within the LayaAir-IDE, refer to the[《plug-in》](../../IDE/layapackage/plug-in/readme.md) document. To import and use plugins from the LayaAir Asset Store, refer to the [《pluginImport》](../../IDE/layapackage/pluginImport/readme.md) document.
+To develop plugins within the LayaAir-IDE, refer to the["plug-in"](../../IDE/layapackage/plug-in/readme.md) document. To import and use plugins from the LayaAir Asset Store, refer to the ["pluginImport"](../../IDE/layapackage/pluginImport/readme.md) document.
 
 ### 3.8 Build and Publish
 

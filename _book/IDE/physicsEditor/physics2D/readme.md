@@ -356,8 +356,6 @@ Through the XOR binary method, we can quickly specify the collision rigid bodies
 
 In order to simplify understanding and quickly design, the XOR operation also has a simple mask value method. That is to add +1 to the sum of the collision categories to be excluded, and then take the negative value.
 
-
-
 ## 3. Collider `collider`
 
 The LayaAir engine and IDE encapsulate a collider that is easier to understand and use based on the shape of the Box2D physics engine. The following is an introduction to the LayaAir3 collision body.
@@ -650,7 +648,7 @@ When the starting vertex to the final vertex, the direction is from left to righ
 
 On the contrary, the direction is from right to left, which is counterclockwise. The normal line is upward, and collision will only occur from bottom to top. The effect is shown in the animation 16-8.
 
-![Demonstrates the collision effect on both sides of a horizontal polyline](16-8.gif)
+![Demonstrates the collision effect on both sides of a horizontal polyline](img/16-8.gif)
 
 (Animation 16-8)
 
@@ -681,8 +679,6 @@ Different from the chain-shaped collider, even if it is a line segment shape com
 ![Demonstrates the contrast effect of chain-shaped and edge collision bodies composed of the same two points, and collisions on both sides at the same time](img/17-2.gif)
 
 (Animation 17-2)
-
-
 
 ## 4. Joint `Joint`
 
@@ -868,13 +864,9 @@ Pulley joints simulate the principles of physical pulleys in real life. In a pul
 
 Since the pulley movement is based on the lever principle, the range point is the end of the movement. As shown in the animated picture 18-1, after reaching the range point, it will not continue to move along the original direction of movement. In Figure 18-2 below, the green point in the red circle is the range point `selfGroundPoint` where the pulley constrains itself, and the red point in the red circle is another range point `otherGroundPoint` connected by the pulley constraint.
 
-![img](img/18-2.png)
-
 (Figure 18-2)
 
 The initial range point and anchor point coincide with each other, and are all at the `0,0` point. They need to be adjusted according to project requirements, as shown in animation 18-3.
-
-![18-3](img/18-3.gif)
 
 (Animation 18-3)
 
@@ -911,13 +903,9 @@ The value of the linear offset is based on the position offset of the B rigid bo
 
 ##### Angular offset `angularOffset`
 
-<img src="img/19-3.png" alt="image-20221115145746562" style="zoom:50%;" />
-
 (Figure 19-3)
 
 The value of the angle offset is based on the rotation angle offset of the B rigid body (otherBody). When torque is applied, the left side of the animation in Figure 19-4 shows the effect of no angle offset (default value 0), and the right side It is to set the angle offset effect of rotating 180 degrees.
-
-![img](img/19-4.gif)
 
 (Animation 19-4)
 
@@ -926,8 +914,6 @@ It should be noted that the attribute value of `angularOffset` is the radian val
 > Calculation formula for radian value: Number of degrees × (π / 180)
 
 ##### Maximum force `maxForce` and maximum torque `maxTorque`
-
-<img src="img/19-5.png" alt="image-20221115145918777" style="zoom:50%;" />
 
 (Figure 19-5)
 
@@ -945,13 +931,9 @@ The previous animations 19-2 and 19-4 are the effects of setting the maximum for
 
 ##### Correction factor `correctionFactor`
 
-<img src="img/19-6.png" alt="image-20221115150004634" style="zoom:50%;" />
-
 (Figure 19-6)
 
 The correction coefficient is to correct the displacement speed parameter of the own rigid body when it reaches the target rigid body position. The value range is 0-1. The larger the value, the faster the movement speed.
-
-![img](img/19-7.gif)
 
 (Animation 19-7)
 
@@ -964,8 +946,6 @@ Rotating a joint forces both bodies to share a common anchor point, often called
 > Skip the attributes introduced in the previous section. If you don’t understand, you can read forward.
 
 ##### Start the motor `enableMotor`, motor speed `motorSpeed`
-
-<img src="img/20-1.png" alt="image-20221115151607889" style="zoom:50%;" />
 
 (Figure 20-1)
 
@@ -981,13 +961,9 @@ Then set the maximum rotation speed of the motor `motorSpeed`. From the effect s
 
 In order to only demonstrate the speed comparison effect, the triangular rigid body is fixed in the animation 20-2. If the triangular rigid body returns to the default dynamic rigid body, when the motor speed is high, we can see the relative rotation of the joint motion effect, as shown in Figure 20-3.
 
-![img](img/20-3.gif)
-
 (Animation 20-3)
 
 ##### Maximum motor torque `maxMotorTorque`
-
-<img src="img/20-4.png" alt="image-20221115151738774" style="zoom:50%;" />
 
 (Figure 20-4)
 
@@ -997,8 +973,6 @@ In the previous animation effect, since `motorSpeed` is the maximum speed value,
 
 When we set the `maxMotorTorque` value to a smaller value, we will find that the initial speed will be slower, and then gradually reach the setting of the motorSpeed ​​attribute value. The effect is shown in the middle of the animation 20-5.
 
-![img](img/20-5.gif)
-
 (Animation 20-5)
 
 And we can see that the left side of the animation 20-5 does not even rotate. This is due to `maxMotorTorque` being set to 0.
@@ -1006,8 +980,6 @@ And we can see that the left side of the animation 20-5 does not even rotate. Th
 Another thing to note is that even if the `maxMotorTorque` value is set to a large value, when the `motorSpeed` value is set to a small value, the speed will still be limited by the maximum motor speed and will not get faster. The effect is shown on the right side of the animation 20-5.
 
 ##### Enable constraints `enableLimit`, lower limit angle `lowerAngle`, upper limit angle `upperAngle`
-
-<img src="img/20-6.png" alt="image-20221115151830782" style="zoom:50%;" />
 
 (Figure 20-6)
 
@@ -1019,8 +991,6 @@ The upper angle `upperAngle` is a radian value that sets the maximum rotation an
 
 The specific effect is shown in the animation 20-7.
 
-![img](img/20-7.gif)
-
 (Animation 20-7)
 
 #### 2.3.8 Translation joint `PrismaticJoint`
@@ -1028,8 +998,6 @@ The specific effect is shown in the animation 20-7.
 The joint feature of `PrismaticJoint` is to lock two rigid bodies on a specified translation axis to move toward or away from each other. The translation joint has only one degree of freedom and cannot rotate. So although prismatic literally translates to prism, it is easier to understand and remember that we call `PrismaticJoint` a translation joint or a moving joint.
 
 ##### Axial direction `axis`, open motor `enableMotor`, motor speed `motorSpeed`, maximum motor force `maxMotorForce`
-
-<img src="img/21-1.png" alt="image-20221115151935198" style="zoom:50%;" />
 
 (Figure 21-1)
 
@@ -1041,13 +1009,9 @@ Therefore, similar to rotating joints, when using translation joints, the motor 
 
 The direction of movement depends on the axis attribute `axis`. This attribute value is a vector value. The default value `1,0` means moving to the right along the X-axis. Otherwise, moving to the left along the X-axis sets `- 1,0` is enough. For specific effects, please refer to the animation shown in Figure 21-2.
 
-![img](img/21-2.gif)
-
 (Animation 21-2)
 
 ##### Enable constraints `enableLimit`, lower translation limit `lowerTranslation`, upper translation limit `upperTranslation`
-
-<img src="img/21-3.png" alt="image-20221115152032658" style="zoom:50%;" />
 
 (Figure 21-3)
 
@@ -1059,13 +1023,9 @@ The upper limit of translation `upperTranslation` refers to the maximum distance
 
 The comparison effect between the lower limit and the upper limit is shown in the animation 21-4.
 
-![img](img/21-4.gif)
-
 (Animation 21-4)
 
 #### 2.3.9 Gear joint `GearJoint`
-
-<img src="img/22-1.png" alt="image-20221115152305935" style="zoom:50%;" />
 
 (Figure 22-1)
 
@@ -1097,8 +1057,6 @@ Therefore, we first set up a dynamic joint. For example, in Figure 22-2, we use 
 
 ##### Step one:
 
-<img src="img/22-3.png" alt="image-20221115153204894" style="zoom: 33%;" />
-
 (Figure 22-3)
 
 As shown in Figure 22-3, we added a rigid body and a rectangular collision body to a node called box. Then add a translation joint, set the direction of translation (axis `axis`), turn on the motor (`enableMotor`), and set the movement speed (`motorSpeed`).
@@ -1108,8 +1066,6 @@ As shown in Figure 22-3, we added a rigid body and a rectangular collision body 
 > After this gear example, no other constraint rigid bodies are bound to any joint properties.
 
 ##### Step 2:
-
-<img src="img/22-4.png" alt="image-20221115155346038" style="zoom:33%;" />
 
 (Figure 22-4)
 
@@ -1121,7 +1077,7 @@ In fact, at this point, the complete production method of the gear joint has bee
 
 When more gear structures are needed, the way we connect all subsequent joints, whether it is a rotation joint or a translation joint, if you want to become a member of the gear group, you must not only add the corresponding physical joints, but also provide The gear joint is also added to the node it belongs to. The binding relationship is to bind your rotation joint or translation joint to joint1 or jonit2 of the gear joint. The other binds the joint you intend to have gear engagement with. Please refer to Figure 22-5 and Figure 22-4. Basically, the second step of the operation process is repeated.
 
-<img src="img/22-5.png" alt="image-20221115160118934" style="zoom:33%;" />     
+     
 
 (Figure 22-5)
 
@@ -1149,8 +1105,6 @@ When constraints are enabled (`enableLimit` is `true`), the lower limit of the m
 
 Lower limit of movement range `lowerTranslation`
 
-<img src="img/23-2.png" alt="image-20221115163955863" style="zoom: 50%;" />
-
 (Figure 23-2)
 
 After enabling constraints, the lower limit of the rigid body's movement range is the offset from the anchor.
@@ -1158,8 +1112,6 @@ After enabling constraints, the lower limit of the rigid body's movement range i
 The lower limit of the rigid body movement range `lowerTranslation` refers to how far the shortest distance of movement can be from the anchor point `anchor`. Even if the motor force is not enabled, it will be affected by this limit.
 
 Upper limit of movement range `upperTranslation`
-
-<img src="img/23-3.png" alt="image-20221115164038013" style="zoom:50%;" />
 
 (Figure 23-3)
 
@@ -1173,7 +1125,7 @@ The upper limit of the rigid body movement range `upperTranslation` refers to ho
 
 In the wheel joint, all rotating wheels can be bound to the same body rigid body, as shown in Figure 23-1.
 
-<img src="img/23-1.png" alt="image-20221115164943631" style="zoom: 33%;" />  
+  
 
 (Figure 23-4)
 

@@ -1,0 +1,4916 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>CPU Particle System · LayaAir3.4 Engine Documentation · LAYABOX</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-sidebar-style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-versions-select/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../spineBake/readme.html" />
+    
+    
+    <link rel="prev" href="../addressable/readme.html" />
+    
+
+    
+        <link rel="shortcut icon" href="./style/favicon-32.ico" type="image/x-icon">
+    
+    
+        <link rel="bookmark" href="./style/favicon-32.ico" type="image/x-icon">
+    
+    
+    
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./style/layabox-152.png">
+    
+    
+        
+    
+    
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../../">
+            
+                <a href="../../../../">
+            
+                    
+                    Documentation Home
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Engine Introduction
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../../../services.html">
+            
+                <a href="../../../../services.html">
+            
+                    
+                    Engine History and Services
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../../../basics/readme.html">
+            
+                <a href="../../../../basics/readme.html">
+            
+                    
+                    Engine Features Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../../../basics/UnityToLayaAir/readme.html">
+            
+                <a href="../../../../basics/UnityToLayaAir/readme.html">
+            
+                    
+                    Unity to LayaAir Differences
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../../../basics/2.x-Upgrade/readme.html">
+            
+                <a href="../../../../basics/2.x-Upgrade/readme.html">
+            
+                    
+                    2.x Engine Project Upgrade Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Development Environment
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../../../basics/developmentEnvironment/readme.html">
+            
+                <a href="../../../../basics/developmentEnvironment/readme.html">
+            
+                    
+                    Beginner's Guide
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../../../basics/developmentEnvironment/download/readme.html">
+            
+                <a href="../../../../basics/developmentEnvironment/download/readme.html">
+            
+                    
+                    Setting Up Development Environment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../../../../basics/developmentEnvironment/AIGC/readme.html">
+            
+                <a href="../../../../basics/developmentEnvironment/AIGC/readme.html">
+            
+                    
+                    AI Collaborative Development Environment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../../../../basics/language/readme.html">
+            
+                <a href="../../../../basics/language/readme.html">
+            
+                    
+                    TypeScript Language Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../../../basics/IDE/readme.html">
+            
+                <a href="../../../../basics/IDE/readme.html">
+            
+                    
+                    Basic Development Modules and Workflow
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../../../basics/IDE/GUI/readme.html">
+            
+                <a href="../../../../basics/IDE/GUI/readme.html">
+            
+                    
+                    IDE Main Modules Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../../../../basics/IDE/createNewProject/readme.html">
+            
+                <a href="../../../../basics/IDE/createNewProject/readme.html">
+            
+                    
+                    Creating New Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../../../../basics/IDE/projecFolders/readme.html">
+            
+                <a href="../../../../basics/IDE/projecFolders/readme.html">
+            
+                    
+                    Project Directory Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../../../../basics/IDE/entry/readme.html">
+            
+                <a href="../../../../basics/IDE/entry/readme.html">
+            
+                    
+                    Project Entry Point
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../../../../basics/IDE/helloWorld/readme.html">
+            
+                <a href="../../../../basics/IDE/helloWorld/readme.html">
+            
+                    
+                    Development Workflow: Hello World
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="../../../../basics/DevTools/readme.html">
+            
+                <a href="../../../../basics/DevTools/readme.html">
+            
+                    
+                    DevTools Debugging Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../../../basics/IDE/shortcutKeyCombinations/readme.html">
+            
+                <a href="../../../../basics/IDE/shortcutKeyCombinations/readme.html">
+            
+                    
+                    IDE Shortcuts and Mouse Interactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../../../3D/advanced/Unity/readme.html">
+            
+                <a href="../../../../3D/advanced/Unity/readme.html">
+            
+                    
+                    Unity Resource Export Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../../../basics/developmentEnvironment/CocosToLayaAir/readme.html">
+            
+                <a href="../../../../basics/developmentEnvironment/CocosToLayaAir/readme.html">
+            
+                    
+                    Cocos Resource Export Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../../../basics/developmentEnvironment/CodingMCP/readme.html">
+            
+                <a href="../../../../basics/developmentEnvironment/CodingMCP/readme.html">
+            
+                    
+                    AI Coding Environment: CodingMCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    IDE Built-in Panels
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../../../basics/IDE/Hierarchy/readme.html">
+            
+                <a href="../../../../basics/IDE/Hierarchy/readme.html">
+            
+                    
+                    Hierarchy Panel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../../../basics/IDE/projectSettings/readme.html">
+            
+                <a href="../../../../basics/IDE/projectSettings/readme.html">
+            
+                    
+                    Project Settings Panel
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../../../../basics/IDE/projectSettings/runConfig/readme.html">
+            
+                <a href="../../../../basics/IDE/projectSettings/runConfig/readme.html">
+            
+                    
+                    Run Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../../../../basics/IDE/projectSettings/engineModule/readme.html">
+            
+                <a href="../../../../basics/IDE/projectSettings/engineModule/readme.html">
+            
+                    
+                    Engine Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3" data-path="../../../../basics/IDE/projectSettings/physicalSystem/readme.html">
+            
+                <a href="../../../../basics/IDE/projectSettings/physicalSystem/readme.html">
+            
+                    
+                    Physics System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.4" data-path="../../../../basics/IDE/projectSettings/webGPU/readme.html">
+            
+                <a href="../../../../basics/IDE/projectSettings/webGPU/readme.html">
+            
+                    
+                    WebGPU
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.5" data-path="../../../../basics/IDE/projectSettings/startPage/readme.html">
+            
+                <a href="../../../../basics/IDE/projectSettings/startPage/readme.html">
+            
+                    
+                    Startup Page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.6" data-path="../../../../basics/IDE/projectSettings/statistics/readme.html">
+            
+                <a href="../../../../basics/IDE/projectSettings/statistics/readme.html">
+            
+                    
+                    Statistics Information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7" data-path="../../../../basics/IDE/projectSettings/scriptCompiler/readme.html">
+            
+                <a href="../../../../basics/IDE/projectSettings/scriptCompiler/readme.html">
+            
+                    
+                    Script Compilation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.8" data-path="../../../../basics/IDE/projectSettings/previewServer/readme.html">
+            
+                <a href="../../../../basics/IDE/projectSettings/previewServer/readme.html">
+            
+                    
+                    Preview Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.9" data-path="../../../../basics/IDE/projectSettings/preset/readme.html">
+            
+                <a href="../../../../basics/IDE/projectSettings/preset/readme.html">
+            
+                    
+                    Presets
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../../../basics/IDE/assets/readme.html">
+            
+                <a href="../../../../basics/IDE/assets/readme.html">
+            
+                    
+                    Project Assets Panel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../../../basics/IDE/AssetDependency/readme.html">
+            
+                <a href="../../../../basics/IDE/AssetDependency/readme.html">
+            
+                    
+                    Asset Dependency Panel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../../../basics/IDE/Inspector/readme.html">
+            
+                <a href="../../../../basics/IDE/Inspector/readme.html">
+            
+                    
+                    Inspector Panel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../../../basics/IDE/Game/readme.html">
+            
+                <a href="../../../../basics/IDE/Game/readme.html">
+            
+                    
+                    Preview Panel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../../../basics/IDE/layouts/readme.html">
+            
+                <a href="../../../../basics/IDE/layouts/readme.html">
+            
+                    
+                    Custom Panel Layout
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Engine Core Features
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../../../basics/common/Loader/readme.html">
+            
+                <a href="../../../../basics/common/Loader/readme.html">
+            
+                    
+                    Resource Loading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../../../basics/common/Scene/readme.html">
+            
+                <a href="../../../../basics/common/Scene/readme.html">
+            
+                    
+                    Scene Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../../../basics/common/Node/readme.html">
+            
+                <a href="../../../../basics/common/Node/readme.html">
+            
+                    
+                    Node Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../../../basics/common/Event/readme.html">
+            
+                <a href="../../../../basics/common/Event/readme.html">
+            
+                    
+                    Event Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../../../basics/common/Timer/readme.html">
+            
+                <a href="../../../../basics/common/Timer/readme.html">
+            
+                    
+                    Timer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../../../basics/common/Tween/readme.html">
+            
+                <a href="../../../../basics/common/Tween/readme.html">
+            
+                    
+                    Tween
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../../../../basics/common/Pool/readme.html">
+            
+                <a href="../../../../basics/common/Pool/readme.html">
+            
+                    
+                    Object Pool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../../../../basics/common/Component/readme.html">
+            
+                <a href="../../../../basics/common/Component/readme.html">
+            
+                    
+                    Entity Component System
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    2D Development Basics
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../../../basics/common/basicConcepts/readme.html">
+            
+                <a href="../../../../basics/common/basicConcepts/readme.html">
+            
+                    
+                    Engine Basic Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../../uiEditor/basic/readme.html">
+            
+                <a href="../../../uiEditor/basic/readme.html">
+            
+                    
+                    UI Editor Basic Interactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../../uiEditor/widgets/readme.html">
+            
+                <a href="../../../uiEditor/widgets/readme.html">
+            
+                    
+                    UI Widgets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../../../2D/displayObject/readme.html">
+            
+                <a href="../../../../2D/displayObject/readme.html">
+            
+                    
+                    2D Basic Display Objects
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.4.1" data-path="../../../../2D/displayObject/Sprite/readme.html">
+            
+                <a href="../../../../2D/displayObject/Sprite/readme.html">
+            
+                    
+                    Sprite
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2" data-path="../../../../2D/displayObject/Animation/readme.html">
+            
+                <a href="../../../../2D/displayObject/Animation/readme.html">
+            
+                    
+                    Animation Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.3" data-path="../../../../2D/displayObject/Text/readme.html">
+            
+                <a href="../../../../2D/displayObject/Text/readme.html">
+            
+                    
+                    Basic Text
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.4" data-path="../../../../2D/displayObject/SoundNode/readme.html">
+            
+                <a href="../../../../2D/displayObject/SoundNode/readme.html">
+            
+                    
+                    Audio Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.5" data-path="../../../../2D/displayObject/VideoNode/readme.html">
+            
+                <a href="../../../../2D/displayObject/VideoNode/readme.html">
+            
+                    
+                    Video Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.6" data-path="../../../uiEditor/uiComponent/OpenDataContextView/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/OpenDataContextView/readme.html">
+            
+                    
+                    Open Data Context Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../../uiEditor/graphics/readme.html">
+            
+                <a href="../../../uiEditor/graphics/readme.html">
+            
+                    
+                    Drawing Capabilities
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../../../uiEditor/Area2D/readme.html">
+            
+                <a href="../../../uiEditor/Area2D/readme.html">
+            
+                    
+                    2D Area
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.6.1" data-path="../../../uiEditor/Area2D/Camera2D/readme.html">
+            
+                <a href="../../../uiEditor/Area2D/Camera2D/readme.html">
+            
+                    
+                    2D Camera
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../../../Component/2D/2DRender/readme.html">
+            
+                <a href="../../../Component/2D/2DRender/readme.html">
+            
+                    
+                    Render Components
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.7.1" data-path="../../../Component/2D/2DRender/Mesh2DRender/readme.html">
+            
+                <a href="../../../Component/2D/2DRender/Mesh2DRender/readme.html">
+            
+                    
+                    2D Mesh Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7.2" data-path="../../../Component/2D/2DRender/Spine2DRenderNode/readme.html">
+            
+                <a href="../../../Component/2D/2DRender/Spine2DRenderNode/readme.html">
+            
+                    
+                    Spine Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7.3" data-path="../../../Component/2D/2DRender/Trail2DRender/readme.html">
+            
+                <a href="../../../Component/2D/2DRender/Trail2DRender/readme.html">
+            
+                    
+                    2D Trail Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7.4" data-path="../../../Component/2D/2DRender/Line2DRender/readme.html">
+            
+                <a href="../../../Component/2D/2DRender/Line2DRender/readme.html">
+            
+                    
+                    2D Line Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7.5" data-path="../../../particleEditor2D/readme.html">
+            
+                <a href="../../../particleEditor2D/readme.html">
+            
+                    
+                    2D Particle Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../../../uiEditor/PostProcess/readme.html">
+            
+                <a href="../../../uiEditor/PostProcess/readme.html">
+            
+                    
+                    Post Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../../../../2D/dynamicAtlas/readme.html">
+            
+                <a href="../../../../2D/dynamicAtlas/readme.html">
+            
+                    
+                    Dynamic Atlas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../../../uiEditor/runtime/readme.html">
+            
+                <a href="../../../uiEditor/runtime/readme.html">
+            
+                    
+                    UI Runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../../../uiEditor/use3D/readme.html">
+            
+                <a href="../../../uiEditor/use3D/readme.html">
+            
+                    
+                    2D Nodes Using 3D
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    New UI System
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../../uiEditor/FairyGUI/readme.html">
+            
+                <a href="../../../uiEditor/FairyGUI/readme.html">
+            
+                    
+                    Basic Usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../../uiEditor/FairyGUI/controller/readme.html">
+            
+                <a href="../../../uiEditor/FairyGUI/controller/readme.html">
+            
+                    
+                    Controller
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../../../uiEditor/FairyGUI/relation/readme.html">
+            
+                <a href="../../../uiEditor/FairyGUI/relation/readme.html">
+            
+                    
+                    Relation System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../../../uiEditor/FairyGUI/layout/readme.html">
+            
+                <a href="../../../uiEditor/FairyGUI/layout/readme.html">
+            
+                    
+                    Layout Containers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../../../uiEditor/FairyGUI/scroller/readme.html">
+            
+                <a href="../../../uiEditor/FairyGUI/scroller/readme.html">
+            
+                    
+                    Scrolling Support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../../../uiEditor/FairyGUI/selection/readme.html">
+            
+                <a href="../../../uiEditor/FairyGUI/selection/readme.html">
+            
+                    
+                    Selection Support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../../../uiEditor/FairyGUI/GWidget/readme.html">
+            
+                <a href="../../../uiEditor/FairyGUI/GWidget/readme.html">
+            
+                    
+                    Widget Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../../../uiEditor/FairyGUI/GImage/readme.html">
+            
+                <a href="../../../uiEditor/FairyGUI/GImage/readme.html">
+            
+                    
+                    Image Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="../../../uiEditor/FairyGUI/GMovieClip/readme.html">
+            
+                <a href="../../../uiEditor/FairyGUI/GMovieClip/readme.html">
+            
+                    
+                    MovieClip Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="../../../uiEditor/FairyGUI/GLoader/readme.html">
+            
+                <a href="../../../uiEditor/FairyGUI/GLoader/readme.html">
+            
+                    
+                    Loader Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.11" data-path="../../../uiEditor/FairyGUI/GTextField/readme.html">
+            
+                <a href="../../../uiEditor/FairyGUI/GTextField/readme.html">
+            
+                    
+                    Text Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.12" data-path="../../../uiEditor/FairyGUI/GTextInput/readme.html">
+            
+                <a href="../../../uiEditor/FairyGUI/GTextInput/readme.html">
+            
+                    
+                    Input Text Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.13" data-path="../../../uiEditor/FairyGUI/GBox/readme.html">
+            
+                <a href="../../../uiEditor/FairyGUI/GBox/readme.html">
+            
+                    
+                    Box Container Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.14" data-path="../../../uiEditor/FairyGUI/GPanel/readme.html">
+            
+                <a href="../../../uiEditor/FairyGUI/GPanel/readme.html">
+            
+                    
+                    Panel Container Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.15" data-path="../../../uiEditor/FairyGUI/GList/readme.html">
+            
+                <a href="../../../uiEditor/FairyGUI/GList/readme.html">
+            
+                    
+                    List Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.16" data-path="../../../uiEditor/FairyGUI/GTree/readme.html">
+            
+                <a href="../../../uiEditor/FairyGUI/GTree/readme.html">
+            
+                    
+                    Tree Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.17" data-path="../../../uiEditor/FairyGUI/GButton/readme.html">
+            
+                <a href="../../../uiEditor/FairyGUI/GButton/readme.html">
+            
+                    
+                    Button Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.18" data-path="../../../uiEditor/FairyGUI/GComboBox/readme.html">
+            
+                <a href="../../../uiEditor/FairyGUI/GComboBox/readme.html">
+            
+                    
+                    ComboBox Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.19" data-path="../../../uiEditor/FairyGUI/GProgressBar/readme.html">
+            
+                <a href="../../../uiEditor/FairyGUI/GProgressBar/readme.html">
+            
+                    
+                    Progress Bar Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.20" data-path="../../../uiEditor/FairyGUI/GSlider/readme.html">
+            
+                <a href="../../../uiEditor/FairyGUI/GSlider/readme.html">
+            
+                    
+                    Slider Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.21" data-path="../../../uiEditor/FairyGUI/GScrollBar/readme.html">
+            
+                <a href="../../../uiEditor/FairyGUI/GScrollBar/readme.html">
+            
+                    
+                    Scrollbar Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.22" data-path="../../../uiEditor/FairyGUI/GWindow/readme.html">
+            
+                <a href="../../../uiEditor/FairyGUI/GWindow/readme.html">
+            
+                    
+                    Window Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.23" data-path="../../../uiEditor/FairyGUI/Groot/readme.html">
+            
+                <a href="../../../uiEditor/FairyGUI/Groot/readme.html">
+            
+                    
+                    Root Node and Popup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.24" data-path="../../../uiEditor/FairyGUI/i18n/readme.html">
+            
+                <a href="../../../uiEditor/FairyGUI/i18n/readme.html">
+            
+                    
+                    Internationalization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Classic UI System
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../../../uiEditor/uiComponent/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/readme.html">
+            
+                    
+                    Basic Usage and Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../../../uiEditor/uiComponent/namingRule/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/namingRule/readme.html">
+            
+                    
+                    UI Component Resource Naming Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../../../uiEditor/uiComponent/Image/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/Image/readme.html">
+            
+                    
+                    Image Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../../../uiEditor/uiComponent/Label/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/Label/readme.html">
+            
+                    
+                    Label Text Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../../../uiEditor/uiComponent/TextInput/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/TextInput/readme.html">
+            
+                    
+                    Input Text Component
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.5.1" data-path="../../../uiEditor/uiComponent/TextArea/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/TextArea/readme.html">
+            
+                    
+                    Multi-line Text Input Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../../../uiEditor/uiComponent/Clip/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/Clip/readme.html">
+            
+                    
+                    Bitmap Clip Component
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.6.1" data-path="../../../uiEditor/uiComponent/FontClip/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/FontClip/readme.html">
+            
+                    
+                    Font Clip Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../../../uiEditor/uiComponent/Button/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/Button/readme.html">
+            
+                    
+                    Button Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../../../uiEditor/uiComponent/scroll/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/scroll/readme.html">
+            
+                    
+                    Scrollbar Component
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.8.1" data-path="../../../uiEditor/uiComponent/HScrollBar/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/HScrollBar/readme.html">
+            
+                    
+                    Horizontal Scrollbar Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8.2" data-path="../../../uiEditor/uiComponent/VScrollBar/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/VScrollBar/readme.html">
+            
+                    
+                    Vertical Scrollbar Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../../../uiEditor/uiComponent/slider/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/slider/readme.html">
+            
+                    
+                    Slider Component
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.9.1" data-path="../../../uiEditor/uiComponent/HSlider/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/HSlider/readme.html">
+            
+                    
+                    Horizontal Slider Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9.2" data-path="../../../uiEditor/uiComponent/VSlider/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/VSlider/readme.html">
+            
+                    
+                    Vertical Slider Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="../../../uiEditor/uiComponent/ProgressBar/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/ProgressBar/readme.html">
+            
+                    
+                    Progress Bar Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="../../../uiEditor/uiComponent/Box/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/Box/readme.html">
+            
+                    
+                    Container Component
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.11.1" data-path="../../../uiEditor/uiComponent/HBox/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/HBox/readme.html">
+            
+                    
+                    Horizontal Layout Container Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11.2" data-path="../../../uiEditor/uiComponent/VBox/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/VBox/readme.html">
+            
+                    
+                    Vertical Layout Container Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11.3" data-path="../../../uiEditor/uiComponent/Panel/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/Panel/readme.html">
+            
+                    
+                    Panel Container Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.12" data-path="../../../uiEditor/uiComponent/List/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/List/readme.html">
+            
+                    
+                    List Component
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.12.1" data-path="../../../uiEditor/uiComponent/Tree/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/Tree/readme.html">
+            
+                    
+                    Tree List Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.13" data-path="../../../uiEditor/uiComponent/optionBox/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/optionBox/readme.html">
+            
+                    
+                    OptionBox
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.13.1" data-path="../../../uiEditor/uiComponent/ComboBox/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/ComboBox/readme.html">
+            
+                    
+                    Dropdown Combo Box Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.13.2" data-path="../../../uiEditor/uiComponent/Radio/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/Radio/readme.html">
+            
+                    
+                    Radio Button Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.13.3" data-path="../../../uiEditor/uiComponent/RadioGroup/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/RadioGroup/readme.html">
+            
+                    
+                    Radio Group Container Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.13.4" data-path="../../../uiEditor/uiComponent/CheckBox/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/CheckBox/readme.html">
+            
+                    
+                    Check Box Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.14" data-path="../../../uiEditor/uiComponent/navigationMenu/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/navigationMenu/readme.html">
+            
+                    
+                    Navigation Menu
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.14.1" data-path="../../../uiEditor/uiComponent/Tab/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/Tab/readme.html">
+            
+                    
+                    Navigation Tab Group Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.14.2" data-path="../../../uiEditor/uiComponent/ViewStack/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/ViewStack/readme.html">
+            
+                    
+                    Navigation Container Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.15" data-path="../../../uiEditor/uiComponent/ColorPicker/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/ColorPicker/readme.html">
+            
+                    
+                    Color Picker Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.16" data-path="../../../uiEditor/Dialog/readme.html">
+            
+                <a href="../../../uiEditor/Dialog/readme.html">
+            
+                    
+                    Dialog Popup Component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    3D Basics
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../../../../basics/3D/beginner/readme.html">
+            
+                <a href="../../../../basics/3D/beginner/readme.html">
+            
+                    
+                    3D Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../../../../basics/3D/Transform/readme.html">
+            
+                <a href="../../../../basics/3D/Transform/readme.html">
+            
+                    
+                    3D Transform
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../../../sceneEditor/basic/readme.html">
+            
+                <a href="../../../sceneEditor/basic/readme.html">
+            
+                    
+                    3D Scene Editor Basic Interactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../../../sceneEditor/environment/readme.html">
+            
+                <a href="../../../sceneEditor/environment/readme.html">
+            
+                    
+                    3D Scene Environment Settings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../../../../3D/useModel/readme.html">
+            
+                <a href="../../../../3D/useModel/readme.html">
+            
+                    
+                    Importing and Using Models and Animations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../../../../3D/Sprite3D/readme.html">
+            
+                <a href="../../../../3D/Sprite3D/readme.html">
+            
+                    
+                    Using 3D Sprites
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../../../../3D/displayObject/readme.html">
+            
+                <a href="../../../../3D/displayObject/readme.html">
+            
+                    
+                    3D Basic Display Objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../../../../3D/Camera/readme.html">
+            
+                <a href="../../../../3D/Camera/readme.html">
+            
+                    
+                    Using 3D Cameras
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="../../../../3D/Light/readme.html">
+            
+                <a href="../../../../3D/Light/readme.html">
+            
+                    
+                    3D Lighting and Shadows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="../../../materialEditor/readme.html">
+            
+                <a href="../../../materialEditor/readme.html">
+            
+                    
+                    3D Material Editing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.11" data-path="../../../uiEditor/3DUI/readme.html">
+            
+                <a href="../../../uiEditor/3DUI/readme.html">
+            
+                    
+                    Using 3D UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    Particles
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../../../particleEditor2D/readme.html">
+            
+                <a href="../../../particleEditor2D/readme.html">
+            
+                    
+                    2D Particles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../../../particleEditor3D/readme.html">
+            
+                <a href="../../../particleEditor3D/readme.html">
+            
+                    
+                    3D Particles
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    Animation
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../../../animationEditor/timelineGUI/readme.html">
+            
+                <a href="../../../animationEditor/timelineGUI/readme.html">
+            
+                    
+                    Timeline Animation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../../../animationEditor/aniController/readme.html">
+            
+                <a href="../../../animationEditor/aniController/readme.html">
+            
+                    
+                    Animation State Machine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../../../Component/3DAnimation/ChainsIK/readme.html">
+            
+                <a href="../../../Component/3DAnimation/ChainsIK/readme.html">
+            
+                    
+                    IK Animation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../../../animationEditor/aniBake/readme.html">
+            
+                <a href="../../../animationEditor/aniBake/readme.html">
+            
+                    
+                    Animation Baking
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../../../uiEditor/uiComponent/skeleton/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/skeleton/readme.html">
+            
+                    
+                    Skeletal Animation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.5.1" data-path="../../../Component/2D/2DRender/Spine2DRenderNode/readme.html">
+            
+                <a href="../../../Component/2D/2DRender/Spine2DRenderNode/readme.html">
+            
+                    
+                    Spine Skeletal Animation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5.2" data-path="../../../Component/3DRender/Spine3DRenderer/readme.html">
+            
+                <a href="../../../Component/3DRender/Spine3DRenderer/readme.html">
+            
+                    
+                    Spine3D Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5.3" data-path="../../../uiEditor/uiComponent/skeleton/sk/readme.html">
+            
+                <a href="../../../uiEditor/uiComponent/skeleton/sk/readme.html">
+            
+                    
+                    Built-in Skeletal Animation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    IDE Resources
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../../../assets/model/readme.html">
+            
+                <a href="../../../assets/model/readme.html">
+            
+                    
+                    Model Resource Settings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../../../assets/texture/readme.html">
+            
+                <a href="../../../assets/texture/readme.html">
+            
+                    
+                    Texture Resources
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.2.1" data-path="../../../uiEditor/textureCompress/readme.html">
+            
+                <a href="../../../uiEditor/textureCompress/readme.html">
+            
+                    
+                    Compressed Textures
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../../../assets/prefab/readme.html">
+            
+                <a href="../../../assets/prefab/readme.html">
+            
+                    
+                    Prefab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../../../assets/TileSet/readme.html">
+            
+                <a href="../../../assets/TileSet/readme.html">
+            
+                    
+                    Tile Map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../../../assets/bundledef/readme.html">
+            
+                <a href="../../../assets/bundledef/readme.html">
+            
+                    
+                    Script Bundle Definition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" data-path="../../../assets/atlascfg/readme.html">
+            
+                <a href="../../../assets/atlascfg/readme.html">
+            
+                    
+                    Auto Atlas Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    Physics Engine
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../../../physicsEditor/physics2D/readme.html">
+            
+                <a href="../../../physicsEditor/physics2D/readme.html">
+            
+                    
+                    2D Physics System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../../../physicsEditor/physics3D/readme.html">
+            
+                <a href="../../../physicsEditor/physics3D/readme.html">
+            
+                    
+                    3D Physics System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../../../../3D/advanced/customPhysicsEngine/readme.html">
+            
+                <a href="../../../../3D/advanced/customPhysicsEngine/readme.html">
+            
+                    
+                    Custom Physics Engine
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <span>
+            
+                    
+                    Shaders
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../../../../2D/advanced/customShader/readme.html">
+            
+                <a href="../../../../2D/advanced/customShader/readme.html">
+            
+                    
+                    Custom 2D Shader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../../../../3D/advanced/customShader/readme.html">
+            
+                <a href="../../../../3D/advanced/customShader/readme.html">
+            
+                    
+                    Custom 3D Shader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../../../../basics/WebGPU/ComputeShader/readme.html">
+            
+                <a href="../../../../basics/WebGPU/ComputeShader/readme.html">
+            
+                    
+                    Compute Shader
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    Blueprints
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../../../ShaderBlueprint/blueprint/readme.html">
+            
+                <a href="../../../ShaderBlueprint/blueprint/readme.html">
+            
+                    
+                    Program Blueprint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../../../ShaderBlueprint/ShaderBlueprint/readme.html">
+            
+                <a href="../../../ShaderBlueprint/ShaderBlueprint/readme.html">
+            
+                    
+                    Shader Blueprint
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" >
+            
+                <span>
+            
+                    
+                    Device Interface and Adaptation
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../../../../basics/common/adaptScreen/readme.html">
+            
+                <a href="../../../../basics/common/adaptScreen/readme.html">
+            
+                    
+                    Screen Adaptation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" data-path="../../../../basics/common/Browser/readme.html">
+            
+                <a href="../../../../basics/common/Browser/readme.html">
+            
+                    
+                    Browser Interface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.3" data-path="../../../../basics/common/device/motion/readme.html">
+            
+                <a href="../../../../basics/common/device/motion/readme.html">
+            
+                    
+                    Gyroscope and Accelerometer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.4" data-path="../../../../basics/common/device/geolocation/readme.html">
+            
+                <a href="../../../../basics/common/device/geolocation/readme.html">
+            
+                    
+                    Getting Location Information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.5" data-path="../../../../basics/common/device/baiduMap/readme.html">
+            
+                <a href="../../../../basics/common/device/baiduMap/readme.html">
+            
+                    
+                    Using Baidu Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" >
+            
+                <span>
+            
+                    
+                    Audio and Video
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../../../../basics/common/device/media/readme.html">
+            
+                <a href="../../../../basics/common/device/media/readme.html">
+            
+                    
+                    Audio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="../../../../basics/common/device/video/readme.html">
+            
+                <a href="../../../../basics/common/device/video/readme.html">
+            
+                    
+                    Video
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" >
+            
+                <span>
+            
+                    
+                    Network Communication
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../../../../basics/common/network/HTTP/readme.html">
+            
+                <a href="../../../../basics/common/network/HTTP/readme.html">
+            
+                    
+                    HTTP Communication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.2" data-path="../../../../basics/common/network/WebSocket/readme.html">
+            
+                <a href="../../../../basics/common/network/WebSocket/readme.html">
+            
+                    
+                    WebSocket Communication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.3" data-path="../../../../libs/Protobuf/readme.html">
+            
+                <a href="../../../../libs/Protobuf/readme.html">
+            
+                    
+                    ProtocolBuffer Communication
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" >
+            
+                <span>
+            
+                    
+                    Performance
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="../../../../basics/IDE/projectSettings/statistics/readme.html">
+            
+                <a href="../../../../basics/IDE/projectSettings/statistics/readme.html">
+            
+                    
+                    Using Performance Statistics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.2" data-path="../../../../2D/performanceOptimization/readme.html">
+            
+                <a href="../../../../2D/performanceOptimization/readme.html">
+            
+                    
+                    2D Performance Optimization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.3" data-path="../../../../3D/advanced/performanceOptimization/readme.html">
+            
+                <a href="../../../../3D/advanced/performanceOptimization/readme.html">
+            
+                    
+                    3D Performance Optimization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" >
+            
+                <span>
+            
+                    
+                    Engine Components
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="../../../../basics/common/Component/readme.html">
+            
+                <a href="../../../../basics/common/Component/readme.html">
+            
+                    
+                    Entity Component System
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1.1" data-path="../../../customComponent/system/readme.html">
+            
+                <a href="../../../customComponent/system/readme.html">
+            
+                    
+                    Built-in Methods of Component Scripts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.1.2" data-path="../../../customComponent/decorators/readme.html">
+            
+                <a href="../../../customComponent/decorators/readme.html">
+            
+                    
+                    Component Decorators Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.1.3" data-path="../../../customComponent/componentProperties/readme.html">
+            
+                <a href="../../../customComponent/componentProperties/readme.html">
+            
+                    
+                    Using Component Properties in Code
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2" data-path="../../../Component/2D/readme.html">
+            
+                <a href="../../../Component/2D/readme.html">
+            
+                    
+                    2D Built-in Components
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.2.1" data-path="../../../Component/2D/2DRender/readme.html">
+            
+                <a href="../../../Component/2D/2DRender/readme.html">
+            
+                    
+                    2D Render Component
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.2.1.1" data-path="../../../Component/2D/2DRender/Mesh2DRender/readme.html">
+            
+                <a href="../../../Component/2D/2DRender/Mesh2DRender/readme.html">
+            
+                    
+                    2D Mesh Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2.1.2" data-path="../../../Component/2D/2DRender/Spine2DRenderNode/readme.html">
+            
+                <a href="../../../Component/2D/2DRender/Spine2DRenderNode/readme.html">
+            
+                    
+                    Spine Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2.1.3" data-path="../../../Component/2D/2DRender/Trail2DRender/readme.html">
+            
+                <a href="../../../Component/2D/2DRender/Trail2DRender/readme.html">
+            
+                    
+                    2D Trail Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2.1.4" data-path="../../../Component/2D/2DRender/Line2DRender/readme.html">
+            
+                <a href="../../../Component/2D/2DRender/Line2DRender/readme.html">
+            
+                    
+                    2D Line Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2.1.5" data-path="../../../Component/2D/TileMapLayer/readme.html">
+            
+                <a href="../../../Component/2D/TileMapLayer/readme.html">
+            
+                    
+                    Tile Map Layer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2.1.6" data-path="../../../particleEditor2D/readme.html">
+            
+                <a href="../../../particleEditor2D/readme.html">
+            
+                    
+                    2D Particle Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2.2" data-path="../../../Component/2D/BaseLight2D/readme.html">
+            
+                <a href="../../../Component/2D/BaseLight2D/readme.html">
+            
+                    
+                    2D Lighting and Grid
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.2.2.1" data-path="../../../Component/2D/DirectionLight2D/readme.html">
+            
+                <a href="../../../Component/2D/DirectionLight2D/readme.html">
+            
+                    
+                    2D Directional Light
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2.2.2" data-path="../../../Component/2D/SpriteLight2D/readme.html">
+            
+                <a href="../../../Component/2D/SpriteLight2D/readme.html">
+            
+                    
+                    2D Sprite Light
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2.2.3" data-path="../../../Component/2D/SpotLight2D/readme.html">
+            
+                <a href="../../../Component/2D/SpotLight2D/readme.html">
+            
+                    
+                    2D Spot Light
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2.2.4" data-path="../../../Component/2D/FreeformLight2D/readme.html">
+            
+                <a href="../../../Component/2D/FreeformLight2D/readme.html">
+            
+                    
+                    2D Freeform Light
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2.3" data-path="../../../Component/2D/LightOccluder2D/readme.html">
+            
+                <a href="../../../Component/2D/LightOccluder2D/readme.html">
+            
+                    
+                    2D Light Occluder and Shadows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2.4" data-path="../../../physicsEditor/physics2D/readme.html">
+            
+                <a href="../../../physicsEditor/physics2D/readme.html">
+            
+                    
+                    2D Physics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2.5" data-path="../../../Component/2D/navMesh/readme.html">
+            
+                <a href="../../../Component/2D/navMesh/readme.html">
+            
+                    
+                    2D Pathfinding
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3" data-path="../../../Component/readme.html">
+            
+                <a href="../../../Component/readme.html">
+            
+                    
+                    3D Built-in Components
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.3.1" data-path="../../../Component/3DAnimation/readme.html">
+            
+                <a href="../../../Component/3DAnimation/readme.html">
+            
+                    
+                    3D Animation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.3.1.1" data-path="../../../Component/3DAnimation/ChainsIK/readme.html">
+            
+                <a href="../../../Component/3DAnimation/ChainsIK/readme.html">
+            
+                    
+                    IK Chain
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3.1.2" data-path="../../../Component/3DAnimation/BoneConstraints/readme.html">
+            
+                <a href="../../../Component/3DAnimation/BoneConstraints/readme.html">
+            
+                    
+                    Bone Constraints
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3.1.3" data-path="../../../animationEditor/aniController/readme.html">
+            
+                <a href="../../../animationEditor/aniController/readme.html">
+            
+                    
+                    Animation State Machine
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3.2" data-path="../../../Component/Mesh/readme.html">
+            
+                <a href="../../../Component/Mesh/readme.html">
+            
+                    
+                    Mesh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3.3" data-path="../../../Component/3DRender/readme.html">
+            
+                <a href="../../../Component/3DRender/readme.html">
+            
+                    
+                    3D Render Component
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.3.3.1" data-path="../../../particleEditor3D/readme.html">
+            
+                <a href="../../../particleEditor3D/readme.html">
+            
+                    
+                    Particle Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3.3.2" data-path="../../../Component/PixelLine/readme.html">
+            
+                <a href="../../../Component/PixelLine/readme.html">
+            
+                    
+                    Mesh Pixel Line
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3.3.3" data-path="../../../Component/Trail/readme.html">
+            
+                <a href="../../../Component/Trail/readme.html">
+            
+                    
+                    Trail
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3.3.4" data-path="../../../uiEditor/3DUI/readme.html">
+            
+                <a href="../../../uiEditor/3DUI/readme.html">
+            
+                    
+                    3D UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3.3.5" data-path="../../../Component/ReflectionProbe/readme.html">
+            
+                <a href="../../../Component/ReflectionProbe/readme.html">
+            
+                    
+                    Reflection Probe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3.3.6" data-path="../../../Component/VolumetricGI/readme.html">
+            
+                <a href="../../../Component/VolumetricGI/readme.html">
+            
+                    
+                    Volumetric Global Illumination
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3.3.7" data-path="../../../Component/StaticBatchVolume/readme.html">
+            
+                <a href="../../../Component/StaticBatchVolume/readme.html">
+            
+                    
+                    Static Batching
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3.3.8" data-path="../../../Component/LOD/readme.html">
+            
+                <a href="../../../Component/LOD/readme.html">
+            
+                    
+                    LOD Group
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3.3.9" data-path="../../../Component/3DRender/Spine3DRenderer/readme.html">
+            
+                <a href="../../../Component/3DRender/Spine3DRenderer/readme.html">
+            
+                    
+                    Spine3D Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3.4" data-path="../../../../3D/Light/readme.html">
+            
+                <a href="../../../../3D/Light/readme.html">
+            
+                    
+                    3D Lighting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3.5" data-path="../../../Component/physics3D/readme.html">
+            
+                <a href="../../../Component/physics3D/readme.html">
+            
+                    
+                    3D Physics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.3.5.1" data-path="../../../Component/physics3D/Rigidbody3D/readme.html">
+            
+                <a href="../../../Component/physics3D/Rigidbody3D/readme.html">
+            
+                    
+                    3D Rigid Body
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3.5.2" data-path="../../../Component/physics3D/PhysicsCollider/readme.html">
+            
+                <a href="../../../Component/physics3D/PhysicsCollider/readme.html">
+            
+                    
+                    Static Collider
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3.5.3" data-path="../../../Component/physics3D/CharacterController/readme.html">
+            
+                <a href="../../../Component/physics3D/CharacterController/readme.html">
+            
+                    
+                    Character Controller
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3.5.4" data-path="../../../Component/physics3D/FixedConstraint/readme.html">
+            
+                <a href="../../../Component/physics3D/FixedConstraint/readme.html">
+            
+                    
+                    Fixed Constraint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3.5.5" data-path="../../../Component/physics3D/HingeConstraint/readme.html">
+            
+                <a href="../../../Component/physics3D/HingeConstraint/readme.html">
+            
+                    
+                    Hinge Constraint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3.5.6" data-path="../../../Component/physics3D/SpringConstraint/readme.html">
+            
+                <a href="../../../Component/physics3D/SpringConstraint/readme.html">
+            
+                    
+                    Spring Constraint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3.5.7" data-path="../../../Component/physics3D/ConfigurableConstraint/readme.html">
+            
+                <a href="../../../Component/physics3D/ConfigurableConstraint/readme.html">
+            
+                    
+                    Configurable Constraint
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3.6" data-path="../../../Component/navMesh/readme.html">
+            
+                <a href="../../../Component/navMesh/readme.html">
+            
+                    
+                    3D Pathfinding
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" >
+            
+                <span>
+            
+                    
+                    IDE Plugins
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="../../plug-in/readme.html">
+            
+                <a href="../../plug-in/readme.html">
+            
+                    
+                    Plugin Development Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.2" data-path="../../pluginImport/readme.html">
+            
+                <a href="../../pluginImport/readme.html">
+            
+                    
+                    Package Manager and Resource Package Import
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.3" data-path="../../exportToStore/readme.html">
+            
+                <a href="../../exportToStore/readme.html">
+            
+                    
+                    Resource Package Export and Upload to Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.4" data-path="../../Layabox/readme.html">
+            
+                <a href="../../Layabox/readme.html">
+            
+                    
+                    Official Plugins
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.4.1" data-path="../../Layabox/LOD/readme.html">
+            
+                <a href="../../Layabox/LOD/readme.html">
+            
+                    
+                    LOD Reduction Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.4.2" data-path="../../Layabox/BakeAnimation/readme.html">
+            
+                <a href="../../Layabox/BakeAnimation/readme.html">
+            
+                    
+                    3D Skeletal Animation Baking Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5" data-path="../readme.html">
+            
+                <a href="../readme.html">
+            
+                    
+                    VIP Value-Added Feature Plugins
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.5.1" data-path="../performanceAnalysis/readme.html">
+            
+                <a href="../performanceAnalysis/readme.html">
+            
+                    
+                    Performance Analysis Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5.2" data-path="../addressable/readme.html">
+            
+                <a href="../addressable/readme.html">
+            
+                    
+                    Smart Resource Management Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.21.5.3" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    CPU Particle System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5.4" data-path="../spineBake/readme.html">
+            
+                <a href="../spineBake/readme.html">
+            
+                    
+                    Spine Animation Baking Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" >
+            
+                <span>
+            
+                    
+                    External Script Usage
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.22.1" data-path="../../../../basics/IDE/importJsLibrary/readme.html">
+            
+                <a href="../../../../basics/IDE/importJsLibrary/readme.html">
+            
+                    
+                    How to Reference External Scripts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.2" data-path="../../../../libs/Protobuf/readme.html">
+            
+                <a href="../../../../libs/Protobuf/readme.html">
+            
+                    
+                    Practical ProtocolBuffer Communication
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" >
+            
+                <span>
+            
+                    
+                    Advanced Usage
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.23.1" data-path="../../../../2D/advanced/readme.html">
+            
+                <a href="../../../../2D/advanced/readme.html">
+            
+                    
+                    2D Advanced
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.23.1.1" data-path="../../../../2D/advanced/useText/readme.html">
+            
+                <a href="../../../../2D/advanced/useText/readme.html">
+            
+                    
+                    Advanced Text Usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.1.2" data-path="../../../../2D/TiledMap/readme.html">
+            
+                <a href="../../../../2D/TiledMap/readme.html">
+            
+                    
+                    TiledMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.1.3" data-path="../../../../2D/useWorker/readme.html">
+            
+                <a href="../../../../2D/useWorker/readme.html">
+            
+                    
+                    Multi-threaded Worker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.1.4" data-path="../../../../2D/dom/readme.html">
+            
+                <a href="../../../../2D/dom/readme.html">
+            
+                    
+                    Interact with Native DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.2" data-path="../../../../3D/advanced/readme.html">
+            
+                <a href="../../../../3D/advanced/readme.html">
+            
+                    
+                    3D Advanced
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.23.2.1" data-path="../../../../3D/advanced/PostProcessing/readme.html">
+            
+                <a href="../../../../3D/advanced/PostProcessing/readme.html">
+            
+                    
+                    Post Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.2.2" data-path="../../../../3D/advanced/CommandBuffer/readme.html">
+            
+                <a href="../../../../3D/advanced/CommandBuffer/readme.html">
+            
+                    
+                    CommandBuffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.2.3" data-path="../../../../3D/WebXR/readme.html">
+            
+                <a href="../../../../3D/WebXR/readme.html">
+            
+                    
+                    WebXR
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" >
+            
+                <span>
+            
+                    
+                    Build and Release
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.1" data-path="../../../../released/generalSetting/readme.html">
+            
+                <a href="../../../../released/generalSetting/readme.html">
+            
+                    
+                    General Release Settings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.2" data-path="../../../../released/commandLine/readme.html">
+            
+                <a href="../../../../released/commandLine/readme.html">
+            
+                    
+                    Command Line Release
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.3" data-path="../../../../released/web/readme.html">
+            
+                <a href="../../../../released/web/readme.html">
+            
+                    
+                    Web Release
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.3.1" data-path="../../../../released/CrazyGames/readme.html">
+            
+                <a href="../../../../released/CrazyGames/readme.html">
+            
+                    
+                    CrazyGames
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.3.2" data-path="../../../../released/Poki/readme.html">
+            
+                <a href="../../../../released/Poki/readme.html">
+            
+                    
+                    Poki
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.4" data-path="../../../../released/miniGame/readme.html">
+            
+                <a href="../../../../released/miniGame/readme.html">
+            
+                    
+                    Mini Game Release
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.4.1" data-path="../../../../released/miniGame/wechat/readme.html">
+            
+                <a href="../../../../released/miniGame/wechat/readme.html">
+            
+                    
+                    WeChat Mini Game
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.4.1.1" data-path="../../../../released/miniGame/wechat/Worker/readme.html">
+            
+                <a href="../../../../released/miniGame/wechat/Worker/readme.html">
+            
+                    
+                    WeChat Mini Game Worker Usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.4.2" data-path="../../../../released/miniGame/byteDance/readme.html">
+            
+                <a href="../../../../released/miniGame/byteDance/readme.html">
+            
+                    
+                    Douyin Mini Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.4.3" data-path="../../../../released/miniGame/OPPO/readme.html">
+            
+                <a href="../../../../released/miniGame/OPPO/readme.html">
+            
+                    
+                    OPPO Mini Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.4.4" data-path="../../../../released/miniGame/vivo/readme.html">
+            
+                <a href="../../../../released/miniGame/vivo/readme.html">
+            
+                    
+                    vivo Mini Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.4.5" data-path="../../../../released/miniGame/xiaomi/readme.html">
+            
+                <a href="../../../../released/miniGame/xiaomi/readme.html">
+            
+                    
+                    Xiaomi Quick Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.4.6" data-path="../../../../released/miniGame/alipaygame/readme.html">
+            
+                <a href="../../../../released/miniGame/alipaygame/readme.html">
+            
+                    
+                    Alipay Mini Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.4.7" data-path="../../../../released/miniGame/tbgame/readme.html">
+            
+                <a href="../../../../released/miniGame/tbgame/readme.html">
+            
+                    
+                    Taobao Mini Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.5" data-path="../../../../released/native/LayaNative_Introduction/readme.html">
+            
+                <a href="../../../../released/native/LayaNative_Introduction/readme.html">
+            
+                    
+                    App Package Development Basics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.5.1" data-path="../../../../released/native/native_index/readme.html">
+            
+                <a href="../../../../released/native/native_index/readme.html">
+            
+                    
+                    LayaNative is Not a Browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.5.2" data-path="../../../../released/native/screen_orientation/readme.html">
+            
+                <a href="../../../../released/native/screen_orientation/readme.html">
+            
+                    
+                    Portrait/Landscape Orientation Settings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.5.3" data-path="../../../../released/native/SplashScreenSettings/readme.html">
+            
+                <a href="../../../../released/native/SplashScreenSettings/readme.html">
+            
+                    
+                    Splash Screen Settings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.5.4" data-path="../../../../released/native/network/readme.html">
+            
+                <a href="../../../../released/native/network/readme.html">
+            
+                    
+                    About Network Monitoring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.5.5" data-path="../../../../released/native/LayaDcc_Tool/readme.html">
+            
+                <a href="../../../../released/native/LayaDcc_Tool/readme.html">
+            
+                    
+                    Cache Tool - layadcc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.5.6" data-path="../../../../released/native/platform_communication/readme.html">
+            
+                <a href="../../../../released/native/platform_communication/readme.html">
+            
+                    
+                    Native Language and JS Communication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.5.7" data-path="../../../../released/native/built_in_font/readme.html">
+            
+                <a href="../../../../released/native/built_in_font/readme.html">
+            
+                    
+                    Embedded Fonts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.5.8" data-path="../../../../released/native/zipUpdate/readme.html">
+            
+                <a href="../../../../released/native/zipUpdate/readme.html">
+            
+                    
+                    zip Update
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.5.9" data-path="../../../../released/native/apk_expansion/readme.html">
+            
+                <a href="../../../../released/native/apk_expansion/readme.html">
+            
+                    
+                    APK Expansion Mechanism
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.5.10" data-path="../../../../released/native/Other_settings/readme.html">
+            
+                <a href="../../../../released/native/Other_settings/readme.html">
+            
+                    
+                    Others
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.6" data-path="../../../../released/Windows/readme.html">
+            
+                <a href="../../../../released/Windows/readme.html">
+            
+                    
+                    Windows Release
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.6.1" data-path="../../../../released/Windows/extension/readme.html">
+            
+                <a href="../../../../released/Windows/extension/readme.html">
+            
+                    
+                    Windows Extension
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.6.2" data-path="../../../../released/Windows/steam/readme.html">
+            
+                <a href="../../../../released/Windows/steam/readme.html">
+            
+                    
+                    Steam Extension Example
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.7" data-path="../../../../released/Harmony/readme.html">
+            
+                <a href="../../../../released/Harmony/readme.html">
+            
+                    
+                    HarmonyOS NEXT Build
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.7.1" data-path="../../../../released/Harmony/debug/readme.html">
+            
+                <a href="../../../../released/Harmony/debug/readme.html">
+            
+                    
+                    HarmonyOS NEXT Device Debugging JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.8" data-path="../../../../released/Android/readme.html">
+            
+                <a href="../../../../released/Android/readme.html">
+            
+                    
+                    Android Build
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.8.1" data-path="../../../../released/Android/debug/readme.html">
+            
+                <a href="../../../../released/Android/debug/readme.html">
+            
+                    
+                    Android Device Debugging JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.9" data-path="../../../../released/iOS/readme.html">
+            
+                <a href="../../../../released/iOS/readme.html">
+            
+                    
+                    iOS Build
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.10" data-path="../../../../released/Linux/readme.html">
+            
+                <a href="../../../../released/Linux/readme.html">
+            
+                    
+                    Linux Build
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../.." >CPU Particle System</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#cpu-particle-system"><b></b>CPU Particle System</a></li><ul><li><span class="title-icon "></span><a href="#i-cpu-particle-system-introduction"><b></b>I. CPU Particle System Introduction</a></li><li><span class="title-icon "></span><a href="#ii-cpu-particle-system-attribute-introduction"><b></b>II. CPU Particle System Attribute Introduction</a></li><ul><li><span class="title-icon "></span><a href="#21-attribute-parameter-modes"><b></b>2.1 Attribute Parameter Modes</a></li><li><span class="title-icon "></span><a href="#22-particle-system-properties"><b></b>2.2 Particle System Properties</a></li><li><span class="title-icon "></span><a href="#23-emitter"><b></b>2.3 Emitter</a></li><li><span class="title-icon "></span><a href="#24-shape"><b></b>2.4 Shape</a></li><li><span class="title-icon "></span><a href="#25-velocity-over-lifetime"><b></b>2.5 Velocity Over Lifetime</a></li><li><span class="title-icon "></span><a href="#26-limit-velocity-over-lifetime"><b></b>2.6 Limit Velocity Over Lifetime</a></li><li><span class="title-icon "></span><a href="#27-inherit-velocity"><b></b>2.7 Inherit Velocity</a></li><li><span class="title-icon "></span><a href="#28-lifetime-by-emitter-speed"><b></b>2.8 Lifetime by Emitter Speed</a></li><li><span class="title-icon "></span><a href="#29-force-over-lifetime"><b></b>2.9 Force Over Lifetime</a></li><li><span class="title-icon "></span><a href="#210-color-over-lifetime"><b></b>2.10 Color Over Lifetime</a></li><li><span class="title-icon "></span><a href="#211-color-by-speed"><b></b>2.11 Color By Speed</a></li><li><span class="title-icon "></span><a href="#212-size-over-lifetime"><b></b>2.12 Size Over Lifetime</a></li><li><span class="title-icon "></span><a href="#213-size-by-speed"><b></b>2.13 Size by Speed</a></li><li><span class="title-icon "></span><a href="#214-rotation-over-lifetime"><b></b>2.14 Rotation Over Lifetime</a></li><li><span class="title-icon "></span><a href="#215-rotation-by-speed"><b></b>2.15 Rotation by Speed</a></li><li><span class="title-icon "></span><a href="#216-external-forces"><b></b>2.16 External Forces</a></li><li><span class="title-icon "></span><a href="#217-noise"><b></b>2.17 Noise</a></li><li><span class="title-icon "></span><a href="#218-collision"><b></b>2.18 Collision</a></li><li><span class="title-icon "></span><a href="#219-sub-emitters"><b></b>2.19 Sub Emitters</a></li><li><span class="title-icon "></span><a href="#220-texture-sheet-animation"><b></b>2.20 Texture Sheet Animation</a></li><li><span class="title-icon "></span><a href="#221-trails"><b></b>2.21 Trails</a></li></ul><li><span class="title-icon "></span><a href="#iii-cpu-particle-system-rendering-introduction"><b></b>III. CPU Particle System Rendering Introduction</a></li></ul></ul></div><a href="#cpu-particle-system" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="cpu-particle-system"><a name="cpu-particle-system" class="anchor-navigation-ex-anchor" href="#cpu-particle-system"><i class="fa fa-link" aria-hidden="true"></i></a>CPU Particle System</h1>
+<h2 id="i-cpu-particle-system-introduction"><a name="i-cpu-particle-system-introduction" class="anchor-navigation-ex-anchor" href="#i-cpu-particle-system-introduction"><i class="fa fa-link" aria-hidden="true"></i></a>I. CPU Particle System Introduction</h2>
+<p>The CPU particle system is not as flexible as the GPU particle system but is suitable for a wider range of hardware and can provide better support for mobile phones or older devices. Since particle rendering is processed on the CPU, performance is not as good as the GPU particle system.</p>
+<p>An important feature of the CPU particle system is supporting particle effects exported from Unity projects. Various attributes of particle effects in Unity cannot be adapted to LayaAir Engine&apos;s built-in 3D particle system, so resources exported from Unity need the CPU particle system plugin to be used normally.</p>
+<p>In LayaAir-IDE, open the package manager to install the CPU particle system.</p>
+<p><img src="img/1-1.png" alt="1-1"></p>
+<blockquote>
+<p>Note: The CPU particle system is a LayaAir member feature.</p>
+</blockquote>
+<p>After importing the plugin, you can add CPU particles in the Hierarchy panel.</p>
+<p><img src="img/1-2.png" alt="1-2"></p>
+<p>You can also add CPU particles in the property settings panel&apos;s rendering section.</p>
+<p><img src="img/1-3.png" alt="1-3"></p>
+<h2 id="ii-cpu-particle-system-attribute-introduction"><a name="ii-cpu-particle-system-attribute-introduction" class="anchor-navigation-ex-anchor" href="#ii-cpu-particle-system-attribute-introduction"><i class="fa fa-link" aria-hidden="true"></i></a>II. CPU Particle System Attribute Introduction</h2>
+<h3 id="21-attribute-parameter-modes"><a name="21-attribute-parameter-modes" class="anchor-navigation-ex-anchor" href="#21-attribute-parameter-modes"><i class="fa fa-link" aria-hidden="true"></i></a>2.1 Attribute Parameter Modes</h3>
+<p>For particle systems, one attribute may have multiple parameter modes. Here we use <code>StartLifetime</code> as an example:</p>
+<p><img src="img/2-1-1.png" alt="2-1-1"></p>
+<p>Click the arrow on the far right of the attribute to select the attribute&apos;s parameter mode. There are four types total:</p>
+<p><img src="img/2-1-2.png" alt="2-1-2"></p>
+<p><strong>Constant</strong>: The parameter value is a constant value during the attribute&apos;s lifecycle and won&apos;t change.</p>
+<p><img src="img/2-1-3.png" alt="2-1-3"></p>
+<p><strong>Curve</strong>: The parameter value changes over time during the attribute&apos;s lifecycle, with the specific value being the curve&apos;s corresponding value at that moment.</p>
+<p><img src="img/2-1-4.png" alt="2-1-4"></p>
+<p>Click to open the curve editing panel. In the panel, you can edit the parameter value&apos;s range and curve shape.</p>
+<p><img src="img/2-1-5.png" alt="2-1-5"></p>
+<p><strong>Random Between Two Curves</strong>: The parameter value changes over time during the attribute&apos;s lifecycle, with the specific value randomly chosen between the upper and lower bounds of the corresponding value range at that moment.</p>
+<p><img src="img/2-1-6.png" alt="2-1-6"></p>
+<p><strong>Random Between Two Constants</strong>: The parameter value continuously changes during the attribute&apos;s lifecycle, with the value range determined by set constants.</p>
+<p><img src="img/2-1-7.png" alt="2-1-7"></p>
+<p>Here&apos;s an explanation of the &quot;attribute&apos;s lifecycle&quot; concept. In CPU particles, there are two lifecycles: the particle system lifecycle and the particle lifecycle. The former belongs to the particle system and affects particle emission quantity, particle initial data, etc. The latter belongs to individual emitted particles and affects particle size changes, motion speed, etc.</p>
+<h3 id="22-particle-system-properties"><a name="22-particle-system-properties" class="anchor-navigation-ex-anchor" href="#22-particle-system-properties"><i class="fa fa-link" aria-hidden="true"></i></a>2.2 Particle System Properties</h3>
+<p>Particle system properties are global properties that affect the entire system. Most properties control particle initial states, while a few control system operation rules. Particle system properties include the following:</p>
+<p><img src="img/2-2-1.png" alt="2-2-1"></p>
+<p><code>Duration</code>: The time length the particle system runs.</p>
+<p><code>Loop</code>: When checked, the particle system restarts and continues repeating after the duration ends.</p>
+<p><code>Prewarm</code>: Only takes effect when <code>Loop</code> is checked. When enabled, the system initializes making the particle system appear as if it has already completed one running cycle.</p>
+<p><code>Start Delay</code>: The delay time before the system starts emitting.</p>
+<p><code>Start Lifetime</code>: Controls each particle&apos;s lifecycle, that is, how long after emission the particle disappears.</p>
+<p><code>Start Speed</code>: Each particle&apos;s initial speed in the appropriate direction. Only indicates speed magnitude, not direction.</p>
+<p><code>Start Size3D</code>: When checked, developers can separately control each axis&apos;s initial particle size.</p>
+<p>&#x200B;    <code>Start SizeX</code>: Controls particle size on the X axis.</p>
+<p>&#x200B;    <code>Start SizeY</code>: Controls particle size on the Y axis.</p>
+<p>&#x200B;    <code>Start SizeZ</code>: Controls particle size on the Z axis.</p>
+<p><code>Start Size</code>: Each particle&apos;s initial size. Becomes invalid when <code>StartSize3D</code> is checked.</p>
+<p><code>Start Rotation3D</code>: When checked, developers can separately control each axis&apos;s rotation angle.</p>
+<p>&#x200B;    <code>Start RotationX</code>: Controls particle rotation on the X axis.</p>
+<p>&#x200B;    <code>Start RotationY</code>: Controls particle rotation on the Y axis.</p>
+<p>&#x200B;    <code>Start RotationZ</code>: Controls particle rotation on the Z axis.</p>
+<p><code>Start Rotation</code>: Each particle&apos;s initial rotation. Becomes invalid when <code>StartRotation3D</code> is checked.</p>
+<p><code>Flip Rotation</code>: A normalized value representing how many particles will be rotated in reverse.</p>
+<p><code>Start Color</code>: Each particle&apos;s initial color.</p>
+<p><code>Gravity Modifier</code>: Sets physical gravity value. Zero value disables gravity.</p>
+<p><code>Simulation Space</code>: Controls whether particle motion position is in the parent object&apos;s local space (moves with parent), world space, or relative to a custom position.</p>
+<p><code>Simulation Speed</code>: Adjusts the entire system&apos;s update speed.</p>
+<p><code>Use Unscaled Time</code>: Attribute has <code>Scaled</code> and <code>Unscaled</code> options. When <code>Scaled</code>, the particle system&apos;s running efficiency is affected by project frame rate. When <code>Unscaled</code>, it&apos;s not affected.</p>
+<p><code>Scaling Mode</code>: Attribute has <code>Hierarchy</code>, <code>Local</code>, or <code>Shape</code> options.</p>
+<p>&#x200B;    <code>Hierarchy</code>: Particles scale with each level of parent nodes like ordinary nodes.</p>
+<p>&#x200B;    <code>Local</code>: Particles only scale with the component&apos;s attached node.</p>
+<p>&#x200B;    <code>Shape</code>: Scaling effect only acts on the particle emitter&apos;s shape, not on particles themselves.</p>
+<p><code>Play On Awake</code>: When checked, the particle system automatically starts emitting particles on startup. Otherwise, control emission via code.</p>
+<p><code>Emitter Velocity Mode</code>: Selects how the particle system calculates the velocity used.</p>
+<p>&#x200B;    <code>Transform</code>: Estimates speed based on the component&apos;s attached node&apos;s Transform.position.</p>
+<p>&#x200B;    <code>Rigidbody</code>: Gets speed value from the rigid body component on the component&apos;s attached node, equivalent to using physics engine-calculated speed.</p>
+<p>&#x200B;    <code>Custom</code>: Custom speed. After selecting this value, an <code>EmitterVelocity</code> property appears for setting the speed value.</p>
+<p><code>MaxParticles</code>: The maximum number of particles allowed simultaneously in the system.</p>
+<p><code>Stop Action</code>: When all particles belonging to the system have completed and the particle system&apos;s operation has also ended, can make the system execute an action.</p>
+<p>&#x200B;    <code>None</code>: No action taken.</p>
+<p>&#x200B;    <code>Disable</code>: Disables the component&apos;s attached node.</p>
+<p>&#x200B;    <code>Destroy</code>: Destroys the component&apos;s attached node.</p>
+<p>&#x200B;    <code>Callback</code>: Sends a callback signal to scripts attached to the same node.</p>
+<p><code>Culling Mode</code>: How the system handles its simulation calculation when the particle system is out of view.</p>
+<p>&#x200B;    <code>Automatic</code>: If it&apos;s a looping particle, uses Pause. If it&apos;s a one-time particle, uses Always Simulate.</p>
+<p>&#x200B;    <code>Pause</code>: When particle leaves view, immediately stops calculation. When re-entering view, continues from the stop moment.</p>
+<p>&#x200B;    <code>Always Simulate</code>: Continuously calculates whether particle is in view or not.</p>
+<p>&#x200B;    <code>Pause And Catchup</code>: When particle leaves view, simulation pauses. When re-entering view, calculates the displacement that should have occurred during this time all at once.</p>
+<p><code>Ring Buffer Mode</code>: When particle quantity reaches the maximum limit, generates new particles by overwriting the &quot;oldest&quot; particles instead of stopping emission.</p>
+<p>&#x200B;    <code>Disabled (default)</code>: Doesn&apos;t enable this option. Particles disappear normally according to lifecycle.</p>
+<p>&#x200B;    <code>Pause Until Replaced</code>: When particle quantity reaches maximum, old particles don&apos;t disappear at lifecycle end but pause in place. They are replaced only when new particles need space.</p>
+<p>&#x200B;    <code>Loop Until Replaced</code>: Old particles don&apos;t disappear at lifecycle end but replay their animation or lifecycle. They are replaced only when new particles need space.</p>
+<p><code>Use Auto Random Seed</code>: When enabled, each playback is different.</p>
+<h3 id="23-emitter"><a name="23-emitter" class="anchor-navigation-ex-anchor" href="#23-emitter"><i class="fa fa-link" aria-hidden="true"></i></a>2.3 Emitter</h3>
+<p>The emitter controls particle emission rate and timing. The emitter includes the following:</p>
+<p><img src="img/2-3-1.png" alt="2-3-1"></p>
+<p><code>Enable</code>: Whether to enable the emitter. When checked, the particle system normally emits particles.</p>
+<p><code>Rate Over Time</code>: Number of particles emitted per second.</p>
+<p><code>Rate Over Distance</code>: Number of particles emitted per movement distance unit. This mode can simulate particles actually generated by object motion (e.g., dust left by wheels on a dirt road).</p>
+<p><code>Bursts</code>: Bursts are events that generate particles. Used to control the particle system emitting multiple particles at once at a specified time.</p>
+<p><img src="img/2-3-2.png" alt="2-3-2"></p>
+<p>&#x200B;    <code>Time</code>: Sets the time to emit burst particles (seconds after particle system starts playing). If the set value is greater than the particle system&apos;s <code>Duration</code>, the burst won&apos;t take effect.</p>
+<p>&#x200B;    <code>Count</code>: Sets the maximum particle emission quantity for a single burst. Actual particle emission quantity is limited by <code>MaxParticles</code>.</p>
+<p>&#x200B;    <code>Cycle Count</code>: Sets the value of burst playback count.</p>
+<p>&#x200B;    <code>Repeat Interval</code>: Sets the interval time (in seconds) between triggering each burst cycle.</p>
+<p>&#x200B;    <code>Probability</code>: Controls the likelihood of each burst event generating particles. Higher values make the system produce more particles. A value of 1 guarantees the system produces particles.</p>
+<h3 id="24-shape"><a name="24-shape" class="anchor-navigation-ex-anchor" href="#24-shape"><i class="fa fa-link" aria-hidden="true"></i></a>2.4 Shape</h3>
+<p>The shape defines the volume or surface from which the particle system can emit particles, as well as the direction of particle initial velocity.</p>
+<p><img src="img/2-4-0-1.png" alt="2-4-0-1"></p>
+<p>The shape module has these common properties:</p>
+<p><code>Enable</code>: Whether to enable the shape module. When disabled, all particles emit from the same point.</p>
+<p><code>Type</code>: Select the emitter type to use. Depending on the selected shape, the remaining properties of the shape module vary.</p>
+<p><code>Position</code>: Applies an offset to the emitter shape that generates particles.</p>
+<p><code>Rotation</code>: Rotates the emitter shape that generates particles.</p>
+<p><code>Scale</code>: Changes the size of the emitter shape that generates particles.</p>
+<p><code>Align To Direction</code>: Aligns particle&apos;s local coordinate axes with its emission velocity direction.</p>
+<p><code>Randomize Direction</code>: Blends particle emission velocity direction toward random direction. When 0, this property has no effect. When 1, particles move randomly.</p>
+<p><code>Spherical Direction</code>: Blends particle emission velocity direction toward spherical direction. When 0, this property has no effect. When 1, particle direction is from center outward.</p>
+<p><code>Randomize Position</code>: Adds a random value to particle&apos;s initial position. Larger value means higher position randomness.</p>
+<p>These properties won&apos;t be repeated in subsequent content.</p>
+<h4 id="241-sphere-hemisphere"><a name="241-sphere-hemisphere" class="anchor-navigation-ex-anchor" href="#241-sphere-hemisphere"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.1 Sphere, Hemisphere</h4>
+<p><img src="img/2-4-1-1.png" alt="2-4-1-1"></p>
+<p>These two shapes have identical properties, so they&apos;re explained together.</p>
+<p><code>Sphere</code>: Emits particles uniformly in all directions.</p>
+<p><code>Hemisphere</code>: Emits particles uniformly in all directions on one side of a plane.</p>
+<p><code>Radius</code>: The circle&apos;s radius.</p>
+<p><code>Radius Thickness</code>: Volume proportion of emitting particles. Value 0 means emit particles from the shape&apos;s outer surface. Value 1 means emit particles from the entire volume. Values between use a proportion of the volume.</p>
+<p><code>Arc</code>: Emitter&apos;s effective arc, default 360&#xB0;. Particles emit from any position on the emitter. When reducing this value (e.g., set to 180&#xB0;), particles only emit from the emitter&apos;s &quot;half&quot; area.</p>
+<p><code>Arc Mode</code>: Movement mode of emitter spray position within the effective range.</p>
+<p>&#x200B;    <code>Random</code>: Particles randomly appear within the arc range.</p>
+<p>&#x200B;    <code>Loop</code>: Particles smoothly move from start point to end point, then jump back to start and restart.</p>
+<p>&#x200B;    <code>PingPong</code>: Particles move from start to end point, then don&apos;t return but go back the way they came.</p>
+<p>&#x200B;    <code>Burst Spread</code>: Generally used with <code>Bursts</code>. Can evenly distribute all particles of a single burst across the entire arc range.</p>
+<p><code>Arc Speed</code>: When <code>Arc Mode</code> selects <code>Loop</code> or <code>PingPong</code>, this property appears, used to control the movement speed of the emitter spray position within the effective range.</p>
+<p><code>Arc Spread</code>: Emits particles every how many degrees. Particles emit evenly at interval angles. Interval angle = Arc * Arc Spread value.</p>
+<h4 id="242-cone"><a name="242-cone" class="anchor-navigation-ex-anchor" href="#242-cone"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.2 Cone</h4>
+<p><img src="img/2-4-2-1.png" alt="2-4-2-1"></p>
+<p>Under this shape, all particles start from the cone&apos;s apex and diffuse outward along the cone&apos;s angle.</p>
+<p><code>Angle</code>: The cone&apos;s angle at its apex. Angle 0 produces a cylinder. Angle 90 produces a disc.</p>
+<p><code>Radius</code>: The radius of the cone&apos;s apex. When set to 0, all particles start from the same point.</p>
+<p><code>Radius Thickness</code>: Volume proportion of emitting particles. Value 0 means emit from shape&apos;s outer surface. Value 1 means emit from entire volume. Values between use a volume proportion.</p>
+<p><code>Arc</code>: Emitter&apos;s effective arc, default 360&#xB0;. Particles emit from any position on the emitter. When reducing this value (e.g., set to 180&#xB0;), particles only emit from the emitter&apos;s &quot;half&quot; area.</p>
+<p><code>Arc Mode</code>: Movement mode of emitter spray position within the effective range.</p>
+<p>&#x200B;    <code>Random</code>: Particles randomly appear within the arc range.</p>
+<p>&#x200B;    <code>Loop</code>: Particles smoothly move from start point to end point, then jump back to start and restart.</p>
+<p>&#x200B;    <code>PingPong</code>: Particles move from start to end point, then don&apos;t return but go back the way they came.</p>
+<p>&#x200B;    <code>Burst Spread</code>: Generally used with <code>Bursts</code>. Can evenly distribute all particles of a single burst across the entire arc range.</p>
+<p><code>Arc Speed</code>: When <code>Arc Mode</code> selects <code>Loop</code> or <code>PingPong</code>, this property appears, used to control the movement speed of the emitter spray position within the effective range.</p>
+<p><code>Arc Spread</code>: Emits particles every how many degrees. Particles emit evenly at interval angles. Interval angle = Arc * Arc Spread value.</p>
+<h4 id="243-box"><a name="243-box" class="anchor-navigation-ex-anchor" href="#243-box"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.3 Box</h4>
+<p><img src="img/2-4-3-1.png" alt="2-4-3-1"></p>
+<p>The box emitter&apos;s shape is a cube, and particles start from any position within the emitter&apos;s volume. The box emitter has no special properties and won&apos;t be introduced here.</p>
+<h4 id="244-cone-volume"><a name="244-cone-volume" class="anchor-navigation-ex-anchor" href="#244-cone-volume"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.4 Cone Volume</h4>
+<p><img src="img/2-4-4-1.png" alt="2-4-4-1"></p>
+<p>Under this shape, particles are generated at random positions within the cone&apos;s internal space, not only at the cone&apos;s apex. Most properties of <code>Cone Volume</code> are the same as <code>Cone</code> and won&apos;t be repeated here. Only <code>Length</code> is a property that <code>Cone</code> doesn&apos;t have:</p>
+<p><code>Length</code>: The depth range where particles can be generated.</p>
+<h4 id="245-circle"><a name="245-circle" class="anchor-navigation-ex-anchor" href="#245-circle"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.5 Circle</h4>
+<p><img src="img/2-4-5-1.png" alt="2-4-5-1"></p>
+<p>The circle emitter is a plane emitter. Particle emission trend is along the circle surface. By default, particles are in the same plane. Adjusting Scale.z doesn&apos;t affect the emitter&apos;s shape.</p>
+<p><code>Radius</code>: The circle&apos;s radius.</p>
+<p><code>Radius Thickness</code>: Volume proportion of emitting particles. Value 0 means emit from shape&apos;s outer surface. Value 1 means emit from entire volume. Values between use a volume proportion.</p>
+<p><code>Arc</code>: Emitter&apos;s effective arc, default 360&#xB0;. Particles emit from any position on the emitter. When reducing this value (e.g., set to 180&#xB0;), particles only emit from the emitter&apos;s &quot;half&quot; area.</p>
+<p><code>Arc Mode</code>: Movement mode of emitter spray position within the effective range.</p>
+<p>&#x200B;    <code>Random</code>: Particles randomly appear within the arc range.</p>
+<p>&#x200B;    <code>Loop</code>: Particles smoothly move from start point to end point, then jump back to start and restart.</p>
+<p>&#x200B;    <code>PingPong</code>: Particles move from start to end point, then don&apos;t return but go back the way they came.</p>
+<p>&#x200B;    <code>Burst Spread</code>: Generally used with <code>Bursts</code>. Can evenly distribute all particles of a single burst across the entire arc range.</p>
+<p><code>Arc Speed</code>: When <code>Arc Mode</code> selects <code>Loop</code> or <code>PingPong</code>, this property appears, used to control the movement speed of the emitter spray position within the effective range.</p>
+<p><code>Arc Spread</code>: Emits particles every how many degrees. Particles emit evenly at interval angles. Interval angle = Arc * Arc Spread value.</p>
+<h4 id="246-single-side-edge"><a name="246-single-side-edge" class="anchor-navigation-ex-anchor" href="#246-single-side-edge"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.6 Single Side Edge</h4>
+<p><img src="img/2-4-6-1.png" alt="2-4-6-1"></p>
+<p>The edge emitter&apos;s shape is a line. Particles move in the object&apos;s upward (Y) direction.</p>
+<p><code>Radius</code>: This radius property is used to define the edge&apos;s length.</p>
+<p><code>Arc Mode</code>: Controls particle generation position and sequence within the arc area.</p>
+<p>&#x200B;    <code>Random</code>: Particles randomly appear within the arc range.</p>
+<p>&#x200B;    <code>Loop</code>: Particles smoothly move from start point to end point, then jump back to start and restart.</p>
+<p>&#x200B;    <code>PingPong</code>: Particles move from start to end point, then don&apos;t return but go back the way they came.</p>
+<p>&#x200B;    <code>Burst Spread</code>: Generally used with <code>Bursts</code>. Can evenly distribute all particles of a single burst across the entire arc range.</p>
+<p><code>Arc Speed</code>: When <code>Arc Mode</code> selects <code>Loop</code> or <code>PingPong</code>, this property appears, used to control the movement speed of the emitter spray position within the effective range.</p>
+<p><code>Arc Spread</code>: Emits particles every how many degrees. Particles emit evenly at interval angles. Interval angle = Arc * Arc Spread value.</p>
+<h4 id="247-box-shell"><a name="247-box-shell" class="anchor-navigation-ex-anchor" href="#247-box-shell"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.7 Box Shell</h4>
+<p><img src="img/2-4-7-1.png" alt="2-4-7-1"></p>
+<p>Similar to the <code>Box</code> emitter, <code>Box Shell</code> is also a cube-shaped emitter. Particles start from the emitter cube&apos;s surface. It has one special property.</p>
+<p><code>Box Thickness</code>: When value is 0, particles only emit from the emitter cube&apos;s surface. When value is not 0, particles emit within the emitter.</p>
+<h4 id="248-box-edge"><a name="248-box-edge" class="anchor-navigation-ex-anchor" href="#248-box-edge"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.8 Box Edge</h4>
+<p><img src="img/2-4-8-1.png" alt="2-4-8-1"></p>
+<p><code>Box Edge</code> is also a cube-shaped emitter. Particles start from each edge of the emitter cube.</p>
+<p><code>Box Thickness</code>: When value is 0, particles only emit from each edge of the emitter cube. When value is not 0, particles emit from the emitter&apos;s surface.</p>
+<h4 id="249-donut"><a name="249-donut" class="anchor-navigation-ex-anchor" href="#249-donut"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.9 Donut</h4>
+<p><img src="img/2-4-9-1.png" alt="2-4-9-1"></p>
+<p><code>Donut</code> particle emitter is a torus-shaped emitter. Particles start from the torus&apos;s surface and move outward.</p>
+<p><code>Radius</code>: The torus&apos;s radius.</p>
+<p><code>Donut Radius</code>: The torus&apos;s thickness.</p>
+<p><code>Radius Thickness</code>: Volume proportion of emitting particles. Value 0 means emit from shape&apos;s outer surface. Value 1 means emit from entire volume. Values between use a volume proportion.</p>
+<p><code>Arc</code>: Emitter&apos;s effective arc, default 360&#xB0;. Particles emit from any position on the emitter. When reducing this value (e.g., set to 180&#xB0;), particles only emit from the emitter&apos;s &quot;half&quot; area.</p>
+<p><code>Arc Mode</code>: Movement mode of emitter spray position within the effective range.</p>
+<p>&#x200B;    <code>Random</code>: Particles randomly appear within the arc range.</p>
+<p>&#x200B;    <code>Loop</code>: Particles smoothly move from start point to end point, then jump back to start and restart.</p>
+<p>&#x200B;    <code>PingPong</code>: Particles move from start to end point, then don&apos;t return but go back the way they came.</p>
+<p>&#x200B;    <code>Burst Spread</code>: Generally used with <code>Bursts</code>. Can evenly distribute all particles of a single burst across the entire arc range.</p>
+<p><code>Arc Speed</code>: When <code>Arc Mode</code> selects <code>Loop</code> or <code>PingPong</code>, this property appears, used to control the movement speed of the emitter spray position within the effective range.</p>
+<p><code>Arc Spread</code>: Emits particles every how many degrees. Particles emit evenly at interval angles. Interval angle = Arc * Arc Spread value.</p>
+<h4 id="2410-rectangle"><a name="2410-rectangle" class="anchor-navigation-ex-anchor" href="#2410-rectangle"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.10 Rectangle</h4>
+<p><img src="img/2-4-10-1.png" alt="2-4-10-1"></p>
+<p>Emits particles from a rectangle. All particles start from random positions on the same rectangle plane. By default, they move in the positive z-axis direction.</p>
+<p><code>Rectangle</code> has no special properties and won&apos;t be explained.</p>
+<h3 id="25-velocity-over-lifetime"><a name="25-velocity-over-lifetime" class="anchor-navigation-ex-anchor" href="#25-velocity-over-lifetime"><i class="fa fa-link" aria-hidden="true"></i></a>2.5 Velocity Over Lifetime</h3>
+<p>This module controls particle velocity during its lifecycle.</p>
+<p><img src="img/2-5-1.png" alt="2-5-1"></p>
+<p><code>Enable</code>: Whether to enable this module.</p>
+<p><code>X, Y, Z</code>: Particle linear velocity on X, Y, and Z axes.</p>
+<blockquote>
+<p>Note: If particle system&apos;s <code>Start Speed</code> property is set, particle&apos;s final speed is the sum of <code>Start Speed</code> and <code>X, Y, Z</code>.</p>
+</blockquote>
+<p><code>Space</code>: Specifies whether <code>X, Y, Z</code> refer to local space or world space.</p>
+<p><code>Orbital X, Y, Z</code>: Particle&apos;s orbital velocity rotating around X, Y, and Z axes.</p>
+<p><code>Orbital Offset X, Y, Z</code>: Orbital center position offset.</p>
+<p><code>Radial</code>: Particle&apos;s radial velocity away from/toward the orbital center position. Value greater than 0 means particles move away from center. Value less than 0 means particles move toward center.</p>
+<p><code>Speed Modifier</code>: A multiplier scaling of particle&apos;s total speed.</p>
+<h3 id="26-limit-velocity-over-lifetime"><a name="26-limit-velocity-over-lifetime" class="anchor-navigation-ex-anchor" href="#26-limit-velocity-over-lifetime"><i class="fa fa-link" aria-hidden="true"></i></a>2.6 Limit Velocity Over Lifetime</h3>
+<p>This module controls how particle velocity decreases during its lifecycle.</p>
+<p><img src="img/2-6-1.png" alt="2-6-1"></p>
+<p><code>Enable</code>: Whether to enable this module.</p>
+<p><code>Separate Axes</code>: Splits axes into separate X, Y, and Z components. When unchecked, the module calculates particle velocity magnitude and limits it.</p>
+<p>&#x200B;    <code>Limit X, Y, Z</code>: Speed limits on X, Y, and Z axes. Displayed and effective when <code>Separate Axes</code> is checked.</p>
+<p><code>Speed</code>: Sets particle speed limit. Displayed and effective when <code>Separate Axes</code> is unchecked.</p>
+<p><code>Dampen</code>: When particle speed exceeds speed limit, the proportion of velocity reduction. This value makes particle speed decrease more smoothly.</p>
+<p><code>Drag</code>: Applies linear drag to particle velocity. Particle speed is continuously affected by this value, even when particle speed is already less than <code>Speed</code> limit.</p>
+<p><code>Multiply by Size</code>: When this property is enabled, larger particles are more affected by drag coefficient.</p>
+<p><code>Multiply by Velocity</code>: When this property is enabled, faster particles are more affected by drag coefficient.</p>
+<h3 id="27-inherit-velocity"><a name="27-inherit-velocity" class="anchor-navigation-ex-anchor" href="#27-inherit-velocity"><i class="fa fa-link" aria-hidden="true"></i></a>2.7 Inherit Velocity</h3>
+<p>This module controls how particle velocity is affected by parent object movement over time.</p>
+<p><img src="img/2-7-1.png" alt="2-7-1"></p>
+<p><code>Enable</code>: Whether to enable this module.</p>
+<p><code>Mode</code>: Specifies how to apply emitter velocity to particles.</p>
+<p>&#x200B;    <code>Current</code>: Emitter&apos;s current velocity is applied to all particles on every frame. For example, if emitter slows down, all particles also slow down.</p>
+<p>&#x200B;    <code>Initial</code>: Emitter&apos;s velocity is applied once when each particle is born. Emitter velocity changes after particle birth won&apos;t affect that particle.</p>
+<p><code>Multiplier</code>: The proportion of emitter velocity that particles should inherit.</p>
+<h3 id="28-lifetime-by-emitter-speed"><a name="28-lifetime-by-emitter-speed" class="anchor-navigation-ex-anchor" href="#28-lifetime-by-emitter-speed"><i class="fa fa-link" aria-hidden="true"></i></a>2.8 Lifetime by Emitter Speed</h3>
+<p>This module controls each particle&apos;s initial lifecycle based on emitter speed at particle generation time. It multiplies particle&apos;s initial lifecycle by a value that depends on the speed of the object generating them. For most particle systems, this is game object speed. For sub-emitters, speed comes from the parent particle that sub-emitter particles originate from.</p>
+<p><img src="img/2-8-1.png" alt="2-8-1"></p>
+<p><code>Enable</code>: Whether to enable this module.</p>
+<p><code>Multiplier</code>: A multiplier applied to particle&apos;s initial lifecycle. The module uses this value differently based on the set curve mode.</p>
+<p>&#x200B;    <code>Constant</code>: Uses constant multiplier value. At this point <code>Speed Range</code> becomes ineffective.</p>
+<p>&#x200B;    <code>Curve</code>: Curve&apos;s horizontal axis is emitter speed, vertical axis is multiplier.</p>
+<p>&#x200B;    <code>Random Between Two Constants</code>: For each particle, randomly chooses a value between two set constants as the constant. At this point <code>Speed Range</code> becomes ineffective.</p>
+<p>&#x200B;    <code>Random Between Two Curves</code>: Curve&apos;s horizontal axis is emitter speed, vertical axis is multiplier. Module randomly chooses a value between the two curves.</p>
+<p><code>Speed Range</code>: Emitter speed&apos;s minimum and maximum values. The module normalizes this value and samples in <code>Multiplier</code> curve.</p>
+<h3 id="29-force-over-lifetime"><a name="29-force-over-lifetime" class="anchor-navigation-ex-anchor" href="#29-force-over-lifetime"><i class="fa fa-link" aria-hidden="true"></i></a>2.9 Force Over Lifetime</h3>
+<p>Accelerates particles by applying specified force.</p>
+<p><img src="img/2-9-1.png" alt="2-9-1"></p>
+<p><code>Enable</code>: Whether to enable this module.</p>
+<p><code>X, Y, Z</code>: Force applied to each particle on X, Y, and Z axes.</p>
+<p><code>Space</code>: Choose whether to apply force in local space or world space.</p>
+<p><code>Randomize</code>: When <code>X, Y, Z</code> choose <code>Random Between Two Constants</code> or <code>Random Between Two Curves</code> mode, this property causes the module to apply different forces to particles each frame, producing more turbulent, unstable motion.</p>
+<h3 id="210-color-over-lifetime"><a name="210-color-over-lifetime" class="anchor-navigation-ex-anchor" href="#210-color-over-lifetime"><i class="fa fa-link" aria-hidden="true"></i></a>2.10 Color Over Lifetime</h3>
+<p>This module specifies how particle color and transparency change during its lifecycle.</p>
+<p><img src="img/2-10-1.png" alt="2-10-1"></p>
+<p><code>Enable</code>: Whether to enable this module.</p>
+<p><code>Color</code>: Particle&apos;s color gradient during its lifecycle. The gradient bar&apos;s left point represents the start of particle lifecycle, and the right represents the end of particle lifecycle.</p>
+<h3 id="211-color-by-speed"><a name="211-color-by-speed" class="anchor-navigation-ex-anchor" href="#211-color-by-speed"><i class="fa fa-link" aria-hidden="true"></i></a>2.11 Color By Speed</h3>
+<p>This module specifies particle color changes produced by particle speed.</p>
+<p><img src="img/2-11-1.png" alt="2-11-1"></p>
+<p><code>Enable</code>: Whether to enable this module.</p>
+<p><code>Color</code>: Particle&apos;s color gradient defined within speed range.</p>
+<p><code>Range</code>: Speed range&apos;s lower and upper bounds. Particle speed is mapped to <code>Color</code>&apos;s horizontal axis. Speeds outside range are mapped to endpoints.</p>
+<h3 id="212-size-over-lifetime"><a name="212-size-over-lifetime" class="anchor-navigation-ex-anchor" href="#212-size-over-lifetime"><i class="fa fa-link" aria-hidden="true"></i></a>2.12 Size Over Lifetime</h3>
+<p>This module specifies particle size changes produced by particle lifecycle.</p>
+<p><img src="img/2-12-1.png" alt="2-12-1"></p>
+<p><code>Enable</code>: Whether to enable this module.</p>
+<p><code>Separate Axes</code>: Independently control particle size on each axis.</p>
+<p><code>Size</code>: Defines how particle size changes during its lifecycle.</p>
+<h3 id="213-size-by-speed"><a name="213-size-by-speed" class="anchor-navigation-ex-anchor" href="#213-size-by-speed"><i class="fa fa-link" aria-hidden="true"></i></a>2.13 Size by Speed</h3>
+<p>This module specifies particle size changes produced by particle speed.</p>
+<p><img src="img/2-13-1.png" alt="2-13-1"></p>
+<p><code>Enable</code>: Whether to enable this module.</p>
+<p><code>Separate Axes</code>: Independently control particle size on each axis.</p>
+<p><code>Size</code>: Particle size. The module uses this value differently based on the set curve mode.</p>
+<p>&#x200B;    <code>Constant</code>: Particle size is a constant. At this point <code>Range</code> becomes ineffective.</p>
+<p>&#x200B;    <code>Curve</code>: Curve&apos;s horizontal axis is particle speed, vertical axis is particle size.</p>
+<p>&#x200B;    <code>Random Between Two Constants</code>: For each particle, randomly choose a value between two set constants as particle size. At this point <code>Range</code> becomes ineffective.</p>
+<p>&#x200B;    <code>Random Between Two Curves</code>: Curve&apos;s horizontal axis is particle speed, vertical axis is particle size. Module randomly chooses a value between the two curves.</p>
+<p><code>Range</code>: Speed range&apos;s lower and upper bounds. Particle speed is mapped to <code>Size</code>&apos;s horizontal axis. Speeds outside range are mapped to endpoints.</p>
+<h3 id="214-rotation-over-lifetime"><a name="214-rotation-over-lifetime" class="anchor-navigation-ex-anchor" href="#214-rotation-over-lifetime"><i class="fa fa-link" aria-hidden="true"></i></a>2.14 Rotation Over Lifetime</h3>
+<p>This module specifies particle rotation changes produced by particle lifecycle.</p>
+<p><img src="img/2-14-1.png" alt="2-14-1"></p>
+<p><code>Enable</code>: Whether to enable this module.</p>
+<p><code>Separate Axes</code>: Allows specifying rotation speed per axis. When enabled, can set rotation speed for each of the X, Y, and Z axes.</p>
+<p><code>Angular Velocity</code>: Particle&apos;s rotation speed. This property only appears when <code>Separate Axes</code> is unchecked. The set value acts on each of the particle&apos;s axes.</p>
+<h3 id="215-rotation-by-speed"><a name="215-rotation-by-speed" class="anchor-navigation-ex-anchor" href="#215-rotation-by-speed"><i class="fa fa-link" aria-hidden="true"></i></a>2.15 Rotation by Speed</h3>
+<p>This module specifies particle rotation changes produced by particle speed.</p>
+<p><img src="img/2-15-1.png" alt="2-15-1"></p>
+<p><code>Enable</code>: Whether to enable this module.</p>
+<p><code>Separate Axes</code>: Allows specifying rotation speed per axis. When enabled, can set rotation speed for each of the X, Y, and Z axes.</p>
+<p><code>Angular Velocity</code>: Particle&apos;s rotation speed.</p>
+<p>&#x200B;    <code>Constant</code>: Particle rotation speed is a constant. At this point <code>Range</code> becomes ineffective.</p>
+<p>&#x200B;    <code>Curve</code>: Curve&apos;s horizontal axis is particle speed, vertical axis is particle&apos;s rotation speed.</p>
+<p>&#x200B;    <code>Random Between Two Constants</code>: For each particle, randomly choose a value between two set constants as particle rotation speed. At this point <code>Range</code> becomes ineffective.</p>
+<p>&#x200B;    <code>Random Between Two Curves</code>: Curve&apos;s horizontal axis is particle speed, vertical axis is particle&apos;s rotation speed. Module randomly chooses a value between the two curves.</p>
+<p><code>Range</code>: Speed range&apos;s lower and upper bounds. Particle speed is mapped to <code>Angular Velocity</code>&apos;s horizontal axis. Speeds outside range are mapped to endpoints.</p>
+<h3 id="216-external-forces"><a name="216-external-forces" class="anchor-navigation-ex-anchor" href="#216-external-forces"><i class="fa fa-link" aria-hidden="true"></i></a>2.16 External Forces</h3>
+<p>This property is used to modify the influence of wind zones and particle system force fields on system-emitted particles.</p>
+<p><img src="img/2-16-1.png" alt="2-16-1"></p>
+<p><code>Enable</code>: Whether to enable this module.</p>
+<p><code>Multiplier</code>: A proportion value applied to wind zone external forces.</p>
+<p><code>Influence Filter</code>: Influence filter. Determines which force fields can affect this particle system.</p>
+<p>&#x200B;    <code>LayerMask</code>: Uses Layer to filter force fields. Only force field components on specified layers affect particles.</p>
+<p>&#x200B;    <code>List</code>: Filters force fields based on specified list.</p>
+<p>&#x200B;    <code>LayerMask And List</code>: Uses both layer and list.</p>
+<h3 id="217-noise"><a name="217-noise" class="anchor-navigation-ex-anchor" href="#217-noise"><i class="fa fa-link" aria-hidden="true"></i></a>2.17 Noise</h3>
+<p>This module adds random perturbation to particle motion trajectories, making particles no longer fly out in stiff straight lines.</p>
+<p><img src="img/2-17-1.png" alt="2-17-1"></p>
+<p><code>Enable</code>: Whether to enable this module.</p>
+<p><code>Separate Axes</code>: Independently control intensity and remapping on each axis.</p>
+<p><code>Strength</code>: Noise&apos;s total intensity. Larger values mean particles jitter and deviate from original trajectory more.</p>
+<p><code>Frequency</code>: Low values produce soft, smooth noise. High values produce fast-changing noise. This property controls the frequency at which particles change direction and the suddenness of direction changes.</p>
+<p><code>Scroll Speed</code>: Noise field&apos;s movement speed. Makes noise shift over time, producing a &quot;wind blowing jitter&quot; effect.</p>
+<p><code>Damping</code>: Damping. When enabled, the faster the particle speed, the less affected by noise.</p>
+<p><code>Octave Count</code>: Specifies how many overlapping noise layers to combine to produce final noise value. Using more layers provides richer, more interesting noise but significantly increases performance cost.</p>
+<p><code>Octave Multiplier</code>: For each additional noise layer, reduces intensity by this proportion.</p>
+<p><code>Octave Scale</code>: For each additional noise layer, adjusts frequency by this multiplier.</p>
+<p><code>Quality</code>: Quality. This property affects noise generation&apos;s fineness.</p>
+<p><code>Remap Enabled</code>: Enable remapping. Remaps final noise value to a different range.</p>
+<p><code>Remap</code>: Curve describing how final noise value transforms.</p>
+<p><code>Position Amount</code>: A multiplier controlling the degree to which noise affects particle position.</p>
+<p><code>Rotation Amount</code>: A multiplier controlling the degree to which noise affects particle rotation (degrees/second).</p>
+<p><code>Size Amount</code>: A multiplier controlling the degree to which noise affects particle size.</p>
+<h3 id="218-collision"><a name="218-collision" class="anchor-navigation-ex-anchor" href="#218-collision"><i class="fa fa-link" aria-hidden="true"></i></a>2.18 Collision</h3>
+<p>This module controls how particles collide with game objects in the scene.</p>
+<p><img src="img/2-18-1.png" alt="2-18-1"></p>
+<p><code>Enable</code>: Whether to enable this module.</p>
+<p><code>Type</code>: Collision mode. Has <code>Planes</code> and <code>World</code> modes.</p>
+<p>&#x200B;    <code>Planes</code>: Specifies a set of planes. Particles only collide with these planes.</p>
+<p>&#x200B;    <code>World</code>: Particles collide with all nodes with Collider in the scene.</p>
+<p><code>Planes</code>: Planes used for collision in <code>Planes</code> mode.</p>
+<p><code>Dampen</code>: Proportion of velocity loss after particle collision.</p>
+<p><code>Bounce</code>: Proportion of velocity rebound after particle collision from surface.</p>
+<p><code>Lifetime Loss</code>: Proportion of total lifecycle loss after particle collision.</p>
+<p><code>Min Kill Speed</code>: Particles moving slower than this speed after collision are removed from the system.</p>
+<p><code>Max Kill Speed</code>: Particles moving faster than this speed after collision are removed from the system.</p>
+<p><code>Radius Scale</code>: Allows adjusting particle collision sphere radius to fit closer to particle graphic&apos;s visual edge.</p>
+<h3 id="219-sub-emitters"><a name="219-sub-emitters" class="anchor-navigation-ex-anchor" href="#219-sub-emitters"><i class="fa fa-link" aria-hidden="true"></i></a>2.19 Sub Emitters</h3>
+<p>In this module, you can set sub-emitters. These are additional particle emitters created at particle positions during certain stages of particle lifecycle.</p>
+<p><img src="img/2-19-1.png" alt="2-19-1"></p>
+<p><code>Enable</code>: Whether to enable this module.</p>
+<p><code>Sub Emitters</code>: Configure a list of sub-emitters and choose their trigger conditions and which properties they inherit from parent particles.</p>
+<p><img src="img/2-19-2.png" alt="2-19-2"></p>
+<p><code>Particle System</code>: Choose the particle system for the particle emitter to inherit.</p>
+<p><code>Type</code>: Sub-emitter&apos;s trigger condition.</p>
+<p>&#x200B;    <code>Birth</code>: Sub-particles are generated when parent particles are born.</p>
+<p>&#x200B;    <code>Collision</code>: Generated when parent particles collide with objects.</p>
+<p>&#x200B;    <code>Death</code>: Generated when parent particle lifecycle ends.</p>
+<p>&#x200B;    <code>Trigger</code>: Generated when particles enter a specific Trigger area.</p>
+<p>&#x200B;    <code>Manual</code>: Triggered via script code control.</p>
+<p><code>Properties</code>: Controls which properties are inherited by sub-emitters. Inheritable properties include color, size, rotation, lifecycle, duration.</p>
+<p><code>Probability</code>: Probability that sub-emitter will be triggered.</p>
+<h3 id="220-texture-sheet-animation"><a name="220-texture-sheet-animation" class="anchor-navigation-ex-anchor" href="#220-texture-sheet-animation"><i class="fa fa-link" aria-hidden="true"></i></a>2.20 Texture Sheet Animation</h3>
+<p>This module uses a texture atlas containing multiple frames to make each particle play the animation in this atlas during its lifecycle.</p>
+<p><img src="img/2-20-1.png" alt="2-20-1"></p>
+<p><code>Enable</code>: Whether to enable this module.</p>
+<p><code>Num Tiles</code>: Number of blocks the texture is divided into in the X (horizontal) and Y (vertical) directions.</p>
+<p><code>Animation</code>: Controls animation playback mode.</p>
+<p>&#x200B;    <code>WholeSheet</code>: Loops playback of all frames in entire texture.</p>
+<p>&#x200B;    <code>SingleRow</code>: Only plays a specific row.</p>
+<p><code>Time Mode</code>: Controls animation playback speed.</p>
+<p>&#x200B;    <code>Lifetime</code>: Animation progress advances with particle lifetime.</p>
+<p>&#x200B;    <code>Speed</code>: Animation playback speed changes with particle movement speed.</p>
+<p>&#x200B;    <code>FPS</code>: Sets fixed frame rate playback.</p>
+<p><code>Frame Over Time</code>: Controls how animation frames increase over time. Takes effect after selecting <code>Lifetime</code> mode.</p>
+<p><code>Start Frame</code>: Which frame to start playing animation from when particle is born.</p>
+<p><code>Cycle Count</code>: How many times the animation repeats during particle&apos;s lifecycle.</p>
+<h3 id="221-trails"><a name="221-trails" class="anchor-navigation-ex-anchor" href="#221-trails"><i class="fa fa-link" aria-hidden="true"></i></a>2.21 Trails</h3>
+<p>This module can add trails to particles.</p>
+<p><img src="img/2-21-1.png" alt="2-21-1"></p>
+<p><code>Enable</code>: Whether to enable this module.</p>
+<p><code>Mode</code>: Particle system trail generation mode.</p>
+<p>&#x200B;    <code>PerParticle</code>: Generates trails along particle motion trajectory.</p>
+<p>&#x200B;    <code>Ribbon</code>: Creates trail bands connecting each particle based on survival time.</p>
+<p><code>Ratio</code>: Defines what proportion of particles will generate trails.</p>
+<p><code>Lifetime</code>: Trail&apos;s duration (as percentage of particle lifetime).</p>
+<p><code>Min Vertex Distance</code>: Vertex density. How far a particle moves before generating a new vertex. Smaller values make trails smoother but increase performance cost.</p>
+<p><code>World Space</code>: When checked, trail vertices stay in world coordinates. When unchecked, moving emitter makes entire trail translate with it.</p>
+<p><code>Die with Particles</code>: Die with particles. When checked, trail disappears immediately when particle dies. When unchecked, trail plays out its own lifetime before disappearing.</p>
+<p><code>Texture Mode</code>: Texture mode.</p>
+<p>&#x200B;    <code>Stretch</code>: Texture is stretched to fill entire trail.</p>
+<p>&#x200B;    <code>Tile</code>: Texture repeats by length.</p>
+<p>&#x200B;    <code>Distribute Per Segment</code>: Texture distributed per vertex.</p>
+<p>&#x200B;    <code>Repeat Per Segment</code>: Texture repeats once between every two vertices.</p>
+<p>&#x200B;    <code>Static</code>: Static texture.</p>
+<p><code>Texture Scale</code>: Trail texture scaling.</p>
+<p><code>Size Affects Width</code>: When this property is enabled, trail width is affected by particle size.</p>
+<p><code>Size Affects Lifetime</code>: When this property is enabled, trail lifetime is affected by particle size.</p>
+<p><code>Inherit Particle Color</code>: When this property is enabled, trail color is modulated by particle color.</p>
+<p><code>Color Over Lifetime</code>: Trail color change over time.</p>
+<p><code>Width Over Trail</code>: Width curve. Horizontal axis 0 is trail head (close to particle), 1 is trail tail.</p>
+<p><code>Color Over Trail</code>: Color gradient curve. Controls trail color and transparency from head to tail.</p>
+<h2 id="iii-cpu-particle-system-rendering-introduction"><a name="iii-cpu-particle-system-rendering-introduction" class="anchor-navigation-ex-anchor" href="#iii-cpu-particle-system-rendering-introduction"><i class="fa fa-link" aria-hidden="true"></i></a>III. CPU Particle System Rendering Introduction</h2>
+<p>The renderer module&apos;s settings determine how particles are shaded and drawn.</p>
+<p><img src="img/3-0-1.png" alt="3-0-1"></p>
+<p><code>Render Mode</code>: Rendering mode.</p>
+<p>&#x200B;    <code>Billboard</code>: Particles always face camera.</p>
+<p>&#x200B;    <code>Alignment</code>: Choose which direction particle billboards face. Effective when <code>Render Mode</code> selects <code>Billboard</code>.</p>
+<p>&#x200B;        <code>View</code>: Particles face camera plane.</p>
+<p>&#x200B;        <code>World</code>: Particles align with world axes.</p>
+<p>&#x200B;        <code>Local</code>: Particles align with game object&apos;s transform component.</p>
+<p>&#x200B;        <code>Facing</code>: Particles face the camera game object&apos;s direct position.</p>
+<p>&#x200B;        <code>Velocity</code>: Particles face their velocity direction.</p>
+<p>&#x200B;    <code>Stretched</code>: Particles are stretched based on velocity, length, or scale.</p>
+<p>&#x200B;        <code>Camera Velocity Scale</code>: Stretches particles based on camera movement. Setting this to 0 disables camera movement stretching.</p>
+<p>&#x200B;        <code>Velocity Scale</code>: Stretches particles proportionally based on particle velocity. Setting this to 0 disables velocity-based stretching.</p>
+<p>&#x200B;        <code>Length Scale</code>: Stretches particles proportionally based on particle&apos;s current size along its velocity direction. Setting this to 0 makes particles disappear, equivalent to 0 length.</p>
+<p>&#x200B;        <code>Freeform Stretching</code>: Indicates whether particles should use freeform stretching. With this stretching behavior, particles don&apos;t become thinner when viewed from the front.</p>
+<p>&#x200B;        <code>Rotate With Stretch</code>: Indicates whether to rotate particles based on their stretching direction. This property is only effective when <code>Freeform Stretching</code> is enabled.</p>
+<p>&#x200B;    <code>Horizontal Billboard</code>: Particles are horizontally fixed on XZ plane.</p>
+<p>&#x200B;    <code>Vertical Billboard</code>: Particles stand vertically on Y axis but rotate with camera.</p>
+<p>&#x200B;    <code>Mesh</code>: Uses 3D model as particles.</p>
+<p>&#x200B;    <code>None</code>: Renders nothing.</p>
+<p><code>Alignment</code>: Choose which direction particle billboards face.</p>
+<p>&#x200B;    <code>View</code>: Particles face camera plane.</p>
+<p>&#x200B;    <code>World</code>: Particles align with world axes.</p>
+<p>&#x200B;    <code>Local</code>: Particles align with game object&apos;s transform component.</p>
+<p>&#x200B;    <code>Facing</code>: Particles face the camera game object&apos;s direct position.</p>
+<p>&#x200B;    <code>Velocity</code>: Particles face their velocity direction.</p>
+<p><code>Flip</code>: Mirrors a certain proportion of particles on specified axes. Higher values flip more particles.</p>
+<p><code>Enable GPU Instancing</code>: Controls whether to use GPU instancing to render the particle system. Requires using mesh render mode and a compatible shader.</p>
+<p><code>Pivot</code>: Modify the rotation center axis point for rotating particles. This value is a multiplier of particle size.</p>
+<p><code>Visualize Pivot</code>: Preview particle pivot point in scene panel.</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9;Layabox 2026 all right reserved&#xFF0C;powered by <a href="https://layaAir.com/" target="_blank">LayaAir</a> Engine</span><span class="footer-modification">Update: 
+2026-02-04 20:59:46
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../addressable/readme.html" class="navigation navigation-prev " aria-label="Previous page: Smart Resource Management Plugin">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../spineBake/readme.html" class="navigation navigation-next " aria-label="Next page: Spine Animation Baking Plugin">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"CPU Particle System","level":"1.21.5.3","depth":3,"next":{"title":"Spine Animation Baking Plugin","level":"1.21.5.4","depth":3,"path":"IDE/layapackage/enterprise/spineBake/readme.md","ref":"IDE/layapackage/enterprise/spineBake/readme.md","articles":[]},"previous":{"title":"Smart Resource Management Plugin","level":"1.21.5.2","depth":3,"path":"IDE/layapackage/enterprise/addressable/readme.md","ref":"IDE/layapackage/enterprise/addressable/readme.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","sidebar-style","anchor-navigation-ex","-lunr","-search","-sharing","search-pro","versions-select","-favicon","favicon-absolute","fontsettings","prism","splitter","code","flexible-alerts","auto-scroll-table","popup","tbfed-pagefooter","-theme-hqbook"],"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"sidebar-style":{"author":"","title":""},"tbfed-pagefooter":{"copyright":"Copyright ©Layabox 2026","modify_label":"Update: ","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"],"lang":{"flow":"typescript"},"ignore":["mermaid","eval-js"]},"splitter":{},"search-pro":{},"auto-scroll-table":{},"popup":{},"code":{"copyButtons":true},"versions-select":{"type":"branches"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./style/layabox-152.png","appleTouchIconPrecomposedMore":{},"favicon":"./style/favicon-32.ico","bookmark":"./style/favicon-32.ico"},"fontsettings":{"family":"sans","size":2,"theme":"white"},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"versions":{"options":[{"value":"https://layaAir.com/3.4/doc/","text":"v3.4"},{"value":"https://layaAir.com/3.3/doc/","text":"v3.3"},{"value":"https://layaAir.com/3.2/doc/","text":"v3.2"},{"value":"https://layaAir.com/3.1/doc/","text":"v3.1"},{"value":"https://layaAir.com/3.0/doc/","text":"v3.0"}]},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"theme":"default","style":{"website":"style/website.css"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LayaAir3.4 Engine Documentation · LAYABOX","gitbook":"*"},"file":{"path":"IDE/layapackage/enterprise/cpuParticle/readme.md","mtime":"2026-02-04T12:59:46.980Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-02-04T13:03:23.313Z"},"basePath":"../../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sidebar-style/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-versions-select/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+

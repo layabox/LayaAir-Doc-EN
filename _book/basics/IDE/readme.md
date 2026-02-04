@@ -1,6 +1,5 @@
-# IDE basics
+# Basic Development Modules and Workflow
 
-The foundation of LayaAir IDE includes basic understanding of each component of the IDE, as well as basic interactive operations.
+This section starts with the IDE's [Overview of Main Modules](./GUI/readme.md), gradually explains how to [Create a Project](./createNewProject/readme.md), and describes the purpose of each directory in the [Project Directory](./projecFolders/readme.md).
 
-Through this part of the documentation, developers will have an overall understanding of the IDE and master the basic operation methods.
-
+Then, using a Hello World example as a guide, it presents the complete [Development Workflow](./helloWorld/readme.md). Finally, it introduces the [Debugging Tools](../DevTools/readme.md) of the development environment, with corresponding usage documentation guides.

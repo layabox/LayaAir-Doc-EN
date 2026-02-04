@@ -59,12 +59,12 @@ Promise.all(tasks).then((res:Array<any>)=> {
 The same resource address, whether loading Texture or Texture2D, has only one copy in the memory, but different types can be obtained.
 
 ```typescript
-Laya.loader.load("1.png").then((res)=> { /* res是Texture */ });
-Laya.loader.load("1.png", Loader.Texture2D).then((res)=> { /* res是Texture2D */ });
+Laya.loader.load("1.png").then((res)=> { /* res is Texture */ });
+Laya.loader.load("1.png", Loader.Texture2D).then((res)=> { /* res is Texture2D */ });
 
-Laya.loader.getRes("1.png"); //res是Texture
-Laya.loader.getRes("1.png", Loader.Texture2D); //res是Texture2D
-Laya.Loader.getTexture2D("1.png"); //res是Texture2D
+Laya.loader.getRes("1.png"); //res is Texture
+Laya.loader.getRes("1.png", Loader.Texture2D); //res is Texture2D
+Laya.Loader.getTexture2D("1.png"); //res is Texture2D
 ```
 
 ### 1.5 Load HTMLImage

@@ -1,737 +1,346 @@
-# Universal release
+# General Release Settings
 
-## 1. Overview
+> Author: Charley
 
-After completing the development of the project in LayaAir, the project needs to be published. Publishing a project is an important step in getting a developer's game or application packaged and ready for deployment to a target platform, whether it's a web browser, mobile device, or other supported platform.
+After completing project development and debugging, the ultimate goal is to build and release the game or application to the target platform, allowing players or users to experience it smoothly. LayaAir IDE provides a comprehensive build and release process to help developers quickly generate runtime versions adapted to different platforms. Whether for Web, PC clients, or various mobile and mini-game platforms, the IDE can minimize developer release costs based on platform characteristics.
 
-LayaAir3.1.x reconstructs the contract issuing process based on 3.0.x. The new version supports batch publishing, API calls, and plug-in extensions.
+LayaAir supports release capabilities for current mainstream platforms, including web, mobile (Android, iOS, HarmonyOS Next), mini-games (WeChat, Douyin, Huawei, OPPO, vivo, Alipay, Taobao, etc.), and PC (Windows, Linux), etc.
 
+The "**General Release**" section here covers common basic capabilities for all platform releases. Developers need to master these configurations and functions to avoid the final release results not meeting expectations.
 
+## 1. Release Entry and Process
 
-## 2. Publish in IDE
+### 1.1 Build Release Entry
 
-### 2.1 Build and release
+Developers can open the build and release panel through **"File" → "Build & Release"** in the IDE's top menu bar. This panel can be freely docked in the IDE's middle area for convenient build configuration, as shown in Figure 1-1:
 
-To use the IDE to publish a project, developers first open the "Build and Release" option in the file menu, as shown in Figure 2-1:
+<img src="img/1-1.png" alt="1-1" style="zoom:80%;" />
 
-<img src="img/2-1.png" alt="2-1" style="zoom:80%;" />
+(Figure 1-1)
+
+At the bottom of the general panel, two shortcut buttons are provided by default: **"Build Web"** and **"Build Other"**. Developers can click these buttons directly for quick building, as shown in Figure 1-2. You can also select the target platform from the platform list on the left, enter the corresponding configuration panel, and then proceed with build and release.
+
+![](img/1-2.png)
+
+(Figure 1-2)
+
+`Web` refers to releasing as an [HTML5 version](../web/readme.md), running in various platform browser HTML5 environments, embedded app or mini-program `webView` environments.
+
+`Android` refers to releasing as an [Android platform](../Android/readme.md), running in Android app environments.
+
+`iOS` refers to releasing as an [iOS platform](../iOS/readme.md), running in iOS app environments.
+
+`Windows` refers to releasing to the [Windows platform](../Windows/readme.md), running directly on the Windows system desktop.
+
+`Linux` refers to releasing to the [Linux platform](../Linux/readme.md), running directly on the Linux system desktop.
+
+`HarmonyOS NEXT` refers to releasing as a project工程 adapted to [HarmonyOS NEXT](../Harmony/readme.md).
+
+`Douyin Mini-game` refers to releasing as a project工程 adapted to [Douyin Mini-game](../miniGame/byteDance/readme.md).
+
+`OPPO Mini-game` refers to releasing as a project adapted to [OPPO Mini-game](../miniGame/OPPO/readme.md).
+
+`VIVO Mini-game` refers to releasing as a project adapted to [VIVO Mini-game](../miniGame/vivo/readme.md).
+
+`WeChat Mini-game | Trial Ad` refers to releasing as a project adapted to [WeChat Mini-game or Trial Ad](../miniGame/wechat/readme.md).
+
+`Xiaomi Quick Game` refers to releasing as a project adapted to [Xiaomi Quick Game](../miniGame/xiaomi/readme.md).
+
+`Alipay Mini-game` refers to releasing as a project adapted to [Alipay Mini-game](../miniGame/alipaygame/readme.md).
+
+`Taobao Mini-game` refers to releasing as a project adapted to [Taobao Mini-game](../miniGame/tbgame/readme.md).
+
+> This section mainly introduces general release settings. For each release platform, click the links above to view the documentation.
+
+### 1.2 Release Tasks and Operations
+
+After clicking the build button, the IDE automatically switches to the **"Build & Release Tasks"** panel. After the release process is completed, developers can perform a series of operations by selecting the corresponding history record, such as: open release directory, view build logs, rebuild, run directly, scan to run, or delete the release directory. As shown in Figure 1-3.
+
+![](img/1-3.png)
+
+(Figure 1-3)
+
+## 2. Basic Settings
+
+Basic settings cover common information used by all platforms during the release process. Developers need to make necessary configurations here to ensure the project can be correctly identified and displayed on different platforms.
+
+### 2.1 Name `name`
+
+The **internal project name**, filled when creating the project, can be modified here (usually not modified, kept consistent with the project file name).
+
+If no display name is set, it defaults to being used as the display name.
+
+For example, in **Web release**, the name displays in the generated HTML file as the webpage's `<title>`.
+
+As a Native package, the name serves as the package name and the default name on the window. As shown in Figure 2-1.
+
+![](img/2-1.png)
 
 (Figure 2-1)
 
+### 2.2 Display Name `displayName`
 
+The user-visible product name. Used for web browser titles, desktop application names, installation package names, etc.
 
-### 2.2 General options
+After setting, the system prioritizes displaying this name rather than the project name. As shown in Figure 2-2.
 
-After the build release option is turned on, you can see that there is a common option, which is consistent for each target platform:
-
-`Name`: The name of the project (for web publishing, it is the title name in html).
-
-`Output directory`: The output directory refers to the target directory to be published to. By default, it is in the release directory of the project. **It is not recommended to change it here**. Of course, if the developer needs to customize the output directory, it can be in the directory where the project is located, or it can be a directory unrelated to the project.
-
-`Compression engine library`: It is generally recommended to check it. After checking, the compressed engine class library will be used, which can reduce the package size.
-
-`Compress JS file`: It is generally recommended to check it. After checking, the compressed JS file will be used, which can reduce the package size.
-
-`Generate source code mapping`: When checked, the output directory will package the ".js.map" file for source code mapping.
-
-`Startup scene`: The first scene when starting the project runtime.
-
-`Include scene`: In the included scene, the referenced resources will be copied to the output directory (refer to 2.5.1 for details).
-
-`Always included resource directory`: Resources in the selected resource directory are always copied to the output directory (refer to 2.5.2 for details).
-
-`Copy files in BIN directory`: When checked, the published output directory will include the files in the bin folder in the project directory (refer to Section 4 for details).
-
-`Turn on version management`: When checked, a key value will be added to the published file name for version management mapping, which can effectively avoid the impact of incorrect loading caused by cache or CDN.
-
-`Enable subcontracting`: After checking, the subcontracting function is enabled (refer to 2.6 and 2.7 for details).
-
-
-
-### 2.3 Target platform
-
-Currently, there are nine publishing options in the target platform, namely: Web, Android, iOS, Douyin mini games, OPPO mini games, VIVO mini games, WeChat mini games, Xiaomi Kuai Games, and Alipay mini games. As shown in Figure 2-2, after selecting the corresponding platform, click Build.
-
-<img src="img/2-2.png" alt="2-2" style="zoom:80%;" />
+![](img/2-2.png)
 
 (Figure 2-2)
 
-`Web` means published as [HTML5 version](../web/readme.md), running in the browser environment, webView, LayaNative APP environment.
+### 2.3 Icon `icon`
 
-`Android` means released as an Android platform and runs in the Android APP environment.
+Serves as the default icon for the application on the desktop, installation interface, etc. Usually needs to be a square icon.
 
-`iOS` refers to an APP released as an iOS platform and running in the iOS APP environment.
+### 2.4 Version `version`
 
-`Douyin Mini Game` refers to the project published as adapted [Douyin Mini Game](../miniGame/byteDance/readme.md).
+The project version number, used to identify different functional versions.
+- When making major functional updates, the version number can be upgraded from `1.0` to `2.0`.
+- For small bug fixes or optimizations, increment based on the original version number, such as `1.0` → `1.1`.
 
-`OPPO Mini Games` refers to projects published as adapted [OPPO Mini Games](../miniGame/OPPO/readme.md).
+Recommend using **floating-point format** (such as `0.1`, `1.3`, `5.0`) for easier management and differentiation.
 
-`VIVO mini-games' refer to projects published as adapted [VIVO mini-games](../miniGame/vivo/readme.md).
+### 2.5 Output Directory `outputPath`
 
-`WeChat Mini Games` refers to projects published as adapted [WeChat Mini Games](../miniGame/wechat/readme.md).
+The directory where generated files are stored after release.
+- Default path is the `release` folder in the project root directory.
+- **Recommend keeping the default path** for unified management.
+- For special needs, developers can also customize the path, either as a subfolder under the project directory or as a completely independent directory.
 
-`Xiaomi Quick Game` refers to projects published as adapted to [Xiaomi Quick Game](../miniGame/xiaomi/readme.md).
+## 3. Scripts
 
-`Alipay Mini Game` refers to a project published as an adapted [Alipay Mini Game](../miniGame/alipaygame/readme.md).
+### 3.1 Compress Engine Library `useCompressedEngine`
 
-> This article mainly introduces the general publishing settings. You can click the above link to view the documentation for each publishing platform.
+For formal release, recommend checking this option. After enabling, the compressed version of the engine library will be used to reduce package size.
 
-You can also click the "Build Other" option in Figure 2-2 to publish directly to the corresponding platform. After publishing, you can see the publishing results in "View Tasks".
+### 3.2 Compress JS Files `minifyJS`
 
+For formal release, recommend checking this option. After enabling, compressed `JS` files will be output to further reduce size.
 
+### 3.3 Generate Source Map `sourcemap`
 
-### 2.4 Resources used by published code
+After enabling, `.js.map` files will be generated in the output directory for source mapping during debugging.
 
-Developers often use code references to use resources in their projects, so the IDE cannot recognize these resources. Therefore, the IDE specifies the `Resources` directory to meet this requirement for developers, as shown in Figure 2-3:
+Source Map is a technique used for debugging and development. It establishes a mapping relationship between original source code and compressed, obfuscated code. By creating a source code mapping file, you can accurately map compressed code back to original source code in browser developer tools, facilitating developers in locating problems, viewing error stacks, and variable values during debugging, improving debugging efficiency.
 
-<img src="img/2-3.png" alt="2-3" style="zoom:50%;" />
+### 3.4 Include Source Content `sourcesContent`
 
-(Figure 2-3)
+Include source content is a related attribute of source mapping.
 
-This is a sample project that uses code only. Note that there are two images image and c1 in the `resources` directory. Let’s take a look at the released directory.
+When checked, the source code mapping `.map` file will directly include source code content. During debugging, you can see the complete source code directly in the browser for the best debugging experience, but it increases release package size and source code can be easily restored.
 
-Taking Web publishing as an example, click the "Build Web" button and wait until the publishing is successful, as shown in Figure 2-4.
+If unchecked, the `.map` file only saves the source code mapping relationship without source code text. You can only see the compressed `JS`. However, when errors occur, it can provide correct error line and column positioning, belonging to a "minimize debug info" solution, often used in online environments.
 
-<img src="img/2-4.png" alt="2-4" style="zoom:50%;" />
+## 4. Resource Options
 
-(Figure 2-4)
+### 4.1 Startup Scene `startupScene`
 
-You will see that under the web directory (if a mini-game is released, it corresponds to the mini-game directory), there will also be a `resources` directory, which includes image and c1. At the same time, there will be a "fileconfig.json" file in the web directory. In fact, the json file contains resource attribute information. The content of the file is as follows:
+The startup scene is the project entry scene after the engine completes loading and initialization, and must be set.
 
-```json
-{
-  "sRGB": true,
-  "wrapMode": 0,
-  "filterMode": 1,
-  "anisoLevel": 0,
-  "readWrite": false,
-  "mipmap": false,
-  "pma": true,
-  "hdrEncodeFormat": 0,
-  "files": [
-	{
-  	"file": "",
-  	"ext": "png",
-  	"format": 1
-	}
-  ],
-  "platforms": {
-	"0": 0,
-	"1": 0,
-	"2": 0
-  }
-}
-```
+### 4.2 Included Scenes `includedScenes`
 
-Any resources in the `resources` directory will be published to the output directory without additional action, so developers can use the `resources` directory as a directory for code to use resources.
+For scenes, only the startup scene and scene files included in the release will be copied to the release directory.
 
+> The release process packages scene-referenced resources to the release directory.
 
+### 4.3 Always Included Resource Directories `alwaysIncluded`
 
-### 2.5 Resources used in IDE
+There are many resources in the IDE project's assets. Which resources are copied to the release directory is mainly determined by three rules.
 
-The above `resources` directory is mainly for using resources with code. Resources need to be stored in the `resources` directory. However, in our actual development process, resources are usually placed in the assets directory, including scenes and prefab files, etc., as shown in Figure 2-5.
+First, resources referenced in release scenes (startup scene + included scenes) will be copied to the release directory.
 
-<img src="img/2-5.png" alt="2-5" style="zoom:50%;" />
+Second, all resources in directories named `resources` under the assets directory will be automatically merged and copied to the `resources` directory in the release directory. As shown in Figure 4-1.
 
-(Figure 2-5)
+![](img/4-1.png)
 
-With so many resource directories, changing them all to the resources directory would be a very huge modification work. Therefore, the IDE provides developers with two more convenient ways:
+(Figure 4-1)
 
+Third, in addition to the above two rules, directories configured in `alwaysIncluded resource directories` will also be copied to the release directory. As shown in Figure 4-2.
 
-
-#### 2.5.1 Including scenes: resources referenced in the scene
-
-As shown in Figure 2-6, scenes such as Game can be added to the included scene. The resources referenced by these scenes will be published to the output directory. After publishing, open the published directory.
-
-<img src="img/2-6.png" alt="2-6" style="zoom:80%;" />
-
-(Figure 2-6)
-
-As shown in Figure 2-7, these directories have been successfully published to the output directory.
-
-<img src="img/2-7.png" alt="2-7" style="zoom:50%;" />
-
-(Figure 2-7)
-
-Next run it to see the effect, as shown in the animation 2-8:
-
-<img src="img/2-8.gif" alt="2-8" style="zoom: 50%;" />
-
-(Animation 2-8)
-
-The scene can be seen running normally, but no enemies are found, and there is no music. Turn on the debugging information, as shown in Figure 2-9. You can see that enemy.lh and bgm.mp3 are not in the output directory. This is because enemy.lh and bgm.mp3 are executed through code. The resources referenced in the code must be placed in the resources directory before they are copied to the release directory. If the resources referenced by the code are not in the resources directory and are not referenced in the scene, the directory where the resource is located needs to be set to Always Contains the resource directory.
-
-<img src="img/2-9.png" alt="2-9" style="zoom: 50%;" />
-
-(Figure 2-9)
-
-At this time, we can use the second method
-
-
-
-#### 2.5.2 Always include resource directories: resources referenced in the code
-
-In the "Always Include Resource Directory" option, click `+` to select the folder where the enemy.lh and bgm.mp3 resources are located, as shown in Figure 2-10:
-
-<img src="img/2-10.png" alt="2-10" style="zoom:80%;" />
-
-(Figure 2-10)
-
-At this time, publish again. After the publishing is successful, check the output directory, as shown in Figure 2-11. It is found that the enemy.lh and bgm.mp3 files have been published to the prefab and music directories respectively.
-
-<img src="img/2-11.png" alt="2-11" style="zoom:50%;" />
-
-(Figure 2-11)
-
-Run it at this time and see the effect. As shown in Figure 2-12, the enemy is running normally, indicating that the resource release has been included.
-
-<img src="img/2-12.png" alt="2-12" style="zoom: 50%;" />
-
-(Figure 2-12)
-
-Finally, to summarize, as shown in Figure 2-13, through the resources directory, included scenes, and always included resource directories, all the resources used during the project running process can be successfully packaged into the output directory.
-
-When the project requires fewer resources, they can be placed in the resources directory numbered 1 in the figure, so that resources referenced in the scene or in the code can be published to the output directory; when the project has more resources , it is inconvenient to manage in the resources directory, so when publishing, you need to set up the resource directory outside the resources directory. The scene should be added in the "Included Scenario" numbered 2, and the resources referenced in the code should be added in the "included scene" numbered 3. "Always included in the resource directory".
-
-![2-13](img/2-13.png)
-
-(Figure 2-13)
-
-In the initial stage of project development, developers should try to plan the directory structure of project resources in advance to avoid repeated use of resources, or continuous modification of resource directories in the later stages of the project, resulting in resource reference errors in the scene.
-
-
-
-### 2.6 Resource subcontracting
-
-When `building and publishing`, you can `turn on subcontracting`. Resource subcontracting is to divide the selected resources into multiple small packages to facilitate users to load resources and avoid problems such as network instability and interruptions.
-
-The following takes web publishing as an example to demonstrate how to enable resource subcontracting. As shown in the animation 2-14, after clicking `Open Subpackaging`, you can add one or more subpackages below. Two subpackages (resource folders) are added in the animation. Select the paths "sub1" and " sub2", all resources under these two paths will each become a subcontract after release. "sub1" has a prefab (Cube.lh), material (CubeMaterial.lmat), and texture map (layaAir.png); "sub2" has only one prefab (Sphere.lh).
-
-<img src="img/2-14.gif" alt="2-14" style="zoom: 50%;" />
-
-(Animation 2-14)
-
-When configuring resource subcontracting, you need to set the following parameters:
-
-| Parameters	| Description	|
-| -------------- | ------------------------------------------------------------ |
-| Resource folder	| The contents in the resource folder are the resources to be subcontracted	|
-| Entrance script	| Refer to code subcontracting in Section 2.7	|
-| Whether the package is remote	| After checking, the resource folder (subpackage) will be released to the release\xxx-remote directory after `version release` |
-| Automatically load at startup | If checked, the resource folder (subpackage) will be automatically loaded when running the published project |
-| Remote package address	| If you check "Remote package or not" and "Automatically load at startup" at the same time, this parameter will be displayed and you will be asked to fill in the address of the remote package |
-
-> The remote package file after Web publishing is in the web-remote folder. Mini games also support remote packages. **The remote package after release is located in the release directory**. For example, the remote package file after the WeChat mini game is released is located in the release\wxgame-remote folder. The same is true for other mini games.
-
-
-#### 2.6.1 Remote package
-
-Remote package means that these resources can be placed on CDN (content distribution network, readers who don't understand can first understand it as a kind of server) to provide high performance, scalability and low-cost network content to users. If the web platform does not use remote packages, there is little point in subcontracting them. Mini games use remote packages to reduce the package size.
-
-For example, as shown in Figure 2-15, if the "sub1" and "sub2" directories are set as remote packages, after publishing, these two directories will be published to the "release\web-remote" directory.
-
-<img src="img/2-15.gif" alt="2-15" style="zoom: 50%;" />
-
-(Animation 2-15)
-
-Developers need to upload all the subdirectories under "web-remote" to the CDN by themselves (not the "web-remote" directory itself, but "sub1" and "sub2" under the directory). After the upload is completed, " Delete the web-remote" directory to prevent it from taking up space (you can also keep it). For the convenience of demonstration, **local server** is used to simulate instead of CDN.
-
-Create a new folder on the desktop named "serve", which represents the folder in the local server. A new text file "This is a local server.txt" is created in it to test that the local server starts successfully. You can use Node.js anywhere to start a local server. As shown in the animation 2-16, open the command line cmd in the "serve" folder, enter `anywhere 2840`, and then click the Enter key on the keyboard to start a local server, where `2840` is the specified port number .
-
-<img src="img/2-16.gif" alt="2-16" style="zoom: 80%;" />
-
-(Animation 2-16)
-
-As you can see from the animation, the address of the local server is `http://192.168.56.1:2840/`. This address will be used in the subsequent demonstration. It should be noted here that when running the published project, the local server needs to be turned on.
-
-The next step is to import the resources to the local server. When actually uploading to CDN, you can use tools to upload, but for the local server, directly upload the remote packages ("sub1" and "sub2") from the "web-remote" file Just cut or copy the folder to the "serve" folder.
-
-After importing the remote package to the local server, there are two situations for loading the remote package, automatic loading in the IDE, and loading with code.
-
-
-
-#### 2.6.2 Automatic loading in IDE
-
-As shown in Figure 2-17, after referencing resources in the IDE (adding resources in the scene),
-
-<img src="img/2-17.png" alt="2-17" style="zoom: 50%;" />
-
-(Figure 2-17)
-
-When building and publishing, check `Automatically load at startup`, and then fill in the remote package address, which is the address of the local server `http://192.168.56.1:2840/`, as shown in the following animation:
-
-<img src="img/2-18.gif" alt="2-18" style="zoom: 80%;" />
-
-(Animation 2-18)
-
-After clicking `Version Release`, you need to upload "sub1" and "sub2" to the "serve" folder of the local server again, as shown in animation 2-19:
-
-<img src="img/2-19.gif" alt="2-19" style="zoom: 50%;" />
-
-(Animation 2-19)
-
-Now you can run the published Web project, as shown in animation 2-20. The same method is used for local debugging. Open the command window in the published folder, enter `anywhere` and press Enter to start. When running the Web project, it is The default port number is `8000`. Be sure to keep the local server with the remote package address `http://192.168.56.1:2840/` open.
-
-<img src="img/2-20.gif" alt="2-20" style="zoom:50%;" />
-
-(Animation 2-20)
-
-You can see that the resources are loaded. Open the developer tools, as shown in Figure 2-21. You can see that the resources are loaded from the remote package `http://192.168.56.1:2840/`.
-
-<img src="img/2-21.png" alt="2-21" style="zoom: 50%;" />
-
-(Figure 2-21)
-
-
-
-#### 2.6.3 Resources referenced by the code
-
-Sometimes, we don't want the game to load too many resources at the beginning. This will cause the load to be too large, and then manual code loading is required.
-
-As shown in Figure 2-22, the resource to be subcontracted is not referenced in the scene. Add a custom component script in the attribute settings of the Scene2D node.
-
-<img src="img/2-22.png" alt="2-22" style="zoom:80%;" />
-
-(Figure 2-22)
-
-Then add the following code to the script:
-
-```typescript
-const { regClass, property } = Laya;
-
-@regClass()
-export class Script extends Laya.Script {
-	//declare owner : Laya.Sprite3D;
-
-	@property({ type: Laya.Scene3D })
-	scene3d: Laya.Scene3D;
-
-	constructor() {
-    	super();
-	}
-
-	/**
- 	* Executed after the component is activated. At this time, all nodes and components have been created. This method is only executed once.
- 	*/
-	onAwake(): void {
-    	//Web platform uses remote package
-    	Laya.loader.loadPackage("sub1","http://192.168.56.1:2840/",this.printProgress).then(()=>{
-        	Laya.loader.load("sub1/cube.lh").then((res:Laya.PrefabImpl) =>{
-            	let sp3:Laya.Sprite3D =res.create() as Laya.Sprite3D;
-            	this.scene3d.addChild(sp3);
-        	});
-    	})
-
-    	Laya.loader.loadPackage("sub2","http://192.168.56.1:2840/",this.printProgress).then(()=>{
-        	Laya.loader.load("sub2/sphere.lh").then((res:Laya.PrefabImpl) =>{
-            	let sp3:Laya.Sprite3D =res.create() as Laya.Sprite3D;
-            	sp3.transform.localPositionX += 1.0; //Prevent the sphere and cube from overlapping at the initial position
-            	this.scene3d.addChild(sp3);
-        	});
-    	})
-	}
-
-	printProgress(res: any) {
-    	console.log("Loading Progress" + JSON.stringify(res)); //Convert the res object into a string in JSON format. The value printed here is 1. This code is mainly used to print loadTask to reflect the download progress after the mini-game is released.
-	}
-
-}
-```
-
-> Note: For resource loading, please refer to ["Resource Loading"](../../basics/common/Loader/readme.md).
-
-When loading the exploit code, uncheck `Automatically load at startup`, but if the subpackaged resources are not in the resources directory ("sub1" and "sub2" in this example are not there), you must add the package to `Always include In the resource directory`, the configuration is as shown below:
-
-<img src="img/2-23.png" alt="2-23" style="zoom:50%;" />
-
-(Figure 2-23)
-
-After publishing, as with the previous operation, "sub1" and "sub2" need to be uploaded to the local server "serve" folder.
-
-Next, you can run the Web project. Same as the previous operation, use `anywhere` to start. The effect is shown in Figure 2-24:
-
-<img src="img/2-24.png" alt="2-24" style="zoom:50%;" />
-
-(Figure 2-24)
-
-You can see that the resource is loaded. Open the developer tools, as shown in Figure 2-25. You can see that the resource is loaded from the remote package `http://192.168.56.1:2840/`.
-
-<img src="img/2-25.png" alt="2-25" style="zoom:50%;" />
-
-(Figure 2-25)
-
-
-
-### 2.7 Code subcontracting
-
-#### 2.7.1 Method
-
-In addition to resource subcontracting, code can also be subcontracted. Generally used for sub-packaging of mini-games, it can reduce the size of the first package (because mini-games limit the size of the package) and speed up loading.
-
-Code subcontracting requires the use of `script set definition`, which can automatically package the scripts in the specified directory (under the src directory) into a separate js. It's also suitable for non-subcontracting purposes, such as simply wanting to split code. As shown in Figure 2-26, a script set definition can be created in the project resource panel.
-
-![2-26](img/2-26.png)
-
-(Figure 2-26)
-
-> Usually, the script files you write will be concentrated in the bundle.js file in the project directory "bin\js\bundles".
->
-> If a certain part of the code is split, this part of the code will be transferred to the "script set definition.js" file in the project directory "bin\js\bundles".
-
-As shown in Figure 2-27, after creation, you can configure it in its property settings panel.
-
-![2-27](img/2-27.png)
-
-(Figure 2-27)
-
-`Activate`: Generally needs to be checked. When checked, code subcontracting is activated.
-
-`Global name`: generally does not need to be set. Used for module naming, such as module1, then other modules can access the classes and functions exported by this module through "module1.xxx".
-
-`Allow editor loading`: Generally needs to be checked. When checked, the script will also be loaded in the editor environment.
-
-`Allow runtime loading` and `Automatic loading`: generally need to be checked. When checked, the script will be loaded automatically at runtime.
-
-`Allow compression when publishing`: When building a release, if "Compress JS files" is set, this script will be compressed.
-
-`Entry file` and `Include all files`: control which TS scripts must be included. The subpackage definition is for the directory. In which directory it is located, the files in this directory will be included in this subpackage.
-
-`Dependencies`: Like JS plug-ins, they manage the loading order. That is, you can set up multiple scripts, and these scripts will be loaded first.
-
-
-
-After configuration, when publishing the project, you only need to place the script set definition in the `entry script`, and then select a non-main package folder in the `resource folder`. Note that the sub-package cannot be a remote package, as shown in Figure 2 -28 shown,
-
-![2-28](img/2-28.png)
-
-(Figure 2-28)
-
-
-
-#### 2.7.2 Demonstration
-
-Here we take "2D Getting Started Example" as an example to demonstrate the code subcontracting process.
-
-After creating a new sample project, as shown in Figure 2-29, create a new `script set definition` MyModule.bundledef in the src folder, and then in its property settings panel, check Include all files. Here, all the codes in the src directory are split. Developers can split the codes according to their own needs.
-
-![2-29](img/2-29.png)
-
-(Figure 2-29)
-
->When MyModule is activated, the bundle.js file in the project directory "bin\js\bundles" will become smaller in size, and there will be one more MyModule.js file.
->
->This means splitting the code in the src directory, and splitting the code in bundle.js into MyModule.js.
-
-Then in the build release, as shown in Figure 2-30, place MyModule in the `Entry Script` and check `Automatically load at startup`. Among them, the script folder of the `resource folder` is a newly created empty folder in the assets directory, and the code subpackage after release will be located in this folder.
-
-![2-30](img/2-30.png)
-
-(Figure 2-30)
-
->After publishing, you can find that in the js folder of the publishing directory, the code in the original bundle.js is split into the subpackaged script folder.
-
-
-
-
-
-## 3. Packaging Album
-
-Atlas is a common art resource in game development. Multiple pictures are merged into one large picture through the IDE publishing process, and the original picture resource information is stored in the atlas format file.
-
-Figure 3-1 is a png atlas resource packaged using LayaAirIDE.
-
-![3-1](img/3-1.png)
-
-(Figure 3-1)
-
-### 3.1 Why use atlas resources?
-
-Using atlas resources synthesized from multiple pictures as art resources in the game has the following advantages:
-
-**1 Optimize memory**
-
-When synthesizing the atlas, the blank area around each picture will be removed, and various optimization algorithms can be implemented as a whole. After the atlas is synthesized, the game package and memory usage can be greatly reduced.
-
-**2 Reduce CPU operations**
-
-If multiple `Sprite` are rendering images from the same atlas, these `Sprite` can be processed using the same rendering batch, which greatly reduces the CPU calculation time and improves operating efficiency.
-
-
-
-### 3.2 Supported album packaging formats
-
-LayaAirIDE supports packaging of two resource formats, PNG and JPG, into atlases. However, it is recommended to use PNG for the original resources packaged in the atlas, because the size of JPG will be larger.
-
-> Tips：
->
-> It should be noted that the bit depth of the original PNG resource cannot exceed 32, otherwise the packaged image will appear blurry. The Texttrue Type property of the resource entered into the atlas should be set to SpritetTextrue. In addition, PNG and JPG resources cannot be renamed from resources in other formats to PNG and JPG formats.
-
-
-
-### 3.3 How to create an atlas using LayaAir IDE
-
-There are two ways to create an atlas using LayaAir IDE. The first way is more detailed, and the second way is simpler and faster. Developers can choose by themselves.
-
-#### 3.3.1 Automatic generation
-
-Automatically packaging image resources is only possible when LayaAir IDE is released, but you need to add and set the album packaging configuration file. Here we explain it through an example, as shown in Figure 3-2:
-
-<img src="img/3-2.png" alt="3-2" style="zoom:80%;" />
-
-(Figure 3-2)
-
-1. All image resources are placed in the assets/resources directory. As mentioned above, since images may be used in code during project development, without specifying the "always included resource directory", they are placed in the The resources directory will be published directly to the output directory.
-
-2. The atlas directory under the resources directory is used to store some scattered images and subfolders (there are also scattered images in it). The advantage of this is to classify and manage resources. There are often other resource directories under the resources directory. Try to put pictures Resources are stored separately from other resources.
-
-3. In the atlas directory, there are two pictures (img_bg100-0.png and img_bg100-1.png) and sub-folders ui1 and ui2, which contain many scatter images respectively. At the same time, there is also a sub-folder in the ui1 directory.
-
-If the atlas is not packaged, after publishing, the atlas directory under the output directory will be filled with scatter images. Let’s take a look at how to package an album:
-
-**Step 1: Add configuration file**
-
-As shown in Figure 3-3, add the configuration file in the atlas directory.
-
-<img src="img/3-3.gif" alt="3-3" style="zoom:80%;" />
-
-(Animation 3-3)
-
-In the resources/atlas directory, right-click -> Create, select "Automatic Atlas Settings", and an AtlasConfig.atlascfg file will be created. The purpose of placing it under atlas is to package the pictures in the atlas directory and the pictures in sub-folders at the same time (supporting single atlas and multiple sub-folder atlases). Developers can rename this file.
-
-
-
-**Step 2: Set file properties for the album**
-
-Click on the AtlasConfig file, as shown in Figure 3-4:
-
-<img src="img/3-4.png" alt="3-4" style="zoom:80%;" />
-
-(Figure 3-4)
-
-`Subfolder handling`:
-
-Create one texture set per subdirectory: Pack one atlas per subfolder.
-
-Share a texture set: All images in subfolders and sibling directories are packaged into one large atlas.
-
-`Include subfolders`:
-
-When checked, it supports packaging subfolders into atlases. When unchecked, only pictures in the same level directory are processed into packaged atlases.
-
-`Maximum width\height of atlas`:
-
-The default value is `2048×2048`, which determines the maximum size of a single atlas. If there are too many original pictures and exceed the maximum width and height of a single atlas, new atlas files (multiple atlases) will be generated during packaging.
-
-`Maximum width\height of a single image`:
-
-The default value is `512×512`. Single images exceeding this size will not be packaged into the album.
-
-> Tips: It is not recommended to package a single image exceeding 512×512 into an atlas. This image can be preloaded separately. However, loading a single image cannot exceed 1024×1024, otherwise it will affect performance.
-
-`Texture set scaling`:
-
-Here you can reduce the size of the atlas by scaling, for example, to 0.5. The IDE will multiply the width and height of the original image by 0.5 to generate it into the atlas. When displayed, the size of the original image will be maintained by stretching. After this processing, although the atlas The size will become smaller, but the display effect will also be affected. It can be regarded as an alternative compression scheme for the atlas. If you want to maintain image accuracy during design, try not to adjust the default values.
-
-`Power of Two Limits`:
-
-If checked, the width and height of the generated atlas image will be a whole power of 2. Here, it is recommended that the artist design according to the whole power of 2 when designing, and use the atlas tool to forcibly maintain the whole power of 2, which will definitely cause the size of the atlas to become larger. Therefore, unless you are faced with some runtime environment that requires optimization by the whole power of 2, under normal circumstances, there is no need to check it. Try to ask the art designer to optimize it by the whole power of 2 such as 32, 64, 128, 256, etc. Design the width and height of the image.
-
-`Crop the white space around the image`:
-
-If checked, the generated atlas pictures will automatically crop out the blank areas in the original pictures. The default is checked, do not remove it.
-
-`Texture format`:
-
-png32 is the default format, this format supports transparency and more colors; png24, no transparency; texture compression reference document ["Texture Compression"] (../../IDE/uiEditor/textureCompress/readme.md).
-
-
-
-**Step 3: Publish the generated atlas**
-
-After setting up, publish in "Build Release" and wait for the release to be successful. Now let's take a look at the released directory, as shown in Figure 3-5:
-
-![3-5](img/3-5.png)
-
-(Figure 3-5)
-
-1. Three atlases (AtlasConfig, ui1 and ui2) were generated. Since the `Create a texture set for each subdirectory` method was selected, ui1 and ui2 each generated an atlas (the atlas file name of the subfolder is According to the folder name), the map under atlas generates an atlas (the atlas file generated in the folder where AtlasConfig.atlascfg is located is named according to the AtlasConfig file name).
-
-2. If there are pictures whose size exceeds 512x512, they will not be entered into the album (512×512 is the setting in Figure 3-4).
-
-3. There is an a directory under the ui1 directory, and `Include subfolders` is checked, so the scatter images under the a folder are also entered in the album ui1. If you do not check `Include subfolders`, the ui1/a directory will be retained, and the scatter image will still be below.
-
-
-
-#### 3.3.2 Tool production
-
-The second method is faster and simpler, but it cannot achieve detailed attribute settings like the first method. This method is in ["Animation Node"](../../2D/displayObject/Animation/readme.md ) is also mentioned in, and I will demonstrate it for you below.
-
-First click "Create Album" in the "Tools" menu.
-
-![3-6](img/3-6.png)
-
-(Figure 3-6)
-
-Then drag the folder you want to package into the folder where the picture is located, and click `Make`.
-
-<img src="img/3-7.png" alt="3-7" style="zoom:80%;" />
-
-(Figure 3-7)
-
-You can also click the folder icon to select the path yourself, as shown in Figure 3-8.
-
-![3-8](img/3-8.png)
-
-(Figure 3-8)
-
-After clicking Create, enter the file name and click Save, as shown in Figure 3-9.
-
-<img src="img/3-9.png" alt="3-9" style="zoom:80%;" />
-
-(Figure 3-9)
-
-The atlas is now created.
-
-When we add or delete pictures included in the atlas, we only need to repeat the above process, click on the .atlas file, and click Yes to successfully replace it, as shown in Figure 3-10.
-
-<img src="img/3-10.png" alt="3-10" style="zoom:80%;" />
-
-(Figure 3-10)
-
-> [!Tip]
->
-> If the second atlas packaging method is used, the developer must ensure that this directory will be very stable, and no subsequent additions, deletions, or modifications of image resources will be made. If a stable directory cannot be guaranteed, it is best to use the first packaging method.
-
-
-
-### 3.4 Introduction to packaged and generated atlas files
-
-#### 3.4.1 Package the generated atlas file
-
-After packaging the atlas, special resources for the atlas will be generated (the `.atlas` files and `.png` files with the same names respectively)
-
-#### 3.4.2 atlas suffix file
-
-`.atlas` is a unique atlas format of LayaAirIDE. It is only used for atlases, so there is no need to fill in the type when loading `.atlas`. It is the same as loading a normal single image, which is more convenient and is the recommended way to load atlases. . The sample code for loading the atlas using atlas is:
-
-```typescript
-//Example of using atlas method atlas
-Laya.loader.load("resources/atlas/Atlas_ui.atlas").then(
-    ()=>{}
-);
-```
-
-
-
-### 3.5 How to use small pictures in the atlas in the project
-
-If you use the resources in the atlas in your project, you need to preload the atlas resources first, and then set the skin (*skin*) attribute value of the image to "original thumbnail directory name/original thumbnail resource name.png".
-
-For example: Now we display the original small picture `img_head2.png` and image.png in the comp directory in the project through the atlas in Figure 3-5. The sample code is as follows:
-
-```typescript
-    	let resArr: Array<any> = [
-
-        	{ url: "resources/atlas/Atlas.atlas", type: Laya.Loader.ATLAS },
-        	{ url: "resources/atlas/Atlas_ui.atlas", type: Laya.Loader.ATLAS },
-        	{ url: "resources/atlas/Atlas_comp.atlas", type: Laya.Loader.ATLAS }];
-
-
-    	Laya.loader.load(resArr).then( ()=>{
-            	//Create Image1 instance
-            	var img1 = new Laya.Image();
-            	//Set the skin (the way to get the small picture in the picture collection is the original small picture directory name/original small picture resource name.png)
-            	img1.skin = "resources/atlas/img_head2.png";
-            	//Add to the stage for display
-            	Laya.stage.addChild(img1);
-
-            	//Create Image2 instance
-            	var img2 = new Laya.Image();
-            	//Set the skin (the way to get the small picture in the picture collection is the original small picture directory name/original small picture resource name.png)
-            	img2.skin = "resources/atlas/comp/image.png";
-            	//Add to the stage for display
-            	Laya.stage.addChild(img2);
-        	}
-    	);
-```
-
-The running effect is shown in Figure 3-11:
-
-<img src="img/3-11.png" alt="3-11" style="zoom:80%;" />
-
-(Figure 3-11)
-
-At this point, the introduction to packaged atlases is complete. Developers need to plan the directory management of images in advance. They can be divided according to functions and create a sub-folder for each function. In this way, the size of the atlas can be controlled within a reasonable range as much as possible and divided according to functions. The advantage is also that it is easy to find. If developers encounter problems during use, please feel free to communicate with us at any time.
-
-
-
-## 4. Release native resources
-
-Native resources refer to resources that load DOM elements through native JS. They are usually used in project development. Therefore, some developers hope to write some JS code that implements DOM in index.html to load these images or video resources. When the preview is running, since index.html is in the bin directory, these resources can only be stored in the bin directory. As shown in Figure 4-1:
-
-<img src="img/4-1.png" alt="4-1" style="zoom: 50%;" />
-
-(Pic 4-1)
-
-> Starting from LayaAir 3.0.0 beta5 version, it will support the function of publishing native resources in the bin directory.
-
-After the project Web is published, by default, all resources in the bin directory will be published to the web directory, as shown in Figure 4-2:
-
-<img src="img/4-2.png" alt="4-2" style="zoom: 50%;" />
+![](img/4-2.png)
 
 (Figure 4-2)
 
+## 5. Unmanaged Resources
 
+### 5.1 Copy Files Under BIN Directory `copyBinFiles`
 
-At the same time, LayaAir3.0 IDE also provides developers with exclusion resource rules. Adding rules here can instruct the packager to exclude some files or folders under the bin folder. For example, to exclude a folder, you can use 'abc/**', etc. , as shown in Figure 4-3
+When checked, files in the project's **bin directory** will be copied to the release directory.
 
-<img src="img/4-3.png" alt="4-3" style="zoom: 50%;" />
+This feature is mainly applicable to the following scenarios:
+- **Custom modified `bin/index.html`** (not recommended to directly modify this file)
+- Placed some special resources not suitable for the `assets` directory in the **bin directory**, such as resources that need to be loaded directly via **DOM**.
 
-(Figure 4-3)
+### 5.2 Exclude Files Rule `excludeFilesRule`
 
+`Exclude files rule` is a companion option for `copy files under bin directory`.
 
+After checking **copy files under bin directory**, you can configure files or directories to exclude in this rule. For example:
+- Exclude all files in a specified directory (including subdirectories), e.g., `abc/**/*`
+- Exclude specific files, e.g., `bg2.png`
 
-After clicking Publish, the native resources in the above bin folder have been excluded, as shown in Figure 4-4:
+As shown in Figure 5-1.
 
-<img src="img/4-4.png" alt="4-4" style="zoom: 50%;" />
+![](img/5-1.png)
 
-(Figure 4-4)
+(Figure 5-1)
 
+## 6. Version Management
 
+### 6.1 Enable Version Management `enableVersion`
 
-It is recommended to call native objects. Let’s talk about the benefits of using LayaAir to call native objects.
+After enabling version management, except for engine-included entry files, all other non-ignored file names will have a version tag generated by a specified algorithm and length appended, as shown in Figure 6-1.
 
-Let's take an example. Add an img tag to index.html in the bin directory to add some styles. The src is designated as bg2.png in the bin directory. At the same time, there is a function to hide the image by clicking on the image, as shown in Figure 4-5. Show. After publishing, this DOM code will also be published to index.html in the web directory.
+![](img/6-1.png)
 
-<img src="img/4-5.png" alt="4-5" style="zoom:50%;" />
+(Figure 6-1)
 
-(Figure 4-5)
+This method effectively avoids display issues caused by file updates not being timely due to `CDN` or browser caching.
 
-There is no problem when we run index.html in the web directory, but bg2.png must be placed in the bin directory. This picture may also be used in the development of the project, which means that it will also be stored in the assets directory. Zhang bg2.png, then the developer needs to maintain the same picture in two places, causing certain trouble. Therefore, we recommend developers to use the method provided by LayaAir to call native objects. The code is as follows:
+### 6.2 Ignore Files in Version Management `ignoreFilesInVersion`
 
-```typescript
-//Create native img object
-let img:any = Laya.Browser.document.createElement("img");
-//Set style
-img.style = "position:absolute;left:10;top:10;cursor:pointer;";
-//Specify resource address
-img.src = Laya.URL.postFormatURL(Laya.URL.formatURL("resources/bg2.png"));
-//Set the attributes of the img element
-img.setAttribute("onclick", "this.style.display=\'none\'");
-//Add to page
-Laya.Browser.document.body.appendChild(img);
+After enabling version management, except for engine-included entry files, by default all files will carry version tags.
+
+The "ignore files in version management" function allows developers to specify some files not to carry version tags.
+
+### 6.3 Version Tag Generation Algorithm `versionAlgorithm`
+
+The default algorithm for version tags is **MD5**, but you can also choose **SHA1** or **SHA256**.
+
+Developers can choose the appropriate algorithm based on project needs.
+
+### 6.4 Version Tag Length `versionTagLength`
+
+The default length for version tags is **5 characters**.
+
+Developers can freely adjust, but need to pay attention to reasonableness. For example, the MD5 algorithm's maximum length is **32 characters**.
+
+## 7. Subpackage
+
+### 7.1 Enable Remote Main Package `enableRemoteMainPackage`
+
+In actual projects, **game resources** are usually stored separately from script code, engine library, and entry files.
+
+For example: hosting resources on Tencent Cloud COS (Object Storage) or other remote servers, while scripts and engine library remain in the mini-game local package.
+
+After enabling `enable remote main package`, you need to set the resource server address `mainPackageRemoteUrl` as the path prefix for resource loading, as shown in Figure 7-1.
+
+![](img/7-1.png)
+
+(Figure 7-1)
+
+After configuration is complete, the release process will separately output all resources to a directory named **`targetPlatform-remote`**.
+
+The contents of this directory need to be uploaded to the remote server, while the original release directory no longer contains project resources, only including entry files, engine library (libs), and project scripts (js), as shown in Figure 7-2.
+
+![](img/7-2.png)
+
+(Figure 7-2)
+
+During development or testing phases, if there's no remote server temporarily, you can directly start a local web service (such as using `anywhere`) in the **remote resource directory** and configure that service's access address as the resource server URL, as shown in Figure 7-3.
+
+![](img/7-3.png)
+
+(Figure 7-3)
+
+After release is complete, you can verify resource loading through debugging tools. At this point, resource request paths point to the configured remote address rather than the project's startup URL, as shown in Figure 7-4.
+
+![](img/7-4.png)
+
+(Figure 7-4)
+
+### 7.2 Enable Subpackage `enableSubpackages`
+
+To avoid the first package being too large, causing long user wait times and user churn. As well as platform limitations (e.g., mini-game package size limits), code and resource modular development needs, etc. The project is divided into an entry main package and several module subpackages to form a complete project.
+
+After enabling subpackages, you can configure one or more subpackages, as well as WASM subpackages, as shown in Figure 7-5.
+
+![](img/7-5.png)
+
+(Figure 7-5)
+
+### 7.3 Subpackage Configuration `subpackages`
+
+#### 7.3.1 Resource Folder `path`
+
+`Resource folder` specifies the root directory path for each subpackage.
+
+Usually we name the directory `sub1`, `sub2`, etc., and then bind that directory to the `resource folder` configuration item by selecting or dragging, as shown in Figure 7-6.
+
+![](img/7-6.png)
+
+(Figure 7-6)
+
+Note: If resources in the subpackage directory are not in the "included scenes," but rely on code for dynamic loading, the subpackage directory must be additionally added to **always included resource directories** as shown in Figure 7-7, otherwise it may be ignored during release.
+
+![](img/7-7.png)
+
+(Figure 7-7)
+
+#### 7.3.2 Entry Script `mainScript`
+
+If the subpackage's purpose is only resource subpackaging, the `entry script` can be left unset, defaulting to none.
+
+The main purpose of the entry script is code subpackaging. It can accept a `script set definition` file, as shown in Figure 7-8:
+
+![7-8](img/7-8.png)
+
+(Figure 7-8)
+
+Through script set definition, code in the subpackage can be compiled and packaged as a complete subpackage script set `game.js`.
+
+> If you're unfamiliar with script set definitions, check the related documentation ["Script Set Definition"](../../IDE/assets/bundledef/readme.md)
+
+#### 7.3.3 Auto Load on Startup `autoLoad`
+
+When checked, the subpackage will **automatically load before the first scene loads**.
+
+If you want to control subpackage loading timing through code logic, uncheck this and manually load in code.
+
+Manual loading method is as follows:
+
+```js
+//Non-remote package loading method
+Laya.loader.loadPackage("NewFolder");  // "NewFolder" is the subpackage directory name
+
+//Remote package loading method, only considered loading remote package when resource network address is provided
+Laya.loader.loadPackage("NewFolder", "http://cdn.cn/"); //"http://cdn.cn/" is the network address
 ```
 
-We delete the DOM code in index.html in the bin directory, cut bg2.png to the resources directory of assets, and publish it again
+> The loadPackage method doesn't immediately load all resources, it only loads a package description file.
 
-In this case, index.html in the web directory does not have any DOM code, and there is only one copy of bg2.png in the resources directory, and the running effect is the same as before!
+After subpackage loading completes, using resources in the subpackage is exactly the same as using ordinary resources.
 
-By using **Laya.URL.postFormatURL(Laya.URL.formatURL("resources/bg2.png"));** both during preview of the IDE and when running after publishing, the LayaAir engine will use resources/bg2.png as the native The image address of img's src, developers can try it themselves.
+For example, if the resource path is `"NewFolder/a.png"`, whether the resource comes from a local subpackage or remote subpackage, it can be loaded through the same path.
 
-At this point, the method of calling native objects through LayaAir has been introduced. Developers can use it according to their own needs.
+#### 7.3.4 Is Remote Package `remote`
 
-> Note: To import old projects before beta5, you need to manually delete index.html in the bin. A new template will be regenerated during preview.
+In section 7.1, we already introduced the concept of "remote main package." In fact, whether for main package or subpackage, **the principle and function of remote packages are consistent**.
 
+When this option is checked, it indicates the current subpackage will be released as a remote package. During build and release, the subpackage's resources and scripts (if configured) will be output to the remote package directory (`release\platformName-remote`).
 
+💡 Subpackage functionality applies to all platforms, but note:
 
+Non-remote packages are used for mini-game platform subpackaging. For web platforms, using non-remote subpackages has little significance. Recommend checking to use remote packages.
 
+#### 7.3.5 Remote Address `remoteUrl`
+
+When both `auto load on startup` and `is remote package` are checked, the remote address `remoteUrl` parameter is displayed, as shown in animated Figure 7-9.
+
+![](img/7-9.gif)
+
+(Animated Figure 7-9)
+
+Only after filling in a valid remote address does the remote package configuration truly take effect.
+
+Its loading method and effect are the same as **section 7.1**'s remote main package introduction, so we won't repeat it here.
+
+#### 7.4 WASM Subpackage `enableWasmSubpackage`
+
+After checking `enable subpackage` and `WASM subpackage`, during release all files ending in "`.wasm`" (and files with property checked `import as plugin`) will be screened. When qualifying `WASM` files exist, the build and release system automatically creates a subpackage configuration object `wasmSubpackage`, sets it to `auto load on startup`. In the resource output directory, it automatically creates a "`wasm_files`" folder and copies all qualifying files ending in "`.wasm`" to this folder, as shown in Figure 7-10.
+
+![](img/7-10.png)
+
+(Figure 7-10)
+
+💡 It's important to emphasize that for `.wasm` files, in the `IDE` you must check `import as plugin` for them to be copied to the subpackage directory (`wasm_files`).

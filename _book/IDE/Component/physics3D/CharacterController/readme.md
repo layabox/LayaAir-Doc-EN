@@ -305,4 +305,4 @@ export default class DirectMove extends Laya.Script {
 
 ## 5\. Related Documentation
 
-### [《physics3D》](../../../physicsEditor/physics3D/readme.md)
+### ["physics3D"](../../../physicsEditor/physics3D/readme.md)

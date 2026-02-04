@@ -24,7 +24,7 @@ For example, on an iPhone 8 in the default portrait orientation, the physical re
 
 iOS draws graphics in units of `point` (pt). In the early days, `1 point = 1 pixel`. With the launch of the iPhone 4 in 2010, which adopted Retina display technology, the physical resolution increased fourfold. At this time, if the iPhone 4 still used the `1pt = 1px` scheme, it would result in the display effect shown in Figure 1-1.
 
-![图1](img/1.png) 
+![Figure 1](img/1.png) 
 
 (Figure 1-1)
 
@@ -32,13 +32,13 @@ In Figure 1-1, if the design was full-screen based on the iPhone 3GS's `320 × 4
 
 Clearly, Apple would not let this happen. In reality, the iPhone 4 has a scaling factor of `@2X`. This means that on this model, one point is represented by a `2 × 2` pixel matrix, as shown in Figure 2, which perfectly solves the potential problem in Figure 1-2.
 
-![图2](img/2.png) 
+![Figure 2](img/2.png) 
 
 (Figure 1-2)
 
 As technology advanced, subsequent models had increasingly higher physical resolutions, and one point occupied more and more physical pixels, as shown in Figure 1-3.
 
-![图2](img/3.png) 
+![Figure 2](img/3.png) 
 
 (Figure 1-3)
 
@@ -48,7 +48,7 @@ As technology advanced, subsequent models had increasingly higher physical resol
 
 Logical resolution is simply the resolution used by the software. We design our adaptations based on it. It is also expressed using multiplication. To better understand this concept, let's look at a data table. See Figure 1-4.
 
-![图3](img/4.png) 
+![Figure 3](img/4.png) 
 
 (Figure 1-3)
 
@@ -112,7 +112,7 @@ The relevant code in the engine is as follows:
 
 Design width and height are the dimensions a developer chooses when designing a product. When faced with so many device models, as shown in Figure 1-5, choosing which one to use as the design width and height can be confusing for new developers. Here's a brief explanation.
 
-![图5](img/5.png) 
+![Figure 5](img/5.png) 
 
  (Figure 1-5)
 
@@ -164,7 +164,7 @@ However, **a larger canvas also puts more pressure on performance and memory**. 
 
 If you run any page in the IDE and open the DevTools in Chrome with F12, find the canvas tag with the ID `layaCanvas` in the main HTML file. Remember this position. The red circle in Figure 1-7 marks the initial canvas width and height. When understanding the screen adaptation modes later, pay close attention to this value.
 
-![图7](img/7.png) 
+![Figure 7](img/7.png) 
 
  (Figure 1-7)
 
@@ -178,7 +178,7 @@ Based on all of this, we need to understand that the **adapted width and height 
 
 When you're trying to understand each adaptation mode, you can observe the canvas width and height and the `transform` matrix's scaling effect in the HTML entry page to compare the differences between modes. As shown in the red circle in Figure 1-8, the adapted width and height are 249.99975 and 444.666222. After being scaled back to the physical resolution size, although there is a slight loss of precision, it is barely noticeable.
 
-![图8](img/8.png) 
+![Figure 8](img/8.png) 
 
  (Figure 1-8)
 
@@ -221,7 +221,7 @@ Even on PC web pages, you must consider whether it's acceptable for the design t
 
 The effect on a high-resolution PC browser is shown in Figure 2-1.
 
-![图11-1](img/11-1.png) 
+![Figure 11](img/11-1.png) 
 
 (Figure 2-1)
 
@@ -233,7 +233,7 @@ However, there is a fundamental difference: in `full` mode, the canvas size is d
 
 For example, in the scene shown in Figure 2-2, the width and height are 1334 and 750.
 
-![图11-2](img/11-2.png) 
+![Figure 11](img/11-2.png) 
 
 (Figure 2-2)
 
@@ -284,7 +284,7 @@ In this mode, the canvas and stage width will be equal to the design width. Howe
 
 The comparison of `fixedwidth` mode on different devices is shown in Figure 2-6.
 
-![图12-1](img/12-1.png) 
+![Figure 12](img/12-1.png) 
 
 (Figure 2-6)
 
@@ -314,7 +314,7 @@ Figures 2-7 and 2-8 again show the intentional exposure of the stage background.
 
 `fixedauto` mode guarantees that **all content within the design dimensions** will always be **completely visible** on **any device resolution without being clipped**. However, it may **expose the stage background color** (`Laya.stage.bgColor`), as shown in Figure 2-9. You **need to combine this with relative layout properties** to achieve full-screen adaptation and solve the background color issue.
 
-![图12-4](img/12-4.png) 
+![Figure 12](img/12-4.png) 
 
 (Figure 2-9)
 
@@ -332,7 +332,7 @@ Therefore, the `showall` adaptation mode is **typically only used for PC web pag
 
 The effect of `showall` mode on different screens is shown in Figure 2-10.
 
-![图13-1](img/13-1.png) 
+![Figure 13](img/13-1.png) 
 
 (Figure 2-10)
 
@@ -346,4 +346,4 @@ For PC browsers, especially for portrait games, `showall` is the recommended mod
 
 Besides adaptation modes, there are other adaptation-related topics, such as portrait/landscape adaptation and canvas alignment.
 
-You can refer to the IDE's basic documentation in the 《[projectSettings](../../IDE/projectSettings/readme.md)》 section.
+You can refer to the IDE's basic documentation in the "[projectSettings](../../IDE/projectSettings/readme.md)" section.

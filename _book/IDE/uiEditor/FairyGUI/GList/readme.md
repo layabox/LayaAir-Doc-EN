@@ -1,185 +1,226 @@
 # List (GList)
+Author: Guzhu
 
-Author: Gu Zhu
+<img src="img/1-1.png" alt="1-1" style="zoom:60%;" />
 
-<img src="img/1-1.png" alt="1-1" style="zoom:60%;" />  
+- `Template Node` Item node template. Drag a node from the hierarchy panel. This node must be a child of the GList node.
+- `Init Item Num` Initial item quantity. If greater than 0, the specified quantity of items will be automatically created.
+- `Is Demo` If checked, `Init Item Num` will only take effect in the IDE, not at runtime. That is, only as a demonstration use within the IDE.
+- `Item Data` Can provide simple data for each item.
+- `Layout` Refer to [Layout Container](../layout/readme.md)
+- `Clipping` Whether to enable clipping. After enabling, content exceeding container dimensions will be hidden.
+- `Selection` Refer to [Selection Support](../selection/readme.md)
+- `Scoller` Refer to [Scroll Support](../scroller/readme.md)
 
-* **Template Node** — The template for item nodes. Drag a node from the hierarchy panel. This node must be a child of the GList.
-* **Init Item Num** — Initial number of items. If greater than 0, the specified number of items will be automatically created.
-* **Is Demo** — If checked, `Init Item Num` only takes effect in the IDE; it has no effect at runtime, serving only as a demo in the IDE.
-* **Item Data** — Allows simple data assignment for each item.
-* **Layout** — See [Layout Containers](../layout/readme.md).
-* **Clipping** — Whether clipping is enabled. Content exceeding the container size will be hidden.
-* **Selection** — See [Selection Support](../selection/readme.md).
-* **Scroller** — See [Scroller Support](../scroller/readme.md).
+### 1. Managing List Content
 
----
+At runtime, you can directly modify the list's children through APIs like addChild/removeChild. However, in practical applications, list content is usually updated frequently. A typical usage is when receiving backend data, clearing the list, then re-adding all items. If creating and destroying UI objects each time, it will consume a lot of CPU and memory. Therefore, GList has a built-in object pool.
 
-## 1. Managing List Content
+Display list management methods using the object pool:
 
-At runtime, you can modify the list’s children using APIs like `addChild` or `removeChild`. However, in practice, list content is frequently updated. A typical scenario is clearing the list and re-adding items after receiving backend data.
+- `addItemFromPool` Get an object from the pool (if available) or create a new one and add it to the list. If no parameters are used, the list's "Item Resource" settings are used; you can also specify a URL to create a specific object.
+- `getFromPool` Get an object from the pool (if available) or create a new one.
+- `returnToPool` Return an object to the pool.
+- `removeChildToPool` Delete an item and return the object to the pool.
+- `removeChildToPoolAt` Delete an item at a specified position and return the object to the pool.
+- `removeChildrenToPool` Delete a range of items, or delete all, and return all deleted objects to the pool
 
-Creating and destroying UI objects repeatedly consumes significant CPU and memory. To address this, **GList** includes an object pool.
+Smart you should know that addItemFromPool = getFromPool + addChild, removeChildToPool = removeChild + returnToPool.
 
-### Using the Object Pool
+When applying the pool, we should be very careful. A continuously growing pool would be a disaster for the game, but not using the pool also affects game performance.
 
-* **addItemFromPool** — Retrieves an object from the pool (or creates a new one) and adds it to the list. If no argument is passed, it uses the list’s “item resource” setting; you can also specify a URL to create a specific object.
-* **getFromPool** — Retrieves an object from the pool or creates a new one.
-* **returnToPool** — Returns an object to the pool.
-* **removeChildToPool** — Removes an item and returns it to the pool.
-* **removeChildToPoolAt** — Removes an item at a specific index and returns it to the pool.
-* **removeChildrenToPool** — Removes a range of items, or all items, returning them to the pool.
+Here are examples of several incorrect usages:
 
-> Smart use: `addItemFromPool = getFromPool + addChild`, and `removeChildToPool = removeChild + returnToPool`.
+Incorrect Example 1:
 
-Be careful: an ever-growing pool can harm performance, but not using a pool also impacts performance.
-
-#### Common Mistakes
-
-**Mistake 1:**
-
-```typescript
+```TypeScript
 aList.addChild(obj);
-aList.removeChildrenToPool();
+aList.RemoveChildrenToPool();
 ```
 
-Adding objects without the pool but returning them when clearing causes the pool to grow indefinitely, possibly leading to memory overflow.
-**Fix:** Use the pool when adding: replace `addChild` with `addItemFromPool`.
+When adding objects, the pool isn't used, but when finally clearing the list, they're put into the pool. If this code runs continuously, the object pool will continue to grow, possibly causing memory overflow.
 
-**Mistake 2:**
+Correct approach: Should create objects from the pool. Change addChild to addItemFromPool.
 
-```typescript
+Incorrect Example 2:
+
+```TypeScript
 for(let i=0;i<10;i++)
     aList.addItemFromPool();
 
 aList.removeChildren();
 ```
 
-Here, items are added but removed without returning to the pool, causing memory leaks.
-**Fix:** Use `aList.removeChildrenToPool()` instead of `removeChildren()`.
+Here 10 items are added, but when removing, their references aren't saved, nor are they returned to the pool, causing memory leak. Change aList.removeChildren to aList.removeChildrenToPool();
 
-> **Note:** Removing an item is different from destroying it. If you remove an item and will not use it again, destroy it. If it will be reused, keep a reference. **Do not destroy items placed in the pool.**
+**Removing and destroying are two different things.** When you remove an item from the list, if it won't be used in the future, it should be destroyed; if it's still needed, please save its reference. **But if put into the pool, do not destroy the item again.**
 
-### Using Callbacks
+When adding a large number of items, besides using loop methods like addChild or addItemFromPool, you can also use another callback method. First define a callback function for the list, for example:
 
-Instead of looping `addChild` or `addItemFromPool`, you can define an item renderer function:
-
-```typescript
+```TypeScript
 function renderListItem(index:number, obj:GButton) {
     obj.title = "" + index;
 }
 ```
 
-> If using a pool, the callback may be called multiple times for the same object. Be careful with event listeners and avoid temporary functions to prevent duplicates.
+If using an object pool, this callback function may be called repeatedly for the same object, so be very careful when registering event listeners in the callback function. Avoid using temporary functions to prevent duplicate additions.
 
-Set the function as the list renderer:
+Then set this function as the list's rendering function:
 
-```typescript
+```TypeScript
 aList.itemRenderer = renderListItem;
 ```
 
-Then set the total number of items:
+Finally, directly set the total number of items in the list. This way, the list will adjust the current list container's object quantity, then call the callback function to render items.
 
-```typescript
-// Creates 100 items; note that numChildren is read-only and cannot be used here
+```TypeScript
+//Create 100 objects. Note: numChildren cannot be used here. numChildren is read-only.
 aList.numItems = 100;
 ```
 
-If the new item count is smaller than the current count, extra items are returned to the pool. To update a specific item, call:
+If the newly set item count is less than the current item count, the excess items will be returned to the pool.
 
-```typescript
-renderListItem(index, aList.getChildAt(index));
+When using this method to generate a list, if you need to update a certain item, you can call renderListItem(index, getChildAt(index)) yourself.
+
+If you want to listen for the click event of a certain item, you don't need to add a Click event listener to each item. Instead, directly listen to the list's ClickItem event:
+
+```TypeScript
+list.on(Laya.UIEvent.ClickItem, this, this.onClickItem);
+
+// The first parameter of the callback function is the currently clicked object
+function onClickItem(item: GObject): void {
+    console.log("Clicked object: " + item.title);
+
+    // How to get the index of this object in the list
+    let childIndex = list.getChildIndex(item);
+}
 ```
 
----
+From the code above, you can see that in the event callback, you can conveniently get the currently clicked object. If you need to get the index, you can use GetChildIndex. Note that the item type must be a button, i.e., GButton, to trigger the ClickItem event.
 
-## 2. Virtual List
+### 2. Virtual List
 
-For very large lists (hundreds or thousands of items), creating display objects for every item is expensive. **GList** supports virtual lists: only items within the visible range are created, and data is dynamically applied.
+If the list has a very large number of items, for example hundreds or thousands, creating entity display objects for each item will consume a lot of time and resources. This UI system has a built-in virtual mechanism for lists, which means it only creates entity objects for items within the display range, and implements large-capacity lists by dynamically setting data.
 
-### Requirements for Virtual Lists
+There are several conditions for enabling a virtual list:
 
-* Define an **itemRenderer** function.
-* Create a **Scroller**; lists without a Scroller cannot be virtual.
+- Need to define itemRenderer.
+- Need to create Scroller. Lists without Scroller cannot enable virtualization.
 
-Enable virtual mode:
+After meeting the conditions, you can enable the list's virtual function:
 
-```typescript
+```TypeScript
 aList.setVirtual();
 ```
 
-> **Note:** Virtual mode can only be enabled; it cannot be disabled.
+**Tip: The virtual function can only be enabled, not disabled.**
 
-### Best Practices
+The performance of a virtual list is closely related to the processing logic of itemRenderer. You should try to simplify the logic here. Operations like Promise, IO, and high-density calculations should not appear here, otherwise lag will occur. If you need to initiate asynchronous operations in itemRenderer, do not let the asynchronous operation save the ITEM instance and directly modify the ITEM instance in the callback. The correct approach is to let the asynchronous operation save the ITEM's index. After the asynchronous operation is completed, query whether the ITEM at this index has a corresponding display object. If yes, update it; if not, give up the update.
 
-* Simplify logic in `itemRenderer`; avoid Promises, I/O, or heavy computations.
-* Do not modify ITEM instances directly in asynchronous callbacks. Instead, save the ITEM index, check if the item exists upon completion, and update it if present.
-* Avoid creating new objects in `itemRenderer` to prevent excessive GC.
+In addition, itemRenderer should not have operations like new that will generate GC, because during the scrolling process, itemRenderer will be called very frequently.
 
-In virtual lists:
+In a virtual list, ITEMS are reused. When an ITEM needs to be refreshed, itemRenderer will be called. You don't need to care about the timing of this call, nor can you depend on this timing.
 
-* ITEMs are reused; `itemRenderer` is called whenever an item is refreshed.
-* Display objects and item indices differ. Use `numItems` for item count and `numChildren` for display object count.
-* `selectedIndex` refers to the **item index**, not the display object index. Use `itemIndexToChildIndex` and `childIndexToItemIndex` to convert between the two:
+In a virtual list, the quantity and order of display objects and items are inconsistent. The quantity of items can be obtained through numItems, while the quantity of display objects can be obtained through the component's API numChildren.
 
-```typescript
-// Convert item index to display object index
+In a virtual list, you need to pay attention to the distinction between item index and display object index. The value obtained through selectedIndex is the item's index, not the display object's index. APIs like AddSelection/RemoveSelection also require the item's index. The conversion between item index and object index can be completed through the following two methods:
+
+```TypeScript
+//Convert item index to display object index.
 let childIndex = aList.itemIndexToChildIndex(1);
 
-// Convert display object index to item index
+//Convert display object index to item index.
 let itemIndex = aList.childIndexToItemIndex(1);
 ```
 
-### Accessing Off-Screen Items
+When using a virtual list, we rarely need to access off-screen objects. If you really need to get the display object of an item at a specified index in the list, for example the 500th one, because this item is not currently in the viewport, for a virtual list, objects not in the viewport do not have corresponding display objects. So you need to first make the list scroll to the target position. For example:
 
-For virtual lists, off-screen items do not have display objects. To access, scroll them into view first:
+```TypeScript
+//Note here, because we need to immediately access the object at the new scroll position, the second parameter scrollItToView cannot be true, i.e., do not use animation effect
+aList.scrollToView(500);
 
-```typescript
-aList.scrollToView(500, false); // false disables animation
+//Convert to display object index
 let index = aList.itemIndexToChildIndex(500);
+
+//This is the 500th object you want
 let obj = aList.getChildAt(index);
 ```
 
-### Updating Virtual Lists
+The essence of a virtual list is the separation of data and rendering. People often ask how to delete or modify virtual list items. The answer is to first modify your data, then refresh the list. You don't need to get a certain item object to handle it.
 
-Virtual lists separate data and rendering. Modify your data and refresh the list; do not manipulate item objects directly.
+There are two ways to refresh a virtual list:
 
-* Methods: set `numItems` or call `GList.refreshVirtualList()`.
-* **Do not use `addChild` or `removeChild` on virtual lists.**
+- Use numItems to reset the quantity.
+- GList.refreshVirtualList.
 
-### Variable Item Sizes
+**Using addChild or removeChild to add or delete objects to a virtual list is not allowed. If you want to clear the list, you must set numItems=0, not removeChildren.**
 
-* Change `width`, `height`, or `size` in `itemRenderer`.
-* Associate internal components with item content; changes in content update item size automatically.
+Virtual lists support variable-sized items. You can dynamically change the item size in two ways:
 
-> Other methods of changing item size externally are not allowed, or layout will break. Use `refreshVirtualList()` if needed.
+- Use width, height, or size inside itemRenderer to change the item's size.
+- The item establishes a linkage to internal components, then modify the content in itemRenderer to trigger the change of internal components, thereby automatically changing the item height. For example, if the item establishes a high-height linkage to an internal variable-height text, then when the text changes, the item height changes automatically.
 
-### Mixed Item Types
+**Except for these two methods, you cannot change the item size through other methods outside of itemRenderer, otherwise the virtual list arrangement will be disordered. But you can force trigger itemRenderer by calling refreshVirtualList.**
 
-Define an item provider function:
+Virtual lists support mixing different types of items. First define a callback function for the list, for example
 
-```typescript
+```TypeScript
+//Return different resource URL strings according to different indexes
 function getListItemResource(index:number) {
     let msg = _messages[index];
-    return msg.fromMe ? "url1.lh" : "url2.lh";
+    if (msg.fromMe)
+        return "url1.lh";
+    else
+        return "url2.lh";
 }
+```
+
+Then set this function as the list's item provider:
+
+```TypeScript
 aList.itemProvider = getListItemResource;
 ```
 
-### Virtual List Layout
+For horizontally flowing, vertically flowing, and paged lists, unlike non-virtual lists with flow characteristics, the number of items per row or column in a virtual list is fixed. The list will create a default item during initialization to measure this quantity.
 
-* Horizontal, vertical, and paged virtual lists have fixed items per row/column.
-* For non-uniform items, insert placeholders with defined width to maintain layout.
+If you still need layout with unequal numbers of items per row or column, and must use virtualization, you can insert some empty components or empty graphics for placeholder, and set their width according to actual needs, thereby achieving that layout effect.
 
----
+### 3. Circular List
 
-## 3. Loop List
+A circular list is a list where the head and tail are connected. A circular list must be a virtual list. The method to enable a circular list is:
 
-Loop lists are circular and must be virtual. Enable with:
-
-```typescript
-aList.setVirtualAndLoop();
+```TypeScript
+    aList.setVirtualAndLoop();
 ```
 
-* Supports only single-row or single-column layouts; not flow or paged layouts.
-* Because indices may appear at different positions in a loop, avoid relying on item indices when scrolling. Use Scroller APIs (`scrollLeft`, `scrollRight`, `scrollUp`, `scrollDown`) to move by one step accurately.
+Circular lists only support single-row or single-column layouts, and do not support flow layouts and paged layouts.
+
+Because a circular list is connected head-to-tail, specifying an item index may appear in different positions. So when you need to specify a scroll position, try to avoid using the item index. For example, if you need the circular list to scroll left/up one grid or right/down one grid, the best method is to call the Scroller's API: scrollLeft/scrollRight/scrollUp/scrollDown.
+
+### 4. List Item Runtime
+
+The list can dynamically set the item's Runtime type through code, thereby implementing logic encapsulation for item display objects. For example
+
+```TypeScript
+//Assume there is a custom component class MyItem. Note that the base class must match the prefab root node type, generally GButton.
+class MyItem extends Laya.GButton {
+    //Note! You can only get child objects in onConstruct. It's recommended to do initialization here, not in the constructor
+    onConstruct() {
+        //this.xx = this.getChild("xx");
+        //this.xx.on(Laya.Event.CLICK, this, this.onClick);
+    }
+
+    sayHello() {
+        console.log("Hello from MyItem");
+    }
+}
+
+//Set the list's item Runtime to MyItem
+aList.itemPool.defaultRuntime = MyItem;
+//After setting the item's Runtime, itemRenderer can directly access MyItem's methods and properties
+aList.itemRenderer = (index: number, item: MyItem) => {
+    item.sayHello();
+};
+```
+
+This mechanism is very useful for virtual lists and can make itemRenderer code more concise and efficient.

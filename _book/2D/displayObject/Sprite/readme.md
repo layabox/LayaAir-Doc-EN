@@ -477,5 +477,396 @@ Runtime result:
 (Animated Figure 3-6)
 
 You can see that clicks within the defined area trigger the event, while clicks outside do not.
- If you don’t define a `hitArea`, any click within the image bounds will trigger the event.
+If you don't define a `hitArea`, any click within the image bounds will trigger the event.
+
+## 4. Mouse Through
+
+When we need to make mouse events penetrate a node without responding, we can use the **Mouse Through** feature.
+
+In the Sprite component properties, check the **Mouse Through** option. As shown in Animated Figure 4-1:
+
+(Animated Figure 4-1)
+
+**Mouse Through** feature is often used for UI backgrounds or decorative nodes that don't need mouse interaction. When enabled, the node becomes "transparent" to mouse events, which will be passed to the node below.
+
+## 5. Hit Test Prior
+
+**Hit Test Prior** controls the priority order of mouse hit testing. When checked, the current node has priority for mouse hit testing, blocking its child nodes from receiving mouse events even if they are in the mouse collision area.
+
+### 5.1 Understanding Hit Test Prior
+
+- **Unchecked (false)**: Mouse events are tested on child nodes first, then recursively to parent nodes
+- **Checked (true)**: The current node is tested first, and if hit, child node testing is skipped
+
+### 5.2 Example
+
+Let's demonstrate with an example:
+
+1. Create Sprite1 (parent node)
+2. Create Sprite2 (child node) under Sprite1
+3. Add the following script to Sprite1:
+
+```typescript
+const { regClass } = Laya;
+
+@regClass()
+export class Sprite1Script extends Laya.Script {
+    onEnable(): void {
+        this.owner.on(Laya.Event.CLICK, this, () => {
+            console.log("Sprite1 clicked");
+        });
+    }
+}
+```
+
+Add the same script to Sprite2 (change "Sprite1" to "Sprite2" in the log).
+
+When **Hit Test Prior** is unchecked (default):
+- Clicking Sprite2 outputs: "Sprite2 clicked" followed by "Sprite1 clicked"
+- Both parent and child respond
+
+When **Hit Test Prior** is checked on Sprite1:
+- Clicking Sprite2 only outputs: "Sprite1 clicked"
+- Only parent responds, child is blocked
+
+## 6. Post-Process
+
+Post-processing is used to implement various special image effects to achieve optimal artistic results. There are many types of post-processing, and different effects require different post-processing features.
+
+Click to create a post-process instance:
+
+After checking the **Enabled** property, the post-process effect takes effect. This property is checked by default:
+
+Click the plus button on the right side of the effect list to select the post-process effect you want to create:
+
+For specific usage of post-processing, we explained it in the [Post-Process](../../../IDE/uiEditor/PostProcess/readme.md) article. Developers can refer to this article.
+
+## 7. Script Control Properties
+
+In the Scene2D property panel, add a custom component script. Then drag the Sprite node into its exposed property entry, as shown in Animated Figure 7-1:
+
+(Animated Figure 7-1)
+
+Then, you can control the Sprite through code in the component script. Example code:
+
+```typescript
+const { regClass, property } = Laya;
+
+@regClass()
+export class NewScript extends Laya.Script {
+    @property({ type: Laya.Sprite })
+    public sprite: Laya.Sprite;
+
+    constructor() {
+        super();
+    }
+
+    onAwake(): void {
+        this.sprite.loadImage("atlas/comp/image.png"); // Texture: image path
+
+        this.sprite.pos(Laya.stage.width >> 1, Laya.stage.height >> 1); // Position: screen center
+        this.sprite.x = Laya.stage.width/2; // Set position x, y separately
+        this.sprite.y = Laya.stage.height/2;
+
+        this.sprite.size(512, 313); // Size
+        this.sprite.width = 512; // Set width and height separately
+        this.sprite.height = 313;
+
+        this.sprite.pivot(this.sprite.width/2, this.sprite.height/2); // Pivot point: sprite center
+        this.sprite.pivotX = this.sprite.width/2; // Set pivot x, y separately
+        this.sprite.pivotY = this.sprite.height/2;
+
+        this.sprite.anchorX = 0.5; // Anchor: sprite center
+        this.sprite.anchorY = 0.5;
+
+        this.sprite.scale(0.5, 0.5); // Scale
+        this.sprite.scaleX = 2; // Set scale x, y separately
+        this.sprite.scaleY = 2;
+
+        this.sprite.skew(5, 5); // Skew
+        this.sprite.skewX = 5; // Set skew x, y separately
+        this.sprite.skewY = 5;
+
+        this.sprite.rotation = 45; // Rotation angle
+
+        this.sprite.visible = true; // Visible
+
+        this.sprite.alpha = 0.5; // Transparency
+    }
+}
+```
+
+## 8. Using Through Code
+
+### 8.1 Creating a Sprite
+
+Create a Sprite instance:
+
+```typescript
+onAwake(): void {
+    let sprite = new Laya.Sprite();
+    // Add to stage
+    Laya.stage.addChild(sprite);
+}
+```
+
+### 8.2 Displaying Images
+
+Image display is fundamental to game development. The Sprite class provides `Sprite.loadImage` and `Sprite.texture` for displaying images.
+
+#### 8.2.1 loadImage
+
+```typescript
+/**
+ * <p>Load and display an image. Equivalent to loading an image then setting the texture property</p>
+ * <p>Note: 2.0 changes: Multiple calls only display one image (1.0 displays multiple), x,y,width,height parameters removed.</p>
+ * @param url Image URL
+ * @param complete (Optional) Load completion callback
+ * @return Returns the sprite object itself
+ */
+loadImage(url: string, complete?: Handler): Sprite;
+```
+
+Code example:
+
+```typescript
+let sprite = new Laya.Sprite();
+// Load and display an image, centered
+sprite.loadImage("atlas/comp/image.png", null);
+sprite.pos(Laya.stage.width >> 1, Laya.stage.height >> 1);
+// Add to stage
+Laya.stage.addChild(sprite);
+```
+
+#### 8.2.2 Setting texture
+
+```typescript
+/**
+ * Set a Texture instance and display this image (clears any previous drawing).
+ * Equivalent to graphics.clear(); graphics.drawImage(), but with higher performance
+ * Can also assign an image URL, which automatically loads and displays the image
+ */
+get texture(): Texture;
+set texture(value: Texture);
+```
+
+Code example:
+
+```typescript
+Laya.loader.load("atlas/comp/image.png").then(() => {
+    let sprite = new Laya.Sprite();
+    // Set sprite texture and center it
+    let res = Laya.loader.getRes("atlas/comp/image.png");
+    sprite.pos(Laya.stage.width >> 1, Laya.stage.height >> 1);
+    sprite.texture = res;
+    // Add to stage
+    Laya.stage.addChild(sprite);
+});
+```
+
+Both 8.2.1 and 8.2.2 examples have the same runtime effect, as shown in Figure 8-1. Developers can choose based on their needs.
+
+(Figure 8-1)
+
+### 8.3 Basic Properties
+
+Let's look at code examples:
+
+```typescript
+let sprite = new Laya.Sprite();
+// Load and display an image
+sprite.loadImage("atlas/comp/image.png", null);
+// Set image starting position
+sprite.pos(20, 20);
+// Set anchor
+sprite.anchorX = 0.5;
+sprite.anchorY = 0.5;
+// Set scale
+sprite.scale(2, 2);
+// Rotate
+sprite.rotation = 30;
+// Add to stage
+Laya.stage.addChild(sprite);
+```
+
+Runtime effect shown in Figure 8-2:
+
+(Figure 8-2)
+
+### 8.4 Other Properties
+
+#### 8.4.1 Setting zIndex
+
+The zIndex property adjusts the rendering order of Sprites. You can set this value directly in the IDE:
+
+Or set it through code:
+
+```typescript
+onAwake(): void {
+    let sp = new Laya.Sprite;
+    sp.zIndex = 1;
+}
+```
+
+Using this property to adjust rendering order is global and not limited by the node tree, nor does it affect the logical order of nodes in the tree.
+
+Assume we have this node tree:
+
+Default order follows depth-first traversal of the node tree, i.e.:
+
+S->A->C->D->B->E->F
+
+If we set C's zIndex to 1, the render order becomes:
+
+S->A->D->B->E->F->C
+
+Then set D's zIndex to -1, render order becomes:
+
+D->S->A->B->E->F->C
+
+The larger the zIndex value, the later the rendering, and the higher the display layer.
+
+Note: zIndex values are relative to the parent node. For example, if the parent node's zIndex is 1 and the child node's zIndex is 2, the child node's final effective zIndex value is 3. For example, setting A's zIndex to 1, C's zIndex to 1, and B's zIndex to 1 gives render order:
+
+S->D->E->F->A->B->C
+
+C renders last because its effective zIndex value is 2.
+
+In practice, we usually need to adjust the render order of nodes locally, not globally. For example, in a prefab, if we want a node to display on top, we set zIndex to a positive number. But when this prefab is added to a scene, if other nodes don't have zIndex set, this node will display above all nodes, not just within the prefab content, which is clearly not the intended behavior.
+
+To solve this problem, Sprite introduces another property: **stackingRoot**:
+
+When checked, all child and grandchild node zIndex values only affect render order within this node.
+
+Using the previous example, if we set A's stackingRoot to true, C's zIndex to 2, and D's zIndex to 1, the render order becomes:
+
+S->A->D->C->B->E->F
+
+We can see that although C and D's zIndex values are larger than B, E, F, they don't display above B, E, F.
+
+If we then set A's zIndex to 3, the render order becomes:
+
+S->B->E->F->A->D->C
+
+Note this is A->D->C, not D->C->A. This means that for nodes set as stackingRoot, their own zIndex still represents the global render order.
+
+Sprite also has a **zOrder** property, which changes the logical order of child nodes within their parent, but does not change the render order.
+
+This property is not exposed in the IDE and can only be set through code:
+
+```typescript
+onAwake(): void {
+    // Create two nodes and add to scene
+    let sp1 = new Laya.Sprite();
+    sp1.name = "sp1";
+    this.owner.addChild(sp1);
+
+    let sp2 = new Laya.Sprite();
+    sp2.name = "sp2";
+    this.owner.addChild(sp2);
+
+    sp1.zOrder = 1;
+    sp2.zOrder = 0;
+}
+```
+
+Runtime effect:
+
+We can see that although sp1 was added to the scene first in the code, because sp1's zOrder value is larger, its hierarchy is deeper than sp2.
+
+#### 8.4.2 Setting BlendMode
+
+Example code for setting BlendMode:
+
+```typescript
+let sp1 = new Laya.Sprite();
+Laya.stage.addChild(sp1);
+// Load and display an image 1
+sp1.loadImage("atlas/comp/image.png", null);
+let sp2 = new Laya.Sprite();
+Laya.stage.addChild(sp2);
+// Load and display an image 2
+sp2.loadImage("resources/layabox.png", null);
+sp2.pos(200, 190);
+// Set blendMode
+sp2.blendMode = "lighter";
+```
+
+Runtime result:
+
+(Figure 8-4)
+
+Compared with Figure 8-3, we can see that after using "lighter" blendMode, sp2's color is blended with sp1's color.
+
+#### 8.4.3 Setting autoSize
+
+Specifies whether to automatically calculate width and height data. Default is false. Sprite width and height default to 0 and don't change with drawn content. If you want to get width and height based on drawn content, set this property to true. Example code:
+
+```typescript
+let sprite = new Laya.Sprite();
+// Add to stage
+Laya.stage.addChild(sprite);
+sprite.autoSize = true;
+```
+
+#### 8.4.4 Cache as Static Image
+
+Example code:
+
+```typescript
+let sprite = new Laya.Sprite();
+Laya.stage.addChild(sprite);
+// Cache as static image
+sprite.cacheAs = "bitmap"
+```
+
+#### 8.4.5 Setting Mask
+
+Code example:
+
+```typescript
+let sprite = new Laya.Sprite();
+Laya.stage.addChild(sprite);
+sprite.loadImage("atlas/comp/image.png", null);
+
+// Create mask
+let mask = new Laya.Sprite();
+sprite.addChild(mask);
+mask.graphics.drawCircle(200, 200, 100, "#FFFFFF");
+
+// Add mask to image
+setTimeout(() => { 
+    sprite.mask = mask; // Execute mask after 1 second
+}, 1000);
+```
+
+Runtime effect:
+
+(Animated Figure 8-5)
+
+#### 8.4.6 Setting Click Area hitArea
+
+There are many mouse-related properties, but code usage is similar. Here we use hitArea as an example:
+
+```typescript
+let sp = new Laya.Sprite();
+Laya.stage.addChild(sp);
+// Load and display an image
+sp.loadImage("atlas/comp/image.png", null);
+// Set image click event
+sp.on("click", this, () => {
+    Laya.Tween.to(sp, { scaleX: 0.5, scaleY: 0.5 }, 100);
+});
+// Set mouse click area
+let hitArea: Laya.HitArea = new Laya.HitArea();
+hitArea.hit.drawRect(0, 0, 100, 100, "#00ff00");
+sp.hitArea = hitArea;
+```
+
+Runtime result:
+
+(Animated Figure 8-6)
+
+We can see that clicks within the defined area trigger the event, while clicks outside do not.
+If you don't set hitArea, any click within the image bounds will trigger the event.
 

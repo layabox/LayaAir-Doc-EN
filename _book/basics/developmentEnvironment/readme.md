@@ -1,13 +1,10 @@
-# Familiar with the development environment
+# Familiarize with the Development Environment
 
-Prepare the relevant development environment and become familiar with the basic development workflow, which are the prerequisites for learning the engine~
-
-
-
-### *[Building a Basic Development Environment](./download/readme.md)*
-
-### *[Overview of IDE Development Process Interface](../IDE/GUI/readme.md)*
+Preparing the relevant development environment and familiarizing yourself with the basic development workflow are prerequisites for learning the engine.
 
 
+### ["Setting Up the Basic Development Environment"](./download/readme.md)
+
+### ["Development Workflow: Hello World"](../IDE/helloWorld/readme.md)
 
 

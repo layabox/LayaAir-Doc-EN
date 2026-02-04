@@ -294,40 +294,57 @@ You can access the Chrome DevTools Profiler via right-click → “Inspect” or
 
 ### 5.1 CPU Usage Analysis
 
-**Start Profiling:**
-Select `Record JavaScript CPU Profile`, then click **Start**.
-![图片1-1](img/5-1.png)
+#### Start CPU Profiler
+
+Select `Record JavaScript CPU Profile`, then click the **Start** button or the solid circle in the upper-left corner. Chrome will begin recording method executions on the current webpage, as shown in Figure 5-1.
+
+![Figure 1-1](img/5-1.png)
 (Figure 5-1)
 
-**Stop Profiling:**
-Click **Stop** to finish.
-![图片1-2](img/5-2.png)
+#### Stop CPU Profiler Monitoring
+
+To stop the profiler monitoring, click the **Stop** button (or the red solid circle on the left), as shown in Figure 5-2.
+
+![Figure 1-2](img/5-2.png)
 (Figure 5-2)
 
-**View Results:**
-CPU usage will appear as a function list, where you can identify costly functions.
-![图片1-3](img/5-3.png)
+#### View CPU Profiler Records
+
+After stopping monitoring, a monitoring result file will be listed under **Profiles** on the left. Click to open this monitoring result file, as shown in Figure 5-3.
+
+![Figure 1-3](img/5-3.png)
 (Figure 5-3)
+
+The monitoring results are displayed as a data table. You can find function names provided in the Function column based on consumption ranking, and optimize areas with higher performance consumption.
 
 ---
 
 ### 5.2 Memory Usage Analysis
 
-**Start Memory Snapshot:**
-Select `Take Heap Snapshot` and click **Take Snapshot**.
-![图片2-1](img/5-4.png)
+#### Start Memory Analysis
+
+Select `Take Heap Snapshot` and click the **Take Snapshot** button (you can also click the black solid circle on the left), as shown in Figure 5-4.
+
+![Figure 2-1](img/5-4.png)
 (Figure 5-4)
 
-**Snapshot Records:**
-Snapshots will appear in the sidebar. Click to view object counts and memory sizes.
-![图片2-2](img/5-5.png)
+The generated memory snapshot file records the current webpage object count, occupied memory size, and other data in a data table format.
+
+#### Memory Snapshot Records
+
+After starting memory analysis, a memory snapshot record file for the current webpage will quickly be generated under the **Profiles** section on the left. Click to view related data, as shown in Figure 5-5.
+
+![Figure 2-2](img/5-5.png)
 (Figure 5-5)
 
-**Compare Snapshots:**
-Take multiple snapshots and compare them using *Comparison mode* to identify changes in memory usage.
-![图片1](img/5-6.png)
+#### Memory Snapshot Analysis
+
+After taking the first memory snapshot, click the circle in the upper-left corner to record a new memory snapshot. Click to select the second memory snapshot, and you can choose **Comparison mode** to compare the changes between the second snapshot and the first snapshot. Through analysis, optimize the webpage.
+
+![Figure 1](img/5-6.png)
 (Figure 5-6)
-![图片1](img/5-7.png)
+
+![Figure 1](img/5-7.png)
 (Figure 5-7)
 
 ---
@@ -336,7 +353,8 @@ Take multiple snapshots and compare them using *Comparison mode* to identify cha
 
 **Benefits:**
 
-1. Reduces memory usage — crucial for mobile devices.
-2. Reduces GPU bandwidth usage — improves rendering performance and reduces overheating.
+1. **Reduces memory usage** — Especially important for mobile applications. Excessive memory usage can easily cause crashes on low-end devices.
+
+2. **Reduces bandwidth usage** — In mobile game applications, a large number of textures are transmitted to the GPU during rendering. Without limitations, this not only seriously affects rendering performance but also causes severe overheating issues.
 
 For details, see [Texture Compression](../../IDE/uiEditor/textureCompress/readme.md).

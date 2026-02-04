@@ -1,64 +1,64 @@
-# IDE material properties
+# IDE Material Properties
 
-In order to draw objects in the scene, we need to describe the shape and appearance of the object. We use mesh to represent the shape of the object and materials to represent the appearance of the object. Materials and shaders are closely linked, and the materials we use must have corresponding shader forms.
+To render objects in a scene, we need to describe the object's shape and appearance. We use mesh to represent the object's shape and material to represent the object's appearance. Materials and shaders are closely connected. The materials we use must have corresponding shader forms set.
 
-# 1. Creation of materials
+# 1. Material Creation
 
-We can create materials in the project panel of the IDE. The material creation operation is as shown in the animation 1-1:
+We can create materials in the IDE's project panel. The material creation operation is shown in Animated Figure 1-1:
 
 <img src="img/1-1.gif" style="zoom: 33%;" />
 
-Animation 1-1
+Figure 1-1
 
 We create a material and name it "myMaterial".
 
-# 2. Material panel
+# 2. Material Panel
 
-After creating the material, we see that new attribute descriptions will appear on the Inspector panel on the right. When we select the created material, the attribute panel will display the attribute content of the current material. The attribute panel mainly displays the basic properties of the material and the material effect. It consists of two parts, as shown in Figure 2-1. Let us explain in detail the composition of the material properties panel.
+After creating a material, we see new property descriptions appear on the Inspector panel on the right. When we select the created material, the property panel displays the current material's property content. The property panel mainly consists of two parts: material basic properties and material effect display. As shown in Figure 2-1, we'll explain the composition of the material property panel in detail.
 
 <img src="img/2-1.png" style="zoom: 33%;" />
 
 Figure 2-1
 
-## 2.1 Basic properties of materials
+## 2.1 Material Basic Properties
 
-Materials describe different surfaces based on different shader models. The IDE has eight built-in shader types. We explain the basic properties of each shader corresponding to the material according to the shader type. **Switching the shader of the material is by selecting ** is implemented using the Shader of the material. The specific operation diagram is shown in Figure 2-1-1 to switch to other types of shaders.
+Materials describe different surfaces based on different shader models. The IDE has eight built-in shader types. We'll explain the basic properties of each shader corresponding material based on shader type. **Switching a material's shader is achieved by selecting the material's Shader**. The specific operation is shown in Animated Figure 2-1-1 to switch to other shader types.
 
 <img src="img/2-1-1.gif" style="zoom: 50%;" />
 
-Animation 2-1-1
+Animated Figure 2-1-1
 
 ### 2.1.1 BlinnPhong Shader
 
-The Blinn-Phong illumination model can simply describe the absorption and reflection of light on the surface of an object, making the surface of the object present different degrees of brightness. It mainly describes the highlight, diffuse light and ambient light parts of the surface of the object.
+The Blinn-Phong lighting model can simply describe an object's surface absorption and reflection of light, making the object's surface present different brightness levels. It mainly describes the object's surface highlights, diffuse light, and ambient light parts.
 
-#### (1) VertexColor vertex color
+#### (1) VertexColor
 
-Whether to support the macro definition switch of vertex color. When turned on, the vertex color content of the mesh can be superimposed.
+A macro definition switch for whether to support vertex colors. After enabling, mesh vertex color content can be superimposed.
 
-#### (2) AlbedoTexture diffuse reflection map
+#### (2) AlbedoTexture
 
-You can set the content of the diffuse reflection map of the material. The example uses the map of a brick, and the effect is as shown in the animation 2-1-1-2-1:
+Can set the content of the material's diffuse texture. The example uses a brick texture. The effect is shown in Animated Figure 2-1-1-2-1:
 
 <img src="img/2-1-1-2-1.gif" style="zoom: 33%;" />
 
-Animation 2-1-1-2-1
+Animated Figure 2-1-1-2-1
 
-#### (3) AlbedoColor diffuse color
+#### (3) AlbedoColor
 
-You can set the overall diffuse reflection color of the material, as shown in the animation 2-1-1-3:
+Can set the overall diffuse color of the material. As shown in Animated Figure 2-1-1-3:
 
 <img src="img/2-1-1-3.gif" style="zoom: 33%;" />
 
-Animation 2-1-1-3
+Animated Figure 2-1-1-3
 
-#### （4） AlbedoIntensity
+#### (4) AlbedoIntensity
 
 Sets the intensity of the diffuse color.
 
-#### (5) SpecularTexture highlight map
+#### (5) SpecularTexture
 
-Used to set the specular reflection of the object's surface, and reflect the smooth reflection degree of the object's current vertex according to the rgb value of the UV of the object's current vertex on the highlight map, as shown in Figure 2-1-1-5-1 and Figure 2-1- As shown in 1-5-2:
+Used to set the specular reflection of the object's surface. Based on the RGB value of the object's current vertex's UV on the specular texture, it reflects the smooth reflection degree of the object's current vertex. As shown in Figure 2-1-1-5-1 and Figure 2-1-1-5-2:
 
 <img src="img/2-1-1-5-1.png" style="zoom: 33%;" />
 
@@ -68,19 +68,19 @@ Figure 2-1-1-5-1
 
 Figure 2-1-1-5-2
 
-Before and after setting the highlight map, you can clearly see that due to the influence of the highlight map, only part of the wall has a highlight effect. This can be used to simulate the highlight phenomenon of different materials and different locations.
+Before and after setting the specular texture, you can clearly see that due to the specular texture's influence, only parts of the wall produce highlight effects. This can be used to simulate highlight phenomena of different materials at different positions.
 
-#### (6) SpecularColor highlight color
+#### (6) SpecularColor
 
-You can set the color of the highlight part, as shown in Figure 2-1-1-6, set the highlight color to green:
+Can set the color of the highlight part. As shown in Figure 2-1-1-6, setting the highlight color to green:
 
 <img src="img/2-1-1-6.png" style="zoom: 33%;" />
 
 Figure 2-1-1-6
 
-#### (7) Shininess glossiness
+#### (7) Shininess
 
-Used to set the highlight range. The effect is as shown in the comparison between 2-1-1-7-1 and 2-1-1-7-2 at different gloss levels:
+Used to set the range of highlights. The effect is shown comparing different shininess values in Figure 2-1-1-7-1 and Figure 2-1-1-7-2:
 
 <img src="img/2-1-1-7-1.png" style="zoom: 33%;" />
 
@@ -90,11 +90,11 @@ Figure 2-1-1-7-1
 
 Figure 2-1-1-7-2
 
-When the shininess value is small, the overall highlight range is larger; when the shininess value is larger, the overall highlight range is smaller.
+When the shininess value is smaller, the overall highlight range is larger; when the shininess value is larger, the overall highlight range is smaller.
 
-#### (8)NormalTexture normal map
+#### (8) NormalTexture
 
-Used to set the normal of the object model in tangent space for lighting calculation. **The model needs to have tangent data**. As shown in Figure 2-1-1-8-1 and Figure 2-1-1-8-2, the lighting and coloring with the participation of normal maps are more realistic.
+Used to set the object model's normals in tangent space for lighting calculations, **requires the model to have tangent data**. As shown in Figure 2-1-1-8-1 and Figure 2-1-1-8-2, with normal map participation, lighting and shading appear more realistic.
 
 <img src="img/2-1-1-8-1.png" style="zoom:33%;" />
 
@@ -104,79 +104,79 @@ Figure 2-1-1-8-1
 
 Figure 2-1-1-8-2
 
-It can be seen that after adding the normal map, the lighting has been recalculated, and the surface of the object has become more realistic.
+It can be seen that after adding the normal map, lighting is recalculated, and the object's surface has a more realistic bump effect.
 
-#### (9) AlphaTestValue alpha test value
+#### (9) AlphaTestValue
 
-This needs to be used in conjunction with the material's rendering mode of CUTOUT. In CUTOUT mode, when the alpha of the fragment color value of the current vertex is less than AlphaTestValue, the value of this fragment will be directly discarded without rendering. We use a spider web The picture is used as a diffuse reflection map. You can check the effect of this value by adjusting the value of AlphaTestValue. The spider diagram is shown in 2-1-1-9-1, and the value of AlphaTestValue is shown in the animated picture 2-1-1-9-2:
+This needs to be used with the material's render mode set to CUTOUT. In CUTOUT mode, when the alpha value of the current vertex's fragment color is less than AlphaTestValue, the fragment's value is directly discarded and not rendered. We use a spider web image as the diffuse texture and adjust the AlphaTestValue to see the effect of this value. The spider web image is shown in Figure 2-1-1-9-1, and the AlphaTestValue adjustment is shown in Animated Figure 2-1-1-9-2:
 
 <img src="img/2-1-1-9-1.png" style="zoom:50%;" />
 
 Figure 2-1-1-9-1
 
-The alpha channel value of the hollow part is 0
+The alpha channel value of the hollow parts is 0
 
 <img src="img/2-1-1-9-2.gif" style="zoom: 33%;" />
 
-Animation 2-1-1-9-2
+Animated Figure 2-1-1-9-2
 
-It can be seen that as the value becomes larger, more fragments are discarded until all fragments are discarded and not rendered.
+As the value increases, more and more fragments are discarded until all fragments are discarded and not rendered.
 
-#### (10) TilingOffset scaling offset
+#### (10) TilingOffset
 
-You can set the scaling and offset of the object model UV to achieve different effects of sampling AlbedoTexture, as shown in the animation 2-1-1-10:
+Can set the scaling and offset of the object model's UV to achieve different effects of sampling AlbedoTexture, as shown in Animated Figure 2-1-1-10:
 
 <img src="img/2-1-1-10.gif" style="zoom: 33%;" />
 
-Animation 2-1-1-10
+Animated Figure 2-1-1-10
 
-#### (11) MaterialRenderMode material rendering mode
+#### (11) MaterialRenderMode
 
-OPAQUE: In opaque mode, models obscured behind objects will not be rendered.
+OPAQUE: Opaque mode, models behind the object will not be rendered.
 
-CUTOUT: Culling mode, which will discard some fragments based on the alpha value of the albedo map and the value of AlphaTestValue.
+CUTOUT: Cutout mode, discards some fragments based on the alpha value of the albedo texture and the AlphaTestValue.
 
-TRANSPARENT: Transparent mode, which will be mixed with the objects behind to create a transparent effect.
+TRANSPARENT: Transparent mode, blends with objects behind to create a transparent effect.
 
-ADDITIVE: Overlay mode, which will superimpose the pixels behind the object
+ADDITIVE: Additive mode, adds pixels of objects behind
 
-ALPHABLENDED: The same blending method as transparent mode. The difference from transparent mode is that the fog in the scene will not be mixed.
+ALPHABLENDED: Same blending mode as transparent mode, the difference is that it doesn't blend with fog in the scene.
 
-#### (12) RenderQueue rendering queue
+#### (12) RenderQueue
 
-It can be used to set the rendering queue of the material shader. The larger the RenderQueue, the later the rendering will be. Generally, after setting the rendering mode of the material, the rendering queue will be set according to the rendering mode.
+Can be used to set the render queue of the material shader. The larger the RenderQueue, the later it renders. Generally, after setting the material's render mode, the render queue is set according to the render mode.
 
-The queue corresponding to OPAQUE mode is 2000;
+OPAQUE mode corresponds to queue 2000;
 
-The queue corresponding to CUTOUT mode is 2450;
+CUTOUT mode corresponds to queue 2450;
 
-The queue corresponding to TRANSPARENT mode is 3000;
+TRANSPARENT mode corresponds to queue 3000;
 
-The queue corresponding to ADDITIVE mode is 3000;
+ADDITIVE mode corresponds to queue 3000;
 
-The queue corresponding to ALPHABLENDED mode is 3000;
+ALPHABLENDED mode corresponds to queue 3000;
 
-#### (13) Cull elimination mode
+#### (13) Cull
 
-Culling is performed based on the different connection orders of the face vertices (clockwise or counterclockwise).
+Culls based on different connection orders of face vertices (clockwise or counterclockwise).
 
-Off: Turn off culling
+Off: Disable culling
 
-Back: Remove the back side
+Back: Cull back faces
 
-Front: remove the front
+Front: Cull front faces
 
 ### 2.1.2 Unlit Shader
 
-The Unlit shader is a material that is not exposed to light and is not affected by lighting. It only relies on the texture and color of the material to express the surface effect of the object.
+The Unlit shader is a light-ignoring material that won't be affected by lighting, only using the material's texture and color to represent the object's surface effect.
 
-#### (1)VertexColor vertex color
+#### (1) VertexColor
 
-Whether to apply vertex color. When this macro definition is turned on, the model vertex color will be superimposed.
+Whether to apply vertex colors. After enabling this macro definition, model vertex colors are superimposed.
 
-#### (2) Texture map
+#### (2) Texture
 
-Set the map used to describe the stroke color of the object, as shown in Figure 2-1-2-2-1 and Figure 2-1-2-2-2. After setting the map, the surface of the object displays the corresponding map part based on UV Color, and you can see that when there is light in the scene, it will not be affected by the light.
+Sets the texture used to describe the object's stroke color. As shown in Figure 2-1-2-2-1 and Figure 2-1-2-2-2, after setting the texture, the object's surface displays the color of the corresponding texture part based on UV, and you can see that it won't be affected by lighting even when light exists in the scene.
 
 <img src="img/2-1-2-2-1.png" style="zoom: 33%;" />
 
@@ -186,143 +186,139 @@ Figure 2-1-2-2-1
 
 Figure 2-1-2-2-2
 
-#### (3)AlbedoColor diffuse color
+#### (3) AlbedoColor
 
-Similarly, AlbedoColor can superimpose colors onto the object surface. As shown in Figure 2-1-2-3-1, we superimpose a red color onto the object surface:
+Similarly, AlbedoColor can superimpose color onto the object's surface. As shown in Figure 2-1-2-3-1, we superimpose a red color onto the object's surface:
 
 <img src="img/2-1-2-3-1.png" style="zoom: 33%;" />
 
 Figure 2-1-2-3-1
 
-#### (4) AlphaTestValue alpha test value
+#### (4) AlphaTestValue
 
-This also needs to take effect when the rendering mode is CUTOUT and is used in conjunction with it. It is the same as the Blinn-Phong shader. It is also determined by judging whether the alpha value of the current vertex fragment and the value of the set AlphaTestValue are smaller than the value of AlphaTestValue. Will be discarded and not rendered. We still use the spider web map used by the Blinn-Phong shader above to see how different alphaTestValue values ​​are processed, as shown in the animation 2-1-2-4-1:
+This also only takes effect when the render mode is CUTOUT and is used in conjunction. Same as the Blinn-Phong shader, it judges the current vertex fragment's alpha value against the set AlphaTestValue. Fragments with alpha values less than AlphaTestValue are discarded and not rendered. We still use the spider web texture from the Blinn-Phong shader to see the processing of different alphaTestValue values, as shown in Animated Figure 2-1-2-4-1:
 
 <img src="img/2-1-2-4-1.gif" style="zoom: 33%;" />
 
-Animation 2-1-2-4-1
+Animated Figure 2-1-2-4-1
 
-You can see that **the difference from Blinn-Phong is that the alpha value of Unlit will superimpose the value of AlbedoColor.a. The alpha of our AlbedoColor is 1.0**. At this time, all the fragments will not be discarded.
+You can see that **unlike Blinn-Phong, Unlit's alpha value will superimpose AlbedoColor.a's value. Our AlbedoColor's alpha is 1.0**, so the situation where all fragments are discarded won't occur.
 
-#### (5) TilingOffset scaling offset
+#### (5) TilingOffset
 
-Used to set the scaling and offset of the UV of the object model, which has the same effect as the Blinn-Phong shader, as shown in the animation 2-1-2-5-1:
+Used to set the scaling and offset of the object model's UV. Same effect as Blinn-Phong shader, as shown in Animated Figure 2-1-2-5-1:
 
 <img src="img/2-1-2-5-1.gif" style="zoom: 33%;" />
 
-Animation 2-1-2-5-1
+Animated Figure 2-1-2-5-1
 
-#### (6) MaterialRenderMode material rendering mode
+#### (6) MaterialRenderMode
 
-OPAQUE: In opaque mode, models obscured behind objects will not be rendered.
+OPAQUE: Opaque mode, models behind the object will not be rendered.
 
-CUTOUT: Culling mode, which will discard some fragments based on the alpha value of the albedo map and the value of AlphaTestValue.
+CUTOUT: Cutout mode, discards some fragments based on the alpha value of the albedo texture and the AlphaTestValue.
 
-TRANSPARENT: Transparent mode, which will be mixed with the objects behind to create a transparent effect.
+TRANSPARENT: Transparent mode, blends with objects behind to create a transparent effect.
 
-ADDITIVE: Overlay mode, which will superimpose the pixels behind the object.
+ADDITIVE: Additive mode, adds pixels of objects behind.
 
-ALPHABLENDED: The same blending method as transparent mode. The difference from transparent mode is that the fog in the scene will not be mixed.
+ALPHABLENDED: Same blending mode as transparent mode, the difference is that it doesn't blend with fog in the scene.
 
-#### (7) RenderQueue rendering queue
+#### (7) RenderQueue
 
-It can be used to set the rendering queue of the material shader. The larger the RenderQuere is, the later the rendering will be. Generally, after setting the rendering mode of the material, the rendering queue will be set according to the rendering mode.
+Can be used to set the render queue of the material shader. The larger the RenderQueue, the later it renders. Generally, after setting the material's render mode, the render queue is set according to the render mode.
 
-The queue corresponding to OPAQUE mode is 2000;
+OPAQUE mode corresponds to queue 2000;
 
-The queue corresponding to CUTOUT mode is 2450;
+CUTOUT mode corresponds to queue 2450;
 
-The queue corresponding to TRANSPARENT mode is 3000;
+TRANSPARENT mode corresponds to queue 3000;
 
-The queue corresponding to ADDITIVE mode is 3000;
+ADDITIVE mode corresponds to queue 3000;
 
-The queue corresponding to ALPHABLENDED mode is 3000;
+ALPHABLENDED mode corresponds to queue 3000;
 
-#### (8) Cull elimination mode
+#### (8) Cull
 
-Culling is performed based on the different connection orders of the face vertices (clockwise or counterclockwise).
+Culls based on different connection orders of face vertices (clockwise or counterclockwise).
 
-Off: Turn off culling
+Off: Disable culling
 
-Back: Remove the back side
+Back: Cull back faces
 
-Front: remove the front
+Front: Cull front faces
 
+#### How to achieve the original 2.0 engine's effect material effect through Unlit settings
 
-
-#### How to use unlit to achieve the material effect of the original 2.0 engine by changing settings
-
- Change the MaterialRenderMode material rendering mode to addtive or blend mode. The effect is the same if the color space is not excluded. The color space of 3.0 has become linear.
-
-
+Change the MaterialRenderMode material render mode to additive or blend mode. If color space is not excluded, the effect is the same. 3.0's color space has already become linear.
 
 ### 2.1.3 PBR Shader
 
-PBR material is a physically based rendering material that can provide an accurate representation of the interaction between light and surfaces, and can more realistically describe the surface properties of objects. We use the image-based lighting (IBL) lighting mode to better display the properties of PBR. We need to convert the ambient light source of the scene from SolidColor to spherical harmonics, and click GenerateLighing below to generate an IBL cube map CubeMap, as shown in the figure As shown in 2-1-3-1:
+PBR material is a physically-based rendering material that can provide an accurate representation of how light interacts with surfaces, more realistically describing object surface properties. We use the Image-Based Lighting (IBL) lighting mode to better demonstrate PBR properties. We need to convert the scene's ambient light source from SolidColor to Spherical Harmonics, and click GenerateLighting below to generate an IBL cubemap CubeMap, as shown in Figure 2-1-3-1:
 
 <img src="img/2-1-3-1.png" style="zoom: 33%;" />
 
 Figure 2-1-3-1
 
-#### (1) AlbedoTexture diffuse reflection map
+#### (1) AlbedoTexture
 
-In order to set the overall texture of the surface material of the object, the wall above is also used as the texture, as shown in Figure 2-1-3-1-1 and Figure 2-1-3-1-2. The effect of setting AlbedoTexture:
+To set the overall texture of the object's surface material, we also use the above wall as the texture. As shown in Figure 2-1-3-1-1 and Figure 2-1-3-1-2, the effect of setting AlbedoTexture:
 
-<img src="img/2-1-3-1-1.png" style="zoom: 33%;" />  
+<img src="img/2-1-3-1-1.png" style="zoom: 33%;" />
 
 Figure 2-1-3-1-1
 
-<img src="img/2-1-3-1-2.png" style="zoom: 33%;" />  
+<img src="img/2-1-3-1-2.png" style="zoom: 33%;" />
 
 Figure 2-1-3-1-2
 
-#### (2)AlbedoColor diffuse color
+#### (2) AlbedoColor
 
-You can superimpose a whole color on the surface of the object. As shown in Figure 2-1-3-2-1, we superimpose a yellow color on the material:
+Can superimpose an overall color onto the object's surface. As shown in Figure 2-1-3-2-1, we superimpose a yellow color onto the material:
 
 <img src="img/2-1-3-2-1.png" style="zoom:33%;" />
 
 Figure 2-1-3-2-1
 
-#### (3) Metallic metal degree
+#### (3) Metallic
 
-It is used to set the effect of metallic glossiness on the surface of an object. Generally, we use 0 and 1 to set the metallicity of the object. It is completely absent or completely present. When the metallicity is 1, it can reflect the content of the surrounding environment. Imagine that when we look into a smooth metal ball, it reflects our face. In this way, we have set up the IBL-based spherical harmonic cube map as the ambient light in the IDE. When we bring the metallicity of the material closer and closer to 1, the surface of the object will reflect the content of the surrounding environment. At the same time, we set the smoothness to 1. This way you can see the effect more clearly, as shown in the animation 2-1-3-3-1:
+Used to set the metallic luster effect of the object's surface. Generally, we use 0 and 1 to set the object's metalness - either completely absent or completely present. When metalness is 1, it can reflect the surrounding environment's content. Imagine when we look at a smooth metal ball, it reflects our face. In the IDE, we've already set up an IBL-based spherical harmonics cubemap as ambient light. When we adjust the material's metalness closer to 1, the object's surface gradually reflects the surrounding environment's content. At the same time, we set smoothness to 1 to see the effect more clearly, as shown in Animated Figure 2-1-3-3-1:
 
 <img src="img/2-1-3-3-1.gif" style="zoom: 33%;" />
 
-Animation 2-1-3-3-1
+Animated Figure 2-1-3-3-1
 
-When we adjust the metallicity of the material and slide it toward 1, we can see that the surface of the object gradually reflects the content of the surrounding environment. When the metallicity is 1, it can completely reflect the surrounding environment.
+When we adjust the material's metalness toward 1, we can see the object's surface gradually reflecting the surrounding environment's content. When metalness is 1, it completely reflects the surrounding environment.
 
 #### (4) Smoothness
 
-Used to set the smoothness of the object surface. When the smoothness is 0, the diffuse reflection of the object surface is obvious and the highlights are insufficient. When the smoothness is 1, the highlights are more obvious. As shown in the animation 2-1-3-4-1:
+Used to set the smoothness of the object's surface. When smoothness is 0, the object's surface shows obvious diffuse reflection and insufficient highlights. When smoothness is 1, the highlight part is more obvious. As shown in Animated Figure 2-1-3-4-1:
 
 <img src="img/2-1-3-4-1.gif" style="zoom: 33%;" />
 
-Animation 2-1-3-4-1
+Animated Figure 2-1-3-4-1
 
-#### (5) SmoothnessSource smoothness source
+#### (5) SmoothnessSource
 
-Two smoothness sources can be set, one is obtained from the alpha channel of AlbedoTexture and the other is obtained from the alpha channel of MetallicGloassTexture. In fact, the smoothness of the object's surface material is mapped to the alpha channel of the AlbedoTexture map, or to the alpha channel of the MetallicGloass map, so that lighting calculations can be performed based on the smoothness of each vertex of the object.
+Can set two smoothness sources: obtained from the alpha channel of AlbedoTexture, or from the alpha channel of MetallicGlossTexture. Actually, this maps the object's surface material's smoothness to the alpha channel of the AlbedoTexture texture or to the alpha channel of the MetallicGloss texture, so lighting calculations can be performed based on each vertex's smoothness.
 
-AlbedoTextureAlpha: Get the surface smoothness of the object from the alpha channel of the Albedo map.
+AlbedoTextureAlpha: Obtain the object's surface smoothness from the alpha channel of the Albedo texture.
 
-MetallicGloassTextureAlpha: Get the surface smoothness of the object from the alpha channel of the MetallicGloass map.
+MetallicGlossTextureAlpha: Obtain the object's surface smoothness from the alpha channel of the MetallicGloss texture.
 
-#### (6) SmoothnessTextureScale smoothness map scaling value
+#### (6) SmoothnessTextureScale
 
-When it is set to obtain the smoothness value from the alpha channel of the texture, you can control the overall smoothness value under the alpha channel of the texture by setting this scaling value. We set the smoothness source to the alpha value of albedoTexture, and use the above spider web map as the albedo map, as shown in the animation 2-1-3-6-1:
+When set to obtain smoothness values from the texture's alpha channel, you can control the overall smoothness value under the texture's alpha channel by setting this scale value. We set the smoothness source to albedoTexture's alpha value and use the above spider web texture as the albedo texture, as shown in Animated Figure 2-1-3-6-1:
 
 <img src="img/2-1-3-6-1.gif" style="zoom: 33%;" />
 
-Animation 2-1-3-6-1
+Animated Figure 2-1-3-6-1
 
-#### (7)NormalTexture normal map
+#### (7) NormalTexture
 
-Setting the normal map of the object will calculate the lighting based on the normal map of the object, as shown in Figure 2-1-3-7-1 and Figure 2-1-3-7-2. After setting the normal map, the lighting will The highlight and diffuse parts have been recalculated:
+Sets the object's normal map, which calculates lighting based on the object's normal map. As shown in Figure 2-1-3-7-1 and Figure 2-1-3-7-2, after setting the normal map, the lighting's highlight and diffuse parts are recalculated:
 
- <img src="img/2-1-3-7-1.png" style="zoom: 33%;" />
+<img src="img/2-1-3-7-1.png" style="zoom: 33%;" />
 
 Figure 2-1-3-7-1
 
@@ -330,41 +326,41 @@ Figure 2-1-3-7-1
 
 Figure 2-1-3-7-2
 
-#### (8) OcclusionTexture occlusion map
+#### (8) OcclusionTexture
 
-By sampling the g channel of the Occlusion map, you can set the AO ambient light occlusion value of the model vertex, so that when performing PBR lighting calculations, the lighting values ​​at small seams and other locations can be more realistically simulated.
+By sampling the g-channel of the Occlusion texture, can set the AO ambient occlusion value of model vertices, so during PBR lighting calculations, can more realistically simulate lighting values at small joints and other positions.
 
-#### (9) OcclusionTextureStrength occlusion map strength
+#### (9) OcclusionTextureStrength
 
-Used to adjust the intensity of the occlusion map. When the intensity is 0, the overall occlusion value is 1; when the intensity is 1, the occlusion value of the occlusion map is used.
+Used to adjust the strength of the occlusion texture. When strength is 0, the overall occlusion value is 1; when strength is 1, the occlusion texture's occlusion value is used.
 
-#### (10) Emission self-illumination
+#### (10) Emission
 
-Used to set whether the self-illumination of the model is turned on. After turning it on, two new self-illumination parameters will be added, namely EmissionColor and EmissionTexture;
+Used to set whether the model's self-illumination is enabled. After enabling, two new self-illumination parameters are added: EmissionColor and EmissionTexture.
 
-##### EmissionColor self-illuminating color
+##### EmissionColor
 
-The superimposed overall self-illuminating color will be more obvious in the diffuse reflection part. As shown in Figure 2-1-3-10-1, a red self-illuminating color is superimposed:
+The overall superimposed self-illumination color, which is more obvious in the diffuse part. As shown in Figure 2-1-3-10-1, superimposing a red self-illumination color:
 
 <img src="img/2-1-3-10-1.png" style="zoom: 33%;" />
 
 Figure 2-1-3-10-1
 
-##### EmissionTexture self-illuminating map
+##### EmissionTexture
 
-Setting the self-illumination map can superimpose the self-illumination color set above on different vertex positions according to the model, as shown in Figure 2-1-3-10-2:
+Setting a self-illumination texture can superimpose the above-set self-illumination color on different vertex positions based on the model. As shown in Figure 2-1-3-10-2:
 
 <img src="img/2-1-3-10-2.png" style="zoom: 33%;" />
 
 Figure 2-1-3-10-2
 
-#### (11) EmissionIntensity self-luminous intensity
+#### (11) EmissionIntensity
 
-Set the intensity of the self-illuminating color. When the intensity is 0, there is no self-illuminating effect; when the intensity is 1, the set self-illuminating color is superimposed.
+Sets the intensity of the self-illumination color. When intensity is 0, there's no self-illumination effect; when intensity is 1, the set self-illumination color is superimposed.
 
-#### (12) MetallicGlossTexture metal smooth map
+#### (12) MetallicGlossTexture
 
-You can set up a map to store the metallicity and smoothness of the surface material of the object. The r channel of the map stores the metallicity information of the model material, and the a channel of the map stores the smoothness information of the model material. Below we use a pure black and pure white map. To show the influence of metal smoothness map on PBR material, as shown in Figure 2-1-3-12-1 and Figure 2-1-3-12-2:
+Can set a texture storing the object's surface material's metalness and smoothness. The texture's r-channel stores the model material's metalness information, and the texture's a-channel stores the model material's smoothness information. Below, we use a pure black and pure white texture to show the metallic gloss texture's influence on PBR material, as shown in Figure 2-1-3-12-1 and Figure 2-1-3-12-2:
 
 <img src="img/2-1-3-12-1.png" style="zoom:33%;" />
 
@@ -374,223 +370,223 @@ Figure 2-1-3-12-1
 
 Figure 2-1-3-12-2
 
-The metallicity and smoothness of the pure black image in Figure 2-1-3-12-1 are 0, basically only the diffuse reflection effect of the cube map. The metallicity and smoothness of the pure white image in Figure 2-1-3-12-2 are The smoothness is 1, which can reflect the surrounding three-dimensional ambient light content very well.
+In Figure 2-1-3-12-1, the pure black image's metalness and smoothness are 0, basically only having the cubemap's diffuse reflection effect. In Figure 2-1-3-12-2, the pure white image's metalness and smoothness are 1, which can well reflect the surrounding stereoscopic ambient light content.
 
-#### (13) AlphaTestValue alpha test value
+#### (13) AlphaTestValue
 
-It also needs to be used with the rendering mode set to CUTOUT mode. It will be tested based on the alpha superposition value of AlbedoTexture and AlbedoColor. Fragments less than the AlphaTestValue value will be discarded and not rendered.
+Also needs to be used with render mode set to CUTOUT mode. It tests based on the alpha superimposed value of AlbedoTexture and AlbedoColor. Fragments with alpha values less than AlphaTestValue are discarded and not rendered.
 
-#### （14）TilingOffset
+#### (14) TilingOffset
 
-The effect is the same as Blinn-Phong and Unlit. It can be used to set the model UV scaling and offset values ​​to achieve sampling of different positions of the Albedo map.
+Same effect as Blinn-Phong and Unlit, can be used to set model UV scaling and offset values, achieving sampling of different positions of the Albedo texture.
 
-#### (15) MaterialRenderMode material rendering mode
+#### (15) MaterialRenderMode
 
-OPAQUE: In opaque mode, models obscured behind objects will not be rendered.
+OPAQUE: Opaque mode, models behind the object will not be rendered.
 
-CUTOUT: Culling mode, which will discard some fragments based on the alpha value of the albedo map and the value of AlphaTestValue.
+CUTOUT: Cutout mode, discards some fragments based on the alpha value of the albedo texture and the AlphaTestValue.
 
-TRANSPARENT: Transparent mode, which will be mixed with the objects behind to create a transparent effect.
+TRANSPARENT: Transparent mode, blends with objects behind to create a transparent effect.
 
-ADDITIVE: Overlay mode, which will superimpose the pixels behind the object
+ADDITIVE: Additive mode, adds pixels of objects behind
 
-ALPHABLENDED: The same blending method as transparent mode. The difference from transparent mode is that the fog in the scene will not be mixed.
+ALPHABLENDED: Same blending mode as transparent mode, the difference is that it doesn't blend with fog in the scene.
 
-#### (16) RenderQueue rendering queue
+#### (16) RenderQueue
 
-It can be used to set the rendering queue of the material shader. The larger the RenderQuere is, the later the rendering will be. Generally, after setting the rendering mode of the material, the rendering queue will be set according to the rendering mode.
+Can be used to set the render queue of the material shader. The larger the RenderQueue, the later it renders. Generally, after setting the material's render mode, the render queue is set according to the render mode.
 
-The queue corresponding to OPAQUE mode is 2000;
+OPAQUE mode corresponds to queue 2000;
 
-The queue corresponding to CUTOUT mode is 2450;
+CUTOUT mode corresponds to queue 2450;
 
-The queue corresponding to TRANSPARENT mode is 3000;
+TRANSPARENT mode corresponds to queue 3000;
 
-The queue corresponding to ADDITIVE mode is 3000;
+ADDITIVE mode corresponds to queue 3000;
 
-The queue corresponding to ALPHABLENDED mode is 3000;
+ALPHABLENDED mode corresponds to queue 3000;
 
-#### (17) Cull elimination mode
+#### (17) Cull
 
-Culling is performed based on the different connection orders of the face vertices (clockwise or counterclockwise).
+Culls based on different connection orders of face vertices (clockwise or counterclockwise).
 
-Off: Turn off culling
+Off: Disable culling
 
-Back: Remove the back side
+Back: Cull back faces
 
-Front: remove the front
+Front: Cull front faces
 
 ### 2.1.4 Particle Shader
 
-Particle shaders are used to set the surface display of particles, and are mainly used in particle special effects. We need to create a particle system in the scene, as shown in animation 2-1-4-1:
+The particle shader is used to set the particle's surface display, mainly used in particle effects. We need to create a particle system in the scene, as shown in Animated Figure 2-1-4-1:
 
 <img src="img/2-1-4-1.gif" style="zoom: 33%;" />
 
-Animation 2-1-4-1
+Animated Figure 2-1-4-1
 
-At the same time, the material needs to be assigned to the particle system, as shown in the animation 2-1-4-2:
+At the same time, we need to assign the material to the particle system, as shown in Animated Figure 2-1-4-2:
 
 <img src="img/2-1-4-2.gif" style="zoom: 33%;" />
 
-Animation 2-1-4-2
+Animated Figure 2-1-4-2
 
-In this way, the material is assigned to the particle system for use. Let’s briefly talk about the role of each parameter.
+This way, the material is assigned to the particle system for use. Below, we briefly explain the role of each parameter.
 
-#### (1) Color particle color
+#### (1) Color
 
-Used to set the color of the particle material, as shown in Figure 2-1-4-1-1, we set the particle color to red, and the particles emitted by the particle system at this time turn red:
+Used to set the color of the particle material. As shown in Figure 2-1-4-1-1, we set the particle color to red, and the particles emitted by the particle system become red:
 
 <img src="img/2-1-4-1-1.png" style="zoom:33%;" />
 
 Figure 2-1-4-1-1
 
-#### (2) Texture map
+#### (2) Texture
 
-Used to set the texture style of particles, as shown in Figure 2-1-4-2-1:
+Used to set the texture style of the particles. As shown in Figure 2-1-4-2-1:
 
 <img src="img/2-1-4-2-1.png" style="zoom:33%;" />
 
 Figure 2-1-4-2-1
 
-#### (3) AlphaTestValue alpha test value
+#### (3) AlphaTestValue
 
-The CUTOUT mode on the particle shader is invalid, and the alpha test value does not need to be set.
+CUTOUT mode is invalid for the particle shader, so the alpha test value doesn't need to be set.
 
-#### （4）TilingOffset
+#### (4) TilingOffset
 
-It has the same effect as Blinn-Phong and Unlit. It can be used to set the UV scaling and offset values ​​of the model to achieve sampling of different effects of the Albedo map.
+Same effect as Blinn-Phong and Unlit, can be used to set the model's UV scaling and offset values, achieving different effects of sampling the Albedo texture.
 
-#### (5) MaterialRenderMode material rendering mode
+#### (5) MaterialRenderMode
 
-OPAQUE: In opaque mode, models obscured behind objects will not be rendered.
+OPAQUE: Opaque mode, models behind the object will not be rendered.
 
-CUTOUT: Invalid under particle shader.
+CUTOUT: Invalid under the particle shader.
 
-TRANSPARENT: Transparent mode, which will be mixed with the objects behind to create a transparent effect.
+TRANSPARENT: Transparent mode, blends with objects behind to create a transparent effect.
 
-ADDITIVE: Overlay mode, which will superimpose the pixels behind the object
+ADDITIVE: Additive mode, adds pixels of objects behind
 
-ALPHABLENDED: The same blending method as transparent mode. The difference from transparent mode is that the fog in the scene will not be mixed.
+ALPHABLENDED: Same blending mode as transparent mode, the difference is that it doesn't blend with fog in the scene.
 
-#### (6) RenderQueue rendering queue
+#### (6) RenderQueue
 
-It can be used to set the rendering queue of the material shader. The larger the RenderQuere is, the later the rendering will be. Generally, after setting the rendering mode of the material, the rendering queue will be set according to the rendering mode.
+Can be used to set the render queue of the material shader. The larger the RenderQueue, the later it renders. Generally, after setting the material's render mode, the render queue is set according to the render mode.
 
-The queue corresponding to OPAQUE mode is 2000;
+OPAQUE mode corresponds to queue 2000;
 
-The queue corresponding to CUTOUT mode is 2450;
+CUTOUT mode corresponds to queue 2450;
 
-The queue corresponding to TRANSPARENT mode is 3000;
+TRANSPARENT mode corresponds to queue 3000;
 
-The queue corresponding to ADDITIVE mode is 3000;
+ADDITIVE mode corresponds to queue 3000;
 
-The queue corresponding to ALPHABLENDED mode is 3000;
+ALPHABLENDED mode corresponds to queue 3000;
 
-#### (7) Cull elimination mode
+#### (7) Cull
 
-Culling is performed based on the different connection orders of the face vertices (clockwise or counterclockwise).
+Culls based on different connection orders of face vertices (clockwise or counterclockwise).
 
-Off: Turn off culling
+Off: Disable culling
 
-Back: Remove the back side
+Back: Cull back faces
 
-Front: remove the front
+Front: Cull front faces
 
 ### 2.1.5 Trail Shader
 
-The Trail shader is used to achieve the trailing effect. We need a trailing effect object to implement it. Create a trailing effect object in the scene as shown in Figure 2-1-5-1:
+The Trail shader is used to achieve trail effects. We need a trail effect object to implement it. Create a trail effect object in the scene as shown in Animated Figure 2-1-5-1:
 
 <img src="img/2-1-5-1.gif" style="zoom:67%;" />
 
-Animation 2-1-5-1
+Animated Figure 2-1-5-1
 
-We add the corresponding material to the trailing special effects object as shown in the animation 2-1-5-2. Add the myMaterial material to the trailing special effects object:
+We add the corresponding material to the trail effect object as shown in Animated Figure 2-1-5-2, adding the myMaterial material to the trail effect object:
 
-![](img/2-1-5-2.gif)
+<img src="img/2-1-5-2.gif" style="zoom:67%;" />
 
-Animation 2-1-5-2
+Animated Figure 2-1-5-2
 
-**In order to see the effect of the trailing, we need to move the trailing special effects object. To do this, we add a Move script so that the special effects object can move along the x-axis. **
+**To view the trail effect, we need to move the trail effect object. For this, we add a Move script to make the effect object move along the x-axis.**
 
-#### (1) Color color
+#### (1) Color
 
-Used to set the color of the trailing, as shown in the animation 2-1-5-1-1, we set a red as the trailing color:
+Used to set the trail's color. As shown in Animated Figure 2-1-5-1-1, we set red as the trail color:
 
 <img src="img/2-1-5-1-1.gif" style="zoom:67%;" />
 
-Animation 2-1-5-1-1
+Animated Figure 2-1-5-1-1
 
-#### (2) Texture map
+#### (2) Texture
 
-Used to set the shape of the trailing, as in the animated picture 2-1-5-2-2, we add a picture 2-1-5-2-1 as a texture, the trailing shader uses ADDITIVE mode to achieve transparent overlay Effect:
+Used to set the trail's shape. In Animated Figure 2-1-5-2-2, we add Figure 2-1-5-2-1 as a texture. The trail shader uses ADDITIVE mode to achieve transparent superposition effect:
 
-![](img/2-1-5-2-1.jpg)
+<img src="img/2-1-5-2-1.jpg" style="zoom:67%;" />
 
 Figure 2-1-5-2-1
 
 <img src="img/2-1-5-2-2.gif" style="zoom:67%;" />
 
-Animation 2-1-5-2-2
+Animated Figure 2-1-5-2-2
 
-#### （3）AlphaTestValue alphaTest值
+#### (3) AlphaTestValue
 
-Trailing shaders only use ADDITIVE and ALPHABLENDED modes, this value has no effect here.
+The trail shader only uses ADDITIVE and ALPHABLENDED modes, so this value is invalid here.
 
-#### (4) TilingOffset scaling offset
+#### (4) TilingOffset
 
-It can be used to set the UV scaling and offset during texture sampling to achieve the effect of texture scaling and offset.
+Can be used to set UV scaling and offset during texture sampling, achieving texture scaling and offset effects.
 
-#### (5) MaterialRenderMode material rendering mode
+#### (5) MaterialRenderMode
 
-Trailing shaders only use ADDITIVE and ALPHABLENDED modes:
+The trail shader only uses ADDITIVE and ALPHABLENDED modes:
 
-ADDITIVE: Transparent overlay mode, superimposes all the alpha values ​​of the following pixels to achieve a transparent effect.
+ADDITIVE: Transparent superposition mode, superimposes all alpha values of pixels behind to achieve a transparent effect.
 
-ALPHABLENDED: The same mixing method as the transparent mode. The difference from the transparent mode is that it will not mix the fog in the scene. This mode will not produce the ADDITIVE transparency effect.
+ALPHABLENDED: Same blending mode as transparent mode, the difference is that it doesn't blend with fog in the scene. This mode won't produce ADDITIVE's transparent effect.
 
-#### (6) RenderQueue rendering queue
+#### (6) RenderQueue
 
-It can be used to set the rendering queue of the material shader. The larger the RenderQuere is, the later the rendering will be. Generally, after setting the rendering mode of the material, the rendering queue will be set according to the rendering mode.
+Can be used to set the render queue of the material shader. The larger the RenderQueue, the later it renders. Generally, after setting the material's render mode, the render queue is set according to the render mode.
 
-The queue corresponding to OPAQUE mode is 2000;
+OPAQUE mode corresponds to queue 2000;
 
-The queue corresponding to CUTOUT mode is 2450;
+CUTOUT mode corresponds to queue 2450;
 
-The queue corresponding to TRANSPARENT mode is 3000;
+TRANSPARENT mode corresponds to queue 3000;
 
-The queue corresponding to ADDITIVE mode is 3000;
+ADDITIVE mode corresponds to queue 3000;
 
-The queue corresponding to ALPHABLENDED mode is 3000;
+ALPHABLENDED mode corresponds to queue 3000;
 
-The trailing shader only uses ADDITIVE and ALPHABLENDED modes, here set to 3000.
+The trail shader only uses ADDITIVE and ALPHABLENDED modes, so set this to 3000.
 
-#### (7) Cull elimination mode
+#### (7) Cull
 
-Culling is performed based on the different connection orders of the face vertices (clockwise or counterclockwise).
+Culls based on different connection orders of face vertices (clockwise or counterclockwise).
 
-Off: Turn off culling
+Off: Disable culling
 
-Back: Remove the back side
+Back: Cull back faces
 
-Front: remove the front
+Front: Cull front faces
 
 ### 2.1.6 SkyBox Shader
 
-The skybox shader is used to set the skybox style of the scene. The skybox requires a cubemap for sampling. We first need to create a new cubemap and set the texture according to the top, bottom, left, right, front and back of the skybox, as shown in the animation 2-1- As shown in 6-1:
+The skybox shader is used to set the scene's skybox style. The skybox needs a cubemap for sampling. We first need to create a new cubemap and set textures according to the skybox's up, down, left, right, front, and back faces, as shown in Animated Figure 2-1-6-1:
 
 <img src="img/2-1-6-1.gif" style="zoom: 33%;" />
 
-Animation 2-1-6-1
+Animated Figure 2-1-6-1
 
-Setting up the sky box requires modifying the sky box material of Scene3D, as shown in the animation 2-1-6-2:
+To set the skybox, we need to modify the Scene3D's skybox material, as shown in Animated Figure 2-1-6-2:
 
 <img src="img/2-1-6-2.gif" style="zoom: 33%;" />
 
-Animation 2-1-6-2
+Animated Figure 2-1-6-2
 
-#### (1)TintColor 
+#### (1) TintColor
 
-Overlay the color onto the sky box, as shown in Figure 2-1-6-1-1, and set a light red color to make the entire sky red:
+Superimposes color onto the skybox. As shown in Figure 2-1-6-1-1, setting a light red color makes the entire sky reddish:
 
 <img src="img/2-1-6-1-1.png" style="zoom:33%;" />
 
@@ -598,151 +594,151 @@ Figure 2-1-6-1-1
 
 #### (2) Exposure
 
-Used to set the exposure of the sky box. When the exposure is 0, the sky box is black; as the exposure value increases, the normal cube map color will gradually be displayed, and then the sky box will turn completely white due to overexposure. As shown in the animation 2-1-6-2-1:
+Used to set the skybox's exposure. When exposure is 0, the skybox is black. As the exposure value increases, it gradually displays the normal cubemap color, then due to overexposure, the entire skybox becomes white. As shown in Animated Figure 2-1-6-2-1:
 
 <img src="img/2-1-6-2-1.gif" style="zoom: 33%;" />
 
-Animation 2-1-6-2-1
+Animated Figure 2-1-6-2-1
 
-#### (3)Rotation 
+#### (3) Rotation
 
-You can rotate the cubemap around the y-axis from 0 to 360 degrees.
+Can rotate the cubemap 0-360 degrees around the y-axis.
 
-#### (4)CubeTexture spherical map
+#### (4) CubeTexture
 
-To set the sampling map of the sky box, you need to use a CubeMap type cube map.
+Used to set the skybox's sampling texture. Needs to use a CubeMap type cubemap.
 
-#### (5) AlphaTestValue alpha test value
+#### (5) AlphaTestValue
 
-This value does not take effect when switching to CUTOUT mode on the skybox shader.
+This value doesn't take effect when switching to CUTOUT mode on the skybox shader.
 
-#### （6）TilingOffset
+#### (6) TilingOffset
 
-Since cubemaps are used, this value has no effect on the skybox shader.
+Since a cubemap is used, this value doesn't take effect on the skybox shader.
 
-#### (7) MaterialRenderMode material rendering mode
+#### (7) MaterialRenderMode
 
-On the skybox shader, setting it to CUTOUT, TRANSPARENT, ADDITIVE, or ALPHABLENED modes does not take effect.
+On the skybox shader, setting to CUTOUT, TRANSPARENT, ADDITIVE, or ALPHABLENDED modes doesn't take effect.
 
-#### (8) RenderQueue rendering queue
+#### (8) RenderQueue
 
-It can be used to set the rendering queue of the material shader. The larger the RenderQuere is, the later the rendering will be. Generally, after setting the rendering mode of the material, the rendering queue will be set according to the rendering mode.
+Can be used to set the render queue of the material shader. The larger the RenderQueue, the later it renders. Generally, after setting the material's render mode, the render queue is set according to the render mode.
 
-The queue corresponding to OPAQUE mode is 2000;
+OPAQUE mode corresponds to queue 2000;
 
-The queue corresponding to CUTOUT mode is 2450;
+CUTOUT mode corresponds to queue 2450;
 
-The queue corresponding to TRANSPARENT mode is 3000;
+TRANSPARENT mode corresponds to queue 3000;
 
-The queue corresponding to ADDITIVE mode is 3000;
+ADDITIVE mode corresponds to queue 3000;
 
-The queue corresponding to ALPHABLENDED mode is 3000;
+ALPHABLENDED mode corresponds to queue 3000;
 
-Since the rendering mode of the skybox material only takes effect in OPAQUE mode, just set it to 2000.
+Since the skybox material's render mode only takes effect in OPAQUE mode, setting it to 2000 is sufficient.
 
-#### (9) Cull elimination mode
+#### (9) Cull
 
-Culling is performed based on the different connection orders of the face vertices (clockwise or counterclockwise).
+Culls based on different connection orders of face vertices (clockwise or counterclockwise).
 
-Off: Turn off culling
+Off: Disable culling
 
-Back: Remove the back side
+Back: Cull back faces
 
-Front: remove the front
+Front: Cull front faces
 
-### 2.1.7 SkyPanoamic Shader
+### 2.1.7 SkyPanoramic Shader
 
-Skybox panoramic map shader, here a 2D panoramic map is used to wrap the scene in the form of a cube map to achieve ambient light effects. The use of this material is the same as that of the skybox, and it is directly assigned to the skybox renderer of the 3D scene. Can.
+The skybox panoramic texture shader uses a 2D panoramic texture to wrap the scene like a cubemap to achieve ambient light effects. The use of this material is the same as the skybox - just assign it directly to the 3D scene's skybox renderer.
 
-#### (1)TintColor color
+#### (1) TintColor
 
-The function is the same as the skybox shader, which superimposes a color on the panorama skybox.
+Same function as the skybox shader, both superimpose a color onto the panoramic skybox.
 
-#### (2)Rotation rotation
+#### (2) Rotation
 
-You can set the rotation angle of the sky box around the Y axis, between 0 and 360.
+Can set the skybox's rotation angle around the Y-axis, between 0-360.
 
-#### (3) PanoramicTexture panoramic map
+#### (3) PanoramicTexture
 
-The panorama map requires a cylindrical 2D map using latitude and longitude.
+The panoramic texture needs a 2D texture using latitude and longitude in a cylindrical style.
 
-#### (4) AlphaTestValue alpha test value
+#### (4) AlphaTestValue
 
-Since only OPAQUE mode is effective on the panoramic skybox shader, this value is invalid in CUTOUT mode.
+Since only OPAQUE mode takes effect on the panoramic skybox shader, this value is invalid in CUTOUT mode.
 
-#### （5）TilingOffset
+#### (5) TilingOffset
 
-Due to the way cubemaps are implemented using 2D textures, this value is invalid.
+Since a 2D texture is used to implement the cubemap approach, this value is invalid.
 
-#### (6) MaterialRenderMode material rendering mode
+#### (6) MaterialRenderMode
 
-In panorama skybox mode, only OPAQUE mode takes effect.
+Only OPAQUE mode takes effect in panoramic skybox mode.
 
-#### (7) RenderQueue rendering queue
+#### (7) RenderQueue
 
-It can be used to set the rendering queue of the material shader. The larger the RenderQuere is, the later the rendering will be. Generally, after setting the rendering mode of the material, the rendering queue will be set according to the rendering mode.
+Can be used to set the render queue of the material shader. The larger the RenderQueue, the later it renders. Generally, after setting the material's render mode, the render queue is set according to the render mode.
 
-The queue corresponding to OPAQUE mode is 2000;
+OPAQUE mode corresponds to queue 2000;
 
-The queue corresponding to CUTOUT mode is 2450;
+CUTOUT mode corresponds to queue 2450;
 
-The queue corresponding to TRANSPARENT mode is 3000;
+TRANSPARENT mode corresponds to queue 3000;
 
-The queue corresponding to ADDITIVE mode is 3000;
+ADDITIVE mode corresponds to queue 3000;
 
-The queue corresponding to ALPHABLENDED mode is 3000;
+ALPHABLENDED mode corresponds to queue 3000;
 
-Since only OPAQUE mode is in effect, it is set to 2000;
+Since only OPAQUE mode takes effect, set this to 2000.
 
-#### (8) Cull elimination mode
+#### (8) Cull
 
-Culling is performed based on the different connection orders of the face vertices (clockwise or counterclockwise).
+Culls based on different connection orders of face vertices (clockwise or counterclockwise).
 
-Off: Turn off culling
+Off: Disable culling
 
-Back: Remove the back side
+Back: Cull back faces
 
-Front: remove the front
+Front: Cull front faces
 
 ### 2.1.8 SkyProcedural Shader
 
-A procedural skybox that simulates the sky by setting the parameters of the sun.
+Procedural skybox, simulates the sky by setting sun parameters.
 
-#### (1) U_SunSize sun size
+#### (1) U_SunSize
 
-Set the disk size of the sun, as shown in Figure 2-1-8-1-1. Set the sun size to 0.1:
+The sun's disk size setting. As shown in Figure 2-1-8-1-1, setting sun size to 0.1:
 
 <img src="img/2-1-8-1-1.png" style="zoom:33%;" />
 
 Figure 2-1-8-1-1
 
-#### (2) Sun type
+#### (2) Sun
 
-There are three types of sun used to set the procedural skybox:
+Used to set the procedural skybox's sun type. There are three types:
 
 ##### SUN_NONE
 
-No Sun, no sun is displayed on the skybox when this mode is selected.
+No sun. After selecting this mode, no sun is displayed on the skybox.
 
 ##### SUN_HIGH_QUALITY
 
-High-quality solar simulation. In this mode, the divergence and convergence of sunlight can be adjusted.
+High-quality sun simulation. In this mode, the sun's divergence and convergence can be adjusted.
 
 ##### SUN_SIMPLE
 
-A simple sun simulation can only adjust the overall size of the sun.
+Simple sun simulation. Can only adjust the sun's overall size.
 
-#### (3) U_SunSizeConvergence sun size convergence
+#### (3) U_SunSizeConvergence
 
-The size of the sun converges. The smaller the value, the larger the overall solar disk. It only takes effect in the SUN_HIGH_QUALITY mode. As shown in the animation 2-1-8-3-1:
+The sun's size convergence. The smaller the value, the larger the overall sun disk. Only takes effect in SUN_HIGH_QUALITY mode. As shown in Animated Figure 2-1-8-3-1:
 
 <img src="img/2-1-8-3-1.gif" style="zoom:33%;" />
 
-Animation 2-1-8-3-1
+Animated Figure 2-1-8-3-1
 
-#### (4) U_AtmosphereThickness Atmosphere thickness
+#### (4) U_AtmosphereThickness
 
-The density of the atmosphere. A higher-density atmosphere will absorb more colors, as shown in Figure 2-1-8-4-1 when the density is 1, and Figure 2-1-8-4-2 when the density is 2. Show:
+Atmospheric density. Higher density atmosphere absorbs more color. As shown in Figure 2-1-8-4-1 at density 1, and Figure 2-1-8-4-2 at density 2:
 
 <img src="img/2-1-8-4-1.png" style="zoom:33%;" />
 
@@ -752,94 +748,90 @@ Figure 2-1-8-4-1
 
 Figure 2-1-8-4-2
 
-#### (5)U_SkyTint sky color
+#### (5) U_SkyTint
 
-Sets the color of the sky above the horizon.
+Sets the sky color above the horizon.
 
-#### (6)U_GroundTint ground color
+#### (6) U_GroundTint
 
-Sets the color of the ground below the horizon.
+Sets the ground color below the horizon.
 
-#### (7)U_Exposure exposure
+#### (7) U_Exposure
 
-Set the light and dark of the sky box through the exposure value, as shown in the animation 2-1-8-7-1:
+Sets the skybox's brightness through the exposure value. As shown in Animated Figure 2-1-8-7-1:
 
 <img src="img/2-1-8-7-1.gif" style="zoom: 33%;" />
 
-Animation 2-1-8-7-1
+Animated Figure 2-1-8-7-1
 
-#### (8) AlphaTestValue alpha test value
+#### (8) AlphaTestValue
 
-Since procedural skyboxes only use OPAQUE, this value has no effect.
+Since the procedural skybox only uses OPAQUE, this value is invalid.
 
-#### （9）TilingOffset
+#### (9) TilingOffset
 
-Since procedural skies do not have textures, this value has no effect.
+Since the procedural sky has no texture, this value is also invalid.
 
-#### (10) MaterialRenderMode material rendering mode
+#### (10) MaterialRenderMode
 
 Only takes effect in OPAQUE mode.
 
-#### (11) RenderQueue rendering queue
+#### (11) RenderQueue
 
-It can be used to set the rendering queue of the material shader. The larger the RenderQuere is, the later the rendering will be. Generally, after setting the rendering mode of the material, the rendering queue will be set according to the rendering mode.
+Can be used to set the render queue of the material shader. The larger the RenderQueue, the later it renders. Generally, after setting the material's render mode, the render queue is set according to the render mode.
 
-The queue corresponding to OPAQUE mode is 2000;
+OPAQUE mode corresponds to queue 2000;
 
-The queue corresponding to CUTOUT mode is 2450;
+CUTOUT mode corresponds to queue 2450;
 
-The queue corresponding to TRANSPARENT mode is 3000;
+TRANSPARENT mode corresponds to queue 3000;
 
-The queue corresponding to ADDITIVE mode is 3000;
+ADDITIVE mode corresponds to queue 3000;
 
-The queue corresponding to ALPHABLENDED mode is 3000;
+ALPHABLENDED mode corresponds to queue 3000;
 
-Since the procedural skybox only takes effect in OPAQUE mode, set it to 2000.
+Since the procedural skybox only takes effect in OPAQUE mode, set to 2000.
 
-#### (12) Cull elimination mode
+#### (12) Cull
 
-Culling is performed based on the different connection orders of the face vertices (clockwise or counterclockwise).
+Culls based on different connection orders of face vertices (clockwise or counterclockwise).
 
-Off: Turn off culling
+Off: Disable culling
 
-Back: Remove the back side
+Back: Cull back faces
 
-Front: remove the front
+Front: Cull front faces
 
-## 2.2 Material effect display
+## 2.2 Material Effect Display
 
-The material effect display is mainly used to display the material effect after setting the attributes. You can use the mouse to interact here to operate the effects of the material ball in different directions.
+The material effect display is mainly used to show the material effect after setting properties. You can use the mouse to interact here to operate the material ball's effect in different directions.
 
-### 2.2.1 Switch the materials of different meshes
+### 2.2.1 Switching Materials of Different Meshes
 
-You can switch the effects of materials under different meshes by clicking the square button on the right, as shown in the animation 2-2-1:
+You can switch the material's effect under different meshes by clicking the square button on the right, as shown in Animated Figure 2-2-1:
 
 <img src="img/2-2-1.gif" style="zoom: 33%;" />
 
-Animation 2-2-1
+Animated Figure 2-2-1
 
-### 2.2.2 Turn off lighting effects
+### 2.2.2 Turning Off Lighting Effects
 
-You can switch the material's effect of receiving light or not by clicking the light bulb button on the right, as shown in the animation 2-2-2:
+You can switch the material's effect between lit and unlit by clicking the light bulb button on the right, as shown in Animated Figure 2-2-2:
 
 <img src="img/2-2-2.gif" style="zoom: 33%;" />
 
-Animation 2-2-2
+Animated Figure 2-2-2
 
-# 3. Use of materials
+# 3. Material Usage
 
-After we adjust the properties of the material to the effect we want, we can assign the material to the object in the scene. There are two methods for setting the material of the object, namely the following animation 3-1 and animation 3-2. Shown:
+After we adjust the material's properties to the desired effect, we can assign the material to objects in the scene. There are two methods to set an object's material, as shown in Animated Figure 3-1 and Animated Figure 3-2:
 
 <img src="img/3-1.gif" style="zoom: 33%;" />
 
-Animation 3-1
+Animated Figure 3-1
 
-As shown in the animation 3-1 above, you can directly drag the material onto the object in the Scene window, or you can select the corresponding material on the renderer of the corresponding object as shown in the animation 3-2.
+The above Animated Figure 3-1 shows directly dragging the material onto an object in the Scene window. Alternatively, as shown in Animated Figure 3-2, you can select the corresponding material on the object's renderer.
 
 <img src="img/3-2.gif" style="zoom: 33%;" />
 
-Animation 3-2
-
-
-
-
+Animated Figure 3-2

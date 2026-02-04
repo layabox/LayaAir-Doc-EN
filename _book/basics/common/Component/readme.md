@@ -1,6 +1,6 @@
 # Entity Component System (ECS)
 
-> Author: Charley, 谷主、孟星煜
+> Author: Charley, Guzhu, Meng Xingyu
 
 ## 1\. Basic Concepts
 
@@ -420,7 +420,7 @@ In the ECS (Entity-Component-System) architecture adopted by the LayaAir engine,
 
 The primary role of **decorators** in LayaAir-IDE is to help the IDE recognize developer-defined components. **By using decorator identifiers, developers can conveniently and quickly expose configurable data within their components to the IDE's property panel.** This allows developers to directly adjust component parameters in the visual interface without writing additional configuration code, greatly enhancing development efficiency and operational convenience for data transfer and component configuration.
 
-For a complete explanation of decorators, please refer to the《[Decorators](../../../IDE/customComponent/decorators/readme.md)》document.
+For a complete explanation of decorators, please refer to the"[Decorators](../../../IDE/customComponent/decorators/readme.md)"document.
 
 
 ## IV. Using Properties in Code

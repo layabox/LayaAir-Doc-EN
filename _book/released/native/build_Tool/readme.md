@@ -145,7 +145,6 @@ Stand-alone version calling command: ``layanative3 refreshres``
 
 ***Tips***  
 **1. The command must be executed in the directory of the built app project. The most obvious sign is that it must be in the directory of navtie.json, as shown in the figure below: **
-![](3.jpg)    
 
 For information on how to install and use the layanative command line, please refer to [Using the layanative command line tool](../build_Cmd/readme.md)
 

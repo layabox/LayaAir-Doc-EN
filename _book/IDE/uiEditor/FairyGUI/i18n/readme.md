@@ -74,8 +74,8 @@ For small amounts of text used only in code, you can create translations entirel
 let myI18n = Laya.Translations.create("LodSimplify");
 
 myI18n.setContent("zh-CN", {
-    meshRate : "模型压缩比例",
-    meshRateTips : "根据设置的比例对模型网格进行压缩2x"
+    meshRate : "Model Compression Ratio",
+    meshRateTips : "Compress model mesh by the set ratio 2x"
 });
 
 console.log(myI18n.t("meshRate", "Mesh Rate"));
@@ -87,8 +87,8 @@ You can call `setContent` multiple times to add different languages. The followi
 let myI18n = Laya.Translations.create("LodSimplify", "en");
 
 myI18n.setContent("zh-CN", {
-    meshRate : "模型压缩比例",
-    meshRateTips : "根据设置的比例对模型网格进行压缩2x"
+    meshRate : "Model Compression Ratio",
+    meshRateTips : "Compress model mesh by the set ratio 2x"
 }).setContent("en", {
     meshRate: "Mesh Rate2",
     meshRateTips: "Compress the model mesh based on the set ratio."

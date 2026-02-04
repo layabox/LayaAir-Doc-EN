@@ -49,7 +49,7 @@ The IDE provides many types by default for scripts to use. The main parameter ty
 | :---------- | :--------------------------------------- |
 | name    	| Attribute display name, must be consistent with variable name	|
 | tips    	| Display label when mouse passes over	|
-| type    	| 类型：Int,Number,sNumber,String,Bool,Option,editOption,Check,Color,ColorArray,Node,Nodes,Prefab,SizeGrid,Vec,Vector,Ease |
+| type    	| Type:Int,Number,sNumber,String,Bool,Option,editOption,Check,Color,ColorArray,Node,Nodes,Prefab,SizeGrid,Vec,Vector,Ease |
 | accept  	| The associated attribute of String, accept:res is the receiving resource address	|
 | acceptTypes | The associated attributes of Node and accept, the received type, such as using RevoluteJoint, PrismaticJoint, RigidBody with node; using jpg, png, txt restriction suffix with accept:res |
 | option  	| Associated attributes of Option and editOption option: selectable list, such as aaa, bbb, ccc |

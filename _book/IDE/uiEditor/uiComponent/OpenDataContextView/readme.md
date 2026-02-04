@@ -320,57 +320,114 @@ export class Script extends Laya.Script {
 
 
 
-### 3. Template Function & Style
+### 3. Create Template Function and Style
 
-* Use [RankList demo](https://codepen.io/yuanzm/pen/QWZybox)
-* Export template function via **doT** → replace `tplfn.js`
-* Copy style from demo → `style.js`
+Open [RankList](https://codepen.io/yuanzm/pen/QWZybox), which is a leaderboard ranking example. In this document, we'll use this example to demonstrate the Open Data Context effect:
+
+![5-3-1](img/5-3-1.png)
+
+Developers can edit the Open Data Context effect themselves, or modify based on this example. For instance, if we don't want to display the first-place content at the bottom of the list, we can delete the corresponding code:
+
+![5-3-2](img/5-3-2.png)
+
+After adjusting the effect, click the **doT** button to export the template function:
+
+![5-3-3](img/5-3-3.png)
+
+Open the Open Data Context folder, find the `tplfn.js` file, and replace the original function with the exported function:
+
+<img src="img/5-3-4.png" alt="5-3-4" style="zoom:80%;" />
+
+Next, copy the style from the example as well:
+
+<img src="img/5-3-5.png" alt="5-3-5" style="zoom:80%;" />
+
+> Note: Here we're using the generated Open Data Context project template. In actual development, developers can define the template function and style location themselves, as long as they can be called normally.
 
 
-4. Open Data Context JS (index.js)
+### 4. Write JavaScript Code
+
+The Open Data Context uses `index.js` as the entry file. Developers need to implement initialization and other operations in this file. Here's the code we've prepared. Developers can understand the purpose of each part by reading the comments:
+
+```javascript
+// Reference modules
 const style = require("./render/style.js");
 const tplFn = require("./render/tplfn.js");
 const Layout = require("./engine.js").default;
 
+// Get Open Data Context canvas
 let sharedCanvas = wx.getSharedCanvas();
 let sharedContext = sharedCanvas.getContext("2d");
 
+// Refresh data
 function reFresh() {
     wx.getFriendCloudStorage({
+        // List of keys to fetch. Developers can upload multiple data items and fetch specified data based on the key list
         keyList: ["playerData"],
-        success: res => draw(res),
-        fail: err => console.log(err)
+        success: res => {
+            console.log("Friend data fetched:", res);
+            draw(res);
+        },
+        fail: err => {
+            console.log(err);
+        }
     });
 }
 
+// Process fetched data and render
 function draw(res) {
-    if (!res) return;
+    if (res == undefined) {
+        return;
+    }
 
+    // Organize data. The data format here must match the logic in the template function
+    let resNumber = res.data.length;
     let it = { data: [] };
-    res.data.forEach(item => {
-        let dataItem = item.KVDataList.length ? 
-            { nickname: item.nickname, rankScore: item.KVDataList[0].value, avatarUrl: item.avatarUrl } :
-            { nickname: item.nickname, rankScore: "1000", avatarUrl: item.avatarUrl };
-        it.data.push(dataItem);
-    });
+    
+    for (let i = 0; i < resNumber; i++) {
+        // If the player doesn't have this data, set a default value
+        if (res.data[i].KVDataList.length == 0) {
+            let item = {
+                nickname: res.data[i].nickname,
+                rankScore: "1000",
+                avatarUrl: res.data[i].avatarUrl
+            };
+            it.data.push(item);
+        } else {
+            let item = {
+                nickname: res.data[i].nickname,
+                rankScore: res.data[i].KVDataList[0].value,
+                avatarUrl: res.data[i].avatarUrl
+            };
+            it.data.push(item);
+        }
+    }
 
+    // Call template function to generate XML format string
     let template = tplFn(it);
+
+    // Execute rendering
     Layout.clear();
     Layout.init(template, style);
     Layout.layout(sharedContext);
 }
 
 function init() {
-    wx.onMessage(data => {
-        if (data.type === "updateViewPort") Layout.updateViewPort(data.box);
-        else if (data.type === 'reFresh') reFresh();
+    // Start listening, execute different functions based on message type
+    wx.onMessage((data) => {
+        if (data.type === "updateViewPort") {
+            Layout.updateViewPort(data.box);
+        } else if (data.type === 'reFresh') {
+            reFresh();
+        }
     });
 }
 
 init();
+```
 
-5. Run & Preview
+### 5. Run and Preview
 
-Use a WeChat account with Mini Program development & privacy permissions.
+Developers need to prepare an account themselves. The account needs to successfully register for Mini Program development and management permissions, and the Mini Program must have permissions to obtain user personal information (refer to Section 3, Subsection 2). Use this account to log in to WeChat Developer Tools and open our configured project. At this point, you can see the Open Data Context effect:
 
-Open the project in WeChat Developer Tools to see Open Data Context in action:
+![5-5-1](img/5-5-1.png)
